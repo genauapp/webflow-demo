@@ -430,13 +430,14 @@ function shouldUseOwnMeaning() {
 }
 
 function getRandomTranslationResult(selectedWord) {
+  console.log("kelime listesi exercise:")
   console.log(kelimeListesiExercise)
-  console.log(selectedWord)
-
-  const filteredKelimeListesiExercise = kelimeListesiExercise.filter(
+  console.log("selected word: " + selectedWord)
+  const kelimeListesiInstance = kelimeListesiExercise
+  const filteredKelimeListesiExercise = kelimeListesiInstance.filter(
     (kelimeExercise) => kelimeExercise.almanca !== selectedWord.almanca
   )
-
+  console.log("filtered kelime listesi exercise:")
   console.log(filteredKelimeListesiExercise)
 
   const randomIndex = getRandomNumber(filteredKelimeListesiExercise.length - 1)
