@@ -1375,7 +1375,7 @@ function addToFavorites() {
     ingilizce: currentWord.ingilizce,
     seviye: currentWord.seviye || 'N/A',
   })
-  localStorage.setItem('favoriteWords', JSON.stringify(favoriteWords))
+  LocalStorageManager.save('favoriteWords', favoriteWords)
 
   feedbackElement.innerText = `"${currentWord.almanca}" has been added to favorites!`
   feedbackElement.style.color = 'green'
@@ -1421,7 +1421,7 @@ function removeFavorite() {
   favoriteWords = favoriteWords.filter(
     (word) => word.almanca !== currentWord.almanca
   )
-  localStorage.setItem('favoriteWords', JSON.stringify(favoriteWords))
+  LocalStorageManager.save('favoriteWords', favoriteWords)
 
   feedbackElement.innerText = `"${currentWord.almanca}" has been removed from favorites.`
   feedbackElement.style.color = 'orange'
@@ -1478,7 +1478,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   try {
     const lastSelectedTopic = 'b1telcpt1'
-    localStorage.setItem('lastSelectedTopic', lastSelectedTopic)
+    LocalStorageManager.save('lastSelectedTopic', lastSelectedTopic)
     await loadWords(lastSelectedTopic)
     showLearnWord()
     showExerciseWord()
