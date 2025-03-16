@@ -430,7 +430,8 @@ function shouldUseOwnMeaning() {
 }
 
 async function getRandomTranslationResult(selectedWord) {
-  const kelimeListesiInstance = await fetch(JSON_URLS[currentType][topic]).json()
+  const currentLevel = LocalStorageManager.load('lastSelectedTopic')
+  const kelimeListesiInstance = await fetch(JSON_URLS[currentType][currentLevel]).json()
   const filteredKelimeListesiExercise = kelimeListesiInstance.filter(
     (kelimeExercise) => kelimeExercise.almanca !== selectedWord.almanca
   )
