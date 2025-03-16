@@ -1400,7 +1400,7 @@ function updateFavoriteIcons() {
   const outFavImage = document.getElementById(`outfav-${currentType}`)
 
   const currentWord = kelimeListesi[currentLearnIndex]
-  const favoriteWords = JSON.parse(LocalStorageManager.load('favoriteWords')) || []
+  const favoriteWords = JSON.parse(localStorage.getItem('favoriteWords')) || []
   const isFavorite = isItInFavorites(currentWord, favoriteWords)
 
   if (isFavorite) {
