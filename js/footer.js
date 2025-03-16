@@ -1,5 +1,5 @@
-import { JSON_URLS } from './urls'
-import LocalStorageManager from './LocalStorageManager'
+import { JSON_URLS } from './urls.js'
+import LocalStorageManager from './LocalStorageManager.js'
 
 let learnedWithLearnWords = {
   noun: [],
