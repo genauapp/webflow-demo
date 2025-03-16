@@ -464,10 +464,10 @@ function showExerciseWord() {
   }
 
   inProgressWords =
-    JSON.parse(LocalStorageManager.load('inProgressWords')) || inProgressWords
+    LocalStorageManager.load('inProgressWords') || inProgressWords
 
   learnedWithExerciseWords =
-    JSON.parse(LocalStorageManager.load('learnedWithExerciseWords')) ||
+    LocalStorageManager.load('learnedWithExerciseWords') ||
     learnedWithExerciseWords
 
   // 🟢 `kelimeListesi` içinden `learnedWords`'de olanları çıkar
@@ -595,9 +595,9 @@ function checkNonNounAnswer(userInput) {
   const buttonWrong = document.getElementById('wrongButton-' + currentType)
   const buttonCorrect = document.getElementById('correctButton-' + currentType)
 
-  inProgressWords = JSON.parse(LocalStorageManager.load('inProgressWords'))
+  inProgressWords = LocalStorageManager.load('inProgressWords')
   learnedWithExerciseWords =
-    JSON.parse(LocalStorageManager.load('learnedWithExerciseWords')) ||
+    LocalStorageManager.load('learnedWithExerciseWords') ||
     learnedWithExerciseWords
 
   const inProgressIndex = inProgressWords[currentType].findIndex(
@@ -797,9 +797,9 @@ function checkNounAnswer(userArtikel) {
   console.log(
     `'${kelimeListesiExercise.length}' kelime listesi uzunlugu böyleydi.`
   )
-  inProgressWords = JSON.parse(LocalStorageManager.load('inProgressWords'))
+  inProgressWords = LocalStorageManager.load('inProgressWords')
   learnedWithExerciseWords =
-    JSON.parse(LocalStorageManager.load('learnedWithExerciseWords')) ||
+    LocalStorageManager.load('learnedWithExerciseWords') ||
     learnedWithExerciseWords
 
   const inProgressIndex = inProgressWords[currentType].findIndex(
@@ -1092,7 +1092,7 @@ function iKnowLearn() {
   }
 
   learnedWithLearnWords =
-    JSON.parse(LocalStorageManager.load('learnedWithLearnWords')) ||
+    LocalStorageManager.load('learnedWithLearnWords') ||
     learnedWithLearnWords
   const currentWord = kelimeListesi[currentLearnIndex]
 
@@ -1366,7 +1366,7 @@ function addToFavorites() {
   }
 
   const currentWord = kelimeListesi[currentLearnIndex]
-  let favoriteWords = JSON.parse(LocalStorageManager.load('favoriteWords')) || []
+  let favoriteWords = LocalStorageManager.load('favoriteWords') || []
   const isFavorite = isItInFavorites(currentWord, favoriteWords)
 
   // Favorilere ekle
@@ -1400,7 +1400,7 @@ function updateFavoriteIcons() {
   const outFavImage = document.getElementById(`outfav-${currentType}`)
 
   const currentWord = kelimeListesi[currentLearnIndex]
-  const favoriteWords = JSON.parse(localStorage.getItem('favoriteWords')) || []
+  const favoriteWords = LocalStorageManager.load('favoriteWords') || []
   const isFavorite = isItInFavorites(currentWord, favoriteWords)
 
   if (isFavorite) {
@@ -1418,7 +1418,7 @@ function removeFavorite() {
     `favoritesFeedback-${currentType}`
   )
   const currentWord = kelimeListesi[currentLearnIndex]
-  let favoriteWords = JSON.parse(localStorage.getItem('favoriteWords')) || []
+  let favoriteWords = localStorage.getItem('favoriteWords') || []
   favoriteWords = favoriteWords.filter(
     (word) => word.almanca !== currentWord.almanca
   )
