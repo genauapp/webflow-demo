@@ -451,7 +451,7 @@ async function getRandomTranslationResult(selectedWord) {
   return randomResult
 }
 
-function showExerciseWord() {
+async function showExerciseWord() {
   if (!kelimeListesiExercise.length) {
     // Liste boşsa UI'ı temizle
     document.getElementById(`levelTagExercise-${currentType}`).innerText = ''
@@ -543,7 +543,7 @@ function showExerciseWord() {
       if (shouldUseOwnMeaning()) {
         exerciseTranslationText = ingilizce
       } else {
-        exerciseTranslationText = getRandomTranslationResult(currentWord)
+        exerciseTranslationText = await getRandomTranslationResult(currentWord)
         // todo: transfer data for checking the answer later
         const buttonWrong = document.getElementById(
           'wrongButton-' + currentType
