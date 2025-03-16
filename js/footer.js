@@ -429,14 +429,14 @@ function shouldUseOwnMeaning() {
   return useOwnMeaning
 }
 
-function getRandomTranslationResult(selectedWord) {
-  console.log('kelime listesi exercise:')
-  console.log(kelimeListesiExercise)
-  console.log('selected word: ' + selectedWord)
-  const kelimeListesiInstance = kelimeListesiExercise
+async function getRandomTranslationResult(selectedWord) {
+  const kelimeListesiInstance = await fetch(JSON_URLS[currentType][topic]).json()
   const filteredKelimeListesiExercise = kelimeListesiInstance.filter(
     (kelimeExercise) => kelimeExercise.almanca !== selectedWord.almanca
   )
+
+  console.log('kelime listesi exercise Instance:')
+  console.log(kelimeListesiInstance)
   console.log('filtered kelime listesi exercise:')
   console.log(filteredKelimeListesiExercise)
 
