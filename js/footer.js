@@ -1,5 +1,14 @@
 import { JSON_URLS } from './urls.js'
 import LocalStorageManager from './LocalStorageManager.js'
+import va1a2 from '../json/a1-a2/verb.json' assert { type: 'json' }
+import adja1a2 from '../json/a1-a2/adjective.json' assert { type: 'json' }
+import adva1a2 from '../json/a1-a2/adverb.json' assert { type: 'json' }
+
+let staticWordLists = {
+  verb: va1a2,
+  adjective: adja1a2,
+  adverb: adva1a2
+}
 
 let learnedWithLearnWords = {
   noun: [],
@@ -429,10 +438,9 @@ function shouldUseOwnMeaning() {
   return useOwnMeaning
 }
 
-async function getRandomTranslationResult(selectedWord) {
-  const currentLevel = LocalStorageManager.load('lastSelectedTopic')
-  const response = await fetch(JSON_URLS[currentType][currentLevel])
-  const kelimeListesiInstance = await response.json()
+function getRandomTranslationResult(selectedWord) {
+  
+  const kelimeListesiInstance = staticWordLists[currentType]
   const filteredKelimeListesiExercise = kelimeListesiInstance.filter(
     (kelimeExercise) => kelimeExercise.almanca !== selectedWord.almanca
   )
@@ -451,7 +459,7 @@ async function getRandomTranslationResult(selectedWord) {
   return randomResult
 }
 
-async function showExerciseWord() {
+function showExerciseWord() {
   if (!kelimeListesiExercise.length) {
     // Liste boşsa UI'ı temizle
     document.getElementById(`levelTagExercise-${currentType}`).innerText = ''
@@ -543,7 +551,7 @@ async function showExerciseWord() {
       if (shouldUseOwnMeaning()) {
         exerciseTranslationText = ingilizce
       } else {
-        exerciseTranslationText = await getRandomTranslationResult(currentWord)
+        exerciseTranslationText = getRandomTranslationResult(currentWord)
         // todo: transfer data for checking the answer later
         const buttonWrong = document.getElementById(
           'wrongButton-' + currentType
@@ -1094,8 +1102,7 @@ function iKnowLearn() {
   }
 
   learnedWithLearnWords =
-    LocalStorageManager.load('learnedWithLearnWords') ||
-    learnedWithLearnWords
+    LocalStorageManager.load('learnedWithLearnWords') || learnedWithLearnWords
   const currentWord = kelimeListesi[currentLearnIndex]
 
   // Kelimeyi öğrenilenlere ekle
