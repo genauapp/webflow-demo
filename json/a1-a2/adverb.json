@@ -1,0 +1,173 @@
+[
+  {
+    "type": "adverb",
+    "almanca": "oft",
+    "ingilizce": "often",
+    "seviye": "A1",
+    "ornek": "Ich besuche meine Großeltern oft.",
+    "kelime": "oft",
+    "kural": true
+  },
+  {
+    "type": "adverb",
+    "almanca": "selten",
+    "ingilizce": "seldom",
+    "seviye": "A1",
+    "ornek": "Er ist selten im Büro.",
+    "kelime": "selten",
+    "kural": false
+  },
+  {
+    "type": "adverb",
+    "almanca": "gerne",
+    "ingilizce": "gladly",
+    "seviye": "A1",
+    "ornek": "Ich lese gerne Bücher.",
+    "kelime": "gerne",
+    "kural": true
+  },
+  {
+    "type": "adverb",
+    "almanca": "jetzt",
+    "ingilizce": "now",
+    "seviye": "A1",
+    "ornek": "Wir müssen jetzt gehen.",
+    "kelime": "jetzt",
+    "kural": false
+  },
+  {
+    "type": "adverb",
+    "almanca": "bald",
+    "ingilizce": "soon",
+    "seviye": "A1",
+    "ornek": "Der Zug wird bald ankommen.",
+    "kelime": "bald",
+    "kural": true
+  },
+  {
+    "type": "adverb",
+    "almanca": "schon",
+    "ingilizce": "already",
+    "seviye": "A2",
+    "ornek": "Ich habe das Buch schon gelesen.",
+    "kelime": "schon",
+    "kural": false
+  },
+  {
+    "type": "adverb",
+    "almanca": "immer",
+    "ingilizce": "always",
+    "seviye": "A1",
+    "ornek": "Sie ist immer freundlich.",
+    "kelime": "immer",
+    "kural": true
+  },
+  {
+    "type": "adverb",
+    "almanca": "wirklich",
+    "ingilizce": "really",
+    "seviye": "A2",
+    "ornek": "Das ist wirklich interessant.",
+    "kelime": "wirklich",
+    "kural": true
+  },
+  {
+    "type": "adverb",
+    "almanca": "sehr",
+    "ingilizce": "very",
+    "seviye": "A1",
+    "ornek": "Er ist sehr müde.",
+    "kelime": "sehr",
+    "kural": false
+  },
+  {
+    "type": "adverb",
+    "almanca": "leider",
+    "ingilizce": "unfortunately",
+    "seviye": "A2",
+    "ornek": "Leider hat er den Bus verpasst.",
+    "kelime": "leider",
+    "kural": true
+  },
+  {
+    "type": "adverb",
+    "almanca": "heute",
+    "ingilizce": "today",
+    "seviye": "A1",
+    "ornek": "Heute regnet es stark.",
+    "kelime": "heute",
+    "kural": false
+  },
+  {
+    "type": "adverb",
+    "almanca": "morgen",
+    "ingilizce": "tomorrow",
+    "seviye": "A1",
+    "ornek": "Morgen beginnt der Kurs.",
+    "kelime": "morgen",
+    "kural": true
+  },
+  {
+    "type": "adverb",
+    "almanca": "dann",
+    "ingilizce": "then",
+    "seviye": "A2",
+    "ornek": "Er ging zuerst einkaufen, dann kochte er.",
+    "kelime": "dann",
+    "kural": false
+  },
+  {
+    "type": "adverb",
+    "almanca": "zuerst",
+    "ingilizce": "first",
+    "seviye": "A2",
+    "ornek": "Zuerst müssen wir die Zutaten vorbereiten.",
+    "kelime": "zuerst",
+    "kural": true
+  },
+  {
+    "type": "adverb",
+    "almanca": "später",
+    "ingilizce": "later",
+    "seviye": "A1",
+    "ornek": "Wir treffen uns später im Café.",
+    "kelime": "später",
+    "kural": false
+  },
+  {
+    "type": "adverb",
+    "almanca": "manchmal",
+    "ingilizce": "sometimes",
+    "seviye": "A2",
+    "ornek": "Manchmal besuche ich meine Familie.",
+    "kelime": "manchmal",
+    "kural": true
+  },
+  {
+    "type": "adverb",
+    "almanca": "dort",
+    "ingilizce": "there",
+    "seviye": "A2",
+    "ornek": "Die Bibliothek ist dort in der Nähe.",
+    "kelime": "dort",
+    "kural": false
+  },
+  {
+    "type": "adverb",
+    "almanca": "hier",
+    "ingilizce": "here",
+    "seviye": "A1",
+    "ornek": "Hier ist dein Platz.",
+    "kelime": "hier",
+    "kural": true
+  },
+  {
+    "type": "adverb",
+    "almanca": "überall",
+    "ingilizce": "everywhere",
+    "seviye": "A2",
+    "ornek": "Überall gibt es schöne Landschaften.",
+    "kelime": "überall",
+    "kural": false
+  }
+]

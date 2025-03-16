@@ -1,0 +1,173 @@
+[
+  {
+    "type": "adjective",
+    "almanca": "schnell",
+    "ingilizce": "fast",
+    "seviye": "A1",
+    "ornek": "Der schnelle Zug fährt pünktlich.",
+    "kelime": "schnell",
+    "kural": true
+  },
+  {
+    "type": "adjective",
+    "almanca": "langsam",
+    "ingilizce": "slow",
+    "seviye": "A1",
+    "ornek": "Die langsame Schnecke kriecht über den Garten.",
+    "kelime": "langsam",
+    "kural": false
+  },
+  {
+    "type": "adjective",
+    "almanca": "groß",
+    "ingilizce": "big, tall",
+    "seviye": "A1",
+    "ornek": "Der große Baum spendet Schatten.",
+    "kelime": "groß",
+    "kural": false
+  },
+  {
+    "type": "adjective",
+    "almanca": "klein",
+    "ingilizce": "small, short",
+    "seviye": "A1",
+    "ornek": "Das kleine Haus ist sehr gemütlich.",
+    "kelime": "klein",
+    "kural": false
+  },
+  {
+    "type": "adjective",
+    "almanca": "alt",
+    "ingilizce": "old",
+    "seviye": "A1",
+    "ornek": "Der alte Mann erzählt Geschichten.",
+    "kelime": "alt",
+    "kural": true
+  },
+  {
+    "type": "adjective",
+    "almanca": "neu",
+    "ingilizce": "new",
+    "seviye": "A1",
+    "ornek": "Die neue Schule ist modern ausgestattet.",
+    "kelime": "neu",
+    "kural": true
+  },
+  {
+    "type": "adjective",
+    "almanca": "gut",
+    "ingilizce": "good",
+    "seviye": "A1",
+    "ornek": "Das gute Wetter lädt zum Spazieren ein.",
+    "kelime": "gut",
+    "kural": true
+  },
+  {
+    "type": "adjective",
+    "almanca": "schlecht",
+    "ingilizce": "bad",
+    "seviye": "A1",
+    "ornek": "Der schlechte Film enttäuschte das Publikum.",
+    "kelime": "schlecht",
+    "kural": false
+  },
+  {
+    "type": "adjective",
+    "almanca": "heiß",
+    "ingilizce": "hot",
+    "seviye": "A1",
+    "ornek": "Der heiße Kaffee ist frisch gebrüht.",
+    "kelime": "heiß",
+    "kural": false
+  },
+  {
+    "type": "adjective",
+    "almanca": "kalt",
+    "ingilizce": "cold",
+    "seviye": "A1",
+    "ornek": "Das kalte Wasser erfrischt an einem Sommertag.",
+    "kelime": "kalt",
+    "kural": false
+  },
+  {
+    "type": "adjective",
+    "almanca": "stark",
+    "ingilizce": "strong",
+    "seviye": "A2",
+    "ornek": "Die starke Brise weht über das Meer.",
+    "kelime": "stark",
+    "kural": true
+  },
+  {
+    "type": "adjective",
+    "almanca": "schwach",
+    "ingilizce": "weak",
+    "seviye": "A2",
+    "ornek": "Das schwache Licht ist kaum zu erkennen.",
+    "kelime": "schwach",
+    "kural": false
+  },
+  {
+    "type": "adjective",
+    "almanca": "laut",
+    "ingilizce": "loud",
+    "seviye": "A2",
+    "ornek": "Die laute Musik stört die Nachbarn.",
+    "kelime": "laut",
+    "kural": false
+  },
+  {
+    "type": "adjective",
+    "almanca": "leise",
+    "ingilizce": "quiet",
+    "seviye": "A2",
+    "ornek": "Der leise Klang der Harfe beruhigt mich.",
+    "kelime": "leise",
+    "kural": true
+  },
+  {
+    "type": "adjective",
+    "almanca": "schön",
+    "ingilizce": "beautiful",
+    "seviye": "A2",
+    "ornek": "Der schöne Garten blüht im Frühling.",
+    "kelime": "schön",
+    "kural": true
+  },
+  {
+    "type": "adjective",
+    "almanca": "hässlich",
+    "ingilizce": "ugly",
+    "seviye": "A2",
+    "ornek": "Das hässliche Gebäude sticht aus der Reihe hervor.",
+    "kelime": "hässlich",
+    "kural": false
+  },
+  {
+    "type": "adjective",
+    "almanca": "interessant",
+    "ingilizce": "interesting",
+    "seviye": "A2",
+    "ornek": "Das interessante Buch fesselt die Leser.",
+    "kelime": "interessant",
+    "kural": true
+  },
+  {
+    "type": "adjective",
+    "almanca": "langweilig",
+    "ingilizce": "boring",
+    "seviye": "A2",
+    "ornek": "Die langweilige Vorlesung dauerte Stunden.",
+    "kelime": "langweilig",
+    "kural": false
+  },
+  {
+    "type": "adjective",
+    "almanca": "sauber",
+    "ingilizce": "clean",
+    "seviye": "A1",
+    "ornek": "Das saubere Zimmer wirkt einladend.",
+    "kelime": "sauber",
+    "kural": true
+  }
+]

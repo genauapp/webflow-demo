@@ -1,0 +1,29 @@
+[
+  {
+    "almanca": "verstehen",
+    "ingilizce": "to understand",
+    "seviye": "A2",
+    "ornek": "Ich verstehe die Aufgabe nicht.",
+    "kelime": "verstehen",
+    "kural": "Irregular verb, changes to 'verstand' in Präteritum and 'verstanden' in Perfekt.",
+    "type": "verb"
+  },
+  {
+    "almanca": "verlieren",
+    "ingilizce": "to lose",
+    "seviye": "B1",
+    "ornek": "Ich habe meinen Schlüssel verloren.",
+    "kelime": "verlieren",
+    "kural": "Irregular verb, past tense forms are 'verlor' (Präteritum) and 'verloren' (Perfekt).",
+    "type": "verb"
+  },
+  {
+    "almanca": "erzählen",
+    "ingilizce": "to tell",
+    "seviye": "B1",
+    "ornek": "Er erzählt eine interessante Geschichte.",
+    "kelime": "erzählen",
+    "kural": "Regular verb, often used with the accusative case.",
+    "type": "verb"
+  }
+]

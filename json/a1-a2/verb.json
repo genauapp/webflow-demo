@@ -1,0 +1,182 @@
+[
+    {
+        "almanca": "gehen",
+        "ingilizce": "to go",
+        "seviye": "A1",
+        "ornek": "Ich gehe jeden Tag zur Arbeit.",
+        "kelime": "gehen",
+        "kural": "Regular verb used to describe movement from one place to another.",
+        "type": "verb"
+    },
+    {
+        "almanca": "kommen",
+        "ingilizce": "to come",
+        "seviye": "A1",
+        "ornek": "Er kommt aus Deutschland.",
+        "kelime": "kommen",
+        "kural": "Common verb indicating movement toward the speaker's location.",
+        "type": "verb"
+    },
+    {
+        "almanca": "sehen",
+        "ingilizce": "to see",
+        "seviye": "A1",
+        "ornek": "Wir sehen einen Film im Kino.",
+        "kelime": "sehen",
+        "kural": "Irregular verb; stem vowel changes (ie) in second and third person singular.",
+        "type": "verb"
+    },
+    {
+        "almanca": "essen",
+        "ingilizce": "to eat",
+        "seviye": "A1",
+        "ornek": "Ich esse gern Pizza.",
+        "kelime": "essen",
+        "kural": "Irregular verb; stem vowel changes (i) in second and third person singular.",
+        "type": "verb"
+    },
+    {
+        "almanca": "trinken",
+        "ingilizce": "to drink",
+        "seviye": "A1",
+        "ornek": "Sie trinkt Wasser.",
+        "kelime": "trinken",
+        "kural": "Regular verb used for consuming liquids.",
+        "type": "verb"
+    },
+    {
+        "almanca": "schreiben",
+        "ingilizce": "to write",
+        "seviye": "A1",
+        "ornek": "Er schreibt einen Brief.",
+        "kelime": "schreiben",
+        "kural": "Regular verb commonly used with objects like letters or emails.",
+        "type": "verb"
+    },
+    {
+        "almanca": "lesen",
+        "ingilizce": "to read",
+        "seviye": "A1",
+        "ornek": "Ich lese ein interessantes Buch.",
+        "kelime": "lesen",
+        "kural": "Irregular verb; stem vowel changes (ie) in second and third person singular.",
+        "type": "verb"
+    },
+    {
+        "almanca": "schlafen",
+        "ingilizce": "to sleep",
+        "seviye": "A1",
+        "ornek": "Das Kind schläft tief und fest.",
+        "kelime": "schlafen",
+        "kural": "Irregular verb; stem vowel changes (ä) in second and third person singular.",
+        "type": "verb"
+    },
+    {
+        "almanca": "laufen",
+        "ingilizce": "to run, to walk",
+        "seviye": "A1",
+        "ornek": "Wir laufen im Park.",
+        "kelime": "laufen",
+        "kural": "Irregular verb; stem vowel changes (äu) in second and third person singular.",
+        "type": "verb"
+    },
+    {
+        "almanca": "hören",
+        "ingilizce": "to hear, to listen",
+        "seviye": "A1",
+        "ornek": "Ich höre gerne Musik.",
+        "kelime": "hören",
+        "kural": "Regular verb used for perceiving sound or intentional listening.",
+        "type": "verb"
+    },
+    {
+        "almanca": "sprechen",
+        "ingilizce": "to speak",
+        "seviye": "A1",
+        "ornek": "Wir sprechen Deutsch im Kurs.",
+        "kelime": "sprechen",
+        "kural": "Irregular verb; stem vowel changes (i) in second and third person singular.",
+        "type": "verb"
+    },
+    {
+        "almanca": "lernen",
+        "ingilizce": "to learn",
+        "seviye": "A1",
+        "ornek": "Sie lernt Deutsch.",
+        "kelime": "lernen",
+        "kural": "Regular verb used when acquiring new skills or knowledge.",
+        "type": "verb"
+    },
+    {
+        "almanca": "arbeiten",
+        "ingilizce": "to work",
+        "seviye": "A1",
+        "ornek": "Mein Vater arbeitet in einer Fabrik.",
+        "kelime": "arbeiten",
+        "kural": "Regular verb, often followed by 'bei' or 'in' to indicate workplace.",
+        "type": "verb"
+    },
+    {
+        "almanca": "spielen",
+        "ingilizce": "to play",
+        "seviye": "A1",
+        "ornek": "Die Kinder spielen im Garten.",
+        "kelime": "spielen",
+        "kural": "Regular verb used for games, sports, and playing instruments.",
+        "type": "verb"
+    },
+    {
+        "almanca": "machen",
+        "ingilizce": "to do, to make",
+        "seviye": "A1",
+        "ornek": "Was machst du heute?",
+        "kelime": "machen",
+        "kural": "Regular verb commonly used in everyday expressions.",
+        "type": "verb"
+    },
+    {
+        "almanca": "helfen",
+        "ingilizce": "to help",
+        "seviye": "A1",
+        "ornek": "Kannst du mir bitte helfen?",
+        "kelime": "helfen",
+        "kural": "Irregular verb; takes dative case and changes vowel (i) in second and third person singular.",
+        "type": "verb"
+    },
+    {
+        "almanca": "finden",
+        "ingilizce": "to find",
+        "seviye": "A1",
+        "ornek": "Ich finde meinen Schlüssel nicht.",
+        "kelime": "finden",
+        "kural": "Regular verb used for locating something physically or abstractly.",
+        "type": "verb"
+    },
+    {
+        "almanca": "geben",
+        "ingilizce": "to give",
+        "seviye": "A1",
+        "ornek": "Er gibt ihr das Buch.",
+        "kelime": "geben",
+        "kural": "Irregular verb; stem vowel changes (i) in second and third person singular.",
+        "type": "verb"
+    },
+    {
+        "almanca": "beginnen",
+        "ingilizce": "to begin, to start",
+        "seviye": "A1",
+        "ornek": "Der Kurs beginnt um neun Uhr.",
+        "kelime": "beginnen",
+        "kural": "Regular verb used to indicate the start of an action or event.",
+        "type": "verb"
+    },
+    {
+        "almanca": "bleiben",
+        "ingilizce": "to stay, to remain",
+        "seviye": "A1",
+        "ornek": "Wir bleiben heute zu Hause.",
+        "kelime": "bleiben",
+        "kural": "Regular verb commonly used with location-related phrases.",
+        "type": "verb"
+    }
+]

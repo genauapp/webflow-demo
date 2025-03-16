@@ -1,0 +1,26 @@
+[
+  {
+    "almanca": "freundlich",
+    "ingilizce": "friendly",
+    "seviye": "A2",
+    "ornek": "Die Verkäuferin war sehr freundlich.",
+    "kelime": "freundlich",
+    "type": "adjective"
+  },
+  {
+    "almanca": "kompliziert",
+    "ingilizce": "complicated",
+    "seviye": "B1",
+    "ornek": "Die Aufgabe ist ziemlich kompliziert.",
+    "kelime": "kompliziert",
+    "type": "adjective"
+  },
+  {
+    "almanca": "nützlich",
+    "ingilizce": "useful",
+    "seviye": "B1",
+    "ornek": "Diese Informationen sind sehr nützlich.",
+    "kelime": "nützlich",
+    "type": "adjective"
+  }
+]

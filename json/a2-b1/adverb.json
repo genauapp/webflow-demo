@@ -1,0 +1,26 @@
+[
+  {
+    "almanca": "plötzlich",
+    "ingilizce": "suddenly",
+    "seviye": "A2",
+    "ornek": "Plötzlich begann es zu regnen.",
+    "kelime": "plötzlich",
+    "type": "adverb"
+  },
+  {
+    "almanca": "genau",
+    "ingilizce": "exactly",
+    "seviye": "B1",
+    "ornek": "Ich weiß genau, was du meinst.",
+    "kelime": "genau",
+    "type": "adverb"
+  },
+  {
+    "almanca": "wahrscheinlich",
+    "ingilizce": "probably",
+    "seviye": "B1",
+    "ornek": "Er kommt wahrscheinlich später.",
+    "kelime": "wahrscheinlich",
+    "type": "adverb"
+  }
+]
