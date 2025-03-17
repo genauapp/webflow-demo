@@ -121,6 +121,9 @@ function removeFavorite(index) {
   listFavorites() // Listeyi yeniden yükle
 }
 
+const levels = ['b1telcpt1', 'b1telcpt2', 'b1telcpt3', 'b1telcpt4']
+const types = ['noun', 'verb', 'adjective', 'adverb']
+
 function listLearnedWords() {
   const learnedWordsContainer = document.getElementById('learnedWordsContainer')
 
@@ -145,12 +148,11 @@ function listLearnedWords() {
 
   console.log(JSON.stringify(learnedWithExerciseWords))
 
-  if (
-    learnedWithExerciseWords['noun'].length === 0 &&
-    learnedWithExerciseWords['verb'].length === 0 &&
-    learnedWithExerciseWords['adjective'].length === 0 &&
-    learnedWithExerciseWords['adverb'].length === 0
-  ) {
+  const allEmpty = levels.every((level) =>
+    types.every((type) => learnedWithExerciseWords[level][type].length === 0)
+  )
+
+  if (allEmpty) {
     // Learned words  yokken gösterilecek mesaj
     learnedWordsContainer.style.display = 'flex' // Flex düzen
     learnedWordsContainer.style.justifyContent = 'center' // Yatayda ortala
