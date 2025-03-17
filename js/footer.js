@@ -60,7 +60,7 @@ let learnedWithLearnWords = {
   },
 }
 
-let learnedWithExerciseWords = {
+export let learnedWithExerciseWords = {
   b1telcpt1: { noun: [], verb: [], adjective: [], adverb: [] },
   b1telcpt2: { noun: [], verb: [], adjective: [], adverb: [] },
   b1telcpt3: { noun: [], verb: [], adjective: [], adverb: [] },
@@ -76,10 +76,10 @@ let inProgressWords = {
 
 // Global variables
 let currentLevel = 'b1telcpt1'
-// const levels = ['b1telcpt1', 'b1telcpt2', 'b1telcpt3', 'b1telcpt4']
+export const levels = ['b1telcpt1', 'b1telcpt2', 'b1telcpt3', 'b1telcpt4']
 
 let currentType = 'noun'
-const types = ['noun', 'verb', 'adjective', 'adverb']
+export const types = ['noun', 'verb', 'adjective', 'adverb']
 
 let kelimeListesi = []
 let kelimeListesiExercise = []
