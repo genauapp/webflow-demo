@@ -1,8 +1,8 @@
 import { JSON_URLS } from './urls.js'
 import LocalStorageManager from './LocalStorageManager.js'
-import va1a2 from '../json/a1-a2/verb.json' assert { type: 'json' }
-import adja1a2 from '../json/a1-a2/adjective.json' assert { type: 'json' }
-import adva1a2 from '../json/a1-a2/adverb.json' assert { type: 'json' }
+import va1a2 from '../json/a1-a2/verb.json' //assert { type: 'json' }
+import adja1a2 from '../json/a1-a2/adjective.json' //assert { type: 'json' }
+import adva1a2 from '../json/a1-a2/adverb.json' //assert { type: 'json' }
 
 let staticWordLists = {
   verb: va1a2,
