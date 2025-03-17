@@ -127,125 +127,153 @@ function removeFavorite(index) {
 function createElementWithStyle(tag, className, styles = {}, textContent = '') {
   const el = document.createElement(tag)
   if (className) el.classList.add(className)
-  Object.assign(el.style, styles)
-  if (textContent) el.textContent = textContent
+  for (const key in styles) {
+    if (styles.hasOwnProperty(key)) {
+      el.style[key] = styles[key]
+    }
+  }
+  if (textContent) {
+    el.textContent = textContent
+  }
   return el
 }
 
 function listLearnedWords() {
-  const learnedWordsContainer = document.getElementById('learnedWordsContainer')
-
-  // learnedWordsContainer için scrollable alan ayarları
-  learnedWordsContainer.style.maxHeight = '420px' // Maksimum yükseklik
-  learnedWordsContainer.style.overflowY = 'auto' // Dikey kaydırma
-  learnedWordsContainer.style.padding = '12px' // İçerik padding
-  learnedWordsContainer.style.border = '0px solid #ccc' // Çerçeve
-  learnedWordsContainer.style.borderRadius = '16px' // Köşeleri yuvarla
-  learnedWordsContainer.style.display = 'block' // Varsayılan düzen
-
-  learnedWordsContainer.innerHTML = '' // Mevcut listeyi temizle
-
-  const learnedWithExerciseWords = JSON.parse(
-    LocalStorageManager.load(
-      'learnedWithExerciseWords',
-      learnedWithExerciseWords
-    )
-  )
-
-  const allEmpty = levels.every((level) =>
-    types.every((type) => learnedWithExerciseWords[level][type].length === 0)
-  )
-
-  if (allEmpty) {
-    // Learned words  yokken gösterilecek mesaj
-    learnedWordsContainer.style.display = 'flex' // Flex düzen
-    learnedWordsContainer.style.justifyContent = 'center' // Yatayda ortala
-    learnedWordsContainer.style.alignItems = 'center' // Dikeyde ortala
-    learnedWordsContainer.style.textAlign = 'center' // Yazıları ortala
-
-    const noLearnedWordsMessage = document.createElement('div')
-    noLearnedWordsMessage.style.color = '#666' // Gri renk
-    noLearnedWordsMessage.style.fontFamily = 'Montserrat, sans-serif' // Font ailesi
-    noLearnedWordsMessage.style.fontSize = '16px' // Font boyutu
-    noLearnedWordsMessage.style.fontWeight = '500' // Yazı kalınlığı
-    noLearnedWordsMessage.style.padding = '16px' // Mesaj için padding
-    noLearnedWordsMessage.style.lineHeight = '1.5' // Satır yüksekliği
-    noLearnedWordsMessage.innerHTML = `
-    <p>No words learned yet!</p>
-    <p>Go to the "Exercise" and answer correctly a word three times in a row!!!</p>
-  `
-
-    learnedWordsContainer.appendChild(noLearnedWordsMessage)
-    return
-  }
-
-  Object.keys(learnedWithExerciseWords).forEach(levelKey => {
-    const levelObj = learnedWithExerciseWords[levelKey];
+    const learnedWordsContainer = document.getElementById('learnedWordsContainer');
   
-    // Iterate over each word type (e.g., noun, verb, etc.)
-    Object.keys(levelObj).forEach(typeKey => {
-      const wordsArray = levelObj[typeKey];
+    // Container scroll and layout settings
+    learnedWordsContainer.style.maxHeight = '420px';
+    learnedWordsContainer.style.overflowY = 'auto';
+    learnedWordsContainer.style.padding = '12px';
+    learnedWordsContainer.style.border = '0px solid #ccc';
+    learnedWordsContainer.style.borderRadius = '16px';
+    learnedWordsContainer.style.display = 'block';
+    learnedWordsContainer.innerHTML = '';
   
-      wordsArray.forEach(word => {
-        console.log('Processing word from', levelKey, typeKey, word);
+    const learnedWithExerciseWords = JSON.parse(
+      LocalStorageManager.load('learnedWithExerciseWords', learnedWithExerciseWords)
+    );
   
-        // Show container if there are any words
-        learnedWordsContainer.style.display = 'block';
+    const allEmpty = levels.every(level =>
+      types.every(type => learnedWithExerciseWords[level][type].length === 0)
+    );
   
-        // Main block for each word entry
-        const learnedWordsAllBlock = createElementWithStyle('div', 'learnedWordsAllBlock', {
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          padding: '12px 0',
-          borderBottom: '1px solid #ccc'
+    if (allEmpty) {
+      learnedWordsContainer.style.display = 'flex';
+      learnedWordsContainer.style.justifyContent = 'center';
+      learnedWordsContainer.style.alignItems = 'center';
+      learnedWordsContainer.style.textAlign = 'center';
+  
+      const noLearnedWordsMessage = document.createElement('div');
+      noLearnedWordsMessage.style.color = '#666';
+      noLearnedWordsMessage.style.fontFamily = 'Montserrat, sans-serif';
+      noLearnedWordsMessage.style.fontSize = '16px';
+      noLearnedWordsMessage.style.fontWeight = '500';
+      noLearnedWordsMessage.style.padding = '16px';
+      noLearnedWordsMessage.style.lineHeight = '1.5';
+      noLearnedWordsMessage.innerHTML = `
+        <p>No words learned yet!</p>
+        <p>Go to the "Exercise" and answer correctly a word three times in a row!!!</p>
+      `;
+      learnedWordsContainer.appendChild(noLearnedWordsMessage);
+      return;
+    }
+  
+    Object.keys(learnedWithExerciseWords).forEach(levelKey => {
+      const levelObj = learnedWithExerciseWords[levelKey];
+      Object.keys(levelObj).forEach(typeKey => {
+        const wordsArray = levelObj[typeKey];
+        wordsArray.forEach(word => {
+          // Ensure container is visible
+          learnedWordsContainer.style.display = 'block';
+  
+          // Main block for each word entry with a minimum height to avoid collapse
+          const learnedWordsAllBlock = createElementWithStyle(
+            'div',
+            'learnedWordsAllBlock',
+            {
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              padding: '12px 0',
+              borderBottom: '1px solid #ccc',
+              minHeight: '40px' // Added to ensure the block has height
+            }
+          );
+  
+          // Block for German and English words
+          const learnedWordsBlock = createElementWithStyle(
+            'div',
+            'learnedWordsBlock',
+            {
+              display: 'flex',
+              flexDirection: 'column',
+              textAlign: 'left',
+              flex: '1'
+            }
+          );
+  
+          const germanWord = createElementWithStyle(
+            'p',
+            'learnedWordGerman',
+            {
+              margin: '0',
+              fontWeight: 'bold'
+            },
+            word.almanca
+          );
+  
+          const englishWord = createElementWithStyle(
+            'p',
+            'learnedWordEnglish',
+            {
+              margin: '4px 0 0 0'
+            },
+            word.ingilizce
+          );
+  
+          learnedWordsBlock.append(germanWord, englishWord);
+  
+          // Block for type and level information
+          const learnedWordsLevelBlock = createElementWithStyle(
+            'div',
+            'favLevelBlock',
+            {
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px'
+            }
+          );
+  
+          const typeTag = createElementWithStyle(
+            'p',
+            'favoriteWordType',
+            {
+              margin: '0',
+              color: '#999'
+            },
+            typeKey
+          );
+  
+          const levelTag = createElementWithStyle(
+            'p',
+            'learnedWordLevel',
+            {
+              margin: '0',
+              color: '#999'
+            },
+            word.seviye
+          );
+  
+          learnedWordsLevelBlock.append(typeTag, levelTag);
+  
+          // Combine blocks and append
+          learnedWordsAllBlock.append(learnedWordsBlock, learnedWordsLevelBlock);
+          learnedWordsContainer.appendChild(learnedWordsAllBlock);
         });
-  
-        // Block for German and English words
-        const learnedWordsBlock = createElementWithStyle('div', 'learnedWordsBlock', {
-          display: 'flex',
-          flexDirection: 'column',
-          textAlign: 'left',
-          flex: '1'
-        });
-  
-        const germanWord = createElementWithStyle('p', 'learnedWordGerman', {
-          margin: '0',
-          fontWeight: 'bold'
-        }, word.almanca);
-  
-        const englishWord = createElementWithStyle('p', 'learnedWordEnglish', {
-          margin: '4px 0 0 0'
-        }, word.ingilizce);
-  
-        learnedWordsBlock.append(germanWord, englishWord);
-  
-        // Block for type and level information
-        const learnedWordsLevelBlock = createElementWithStyle('div', 'favLevelBlock', {
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px'
-        });
-  
-        const typeTag = createElementWithStyle('p', 'favoriteWordType', {
-          margin: '0',
-          color: '#999'
-        }, typeKey);
-  
-        const levelTag = createElementWithStyle('p', 'learnedWordLevel', {
-          margin: '0',
-          color: '#999'
-        }, word.seviye);
-  
-        learnedWordsLevelBlock.append(typeTag, levelTag);
-  
-        // Combine blocks into the overall block and append to container
-        learnedWordsAllBlock.append(learnedWordsBlock, learnedWordsLevelBlock);
-        learnedWordsContainer.appendChild(learnedWordsAllBlock);
       });
     });
-  });
-}
+  }
 
 // Sayfa yüklendiğinde favorileri listele
 document.addEventListener('DOMContentLoaded', listFavorites)
