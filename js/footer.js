@@ -3,11 +3,34 @@ import LocalStorageManager from './LocalStorageManager.js'
 import va1a2 from '../json/a1-a2/verb.json' with { type: 'json' }
 import adja1a2 from '../json/a1-a2/adjective.json' with { type: 'json' }
 import adva1a2 from '../json/a1-a2/adverb.json' with { type: 'json' }
+import va2b1 from '../json/a2-b1/verb.json' with { type: 'json' }
+import adja2b1 from '../json/a2-b1/adjective.json' with { type: 'json' }
+import adva2b1 from '../json/a2-b1/adverb.json' with { type: 'json' }
+import vb1b2 from '../json/b1-b2/verb.json' with { type: 'json' }
+import adjb1b2 from '../json/b1-b2/adjective.json' with { type: 'json' }
+import advb1b2 from '../json/b1-b2/adverb.json' with { type: 'json' }
 
 let staticWordLists = {
-  verb: va1a2,
-  adjective: adja1a2,
-  adverb: adva1a2,
+  b1telcpt1: {
+    verb: va1a2,
+    adjective: adja1a2,
+    adverb: adva1a2
+  },
+  b1telcpt2: {
+    verb: va2b1,
+    adjective: adja2b1,
+    adverb: adva2b1
+  },
+  b1telcpt3: {
+    verb: vb1b2,
+    adjective: adjb1b2,
+    adverb: advb1b2
+  },
+  b1telcpt4: {
+    verb: va1a2,
+    adjective: adja1a2,
+    adverb: adva1a2
+  }
 }
 
 let learnedWithLearnWords = {
@@ -467,7 +490,7 @@ function shouldUseOwnMeaning() {
 }
 
 function getRandomTranslationResult(selectedWord) {
-  const kelimeListesiInstance = staticWordLists[currentType]
+  const kelimeListesiInstance = staticWordLists[currentLevel][currentType]
   const filteredKelimeListesiExercise = kelimeListesiInstance.filter(
     (kelimeExercise) => kelimeExercise.almanca !== selectedWord.almanca
   )
