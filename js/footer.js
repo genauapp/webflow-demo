@@ -434,7 +434,7 @@ function showLearnWord() {
     ruleLearnElement.innerText = ''
     ruleLearnElement.style.display = 'none'
   } else {
-    ruleLearnElement.innerText = `Rule: ${kural}`
+    ruleLearnElement.innerText = `${kural}`
     ruleLearnElement.style.display = 'block'
 
     // Animasyonu tekrar ettir
@@ -1033,7 +1033,7 @@ function checkNounAnswer(userArtikel) {
     }
     document.getElementById(
       'feedbackMessage-' + currentType
-    ).innerText = `Upps! ⚠️ Rule: ${kural}`
+    ).innerText = `Upps! ⚠️ ${kural}`
     document.getElementById('feedbackMessage-' + currentType).style.color =
       'red'
     setTimeout(() => {
