@@ -1,8 +1,8 @@
 import { JSON_URLS } from './urls.js'
 import LocalStorageManager from './LocalStorageManager.js'
-import va1a2 from '../json/a1-a2/verb.json' //assert { type: 'json' }
-import adja1a2 from '../json/a1-a2/adjective.json' //assert { type: 'json' }
-import adva1a2 from '../json/a1-a2/adverb.json' //assert { type: 'json' }
+import va1a2 from '../json/a1-a2/verb.json' assert { type: 'json' }
+import adja1a2 from '../json/a1-a2/adjective.json' assert { type: 'json' }
+import adva1a2 from '../json/a1-a2/adverb.json' assert { type: 'json' }
 
 let staticWordLists = {
   verb: va1a2,
@@ -523,7 +523,10 @@ function showExerciseWord() {
     return
   }
 
-  if (correctAnswerWordsCounter[currentLevel][currentType] === kelimeListesiExercise.length) {
+  if (
+    correctAnswerWordsCounter[currentLevel][currentType] ===
+    kelimeListesiExercise.length
+  ) {
     document.getElementById(
       'remainingWordsCountExercise-' + currentType
     ).innerText = correctAnswerWordsCounter[currentLevel][currentType]
@@ -681,12 +684,17 @@ function checkNonNounAnswer(userInput) {
       }
     } else {
       inProgressWords[currentLevel][currentType][inProgressIndex].counter += 1
-      if (inProgressWords[currentLevel][currentType][inProgressIndex].counter === 2) {
+      if (
+        inProgressWords[currentLevel][currentType][inProgressIndex].counter ===
+        2
+      ) {
         document.getElementById('progressMiddle-' + currentType).style.opacity =
           '1'
       }
       //3 kere bilindiyse learnede ekle
-      if (inProgressWords[currentLevel][currentType][inProgressIndex].counter >= 3) {
+      if (
+        inProgressWords[currentLevel][currentType][inProgressIndex].counter >= 3
+      ) {
         playSound(
           'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/streak.mp3'
         )
@@ -697,7 +705,10 @@ function checkNonNounAnswer(userInput) {
           seviye: currentWord.seviye || 'N/A',
         })
 
-        if (inProgressWords[currentLevel][currentType][inProgressIndex].counter === 3) {
+        if (
+          inProgressWords[currentLevel][currentType][inProgressIndex]
+            .counter === 3
+        ) {
           document.getElementById(
             'feedbackMessage-' + currentType
           ).innerText = `This word: ${currentWord.almanca} added to learned list!🏆`
@@ -727,7 +738,10 @@ function checkNonNounAnswer(userInput) {
           'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/correct.mp3'
         )
         kelimeListesiExercise.splice(currentExerciseIndex, 1)
-        if (inProgressWords[currentLevel][currentType][inProgressIndex].counter === 1) {
+        if (
+          inProgressWords[currentLevel][currentType][inProgressIndex]
+            .counter === 1
+        ) {
           kelimeListesiExercise.splice(
             currentExerciseIndex + 8,
             0,
@@ -889,12 +903,17 @@ function checkNounAnswer(userArtikel) {
       }
     } else {
       inProgressWords[currentLevel][currentType][inProgressIndex].counter += 1
-      if (inProgressWords[currentLevel][currentType][inProgressIndex].counter === 2) {
+      if (
+        inProgressWords[currentLevel][currentType][inProgressIndex].counter ===
+        2
+      ) {
         document.getElementById('progressMiddle-' + currentType).style.opacity =
           '1'
       }
       //3 kere bilindiyse learnede ekle
-      if (inProgressWords[currentLevel][currentType][inProgressIndex].counter >= 3) {
+      if (
+        inProgressWords[currentLevel][currentType][inProgressIndex].counter >= 3
+      ) {
         playSound(
           'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/streak.mp3'
         )
@@ -905,7 +924,10 @@ function checkNounAnswer(userArtikel) {
           seviye: currentWord.seviye || 'N/A',
         })
 
-        if (inProgressWords[currentLevel][currentType][inProgressIndex].counter === 3) {
+        if (
+          inProgressWords[currentLevel][currentType][inProgressIndex]
+            .counter === 3
+        ) {
           document.getElementById(
             'feedbackMessage-' + currentType
           ).innerText = `This word: ${currentWord.almanca} added to learned list!🏆`
@@ -935,7 +957,10 @@ function checkNounAnswer(userArtikel) {
           'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/correct.mp3'
         )
         kelimeListesiExercise.splice(currentExerciseIndex, 1)
-        if (inProgressWords[currentLevel][currentType][inProgressIndex].counter === 1) {
+        if (
+          inProgressWords[currentLevel][currentType][inProgressIndex]
+            .counter === 1
+        ) {
           kelimeListesiExercise.splice(
             currentExerciseIndex + 8,
             0,
@@ -1362,7 +1387,9 @@ function updateExerciseCounter() {
   document.getElementById('totalWordsCountExercise-' + currentType).innerText =
     initialTotalWords
 
-  if (correctAnswerWordsCounter[currentLevel][currentType] >= initialTotalWords) {
+  if (
+    correctAnswerWordsCounter[currentLevel][currentType] >= initialTotalWords
+  ) {
     showModalExercise('You completed all exercise words! 🎉')
 
     if (currentType === 'noun') {
@@ -1489,7 +1516,9 @@ function navigateToPage(pageId) {
         'repeatButtonLearn-' + currentType
       ).style.visibility = 'hidden'
     }
-    if (learnedWithExerciseWords[currentLevel][currentType] >= initialTotalWords) {
+    if (
+      learnedWithExerciseWords[currentLevel][currentType] >= initialTotalWords
+    ) {
       if (currentType === 'noun') {
         document.getElementById('buttonDer').style.visibility = 'hidden'
         document.getElementById('buttonDie').style.visibility = 'hidden'
@@ -1529,7 +1558,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         'repeatButtonLearn-' + currentType
       ).style.visibility = 'hidden'
     }
-    if (learnedWithExerciseWords[currentLevel][currentType] >= initialTotalWords) {
+    if (
+      learnedWithExerciseWords[currentLevel][currentType] >= initialTotalWords
+    ) {
       if (currentType === 'noun') {
         document.getElementById('buttonDer').style.visibility = 'hidden'
         document.getElementById('buttonDie').style.visibility = 'hidden'
