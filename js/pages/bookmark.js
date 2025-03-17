@@ -1,6 +1,3 @@
-import LocalStorageManager from '../LocalStorageManager.js'
-import { learnedWithExerciseWords, levels, types } from '../footer.js'
-
 function listFavorites() {
   const favoritesContainer = document.getElementById('favoritesContainer')
 
@@ -138,19 +135,22 @@ function listLearnedWords() {
   learnedWordsContainer.innerHTML = '' // Mevcut listeyi temizle
 
   const learnedWithExerciseWords = JSON.parse(
-    LocalStorageManager.load(
-      'learnedWithExerciseWords',
-      learnedWithExerciseWords
-    )
-  )
+    localStorage.getItem('learnedWithExerciseWords')
+  ) || {
+    b1telcpt1: { noun: [], verb: [], adjective: [], adverb: [] },
+    b1telcpt2: { noun: [], verb: [], adjective: [], adverb: [] },
+    b1telcpt3: { noun: [], verb: [], adjective: [], adverb: [] },
+    b1telcpt4: { noun: [], verb: [], adjective: [], adverb: [] },
+  }
 
-  const allEmpty = levels.every((level) =>
-    types.every((type) => learnedWithExerciseWords[level][type].length === 0)
-  )
+  console.log(JSON.stringify(learnedWithExerciseWords))
 
-  console.log(allEmpty)
-
-  if (allEmpty) {
+  if (
+    learnedWithExerciseWords['noun'].length === 0 &&
+    learnedWithExerciseWords['verb'].length === 0 &&
+    learnedWithExerciseWords['adjective'].length === 0 &&
+    learnedWithExerciseWords['adverb'].length === 0
+  ) {
     // Learned words  yokken gösterilecek mesaj
     learnedWordsContainer.style.display = 'flex' // Flex düzen
     learnedWordsContainer.style.justifyContent = 'center' // Yatayda ortala
