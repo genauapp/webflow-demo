@@ -22,5 +22,61 @@
     "ornek": "Diese Informationen sind sehr nützlich.",
     "kelime": "nützlich",
     "type": "adjective"
+  },
+  {
+    "almanca": "interessant",
+    "ingilizce": "interesting",
+    "seviye": "A2",
+    "ornek": "Das Buch ist sehr interessant.",
+    "kelime": "interessant",
+    "type": "adjective"
+  },
+  {
+    "almanca": "müde",
+    "ingilizce": "tired",
+    "seviye": "A2",
+    "ornek": "Nach der Arbeit bin ich immer müde.",
+    "kelime": "müde",
+    "type": "adjective"
+  },
+  {
+    "almanca": "zufrieden",
+    "ingilizce": "satisfied",
+    "seviye": "B1",
+    "ornek": "Der Kunde ist mit dem Service zufrieden.",
+    "kelime": "zufrieden",
+    "type": "adjective"
+  },
+  {
+    "almanca": "ehrlich",
+    "ingilizce": "honest",
+    "seviye": "A2",
+    "ornek": "Er ist ein sehr ehrlicher Mensch.",
+    "kelime": "ehrlich",
+    "type": "adjective"
+  },
+  {
+    "almanca": "gesund",
+    "ingilizce": "healthy",
+    "seviye": "A2",
+    "ornek": "Gemüse ist gesund.",
+    "kelime": "gesund",
+    "type": "adjective"
+  },
+  {
+    "almanca": "bequem",
+    "ingilizce": "comfortable",
+    "seviye": "B1",
+    "ornek": "Das Sofa ist sehr bequem.",
+    "kelime": "bequem",
+    "type": "adjective"
+  },
+  {
+    "almanca": "spannend",
+    "ingilizce": "exciting",
+    "seviye": "B1",
+    "ornek": "Der Film war wirklich spannend.",
+    "kelime": "spannend",
+    "type": "adjective"
   }
 ]

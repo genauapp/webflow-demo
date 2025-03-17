@@ -25,5 +25,158 @@
     "kelime": "erzählen",
     "kural": "Regular verb, often used with the accusative case.",
     "type": "verb"
+  },
+  {
+    "almanca": "anbieten",
+    "ingilizce": "to offer",
+    "seviye": "B1",
+    "ornek": "Er bietet mir seine Hilfe an.",
+    "kelime": "anbieten",
+    "kural": "Separable irregular verb, past: 'bot an', 'angeboten'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "beginnen",
+    "ingilizce": "to begin",
+    "seviye": "A2",
+    "ornek": "Wir beginnen den Unterricht um 9 Uhr.",
+    "kelime": "beginnen",
+    "kural": "Irregular verb, past forms: 'begann', 'begonnen'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "mitbringen",
+    "ingilizce": "to bring along",
+    "seviye": "A2",
+    "ornek": "Ich bringe meine Freunde zur Party mit.",
+    "kelime": "mitbringen",
+    "kural": "Separable irregular verb, past: 'brachte mit', 'mitgebracht'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "erklären",
+    "ingilizce": "to explain",
+    "seviye": "A2",
+    "ornek": "Kannst du mir das erklären?",
+    "kelime": "erklären",
+    "kural": "Regular verb, often used with dative + accusative.",
+    "type": "verb"
+  },
+  {
+    "almanca": "vergessen",
+    "ingilizce": "to forget",
+    "seviye": "A2",
+    "ornek": "Ich habe das Buch zu Hause vergessen.",
+    "kelime": "vergessen",
+    "kural": "Irregular verb, past: 'vergaß', 'vergessen'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "empfehlen",
+    "ingilizce": "to recommend",
+    "seviye": "B1",
+    "ornek": "Ich empfehle dir dieses Restaurant.",
+    "kelime": "empfehlen",
+    "kural": "Irregular verb, vowel change: e → ie, past: 'empfahl', 'empfohlen'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "entscheiden",
+    "ingilizce": "to decide",
+    "seviye": "B1",
+    "ornek": "Wir müssen uns schnell entscheiden.",
+    "kelime": "entscheiden",
+    "kural": "Reflexive irregular verb, past: 'entschied', 'entschieden'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "erkennen",
+    "ingilizce": "to recognize",
+    "seviye": "B1",
+    "ornek": "Ich habe ihn sofort erkannt.",
+    "kelime": "erkennen",
+    "kural": "Irregular verb, past: 'erkannte', 'erkannt'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "gehören",
+    "ingilizce": "to belong",
+    "seviye": "A2",
+    "ornek": "Dieses Buch gehört mir.",
+    "kelime": "gehören",
+    "kural": "Regular verb, always used with dative case.",
+    "type": "verb"
+  },
+  {
+    "almanca": "aufhören",
+    "ingilizce": "to stop",
+    "seviye": "A2",
+    "ornek": "Er hat mit dem Rauchen aufgehört.",
+    "kelime": "aufhören",
+    "kural": "Separable regular verb, past: 'hörte auf', 'aufgehört'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "auswählen",
+    "ingilizce": "to choose",
+    "seviye": "B1",
+    "ornek": "Du kannst ein Gericht auswählen.",
+    "kelime": "auswählen",
+    "kural": "Separable regular verb, past: 'wählte aus', 'ausgewählt'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "einladen",
+    "ingilizce": "to invite",
+    "seviye": "A2",
+    "ornek": "Ich lade dich zur Party ein.",
+    "kelime": "einladen",
+    "kural": "Separable irregular verb, vowel change: a → ä, past: 'lud ein', 'eingeladen'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "bekommen",
+    "ingilizce": "to receive",
+    "seviye": "A2",
+    "ornek": "Ich habe eine Nachricht bekommen.",
+    "kelime": "bekommen",
+    "kural": "Irregular verb, past: 'bekam', 'bekommen'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "vergleichen",
+    "ingilizce": "to compare",
+    "seviye": "B1",
+    "ornek": "Man sollte die Preise vergleichen.",
+    "kelime": "vergleichen",
+    "kural": "Irregular verb, past: 'verglich', 'verglichen'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "verschieben",
+    "ingilizce": "to postpone",
+    "seviye": "B1",
+    "ornek": "Wir müssen den Termin verschieben.",
+    "kelime": "verschieben",
+    "kural": "Irregular verb, past: 'verschob', 'verschoben'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "begründen",
+    "ingilizce": "to justify",
+    "seviye": "B1",
+    "ornek": "Kannst du deine Meinung begründen?",
+    "kelime": "begründen",
+    "kural": "Regular verb, inseparable prefix 'be-'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "annehmen",
+    "ingilizce": "to accept, to assume",
+    "seviye": "B1",
+    "ornek": "Ich nehme das Angebot an.",
+    "kelime": "annehmen",
+    "kural": "Separable irregular verb, vowel change: e → i, past: 'nahm an', 'angenommen'.",
+    "type": "verb"
   }
 ]

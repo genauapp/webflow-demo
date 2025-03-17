@@ -1,0 +1,82 @@
+[
+  {
+    "almanca": "anstrengend",
+    "ingilizce": "exhausting",
+    "seviye": "B1",
+    "ornek": "Das Training war ziemlich anstrengend.",
+    "kelime": "anstrengend",
+    "type": "adjective"
+  },
+  {
+    "almanca": "verlässlich",
+    "ingilizce": "reliable",
+    "seviye": "B1",
+    "ornek": "Er ist ein sehr verlässlicher Kollege.",
+    "kelime": "verlässlich",
+    "type": "adjective"
+  },
+  {
+    "almanca": "kritisch",
+    "ingilizce": "critical",
+    "seviye": "B1",
+    "ornek": "Seine Meinung war sehr kritisch.",
+    "kelime": "kritisch",
+    "type": "adjective"
+  },
+  {
+    "almanca": "zufällig",
+    "ingilizce": "accidental, random",
+    "seviye": "B1",
+    "ornek": "Wir haben uns zufällig im Supermarkt getroffen.",
+    "kelime": "zufällig",
+    "type": "adjective"
+  },
+  {
+    "almanca": "selbstständig",
+    "ingilizce": "independent, self-employed",
+    "seviye": "B2",
+    "ornek": "Sie arbeitet als selbstständige Designerin.",
+    "kelime": "selbstständig",
+    "type": "adjective"
+  },
+  {
+    "almanca": "herausfordernd",
+    "ingilizce": "challenging",
+    "seviye": "B2",
+    "ornek": "Das Projekt war sehr herausfordernd.",
+    "kelime": "herausfordernd",
+    "type": "adjective"
+  },
+  {
+    "almanca": "widersprüchlich",
+    "ingilizce": "contradictory",
+    "seviye": "B2",
+    "ornek": "Seine Aussagen sind widersprüchlich.",
+    "kelime": "widersprüchlich",
+    "type": "adjective"
+  },
+  {
+    "almanca": "bedeutend",
+    "ingilizce": "significant",
+    "seviye": "B2",
+    "ornek": "Er hat einen bedeutenden Beitrag geleistet.",
+    "kelime": "bedeutend",
+    "type": "adjective"
+  },
+  {
+    "almanca": "komplex",
+    "ingilizce": "complex",
+    "seviye": "B2",
+    "ornek": "Das Thema ist ziemlich komplex.",
+    "kelime": "komplex",
+    "type": "adjective"
+  },
+  {
+    "almanca": "anspruchsvoll",
+    "ingilizce": "demanding",
+    "seviye": "B2",
+    "ornek": "Die Aufgabe ist sehr anspruchsvoll.",
+    "kelime": "anspruchsvoll",
+    "type": "adjective"
+  }
+]
