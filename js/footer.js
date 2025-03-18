@@ -95,19 +95,19 @@ let currentExerciseIndex = 0
 let totalWordsLearn = 0
 let totalWordsExercise = 0
 
-const learnedWords = {
+const learnedWords = LocalStorageManager.load('learnedWords', {
   b1telcpt1: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
   b1telcpt2: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
   b1telcpt3: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
   b1telcpt4: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
-}
+})
 
-const correctAnswerWordsCounter = {
+const correctAnswerWordsCounter = LocalStorageManager.load('correctAnswerWordsCounter', {
   b1telcpt1: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
   b1telcpt2: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
   b1telcpt3: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
   b1telcpt4: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
-}
+})
 
 let initialTotalWords = 0 // Yeni eklenen değişken
 
