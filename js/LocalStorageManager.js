@@ -57,18 +57,23 @@ export default class LocalStorageManager {
   }
 
   // Loads data from localStorage.
-  // If the value can be parsed as JSON, it returns the parsed value.
-  // Otherwise, it returns the raw value (which will be a string).
   static load(key, defaultValue) {
+    // Retrieve the item from localStorage. This returns a string or null.
     const stored = localStorage.getItem(key)
-    if (typeof stored == 'object' && stored !== null) {
+
+    // If a value is found...
+    if (stored !== null) {
       try {
-        // Try parsing; if it fails, we'll fall back to the raw value.
+        // Try to parse the stored JSON string.
+        // If stored is valid JSON, JSON.parse will convert it to the correct type.
         return JSON.parse(stored)
       } catch (error) {
+        // If parsing fails, return the raw string.
         return stored
       }
     }
+
+    // If nothing is found, return the default value.
     return defaultValue
   }
 
