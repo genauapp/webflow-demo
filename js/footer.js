@@ -1229,10 +1229,10 @@ function iKnowLearn() {
   }
 }
 
-// Add event listeners for learn buttons
-document.addEventListener('DOMContentLoaded', () => {
-  setupEventListeners() // İlk yüklemede çağır
-})
+// // Add event listeners for learn buttons
+// document.addEventListener('DOMContentLoaded', () => {
+//   setupEventListeners() // İlk yüklemede çağır
+// })
 
 // ... existing code ...
 
