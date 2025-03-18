@@ -1,12 +1,56 @@
 export default class LocalStorageManager {
-  // Saves data to localStorage.
-  // If data is an object (or array), it’s stringified.
-  // For primitives (like numbers, booleans, or strings), it’s stored directly.
+  /**
+   * Save data to localStorage under the given key.
+   *
+   * The function handles different data types:
+   *
+   * 1. **Objects and Arrays**:
+   *    - If data is an object (or array) and not null, it is serialized using JSON.stringify.
+   *
+   * 2. **Strings**:
+   *    - For strings, we check if the string appears to be valid JSON by checking if it starts with
+   *      '{' or '[' (and correspondingly ends with '}' or ']').
+   *    - We attempt to parse it. If parsing is successful, we assume the string is already a JSON string and
+   *      store it as is, to avoid double-stringification.
+   *    - Otherwise, we treat it as a plain string.
+   *
+   * 3. **Other Primitives (numbers, booleans, etc.)**:
+   *    - They are stored directly.
+   *
+   * **Important:**
+   * Make sure you pass raw data (objects, arrays, or plain primitives) into this method. If you pre-stringify the data,
+   * this function might end up stringifying it again, causing issues on load.
+   *
+   * @param {string} key - The key under which the data will be stored.
+   * @param {*} data - The data to store. It can be an object, array, string, number, or boolean.
+   */
   static save(key, data) {
     let value
     if (typeof data === 'object' && data !== null) {
+      // For objects and arrays, use JSON.stringify to serialize the data.
       value = JSON.stringify(data)
+    } else if (typeof data === 'string') {
+      const trimmed = data.trim()
+      // Check if the string looks like JSON (starts with '{' or '[' and ends with '}' or ']').
+      if (
+        (trimmed.startsWith('{') && trimmed.endsWith('}')) ||
+        (trimmed.startsWith('[') && trimmed.endsWith(']'))
+      ) {
+        // Try parsing it to confirm if it's valid JSON.
+        try {
+          JSON.parse(data)
+          // If parsing is successful, assume it's already a valid JSON string and store it as is.
+          value = data
+        } catch (e) {
+          // If parsing fails, it's a plain string; store it directly.
+          value = data
+        }
+      } else {
+        // Plain string, store it directly.
+        value = data
+      }
     } else {
+      // For numbers, booleans, etc., store them directly.
       value = data
     }
     localStorage.setItem(key, value)
@@ -17,7 +61,7 @@ export default class LocalStorageManager {
   // Otherwise, it returns the raw value (which will be a string).
   static load(key, defaultValue) {
     const stored = localStorage.getItem(key)
-    if (stored !== null) {
+    if (typeof stored == 'object' && stored !== null) {
       try {
         // Try parsing; if it fails, we'll fall back to the raw value.
         return JSON.parse(stored)
