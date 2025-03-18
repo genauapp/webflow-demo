@@ -237,7 +237,7 @@ function listLearnedWords() {
         typeTag.classList.add('favoriteWordType')
         typeTag.style.margin = '0'
         typeTag.style.color = '#999'
-        typeTag.textContent = levelKey
+        typeTag.textContent = word.type
 
         learnedWordsLevelBlock.appendChild(typeTag)
         learnedWordsLevelBlock.appendChild(levelTag)
