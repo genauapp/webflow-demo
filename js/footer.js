@@ -275,8 +275,11 @@ document.querySelectorAll('.dropdown-link').forEach((link) => {
       updateTopicNames(selectedOption)
 
       // İndeksleri sıfırla
-      currentLearnIndex = 0
-      currentExerciseIndex = 0
+      currentLearnIndex = learnedWords[currentLevel][currentType]
+      currentExerciseIndex = correctAnswerWordsCounter[currentLevel][currentType]
+
+      console.log(`currentLearnIndex: ${currentLearnIndex}`)
+      console.log(`currentExerciseIndex: ${currentExerciseIndex}`)
 
       try {
         await loadWords(selectedOption)
