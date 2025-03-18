@@ -691,6 +691,7 @@ function checkNonNounAnswer(userInput) {
         'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/correct.mp3'
       )
       inProgressWords[currentLevel][currentType].push({
+        type: currentWord.type,
         almanca: currentWord.almanca,
         counter: 1,
       })
@@ -910,6 +911,7 @@ function checkNounAnswer(userArtikel) {
         'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/correct.mp3'
       )
       inProgressWords[currentLevel][currentType].push({
+        type: currentWord.type,
         almanca: currentWord.almanca,
         counter: 1,
       })
