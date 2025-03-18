@@ -731,6 +731,7 @@ function checkNonNounAnswer(userInput) {
         )
 
         learnedWithExerciseWords[currentLevel][currentType].push({
+          type: currentWord.type,
           almanca: currentWord.almanca,
           ingilizce: currentWord.ingilizce,
           seviye: currentWord.seviye || 'N/A',
@@ -951,6 +952,7 @@ function checkNounAnswer(userArtikel) {
         )
 
         learnedWithExerciseWords[currentLevel][currentType].push({
+          type: currentWord.type,
           almanca: currentWord.almanca,
           ingilizce: currentWord.ingilizce,
           seviye: currentWord.seviye || 'N/A',
