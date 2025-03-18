@@ -175,72 +175,80 @@ function listLearnedWords() {
     return
   }
 
-  Object.keys(learnedWithExerciseWords).forEach((key) => {
+  Object.keys(learnedWithExerciseWords).forEach((levelKey) => {
     // Favori kelimeler mevcutsa düzeni geri yükle
-    console.log('key:', key)
-    console.log('value:', learnedWithExerciseWords[key])
+    console.log('levelKey:', levelKey)
+    console.log('value:', learnedWithExerciseWords[levelKey])
+
+    const levelObj = learnedWithExerciseWords[levelKey]
+
     learnedWordsContainer.style.display = 'block' // Flex değil, varsayılan düzen
 
-    learnedWithExerciseWords[key].forEach((word) => {
-      // Tüm favori bloğunu kapsayan div
-      const learnedWordsAllBlock = document.createElement('div')
-      learnedWordsAllBlock.classList.add('learnedWordsAllBlock')
-      learnedWordsAllBlock.style.display = 'flex'
-      learnedWordsAllBlock.style.justifyContent = 'space-between' // Yatayda aralık
-      learnedWordsAllBlock.style.alignItems = 'center' // Dikeyde ortalama
-      learnedWordsAllBlock.style.padding = '12px 0' // Bloklar arası boşluk
-      learnedWordsAllBlock.style.borderBottom = '1px solid #ccc' // Alt çizgi ile ayırma
+    // Iterate over each word type (e.g., noun, verb, etc.)
+    Object.keys(levelObj).forEach((typeKey) => {
+      const wordsArray = levelObj[typeKey]
 
-      // Almanca ve İngilizce kelimeler
-      const learnedWordsBlock = document.createElement('div')
-      learnedWordsBlock.classList.add('learnedWordsBlock')
-      learnedWordsBlock.style.display = 'flex'
-      learnedWordsBlock.style.flexDirection = 'column' // Dikey hizalama
-      learnedWordsBlock.style.textAlign = 'left' // Sola hizalama
-      learnedWordsBlock.style.flex = '1' // Otomatik genişleme
+      wordsArray.forEach((word) => {
+        // Tüm favori bloğunu kapsayan div
+        const learnedWordsAllBlock = document.createElement('div')
+        learnedWordsAllBlock.classList.add('learnedWordsAllBlock')
+        learnedWordsAllBlock.style.display = 'flex'
+        learnedWordsAllBlock.style.justifyContent = 'space-between' // Yatayda aralık
+        learnedWordsAllBlock.style.alignItems = 'center' // Dikeyde ortalama
+        learnedWordsAllBlock.style.padding = '12px 0' // Bloklar arası boşluk
+        learnedWordsAllBlock.style.borderBottom = '1px solid #ccc' // Alt çizgi ile ayırma
 
-      const germanWord = document.createElement('p')
-      germanWord.classList.add('learnedWordGerman')
-      germanWord.style.margin = '0' // Varsayılan margin sıfırlama
-      germanWord.style.fontWeight = 'bold' // Kalın yazı
-      germanWord.textContent = word.almanca
+        // Almanca ve İngilizce kelimeler
+        const learnedWordsBlock = document.createElement('div')
+        learnedWordsBlock.classList.add('learnedWordsBlock')
+        learnedWordsBlock.style.display = 'flex'
+        learnedWordsBlock.style.flexDirection = 'column' // Dikey hizalama
+        learnedWordsBlock.style.textAlign = 'left' // Sola hizalama
+        learnedWordsBlock.style.flex = '1' // Otomatik genişleme
 
-      const englishWord = document.createElement('p')
-      englishWord.classList.add('learnedWordEnglish')
-      englishWord.style.margin = '4px 0 0 0' // Üstte boşluk
-      englishWord.textContent = word.ingilizce
+        const germanWord = document.createElement('p')
+        germanWord.classList.add('learnedWordGerman')
+        germanWord.style.margin = '0' // Varsayılan margin sıfırlama
+        germanWord.style.fontWeight = 'bold' // Kalın yazı
+        germanWord.textContent = word.almanca
 
-      learnedWordsBlock.appendChild(germanWord)
-      learnedWordsBlock.appendChild(englishWord)
+        const englishWord = document.createElement('p')
+        englishWord.classList.add('learnedWordEnglish')
+        englishWord.style.margin = '4px 0 0 0' // Üstte boşluk
+        englishWord.textContent = word.ingilizce
 
-      // Seviye ve silme butonu
-      const learnedWordsLevelBlock = document.createElement('div')
-      learnedWordsLevelBlock.classList.add('favLevelBlock')
-      learnedWordsLevelBlock.style.display = 'flex'
-      learnedWordsLevelBlock.style.alignItems = 'center' // Dikeyde ortalama
-      learnedWordsLevelBlock.style.gap = '8px' // Level ve buton arası boşluk
+        learnedWordsBlock.appendChild(germanWord)
+        learnedWordsBlock.appendChild(englishWord)
 
-      const levelTag = document.createElement('p')
-      levelTag.classList.add('learnedWordLevel')
-      levelTag.style.margin = '0' // Varsayılan margin sıfırlama
-      levelTag.style.color = '#999' // Gri renk
-      levelTag.textContent = word.seviye
+        // Seviye ve silme butonu
+        const learnedWordsLevelBlock = document.createElement('div')
+        learnedWordsLevelBlock.classList.add('favLevelBlock')
+        learnedWordsLevelBlock.style.display = 'flex'
+        learnedWordsLevelBlock.style.alignItems = 'center' // Dikeyde ortalama
+        learnedWordsLevelBlock.style.gap = '8px' // Level ve buton arası boşluk
 
-      const typeTag = document.createElement('p')
-      typeTag.classList.add('favoriteWordType')
-      typeTag.style.margin = '0'
-      typeTag.style.color = '#999'
-      typeTag.textContent = key
+        const levelTag = document.createElement('p')
+        levelTag.classList.add('learnedWordLevel')
+        levelTag.style.margin = '0' // Varsayılan margin sıfırlama
+        levelTag.style.color = '#999' // Gri renk
+        levelTag.textContent = word.seviye
 
-      learnedWordsLevelBlock.appendChild(typeTag)
-      learnedWordsLevelBlock.appendChild(levelTag)
+        const typeTag = document.createElement('p')
+        typeTag.classList.add('favoriteWordType')
+        typeTag.style.margin = '0'
+        typeTag.style.color = '#999'
+        typeTag.textContent = levelKey
 
-      // Ana bloğa ekle
-      learnedWordsAllBlock.appendChild(learnedWordsBlock)
-      learnedWordsAllBlock.appendChild(learnedWordsLevelBlock)
+        learnedWordsLevelBlock.appendChild(typeTag)
+        learnedWordsLevelBlock.appendChild(levelTag)
 
-      // Favoriler kapsayıcısına ekle
-      learnedWordsContainer.appendChild(learnedWordsAllBlock)
+        // Ana bloğa ekle
+        learnedWordsAllBlock.appendChild(learnedWordsBlock)
+        learnedWordsAllBlock.appendChild(learnedWordsLevelBlock)
+
+        // Favoriler kapsayıcısına ekle
+        learnedWordsContainer.appendChild(learnedWordsAllBlock)
+      })
     })
   })
 }
