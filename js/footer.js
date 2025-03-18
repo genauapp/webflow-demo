@@ -106,6 +106,14 @@ let initialTotalWords = 0 // Yeni eklenen değişken
 
 async function executeInitialLoadAndShow() {
   const lastSelectedTopic = LocalStorageManager.load('lastSelectedTopic')
+
+  // İndeksleri sıfırla
+  currentLearnIndex = learnedWords[currentLevel][currentType]
+  currentExerciseIndex = correctAnswerWordsCounter[currentLevel][currentType]
+
+  console.log(`currentLearnIndex: ${currentLearnIndex}`)
+  console.log(`currentExerciseIndex: ${currentLearnIndex}`)
+
   await loadWords(lastSelectedTopic)
   console.log(currentType + 's ARE LOADED')
   showLearnWord()
@@ -279,7 +287,7 @@ document.querySelectorAll('.dropdown-link').forEach((link) => {
       currentExerciseIndex = correctAnswerWordsCounter[currentLevel][currentType]
 
       console.log(`currentLearnIndex: ${currentLearnIndex}`)
-      console.log(`currentExerciseIndex: ${currentExerciseIndex}`)
+      console.log(`currentExerciseIndex: ${currentLearnIndex}`)
 
       try {
         await loadWords(selectedOption)
