@@ -275,8 +275,8 @@ document.querySelectorAll('.dropdown-link').forEach((link) => {
       updateTopicNames(selectedOption)
 
       // İndeksleri sıfırla
-      currentLearnIndex = 0
-      currentExerciseIndex = 0
+      // currentLearnIndex = 0
+      // currentExerciseIndex = 0
 
       try {
         await loadWords(selectedOption)
