@@ -1504,7 +1504,7 @@ function removeFavorite() {
     `favoritesFeedback-${currentType}`
   )
   const currentWord = kelimeListesi[currentLearnIndex]
-  let favoriteWords = localStorage.getItem('favoriteWords') || []
+  let favoriteWords = LocalStorageManager.load('favoriteWords') || []
   favoriteWords = favoriteWords.filter(
     (word) => word.almanca !== currentWord.almanca
   )
