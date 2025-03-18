@@ -11,10 +11,14 @@ const JSON_URLS_NOUN = {
 }
 
 const JSON_URLS_VERB = {
-  b1telcpt1: 'https://chatonode.github.io/genau-webflow-demo/json/a1-a2/verb.json',
-  b1telcpt2: 'https://chatonode.github.io/genau-webflow-demo/json/a2-b1/verb.json',
-  b1telcpt3: 'https://chatonode.github.io/genau-webflow-demo/json/b1-b2/verb.json',
-  b1telcpt4: 'https://chatonode.github.io/genau-webflow-demo/json/a1-a2/verb.json',
+  b1telcpt1:
+    'https://chatonode.github.io/genau-webflow-demo/json/a1-a2/verb.json',
+  b1telcpt2:
+    'https://chatonode.github.io/genau-webflow-demo/json/a2-b1/verb.json',
+  b1telcpt3:
+    'https://chatonode.github.io/genau-webflow-demo/json/b1-b2/verb.json',
+  b1telcpt4:
+    'https://chatonode.github.io/genau-webflow-demo/json/c1-c2/verb.json',
 }
 
 const JSON_URLS_ADJECTIVE = {
@@ -25,7 +29,7 @@ const JSON_URLS_ADJECTIVE = {
   b1telcpt3:
     'https://chatonode.github.io/genau-webflow-demo/json/b1-b2/adjective.json',
   b1telcpt4:
-    'https://chatonode.github.io/genau-webflow-demo/json/a1-a2/adjective.json',
+    'https://chatonode.github.io/genau-webflow-demo/json/c1-c2/adjective.json',
 }
 
 const JSON_URLS_ADVERB = {
@@ -36,7 +40,7 @@ const JSON_URLS_ADVERB = {
   b1telcpt3:
     'https://chatonode.github.io/genau-webflow-demo/json/b1-b2/adverb.json',
   b1telcpt4:
-    'https://chatonode.github.io/genau-webflow-demo/json/a1-a2/adverb.json',
+    'https://chatonode.github.io/genau-webflow-demo/json/c1-c2/adverb.json',
 }
 
 export const JSON_URLS = {

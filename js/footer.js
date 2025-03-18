@@ -6,9 +6,9 @@ import adva1a2 from '../json/a1-a2/adverb.json' with { type: 'json' }
 import va2b1 from '../json/a2-b1/verb.json' with { type: 'json' }
 import adja2b1 from '../json/a2-b1/adjective.json' with { type: 'json' }
 import adva2b1 from '../json/a2-b1/adverb.json' with { type: 'json' }
-import vb1b2 from '../json/b1-b2/verb.json' with { type: 'json' }
-import adjb1b2 from '../json/b1-b2/adjective.json' with { type: 'json' }
-import advb1b2 from '../json/b1-b2/adverb.json' with { type: 'json' }
+import vc1c2 from '../json/c1-c2/verb.json' with { type: 'json' }
+import adjc1c2 from '../json/c1-c2/adjective.json' with { type: 'json' }
+import advc1c2 from '../json/c1-c2/adverb.json' with { type: 'json' }
 
 let staticWordLists = {
   b1telcpt1: {
@@ -27,9 +27,9 @@ let staticWordLists = {
     adverb: advb1b2
   },
   b1telcpt4: {
-    verb: va1a2,
-    adjective: adja1a2,
-    adverb: adva1a2
+    verb: vc1c2,
+    adjective: adjc1c2,
+    adverb: advc1c2
   }
 }
 
