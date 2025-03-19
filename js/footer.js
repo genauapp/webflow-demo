@@ -1240,11 +1240,6 @@ function iKnowLearn() {
   }
 }
 
-// // Add event listeners for learn buttons
-// document.addEventListener('DOMContentLoaded', () => {
-//   setupEventListeners() // İlk yüklemede çağır
-// })
-
 // ... existing code ...
 
 function setupEventListeners() {
@@ -1361,7 +1356,7 @@ function setupListenerForIknowAndLearn(iKnowButton, repeatButton) {
   }
 }
 
-// DOMContentLoaded event listener
+// Page Changes
 document.addEventListener('DOMContentLoaded', () => {
   try {
     setupEventListeners()
@@ -1395,6 +1390,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 })
 
+// E-mail Form
 document.addEventListener('DOMContentLoaded', function () {
   document
     .getElementById('email-form')
@@ -1572,9 +1568,25 @@ function navigateToPage(pageId) {
   }, 500)
 }
 
+const clearDeprecatedLocalStorageItems = () => {
+  const APP_VERSION = LocalStorageManager.load('APP_VERSION', null)
+
+  if (APP_VERSION === null || APP_VERSION !== "1.0") {
+    LocalStorageManager.remove('lastSelectedTopic')
+    LocalStorageManager.remove('inProgressWords')
+    LocalStorageManager.remove('learnedWithExerciseWords')
+    LocalStorageManager.remove('learnedWords')
+    LocalStorageManager.remove('learnedWithLearnWords')
+    LocalStorageManager.remove('correctAnswerWordsCounter')
+    LocalStorageManager.remove('favoriteWords')
+
+    LocalStorageManager.save('APP_VERSION', "1.0")
+  }
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
   showSkeleton()
-  // localStorage.clear()
+  clearDeprecatedLocalStorageItems()
 
   try {
     const lastSelectedTopic = 'b1telcpt1'
