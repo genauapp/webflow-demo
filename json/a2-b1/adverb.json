@@ -1,82 +1,44 @@
 [
   {
-    "almanca": "plötzlich",
-    "ingilizce": "suddenly",
+    "almanca": "abends",
+    "ingilizce": "in the evening",
     "seviye": "A2",
-    "ornek": "Plötzlich begann es zu regnen.",
-    "kelime": "plötzlich",
+    "ornek": "Abends esse ich meist nur eine Kleinigkeit.",
+    "kelime": "abends",
+    "type": "adverb"
+  },
+
+  {
+    "almanca": "mittags",
+    "ingilizce": "at noon",
+    "seviye": "A2",
+    "ornek": "Mittags findet man im Zentrum nie einen Parkplatz.",
+    "kelime": "mittags",
+    "type": "adverb"
+  },
+
+  {
+    "almanca": "morgens",
+    "ingilizce": "in the morning",
+    "seviye": "A2",
+    "ornek": "Morgens telefoniere ich immer mit meiner Familie in Indien.",
+    "kelime": "morgens",
     "type": "adverb"
   },
   {
-    "almanca": "genau",
-    "ingilizce": "exactly",
+    "almanca": "überhaupt",
+    "ingilizce": "at all",
     "seviye": "B1",
-    "ornek": "Ich weiß genau, was du meinst.",
-    "kelime": "genau",
+    "ornek": "Volleyball mag ich überhaupt nicht.",
+    "kelime": "überhaupt",
     "type": "adverb"
   },
   {
-    "almanca": "wahrscheinlich",
-    "ingilizce": "probably",
+    "almanca": "übrigens",
+    "ingilizce": "by the way",
     "seviye": "B1",
-    "ornek": "Er kommt wahrscheinlich später.",
-    "kelime": "wahrscheinlich",
-    "type": "adverb"
-  },
-  {
-    "almanca": "bald",
-    "ingilizce": "soon",
-    "seviye": "A2",
-    "ornek": "Ich rufe dich bald an.",
-    "kelime": "bald",
-    "type": "adverb"
-  },
-  {
-    "almanca": "gestern",
-    "ingilizce": "yesterday",
-    "seviye": "A2",
-    "ornek": "Gestern war ich im Kino.",
-    "kelime": "gestern",
-    "type": "adverb"
-  },
-  {
-    "almanca": "heute",
-    "ingilizce": "today",
-    "seviye": "A2",
-    "ornek": "Heute scheint die Sonne.",
-    "kelime": "heute",
-    "type": "adverb"
-  },
-  {
-    "almanca": "oft",
-    "ingilizce": "often",
-    "seviye": "A2",
-    "ornek": "Ich gehe oft spazieren.",
-    "kelime": "oft",
-    "type": "adverb"
-  },
-  {
-    "almanca": "manchmal",
-    "ingilizce": "sometimes",
-    "seviye": "A2",
-    "ornek": "Manchmal trinke ich Tee statt Kaffee.",
-    "kelime": "manchmal",
-    "type": "adverb"
-  },
-  {
-    "almanca": "vielleicht",
-    "ingilizce": "maybe, perhaps",
-    "seviye": "B1",
-    "ornek": "Vielleicht komme ich später.",
-    "kelime": "vielleicht",
-    "type": "adverb"
-  },
-  {
-    "almanca": "schon",
-    "ingilizce": "already",
-    "seviye": "A2",
-    "ornek": "Ich habe das Buch schon gelesen.",
-    "kelime": "schon",
+    "ornek": "Übrigens: Hast du gestern die Nachrichten geschaut?",
+    "kelime": "übrigens",
     "type": "adverb"
   }
 ]
