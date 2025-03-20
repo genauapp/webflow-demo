@@ -1,82 +1,68 @@
 [
   {
-    "almanca": "anstrengend",
-    "ingilizce": "exhausting",
+    "almanca": "finanziell",
+    "ingilizce": "monetär, Geld-",
     "seviye": "B1",
-    "ornek": "Das Training war ziemlich anstrengend.",
-    "kelime": "anstrengend",
+    "ornek": "Ich bin aktuell arbeitslos, deshalb ist meine finanzielle Situation nicht besonders gut.",
+    "kelime": "finanziell",
     "type": "adjective"
   },
   {
-    "almanca": "verlässlich",
-    "ingilizce": "reliable",
+    "almanca": "schlank",
+    "ingilizce": "Das Gegenteil ist ‚dick‘ (nur für Personen)",
     "seviye": "B1",
-    "ornek": "Er ist ein sehr verlässlicher Kollege.",
-    "kelime": "verlässlich",
+    "ornek": "Wow, du bist so schlank! Hast du abgenommen?",
+    "kelime": "schlank",
     "type": "adjective"
   },
   {
-    "almanca": "kritisch",
-    "ingilizce": "critical",
+    "almanca": "arm",
+    "ingilizce": "Das Gegenteil ist ‚reich‘",
     "seviye": "B1",
-    "ornek": "Seine Meinung war sehr kritisch.",
-    "kelime": "kritisch",
+    "ornek": "Als ich Kind war, waren wir sehr arm. Wir hatten nicht genug Geld und mussten immer sparen.",
+    "kelime": "arm",
     "type": "adjective"
   },
   {
-    "almanca": "zufällig",
-    "ingilizce": "accidental, random",
-    "seviye": "B1",
-    "ornek": "Wir haben uns zufällig im Supermarkt getroffen.",
-    "kelime": "zufällig",
-    "type": "adjective"
-  },
-  {
-    "almanca": "selbstständig",
-    "ingilizce": "independent, self-employed",
+    "almanca": "gepflegt",
+    "ingilizce": "wenn jemand auf sein Aussehen achtet, also z.B. die Haare kämmt, die Fingernägel schneidet etc.",
     "seviye": "B2",
-    "ornek": "Sie arbeitet als selbstständige Designerin.",
-    "kelime": "selbstständig",
+    "ornek": "Voraussetzungen für diese Stelle sind Serviceorientierung und ein gepflegtes Äußeres.",
+    "kelime": "gepflegt",
     "type": "adjective"
   },
   {
-    "almanca": "herausfordernd",
-    "ingilizce": "challenging",
-    "seviye": "B2",
-    "ornek": "Das Projekt war sehr herausfordernd.",
-    "kelime": "herausfordernd",
+    "almanca": "weltweit",
+    "ingilizce": "auf der ganzen Welt",
+    "seviye": " B2",
+    "ornek": "Politische Veränderungen in einem Land haben oft weltweite Auswirkungen.",
+    "kelime": "weltweit",
     "type": "adjective"
   },
   {
-    "almanca": "widersprüchlich",
-    "ingilizce": "contradictory",
-    "seviye": "B2",
-    "ornek": "Seine Aussagen sind widersprüchlich.",
-    "kelime": "widersprüchlich",
+    "almanca": "einwandfrei",
+    "ingilizce": "fehlerfrei",
+    "seviye": " B2",
+    "ornek": "Seit der Reparatur funktioniert der Kühlschrank wieder einwandfrei.",
+    "kelime": "einwandfrei",
+    "kural": "‚der Einwand‘ ist ein mündlicher (!) Widerspruch, z.B. in einer Diskussion.",
     "type": "adjective"
   },
   {
-    "almanca": "bedeutend",
-    "ingilizce": "significant",
-    "seviye": "B2",
-    "ornek": "Er hat einen bedeutenden Beitrag geleistet.",
-    "kelime": "bedeutend",
+    "almanca": "zuständig sein für",
+    "ingilizce": "die Verantwortung für etwas haben (im positiven Sinne)",
+    "seviye": " B2",
+    "ornek": "Frau Schmidt ist bei uns für die Finanzbuchhaltung zuständig.",
+    "kelime": "zuständig sein für",
     "type": "adjective"
   },
   {
-    "almanca": "komplex",
-    "ingilizce": "complex",
-    "seviye": "B2",
-    "ornek": "Das Thema ist ziemlich komplex.",
-    "kelime": "komplex",
-    "type": "adjective"
-  },
-  {
-    "almanca": "anspruchsvoll",
-    "ingilizce": "demanding",
-    "seviye": "B2",
-    "ornek": "Die Aufgabe ist sehr anspruchsvoll.",
-    "kelime": "anspruchsvoll",
+    "almanca": "verantwortlich sein für",
+    "ingilizce": "die Verantwortung für etwas haben (im negativen Sinne)",
+    "seviye": " B2",
+    "ornek": "Wer ist für den Schaden verantwortlich?",
+    "kelime": "verantwortlich sein für",
+    "kural": "‚verantwortlich sein für‘ kann man aber auch im positiven Sinne benutzen…Ja ja, Deutsch",
     "type": "adjective"
   }
 ]

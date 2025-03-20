@@ -1,82 +1,42 @@
 [
   {
-    "almanca": "freundlich",
-    "ingilizce": "friendly",
+    "almanca": "mutig",
+    "ingilizce": "courageous",
     "seviye": "A2",
-    "ornek": "Die Verkäuferin war sehr freundlich.",
-    "kelime": "freundlich",
+    "ornek": "Mein Cousin ist echt sehr mutig. Dieses Jahr geht er allein in Australien wandern!",
+    "kelime": "mutig",
     "type": "adjective"
   },
   {
-    "almanca": "kompliziert",
-    "ingilizce": "complicated",
+    "almanca": "ängstlich",
+    "ingilizce": "fearful",
+    "seviye": "A2",
+    "ornek": "Leider ist meine Tochter ein sehr ängstliches Kind.",
+    "kelime": "ängstlich",
+    "type": "adjective"
+  },
+  {
+    "almanca": "optimistisch",
+    "ingilizce": "optimistic",
+    "seviye": "A2",
+    "ornek": "Ich bin optimistisch, dass ich die Prüfung bestehe.",
+    "kelime": "optimistisch",
+    "type": "adjective"
+  },
+  {
+    "almanca": "klasse",
+    "ingilizce": "super",
     "seviye": "B1",
-    "ornek": "Die Aufgabe ist ziemlich kompliziert.",
-    "kelime": "kompliziert",
+    "ornek": "Klasse gemacht!",
+    "kelime": "klasse",
     "type": "adjective"
   },
   {
     "almanca": "nützlich",
     "ingilizce": "useful",
-    "seviye": "B1",
-    "ornek": "Diese Informationen sind sehr nützlich.",
+    "seviye": " B1",
+    "ornek": "Ein Wörterbuch ist ein nützliches Hilfsmittel.",
     "kelime": "nützlich",
-    "type": "adjective"
-  },
-  {
-    "almanca": "interessant",
-    "ingilizce": "interesting",
-    "seviye": "A2",
-    "ornek": "Das Buch ist sehr interessant.",
-    "kelime": "interessant",
-    "type": "adjective"
-  },
-  {
-    "almanca": "müde",
-    "ingilizce": "tired",
-    "seviye": "A2",
-    "ornek": "Nach der Arbeit bin ich immer müde.",
-    "kelime": "müde",
-    "type": "adjective"
-  },
-  {
-    "almanca": "zufrieden",
-    "ingilizce": "satisfied",
-    "seviye": "B1",
-    "ornek": "Der Kunde ist mit dem Service zufrieden.",
-    "kelime": "zufrieden",
-    "type": "adjective"
-  },
-  {
-    "almanca": "ehrlich",
-    "ingilizce": "honest",
-    "seviye": "A2",
-    "ornek": "Er ist ein sehr ehrlicher Mensch.",
-    "kelime": "ehrlich",
-    "type": "adjective"
-  },
-  {
-    "almanca": "gesund",
-    "ingilizce": "healthy",
-    "seviye": "A2",
-    "ornek": "Gemüse ist gesund.",
-    "kelime": "gesund",
-    "type": "adjective"
-  },
-  {
-    "almanca": "bequem",
-    "ingilizce": "comfortable",
-    "seviye": "B1",
-    "ornek": "Das Sofa ist sehr bequem.",
-    "kelime": "bequem",
-    "type": "adjective"
-  },
-  {
-    "almanca": "spannend",
-    "ingilizce": "exciting",
-    "seviye": "B1",
-    "ornek": "Der Film war wirklich spannend.",
-    "kelime": "spannend",
     "type": "adjective"
   }
 ]
