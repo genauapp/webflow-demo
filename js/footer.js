@@ -17,9 +17,13 @@ import vc1c2 from '../json/c1-c2/verb.json' with { type: 'json' }
 import adjc1c2 from '../json/c1-c2/adjective.json' with { type: 'json' }
 import advc1c2 from '../json/c1-c2/adverb.json' with { type: 'json' }
 
+// Static Test Data 
+import vtesta1a2b1b2 from '../json/test/verb-laura.json' with { type: 'json' }
+
 let staticWordLists = {
   b1telcpt1: {
-    verb: va1a2,
+    // verb: va1a2,
+    verb: vtesta1a2b1b2,
     adjective: adja1a2,
     adverb: adva1a2
   },
