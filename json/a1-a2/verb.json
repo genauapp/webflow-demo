@@ -1,182 +1,137 @@
 [
-    {
-        "almanca": "gehen",
-        "ingilizce": "to go",
-        "seviye": "A1",
-        "ornek": "Ich gehe jeden Tag zur Arbeit.",
-        "kelime": "gehen",
-        "kural": "Regular verb used to describe movement from one place to another.",
-        "type": "verb"
-    },
-    {
-        "almanca": "kommen",
-        "ingilizce": "to come",
-        "seviye": "A1",
-        "ornek": "Er kommt aus Deutschland.",
-        "kelime": "kommen",
-        "kural": "Common verb indicating movement toward the speaker's location.",
-        "type": "verb"
-    },
-    {
-        "almanca": "sehen",
-        "ingilizce": "to see",
-        "seviye": "A1",
-        "ornek": "Wir sehen einen Film im Kino.",
-        "kelime": "sehen",
-        "kural": "Irregular verb; stem vowel changes (ie) in second and third person singular.",
-        "type": "verb"
-    },
-    {
-        "almanca": "essen",
-        "ingilizce": "to eat",
-        "seviye": "A1",
-        "ornek": "Ich esse gern Pizza.",
-        "kelime": "essen",
-        "kural": "Irregular verb; stem vowel changes (i) in second and third person singular.",
-        "type": "verb"
-    },
-    {
-        "almanca": "trinken",
-        "ingilizce": "to drink",
-        "seviye": "A1",
-        "ornek": "Sie trinkt Wasser.",
-        "kelime": "trinken",
-        "kural": "Regular verb used for consuming liquids.",
-        "type": "verb"
-    },
-    {
-        "almanca": "schreiben",
-        "ingilizce": "to write",
-        "seviye": "A1",
-        "ornek": "Er schreibt einen Brief.",
-        "kelime": "schreiben",
-        "kural": "Regular verb commonly used with objects like letters or emails.",
-        "type": "verb"
-    },
-    {
-        "almanca": "lesen",
-        "ingilizce": "to read",
-        "seviye": "A1",
-        "ornek": "Ich lese ein interessantes Buch.",
-        "kelime": "lesen",
-        "kural": "Irregular verb; stem vowel changes (ie) in second and third person singular.",
-        "type": "verb"
-    },
-    {
-        "almanca": "schlafen",
-        "ingilizce": "to sleep",
-        "seviye": "A1",
-        "ornek": "Das Kind schläft tief und fest.",
-        "kelime": "schlafen",
-        "kural": "Irregular verb; stem vowel changes (ä) in second and third person singular.",
-        "type": "verb"
-    },
-    {
-        "almanca": "laufen",
-        "ingilizce": "to run, to walk",
-        "seviye": "A1",
-        "ornek": "Wir laufen im Park.",
-        "kelime": "laufen",
-        "kural": "Irregular verb; stem vowel changes (äu) in second and third person singular.",
-        "type": "verb"
-    },
-    {
-        "almanca": "hören",
-        "ingilizce": "to hear, to listen",
-        "seviye": "A1",
-        "ornek": "Ich höre gerne Musik.",
-        "kelime": "hören",
-        "kural": "Regular verb used for perceiving sound or intentional listening.",
-        "type": "verb"
-    },
-    {
-        "almanca": "sprechen",
-        "ingilizce": "to speak",
-        "seviye": "A1",
-        "ornek": "Wir sprechen Deutsch im Kurs.",
-        "kelime": "sprechen",
-        "kural": "Irregular verb; stem vowel changes (i) in second and third person singular.",
-        "type": "verb"
-    },
-    {
-        "almanca": "lernen",
-        "ingilizce": "to learn",
-        "seviye": "A1",
-        "ornek": "Sie lernt Deutsch.",
-        "kelime": "lernen",
-        "kural": "Regular verb used when acquiring new skills or knowledge.",
-        "type": "verb"
-    },
-    {
-        "almanca": "arbeiten",
-        "ingilizce": "to work",
-        "seviye": "A1",
-        "ornek": "Mein Vater arbeitet in einer Fabrik.",
-        "kelime": "arbeiten",
-        "kural": "Regular verb, often followed by 'bei' or 'in' to indicate workplace.",
-        "type": "verb"
-    },
-    {
-        "almanca": "spielen",
-        "ingilizce": "to play",
-        "seviye": "A1",
-        "ornek": "Die Kinder spielen im Garten.",
-        "kelime": "spielen",
-        "kural": "Regular verb used for games, sports, and playing instruments.",
-        "type": "verb"
-    },
-    {
-        "almanca": "machen",
-        "ingilizce": "to do, to make",
-        "seviye": "A1",
-        "ornek": "Was machst du heute?",
-        "kelime": "machen",
-        "kural": "Regular verb commonly used in everyday expressions.",
-        "type": "verb"
-    },
-    {
-        "almanca": "helfen",
-        "ingilizce": "to help",
-        "seviye": "A1",
-        "ornek": "Kannst du mir bitte helfen?",
-        "kelime": "helfen",
-        "kural": "Irregular verb; takes dative case and changes vowel (i) in second and third person singular.",
-        "type": "verb"
-    },
-    {
-        "almanca": "finden",
-        "ingilizce": "to find",
-        "seviye": "A1",
-        "ornek": "Ich finde meinen Schlüssel nicht.",
-        "kelime": "finden",
-        "kural": "Regular verb used for locating something physically or abstractly.",
-        "type": "verb"
-    },
-    {
-        "almanca": "geben",
-        "ingilizce": "to give",
-        "seviye": "A1",
-        "ornek": "Er gibt ihr das Buch.",
-        "kelime": "geben",
-        "kural": "Irregular verb; stem vowel changes (i) in second and third person singular.",
-        "type": "verb"
-    },
-    {
-        "almanca": "beginnen",
-        "ingilizce": "to begin, to start",
-        "seviye": "A1",
-        "ornek": "Der Kurs beginnt um neun Uhr.",
-        "kelime": "beginnen",
-        "kural": "Regular verb used to indicate the start of an action or event.",
-        "type": "verb"
-    },
-    {
-        "almanca": "bleiben",
-        "ingilizce": "to stay, to remain",
-        "seviye": "A1",
-        "ornek": "Wir bleiben heute zu Hause.",
-        "kelime": "bleiben",
-        "kural": "Regular verb commonly used with location-related phrases.",
-        "type": "verb"
-    }
+  {
+    "almanca": "sein",
+    "ingilizce": "to be",
+    "seviye": "A1",
+    "ornek": "Ich bin Maria.",
+    "kelime": "sein ",
+    "kural": "Like in many languages, the verb ‚sein‘ looks very different when conjugated. Learn the conjugation!",
+    "type": "verb"
+  },
+  {
+    "almanca": "kommen",
+    "ingilizce": "to come",
+    "seviye": "A1",
+    "ornek": "Ich komme aus Deutschland.",
+    "kelime": "kommen",
+    "kural": "",
+    "type": "verb"
+  },
+  {
+    "almanca": "heißen",
+    "ingilizce": "to be called",
+    "seviye": "A1",
+    "ornek": "Wie heißt du?",
+    "kelime": "heißen ",
+    "kural": "",
+    "type": "verb"
+  },
+  {
+    "almanca": "gehen",
+    "ingilizce": "to go",
+    "seviye": "A1",
+    "ornek": "Wie geht es dir?",
+    "kelime": "gehen",
+    "kural": "The most important German small talk question literally translates to ‚How is it going with you?‘",
+    "type": "verb"
+  },
+  {
+    "almanca": "wohnen",
+    "ingilizce": "to live somewhere",
+    "seviye": "A1",
+    "ornek": "Ich wohne in Berlin.",
+    "kelime": "wohnen",
+    "kural": "There are two different verbs in German for ‘to live’ and ‘to live somewhere’",
+    "type": "verb"
+  },
+  {
+    "almanca": "buchstabieren",
+    "ingilizce": "to spell",
+    "seviye": "A1",
+    "ornek": "Bitte buchstabiere deinen Namen!",
+    "kelime": "buchstabieren ",
+    "kural": "",
+    "type": "verb"
+  },
+  {
+    "almanca": "denken",
+    "ingilizce": "to think",
+    "seviye": "A1",
+    "ornek": "Das denke ich auch.",
+    "kelime": "denken",
+    "kural": "",
+    "type": "verb"
+  },
+  {
+    "almanca": "haben",
+    "ingilizce": "to have",
+    "seviye": "A1",
+    "ornek": "Er hat einen Bruder und eine Schwester.",
+    "kelime": "haben",
+    "kural": "",
+    "type": "verb"
+  },
+  {
+    "almanca": "studieren",
+    "ingilizce": "to study",
+    "seviye": "A1",
+    "ornek": "Ich studiere an der Universität in Leipzig.",
+    "kelime": "studieren",
+    "kural": "Beware of this false friend: ‚studieren‘ in German is only used for studying at a ‚Universität‘ or ‚Fachhochschule‘, not general studying i.e. in a German class.",
+    "type": "verb"
+  },
+  {
+    "almanca": "sprechen",
+    "ingilizce": "to speak",
+    "seviye": "A1",
+    "ornek": "Ich spreche Englisch, Türkisch und ein bisschen Deutsch.",
+    "kelime": "sprechen",
+    "kural": "When conjugating this verb, note that the vocal changes from ‚e‘ to ‚i‘ in 2. and 3. person singular.",
+    "type": "verb"
+  },
+  {
+    "almanca": "verdienen",
+    "ingilizce": "to earn",
+    "seviye": "A2",
+    "ornek": "Sie verdient 2800€ im Monat.",
+    "kelime": "verdienen",
+    "kural": "Just like in English, you can use ‚verdienen‘ when talking about money, but also respect etc.",
+    "type": "verb"
+  },
+  {
+    "almanca": "einpacken",
+    "ingilizce": "to pack into, to wrap",
+    "seviye": "A2",
+    "ornek": "Hast du dein Buch schon eingepackt?",
+    "kelime": "einpacken",
+    "kural": " ‚packen‘ and ‚einpacken‘ are not the same like in English. ‚einpacken‘ means that you put an object, like a book, into another, like a bag – or wrapping paper!",
+    "type": "verb"
+  },
+  {
+    "almanca": "erzählen",
+    "ingilizce": "to tell",
+    "seviye": "A2",
+    "ornek": "Erzähl mal! Was hast du heute gelernt?",
+    "kelime": "erzählen",
+    "kural": "",
+    "type": "verb"
+  },
+  {
+    "almanca": "passieren",
+    "ingilizce": "to happen",
+    "seviye": "A2",
+    "ornek": "Kein Problem, das passiert!",
+    "kelime": "passieren",
+    "kural": "The verb ‚passieren‘ in ist most common use (to happen) can only be combined with ‚inactive‘ subjects like ‚es‘, ‚das‘, ‚sowas‘, never ‚active subjects‘ like ‚ich‘, ‚er‘ etc.",
+    "type": "verb"
+  },
+  {
+    "almanca": "kriegen",
+    "ingilizce": "to get",
+    "seviye": "A2",
+    "ornek": "Wir haben noch keine Information gekriegt.",
+    "kelime": "kriegen",
+    "kural": "‘bekommen‘ and ‚kriegen‘ are interchangeable.",
+    "type": "verb"
+  }
 ]

@@ -4,8 +4,8 @@
     "ingilizce": "to be",
     "seviye": "A1",
     "ornek": "Ich bin Maria.",
-    "kelime": " sein ",
-    "kural": "Like in many languages, the verb ‚sein‘ looks very different when conjugated. Learn the conjugation! ",
+    "kelime": "sein ",
+    "kural": "Like in many languages, the verb ‚sein‘ looks very different when conjugated. Learn the conjugation!",
     "type": "verb"
   },
   {
@@ -13,8 +13,8 @@
     "ingilizce": "to come",
     "seviye": "A1",
     "ornek": "Ich komme aus Deutschland.",
-    "kelime": " kommen",
-    "kural": " /",
+    "kelime": "kommen",
+    "kural": "",
     "type": "verb"
   },
   {
@@ -22,8 +22,8 @@
     "ingilizce": "to be called",
     "seviye": "A1",
     "ornek": "Wie heißt du?",
-    "kelime": " heißen ",
-    "kural": "/",
+    "kelime": "heißen ",
+    "kural": "",
     "type": "verb"
   },
   {
@@ -31,7 +31,7 @@
     "ingilizce": "to go",
     "seviye": "A1",
     "ornek": "Wie geht es dir?",
-    "kelime": " gehen",
+    "kelime": "gehen",
     "kural": "The most important German small talk question literally translates to ‚How is it going with you?‘",
     "type": "verb"
   },
@@ -40,7 +40,7 @@
     "ingilizce": "to live somewhere",
     "seviye": "A1",
     "ornek": "Ich wohne in Berlin.",
-    "kelime": " wohnen ",
+    "kelime": "wohnen",
     "kural": "There are two different verbs in German for ‘to live’ and ‘to live somewhere’",
     "type": "verb"
   },
@@ -49,8 +49,8 @@
     "ingilizce": "to spell",
     "seviye": "A1",
     "ornek": "Bitte buchstabiere deinen Namen!",
-    "kelime": " buchstabieren ",
-    "kural": "/",
+    "kelime": "buchstabieren ",
+    "kural": "",
     "type": "verb"
   },
   {
@@ -58,8 +58,8 @@
     "ingilizce": "to think",
     "seviye": "A1",
     "ornek": "Das denke ich auch.",
-    "kelime": " denken",
-    "kural": "/",
+    "kelime": "denken",
+    "kural": "",
     "type": "verb"
   },
   {
@@ -67,8 +67,8 @@
     "ingilizce": "to have",
     "seviye": "A1",
     "ornek": "Er hat einen Bruder und eine Schwester.",
-    "kelime": " haben",
-    "kural": "/",
+    "kelime": "haben",
+    "kural": "",
     "type": "verb"
   },
   {
@@ -76,7 +76,7 @@
     "ingilizce": "to study",
     "seviye": "A1",
     "ornek": "Ich studiere an der Universität in Leipzig.",
-    "kelime": " studieren",
+    "kelime": "studieren",
     "kural": "Beware of this false friend: ‚studieren‘ in German is only used for studying at a ‚Universität‘ or ‚Fachhochschule‘, not general studying i.e. in a German class.",
     "type": "verb"
   },
@@ -85,16 +85,16 @@
     "ingilizce": "to speak",
     "seviye": "A1",
     "ornek": "Ich spreche Englisch, Türkisch und ein bisschen Deutsch.",
-    "kelime": " sprechen",
-    "kural": "When conjugating this verb, note that the vocal changes from ‚e‘ to ‚i‘ in 2. and 3. person singular. ",
+    "kelime": "sprechen",
+    "kural": "When conjugating this verb, note that the vocal changes from ‚e‘ to ‚i‘ in 2. and 3. person singular.",
     "type": "verb"
   },
   {
     "almanca": "verdienen",
-    "ingilizce": "to earn ",
+    "ingilizce": "to earn",
     "seviye": "A2",
     "ornek": "Sie verdient 2800€ im Monat.",
-    "kelime": " verdienen ",
+    "kelime": "verdienen",
     "kural": "Just like in English, you can use ‚verdienen‘ when talking about money, but also respect etc.",
     "type": "verb"
   },
@@ -103,7 +103,7 @@
     "ingilizce": "to pack into, to wrap",
     "seviye": "A2",
     "ornek": "Hast du dein Buch schon eingepackt?",
-    "kelime": " einpacken ",
+    "kelime": "einpacken",
     "kural": " ‚packen‘ and ‚einpacken‘ are not the same like in English. ‚einpacken‘ means that you put an object, like a book, into another, like a bag – or wrapping paper!",
     "type": "verb"
   },
@@ -112,16 +112,16 @@
     "ingilizce": "to tell",
     "seviye": "A2",
     "ornek": "Erzähl mal! Was hast du heute gelernt?",
-    "kelime": " erzählen ",
-    "kural": "/",
+    "kelime": "erzählen",
+    "kural": "",
     "type": "verb"
   },
   {
     "almanca": "passieren",
     "ingilizce": "to happen",
     "seviye": "A2",
-    "ornek": "Kein Problem, das passiert! ",
-    "kelime": " passieren ",
+    "ornek": "Kein Problem, das passiert!",
+    "kelime": "passieren",
     "kural": "The verb ‚passieren‘ in ist most common use (to happen) can only be combined with ‚inactive‘ subjects like ‚es‘, ‚das‘, ‚sowas‘, never ‚active subjects‘ like ‚ich‘, ‚er‘ etc.",
     "type": "verb"
   },
@@ -130,7 +130,7 @@
     "ingilizce": "to get",
     "seviye": "A2",
     "ornek": "Wir haben noch keine Information gekriegt.",
-    "kelime": " kriegen ",
+    "kelime": "kriegen",
     "kural": "‘bekommen‘ and ‚kriegen‘ are interchangeable.",
     "type": "verb"
   },
@@ -139,16 +139,16 @@
     "ingilizce": "to rent",
     "seviye": "A2",
     "ornek": "Wir mieten ein Auto.",
-    "kelime": " mieten ",
-    "kural": "/",
+    "kelime": "mieten",
+    "kural": "",
     "type": "verb"
   },
   {
     "almanca": "kennenlernen",
     "ingilizce": "to get to know",
     "seviye": "A2",
-    "ornek": "Schön, dich kennenzulernen! ",
-    "kelime": " kennenlernen ",
+    "ornek": "Schön, dich kennenzulernen!",
+    "kelime": "kennenlernen",
     "kural": "Just like ALL prefixes that are words on their own, ‚kennen‘ is seperable.",
     "type": "verb"
   },
@@ -157,8 +157,8 @@
     "ingilizce": "to prohibit",
     "seviye": "A2",
     "ornek": "Das Rauchen ist am Bahnhof verboten.",
-    "kelime": " verbieten ",
-    "kural": "/",
+    "kelime": "verbieten",
+    "kural": "",
     "type": "verb"
   },
   {
@@ -166,8 +166,8 @@
     "ingilizce": "to get",
     "seviye": "A2",
     "ornek": "Ich habe deine E-Mail bekommen.",
-    "kelime": " bekommen ",
-    "kural": " Beware of this false friend: ‚bekommen‘ means ‚to get‘, NOT ‚to become‘!",
+    "kelime": "bekommen",
+    "kural": "Beware of this false friend: ‚bekommen‘ means ‚to get‘, NOT ‚to become‘!",
     "type": "verb"
   },
   {
@@ -175,16 +175,16 @@
     "ingilizce": "to buy",
     "seviye": "A2",
     "ornek": "Wir haben eine Wohnung gekauft.",
-    "kelime": "kaufen ",
-    "kural": "/",
+    "kelime": "kaufen",
+    "kural": "",
     "type": "verb"
   },
   {
     "almanca": "gratulieren",
     "ingilizce": "to congratulate",
     "seviye": "B1",
-    "ornek": "Gratuliere! .",
-    "kelime": " gratulieren ",
+    "ornek": "Gratuliere!",
+    "kelime": "gratulieren",
     "kural": "You discovered a rare gem! A verb that needs an object in Dativ.",
     "type": "verb"
   },
@@ -193,8 +193,8 @@
     "ingilizce": "to recognize",
     "seviye": "B1",
     "ornek": "Ohne Brille erkenne ich fast nichts.",
-    "kelime": " erkennen ",
-    "kural": "/",
+    "kelime": "erkennen",
+    "kural": "",
     "type": "verb"
   },
   {
@@ -202,8 +202,8 @@
     "ingilizce": "to analyse",
     "seviye": "B1",
     "ornek": "Wir versuchen gerade, diese grammatikalische Struktur zu analysieren.",
-    "kelime": "analysieren ",
-    "kural": "/",
+    "kelime": "analysieren",
+    "kural": "",
     "type": "verb"
   },
   {
@@ -211,8 +211,8 @@
     "ingilizce": "to choose, to select",
     "seviye": "B1",
     "ornek": "Es ist nicht leicht, eine Ausbildung auszuwählen.",
-    "kelime": " auswählen",
-    "kural": " Just like ALL prefixes that are words on their own, ‚aus‘ is seperable.",
+    "kelime": "auswählen",
+    "kural": "Just like ALL prefixes that are words on their own, ‚aus‘ is seperable.",
     "type": "verb"
   },
   {
@@ -220,8 +220,8 @@
     "ingilizce": "to warn",
     "seviye": "B1",
     "ornek": "Ich habe dich gewarnt...",
-    "kelime": "warnen ",
-    "kural": "/",
+    "kelime": "warnen",
+    "kural": "",
     "type": "verb"
   },
   {
@@ -229,26 +229,26 @@
     "ingilizce": "to make an effort",
     "seviye": "B1",
     "ornek": "Wenn man Deutsch lernen möchte, muss man sich ein bisschen anstrengen.",
-    "kelime": "sich anstrengen ",
-    "kural": "/",
+    "kelime": "sich anstrengen",
+    "kural": "",
     "type": "verb"
   },
   {
     "almanca": "sammeln",
     "ingilizce": "to collect",
     "seviye": "B1",
-    "ornek": " Ich möchte neue berufliche Erfahrungen sammeln.",
-    "kelime": "sammeln ",
-    "kural": "/",
+    "ornek": "Ich möchte neue berufliche Erfahrungen sammeln.",
+    "kelime": "sammeln",
+    "kural": "",
     "type": "verb"
   },
   {
     "almanca": "prüfen",
     "ingilizce": "to examine, to check",
     "seviye": "B1",
-    "ornek": "Mit dieser App prüfst du, welche deutschen Wörter du wirklich gelernt hast .",
-    "kelime": "prüfen ",
-    "kural": "/",
+    "ornek": "Mit dieser App prüfst du, welche deutschen Wörter du wirklich gelernt hast.",
+    "kelime": "prüfen",
+    "kural": "",
     "type": "verb"
   },
   {
@@ -257,7 +257,7 @@
     "seviye": "B1",
     "ornek": "Der Arzt behandelt Kranke.",
     "kelime": "behandeln ",
-    "kural": " Just like in English, you can use ‚behandeln‘ when talking about medical care, but also about how someone generally treats other people.",
+    "kural": "Just like in English, you can use ‚behandeln‘ when talking about medical care, but also about how someone generally treats other people.",
     "type": "verb"
   },
   {
@@ -265,16 +265,16 @@
     "ingilizce": "to react",
     "seviye": "B1",
     "ornek": "Ich bin gespannt, wie er auf sein Prüfungsergebnis reagiert!",
-    "kelime": " reagieren",
-    "kural": "/",
+    "kelime": "reagieren",
+    "kural": "",
     "type": "verb"
   },
   {
     "almanca": "sich+A befinden",
     "ingilizce": "an einem bestimmten Ort sein (normalerweise nur für Unbewegliches, also z.B. Räume, Gebäude etc.)",
     "seviye": "B2",
-    "ornek": "Entschuldigen Sie bitte, wo befindet sich der Konferenzraum? – Im zweiten Stock. ",
-    "kelime": " sich befinden ",
+    "ornek": "Entschuldigen Sie bitte, wo befindet sich der Konferenzraum? – Im zweiten Stock.",
+    "kelime": "sich befinden",
     "kural": "Immer in Kombination mit ‚in + D‘ ",
     "type": "verb"
   },
@@ -283,8 +283,8 @@
     "ingilizce": "grüßen",
     "seviye": "B2",
     "ornek": "",
-    "kelime": "begrüßen ",
-    "kural": "Der Unterschied zwischen ‚grüßen‘ und ‚begrüßen‘ ist folgender: ‚grüßen‘ ist ein kurzes Hallo, meist auf Distanz, manchmal nur ein Winken. Begrüßen ist ein umfassendes ‚willkommen heißen‘, z.B. zu Beginn einer Konferenz. ",
+    "kelime": "begrüßen",
+    "kural": "Der Unterschied zwischen ‚grüßen‘ und ‚begrüßen‘ ist folgender: ‚grüßen‘ ist ein kurzes Hallo, meist auf Distanz, manchmal nur ein Winken. Begrüßen ist ein umfassendes ‚willkommen heißen‘, z.B. zu Beginn einer Konferenz.",
     "type": "verb"
   },
   {
@@ -292,8 +292,8 @@
     "ingilizce": "eine Firma/ein Unternehmen/einen Verein starten",
     "seviye": "B2",
     "ornek": "Das Unternehmen wurde bereits 1949 von Max Mustermann gegründet.",
-    "kelime": "gründen ",
-    "kural": "Denk an Wörter wie ‚Grundlage‘, ‚Grundstein‘ etc. – Macht Sinn, oder? ",
+    "kelime": "gründen",
+    "kural": "Denk an Wörter wie ‚Grundlage‘, ‚Grundstein‘ etc. – Macht Sinn, oder?",
     "type": "verb"
   },
   {
@@ -301,7 +301,7 @@
     "ingilizce": "brauchen",
     "seviye": "B2",
     "ornek": "Wir benötigen das überarbeitete Angebot bis Montag.",
-    "kelime": " benötigen",
+    "kelime": "benötigen",
     "kural": "Verben des Bedeutungsspektrums ‚brauchen‘ fordern eine Nominalphrase – ein weiteres Verb im Satz ist NICHT möglich!",
     "type": "verb"
   },
@@ -310,8 +310,8 @@
     "ingilizce": "die Orientierung verlieren und deshalb einen falschen Weg laufen",
     "seviye": "B2",
     "ornek": "Am Frankfurter Flughafen ist es beinah unvermeidlich, sich zu verlaufen.",
-    "kelime": "sich verlaufen ",
-    "kural": "Es gibt auch die nicht-reflexive Variante ‚verlaufen‘; die bedeutet aber etwas anderes ",
+    "kelime": "sich verlaufen",
+    "kural": "Es gibt auch die nicht-reflexive Variante ‚verlaufen‘; die bedeutet aber etwas anderes",
     "type": "verb"
   },
   {
@@ -320,11 +320,11 @@
     "seviye": "B2",
     "ornek": "Ich finde es wichtig, bei der Urlaubsplanung die Bedürfnisse von Eltern zu berücksichtigen",
     "kelime": "berücksichtigen",
-    "kural": "/",
+    "kural": "",
     "type": "verb"
   },
   {
-    "almanca": "bestehen ",
+    "almanca": "bestehen",
     "ingilizce": "existieren, da sein",
     "seviye": "B2",
     "ornek": "Die Probleme mit der Internetverbindung bestehen leider schon seit geraumer Zeit!",
@@ -337,17 +337,17 @@
     "ingilizce": "1) anstellen 2) stoppen, aufhören",
     "seviye": "B2",
     "ornek": "1) Um die Produktion auf diesem Niveau zu halten, müssen wir zehn weitere Mitarbeiter/innen einstellen., 2) Aufgrund der sinkenden Verkaufszahlen wurde die Produktion eingestellt.",
-    "kelime": "einstellen ",
-    "kural": "/",
+    "kelime": "einstellen",
+    "kural": "",
     "type": "verb"
   },
   {
     "almanca": "entwickeln",
     "ingilizce": "wenn ein Prozess Schritt für Schritt vorangeht",
     "seviye": "B2",
-    "ornek": "Mit der Zeit entwickeln Sie ein Sprachgefühl. Das ist ein tolles Gefühl! ",
-    "kelime": "entwickeln ",
-    "kural": "/",
+    "ornek": "Mit der Zeit entwickeln Sie ein Sprachgefühl. Das ist ein tolles Gefühl!",
+    "kelime": "entwickeln",
+    "kural": "",
     "type": "verb"
   },
   {
@@ -355,8 +355,8 @@
     "ingilizce": "markieren",
     "seviye": "B2",
     "ornek": "Damit wir die Laborproben nicht verwechseln, kennzeichnen wir sie mit unterschiedlichen Farben.",
-    "kelime": "kennzeichnen ",
-    "kural": "/",
+    "kelime": "kennzeichnen",
+    "kural": "",
     "type": "verb"
   },
   {
@@ -364,8 +364,8 @@
     "ingilizce": "",
     "seviye": "B2",
     "ornek": "Also, meiner Meinung nach sollten wir über diesen Vertragsparagraphen noch einmal mit ihm verhandeln.",
-    "kelime": " ",
-    "kural": " Kombinationen mit ‚mit + D und/oder ‚über + A‘ sind möglich.",
+    "kelime": "",
+    "kural": "Kombinationen mit ‚mit + D und/oder ‚über + A‘ sind möglich.",
     "type": "verb"
   }
 ]
