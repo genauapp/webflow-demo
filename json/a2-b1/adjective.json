@@ -38,5 +38,29 @@
     "ornek": "Ein Wörterbuch ist ein nützliches Hilfsmittel.",
     "kelime": "nützlich",
     "type": "adjective"
+  },
+  {
+    "almanca": "finanziell",
+    "ingilizce": "monetär, Geld-",
+    "seviye": "B1",
+    "ornek": "Ich bin aktuell arbeitslos, deshalb ist meine finanzielle Situation nicht besonders gut.",
+    "kelime": "finanziell",
+    "type": "adjective"
+  },
+  {
+    "almanca": "schlank",
+    "ingilizce": "Das Gegenteil ist ‚dick‘ (nur für Personen)",
+    "seviye": "B1",
+    "ornek": "Wow, du bist so schlank! Hast du abgenommen?",
+    "kelime": "schlank",
+    "type": "adjective"
+  },
+  {
+    "almanca": "arm",
+    "ingilizce": "Das Gegenteil ist ‚reich‘",
+    "seviye": "B1",
+    "ornek": "Als ich Kind war, waren wir sehr arm. Wir hatten nicht genug Geld und mussten immer sparen.",
+    "kelime": "arm",
+    "type": "adjective"
   }
 ]

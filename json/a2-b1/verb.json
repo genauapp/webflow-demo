@@ -88,5 +88,50 @@
     "kelime": "warnen",
     "kural": "",
     "type": "verb"
+  },
+  {
+    "almanca": "sich anstrengen",
+    "ingilizce": "to make an effort",
+    "seviye": "B1",
+    "ornek": "Wenn man Deutsch lernen möchte, muss man sich ein bisschen anstrengen.",
+    "kelime": "sich anstrengen",
+    "kural": "",
+    "type": "verb"
+  },
+  {
+    "almanca": "sammeln",
+    "ingilizce": "to collect",
+    "seviye": "B1",
+    "ornek": "Ich möchte neue berufliche Erfahrungen sammeln.",
+    "kelime": "sammeln",
+    "kural": "",
+    "type": "verb"
+  },
+  {
+    "almanca": "prüfen",
+    "ingilizce": "to examine, to check",
+    "seviye": "B1",
+    "ornek": "Mit dieser App prüfst du, welche deutschen Wörter du wirklich gelernt hast.",
+    "kelime": "prüfen",
+    "kural": "",
+    "type": "verb"
+  },
+  {
+    "almanca": "behandeln",
+    "ingilizce": "to treat",
+    "seviye": "B1",
+    "ornek": "Der Arzt behandelt Kranke.",
+    "kelime": "behandeln ",
+    "kural": "Just like in English, you can use ‚behandeln‘ when talking about medical care, but also about how someone generally treats other people.",
+    "type": "verb"
+  },
+  {
+    "almanca": "reagieren",
+    "ingilizce": "to react",
+    "seviye": "B1",
+    "ornek": "Ich bin gespannt, wie er auf sein Prüfungsergebnis reagiert!",
+    "kelime": "reagieren",
+    "kural": "",
+    "type": "verb"
   }
 ]

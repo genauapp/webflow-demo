@@ -1,72 +1,82 @@
 [
   {
-    "almanca": "zuletzt",
-    "ingilizce": "most recently",
+    "almanca": "allerdings",
+    "ingilizce": "however, indeed",
+    "seviye": "B2",
+    "ornek": "Das ist möglich, allerdings sehr teuer.",
+    "kelime": "allerdings",
+    "type": "adverb"
+  },
+  {
+    "almanca": "außerdem",
+    "ingilizce": "besides, furthermore",
     "seviye": "B1",
-    "ornek": "Der Einbrecher wurde zuletzt in der Heinstr. gesehen.",
-    "kelime": "zuletzt",
-    "kural": "Denk an ‚das letzte Mal‘",
+    "ornek": "Ich habe keine Zeit und außerdem kein Geld.",
+    "kelime": "außerdem",
     "type": "adverb"
   },
   {
-    "almanca": "mehrmals",
-    "ingilizce": "several times",
+    "almanca": "deshalb",
+    "ingilizce": "therefore",
     "seviye": "B1",
-    "ornek": " Mein Sohn geht mehrmals pro Woche ins Fitnessstudio",
-    "kelime": "mehrmals",
-    "kural": "‚einmal‘, ‚zweimal‘, ‚dreimal‘…‘mehrmals‘!",
+    "ornek": "Es regnet, deshalb bleibe ich zu Hause.",
+    "kelime": "deshalb",
     "type": "adverb"
   },
   {
-    "almanca": "quer",
-    "ingilizce": "crosswise",
+    "almanca": "dennoch",
+    "ingilizce": "nevertheless",
+    "seviye": "B2",
+    "ornek": "Es war kalt, dennoch ging er schwimmen.",
+    "kelime": "dennoch",
+    "type": "adverb"
+  },
+  {
+    "almanca": "folglich",
+    "ingilizce": "consequently",
+    "seviye": "B2",
+    "ornek": "Er hat viel gelernt, folglich hat er die Prüfung bestanden.",
+    "kelime": "folglich",
+    "type": "adverb"
+  },
+  {
+    "almanca": "inzwischen",
+    "ingilizce": "meanwhile",
     "seviye": "B1",
-    "ornek": "Lauf einfach quer über die Wiese, das ist der kürzeste Weg.",
-    "kelime": "quer",
-    "kural": "Auf Deutsch: ‚quer‘; auf Englisch: ‚cross‘, ‚across‘, ‚transversely‘…",
+    "ornek": "Ich koche, du kannst inzwischen den Tisch decken.",
+    "kelime": "inzwischen",
     "type": "adverb"
   },
   {
-    "almanca": "idealerweise",
-    "ingilizce": "im besten Fall",
-    "seviye": "B2",
-    "ornek": "Ihr Netto-Einkommen sollte Ihnen idealerweise auch das Sparen ermöglichen.",
-    "kelime": "idealerweise",
+    "almanca": "meistens",
+    "ingilizce": "mostly, usually",
+    "seviye": "B1",
+    "ornek": "Meistens gehe ich am Wochenende joggen.",
+    "kelime": "meistens",
     "type": "adverb"
   },
   {
-    "almanca": "jederzeit",
-    "ingilizce": "immer",
+    "almanca": "daher",
+    "ingilizce": "hence, therefore",
     "seviye": "B2",
-    "ornek": "Für Rückfragen stehen wir Ihnen selbstverständlich jederzeit zur Verfügung.",
-    "kelime": "jederzeit",
+    "ornek": "Er ist krank, daher bleibt er im Bett.",
+    "kelime": "daher",
     "type": "adverb"
   },
   {
-    "almanca": "zunächst",
-    "ingilizce": "zuerst",
+    "almanca": "stets",
+    "ingilizce": "always, constantly",
     "seviye": "B2",
-    "ornek": "Zunächst werde ich Ihnen einen groben Überblick geben.",
-    "kelime": "zunächst",
-    "kural": "So verwirrend es klingt – ‚zunächst‘ und ‚zuerst sind wirklich Synonyme.",
+    "ornek": "Er ist stets freundlich zu seinen Kollegen.",
+    "kelime": "stets",
     "type": "adverb"
   },
   {
-    "almanca": "ansonsten",
-    "ingilizce": "1) darüber hinaus 2) ander(e)nfalls",
-    "seviye": "B2",
-    "ornek": "1) Ich würde nur das Design verändern. Ansonsten habe ich keine Einwände. 2) Beeil dich! Ansonsten kommen wir zu spät!",
-    "kelime": "ansonsten",
-    "kural": "Achte darauf, wie Deutsche dieses Wort benutzen und sammele deine eigenen Beispiele",
-    "type": "adverb"
-  },
-  {
-    "almanca": "anbei",
-    "ingilizce": "beiliegend",
-    "seviye": "B2",
-    "ornek": "Anbei sende ich Ihnen wie gewünscht unseren aktuellen Katalog.",
-    "kelime": "anbei",
-    "kural": "‚Anbei‘ verweist auf ein extra Dokument, das einer E-Mail o. einem Brief beiliegt.",
+    "almanca": "übrigens",
+    "ingilizce": "by the way",
+    "seviye": "B1",
+    "ornek": "Übrigens, hast du meine E-Mail bekommen?",
+    "kelime": "übrigens",
     "type": "adverb"
   }
 ]

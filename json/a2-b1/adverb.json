@@ -7,7 +7,6 @@
     "kelime": "abends",
     "type": "adverb"
   },
-
   {
     "almanca": "mittags",
     "ingilizce": "at noon",
@@ -16,7 +15,6 @@
     "kelime": "mittags",
     "type": "adverb"
   },
-
   {
     "almanca": "morgens",
     "ingilizce": "in the morning",
@@ -39,6 +37,33 @@
     "seviye": "B1",
     "ornek": "Übrigens: Hast du gestern die Nachrichten geschaut?",
     "kelime": "übrigens",
+    "type": "adverb"
+  },
+  {
+    "almanca": "zuletzt",
+    "ingilizce": "most recently",
+    "seviye": "B1",
+    "ornek": "Der Einbrecher wurde zuletzt in der Heinstr. gesehen.",
+    "kelime": "zuletzt",
+    "kural": "Denk an ‚das letzte Mal‘",
+    "type": "adverb"
+  },
+  {
+    "almanca": "mehrmals",
+    "ingilizce": "several times",
+    "seviye": "B1",
+    "ornek": " Mein Sohn geht mehrmals pro Woche ins Fitnessstudio",
+    "kelime": "mehrmals",
+    "kural": "‚einmal‘, ‚zweimal‘, ‚dreimal‘…‘mehrmals‘!",
+    "type": "adverb"
+  },
+  {
+    "almanca": "quer",
+    "ingilizce": "crosswise",
+    "seviye": "B1",
+    "ornek": "Lauf einfach quer über die Wiese, das ist der kürzeste Weg.",
+    "kelime": "quer",
+    "kural": "Auf Deutsch: ‚quer‘; auf Englisch: ‚cross‘, ‚across‘, ‚transversely‘…",
     "type": "adverb"
   }
 ]
