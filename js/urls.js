@@ -23,8 +23,7 @@ const JSON_URLS_NOUN = {
 
 const JSON_URLS_VERB = {
   b1telcpt1:
-    // 'https://chatonode.github.io/genau-webflow-demo/json/a1-a2/verb.json',
-    'https://chatonode.github.io/genau-webflow-demo/json/test/verb-laura.json',
+    'https://chatonode.github.io/genau-webflow-demo/json/a1-a2/verb.json',
   b1telcpt2:
     'https://chatonode.github.io/genau-webflow-demo/json/a2-b1/verb.json',
   b1telcpt3:
