@@ -1569,9 +1569,10 @@ function navigateToPage(pageId) {
 }
 
 const clearDeprecatedLocalStorageItems = () => {
+  const currentAppVersion = "1.0.1"
   const APP_VERSION = LocalStorageManager.load('APP_VERSION', null)
-
-  if (APP_VERSION === null || APP_VERSION !== "1.0") {
+  
+  if (APP_VERSION === null || APP_VERSION !== currentAppVersion) {
     LocalStorageManager.remove('lastSelectedTopic')
     LocalStorageManager.remove('inProgressWords')
     LocalStorageManager.remove('learnedWithExerciseWords')
@@ -1580,7 +1581,7 @@ const clearDeprecatedLocalStorageItems = () => {
     LocalStorageManager.remove('correctAnswerWordsCounter')
     LocalStorageManager.remove('favoriteWords')
 
-    LocalStorageManager.save('APP_VERSION', "1.0")
+    LocalStorageManager.save('APP_VERSION', currentAppVersion)
   }
 }
 
