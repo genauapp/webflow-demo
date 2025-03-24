@@ -242,7 +242,7 @@ function showLearnElements() {
 }
 
 // Dropdown seçeneklerini dinle
-document.querySelectorAll('.dropdown-link').forEach((link) => {
+document.querySelectorAll('.level-dropdown-link').forEach((link) => {
   link.addEventListener('click', async function (event) {
     event.preventDefault()
     const selectedOption = link.getAttribute('data-option')
