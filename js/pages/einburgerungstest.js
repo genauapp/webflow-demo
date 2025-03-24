@@ -27,10 +27,12 @@ document.querySelectorAll('.state-dropdown-link').forEach((link) => {
 })
 
 document.addEventListener('DOMContentLoaded', async () => {
+  // set initial state
   currentState = "Berlin"
 
   const loadedQuestions = await loadQuestionsJson()
 
+  // set initial questions
   questions = [...loadedQuestions]
 
   console.log(questions)
