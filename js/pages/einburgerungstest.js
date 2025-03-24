@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const firstQuestion = questions[0]
 
   // show initial question
-  setLearnTabElements(1, firstQuestion.length, firstQuestion.question, firstQuestion.answers, firstQuestion.correct_answer)
+  setLearnTabElements(1, questions.length, firstQuestion.question, firstQuestion.answers, firstQuestion.correct_answer)
 
 
 })
