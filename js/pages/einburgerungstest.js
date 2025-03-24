@@ -3,7 +3,7 @@ import {
   getQuestionsByState,
 } from '../utils/einburgerungstestUtils.js'
 
-import questionsJson from '../json/einbürgerungstest.json' with { type: 'json' }
+import questionsJson from '../json/einburgerungstest/questions.json' with { type: 'json' }
 
 let currentState
 
