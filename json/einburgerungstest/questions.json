@@ -1,5 +1,18 @@
 [
   {
+    "id": 0,
+    "question": "Dummy Berlin Test Question",
+    "answers": [
+      "Test 1 Alle Einwohnerinnen/Einwohner und der Staat müssen sich an die Gesetze halten.",
+      "Test 2 Der Staat muss sich nicht an die Gesetze halten.",
+      "Test 3 Nur Deutsche müssen die Gesetze befolgen.",
+      "Test 4 Die Gerichte machen die Gesetze."
+    ],
+    "correct_answer": "Test 1 Alle Einwohnerinnen/Einwohner und der Staat müssen sich an die Gesetze halten.",
+    "state": "Berlin",
+    "image": ""
+  },
+  {
     "id": 1,
     "question": "In Deutschland dürfen Menschen offen etwas gegen die Regierung sagen, weil ...",
     "answers": [

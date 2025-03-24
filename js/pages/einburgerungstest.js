@@ -9,20 +9,20 @@ let currentState
 
 let questions
 
-const loadQuestionsJson = async () => {
-  return getQuestionsByState(questionsJson, currentState)
+const loadQuestions = async () => {
+  questions = [...getQuestionsByState(questionsJson, currentState)]
 }
 
 document.querySelectorAll('.state-dropdown-link').forEach((link) => {
   link.addEventListener('click', async function (event) {
-    // event.preventDefault()
+    event.preventDefault()
     const currentState = link.getAttribute('data-option')
 
     document.getElementById('dropdown-header').innerText = currentState
 
     console.log(currentState)
 
-    await loadQuestionsJson()
+    await loadQuestions()
   })
 })
 
@@ -30,10 +30,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // set initial state
   currentState = "Berlin"
 
-  const loadedQuestions = await loadQuestionsJson()
-
-  // set initial questions
-  questions = [...loadedQuestions]
+  await loadQuestions()
 
   console.log(questions)
 })
