@@ -7,7 +7,7 @@ import questionsJson from '../../json/einburgerungstest/questions.json' with { t
 
 let currentState
 
-const questions = []
+let questions
 
 const loadQuestionsJson = async () => {
   return getQuestionsByState(questionsJson, currentState)
