@@ -23,7 +23,7 @@ const setLearnTabElements = (questionIndex, numberOfQuestions, questionDescripti
   document.getElementById('learn-current-question-description-label').innerText = questionDescription
 
   questionAnswers.forEach((questionAnswer, i) => {
-    const answerElement = document.getElementById(`learn-current-question-answer-${i}`)
+    const answerElement = document.getElementById(`learn-current-question-answer-${i+1}`)
     answerElement.innerText = questionAnswer
 
     if (showLearnAnswers && questionAnswer === questionCorrectAnswer) {
