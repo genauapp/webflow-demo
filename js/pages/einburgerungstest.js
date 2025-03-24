@@ -1,7 +1,7 @@
 import {
   capitalize,
   getQuestionsByState,
-} from '../utils/einbürgerungstestUtils.js'
+} from '../utils/einburgerungstestUtils.js'
 
 import questionsJson from '../json/einbürgerungstest.json' with { type: 'json' }
 
