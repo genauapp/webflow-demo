@@ -1,5 +1,5 @@
-import { JSON_URLS } from '../urls.js'
-import LocalStorageManager from '../LocalStorageManager.js'
+import { JSON_URLS } from '../constants/urls.js'
+import LocalStorageManager from '../utils/LocalStorageManager.js'
 
 import va1a2 from '../../json/a1-a2/verb.json' with { type: 'json' }
 import adja1a2 from '../../json/a1-a2/adjective.json' with { type: 'json' }

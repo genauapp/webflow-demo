@@ -1,75 +1,130 @@
+import QuestionManager from '../utils/einburgerungstest/QuestionManager.js'
+
+import LocalStorageManager from '../utils/LocalStorageManager.js'
+
 import {
-  capitalize,
-  getQuestionsByState,
-} from '../utils/einburgerungstestUtils.js'
+  LEARN__STATE__QUESTION_INDEX_KEY,
+  LEARN_STATE_KEY,
+  SHOULD_SHOW_ANSWER_KEY,
+  DEFAULT_VALUE,
+} from '../constants/storageKeys.js'
 
-import questionsJson from '../../json/einburgerungstest/questions.json' with { type: 'json' }
+// On Initial Load
+document.addEventListener('DOMContentLoaded', () => {
+  // get recent local storage items
+  const currentState = LocalStorageManager.load(
+    LEARN_STATE_KEY,
+    DEFAULT_VALUE.LEARN_STATE
+  )
+  const shouldShowAnswer = LocalStorageManager.load(
+    SHOULD_SHOW_ANSWER_KEY,
+    DEFAULT_VALUE.SHOULD_SHOW_ANSWER
+  )
+  const currentLearnQuestionIndex = LocalStorageManager.load(
+    new LEARN__STATE__QUESTION_INDEX_KEY(currentState),
+    DEFAULT_VALUE.LEARN_QUESTION_INDEX
+  )
 
-// Global Variables
-let currentState
-let showLearnAnswers
-let questions
+  // get filtered questions
+  const questions = QuestionManager.getQuestionsByState(currentState)
 
-const loadQuestions = async () => {
-  questions = [...getQuestionsByState(questionsJson, currentState)]
-}
+  // show initial question
+  const recentQuestion = questions[currentLearnQuestionIndex - 1]
+  setLearnTabElements(
+    currentLearnQuestionIndex,
+    questions.length,
+    shouldShowAnswer,
+    recentQuestion
+  ) // questionIndex, totalNumberOfQuestions, shouldShowAnswer, currentQuestion
+})
 
-const setLearnTabElements = (questionIndex, numberOfQuestions, questionDescription, questionAnswers, questionCorrectAnswer) => {
+// On State Change
+document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
+  stateLink.addEventListener('click', function (event) {
+    event.preventDefault()
+    // set updated local storage item
+    const currentState = stateLink.getAttribute('data-option')
+    LocalStorageManager.save(LEARN_STATE_KEY, currentState)
+    // get recent local storage items
+    const shouldShowAnswer = LocalStorageManager.load(
+      SHOULD_SHOW_ANSWER_KEY,
+      DEFAULT_VALUE.SHOULD_SHOW_ANSWER
+    )
+    const currentLearnQuestionIndex = LocalStorageManager.load(
+      new LEARN__STATE__QUESTION_INDEX_KEY(currentState),
+      DEFAULT_VALUE.LEARN_QUESTION_INDEX
+    )
 
-  document.getElementById('learn-question-index').innerText = questionIndex
-  document.getElementById('learn-questions-length').innerText = numberOfQuestions
+    // get filtered questions
+    const questions = QuestionManager.getQuestionsByState(currentState)
 
-  document.getElementById('learn-current-question-index-label').innerText = `Aufgabe ${questionIndex}`
-  document.getElementById('learn-current-question-description-label').innerText = questionDescription
+    // update ui
+    // // show updated state header
+    document.getElementById('dropdown-header').innerText = currentState
+    // // show updated question
+    const updatedQuestion = questions[currentLearnQuestionIndex - 1]
+    setLearnTabElements(
+      currentLearnQuestionIndex,
+      questions.length,
+      shouldShowAnswer,
+      updatedQuestion
+    )
+  })
+})
 
-  questionAnswers.forEach((questionAnswer, i) => {
-    const answerElement = document.getElementById(`learn-current-question-answer-${i+1}`)
-    answerElement.innerText = questionAnswer
+// On Toggle Change
+document
+  .querySelectorAll('.toggle-option-show-hide-correct-answer')
+  .forEach((toggleOption) => {
+    toggleOption.addEventListener('click', () => {
+      if (
+        toggleOption.id === 'Off' &&
+        toggleOption.classList.contains('active')
+      ) {
+        console.log('hiding learn answers...')
+        // set updated local storage item
+        LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, false)
+      } else if (
+        toggleOption.id === 'On' &&
+        toggleOption.classList.contains('active')
+      ) {
+        console.log('showing learn answers...')
+        // set updated local storage item
+        LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, true)
+      }
+    })
+  })
 
-    if (showLearnAnswers && questionAnswer === questionCorrectAnswer) {
+/** UI Changes
+ * They CANNOT access local storage items
+ * */
+
+const setLearnTabElements = (
+  currentQuestionIndex,
+  totalNumberOfQuestions,
+  shouldShowAnswer,
+  currentQuestion
+) => {
+  document.getElementById('learn-question-index').innerText =
+    currentQuestionIndex
+  document.getElementById('learn-questions-length').innerText =
+    totalNumberOfQuestions
+
+  document.getElementById(
+    'learn-current-question-index-label'
+  ).innerText = `Aufgabe ${currentQuestionIndex}`
+  document.getElementById(
+    'learn-current-question-description-label'
+  ).innerText = currentQuestion.question
+
+  currentQuestion.answers.forEach((answer, i) => {
+    const answerElement = document.getElementById(
+      `learn-current-question-answer-${i + 1}`
+    )
+    answerElement.innerText = answer
+
+    if (shouldShowAnswer && answer === currentQuestion.correct_answer) {
       answerElement.style.backgroundColor === '#0cac92'
     }
   })
 }
-
-document.querySelectorAll('.toggle-option-show-hide-correct-answer').forEach((toggleOption) => {
-  toggleOption.addEventListener('click', () => {
-    if (toggleOption.id === "Off" && toggleOption.classList.contains("active")) {
-      console.log("hiding learn answers...")
-      showLearnAnswers = false
-    } else if (toggleOption.id === "On" && toggleOption.classList.contains("active")) {
-      console.log("showing learn answers...")
-      showLearnAnswers = true
-    }
-  })
-})
-
-document.querySelectorAll('.state-dropdown-link').forEach((link) => {
-  link.addEventListener('click', async function (event) {
-    event.preventDefault()
-    currentState = link.getAttribute('data-option')
-
-    document.getElementById('dropdown-header').innerText = currentState
-
-    console.log(currentState)
-
-    await loadQuestions()
-  })
-})
-
-document.addEventListener('DOMContentLoaded', async () => {
-  // set initial state
-  currentState = "Berlin"
-  showLearnAnswers = false
-
-  await loadQuestions()
-
-  console.log(questions)
-
-  const firstQuestion = questions[0]
-
-  // show initial question
-  setLearnTabElements(1, questions.length, firstQuestion.question, firstQuestion.answers, firstQuestion.correct_answer)
-
-
-})
