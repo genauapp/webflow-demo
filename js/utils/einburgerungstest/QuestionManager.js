@@ -1,7 +1,8 @@
 import questionsJson from '../../../json/einburgerungstest/questions.json' with { type: 'json' }
+import { STATE_NATIONWIDE } from '../../constants/states'
 
 export default class QuestionManager {
-  static getQuestionsByState = (state) => {
+  static getLearnQuestionsByState = (state) => {
     const questions = questionsJson
 
     if (
@@ -13,10 +14,20 @@ export default class QuestionManager {
       return []
     }
 
-    const questionsByState = questions.filter(
-      (question) => question.state === state
+    const learnQuestionsByNationwide = questions.filter(
+      (question) => question.state === STATE_NATIONWIDE
     )
 
-    return questionsByState
+    // TODO
+    // const learnQuestionsByState = questions.filter(
+    //   (question) => question.state === state
+    // )
+
+    const learnQuestions = [
+      ...learnQuestionsByNationwide,
+      // ...learnQuestionsByState
+    ]
+
+    return learnQuestions
   }
 }

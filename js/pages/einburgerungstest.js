@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   )
 
   // get filtered questions
-  const questions = QuestionManager.getQuestionsByState(currentState)
+  const questions = QuestionManager.getLearnQuestionsByState(currentState)
 
   // show initial question
   const recentQuestion = questions[currentLearnQuestionIndex - 1]
@@ -56,7 +56,7 @@ document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
     )
 
     // get filtered questions
-    const questions = QuestionManager.getQuestionsByState(currentState)
+    const questions = QuestionManager.getLearnQuestionsByState(currentState)
 
     // update ui
     // // show updated state header
