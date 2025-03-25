@@ -1,5 +1,5 @@
 import questionsJson from '../../../json/einburgerungstest/questions.json' with { type: 'json' }
-import { STATE_NATIONWIDE } from '../../constants/states'
+import { STATE_NATIONWIDE } from '../../constants/states.js'
 
 export default class QuestionManager {
   static getLearnQuestionsByState = (state) => {
