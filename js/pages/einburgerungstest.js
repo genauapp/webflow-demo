@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     questions.length,
     shouldShowAnswer,
     recentQuestion
-  ) // questionIndex, totalNumberOfQuestions, shouldShowAnswer, currentQuestion
+  )
 })
 
 // On State Change
@@ -73,30 +73,8 @@ document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
 })
 
 // On Toggle Change
-// document
-//   .querySelectorAll('.toggle-option-show-hide-correct-answer')
-//   .forEach((toggleOption) => {
-//     toggleOption.addEventListener('click', () => {
-//       if (
-//         toggleOption.id === 'Off' &&
-//         toggleOption.classList.contains('active')
-//       ) {
-//         console.log('hiding learn answers...')
-//         // set updated local storage item
-//         LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, false)
-//       } else if (
-//         toggleOption.id === 'On' &&
-//         toggleOption.classList.contains('active')
-//       ) {
-//         console.log('showing learn answers...')
-//         // set updated local storage item
-//         LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, true)
-//       }
-//     })
-//   })
-
 document
-  .getelementById('should-show-answer-switch')
+  .getElementById('should-show-answer-switch')
   .addEventListener('click', () => {
     const offOptionElement = document.getElementById('hide-answers-option')
     const onOptionElement = document.getElementById('show-answers-option')
