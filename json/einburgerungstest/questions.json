@@ -1585,7 +1585,7 @@
     "id": 130,
     "question": "Welcher Stimmzettel wäre bei einer Bundestagswahl gültig?",
     "answers": ["1", "2", "3", "4"],
-    "correctAnswer": "4",
+    "correct_answer": "4",
     "state": "Bundesweit",
     "image": "true"
   },
@@ -1663,7 +1663,7 @@
       "Selbstständige",
       "Arbeitnehmerinnen und Arbeitnehmer"
     ],
-    "correctAnswer": "Arbeitnehmerinnen und Arbeitnehmer",
+    "correct_answer": "Arbeitnehmerinnen und Arbeitnehmer",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1676,7 +1676,7 @@
       "Problemen mit den Nachbarinnen/Nachbarn.",
       "Schwierigkeiten nach einem Verkehrsunfall."
     ],
-    "correctAnswer": "ungerechtfertigter Kündigung durch Ihre Chefin/Ihren Chef.",
+    "correct_answer": "ungerechtfertigter Kündigung durch Ihre Chefin/Ihren Chef.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1689,7 +1689,7 @@
       "das Arbeitsgericht",
       "das Amtsgericht"
     ],
-    "correctAnswer": "das Arbeitsgericht",
+    "correct_answer": "das Arbeitsgericht",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1702,7 +1702,7 @@
       "Kündigungsschutzklage erheben",
       "die Arbeitgeberin/den Arbeitgeber bei der Polizei anzeigen"
     ],
-    "correctAnswer": "Kündigungsschutzklage erheben",
+    "correct_answer": "Kündigungsschutzklage erheben",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1715,7 +1715,7 @@
       "eine andere Meinung als die der Regierung vertritt.",
       "sein Auto falsch geparkt hat und es abgeschleppt wird."
     ],
-    "correctAnswer": "eine Straftat begangen hat und angeklagt wird.",
+    "correct_answer": "eine Straftat begangen hat und angeklagt wird.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1728,7 +1728,7 @@
       "stellt Urkunden aus.",
       "verteidigt die Angeklagte/den Angeklagten."
     ],
-    "correctAnswer": "entscheidet mit Richterinnen/Richtern über Schuld und Strafe.",
+    "correct_answer": "entscheidet mit Richterinnen/Richtern über Schuld und Strafe.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1741,7 +1741,7 @@
       "eine Schöffin/ein Schöffe",
       "eine Staatsanwältin/ein Staatsanwalt"
     ],
-    "correctAnswer": "eine Rechtsanwältin/ein Rechtsanwalt",
+    "correct_answer": "eine Rechtsanwältin/ein Rechtsanwalt",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1754,7 +1754,7 @@
       "ändert Gesetze.",
       "betreut Jugendliche vor Gericht."
     ],
-    "correctAnswer": "arbeitet an einem Gericht und spricht Urteile.",
+    "correct_answer": "arbeitet an einem Gericht und spricht Urteile.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1762,7 +1762,7 @@
     "id": 143,
     "question": "Eine Richterin/ein Richter in Deutschland gehört zur …",
     "answers": ["Judikative.", "Exekutive.", "Operative.", "Legislative."],
-    "correctAnswer": "Judikative.",
+    "correct_answer": "Judikative.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1775,7 +1775,7 @@
       "planenden Gewalt.",
       "gesetzgebenden Gewalt."
     ],
-    "correctAnswer": "rechtsprechenden Gewalt.",
+    "correct_answer": "rechtsprechenden Gewalt.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1783,7 +1783,7 @@
     "id": 145,
     "question": "In Deutschland wird die Staatsgewalt geteilt. Für welche Staatsgewalt arbeitet eine Richterin/ein Richter? Für die …",
     "answers": ["Judikative", "Exekutive", "Presse", "Legislative"],
-    "correctAnswer": "Judikative",
+    "correct_answer": "Judikative",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1791,7 +1791,7 @@
     "id": 146,
     "question": "Wie nennt man in Deutschland ein Verfahren vor einem Gericht?",
     "answers": ["Programm", "Prozedur", "Protokoll", "Prozess"],
-    "correctAnswer": "Prozess",
+    "correct_answer": "Prozess",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1804,7 +1804,7 @@
       "Pläne erstellen",
       "Gesetze erlassen"
     ],
-    "correctAnswer": "Recht sprechen",
+    "correct_answer": "Recht sprechen",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1817,7 +1817,7 @@
       "die Gesetze zu beschließen",
       "die Einhaltung von Gesetzen zu überwachen"
     ],
-    "correctAnswer": "die Einhaltung von Gesetzen zu überwachen",
+    "correct_answer": "die Einhaltung von Gesetzen zu überwachen",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1830,7 +1830,7 @@
       "den Holocaust leugnen",
       "gegen Juden Fußball spielen"
     ],
-    "correctAnswer": "den Holocaust leugnen",
+    "correct_answer": "den Holocaust leugnen",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1843,7 +1843,7 @@
       "ein Mitglied eines Gemeinderats.",
       "eine Person, die Jura studiert hat."
     ],
-    "correctAnswer": "eine ehrenamtliche Richterin/ein ehrenamtlicher Richter.",
+    "correct_answer": "eine ehrenamtliche Richterin/ein ehrenamtlicher Richter.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1856,7 +1856,7 @@
       "die Bundesrepublik Deutschland",
       "die USA"
     ],
-    "correctAnswer": "die DDR",
+    "correct_answer": "die DDR",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1869,7 +1869,7 @@
       "1933 bis 1945",
       "1945 bis 1989"
     ],
-    "correctAnswer": "1933 bis 1945",
+    "correct_answer": "1933 bis 1945",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1882,7 +1882,7 @@
       "Wahl von Konrad Adenauer zum Bundeskanzler",
       "Ende des Zweiten Weltkriegs in Europa"
     ],
-    "correctAnswer": "Ende des Zweiten Weltkriegs in Europa",
+    "correct_answer": "Ende des Zweiten Weltkriegs in Europa",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1890,7 +1890,7 @@
     "id": 154,
     "question": "Wann war der Zweite Weltkrieg zu Ende?",
     "answers": ["1933", "1945", "1949", "1961"],
-    "correctAnswer": "1945",
+    "correct_answer": "1945",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1903,7 +1903,7 @@
       "1933 bis 1945",
       "1949 bis 1963"
     ],
-    "correctAnswer": "1933 bis 1945",
+    "correct_answer": "1933 bis 1945",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1911,7 +1911,7 @@
     "id": 156,
     "question": "In welchem Jahr wurde Hitler Reichskanzler?",
     "answers": ["1923", "1927", "1933", "1936"],
-    "correctAnswer": "1933",
+    "correct_answer": "1933",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1924,7 +1924,7 @@
       "eine Monarchie.",
       "ein Fürstentum."
     ],
-    "correctAnswer": "eine Diktatur.",
+    "correct_answer": "eine Diktatur.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1932,7 +1932,7 @@
     "id": 158,
     "question": "Das \"Dritte Reich\" war eine …",
     "answers": ["Diktatur.", "Demokratie.", "Monarchie.", "Räterepublik."],
-    "correctAnswer": "Diktatur.",
+    "correct_answer": "Diktatur.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1945,7 +1945,7 @@
       "willkürliche Verhaftungen",
       "Verfolgung von Juden"
     ],
-    "correctAnswer": "freie Wahlen",
+    "correct_answer": "freie Wahlen",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1958,7 +1958,7 @@
       "der Vietnamkrieg",
       "der Golfkrieg"
     ],
-    "correctAnswer": "der Zweite Weltkrieg",
+    "correct_answer": "der Zweite Weltkrieg",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1971,7 +1971,7 @@
       "der allgemeinen Religionsfreiheit",
       "der Entwicklung der Demokratie"
     ],
-    "correctAnswer": "des staatlichen Rassismus",
+    "correct_answer": "des staatlichen Rassismus",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1984,7 +1984,7 @@
       "den Aufbau der Wehrmacht.",
       "das Attentat auf Hitler am 20. Juli 1944."
     ],
-    "correctAnswer": "das Attentat auf Hitler am 20. Juli 1944.",
+    "correct_answer": "das Attentat auf Hitler am 20. Juli 1944.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -1992,7 +1992,7 @@
     "id": 163,
     "question": "In welchem Jahr zerstörten die Nationalsozialisten Synagogen und jüdische Geschäfte in Deutschland?",
     "answers": ["1925", "1930", "1938", "1945"],
-    "correctAnswer": "1938",
+    "correct_answer": "1938",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2005,7 +2005,7 @@
       "Jüdische Geschäfte und Synagogen werden durch Nationalsozialisten und ihre Anhänger zerstört.",
       "Hitler wird Reichspräsident und lässt alle Parteien verbieten."
     ],
-    "correctAnswer": "Jüdische Geschäfte und Synagogen werden durch Nationalsozialisten und ihre Anhänger zerstört.",
+    "correct_answer": "Jüdische Geschäfte und Synagogen werden durch Nationalsozialisten und ihre Anhänger zerstört.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2018,7 +2018,7 @@
       "Helmut Schmidt",
       "Willy Brandt"
     ],
-    "correctAnswer": "Konrad Adenauer",
+    "correct_answer": "Konrad Adenauer",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2031,7 +2031,7 @@
       "bei den Anti-Atomkraft-Demonstrationen 1985 in der Bundesrepublik Deutschland",
       "bei den Montagsdemonstrationen 1989 in der DDR"
     ],
-    "correctAnswer": "bei den Montagsdemonstrationen 1989 in der DDR",
+    "correct_answer": "bei den Montagsdemonstrationen 1989 in der DDR",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2044,7 +2044,7 @@
       "USA, Sowjetunion, Spanien, Portugal",
       "USA, Sowjetunion, Großbritannien, Frankreich"
     ],
-    "correctAnswer": "USA, Sowjetunion, Großbritannien, Frankreich",
+    "correct_answer": "USA, Sowjetunion, Großbritannien, Frankreich",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2052,7 +2052,7 @@
     "id": 168,
     "question": "Welches Land war keine \"Alliierte Besatzungsmacht\" in Deutschland?",
     "answers": ["USA", "Sowjetunion", "Frankreich", "Japan"],
-    "correctAnswer": "Japan",
+    "correct_answer": "Japan",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2060,7 +2060,7 @@
     "id": 169,
     "question": "Wann wurde die Bundesrepublik Deutschland gegründet?",
     "answers": ["1939", "1945", "1949", "1951"],
-    "correctAnswer": "1949",
+    "correct_answer": "1949",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2073,7 +2073,7 @@
       "Pressefreiheit",
       "den Schutz der Menschenwürde"
     ],
-    "correctAnswer": "das Verbot von Parteien",
+    "correct_answer": "das Verbot von Parteien",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2086,7 +2086,7 @@
       "richtet sich nach der Nachfrage im Ausland.",
       "richtet sich nach Angebot und Nachfrage, aber der Staat sorgt für einen sozialen Ausgleich."
     ],
-    "correctAnswer": "richtet sich nach Angebot und Nachfrage, aber der Staat sorgt für einen sozialen Ausgleich.",
+    "correct_answer": "richtet sich nach Angebot und Nachfrage, aber der Staat sorgt für einen sozialen Ausgleich.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2099,7 +2099,7 @@
       "britischen Besatzungszone",
       "sowjetischen Besatzungszone"
     ],
-    "correctAnswer": "sowjetischen Besatzungszone",
+    "correct_answer": "sowjetischen Besatzungszone",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2112,7 +2112,7 @@
       "der Europäischen Union (EU).",
       "des Warschauer Pakts."
     ],
-    "correctAnswer": "des Nordatlantikpakts (NATO).",
+    "correct_answer": "des Nordatlantikpakts (NATO).",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2120,7 +2120,7 @@
     "id": 174,
     "question": "Wann wurde die DDR gegründet?",
     "answers": ["1947", "1949", "1953", "1956"],
-    "correctAnswer": "1949",
+    "correct_answer": "1949",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2128,7 +2128,7 @@
     "id": 175,
     "question": "Wie viele Besatzungszonen gab es in Deutschland nach dem Zweiten Weltkrieg?",
     "answers": ["3", "4", "5", "6"],
-    "correctAnswer": "4",
+    "correct_answer": "4",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2141,7 +2141,7 @@
       "1=Großbritannien, 2=Sowjetunion, 3=USA, 4=Frankreich",
       "1=Großbritannien, 2=USA, 3=Sowjetunion, 4=Frankreich"
     ],
-    "correctAnswer": "1=Großbritannien, 2=Sowjetunion, 3=USA, 4=Frankreich",
+    "correct_answer": "1=Großbritannien, 2=Sowjetunion, 3=USA, 4=Frankreich",
     "state": "Bundesweit",
     "image": "true"
   },
@@ -2149,7 +2149,7 @@
     "id": 177,
     "question": "Welche deutsche Stadt wurde nach dem Zweiten Weltkrieg in vier Sektoren aufgeteilt?",
     "answers": ["München", "Berlin", "Dresden", "Frankfurt/Oder"],
-    "correctAnswer": "Berlin",
+    "correct_answer": "Berlin",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2162,7 +2162,7 @@
       "Für Großbritannien war die Versorgung über die Luftbrücke schneller.",
       "Die Sowjetunion unterbrach den gesamten Verkehr auf dem Landwege."
     ],
-    "correctAnswer": "Die Sowjetunion unterbrach den gesamten Verkehr auf dem Landwege.",
+    "correct_answer": "Die Sowjetunion unterbrach den gesamten Verkehr auf dem Landwege.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2175,7 +2175,7 @@
       "mit dem Rückzug der Deutschen aus den besetzten Gebieten",
       "durch eine Revolution in Deutschland"
     ],
-    "correctAnswer": "durch die bedingungslose Kapitulation Deutschlands",
+    "correct_answer": "durch die bedingungslose Kapitulation Deutschlands",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2188,7 +2188,7 @@
       "Konrad Adenauer.",
       "Gerhard Schröder."
     ],
-    "correctAnswer": "Konrad Adenauer.",
+    "correct_answer": "Konrad Adenauer.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2201,7 +2201,7 @@
       "Er zeigte seine Demut vor dem Warschauer Pakt.",
       "Er sprach ein Gebet am Grab des Unbekannten Soldaten."
     ],
-    "correctAnswer": "Er bat Polen und die polnischen Juden um Vergebung.",
+    "correct_answer": "Er bat Polen und die polnischen Juden um Vergebung.",
     "state": "Bundesweit",
     "image": "true"
   },
@@ -2209,7 +2209,7 @@
     "id": 182,
     "question": "Wie heißt das jüdische Gebetshaus?",
     "answers": ["Basilika", "Moschee", "Synagoge", "Kirche"],
-    "correctAnswer": "Synagoge",
+    "correct_answer": "Synagoge",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2217,7 +2217,7 @@
     "id": 183,
     "question": "Wann war in der Bundesrepublik Deutschland das \"Wirtschaftswunder\"?",
     "answers": ["40er Jahre", "50er Jahre", "70er Jahre", "80er Jahre"],
-    "correctAnswer": "50er Jahre",
+    "correct_answer": "50er Jahre",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2230,7 +2230,7 @@
       "ein Vorschlag der Bundesregierung",
       "ein Vorschlag der UdSSR"
     ],
-    "correctAnswer": "eine Resolution der Vereinten Nationen",
+    "correct_answer": "eine Resolution der Vereinten Nationen",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2243,7 +2243,7 @@
       "Nazi-Deutschlands gegen die Alliierten",
       "Europas gegen die USA"
     ],
-    "correctAnswer": "des Warschauer Pakts gegen den Westen",
+    "correct_answer": "des Warschauer Pakts gegen den Westen",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2251,7 +2251,7 @@
     "id": 186,
     "question": "Im Jahr 1953 gab es in der DDR einen Aufstand, an den lange Zeit in der Bundesrepublik Deutschland ein Feiertag erinnerte. Wann war das?",
     "answers": ["1. Mai", "17. Juni", "20. Juli", "9. November"],
-    "correctAnswer": "17. Juni",
+    "correct_answer": "17. Juni",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2264,7 +2264,7 @@
       "\"Drittes Reich\"",
       "DDR"
     ],
-    "correctAnswer": "DDR",
+    "correct_answer": "DDR",
     "state": "Bundesweit",
     "image": "true"
   },
@@ -2272,7 +2272,7 @@
     "id": 188,
     "question": "In welchem Jahr wurde die Mauer in Berlin gebaut?",
     "answers": ["1953", "1956", "1959", "1961"],
-    "correctAnswer": "1961",
+    "correct_answer": "1961",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2280,7 +2280,7 @@
     "id": 189,
     "question": "Wann baute die DDR die Mauer in Berlin?",
     "answers": ["1919", "1933", "1961", "1990"],
-    "correctAnswer": "1961",
+    "correct_answer": "1961",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2293,7 +2293,7 @@
       "Dritte Deutsche Republik",
       "Deutsche Demokratische Republik"
     ],
-    "correctAnswer": "Deutsche Demokratische Republik",
+    "correct_answer": "Deutsche Demokratische Republik",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2301,7 +2301,7 @@
     "id": 191,
     "question": "Wann wurde die Mauer in Berlin für alle geöffnet?",
     "answers": ["1987", "1989", "1992", "1995"],
-    "correctAnswer": "1989",
+    "correct_answer": "1989",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2309,7 +2309,7 @@
     "id": 192,
     "question": "Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?",
     "answers": ["Brandenburg", "Bayern", "Saarland", "Hessen"],
-    "correctAnswer": "Brandenburg",
+    "correct_answer": "Brandenburg",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2322,7 +2322,7 @@
       "durch eine Mauer geteilt.",
       "nur mit dem Flugzeug erreichbar."
     ],
-    "correctAnswer": "durch eine Mauer geteilt.",
+    "correct_answer": "durch eine Mauer geteilt.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2330,7 +2330,7 @@
     "id": 194,
     "question": "Am 3. Oktober feiert man in Deutschland den Tag der Deutschen …",
     "answers": ["Einheit.", "Nation.", "Bundesländer.", "Städte."],
-    "correctAnswer": "Einheit.",
+    "correct_answer": "Einheit.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2338,7 +2338,7 @@
     "id": 195,
     "question": "Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?",
     "answers": ["Hessen", "Sachsen-Anhalt", "Nordrhein-Westfalen", "Saarland"],
-    "correctAnswer": "Sachsen-Anhalt",
+    "correct_answer": "Sachsen-Anhalt",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2351,7 +2351,7 @@
       "von einer Monarchie zur Sozialdemokratie.",
       "von einem religiösen Staat zu einem kommunistischen Staat."
     ],
-    "correctAnswer": "von einer Diktatur zur Demokratie.",
+    "correct_answer": "von einer Diktatur zur Demokratie.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2359,7 +2359,7 @@
     "id": 197,
     "question": "Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?",
     "answers": ["Thüringen", "Hessen", "Bayern", "Bremen"],
-    "correctAnswer": "Thüringen",
+    "correct_answer": "Thüringen",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2367,7 +2367,7 @@
     "id": 198,
     "question": "Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?",
     "answers": ["Bayern", "Niedersachsen", "Sachsen", "Baden-Württemberg"],
-    "correctAnswer": "Sachsen",
+    "correct_answer": "Sachsen",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2380,7 +2380,7 @@
       "eine regierende Partei.",
       "das Ministerium für Volksbildung."
     ],
-    "correctAnswer": "das Ministerium für Staatssicherheit.",
+    "correct_answer": "das Ministerium für Staatssicherheit.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2393,7 +2393,7 @@
       "Mecklenburg-Vorpommern",
       "Saarland"
     ],
-    "correctAnswer": "Mecklenburg-Vorpommern",
+    "correct_answer": "Mecklenburg-Vorpommern",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2406,7 +2406,7 @@
       "Bayern, Baden-Württemberg, Rheinland-Pfalz, Thüringen, Sachsen",
       "Sachsen, Thüringen, Hessen, Niedersachen, Brandenburg"
     ],
-    "correctAnswer": "Mecklenburg-Vorpommern, Brandenburg, Sachsen, Sachsen-Anhalt, Thüringen",
+    "correct_answer": "Mecklenburg-Vorpommern, Brandenburg, Sachsen, Sachsen-Anhalt, Thüringen",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2419,7 +2419,7 @@
       "zur NATO",
       "zu den blockfreien Staaten"
     ],
-    "correctAnswer": "zum Warschauer Pakt",
+    "correct_answer": "zum Warschauer Pakt",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2432,7 +2432,7 @@
       "Angebot und Nachfrage",
       "Kapitalismus"
     ],
-    "correctAnswer": "Planwirtschaft",
+    "correct_answer": "Planwirtschaft",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2445,7 +2445,7 @@
       "Die westlichen Bundesländer sind der DDR beigetreten.",
       "Die DDR hat die Bundesrepublik Deutschland besetzt."
     ],
-    "correctAnswer": "Die heutigen fünf östlichen Bundesländer sind der Bundesrepublik Deutschland beigetreten.",
+    "correct_answer": "Die heutigen fünf östlichen Bundesländer sind der Bundesrepublik Deutschland beigetreten.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2458,7 +2458,7 @@
       "zur OPEC.",
       "zur Europäischen Verteidigungsgemeinschaft."
     ],
-    "correctAnswer": "zur Europäischen Union.",
+    "correct_answer": "zur Europäischen Union.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2471,7 +2471,7 @@
       "an Verkehrstote",
       "an bekannte jüdische Musiker"
     ],
-    "correctAnswer": "an die Opfer des Nationalsozialismus",
+    "correct_answer": "an die Opfer des Nationalsozialismus",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2484,7 +2484,7 @@
       "im Warschauer Pakt",
       "im Europabündnis"
     ],
-    "correctAnswer": "im Warschauer Pakt",
+    "correct_answer": "im Warschauer Pakt",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2497,7 +2497,7 @@
       "der Geheimdienst der DDR",
       "ein deutscher Sportverein während des Zweiten Weltkrieges"
     ],
-    "correctAnswer": "der Geheimdienst der DDR",
+    "correct_answer": "der Geheimdienst der DDR",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2505,7 +2505,7 @@
     "id": 209,
     "question": "Welches war das Wappen der Deutschen Demokratischen Republik?",
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
-    "correctAnswer": "Bild 3",
+    "correct_answer": "Bild 3",
     "state": "Bundesweit",
     "image": "true"
   },
@@ -2518,7 +2518,7 @@
       "der 1. SED-Parteitag",
       "der erste Besuch Fidel Castros"
     ],
-    "correctAnswer": "landesweite Streiks und ein Volksaufstand",
+    "correct_answer": "landesweite Streiks und ein Volksaufstand",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2531,7 +2531,7 @@
       "Michail Gorbatschow",
       "Ludwig Erhard"
     ],
-    "correctAnswer": "Willy Brandt",
+    "correct_answer": "Willy Brandt",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2544,7 +2544,7 @@
       "Bundesrepublik Deutschland",
       "Bundesbezirk Deutschland"
     ],
-    "correctAnswer": "Bundesrepublik Deutschland",
+    "correct_answer": "Bundesrepublik Deutschland",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2552,7 +2552,7 @@
     "id": 213,
     "question": "Wie viele Einwohner hat Deutschland?",
     "answers": ["70 Millionen", "78 Millionen", "84 Millionen", "90 Millionen"],
-    "correctAnswer": "84 Millionen",
+    "correct_answer": "84 Millionen",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2565,7 +2565,7 @@
       "schwarz-rot-grün",
       "schwarz-gelb-rot"
     ],
-    "correctAnswer": "schwarz-rot-gold",
+    "correct_answer": "schwarz-rot-gold",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2578,7 +2578,7 @@
       "Konrad Adenauer",
       "Helmut Schmidt"
     ],
-    "correctAnswer": "Helmut Kohl",
+    "correct_answer": "Helmut Kohl",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2591,7 +2591,7 @@
       "der Reichsadler",
       "die Reichskrone"
     ],
-    "correctAnswer": "der Bundesadler",
+    "correct_answer": "der Bundesadler",
     "state": "Bundesweit",
     "image": "true"
   },
@@ -2604,7 +2604,7 @@
       "1945 bis 1961",
       "1949 bis 1990"
     ],
-    "correctAnswer": "1949 bis 1990",
+    "correct_answer": "1949 bis 1990",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2612,7 +2612,7 @@
     "id": 218,
     "question": "Wie viele Bundesländer kamen bei der Wiedervereinigung 1990 zur Bundesrepublik Deutschland hinzu?",
     "answers": ["4", "5", "6", "7"],
-    "correctAnswer": "5",
+    "correct_answer": "5",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2620,7 +2620,7 @@
     "id": 219,
     "question": "Die Bundesrepublik Deutschland hat die Grenzen von heute seit …",
     "answers": ["1933", "1949", "1971", "1990"],
-    "correctAnswer": "1990",
+    "correct_answer": "1990",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2633,7 +2633,7 @@
       "an die Wiedervereinigung Deutschlands",
       "an die Opfer des Nationalsozialismus (Tag der Befreiung des Vernichtungslagers Auschwitz)"
     ],
-    "correctAnswer": "an die Opfer des Nationalsozialismus (Tag der Befreiung des Vernichtungslagers Auschwitz)",
+    "correct_answer": "an die Opfer des Nationalsozialismus (Tag der Befreiung des Vernichtungslagers Auschwitz)",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2646,7 +2646,7 @@
       "Deutsche können ohne Passkontrolle in jedes Land reisen.",
       "Deutsche können in jedem Land mit dem Euro bezahlen."
     ],
-    "correctAnswer": "Deutsche können in viele Länder Europas ohne Passkontrolle reisen.",
+    "correct_answer": "Deutsche können in viele Länder Europas ohne Passkontrolle reisen.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2654,7 +2654,7 @@
     "id": 222,
     "question": "Welches Land ist ein Nachbarland von Deutschland?",
     "answers": ["Ungarn", "Portugal", "Spanien", "Schweiz"],
-    "correctAnswer": "Schweiz",
+    "correct_answer": "Schweiz",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2662,7 +2662,7 @@
     "id": 223,
     "question": "Welches Land ist ein Nachbarland von Deutschland?",
     "answers": ["Rumänien", "Bulgarien", "Polen", "Griechenland"],
-    "correctAnswer": "Polen",
+    "correct_answer": "Polen",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2675,7 +2675,7 @@
       "Einheitliche Union",
       "Euro Union"
     ],
-    "correctAnswer": "Europäische Union",
+    "correct_answer": "Europäische Union",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2683,7 +2683,7 @@
     "id": 225,
     "question": "In welchem anderen Land gibt es eine große deutschsprachige Bevölkerung?",
     "answers": ["Tschechien", "Norwegen", "Spanien", "Österreich"],
-    "correctAnswer": "Österreich",
+    "correct_answer": "Österreich",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2691,7 +2691,7 @@
     "id": 226,
     "question": "Welche ist die Flagge der Europäischen Union?",
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
-    "correctAnswer": "Bild 1",
+    "correct_answer": "Bild 1",
     "state": "Bundesweit",
     "image": "true"
   },
@@ -2699,7 +2699,7 @@
     "id": 227,
     "question": "Welches Land ist ein Nachbarland von Deutschland?",
     "answers": ["Finnland", "Dänemark", "Norwegen", "Schweden"],
-    "correctAnswer": "Dänemark",
+    "correct_answer": "Dänemark",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2712,7 +2712,7 @@
       "Deutsche Wiedervereinigung",
       "Europäische Gemeinschaft"
     ],
-    "correctAnswer": "Deutsche Wiedervereinigung",
+    "correct_answer": "Deutsche Wiedervereinigung",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2720,7 +2720,7 @@
     "id": 229,
     "question": "Welches Land ist ein Nachbarland von Deutschland?",
     "answers": ["Spanien", "Bulgarien", "Norwegen", "Luxemburg"],
-    "correctAnswer": "Luxemburg",
+    "correct_answer": "Luxemburg",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2728,7 +2728,7 @@
     "id": 230,
     "question": "Das Europäische Parlament wird regelmäßig gewählt, nämlich alle …",
     "answers": ["5 Jahre.", "6 Jahre.", "7 Jahre.", "8 Jahre."],
-    "correctAnswer": "5 Jahre.",
+    "correct_answer": "5 Jahre.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2741,7 +2741,7 @@
       "Damit sind europäische Auswanderinnen und Auswanderer in den USA gemeint.",
       "Der Begriff meint den Zusammenschluss europäischer Staaten zur EU."
     ],
-    "correctAnswer": "Der Begriff meint den Zusammenschluss europäischer Staaten zur EU.",
+    "correct_answer": "Der Begriff meint den Zusammenschluss europäischer Staaten zur EU.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2754,7 +2754,7 @@
       "die Abgeordneten des Europäischen Parlaments",
       "die europäische Verfassung"
     ],
-    "correctAnswer": "die Abgeordneten des Europäischen Parlaments",
+    "correct_answer": "die Abgeordneten des Europäischen Parlaments",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2762,7 +2762,7 @@
     "id": 233,
     "question": "Welches Land ist ein Nachbarland von Deutschland?",
     "answers": ["Tschechien", "Bulgarien", "Griechenland", "Portugal"],
-    "correctAnswer": "Tschechien",
+    "correct_answer": "Tschechien",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2770,7 +2770,7 @@
     "id": 234,
     "question": "Wo ist der Sitz des Europäischen Parlaments?",
     "answers": ["London", "Paris", "Berlin", "Straßburg"],
-    "correctAnswer": "Straßburg",
+    "correct_answer": "Straßburg",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2783,7 +2783,7 @@
       "Frieden und Sicherheit in den Ländern der EU",
       "einheitliche Feiertage in den Ländern der EU"
     ],
-    "correctAnswer": "Frieden und Sicherheit in den Ländern der EU",
+    "correct_answer": "Frieden und Sicherheit in den Ländern der EU",
     "state": "Bundesweit",
     "image": "true"
   },
@@ -2791,7 +2791,7 @@
     "id": 236,
     "question": "Wie viele Mitgliedstaaten hat die EU heute?",
     "answers": ["21", "23", "25", "27"],
-    "correctAnswer": "27",
+    "correct_answer": "27",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2804,7 +2804,7 @@
       "Verpflichtung Deutschlands zu Reparationsleistungen",
       "Festlegung der Oder-Neiße-Linie als Ostgrenze"
     ],
-    "correctAnswer": "Gründung der Europäischen Wirtschaftsgemeinschaft (EWG)",
+    "correct_answer": "Gründung der Europäischen Wirtschaftsgemeinschaft (EWG)",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2817,7 +2817,7 @@
       "Rom, Bern und Wien",
       "Bonn, Zürich und Mailand"
     ],
-    "correctAnswer": "Straßburg, Luxemburg und Brüssel",
+    "correct_answer": "Straßburg, Luxemburg und Brüssel",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2830,7 +2830,7 @@
       "durch die \"Pariser Verträge\"",
       "durch die \"Londoner Verträge\""
     ],
-    "correctAnswer": "durch die \"Römischen Verträge\"",
+    "correct_answer": "durch die \"Römischen Verträge\"",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2838,7 +2838,7 @@
     "id": 240,
     "question": "Seit wann bezahlt man in Deutschland mit dem Euro in bar?",
     "answers": ["1995", "1998", "2002", "2005"],
-    "correctAnswer": "2002",
+    "correct_answer": "2002",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2851,7 +2851,7 @@
       "Sie muss nichts tun, denn sie bekommt automatisch Elterngeld.",
       "Sie muss das Arbeitsamt um Erlaubnis bitten."
     ],
-    "correctAnswer": "Sie muss einen Antrag bei der Elterngeldstelle stellen.",
+    "correct_answer": "Sie muss einen Antrag bei der Elterngeldstelle stellen.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2864,7 +2864,7 @@
       "die Eltern/die Erziehungsberechtigten",
       "die Schulen"
     ],
-    "correctAnswer": "die Eltern/die Erziehungsberechtigten",
+    "correct_answer": "die Eltern/die Erziehungsberechtigten",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2877,7 +2877,7 @@
       "Sie können gar nichts tun, denn Demonstrationen sind in Deutschland grundsätzlich verboten.",
       "Maik und Sybille müssen einen neuen Verein gründen, weil nur Vereine demonstrieren dürfen."
     ],
-    "correctAnswer": "Sie müssen die Demonstration anmelden.",
+    "correct_answer": "Sie müssen die Demonstration anmelden.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2890,7 +2890,7 @@
       "die Prokura",
       "eine Gesellenprüfung"
     ],
-    "correctAnswer": "das Abitur",
+    "correct_answer": "das Abitur",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2903,7 +2903,7 @@
       "Sofie (35 Jahre) und Lisa (40 Jahre)",
       "Anne (13 Jahre) und Tim (25 Jahre)"
     ],
-    "correctAnswer": "Anne (13 Jahre) und Tim (25 Jahre)",
+    "correct_answer": "Anne (13 Jahre) und Tim (25 Jahre)",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2911,7 +2911,7 @@
     "id": 246,
     "question": "Ab welchem Alter ist man in Deutschland volljährig?",
     "answers": ["16", "18", "19", "21"],
-    "correctAnswer": "18",
+    "correct_answer": "18",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2924,7 +2924,7 @@
       "Geburtsvorbereitung",
       "Wochenbett"
     ],
-    "correctAnswer": "Mutterschutz",
+    "correct_answer": "Mutterschutz",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2937,7 +2937,7 @@
       "der Großeltern.",
       "der Schulen."
     ],
-    "correctAnswer": "der Eltern.",
+    "correct_answer": "der Eltern.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2945,7 +2945,7 @@
     "id": 249,
     "question": "Wer ist in Deutschland hauptsächlich verantwortlich für die Kindererziehung?",
     "answers": ["der Staat", "die Eltern", "die Verwandten", "die Schulen"],
-    "correctAnswer": "die Eltern",
+    "correct_answer": "die Eltern",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2958,7 +2958,7 @@
       "eine Frau ist.",
       "Mitglied einer Partei ist."
     ],
-    "correctAnswer": "gut ausgebildet ist.",
+    "correct_answer": "gut ausgebildet ist.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2971,7 +2971,7 @@
       "kann man dafür nicht bestraft werden.",
       "kann man dafür bestraft werden."
     ],
-    "correctAnswer": "kann man dafür bestraft werden.",
+    "correct_answer": "kann man dafür bestraft werden.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2984,7 +2984,7 @@
       "darf man nicht wieder heiraten, wenn man einmal verheiratet war.",
       "darf eine Frau nicht wieder heiraten, wenn ihr Mann gestorben ist."
     ],
-    "correctAnswer": "darf man zur gleichen Zeit nur mit einer Partnerin/einem Partner verheiratet sein.",
+    "correct_answer": "darf man zur gleichen Zeit nur mit einer Partnerin/einem Partner verheiratet sein.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -2997,7 +2997,7 @@
       "beim Ordnungsamt",
       "beim Gewerbeamt"
     ],
-    "correctAnswer": "beim Einwohnermeldeamt",
+    "correct_answer": "beim Einwohnermeldeamt",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3010,7 +3010,7 @@
       "Das Besuchsrecht für die Kinder gilt ein Jahr.",
       "Die Ehegatten führen mindestens ein Jahr getrennt ihr eigenes Leben. Danach ist die Scheidung möglich."
     ],
-    "correctAnswer": "Die Ehegatten führen mindestens ein Jahr getrennt ihr eigenes Leben. Danach ist die Scheidung möglich.",
+    "correct_answer": "Die Ehegatten führen mindestens ein Jahr getrennt ihr eigenes Leben. Danach ist die Scheidung möglich.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3018,7 +3018,7 @@
     "id": 255,
     "question": "Bei Erziehungsproblemen können Eltern in Deutschland Hilfe erhalten vom …",
     "answers": ["Ordnungsamt.", "Schulamt.", "Jugendamt.", "Gesundheitsamt."],
-    "correctAnswer": "Jugendamt.",
+    "correct_answer": "Jugendamt.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3031,7 +3031,7 @@
       "eine Genehmigung des Einwohnermeldeamts",
       "eine Gaststättenerlaubnis von der zuständigen Behörde"
     ],
-    "correctAnswer": "eine Gaststättenerlaubnis von der zuständigen Behörde",
+    "correct_answer": "eine Gaststättenerlaubnis von der zuständigen Behörde",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3044,7 +3044,7 @@
       "einer Hauptschule.",
       "einer Privatuniversität."
     ],
-    "correctAnswer": "einem Abendgymnasium.",
+    "correct_answer": "einem Abendgymnasium.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3057,7 +3057,7 @@
       "Es bezahlt das Kindergeld an die Eltern.",
       "Es kontrolliert, ob das Kind einen Kindergarten besucht."
     ],
-    "correctAnswer": "Es kann ein Kind, das geschlagen wird oder hungern muss, aus der Familie nehmen.",
+    "correct_answer": "Es kann ein Kind, das geschlagen wird oder hungern muss, aus der Familie nehmen.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3070,7 +3070,7 @@
       "Steuererklärung.",
       "Krankenversicherung."
     ],
-    "correctAnswer": "Lehrstellensuche.",
+    "correct_answer": "Lehrstellensuche.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3083,7 +3083,7 @@
       "Anspruch auf Schulgeld.",
       "Anwesenheitspflicht."
     ],
-    "correctAnswer": "Anwesenheitspflicht.",
+    "correct_answer": "Anwesenheitspflicht.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3096,7 +3096,7 @@
       "einer Hauptschule.",
       "einer Privatuniversität."
     ],
-    "correctAnswer": "einem Abendgymnasium.",
+    "correct_answer": "einem Abendgymnasium.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3109,7 +3109,7 @@
       "Niemand darf gegen Personen klagen, wenn sie benachteiligt wurden.",
       "Es ist für alle Gesetz, benachteiligten Gruppen jährlich Geld zu spenden."
     ],
-    "correctAnswer": "Niemand darf z.B. wegen einer Behinderung benachteiligt werden.",
+    "correct_answer": "Niemand darf z.B. wegen einer Behinderung benachteiligt werden.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3122,7 +3122,7 @@
       "teilen die Strafe mit ihren Eltern.",
       "werden nicht bestraft."
     ],
-    "correctAnswer": "werden bestraft.",
+    "correct_answer": "werden bestraft.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3135,7 +3135,7 @@
       "beim Oktoberfest",
       "an Pfingsten"
     ],
-    "correctAnswer": "am Rosenmontag",
+    "correct_answer": "am Rosenmontag",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3148,7 +3148,7 @@
       "zur Agentur für Arbeit",
       "zum Standesamt"
     ],
-    "correctAnswer": "zum Standesamt",
+    "correct_answer": "zum Standesamt",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3161,7 +3161,7 @@
       "um 0 Uhr, Mitternacht",
       "um 22 Uhr"
     ],
-    "correctAnswer": "um 22 Uhr",
+    "correct_answer": "um 22 Uhr",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3174,7 +3174,7 @@
       "Sie können zur Polizei gehen und die Tochter anzeigen.",
       "Sie suchen einen anderen Mann für die Tochter."
     ],
-    "correctAnswer": "Sie müssen die Entscheidung der volljährigen Tochter respektieren.",
+    "correct_answer": "Sie müssen die Entscheidung der volljährigen Tochter respektieren.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3187,7 +3187,7 @@
       "Sie muss den Führerschein in dem Land machen, in dem man ihre Sprache spricht.",
       "Sie kann die Theorie-Prüfung vielleicht in ihrer Muttersprache machen. Es gibt mehr als zehn Sprachen zur Auswahl."
     ],
-    "correctAnswer": "Sie kann die Theorie-Prüfung vielleicht in ihrer Muttersprache machen. Es gibt mehr als zehn Sprachen zur Auswahl.",
+    "correct_answer": "Sie kann die Theorie-Prüfung vielleicht in ihrer Muttersprache machen. Es gibt mehr als zehn Sprachen zur Auswahl.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3200,7 +3200,7 @@
       "einen Kindergartenplatz.",
       "einen Ferienpass."
     ],
-    "correctAnswer": "einen Kindergartenplatz.",
+    "correct_answer": "einen Kindergartenplatz.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3213,7 +3213,7 @@
       "zur Weiterbildung.",
       "nur für Rentnerinnen und Rentner."
     ],
-    "correctAnswer": "zur Weiterbildung.",
+    "correct_answer": "zur Weiterbildung.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3226,7 +3226,7 @@
       "sich mit Masken und Kostümen verkleiden",
       "Kürbisse vor die Tür stellen"
     ],
-    "correctAnswer": "einen Tannenbaum schmücken",
+    "correct_answer": "einen Tannenbaum schmücken",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3239,7 +3239,7 @@
       "Ein alleinerziehender Vater lebt mit seinen zwei Kindern zusammen.",
       "Ein Mann ist mit zwei Frauen zur selben Zeit verheiratet."
     ],
-    "correctAnswer": "Ein Mann ist mit zwei Frauen zur selben Zeit verheiratet.",
+    "correct_answer": "Ein Mann ist mit zwei Frauen zur selben Zeit verheiratet.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3252,7 +3252,7 @@
       "zum Einwohnermeldeamt.",
       "zum Jugendamt."
     ],
-    "correctAnswer": "zum Jugendamt.",
+    "correct_answer": "zum Jugendamt.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3265,7 +3265,7 @@
       "die Schweigepflicht",
       "die Meinungsfreiheit"
     ],
-    "correctAnswer": "das Briefgeheimnis",
+    "correct_answer": "das Briefgeheimnis",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3278,7 +3278,7 @@
       "die Einwilligung der Kinder",
       "die Unterstützung einer Anwältin/eines Anwalts"
     ],
-    "correctAnswer": "die Unterstützung einer Anwältin/eines Anwalts",
+    "correct_answer": "die Unterstützung einer Anwältin/eines Anwalts",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3291,7 +3291,7 @@
       "Ich drohe der Person.",
       "Ich kann mich bei der Behördenleiterin/beim Behördenleiter beschweren."
     ],
-    "correctAnswer": "Ich kann mich bei der Behördenleiterin/beim Behördenleiter beschweren.",
+    "correct_answer": "Ich kann mich bei der Behördenleiterin/beim Behördenleiter beschweren.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3304,7 +3304,7 @@
       "keine Erfahrungen in diesem Beruf hat.",
       "Mutter ist."
     ],
-    "correctAnswer": "Mutter ist.",
+    "correct_answer": "Mutter ist.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3317,7 +3317,7 @@
       "zu hohe Gehaltsvorstellungen hat.",
       "kein Englisch spricht."
     ],
-    "correctAnswer": "im Rollstuhl sitzt.",
+    "correct_answer": "im Rollstuhl sitzt.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3330,7 +3330,7 @@
       "Regeln, an die sich alle Bewohnerinnen und Bewohner halten müssen.",
       "die Adresse des nächsten Ordnungsamtes."
     ],
-    "correctAnswer": "Regeln, an die sich alle Bewohnerinnen und Bewohner halten müssen.",
+    "correct_answer": "Regeln, an die sich alle Bewohnerinnen und Bewohner halten müssen.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3343,7 +3343,7 @@
       "Einspruch einlegen.",
       "warten, bis ein anderer Bescheid kommt."
     ],
-    "correctAnswer": "Einspruch einlegen.",
+    "correct_answer": "Einspruch einlegen.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3356,7 +3356,7 @@
       "Versammlungsfreiheit",
       "Freizügigkeit"
     ],
-    "correctAnswer": "Gleichbehandlung",
+    "correct_answer": "Gleichbehandlung",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3369,7 +3369,7 @@
       "Bibliotheksaufsicht",
       "Lehrerin/Lehrer"
     ],
-    "correctAnswer": "Wahlhelferin/Wahlhelfer",
+    "correct_answer": "Wahlhelferin/Wahlhelfer",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3382,7 +3382,7 @@
       "Ich schicke die Rechnung an die Behörde zurück.",
       "Ich gehe mit der Rechnung zum Finanzamt."
     ],
-    "correctAnswer": "Ich lege Widerspruch bei der Behörde ein.",
+    "correct_answer": "Ich lege Widerspruch bei der Behörde ein.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3395,7 +3395,7 @@
       "Kinder lernen in der Schule alles, was im Beruf wichtig ist. Nach der Schule muss man nicht weiter lernen.",
       "Alle müssen früher aufhören zu arbeiten, weil sich alles ändert."
     ],
-    "correctAnswer": "Erwachsene müssen auch nach der Ausbildung immer weiter lernen.",
+    "correct_answer": "Erwachsene müssen auch nach der Ausbildung immer weiter lernen.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3408,7 +3408,7 @@
       "Beiträge zur Renten- und Krankenversicherung",
       "Umsatzsteuer"
     ],
-    "correctAnswer": "Umsatzsteuer",
+    "correct_answer": "Umsatzsteuer",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3421,7 +3421,7 @@
       "die Betriebsgruppe",
       "das Betriebsmanagement"
     ],
-    "correctAnswer": "der Betriebsrat",
+    "correct_answer": "der Betriebsrat",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3434,7 +3434,7 @@
       "die Kündigungsfrist",
       "die Versicherungspflicht"
     ],
-    "correctAnswer": "die Kündigungsfrist",
+    "correct_answer": "die Kündigungsfrist",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3447,7 +3447,7 @@
       "aus dem Grundgesetz der Bundesrepublik Deutschland",
       "aus der christlichen Tradition"
     ],
-    "correctAnswer": "aus den nationalsozialistischen Verbrechen gegen Juden",
+    "correct_answer": "aus den nationalsozialistischen Verbrechen gegen Juden",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3460,7 +3460,7 @@
       "er eine dunkle Haut hat.",
       "er keine Erfahrungen im Beruf hat."
     ],
-    "correctAnswer": "er eine dunkle Haut hat.",
+    "correct_answer": "er eine dunkle Haut hat.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3473,7 +3473,7 @@
       "das Gerät ungefragt austauschen",
       "die Garantie verlängern"
     ],
-    "correctAnswer": "den Fernseher reklamieren",
+    "correct_answer": "den Fernseher reklamieren",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3486,7 +3486,7 @@
       "man mehr Steuern zahlen muss, wenn man nicht zu einer Kirche gehört.",
       "die Kirche für die Steuererklärung verantwortlich ist."
     ],
-    "correctAnswer": "es eine Kirchensteuer gibt, die an die Einkommen- und Lohnsteuer geknüpft ist.",
+    "correct_answer": "es eine Kirchensteuer gibt, die an die Einkommen- und Lohnsteuer geknüpft ist.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3499,7 +3499,7 @@
       "Jeder kann glauben, was er möchte.",
       "Der Staat entscheidet, an welchen Gott die Menschen glauben."
     ],
-    "correctAnswer": "Jeder kann glauben, was er möchte.",
+    "correct_answer": "Jeder kann glauben, was er möchte.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3512,7 +3512,7 @@
       "Eier bemalen",
       "Raketen in die Luft schießen"
     ],
-    "correctAnswer": "Eier bemalen",
+    "correct_answer": "Eier bemalen",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3525,7 +3525,7 @@
       "internationaler Trauertag.",
       "bayerischer Brauch."
     ],
-    "correctAnswer": "christlicher Feiertag.",
+    "correct_answer": "christlicher Feiertag.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3538,7 +3538,7 @@
       "der Buddhismus",
       "der Islam"
     ],
-    "correctAnswer": "das Christentum",
+    "correct_answer": "das Christentum",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3551,7 +3551,7 @@
       "die Adventszeit.",
       "Allerheiligen."
     ],
-    "correctAnswer": "die Adventszeit.",
+    "correct_answer": "die Adventszeit.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3559,7 +3559,7 @@
     "id": 297,
     "question": "Aus welchem Land sind die meisten Migrantinnen und Migranten nach Deutschland gekommen?",
     "answers": ["Italien", "Polen", "Marokko", "Türkei"],
-    "correctAnswer": "Türkei",
+    "correct_answer": "Türkei",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3572,7 +3572,7 @@
       "Chile, Ungarn, Simbabwe.",
       "Nordkorea, Mexiko, Ägypten."
     ],
-    "correctAnswer": "Vietnam, Polen, Mosambik.",
+    "correct_answer": "Vietnam, Polen, Mosambik.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3585,7 +3585,7 @@
       "Zeitarbeiterinnen/Zeitarbeiter.",
       "Schichtarbeiterinnen/Schichtarbeiter."
     ],
-    "correctAnswer": "Gastarbeiterinnen/Gastarbeiter.",
+    "correct_answer": "Gastarbeiterinnen/Gastarbeiter.",
     "state": "Bundesweit",
     "image": ""
   },
@@ -3593,7 +3593,7 @@
     "id": 300,
     "question": "Aus welchem Land kamen die ersten Gastarbeiterinnen und Gastarbeiter nach Bundesrepublik Deutschland?",
     "answers": ["Italien", "Spanien", "Portugal", "Türkei"],
-    "correctAnswer": "Italien",
+    "correct_answer": "Italien",
     "state": "Bundesweit",
     "image": ""
   }
