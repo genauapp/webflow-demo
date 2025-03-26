@@ -264,11 +264,11 @@ const switchLearnAnswers = (
     )
     answerElement.innerText = answer
 
+    answerElement.removeEventListener('click', wrongAnswerEventListener)
+    answerElement.removeEventListener('click', correctAnswerEventListener)
+
     // answers toggled ON
     if (shouldShowAnswer) {
-      answerElement.removeEventListener('click', wrongAnswerEventListener)
-      answerElement.removeEventListener('click', correctAnswerEventListener)
-
       answerElement.classList.remove('wrong')
       // answer is correct
       if (answer === correctAnswer) {
@@ -285,13 +285,8 @@ const switchLearnAnswers = (
     else {
       // user is not answered
       if (userAnswer.answered === false) {
-        answerElement.classList.remove('active')
-        answerElement.classList.remove('wrong')
+        answerElement.classList.remove('active', 'wrong')
         answerElement.classList.add('inactive')
-
-        answerElement.removeEventListener('click', wrongAnswerEventListener)
-        answerElement.removeEventListener('click', correctAnswerEventListener)
-
         // answer is correct
         if (answer === correctAnswer) {
           answerElement.addEventListener('click', correctAnswerEventListener)
@@ -304,31 +299,25 @@ const switchLearnAnswers = (
       // user is answered
       else {
         // answered correctly
-        answerElement.removeEventListener('click', wrongAnswerEventListener)
-        answerElement.removeEventListener('click', correctAnswerEventListener)
         if (userAnswer.wasCorrect) {
-          answerElement.classList.remove('inactive')
-          answerElement.classList.remove('wrong')
+          answerElement.classList.remove('inactive', 'wrong')
           answerElement.classList.add('active')
         }
         // answered incorrectly
         else {
           // incorrect user input
           if (answerElement.getAttribute('wrong-input') === true) {
-            answerElement.classList.remove('inactive')
-            answerElement.classList.remove('active')
+            answerElement.classList.remove('inactive', 'active')
             answerElement.classList.add('wrong')
           }
           // correct user input
           else if (answerElement.getAttribute('correct-input') === true) {
-            answerElement.classList.remove('inactive')
-            answerElement.classList.remove('wrong')
+            answerElement.classList.remove('inactive', 'wrong')
             answerElement.classList.add('active')
           }
           // other answers
           else {
-            answerElement.classList.remove('active')
-            answerElement.classList.remove('wrong')
+            answerElement.classList.remove('active', 'wrong')
             answerElement.classList.add('inactive')
           }
         }
