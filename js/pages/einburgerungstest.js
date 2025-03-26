@@ -210,7 +210,7 @@ const correctAnswerEventListener = (event) => {
     currentLearnQuestionIndex
   )
 
-  answerElement.setAttribute('correct-input', true)
+  event.target.setAttribute('correct-input', true)
 
   switchLearnAnswers(
     shouldShowAnswer,
