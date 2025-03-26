@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     shouldShowAnswer,
     recentQuestion
   )
+  setToggleSwitch(shouldShowAnswer)
 })
 
 // On State Change
@@ -69,6 +70,7 @@ document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
       shouldShowAnswer,
       updatedQuestion
     )
+    setToggleSwitch(shouldShowAnswer)
   })
 })
 
@@ -161,4 +163,18 @@ const setLearnTabElements = (
       answerElement.style.backgroundColor === '#0cac92'
     }
   })
+}
+
+const setToggleSwitch = (shouldShowAnswer) => {
+  if (shouldShowAnswer) {
+    offOptionElement.classList.add('deactive')
+    onOptionElement.classList.add('active')
+    offOptionElement.classList.remove('active')
+    onOptionElement.classList.remove('deactive')
+  } else {
+    offOptionElement.classList.add('active')
+    onOptionElement.classList.add('deactive')
+    offOptionElement.classList.remove('deactive')
+    onOptionElement.classList.remove('active')
+  }
 }
