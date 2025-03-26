@@ -7,7 +7,7 @@ export class LEARN__STATE__QUESTION_INDEX_KEY {
 }
 
 export class DEFAULT_VALUE {
-  static SHOULD_SHOW_ANSWER = false
+  static SHOULD_SHOW_ANSWER = true
   static LEARN_STATE = 'Berlin'
   static LEARN_QUESTION_INDEX = 1
 }
