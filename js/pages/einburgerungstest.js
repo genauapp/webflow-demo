@@ -158,10 +158,8 @@ document.getElementById('show-answers-option').addEventListener('click', () => {
 })
 
 // On Learn Tab's User Answer
+// // on wrong answer
 const wrongAnswerEventListener = (event) => {
-  event.target.removeAttribute('correct-input')
-  event.target.setAttribute('wrong-input', true)
-
   const userAnswer = {
     answered: true,
     wasCorrect: false,
@@ -181,6 +179,8 @@ const wrongAnswerEventListener = (event) => {
     currentLearnQuestionIndex
   )
 
+  event.target.setAttribute('wrong-input', true)
+
   switchLearnAnswers(
     shouldShowAnswer,
     userAnswer,
@@ -189,10 +189,8 @@ const wrongAnswerEventListener = (event) => {
   )
 }
 
+// // on correct answer
 const correctAnswerEventListener = (event) => {
-  event.target.removeAttribute('wrong-input')
-  event.target.setAttribute('correct-input', true)
-
   const userAnswer = {
     answered: true,
     wasCorrect: true,
@@ -264,11 +262,14 @@ const switchLearnAnswers = (
     )
     answerElement.innerText = answer
 
-    answerElement.removeEventListener('click', wrongAnswerEventListener)
-    answerElement.removeEventListener('click', correctAnswerEventListener)
-
     // answers toggled ON
     if (shouldShowAnswer) {
+      // // clear toggle OFF event listeners and attributes
+      answerElement.removeAttribute('wrong-input')
+      answerElement.removeAttribute('correct-input')
+      answerElement.removeEventListener('click', wrongAnswerEventListener)
+      answerElement.removeEventListener('click', correctAnswerEventListener)
+
       answerElement.classList.remove('wrong')
       // answer is correct
       if (answer === correctAnswer) {
@@ -283,25 +284,43 @@ const switchLearnAnswers = (
     }
     // answers toggled OFF
     else {
-      // user is not answered
+      // user did not answer
       if (userAnswer.answered === false) {
         answerElement.classList.remove('active', 'wrong')
         answerElement.classList.add('inactive')
         // answer is correct
         if (answer === correctAnswer) {
+          answerElement.removeAttribute('wrong-input')
+          answerElement.removeEventListener('click', wrongAnswerEventListener)
+
+          answerElement.setAttribute('correct-input', true)
           answerElement.addEventListener('click', correctAnswerEventListener)
         }
         // answer is incorrect
         else {
+          answerElement.removeAttribute('wrong-input')
+          answerElement.removeAttribute('correct-input')
+          answerElement.removeEventListener('click', correctAnswerEventListener)
+
           answerElement.addEventListener('click', wrongAnswerEventListener)
         }
       }
-      // user is answered
+      // user answered
       else {
+        answerElement.removeEventListener('click', wrongAnswerEventListener)
+        answerElement.removeEventListener('click', correctAnswerEventListener)
         // answered correctly
         if (userAnswer.wasCorrect) {
-          answerElement.classList.remove('inactive', 'wrong')
-          answerElement.classList.add('active')
+          // element is the correct answer
+          if (answerElement.getAttribute('correct-input') === true) {
+            answerElement.classList.remove('inactive', 'wrong')
+            answerElement.classList.add('active')
+          }
+          // element is not the correct answer
+          else {
+            answerElement.classList.remove('active', 'wrong')
+            answerElement.classList.add('inactive')
+          }
         }
         // answered incorrectly
         else {
