@@ -1569,7 +1569,7 @@ function navigateToPage(pageId) {
 }
 
 const clearDeprecatedLocalStorageItems = () => {
-  const currentAppVersion = "1.0.3"
+  const currentAppVersion = "1.0.4"
   const APP_VERSION = LocalStorageManager.load('APP_VERSION', null)
   
   if (APP_VERSION === null || APP_VERSION !== currentAppVersion) {
@@ -1586,12 +1586,6 @@ const clearDeprecatedLocalStorageItems = () => {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-  // make einburgerungstest disabled temporarily
-  const newPackBannerLink = document.getElementById('new-pack-banner-link')
-  newPackBannerLink.style.pointerEvents = "none"
-  newPackBannerLink.style.opacity = "0.5"
-  newPackBannerLink.style.cursor = "default"
-
   showSkeleton()
   clearDeprecatedLocalStorageItems()
 
