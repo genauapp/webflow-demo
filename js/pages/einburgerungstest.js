@@ -11,14 +11,16 @@ import {
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', () => {
+  // set toggle to off initially
+  LocalStorageManager.save(
+    SHOULD_SHOW_ANSWER_KEY,
+    DEFAULT_VALUE.SHOULD_SHOW_ANSWER
+  )
+
   // get recent local storage items
   const currentState = LocalStorageManager.load(
     LEARN_STATE_KEY,
     DEFAULT_VALUE.LEARN_STATE
-  )
-  const shouldShowAnswer = LocalStorageManager.load(
-    SHOULD_SHOW_ANSWER_KEY,
-    DEFAULT_VALUE.SHOULD_SHOW_ANSWER
   )
   const currentLearnQuestionIndex = LocalStorageManager.load(
     new LEARN__STATE__QUESTION_INDEX_KEY(currentState),
@@ -36,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     shouldShowAnswer,
     recentQuestion
   )
-  setToggleSwitch(shouldShowAnswer)
 })
 
 // On State Change
@@ -70,36 +71,10 @@ document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
       shouldShowAnswer,
       updatedQuestion
     )
-    setToggleSwitch(shouldShowAnswer)
   })
 })
 
 // On Toggle Change
-// document
-//   .getElementById('should-show-answer-switch-button')
-//   .addEventListener('click', () => {
-//     const offOptionElement = document.getElementById('hide-answers-option')
-//     const onOptionElement = document.getElementById('show-answers-option')
-//     if (offOptionElement && offOptionElement.classList.contains('active')) {
-//       console.log('hiding learn answers...')
-//       // set updated local storage item
-//       LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, false)
-//     } else if (
-//       onOptionElement &&
-//       onOptionElement.classList.contains('active')
-//     ) {
-//       console.log('showing learn answers...')
-//       // set updated local storage item
-//       LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, true)
-//     }
-//   })
-
-// const toggle = document.getElementById("should-show-answer-switch")
-
-// toggle.addEventListener("change", () => {
-//   if (toggle)
-// })
-
 const offOptionElement = document.getElementById('hide-answers-option')
 const onOptionElement = document.getElementById('show-answers-option')
 
@@ -165,16 +140,16 @@ const setLearnTabElements = (
   })
 }
 
-const setToggleSwitch = (shouldShowAnswer) => {
-  if (shouldShowAnswer) {
-    offOptionElement.classList.add('deactive')
-    onOptionElement.classList.add('active')
-    offOptionElement.classList.remove('active')
-    onOptionElement.classList.remove('deactive')
-  } else {
-    offOptionElement.classList.add('active')
-    onOptionElement.classList.add('deactive')
-    offOptionElement.classList.remove('deactive')
-    onOptionElement.classList.remove('active')
-  }
-}
+// const setToggleSwitch = (shouldShowAnswer) => {
+//   if (shouldShowAnswer) {
+//     offOptionElement.classList.add('deactive')
+//     onOptionElement.classList.add('active')
+//     offOptionElement.classList.remove('active')
+//     onOptionElement.classList.remove('deactive')
+//   } else {
+//     offOptionElement.classList.add('active')
+//     onOptionElement.classList.add('deactive')
+//     offOptionElement.classList.remove('deactive')
+//     onOptionElement.classList.remove('active')
+//   }
+// }
