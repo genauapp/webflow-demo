@@ -112,7 +112,7 @@ const correctAnswerWordsCounter = LocalStorageManager.load('correctAnswerWordsCo
 let initialTotalWords = 0 // Yeni eklenen değişken
 
 async function executeInitialLoadAndShow() {
-  const lastSelectedTopic = LocalStorageManager.load('lastSelectedTopic')
+  const lastSelectedTopic = LocalStorageManager.load('lastSelectedTopic', 'b1telcpt1')
   await loadWords(lastSelectedTopic)
   console.log(currentType + 's ARE LOADED')
   showLearnWord()
@@ -531,11 +531,11 @@ function showExerciseWord() {
   }
 
   inProgressWords =
-    LocalStorageManager.load('inProgressWords') || inProgressWords
+    LocalStorageManager.load('inProgressWords', inProgressWords)
 
   learnedWithExerciseWords =
-    LocalStorageManager.load('learnedWithExerciseWords') ||
-    learnedWithExerciseWords
+    LocalStorageManager.load('learnedWithExerciseWords', learnedWithExerciseWords)
+    
 
   // 🟢 `kelimeListesi` içinden `learnedWords`'de olanları çıkar
   if (learnedWithExerciseWords[currentLevel][currentType].length > 0) {
@@ -665,10 +665,10 @@ function checkNonNounAnswer(userInput) {
   const buttonWrong = document.getElementById('wrongButton-' + currentType)
   const buttonCorrect = document.getElementById('correctButton-' + currentType)
 
-  inProgressWords = LocalStorageManager.load('inProgressWords')
+  inProgressWords = LocalStorageManager.load('inProgressWords', inProgressWords)
   learnedWithExerciseWords =
-    LocalStorageManager.load('learnedWithExerciseWords') ||
-    learnedWithExerciseWords
+    LocalStorageManager.load('learnedWithExerciseWords', learnedWithExerciseWords)
+    
 
   const inProgressIndex = inProgressWords[currentLevel][currentType].findIndex(
     (item) => item.almanca === almanca
@@ -880,10 +880,10 @@ function checkNounAnswer(userArtikel) {
   console.log(
     `'${kelimeListesiExercise.length}' kelime listesi uzunlugu böyleydi.`
   )
-  inProgressWords = LocalStorageManager.load('inProgressWords')
+  inProgressWords = LocalStorageManager.load('inProgressWords', inProgressWords)
   learnedWithExerciseWords =
-    LocalStorageManager.load('learnedWithExerciseWords') ||
-    learnedWithExerciseWords
+    LocalStorageManager.load('learnedWithExerciseWords', learnedWithExerciseWords)
+    
 
   const inProgressIndex = inProgressWords[currentLevel][currentType].findIndex(
     (item) => item.almanca === currentWord.almanca
@@ -1188,7 +1188,7 @@ function iKnowLearn() {
   }
 
   learnedWithLearnWords =
-    LocalStorageManager.load('learnedWithLearnWords') || learnedWithLearnWords
+    LocalStorageManager.load('learnedWithLearnWords', learnedWithLearnWords)
   const currentWord = kelimeListesi[currentLearnIndex]
 
   // Kelimeyi öğrenilenlere ekle
@@ -1459,7 +1459,7 @@ function addToFavorites() {
   }
 
   const currentWord = kelimeListesi[currentLearnIndex]
-  let favoriteWords = LocalStorageManager.load('favoriteWords') || []
+  let favoriteWords = LocalStorageManager.load('favoriteWords', []) 
   const isFavorite = isItInFavorites(currentWord, favoriteWords)
 
   // Favorilere ekle
@@ -1493,7 +1493,7 @@ function updateFavoriteIcons() {
   const outFavImage = document.getElementById(`outfav-${currentType}`)
 
   const currentWord = kelimeListesi[currentLearnIndex]
-  const favoriteWords = LocalStorageManager.load('favoriteWords') || []
+  const favoriteWords = LocalStorageManager.load('favoriteWords', []) 
   const isFavorite = isItInFavorites(currentWord, favoriteWords)
 
   if (isFavorite) {
@@ -1511,7 +1511,7 @@ function removeFavorite() {
     `favoritesFeedback-${currentType}`
   )
   const currentWord = kelimeListesi[currentLearnIndex]
-  let favoriteWords = LocalStorageManager.load('favoriteWords') || []
+  let favoriteWords = LocalStorageManager.load('favoriteWords', [])
   favoriteWords = favoriteWords.filter(
     (word) => word.almanca !== currentWord.almanca
   )
@@ -1569,7 +1569,7 @@ function navigateToPage(pageId) {
 }
 
 const clearDeprecatedLocalStorageItems = () => {
-  const currentAppVersion = "1.0.1"
+  const currentAppVersion = "1.0.2"
   const APP_VERSION = LocalStorageManager.load('APP_VERSION', null)
   
   if (APP_VERSION === null || APP_VERSION !== currentAppVersion) {
