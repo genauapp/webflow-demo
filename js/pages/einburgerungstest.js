@@ -27,14 +27,17 @@ document.addEventListener('DOMContentLoaded', () => {
     DEFAULT_VALUE.LEARN_QUESTION_INDEX
   )
 
-  // get filtered questions
-  const questions = QuestionManager.getLearnQuestionsByState(currentState)
+  // get most recent question info
+  const recentQuestion = QuestionManager.getCurrentLearnQuestion(
+    currentState,
+    currentLearnQuestionIndex
+  )
+  const totalNumberOfQuestions =
+    QuestionManager.getTotalNumberOfLearnQuestions(currentState)
 
-  // show initial question
-  const recentQuestion = questions[currentLearnQuestionIndex - 1]
   setLearnTabElements(
     currentLearnQuestionIndex,
-    questions.length,
+    totalNumberOfQuestions,
     DEFAULT_VALUE.SHOULD_SHOW_ANSWER,
     recentQuestion
   )
@@ -57,17 +60,21 @@ document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
       DEFAULT_VALUE.LEARN_QUESTION_INDEX
     )
 
-    // get filtered questions
-    const questions = QuestionManager.getLearnQuestionsByState(currentState)
+    // get updated question info
+    const updatedQuestion = QuestionManager.getCurrentLearnQuestion(
+      currentState,
+      currentLearnQuestionIndex
+    )
+    const totalNumberOfQuestions =
+      QuestionManager.getTotalNumberOfLearnQuestions(currentState)
 
     // update ui
     // // show updated state header
     document.getElementById('dropdown-header').innerText = currentState
     // // show updated question
-    const updatedQuestion = questions[currentLearnQuestionIndex - 1]
     setLearnTabElements(
       currentLearnQuestionIndex,
-      questions.length,
+      totalNumberOfQuestions,
       shouldShowAnswer,
       updatedQuestion
     )
@@ -77,14 +84,27 @@ document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
 // On Toggle Change
 // // button: OFF
 document.getElementById('hide-answers-option').addEventListener('click', () => {
-  const shouldShowAnswer = LocalStorageManager.load(
-    SHOULD_SHOW_ANSWER_KEY,
-    DEFAULT_VALUE.SHOULD_SHOW_ANSWER
+  // get recent local storage items
+  const currentState = LocalStorageManager.load(LEARN_STATE_KEY)
+  const shouldShowAnswer = LocalStorageManager.load(SHOULD_SHOW_ANSWER_KEY)
+  const currentLearnQuestionIndex = LocalStorageManager.load(
+    new LEARN__STATE__QUESTION_INDEX_KEY(currentState)
+  )
+
+  // get current question
+  const currentQuestion = QuestionManager.getCurrentLearnQuestion(
+    currentState,
+    currentLearnQuestionIndex
   )
 
   if (shouldShowAnswer) {
     console.log('hiding learn answers...')
     LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, false)
+    switchLearnAnswers(
+      shouldShowAnswer,
+      currentQuestion.answers,
+      currentQuestion.correct_answer
+    )
   }
 
   return
@@ -92,21 +112,35 @@ document.getElementById('hide-answers-option').addEventListener('click', () => {
 
 // // button: ON
 document.getElementById('show-answers-option').addEventListener('click', () => {
-  const shouldShowAnswer = LocalStorageManager.load(
-    SHOULD_SHOW_ANSWER_KEY,
-    DEFAULT_VALUE.SHOULD_SHOW_ANSWER
+  // get recent local storage items
+  const currentState = LocalStorageManager.load(LEARN_STATE_KEY)
+  const shouldShowAnswer = LocalStorageManager.load(SHOULD_SHOW_ANSWER_KEY)
+  const currentLearnQuestionIndex = LocalStorageManager.load(
+    new LEARN__STATE__QUESTION_INDEX_KEY(currentState)
+  )
+
+  // get current question
+  const currentQuestion = QuestionManager.getCurrentLearnQuestion(
+    currentState,
+    currentLearnQuestionIndex
   )
 
   if (!shouldShowAnswer) {
     console.log('showing learn answers...')
     LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, true)
+    switchLearnAnswers(
+      shouldShowAnswer,
+      currentQuestion.answers,
+      currentQuestion.correct_answer
+    )
   }
 
   return
 })
 
 /** UI Changes
- * They CANNOT access local storage items
+ * They are only responsible for displaying whatever they receive as parameter
+ * NO ACCESS to Local Storage or Question managers
  * */
 
 const setLearnTabElements = (

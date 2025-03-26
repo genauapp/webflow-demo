@@ -30,4 +30,15 @@ export default class QuestionManager {
 
     return learnQuestions
   }
+
+  static getCurrentLearnQuestion = (currentState, currentLearnQuestionIndex) => {
+    const questions = QuestionManager.getLearnQuestionsByState(currentState)
+    return questions[currentLearnQuestionIndex - 1]
+  }
+
+  static getTotalNumberOfLearnQuestions = (currentState) => {
+    const questions = QuestionManager.getLearnQuestionsByState(currentState)
+
+    return questions.length
+  }
 }
