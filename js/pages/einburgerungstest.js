@@ -274,7 +274,6 @@ const switchLearnAnswers = (
       // answerElement.removeEventListener('click', wrongAnswerEventListener)
       // answerElement.removeEventListener('click', correctAnswerEventListener)
 
-      newAnswerElement.style.backgroundColor = 'inherit'
       newAnswerElement.classList.remove('wrong')
       // answer is correct
       if (answer === correctAnswer) {
@@ -318,7 +317,7 @@ const switchLearnAnswers = (
         // answered correctly
         if (userAnswer.wasCorrect) {
           // element is the correct answer
-          if (newAnswerElement.getAttribute('correct-input') == 'true') {
+          if (newAnswerElement.getAttribute('correct-input') == "true") {
             newAnswerElement.classList.remove('inactive')
             newAnswerElement.classList.remove('wrong')
             newAnswerElement.classList.add('active')
@@ -333,14 +332,14 @@ const switchLearnAnswers = (
         // answered incorrectly
         else {
           // incorrect user input
-          if (newAnswerElement.getAttribute('wrong-input') === 'true') {
+          if (newAnswerElement.getAttribute('wrong-input') === "true") {
             newAnswerElement.classList.remove('inactive')
             newAnswerElement.classList.remove('active')
             newAnswerElement.classList.add('wrong')
             newAnswerElement.style.backgroundColor = '#a560602b'
           }
           // correct user input
-          else if (newAnswerElement.getAttribute('correct-input') === 'true') {
+          else if (newAnswerElement.getAttribute('correct-input') === "true") {
             newAnswerElement.classList.remove('inactive')
             newAnswerElement.classList.remove('wrong')
             newAnswerElement.classList.add('active')
