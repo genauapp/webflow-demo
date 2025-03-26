@@ -101,7 +101,7 @@ document.getElementById('hide-answers-option').addEventListener('click', () => {
     console.log('showing learn answers...')
     LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, true)
     switchLearnAnswers(
-      shouldShowAnswer,
+      true,
       currentQuestion.answers,
       currentQuestion.correct_answer
     )
@@ -129,7 +129,7 @@ document.getElementById('show-answers-option').addEventListener('click', () => {
     console.log('hiding learn answers...')
     LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, false)
     switchLearnAnswers(
-      shouldShowAnswer,
+      false,
       currentQuestion.answers,
       currentQuestion.correct_answer
     )
