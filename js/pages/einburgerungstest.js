@@ -210,8 +210,6 @@ const correctAnswerEventListener = (event) => {
     currentLearnQuestionIndex
   )
 
-  event.target.setAttribute('correct-input', true)
-
   switchLearnAnswers(
     shouldShowAnswer,
     userAnswer,
@@ -295,6 +293,8 @@ const switchLearnAnswers = (
         if (answer === correctAnswer) {
           answerElement.removeAttribute('wrong-input')
           answerElement.removeEventListener('click', wrongAnswerEventListener)
+
+          answerElement.setAttribute('correct-input', true)
           answerElement.addEventListener('click', correctAnswerEventListener)
         }
         // answer is incorrect
