@@ -97,9 +97,9 @@ document.getElementById('hide-answers-option').addEventListener('click', () => {
     currentLearnQuestionIndex
   )
 
-  if (shouldShowAnswer) {
-    console.log('hiding learn answers...')
-    LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, false)
+  if (!shouldShowAnswer) {
+    console.log('showing learn answers...')
+    LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, true)
     switchLearnAnswers(
       shouldShowAnswer,
       currentQuestion.answers,
@@ -125,9 +125,9 @@ document.getElementById('show-answers-option').addEventListener('click', () => {
     currentLearnQuestionIndex
   )
 
-  if (!shouldShowAnswer) {
-    console.log('showing learn answers...')
-    LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, true)
+  if (shouldShowAnswer) {
+    console.log('hiding learn answers...')
+    LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, false)
     switchLearnAnswers(
       shouldShowAnswer,
       currentQuestion.answers,
@@ -177,9 +177,6 @@ const switchLearnAnswers = (shouldShowAnswer, answers, correctAnswer) => {
 
     // answers toggled ON
     if (shouldShowAnswer) {
-      answerElement.classList.remove('text-block-5')
-      answerElement.classList.add('button-5')
-      answerElement.classList.add('w-button')
       // answer is correct
       if (answer === correctAnswer) {
         answerElement.classList.add('active')
@@ -191,11 +188,8 @@ const switchLearnAnswers = (shouldShowAnswer, answers, correctAnswer) => {
     }
     // answers toggled OFF
     else {
-      answerElement.classList.remove('button-5')
-      answerElement.classList.remove('w-button')
-      answerElement.classList.remove('inactive')
+      answerElement.classList.add('inactive')
       answerElement.classList.remove('active')
-      answerElement.classList.add('text-block-5')
     }
   })
 }
