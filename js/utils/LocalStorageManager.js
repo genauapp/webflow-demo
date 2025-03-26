@@ -73,7 +73,8 @@ export default class LocalStorageManager {
       }
     }
 
-    // If nothing is found, return the default value.
+    // If nothing is found, save it to local storage and return the default value.
+    LocalStorageManager.save(key, defaultValue)
     return defaultValue
   }
 
