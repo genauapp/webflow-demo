@@ -7,7 +7,6 @@ import {
   LEARN_STATE_KEY,
   SHOULD_SHOW_ANSWER_KEY,
   DEFAULT_VALUE,
-  IS_LEARN_QUESTION_ANSWERED_KEY,
   LEARN_QUESTION_USER_ANSWER_KEY,
 } from '../constants/storageKeys.js'
 
@@ -18,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     SHOULD_SHOW_ANSWER_KEY,
     DEFAULT_VALUE.SHOULD_SHOW_ANSWER
   )
-  // set is answered to default one
 
   // get recent local storage items
   const currentState = LocalStorageManager.load(
@@ -103,6 +101,9 @@ document.getElementById('hide-answers-option').addEventListener('click', () => {
   const currentLearnQuestionIndex = LocalStorageManager.load(
     new LEARN__STATE__QUESTION_INDEX_KEY(currentState)
   )
+  const learnQuestionUserAnswer = LocalStorageManager.load(
+    LEARN_QUESTION_USER_ANSWER_KEY
+  )
 
   // get current question
   const currentQuestion = QuestionManager.getCurrentLearnQuestion(
@@ -115,6 +116,7 @@ document.getElementById('hide-answers-option').addEventListener('click', () => {
     LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, true)
     switchLearnAnswers(
       true,
+      learnQuestionUserAnswer,
       currentQuestion.answers,
       currentQuestion.correct_answer
     )
@@ -131,6 +133,9 @@ document.getElementById('show-answers-option').addEventListener('click', () => {
   const currentLearnQuestionIndex = LocalStorageManager.load(
     new LEARN__STATE__QUESTION_INDEX_KEY(currentState)
   )
+  const learnQuestionUserAnswer = LocalStorageManager.load(
+    LEARN_QUESTION_USER_ANSWER_KEY
+  )
 
   // get current question
   const currentQuestion = QuestionManager.getCurrentLearnQuestion(
@@ -143,6 +148,7 @@ document.getElementById('show-answers-option').addEventListener('click', () => {
     LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, false)
     switchLearnAnswers(
       false,
+      learnQuestionUserAnswer,
       currentQuestion.answers,
       currentQuestion.correct_answer
     )
@@ -150,6 +156,69 @@ document.getElementById('show-answers-option').addEventListener('click', () => {
 
   return
 })
+
+// On Learn Tab's User Answer
+const wrongAnswerEventListener = (event) => {
+  event.target.removeAttribute('correct-input')
+  event.target.setAttribute('wrong-input', true)
+
+  const userAnswer = {
+    answered: true,
+    wasCorrect: false,
+  }
+  LocalStorageManager.save(LEARN_QUESTION_USER_ANSWER_KEY, userAnswer)
+
+  // get recent local storage items
+  const currentState = LocalStorageManager.load(LEARN_STATE_KEY)
+  const shouldShowAnswer = LocalStorageManager.load(SHOULD_SHOW_ANSWER_KEY)
+  const currentLearnQuestionIndex = LocalStorageManager.load(
+    new LEARN__STATE__QUESTION_INDEX_KEY(currentState)
+  )
+
+  // get current question
+  const currentQuestion = QuestionManager.getCurrentLearnQuestion(
+    currentState,
+    currentLearnQuestionIndex
+  )
+
+  switchLearnAnswers(
+    shouldShowAnswer,
+    userAnswer,
+    currentQuestion.answers,
+    currentQuestion.correct_answer
+  )
+}
+
+const correctAnswerEventListener = (event) => {
+  event.target.removeAttribute('wrong-input')
+  event.target.setAttribute('correct-input', true)
+
+  const userAnswer = {
+    answered: true,
+    wasCorrect: true,
+  }
+  LocalStorageManager.save(LEARN_QUESTION_USER_ANSWER_KEY, userAnswer)
+
+  // get recent local storage items
+  const currentState = LocalStorageManager.load(LEARN_STATE_KEY)
+  const shouldShowAnswer = LocalStorageManager.load(SHOULD_SHOW_ANSWER_KEY)
+  const currentLearnQuestionIndex = LocalStorageManager.load(
+    new LEARN__STATE__QUESTION_INDEX_KEY(currentState)
+  )
+
+  // get current question
+  const currentQuestion = QuestionManager.getCurrentLearnQuestion(
+    currentState,
+    currentLearnQuestionIndex
+  )
+
+  switchLearnAnswers(
+    shouldShowAnswer,
+    userAnswer,
+    currentQuestion.answers,
+    currentQuestion.correct_answer
+  )
+}
 
 /** UI Changes
  * They are only responsible for displaying whatever they receive as parameter
@@ -185,7 +254,7 @@ const setLearnTabElements = (
 
 const switchLearnAnswers = (
   shouldShowAnswer,
-  learnQuestionUserAnswer,
+  userAnswer,
   answers,
   correctAnswer
 ) => {
@@ -197,6 +266,8 @@ const switchLearnAnswers = (
 
     // answers toggled ON
     if (shouldShowAnswer) {
+      answerElement.removeEventListener('click')
+
       answerElement.classList.remove('wrong')
       // answer is correct
       if (answer === correctAnswer) {
@@ -212,24 +283,49 @@ const switchLearnAnswers = (
     // answers toggled OFF
     else {
       // user is not answered
-      if (learnQuestionUserAnswer.answered === false) {
+      if (userAnswer.answered === false) {
         answerElement.classList.remove('active')
         answerElement.classList.remove('wrong')
         answerElement.classList.add('inactive')
+        answerElement.removeEventListener('click')
+        // answer is correct
+        if (answer === correctAnswer) {
+          answerElement.addEventListener('click', correctAnswerEventListener)
+        }
+        // answer is incorrect
+        else {
+          answerElement.addEventListener('click', wrongAnswerEventListener)
+        }
       }
       // user is answered
       else {
         // answered correctly
-        if (learnQuestionUserAnswer.input === correctAnswer) {
+        answerElement.removeEventListener('click')
+        if (userAnswer.wasCorrect) {
           answerElement.classList.remove('inactive')
           answerElement.classList.remove('wrong')
           answerElement.classList.add('active')
         }
         // answered incorrectly
         else {
-          answerElement.classList.remove('inactive')
-          answerElement.classList.remove('active')
-          answerElement.classList.add('wrong')
+          // incorrect user input
+          if (answerElement.getAttribute('wrong-input') === true) {
+            answerElement.classList.remove('inactive')
+            answerElement.classList.remove('active')
+            answerElement.classList.add('wrong')
+          }
+          // correct user input
+          else if (answerElement.getAttribute('correct-input') === true) {
+            answerElement.classList.remove('inactive')
+            answerElement.classList.remove('wrong')
+            answerElement.classList.add('active')
+          }
+          // other answers
+          else {
+            answerElement.classList.remove('active')
+            answerElement.classList.remove('wrong')
+            answerElement.classList.add('inactive')
+          }
         }
       }
     }

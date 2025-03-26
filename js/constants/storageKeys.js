@@ -13,6 +13,6 @@ export class DEFAULT_VALUE {
   static LEARN_QUESTION_INDEX = 1
   static LEARN_QUESTION_USER_ANSWER = {
     answered: false,
-    input: "",
+    wasCorrect: false,
   }
 }
