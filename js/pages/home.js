@@ -1586,6 +1586,12 @@ const clearDeprecatedLocalStorageItems = () => {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
+  // make einburgerungstest disabled temporarily
+  const newPackBanner = document.getElementById('new-pack-banner')
+  newPackBanner.style.pointerEvents = "none"
+  newPackBanner.style.opacity = "0.5"
+  newPackBanner.style.cursor = "default"
+
   showSkeleton()
   clearDeprecatedLocalStorageItems()
 
