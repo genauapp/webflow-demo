@@ -260,91 +260,95 @@ const switchLearnAnswers = (
     const answerElement = document.getElementById(
       `learn-current-question-answer-${i + 1}`
     )
-    answerElement.innerText = answer
+
+    const newAnswerElement = answerElement.cloneNode(true)
+    answerElement.parentNode.replaceChild(newAnswerElement, answerElement)
+    newAnswerElement.innerText = answer
 
     // answers toggled ON
     if (shouldShowAnswer) {
       // // clear toggle OFF event listeners and attributes
-      answerElement.removeAttribute('wrong-input')
-      answerElement.removeAttribute('correct-input')
-      answerElement.removeEventListener('click', wrongAnswerEventListener)
-      answerElement.removeEventListener('click', correctAnswerEventListener)
+      newAnswerElement.removeAttribute('wrong-input')
+      newAnswerElement.removeAttribute('correct-input')
 
-      answerElement.classList.remove('wrong')
+      // answerElement.removeEventListener('click', wrongAnswerEventListener)
+      // answerElement.removeEventListener('click', correctAnswerEventListener)
+
+      newAnswerElement.classList.remove('wrong')
       // answer is correct
       if (answer === correctAnswer) {
-        answerElement.classList.remove('inactive')
-        answerElement.classList.add('active')
+        newAnswerElement.classList.remove('inactive')
+        newAnswerElement.classList.add('active')
       }
       // answer is incorrect
       else {
-        answerElement.classList.remove('active')
-        answerElement.classList.add('inactive')
+        newAnswerElement.classList.remove('active')
+        newAnswerElement.classList.add('inactive')
       }
     }
     // answers toggled OFF
     else {
       // user did not answer
       if (userAnswer.answered === false) {
-        answerElement.classList.remove('active')
-        answerElement.classList.remove('wrong')
-        answerElement.classList.add('inactive')
+        newAnswerElement.classList.remove('active')
+        newAnswerElement.classList.remove('wrong')
+        newAnswerElement.classList.add('inactive')
         // answer is correct
         if (answer === correctAnswer) {
-          answerElement.removeAttribute('wrong-input')
-          answerElement.removeEventListener('click', wrongAnswerEventListener)
+          newAnswerElement.removeAttribute('wrong-input')
+          // answerElement.removeEventListener('click', wrongAnswerEventListener)
 
-          answerElement.setAttribute('correct-input', true)
-          answerElement.addEventListener('click', correctAnswerEventListener)
+          newAnswerElement.setAttribute('correct-input', true)
+          newAnswerElement.addEventListener('click', correctAnswerEventListener)
         }
         // answer is incorrect
         else {
-          answerElement.removeAttribute('wrong-input')
-          answerElement.removeAttribute('correct-input')
-          answerElement.removeEventListener('click', correctAnswerEventListener)
+          newAnswerElement.removeAttribute('wrong-input')
+          newAnswerElement.removeAttribute('correct-input')
+          // answerElement.removeEventListener('click', correctAnswerEventListener)
 
-          answerElement.addEventListener('click', wrongAnswerEventListener)
+          newAnswerElement.addEventListener('click', wrongAnswerEventListener)
         }
       }
       // user answered
       else {
-        answerElement.removeEventListener('click', wrongAnswerEventListener)
-        answerElement.removeEventListener('click', correctAnswerEventListener)
+        // answerElement.removeEventListener('click', wrongAnswerEventListener)
+        // answerElement.removeEventListener('click', correctAnswerEventListener)
         // answered correctly
         if (userAnswer.wasCorrect) {
           // element is the correct answer
-          if (answerElement.getAttribute('correct-input') === true) {
-            answerElement.classList.remove('inactive')
-            answerElement.classList.remove('wrong')
-            answerElement.classList.add('active')
+          if (newAnswerElement.getAttribute('correct-input') === true) {
+            newAnswerElement.classList.remove('inactive')
+            newAnswerElement.classList.remove('wrong')
+            newAnswerElement.classList.add('active')
           }
           // element is not the correct answer
           else {
-            answerElement.classList.remove('active')
-            answerElement.classList.remove('wrong')
-            answerElement.classList.add('inactive')
+            newAnswerElement.classList.remove('active')
+            newAnswerElement.classList.remove('wrong')
+            newAnswerElement.classList.add('inactive')
           }
         }
         // answered incorrectly
         else {
           // incorrect user input
-          if (answerElement.getAttribute('wrong-input') === true) {
-            answerElement.classList.remove('inactive')
-            answerElement.classList.remove('active')
-            answerElement.classList.add('wrong')
-            answerElement.style.backgroundColor = '#a560602b'
+          if (newAnswerElement.getAttribute('wrong-input') === true) {
+            newAnswerElement.classList.remove('inactive')
+            newAnswerElement.classList.remove('active')
+            newAnswerElement.classList.add('wrong')
+            newAnswerElement.style.backgroundColor = '#a560602b'
           }
           // correct user input
-          else if (answerElement.getAttribute('correct-input') === true) {
-            answerElement.classList.remove('inactive')
-            answerElement.classList.remove('wrong')
-            answerElement.classList.add('active')
+          else if (newAnswerElement.getAttribute('correct-input') === true) {
+            newAnswerElement.classList.remove('inactive')
+            newAnswerElement.classList.remove('wrong')
+            newAnswerElement.classList.add('active')
           }
           // other answers
           else {
-            answerElement.classList.remove('active')
-            answerElement.classList.remove('wrong')
-            answerElement.classList.add('inactive')
+            newAnswerElement.classList.remove('active')
+            newAnswerElement.classList.remove('wrong')
+            newAnswerElement.classList.add('inactive')
           }
         }
       }
