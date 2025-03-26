@@ -210,6 +210,8 @@ const correctAnswerEventListener = (event) => {
     currentLearnQuestionIndex
   )
 
+  answerElement.setAttribute('correct-input', true)
+
   switchLearnAnswers(
     shouldShowAnswer,
     userAnswer,
@@ -286,14 +288,13 @@ const switchLearnAnswers = (
     else {
       // user did not answer
       if (userAnswer.answered === false) {
-        answerElement.classList.remove('active', 'wrong')
+        answerElement.classList.remove('active')
+        answerElement.classList.remove('wrong')
         answerElement.classList.add('inactive')
         // answer is correct
         if (answer === correctAnswer) {
           answerElement.removeAttribute('wrong-input')
           answerElement.removeEventListener('click', wrongAnswerEventListener)
-
-          answerElement.setAttribute('correct-input', true)
           answerElement.addEventListener('click', correctAnswerEventListener)
         }
         // answer is incorrect
@@ -313,12 +314,14 @@ const switchLearnAnswers = (
         if (userAnswer.wasCorrect) {
           // element is the correct answer
           if (answerElement.getAttribute('correct-input') === true) {
-            answerElement.classList.remove('inactive', 'wrong')
+            answerElement.classList.remove('inactive')
+            answerElement.classList.remove('wrong')
             answerElement.classList.add('active')
           }
           // element is not the correct answer
           else {
-            answerElement.classList.remove('active', 'wrong')
+            answerElement.classList.remove('active')
+            answerElement.classList.remove('wrong')
             answerElement.classList.add('inactive')
           }
         }
@@ -326,17 +329,21 @@ const switchLearnAnswers = (
         else {
           // incorrect user input
           if (answerElement.getAttribute('wrong-input') === true) {
-            answerElement.classList.remove('inactive', 'active')
+            answerElement.classList.remove('inactive')
+            answerElement.classList.remove('active')
             answerElement.classList.add('wrong')
+            answerElement.style.backgroundColor = '#a560602b'
           }
           // correct user input
           else if (answerElement.getAttribute('correct-input') === true) {
-            answerElement.classList.remove('inactive', 'wrong')
+            answerElement.classList.remove('inactive')
+            answerElement.classList.remove('wrong')
             answerElement.classList.add('active')
           }
           // other answers
           else {
-            answerElement.classList.remove('active', 'wrong')
+            answerElement.classList.remove('active')
+            answerElement.classList.remove('wrong')
             answerElement.classList.add('inactive')
           }
         }
