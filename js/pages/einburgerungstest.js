@@ -73,24 +73,61 @@ document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
 })
 
 // On Toggle Change
-document
-  .getElementById('should-show-answer-switch')
-  .addEventListener('click', () => {
-    const offOptionElement = document.getElementById('hide-answers-option')
-    const onOptionElement = document.getElementById('show-answers-option')
-    if (offOptionElement && offOptionElement.classList.contains('active')) {
-      console.log('hiding learn answers...')
-      // set updated local storage item
-      LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, false)
-    } else if (
-      onOptionElement &&
-      onOptionElement.classList.contains('active')
-    ) {
-      console.log('showing learn answers...')
-      // set updated local storage item
-      LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, true)
-    }
-  })
+// document
+//   .getElementById('should-show-answer-switch-button')
+//   .addEventListener('click', () => {
+//     const offOptionElement = document.getElementById('hide-answers-option')
+//     const onOptionElement = document.getElementById('show-answers-option')
+//     if (offOptionElement && offOptionElement.classList.contains('active')) {
+//       console.log('hiding learn answers...')
+//       // set updated local storage item
+//       LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, false)
+//     } else if (
+//       onOptionElement &&
+//       onOptionElement.classList.contains('active')
+//     ) {
+//       console.log('showing learn answers...')
+//       // set updated local storage item
+//       LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, true)
+//     }
+//   })
+
+// const toggle = document.getElementById("should-show-answer-switch")
+
+// toggle.addEventListener("change", () => {
+//   if (toggle)
+// })
+
+const offOptionElement = document.getElementById('hide-answers-option')
+const onOptionElement = document.getElementById('show-answers-option')
+
+offOptionElement.addEventListener('click', () => {
+  const shouldShowAnswer = LocalStorageManager.load(
+    SHOULD_SHOW_ANSWER_KEY,
+    DEFAULT_VALUE.SHOULD_SHOW_ANSWER
+  )
+
+  if (shouldShowAnswer) {
+    console.log('hiding learn answers...')
+    LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, false)
+  }
+
+  return
+})
+
+onOptionElement.addEventListener('click', () => {
+  const shouldShowAnswer = LocalStorageManager.load(
+    SHOULD_SHOW_ANSWER_KEY,
+    DEFAULT_VALUE.SHOULD_SHOW_ANSWER
+  )
+
+  if (!shouldShowAnswer) {
+    console.log('showing learn answers...')
+    LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, true)
+  }
+
+  return
+})
 
 /** UI Changes
  * They CANNOT access local storage items
