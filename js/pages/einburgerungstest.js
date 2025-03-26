@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setLearnTabElements(
     currentLearnQuestionIndex,
     questions.length,
-    shouldShowAnswer,
+    DEFAULT_VALUE.SHOULD_SHOW_ANSWER,
     recentQuestion
   )
 })
