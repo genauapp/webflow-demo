@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     DEFAULT_VALUE.LEARN_STATE
   )
   const currentLearnQuestionIndex = LocalStorageManager.load(
-    new LEARN__STATE__QUESTION_INDEX_KEY(currentState),
+    LEARN__STATE__QUESTION_INDEX_KEY(currentState),
     DEFAULT_VALUE.LEARN_QUESTION_INDEX
   )
   const learnQuestionUserAnswer = LocalStorageManager.load(
@@ -62,7 +62,7 @@ document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
       DEFAULT_VALUE.SHOULD_SHOW_ANSWER
     )
     const currentLearnQuestionIndex = LocalStorageManager.load(
-      new LEARN__STATE__QUESTION_INDEX_KEY(currentState),
+      LEARN__STATE__QUESTION_INDEX_KEY(currentState),
       DEFAULT_VALUE.LEARN_QUESTION_INDEX
     )
     const learnQuestionUserAnswer = LocalStorageManager.load(
@@ -99,7 +99,7 @@ document.getElementById('hide-answers-option').addEventListener('click', () => {
   const currentState = LocalStorageManager.load(LEARN_STATE_KEY)
   const shouldShowAnswer = LocalStorageManager.load(SHOULD_SHOW_ANSWER_KEY)
   const currentLearnQuestionIndex = LocalStorageManager.load(
-    new LEARN__STATE__QUESTION_INDEX_KEY(currentState)
+    LEARN__STATE__QUESTION_INDEX_KEY(currentState)
   )
   const learnQuestionUserAnswer = LocalStorageManager.load(
     LEARN_QUESTION_USER_ANSWER_KEY
@@ -131,7 +131,7 @@ document.getElementById('show-answers-option').addEventListener('click', () => {
   const currentState = LocalStorageManager.load(LEARN_STATE_KEY)
   const shouldShowAnswer = LocalStorageManager.load(SHOULD_SHOW_ANSWER_KEY)
   const currentLearnQuestionIndex = LocalStorageManager.load(
-    new LEARN__STATE__QUESTION_INDEX_KEY(currentState)
+    LEARN__STATE__QUESTION_INDEX_KEY(currentState)
   )
   const learnQuestionUserAnswer = LocalStorageManager.load(
     LEARN_QUESTION_USER_ANSWER_KEY
@@ -172,7 +172,7 @@ const wrongAnswerEventListener = (event) => {
   const currentState = LocalStorageManager.load(LEARN_STATE_KEY)
   const shouldShowAnswer = LocalStorageManager.load(SHOULD_SHOW_ANSWER_KEY)
   const currentLearnQuestionIndex = LocalStorageManager.load(
-    new LEARN__STATE__QUESTION_INDEX_KEY(currentState)
+    LEARN__STATE__QUESTION_INDEX_KEY(currentState)
   )
 
   // get current question
@@ -203,7 +203,7 @@ const correctAnswerEventListener = (event) => {
   const currentState = LocalStorageManager.load(LEARN_STATE_KEY)
   const shouldShowAnswer = LocalStorageManager.load(SHOULD_SHOW_ANSWER_KEY)
   const currentLearnQuestionIndex = LocalStorageManager.load(
-    new LEARN__STATE__QUESTION_INDEX_KEY(currentState)
+    LEARN__STATE__QUESTION_INDEX_KEY(currentState)
   )
 
   // get current question
