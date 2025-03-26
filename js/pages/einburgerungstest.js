@@ -75,10 +75,8 @@ document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
 })
 
 // On Toggle Change
-const offOptionElement = document.getElementById('hide-answers-option')
-const onOptionElement = document.getElementById('show-answers-option')
-
-offOptionElement.addEventListener('click', () => {
+// // button: OFF
+document.getElementById('hide-answers-option').addEventListener('click', () => {
   const shouldShowAnswer = LocalStorageManager.load(
     SHOULD_SHOW_ANSWER_KEY,
     DEFAULT_VALUE.SHOULD_SHOW_ANSWER
@@ -92,7 +90,8 @@ offOptionElement.addEventListener('click', () => {
   return
 })
 
-onOptionElement.addEventListener('click', () => {
+// // button: ON
+document.getElementById('show-answers-option').addEventListener('click', () => {
   const shouldShowAnswer = LocalStorageManager.load(
     SHOULD_SHOW_ANSWER_KEY,
     DEFAULT_VALUE.SHOULD_SHOW_ANSWER
@@ -128,28 +127,41 @@ const setLearnTabElements = (
     'learn-current-question-description-label'
   ).innerText = currentQuestion.question
 
-  currentQuestion.answers.forEach((answer, i) => {
+  switchLearnAnswers(
+    shouldShowAnswer,
+    currentQuestion.answers,
+    currentQuestion.correct_answer
+  )
+}
+
+const switchLearnAnswers = (shouldShowAnswer, answers, correctAnswer) => {
+  answers.forEach((answer, i) => {
     const answerElement = document.getElementById(
       `learn-current-question-answer-${i + 1}`
     )
     answerElement.innerText = answer
 
-    if (shouldShowAnswer && answer === currentQuestion.correct_answer) {
-      answerElement.style.backgroundColor === '#0cac92'
+    // answers toggled ON
+    if (shouldShowAnswer) {
+      answerElement.classList.remove('text-block-5')
+      answerElement.classList.add('button-5')
+      answerElement.classList.add('w-button')
+      // answer is correct
+      if (answer === correctAnswer) {
+        answerElement.classList.add('active')
+      }
+      // answer is incorrect
+      else {
+        answerElement.classList.add('inactive')
+      }
+    }
+    // answers toggled OFF
+    else {
+      answerElement.classList.remove('button-5')
+      answerElement.classList.remove('w-button')
+      answerElement.classList.remove('inactive')
+      answerElement.classList.remove('active')
+      answerElement.classList.add('text-block-5')
     }
   })
 }
-
-// const setToggleSwitch = (shouldShowAnswer) => {
-//   if (shouldShowAnswer) {
-//     offOptionElement.classList.add('deactive')
-//     onOptionElement.classList.add('active')
-//     offOptionElement.classList.remove('active')
-//     onOptionElement.classList.remove('deactive')
-//   } else {
-//     offOptionElement.classList.add('active')
-//     onOptionElement.classList.add('deactive')
-//     offOptionElement.classList.remove('deactive')
-//     onOptionElement.classList.remove('active')
-//   }
-// }
