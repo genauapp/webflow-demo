@@ -1655,19 +1655,6 @@
     "image": ""
   },
   {
-    "id": 135,
-    "question": "Wen vertreten die Gewerkschaften in Deutschland?",
-    "answers": [
-      "große Unternehmen",
-      "kleine Unternehmen",
-      "Selbstständige",
-      "Arbeitnehmerinnen und Arbeitnehmer"
-    ],
-    "correct_answer": "Arbeitnehmerinnen und Arbeitnehmer",
-    "state": "Bundesweit",
-    "image": ""
-  },
-  {
     "id": 136,
     "question": "Sie gehen in Deutschland zum Arbeitsgericht bei …",
     "answers": [
