@@ -11,6 +11,7 @@ import {
   DEFAULT_VALUE,
   LEARN_QUESTION_USER_ANSWER_KEY,
 } from '../constants/storageKeys.js'
+import { testTabClickHandler } from '../components/einburgerungstest/test.js'
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', () => {
@@ -321,6 +322,11 @@ const correctAnswerEventListener = (event) => {
     currentQuestion.correct_answer
   )
 }
+
+// On Test Tab Click
+document
+  .getElementById('test-tab')
+  .addEventListener('click', testTabClickHandler)
 
 /** UI Changes
  * They are only responsible for displaying whatever they receive as parameter

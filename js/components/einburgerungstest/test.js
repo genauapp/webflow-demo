@@ -1,17 +1,36 @@
 import ElementUtils from '../../utils/ElementUtils'
 
-const testTabClickHandler = (event) => {
+export const testTabClickHandler = (event) => {
   const testTabElement = event.target
 
   console.log('I am clicked!')
 
+
+  // set user answer to default one
+  LocalStorageManager.save(
+    LEARN_QUESTION_USER_ANSWER_KEY,
+    DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
+  )
+  // set current state to default one
+
+  // get recent local storage items
+  LocalStorageManager.save(CURRENT_STATE_KEY, DEFAULT_VALUE.CURRENT_STATE)
+  const currentLearnQuestionIndex = LocalStorageManager.load(
+    LEARN__STATE__QUESTION_INDEX_KEY(DEFAULT_VALUE.CURRENT_STATE),
+    DEFAULT_VALUE.LEARN_QUESTION_INDEX
+  )
+
+  // get most recent question info
+  const recentQuestion = QuestionManager.getCurrentLearnQuestion(
+    DEFAULT_VALUE.CURRENT_STATE,
+    currentLearnQuestionIndex
+  )
+  const totalNumberOfQuestions = QuestionManager.getTotalNumberOfLearnQuestions(
+    DEFAULT_VALUE.CURRENT_STATE
+  )
+
   //   testTabElement.removeEventListener('click', testTabClickHandler)
 }
-
-// On Click
-document
-  .getElementById('test-tab')
-  .addEventListener('click', testTabClickHandler)
 
 /** UI Changes
  * They are only responsible for displaying whatever they receive as parameter
