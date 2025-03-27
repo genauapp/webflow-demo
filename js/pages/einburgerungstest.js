@@ -90,12 +90,12 @@ document.getElementById('learn-previous').addEventListener('click', (event) => {
   )
 
   // UI Changes
-  const isFirst = previousIndex === 1
-  ElementUtils.switchButtonActivation(event.target, isFirst)
+  const prevIsFirst = previousIndex === 1
+  ElementUtils.switchButtonActivation(event.target, prevIsFirst)
 
-  const newNextIsLast = currentLearnQuestionIndex === totalNumberOfQuestions
-  const nextButton = document.getElementById('learn-next')
-  ElementUtils.switchButtonActivation(nextButton, newNextIsLast)
+  const newNextIsLast = !prevIsFirst
+  const newNextButton = document.getElementById('learn-next')
+  ElementUtils.switchButtonActivation(newNextButton, newNextIsLast)
 
   setLearnTabElements(
     previousIndex,
@@ -137,10 +137,10 @@ document.getElementById('learn-next').addEventListener('click', (event) => {
   )
 
   // UI Changes
-  const isLast = nextIndex === totalNumberOfQuestions
-  ElementUtils.switchButtonActivation(event.target, isLast)
+  const nextIsLast = nextIndex === totalNumberOfQuestions
+  ElementUtils.switchButtonActivation(event.target, nextIsLast)
 
-  const newPreviousIsFirst = currentLearnQuestionIndex === 1
+  const newPreviousIsFirst = !nextIsLast
   const newPreviousButton = document.getElementById('learn-previous')
   ElementUtils.switchButtonActivation(newPreviousButton, newPreviousIsFirst)
 
