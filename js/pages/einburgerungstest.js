@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // get recent local storage items
   LocalStorageManager.save(LEARN_STATE_KEY, DEFAULT_VALUE.LEARN_STATE)
   const currentLearnQuestionIndex = LocalStorageManager.load(
-    LEARN__STATE__QUESTION_INDEX_KEY(currentState),
+    LEARN__STATE__QUESTION_INDEX_KEY(DEFAULT_VALUE.LEARN_STATE),
     DEFAULT_VALUE.LEARN_QUESTION_INDEX
   )
 
