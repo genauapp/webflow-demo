@@ -355,6 +355,7 @@ const switchLearnAnswers = (
             newAnswerElement.classList.remove('active')
             newAnswerElement.classList.remove('wrong')
             newAnswerElement.classList.add('inactive')
+            newAnswerElement.style.backgroundColor = '#fff0'
           }
         }
       }
