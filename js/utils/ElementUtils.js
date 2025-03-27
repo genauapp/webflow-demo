@@ -2,10 +2,10 @@ export default class ElementUtils {
   static switchButtonActivation = (button, isDisabled) => {
     if (isDisabled) {
       // disable it on the UI
-      makeButtonDisabled(button)
+      ElementUtils.makeButtonDisabled(button)
     } else {
       // enable it on the UI
-      makeButtonEnabled(button)
+      ElementUtils.makeButtonEnabled(button)
     }
   }
 
