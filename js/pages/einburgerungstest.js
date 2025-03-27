@@ -451,3 +451,12 @@ const switchLearnAnswers = (
     }
   })
 }
+
+// jQuery for Dropdown
+
+$('a').click(function () {
+  $('nav').removeClass('w--open')
+})
+$('a').click(function () {
+  $('div').removeClass('w--open')
+})
