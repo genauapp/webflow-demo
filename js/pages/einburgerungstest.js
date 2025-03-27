@@ -326,7 +326,7 @@ const setLearnTabElements = (
   totalNumberOfQuestions,
   shouldShowAnswer,
   currentQuestion,
-  learnQuestionUserAnswer
+  userAnswer
 ) => {
   document.getElementById('learn-question-index').innerText =
     currentQuestionIndex
@@ -342,7 +342,7 @@ const setLearnTabElements = (
 
   switchLearnAnswers(
     shouldShowAnswer,
-    learnQuestionUserAnswer,
+    userAnswer,
     currentQuestion.answers,
     currentQuestion.correct_answer
   )
