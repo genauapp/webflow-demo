@@ -48,48 +48,110 @@ document.addEventListener('DOMContentLoaded', () => {
     recentQuestion,
     DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
   )
+})
 
-  document.getElementById('learn-previous').addEventListener('click', () => {
-    const isFirst = currentLearnQuestionIndex === 1
+// On Previous Click
+document.getElementById('learn-previous').addEventListener('click', () => {
+  // set toggle to default one
+  LocalStorageManager.save(
+    SHOULD_SHOW_ANSWER_KEY,
+    DEFAULT_VALUE.SHOULD_SHOW_ANSWER
+  )
+  // set user answer to default one
+  LocalStorageManager.save(
+    LEARN_QUESTION_USER_ANSWER_KEY,
+    DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
+  )
 
-    if (isFirst) {
-      return
-    }
+  // get recent local storage items
+  const currentState = LocalStorageManager.load(
+    LEARN_STATE_KEY,
+    DEFAULT_VALUE.LEARN_STATE
+  )
+  const currentLearnQuestionIndex = LocalStorageManager.load(
+    LEARN__STATE__QUESTION_INDEX_KEY(currentState)
+  )
 
-    LocalStorageManager.save(
-      LEARN__STATE__QUESTION_INDEX_KEY(currentState),
-      currentLearnQuestionIndex - 1
-    )
+  const isFirst = currentLearnQuestionIndex === 1
 
-    setLearnTabElements(
-      currentLearnQuestionIndex - 1,
-      totalNumberOfQuestions,
-      DEFAULT_VALUE.SHOULD_SHOW_ANSWER,
-      recentQuestion,
-      DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
-    )
-  })
+  if (isFirst) {
+    return
+  }
 
-  document.getElementById('learn-next').addEventListener('click', () => {
-    const isLast = currentLearnQuestionIndex === totalNumberOfQuestions
+  const previousIndex = currentLearnQuestionIndex - 1
 
-    if (isLast) {
-      return
-    }
+  // get previous question info
+  const previousQuestion = QuestionManager.getCurrentLearnQuestion(
+    currentState,
+    previousIndex
+  )
+  const totalNumberOfQuestions =
+    QuestionManager.getTotalNumberOfLearnQuestions(currentState)
 
-    LocalStorageManager.save(
-      LEARN__STATE__QUESTION_INDEX_KEY(currentState),
-      currentLearnQuestionIndex + 1
-    )
+  LocalStorageManager.save(
+    LEARN__STATE__QUESTION_INDEX_KEY(currentState),
+    previousIndex
+  )
 
-    setLearnTabElements(
-      currentLearnQuestionIndex + 1,
-      totalNumberOfQuestions,
-      DEFAULT_VALUE.SHOULD_SHOW_ANSWER,
-      recentQuestion,
-      DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
-    )
-  })
+  setLearnTabElements(
+    previousIndex,
+    totalNumberOfQuestions,
+    DEFAULT_VALUE.SHOULD_SHOW_ANSWER,
+    previousQuestion,
+    DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
+  )
+})
+
+// On Next Click
+document.getElementById('learn-next').addEventListener('click', () => {
+  // set toggle to default one
+  LocalStorageManager.save(
+    SHOULD_SHOW_ANSWER_KEY,
+    DEFAULT_VALUE.SHOULD_SHOW_ANSWER
+  )
+  // set user answer to default one
+  LocalStorageManager.save(
+    LEARN_QUESTION_USER_ANSWER_KEY,
+    DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
+  )
+
+  // get recent local storage items
+  const currentState = LocalStorageManager.load(
+    LEARN_STATE_KEY,
+    DEFAULT_VALUE.LEARN_STATE
+  )
+  const currentLearnQuestionIndex = LocalStorageManager.load(
+    LEARN__STATE__QUESTION_INDEX_KEY(currentState)
+  )
+
+  const isLast = currentLearnQuestionIndex === totalNumberOfQuestions
+
+  if (isLast) {
+    return
+  }
+
+  const nextIndex = currentLearnQuestionIndex + 1
+
+  // get previous question info
+  const nextQuestion = QuestionManager.getCurrentLearnQuestion(
+    currentState,
+    nextIndex
+  )
+  const totalNumberOfQuestions =
+    QuestionManager.getTotalNumberOfLearnQuestions(currentState)
+
+  LocalStorageManager.save(
+    LEARN__STATE__QUESTION_INDEX_KEY(currentState),
+    nextIndex
+  )
+
+  setLearnTabElements(
+    nextIndex,
+    totalNumberOfQuestions,
+    DEFAULT_VALUE.SHOULD_SHOW_ANSWER,
+    nextQuestion,
+    DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
+  )
 })
 
 // On State Change
