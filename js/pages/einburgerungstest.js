@@ -280,6 +280,7 @@ const switchLearnAnswers = (
       // answerElement.removeEventListener('click', correctAnswerEventListener)
 
       newAnswerElement.classList.remove('wrong')
+      newAnswerElement.style.backgroundColor = '#fff0'
       // answer is correct
       if (answer === correctAnswer) {
         newAnswerElement.classList.remove('inactive')
