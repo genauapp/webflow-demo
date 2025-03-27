@@ -72,12 +72,6 @@ document.getElementById('learn-previous').addEventListener('click', () => {
     LEARN__STATE__QUESTION_INDEX_KEY(currentState)
   )
 
-  const isFirst = currentLearnQuestionIndex === 1
-
-  if (isFirst) {
-    return
-  }
-
   const previousIndex = currentLearnQuestionIndex - 1
 
   // get previous question info
@@ -87,6 +81,12 @@ document.getElementById('learn-previous').addEventListener('click', () => {
   )
   const totalNumberOfQuestions =
     QuestionManager.getTotalNumberOfLearnQuestions(currentState)
+
+  const isFirst = currentLearnQuestionIndex === 1
+
+  if (isFirst) {
+    return
+  }
 
   LocalStorageManager.save(
     LEARN__STATE__QUESTION_INDEX_KEY(currentState),
@@ -124,12 +124,6 @@ document.getElementById('learn-next').addEventListener('click', () => {
     LEARN__STATE__QUESTION_INDEX_KEY(currentState)
   )
 
-  const isLast = currentLearnQuestionIndex === totalNumberOfQuestions
-
-  if (isLast) {
-    return
-  }
-
   const nextIndex = currentLearnQuestionIndex + 1
 
   // get previous question info
@@ -139,6 +133,12 @@ document.getElementById('learn-next').addEventListener('click', () => {
   )
   const totalNumberOfQuestions =
     QuestionManager.getTotalNumberOfLearnQuestions(currentState)
+
+  const isLast = currentLearnQuestionIndex === totalNumberOfQuestions
+
+  if (isLast) {
+    return
+  }
 
   LocalStorageManager.save(
     LEARN__STATE__QUESTION_INDEX_KEY(currentState),
