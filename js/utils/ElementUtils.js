@@ -18,4 +18,16 @@ export default class ElementUtils {
     element.style.opacity = 'inherit'
     element.style.pointerEvents = 'inherit'
   }
+
+  static switchPreviousNextButtons = (
+    potentialQuestionIndex,
+    totalNumberOfQuestions,
+    { prevButton, nextButton }
+  ) => {
+    const isPreviousFirst = potentialQuestionIndex === 1
+    const isNextLast = potentialQuestionIndex === totalNumberOfQuestions
+
+    ElementUtils.switchButtonActivation(prevButton, isPreviousFirst)
+    ElementUtils.switchButtonActivation(nextButton, isNextLast)
+  }
 }

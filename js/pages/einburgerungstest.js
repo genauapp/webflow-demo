@@ -5,8 +5,8 @@ import LocalStorageManager from '../utils/LocalStorageManager.js'
 import ElementUtils from '../utils/ElementUtils.js'
 
 import {
+  CURRENT_STATE_KEY,
   LEARN__STATE__QUESTION_INDEX_KEY,
-  LEARN_STATE_KEY,
   SHOULD_SHOW_ANSWER_KEY,
   DEFAULT_VALUE,
   LEARN_QUESTION_USER_ANSWER_KEY,
@@ -27,24 +27,27 @@ document.addEventListener('DOMContentLoaded', () => {
   // set current state to default one
 
   // get recent local storage items
-  LocalStorageManager.save(LEARN_STATE_KEY, DEFAULT_VALUE.LEARN_STATE)
+  LocalStorageManager.save(CURRENT_STATE_KEY, DEFAULT_VALUE.CURRENT_STATE)
   const currentLearnQuestionIndex = LocalStorageManager.load(
-    LEARN__STATE__QUESTION_INDEX_KEY(DEFAULT_VALUE.LEARN_STATE),
+    LEARN__STATE__QUESTION_INDEX_KEY(DEFAULT_VALUE.CURRENT_STATE),
     DEFAULT_VALUE.LEARN_QUESTION_INDEX
   )
 
   // get most recent question info
   const recentQuestion = QuestionManager.getCurrentLearnQuestion(
-    DEFAULT_VALUE.LEARN_STATE,
+    DEFAULT_VALUE.CURRENT_STATE,
     currentLearnQuestionIndex
   )
   const totalNumberOfQuestions = QuestionManager.getTotalNumberOfLearnQuestions(
-    DEFAULT_VALUE.LEARN_STATE
+    DEFAULT_VALUE.CURRENT_STATE
   )
 
   // UI Changes
   // // show initial previous/next buttons
-  switchPreviousNextButtons(currentLearnQuestionIndex, totalNumberOfQuestions)
+  switchLearnPreviousNextButtons(
+    currentLearnQuestionIndex,
+    totalNumberOfQuestions
+  )
   // // show initial question
   setLearnTabElements(
     currentLearnQuestionIndex,
@@ -65,7 +68,7 @@ document.getElementById('learn-previous').addEventListener('click', (event) => {
 
   // get recent local storage items
   const shouldShowAnswer = LocalStorageManager.load(SHOULD_SHOW_ANSWER_KEY)
-  const currentState = LocalStorageManager.load(LEARN_STATE_KEY)
+  const currentState = LocalStorageManager.load(CURRENT_STATE_KEY)
   const currentLearnQuestionIndex = LocalStorageManager.load(
     LEARN__STATE__QUESTION_INDEX_KEY(currentState)
   )
@@ -87,7 +90,7 @@ document.getElementById('learn-previous').addEventListener('click', (event) => {
 
   // UI Changes
   // // show new previous/next buttons
-  switchPreviousNextButtons(previousIndex, totalNumberOfQuestions)
+  switchLearnPreviousNextButtons(previousIndex, totalNumberOfQuestions)
   // // show previous question
   setLearnTabElements(
     previousIndex,
@@ -108,7 +111,7 @@ document.getElementById('learn-next').addEventListener('click', (event) => {
 
   // get recent local storage items
   const shouldShowAnswer = LocalStorageManager.load(SHOULD_SHOW_ANSWER_KEY)
-  const currentState = LocalStorageManager.load(LEARN_STATE_KEY)
+  const currentState = LocalStorageManager.load(CURRENT_STATE_KEY)
   const currentLearnQuestionIndex = LocalStorageManager.load(
     LEARN__STATE__QUESTION_INDEX_KEY(currentState)
   )
@@ -130,7 +133,7 @@ document.getElementById('learn-next').addEventListener('click', (event) => {
 
   // UI Changes
   // // show new previous/next buttons
-  switchPreviousNextButtons(nextIndex, totalNumberOfQuestions)
+  switchLearnPreviousNextButtons(nextIndex, totalNumberOfQuestions)
   // // show next question
   setLearnTabElements(
     nextIndex,
@@ -147,7 +150,7 @@ document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
     event.preventDefault()
     // set updated local storage item
     const currentState = stateLink.getAttribute('data-option')
-    LocalStorageManager.save(LEARN_STATE_KEY, currentState)
+    LocalStorageManager.save(CURRENT_STATE_KEY, currentState)
     // set user answer to default one
     LocalStorageManager.save(
       LEARN_QUESTION_USER_ANSWER_KEY,
@@ -175,7 +178,10 @@ document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
     // // show updated state header
     document.getElementById('dropdown-header').innerText = currentState
     // // show updated previous/next buttons
-    switchPreviousNextButtons(currentLearnQuestionIndex, totalNumberOfQuestions)
+    switchLearnPreviousNextButtons(
+      currentLearnQuestionIndex,
+      totalNumberOfQuestions
+    )
     // // show updated question
     setLearnTabElements(
       currentLearnQuestionIndex,
@@ -197,7 +203,7 @@ document.getElementById('hide-answers-option').addEventListener('click', () => {
   )
 
   // get recent local storage items
-  const currentState = LocalStorageManager.load(LEARN_STATE_KEY)
+  const currentState = LocalStorageManager.load(CURRENT_STATE_KEY)
   const shouldShowAnswer = LocalStorageManager.load(SHOULD_SHOW_ANSWER_KEY)
   const currentLearnQuestionIndex = LocalStorageManager.load(
     LEARN__STATE__QUESTION_INDEX_KEY(currentState)
@@ -226,7 +232,7 @@ document.getElementById('hide-answers-option').addEventListener('click', () => {
 // // button: ON
 document.getElementById('show-answers-option').addEventListener('click', () => {
   // get recent local storage items
-  const currentState = LocalStorageManager.load(LEARN_STATE_KEY)
+  const currentState = LocalStorageManager.load(CURRENT_STATE_KEY)
   const shouldShowAnswer = LocalStorageManager.load(SHOULD_SHOW_ANSWER_KEY)
   const currentLearnQuestionIndex = LocalStorageManager.load(
     LEARN__STATE__QUESTION_INDEX_KEY(currentState)
@@ -265,7 +271,7 @@ const wrongAnswerEventListener = (event) => {
   LocalStorageManager.save(LEARN_QUESTION_USER_ANSWER_KEY, userAnswer)
 
   // get recent local storage items
-  const currentState = LocalStorageManager.load(LEARN_STATE_KEY)
+  const currentState = LocalStorageManager.load(CURRENT_STATE_KEY)
   const shouldShowAnswer = LocalStorageManager.load(SHOULD_SHOW_ANSWER_KEY)
   const currentLearnQuestionIndex = LocalStorageManager.load(
     LEARN__STATE__QUESTION_INDEX_KEY(currentState)
@@ -296,7 +302,7 @@ const correctAnswerEventListener = (event) => {
   LocalStorageManager.save(LEARN_QUESTION_USER_ANSWER_KEY, userAnswer)
 
   // get recent local storage items
-  const currentState = LocalStorageManager.load(LEARN_STATE_KEY)
+  const currentState = LocalStorageManager.load(CURRENT_STATE_KEY)
   const shouldShowAnswer = LocalStorageManager.load(SHOULD_SHOW_ANSWER_KEY)
   const currentLearnQuestionIndex = LocalStorageManager.load(
     LEARN__STATE__QUESTION_INDEX_KEY(currentState)
@@ -456,16 +462,17 @@ const switchLearnAnswers = (
   })
 }
 
-const switchPreviousNextButtons = (
+const switchLearnPreviousNextButtons = (
   potentialQuestionIndex,
   totalNumberOfQuestions
 ) => {
-  const isPreviousFirst = potentialQuestionIndex === 1
-  const isNextLast = potentialQuestionIndex === totalNumberOfQuestions
   const previousButton = document.getElementById('learn-previous')
   const nextButton = document.getElementById('learn-next')
-  ElementUtils.switchButtonActivation(previousButton, isPreviousFirst)
-  ElementUtils.switchButtonActivation(nextButton, isNextLast)
+  ElementUtils.switchPreviousNextButtons(
+    potentialQuestionIndex,
+    totalNumberOfQuestions,
+    { previousButton, nextButton }
+  )
 }
 
 // jQuery for Dropdown
