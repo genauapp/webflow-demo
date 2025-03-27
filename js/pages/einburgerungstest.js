@@ -48,6 +48,48 @@ document.addEventListener('DOMContentLoaded', () => {
     recentQuestion,
     DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
   )
+
+  document.getElementById('learn-prev').addEventListener('click', () => {
+    const isFirst = currentLearnQuestionIndex === 1
+
+    if (isFirst) {
+      return
+    }
+
+    LocalStorageManager.save(
+      LEARN__STATE__QUESTION_INDEX_KEY(currentState),
+      currentLearnQuestionIndex - 1
+    )
+
+    setLearnTabElements(
+      currentLearnQuestionIndex - 1,
+      totalNumberOfQuestions,
+      DEFAULT_VALUE.SHOULD_SHOW_ANSWER,
+      recentQuestion,
+      DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
+    )
+  })
+
+  document.getElementById('learn-next').addEventListener('click', () => {
+    const isLast = currentLearnQuestionIndex === totalNumberOfQuestions
+
+    if (isLast) {
+      return
+    }
+
+    LocalStorageManager.save(
+      LEARN__STATE__QUESTION_INDEX_KEY(currentState),
+      currentLearnQuestionIndex + 1
+    )
+
+    setLearnTabElements(
+      currentLearnQuestionIndex + 1,
+      totalNumberOfQuestions,
+      DEFAULT_VALUE.SHOULD_SHOW_ANSWER,
+      recentQuestion,
+      DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
+    )
+  })
 })
 
 // On State Change
