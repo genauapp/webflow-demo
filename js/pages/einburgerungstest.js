@@ -477,7 +477,7 @@ const switchLearnPreviousNextButtons = (
   ElementUtils.switchPreviousNextButtons(
     potentialQuestionIndex,
     totalNumberOfQuestions,
-    { previousButton, nextButton }
+    { prevButton: previousButton, nextButton: nextButton }
   )
 }
 

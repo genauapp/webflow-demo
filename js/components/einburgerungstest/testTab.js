@@ -5,7 +5,6 @@ export const testTabClickHandler = (event) => {
 
   console.log('I am clicked!')
 
-
   // set user answer to default one
   LocalStorageManager.save(
     LEARN_QUESTION_USER_ANSWER_KEY,
@@ -100,6 +99,6 @@ const switchTestPreviousNextButtons = (
   ElementUtils.switchPreviousNextButtons(
     potentialQuestionIndex,
     totalNumberOfQuestions,
-    { previousButton, nextButton }
+    { prevButton: previousButton, nextButton: nextButton }
   )
 }
