@@ -43,13 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
   )
 
   // UI Changes
-  const isFirst = currentLearnQuestionIndex === 1
-  const isLast = currentLearnQuestionIndex === totalNumberOfQuestions
-  const previousButton = document.getElementById('learn-previous')
-  const nextButton = document.getElementById('learn-next')
-  ElementUtils.switchButtonActivation(previousButton, isFirst)
-  ElementUtils.switchButtonActivation(nextButton, isLast)
-
+  // // show initial previous/next buttons
+  switchPreviousNextButtons(currentLearnQuestionIndex, totalNumberOfQuestions)
+  // // show initial question
   setLearnTabElements(
     currentLearnQuestionIndex,
     totalNumberOfQuestions,
@@ -90,13 +86,9 @@ document.getElementById('learn-previous').addEventListener('click', (event) => {
   )
 
   // UI Changes
-  const prevIsFirst = previousIndex === 1
-  ElementUtils.switchButtonActivation(event.target, prevIsFirst)
-
-  const hasOneQuestion = totalNumberOfQuestions === 1
-  const newNextButton = document.getElementById('learn-next')
-  ElementUtils.switchButtonActivation(newNextButton, hasOneQuestion)
-
+  // // show new previous/next buttons
+  switchPreviousNextButtons(currentLearnQuestionIndex, totalNumberOfQuestions)
+  // // show previous question
   setLearnTabElements(
     previousIndex,
     totalNumberOfQuestions,
@@ -137,13 +129,9 @@ document.getElementById('learn-next').addEventListener('click', (event) => {
   )
 
   // UI Changes
-  const nextIsLast = nextIndex === totalNumberOfQuestions
-  ElementUtils.switchButtonActivation(event.target, nextIsLast)
-
-  const hasOneQuestion = totalNumberOfQuestions === 1
-  const newPreviousButton = document.getElementById('learn-previous')
-  ElementUtils.switchButtonActivation(newPreviousButton, hasOneQuestion)
-
+  // // show new previous/next buttons
+  switchPreviousNextButtons(currentLearnQuestionIndex, totalNumberOfQuestions)
+  // // show next question
   setLearnTabElements(
     nextIndex,
     totalNumberOfQuestions,
@@ -186,6 +174,8 @@ document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
     // update ui
     // // show updated state header
     document.getElementById('dropdown-header').innerText = currentState
+    // // show updated previous/next buttons
+    switchPreviousNextButtons(currentLearnQuestionIndex, totalNumberOfQuestions)
     // // show updated question
     setLearnTabElements(
       currentLearnQuestionIndex,
@@ -464,6 +454,18 @@ const switchLearnAnswers = (
       }
     }
   })
+}
+
+const switchPreviousNextButtons = (
+  currentQuestionIndex,
+  totalNumberOfQuestions
+) => {
+  const isPreviousFirst = currentQuestionIndex === 1
+  const isNextLast = currentQuestionIndex === totalNumberOfQuestions
+  const previousButton = document.getElementById('learn-previous')
+  const nextButton = document.getElementById('learn-next')
+  ElementUtils.switchButtonActivation(previousButton, isPreviousFirst)
+  ElementUtils.switchButtonActivation(nextButton, isNextLast)
 }
 
 // jQuery for Dropdown
