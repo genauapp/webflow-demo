@@ -17,6 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
     SHOULD_SHOW_ANSWER_KEY,
     DEFAULT_VALUE.SHOULD_SHOW_ANSWER
   )
+  // set user answer to default one
+  LocalStorageManager.save(
+    LEARN_QUESTION_USER_ANSWER_KEY,
+    DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
+  )
 
   // get recent local storage items
   const currentState = LocalStorageManager.load(
@@ -26,10 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const currentLearnQuestionIndex = LocalStorageManager.load(
     LEARN__STATE__QUESTION_INDEX_KEY(currentState),
     DEFAULT_VALUE.LEARN_QUESTION_INDEX
-  )
-  const learnQuestionUserAnswer = LocalStorageManager.load(
-    LEARN_QUESTION_USER_ANSWER_KEY,
-    DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
   )
 
   // get most recent question info
@@ -45,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     totalNumberOfQuestions,
     DEFAULT_VALUE.SHOULD_SHOW_ANSWER,
     recentQuestion,
-    learnQuestionUserAnswer
+    DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
   )
 })
 
@@ -56,6 +57,12 @@ document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
     // set updated local storage item
     const currentState = stateLink.getAttribute('data-option')
     LocalStorageManager.save(LEARN_STATE_KEY, currentState)
+    // set user answer to default one
+    LocalStorageManager.save(
+      LEARN_QUESTION_USER_ANSWER_KEY,
+      DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
+    )
+
     // get recent local storage items
     const shouldShowAnswer = LocalStorageManager.load(
       SHOULD_SHOW_ANSWER_KEY,
@@ -65,11 +72,6 @@ document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
       LEARN__STATE__QUESTION_INDEX_KEY(currentState),
       DEFAULT_VALUE.LEARN_QUESTION_INDEX
     )
-    const learnQuestionUserAnswer = LocalStorageManager.load(
-      LEARN_QUESTION_USER_ANSWER_KEY,
-      DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
-    )
-
     // get updated question info
     const updatedQuestion = QuestionManager.getCurrentLearnQuestion(
       currentState,
@@ -87,7 +89,7 @@ document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
       totalNumberOfQuestions,
       shouldShowAnswer,
       updatedQuestion,
-      learnQuestionUserAnswer
+      DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
     )
   })
 })
@@ -127,14 +129,17 @@ document.getElementById('hide-answers-option').addEventListener('click', () => {
 
 // // button: ON
 document.getElementById('show-answers-option').addEventListener('click', () => {
+  // set user answer to default one
+  LocalStorageManager.save(
+    LEARN_QUESTION_USER_ANSWER_KEY,
+    DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
+  )
+
   // get recent local storage items
   const currentState = LocalStorageManager.load(LEARN_STATE_KEY)
   const shouldShowAnswer = LocalStorageManager.load(SHOULD_SHOW_ANSWER_KEY)
   const currentLearnQuestionIndex = LocalStorageManager.load(
     LEARN__STATE__QUESTION_INDEX_KEY(currentState)
-  )
-  const learnQuestionUserAnswer = LocalStorageManager.load(
-    LEARN_QUESTION_USER_ANSWER_KEY
   )
 
   // get current question
@@ -148,7 +153,7 @@ document.getElementById('show-answers-option').addEventListener('click', () => {
     LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, false)
     switchLearnAnswers(
       false,
-      learnQuestionUserAnswer,
+      DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER,
       currentQuestion.answers,
       currentQuestion.correct_answer
     )
@@ -317,7 +322,7 @@ const switchLearnAnswers = (
         // answered correctly
         if (userAnswer.wasCorrect) {
           // element is the correct answer
-          if (newAnswerElement.getAttribute('correct-input') == "true") {
+          if (newAnswerElement.getAttribute('correct-input') == 'true') {
             newAnswerElement.classList.remove('inactive')
             newAnswerElement.classList.remove('wrong')
             newAnswerElement.classList.add('active')
@@ -332,14 +337,14 @@ const switchLearnAnswers = (
         // answered incorrectly
         else {
           // incorrect user input
-          if (newAnswerElement.getAttribute('wrong-input') === "true") {
+          if (newAnswerElement.getAttribute('wrong-input') === 'true') {
             newAnswerElement.classList.remove('inactive')
             newAnswerElement.classList.remove('active')
             newAnswerElement.classList.add('wrong')
             newAnswerElement.style.backgroundColor = '#a560602b'
           }
           // correct user input
-          else if (newAnswerElement.getAttribute('correct-input') === "true") {
+          else if (newAnswerElement.getAttribute('correct-input') === 'true') {
             newAnswerElement.classList.remove('inactive')
             newAnswerElement.classList.remove('wrong')
             newAnswerElement.classList.add('active')
