@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
   )
 
-  document.getElementById('learn-prev').addEventListener('click', () => {
+  document.getElementById('learn-previous').addEventListener('click', () => {
     const isFirst = currentLearnQuestionIndex === 1
 
     if (isFirst) {
