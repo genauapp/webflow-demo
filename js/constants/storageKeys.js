@@ -5,6 +5,8 @@ export const LEARN__STATE__QUESTION_INDEX_KEY = (state) => {
   return `LEARN_${state}_QUESTION_INDEX`
 }
 export const LEARN_QUESTION_USER_ANSWER_KEY = 'LEARN_QUESTION_USER_ANSWER'
+export const TEST_QUESTION_USER_ANSWER_KEY = 'TEST_QUESTION_USER_ANSWER'
+export const TEST_PROGRESSION_KEY = 'TEST_PROGRESSION'
 
 export class DEFAULT_VALUE {
   static CURRENT_STATE = 'Berlin'
@@ -15,6 +17,20 @@ export class DEFAULT_VALUE {
     answered: false,
     wasCorrect: false,
   }
-
-  
+  static TEST_PROGRESSION = (
+    testId,
+    currentState,
+    testQuestions,
+    startedAt
+  ) => {
+    return {
+      testId: testId,
+      state: currentState,
+      questions: [...testQuestions],
+      currentIndex: 1,
+      isCompleted: false,
+      startedAt: startedAt,
+      completedAt: null,
+    }
+  }
 }

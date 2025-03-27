@@ -1,31 +1,54 @@
+import LocalStorageManager from '../../utils/LocalStorageManager.js'
+import QuestionManager from '../../utils/einburgerungstest/QuestionManager.js'
+import DateUtils from '../../utils/DateUtils.js'
 import ElementUtils from '../../utils/ElementUtils.js'
 
-export const testTabClickHandler = (event) => {
-  const testTabElement = event.target
+import {
+  CURRENT_STATE_KEY,
+  DEFAULT_VALUE,
+  TEST_PROGRESSION_KEY,
+} from '../../constants/storageKeys.js'
 
+export const testTabClickHandler = (event) => {
+  // const testTabElement = event.target
   console.log('I am clicked!')
 
-  // set user answer to default one
-  LocalStorageManager.save(
-    LEARN_QUESTION_USER_ANSWER_KEY,
-    DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
-  )
-  // set current state to default one
-
   // get recent local storage items
-  LocalStorageManager.save(CURRENT_STATE_KEY, DEFAULT_VALUE.CURRENT_STATE)
-  const currentLearnQuestionIndex = LocalStorageManager.load(
-    LEARN__STATE__QUESTION_INDEX_KEY(DEFAULT_VALUE.CURRENT_STATE),
-    DEFAULT_VALUE.LEARN_QUESTION_INDEX
+  const currentState = LocalStorageManager.load(
+    CURRENT_STATE_KEY,
+    DEFAULT_VALUE.CURRENT_STATE
   )
 
-  // get most recent question info
-  const recentQuestion = QuestionManager.getCurrentLearnQuestion(
-    DEFAULT_VALUE.CURRENT_STATE,
-    currentLearnQuestionIndex
+  // load questions
+  const testQuestions = QuestionManager.getTestQuestionsByState(currentState)
+
+  const initialTestProgression = DEFAULT_VALUE.TEST_PROGRESSION(
+    crypto.randomUUID(),
+    currentState,
+    testQuestions,
+    DateUtils.getCurrentDateTime()
   )
-  const totalNumberOfQuestions = QuestionManager.getTotalNumberOfLearnQuestions(
-    DEFAULT_VALUE.CURRENT_STATE
+
+  // set test progression to default one
+  LocalStorageManager.save(TEST_PROGRESSION_KEY, initialTestProgression)
+
+  // get first question info
+  const firstQuestion = QuestionManager.getCurrentTestQuestion(
+    initialTestProgression.currentIndex,
+    initialTestProgression.questions
+  )
+
+  // UI Changes
+  // // show initial previous/next buttons
+  switchTestPreviousNextButtons(
+    initialTestProgression.currentIndex,
+    initialTestProgression.questions.length
+  )
+  // // show initial question
+  setTestTabElements(
+    initialTestProgression.currentIndex,
+    initialTestProgression.questions.length,
+    firstQuestion
   )
 
   //   testTabElement.removeEventListener('click', testTabClickHandler)
@@ -38,48 +61,24 @@ export const testTabClickHandler = (event) => {
 const setTestTabElements = (
   currentQuestionIndex,
   totalNumberOfQuestions,
-  currentQuestion,
-  userAnswer
+  currentQuestion
 ) => {
-  // Example: Load current state and test question index (replace placeholders as needed)
-  const currentState =
-    LocalStorageManager.load(LEARN_STATE_KEY) || 'DefaultState'
-  const testQuestionIndex = /* PLACEHOLDER: retrieve the appropriate test question index */ 1
-
-  // Get test question info using a hypothetical function from QuestionManager
-  // (Assuming you have a corresponding method for test questions)
-  const testQuestion = QuestionManager.getCurrentTestQuestion
-    ? QuestionManager.getCurrentTestQuestion(currentState, testQuestionIndex)
-    : {
-        question: 'Test Question Placeholder',
-        answers: ['A', 'B', 'C', 'D'],
-        correct_answer: 'B',
-      }
-
   // Update the UI for the test tab (use placeholder IDs for test tab elements)
-  document.getElementById('test-question-index').innerText = testQuestionIndex
+  document.getElementById('test-question-index').innerText =
+    currentQuestionIndex
+  document.getElementById('test-questions-length').innerText =
+    totalNumberOfQuestions
   document.getElementById(
-    'test-question-label'
-  ).innerText = `Aufgabe ${testQuestionIndex}`
-  document.getElementById('test-question-description').innerText =
-    testQuestion.question
+    'test-current-question-index-label'
+  ).innerText = `Aufgabe ${currentQuestionIndex}`
+  document.getElementById('test-question-description-label').innerText =
+    currentQuestion.question
 
-  // Update answers, etc. (you might call a similar helper as setLearnTabElements)
-  switchTestAnswers(
-    shouldShowAnswer,
-    userAnswer,
-    testQuestion.answers,
-    testQuestion.correct_answer
-  )
+  switchTestAnswers(currentQuestion)
 }
 
-const switchTestAnswers = (
-  shouldShowAnswer,
-  userAnswer,
-  answers,
-  correctAnswer
-) => {
-  answers.forEach((answer, i) => {
+const switchTestAnswers = (question) => {
+  question.answers.forEach((answer, i) => {
     const answerElement = document.getElementById(
       `test-current-question-answer-${i + 1}`
     )
@@ -87,6 +86,37 @@ const switchTestAnswers = (
     const newAnswerElement = answerElement.cloneNode(true)
     answerElement.parentNode.replaceChild(newAnswerElement, answerElement)
     newAnswerElement.innerText = answer
+
+    // user answered
+    if (question.answers.some((q) => q.isSelected)) {
+      // answer is selected
+      if (answer.isSelected) {
+        // element is the correct answer
+        if (answer === question.correct_answer) {
+          newAnswerElement.classList.remove('inactive')
+          newAnswerElement.classList.remove('wrong')
+          newAnswerElement.classList.add('active')
+        }
+        // element is not the correct answer
+        else {
+          newAnswerElement.classList.remove('inactive')
+          newAnswerElement.classList.add('active')
+          newAnswerElement.classList.add('wrong')
+        }
+      }
+      // answer is not selected
+      else {
+        newAnswerElement.classList.remove('active')
+        newAnswerElement.classList.remove('wrong')
+        newAnswerElement.classList.add('inactive')
+      }
+    }
+    // user did not answer
+    else {
+      newAnswerElement.classList.remove('active')
+      newAnswerElement.classList.remove('wrong')
+      newAnswerElement.classList.add('inactive')
+    }
   })
 }
 

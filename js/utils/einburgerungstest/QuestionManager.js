@@ -5,6 +5,7 @@ export default class QuestionManager {
   static getLearnQuestionsByState = (state) => {
     const questions = questionsJson
 
+    // Return an empty list if json is null/empty or state is null/empty
     if (
       questions === null ||
       questions.length === 0 ||
@@ -18,14 +19,13 @@ export default class QuestionManager {
       (question) => question.state === STATE_NATIONWIDE
     )
 
-    // TODO
-    // const learnQuestionsByState = questions.filter(
-    //   (question) => question.state === state
-    // )
+    const learnQuestionsByState = questions.filter(
+      (question) => question.state === state
+    )
 
     const learnQuestions = [
       ...learnQuestionsByNationwide,
-      // ...learnQuestionsByState
+      ...learnQuestionsByState
     ]
 
     return learnQuestions
@@ -40,5 +40,46 @@ export default class QuestionManager {
     const questions = QuestionManager.getLearnQuestionsByState(currentState)
 
     return questions.length
+  }
+
+  /** Test Tab */
+  static getTestQuestionsByState = (state) => {
+    const questions = questionsJson
+
+    // Return an empty list if json is null/empty or state is null/empty
+    if (
+      questions === null ||
+      questions.length === 0 ||
+      state === null ||
+      state.trim().length === 0
+    ) {
+      return []
+    }
+
+    const testQuestionsByNationwide = questions.filter(
+      (question) => question.state === STATE_NATIONWIDE
+    ).map(question => {
+      question.isSelected = false
+    })
+
+    const testQuestionsByState = questions.filter(
+      (question) => question.state === state
+    ).map(question => {
+      question.isSelected = false
+    })
+
+    const testQuestions = [
+      ...testQuestionsByNationwide,
+      ...testQuestionsByState
+    ]
+
+    return testQuestions
+  }
+
+  static getCurrentTestQuestion = (
+    currentIndex,
+    questions
+  ) => {
+    return questions[currentIndex - 1]
   }
 }
