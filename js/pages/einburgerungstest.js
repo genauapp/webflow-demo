@@ -323,10 +323,10 @@ const correctAnswerEventListener = (event) => {
   )
 }
 
-// On Test Tab Click
-document
-  .getElementById('test-tab')
-  .addEventListener('click', testTabClickHandler)
+// TODO: On Test Tab Click
+// document
+//   .getElementById('test-tab')
+//   .addEventListener('click', testTabClickHandler)
 
 /** UI Changes
  * They are only responsible for displaying whatever they receive as parameter
