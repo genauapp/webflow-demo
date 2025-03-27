@@ -11,7 +11,7 @@ import {
   DEFAULT_VALUE,
   LEARN_QUESTION_USER_ANSWER_KEY,
 } from '../constants/storageKeys.js'
-import { testTabClickHandler } from '../components/einburgerungstest/test.js'
+import { testTabClickHandler } from '../components/einburgerungstest/testTab.js'
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', () => {

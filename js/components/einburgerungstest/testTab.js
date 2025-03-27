@@ -1,4 +1,4 @@
-import ElementUtils from '../../utils/ElementUtils'
+import ElementUtils from '../../utils/ElementUtils.js'
 
 export const testTabClickHandler = (event) => {
   const testTabElement = event.target
