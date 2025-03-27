@@ -59,17 +59,23 @@ export default class QuestionManager {
     const testQuestionsByNationwide = questions.filter(
       (question) => question.state === STATE_NATIONWIDE
     ).map(question => {
-      question.isSelected = false
+      const testQuestion = {
+        ...question,
+        isSelected: false,
+      }
 
-      return updatedQuestion
+      return testQuestion 
     })
 
     const testQuestionsByState = questions.filter(
       (question) => question.state === state
     ).map(question => {
-      const updatedQuestion = question.isSelected = false
+      const testQuestion = {
+        ...question,
+        isSelected: false
+      }
 
-      return updatedQuestion
+      return testQuestion
     })
 
     const testQuestions = [
