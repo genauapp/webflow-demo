@@ -97,38 +97,6 @@ document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
 // On Toggle Change
 // // button: OFF
 document.getElementById('hide-answers-option').addEventListener('click', () => {
-  // get recent local storage items
-  const currentState = LocalStorageManager.load(LEARN_STATE_KEY)
-  const shouldShowAnswer = LocalStorageManager.load(SHOULD_SHOW_ANSWER_KEY)
-  const currentLearnQuestionIndex = LocalStorageManager.load(
-    LEARN__STATE__QUESTION_INDEX_KEY(currentState)
-  )
-  const learnQuestionUserAnswer = LocalStorageManager.load(
-    LEARN_QUESTION_USER_ANSWER_KEY
-  )
-
-  // get current question
-  const currentQuestion = QuestionManager.getCurrentLearnQuestion(
-    currentState,
-    currentLearnQuestionIndex
-  )
-
-  if (!shouldShowAnswer) {
-    console.log('showing learn answers...')
-    LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, true)
-    switchLearnAnswers(
-      true,
-      learnQuestionUserAnswer,
-      currentQuestion.answers,
-      currentQuestion.correct_answer
-    )
-  }
-
-  return
-})
-
-// // button: ON
-document.getElementById('show-answers-option').addEventListener('click', () => {
   // set user answer to default one
   LocalStorageManager.save(
     LEARN_QUESTION_USER_ANSWER_KEY,
@@ -148,12 +116,44 @@ document.getElementById('show-answers-option').addEventListener('click', () => {
     currentLearnQuestionIndex
   )
 
+  if (!shouldShowAnswer) {
+    console.log('showing learn answers...')
+    LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, true)
+    switchLearnAnswers(
+      true,
+      DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER,
+      currentQuestion.answers,
+      currentQuestion.correct_answer
+    )
+  }
+
+  return
+})
+
+// // button: ON
+document.getElementById('show-answers-option').addEventListener('click', () => {
+  // get recent local storage items
+  const currentState = LocalStorageManager.load(LEARN_STATE_KEY)
+  const shouldShowAnswer = LocalStorageManager.load(SHOULD_SHOW_ANSWER_KEY)
+  const currentLearnQuestionIndex = LocalStorageManager.load(
+    LEARN__STATE__QUESTION_INDEX_KEY(currentState)
+  )
+  const learnQuestionUserAnswer = LocalStorageManager.load(
+    LEARN_QUESTION_USER_ANSWER_KEY
+  )
+
+  // get current question
+  const currentQuestion = QuestionManager.getCurrentLearnQuestion(
+    currentState,
+    currentLearnQuestionIndex
+  )
+
   if (shouldShowAnswer) {
     console.log('hiding learn answers...')
     LocalStorageManager.save(SHOULD_SHOW_ANSWER_KEY, false)
     switchLearnAnswers(
       false,
-      DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER,
+      learnQuestionUserAnswer,
       currentQuestion.answers,
       currentQuestion.correct_answer
     )
