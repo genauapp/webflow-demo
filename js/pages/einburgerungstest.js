@@ -52,11 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // On Previous Click
 document.getElementById('learn-previous').addEventListener('click', () => {
-  // set toggle to default one
-  LocalStorageManager.save(
-    SHOULD_SHOW_ANSWER_KEY,
-    DEFAULT_VALUE.SHOULD_SHOW_ANSWER
-  )
   // set user answer to default one
   LocalStorageManager.save(
     LEARN_QUESTION_USER_ANSWER_KEY,
@@ -64,10 +59,8 @@ document.getElementById('learn-previous').addEventListener('click', () => {
   )
 
   // get recent local storage items
-  const currentState = LocalStorageManager.load(
-    LEARN_STATE_KEY,
-    DEFAULT_VALUE.LEARN_STATE
-  )
+  const shouldShowAnswer = LocalStorageManager.load(SHOULD_SHOW_ANSWER_KEY)
+  const currentState = LocalStorageManager.load(LEARN_STATE_KEY)
   const currentLearnQuestionIndex = LocalStorageManager.load(
     LEARN__STATE__QUESTION_INDEX_KEY(currentState)
   )
@@ -96,7 +89,7 @@ document.getElementById('learn-previous').addEventListener('click', () => {
   setLearnTabElements(
     previousIndex,
     totalNumberOfQuestions,
-    DEFAULT_VALUE.SHOULD_SHOW_ANSWER,
+    shouldShowAnswer,
     previousQuestion,
     DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
   )
@@ -104,11 +97,6 @@ document.getElementById('learn-previous').addEventListener('click', () => {
 
 // On Next Click
 document.getElementById('learn-next').addEventListener('click', () => {
-  // set toggle to default one
-  LocalStorageManager.save(
-    SHOULD_SHOW_ANSWER_KEY,
-    DEFAULT_VALUE.SHOULD_SHOW_ANSWER
-  )
   // set user answer to default one
   LocalStorageManager.save(
     LEARN_QUESTION_USER_ANSWER_KEY,
@@ -116,10 +104,8 @@ document.getElementById('learn-next').addEventListener('click', () => {
   )
 
   // get recent local storage items
-  const currentState = LocalStorageManager.load(
-    LEARN_STATE_KEY,
-    DEFAULT_VALUE.LEARN_STATE
-  )
+  const shouldShowAnswer = LocalStorageManager.load(SHOULD_SHOW_ANSWER_KEY)
+  const currentState = LocalStorageManager.load(LEARN_STATE_KEY)
   const currentLearnQuestionIndex = LocalStorageManager.load(
     LEARN__STATE__QUESTION_INDEX_KEY(currentState)
   )
@@ -148,7 +134,7 @@ document.getElementById('learn-next').addEventListener('click', () => {
   setLearnTabElements(
     nextIndex,
     totalNumberOfQuestions,
-    DEFAULT_VALUE.SHOULD_SHOW_ANSWER,
+    shouldShowAnswer,
     nextQuestion,
     DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
   )
