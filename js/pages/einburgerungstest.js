@@ -74,16 +74,15 @@ document.getElementById('learn-previous').addEventListener('click', (event) => {
   const totalNumberOfQuestions =
     QuestionManager.getTotalNumberOfLearnQuestions(currentState)
 
-  const isFirst = currentLearnQuestionIndex === 1
+  const isFirst = previousIndex === 1
 
   if (isFirst) {
     // disable it on the UI
     makeButtonDisabled(event.target)
-    return
+  } else {
+    // enable it on the UI
+    makeButtonEnabled(event.target)
   }
-
-  // enable it on the UI
-  makeButtonEnabled(event.target)
 
   LocalStorageManager.save(
     LEARN__STATE__QUESTION_INDEX_KEY(currentState),
@@ -124,16 +123,15 @@ document.getElementById('learn-next').addEventListener('click', (event) => {
   const totalNumberOfQuestions =
     QuestionManager.getTotalNumberOfLearnQuestions(currentState)
 
-  const isLast = currentLearnQuestionIndex === totalNumberOfQuestions
+  const isLast = nextIndex === totalNumberOfQuestions
 
   if (isLast) {
     // disable it on the UI
     makeButtonDisabled(event.target)
-    return
+  } else {
+    // enable it on the UI
+    makeButtonEnabled(event.target)
   }
-
-  // enable it on the UI
-  makeButtonEnabled(event.target)
 
   LocalStorageManager.save(
     LEARN__STATE__QUESTION_INDEX_KEY(currentState),
