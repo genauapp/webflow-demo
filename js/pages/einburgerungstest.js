@@ -280,7 +280,7 @@ const switchLearnAnswers = (
       // answerElement.removeEventListener('click', correctAnswerEventListener)
 
       newAnswerElement.classList.remove('wrong')
-      newAnswerElement.style.backgroundColor = '#fff0'
+      // newAnswerElement.style.backgroundColor = '#fff0'
       // answer is correct
       if (answer === correctAnswer) {
         newAnswerElement.classList.remove('inactive')
@@ -340,9 +340,9 @@ const switchLearnAnswers = (
           // incorrect user input
           if (newAnswerElement.getAttribute('wrong-input') === 'true') {
             newAnswerElement.classList.remove('inactive')
-            newAnswerElement.classList.remove('active')
+            newAnswerElement.classList.add('active')
             newAnswerElement.classList.add('wrong')
-            newAnswerElement.style.backgroundColor = '#a560602b'
+            // newAnswerElement.style.backgroundColor = '#a560602b'
           }
           // correct user input
           else if (newAnswerElement.getAttribute('correct-input') === 'true') {
@@ -355,7 +355,7 @@ const switchLearnAnswers = (
             newAnswerElement.classList.remove('active')
             newAnswerElement.classList.remove('wrong')
             newAnswerElement.classList.add('inactive')
-            newAnswerElement.style.backgroundColor = '#fff0'
+            // newAnswerElement.style.backgroundColor = '#fff0'
           }
         }
       }
