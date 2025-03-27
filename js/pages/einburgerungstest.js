@@ -2,6 +2,8 @@ import QuestionManager from '../utils/einburgerungstest/QuestionManager.js'
 
 import LocalStorageManager from '../utils/LocalStorageManager.js'
 
+import ElementUtils from '../utils/ElementUtils.js'
+
 import {
   LEARN__STATE__QUESTION_INDEX_KEY,
   LEARN_STATE_KEY,
@@ -40,6 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
     DEFAULT_VALUE.LEARN_STATE
   )
 
+  // UI Changes
+  const isFirst = currentLearnQuestionIndex === 1
+  const isLast = currentLearnQuestionIndex === totalNumberOfQuestions
+  const previousButton = document.getElementById('learn-previous')
+  const nextButton = document.getElementById('learn-next')
+  ElementUtils.switchButtonActivation(previousButton, isFirst)
+  ElementUtils.switchButtonActivation(nextButton, isLast)
+
   setLearnTabElements(
     currentLearnQuestionIndex,
     totalNumberOfQuestions,
@@ -74,20 +84,14 @@ document.getElementById('learn-previous').addEventListener('click', (event) => {
   const totalNumberOfQuestions =
     QuestionManager.getTotalNumberOfLearnQuestions(currentState)
 
-  const isFirst = previousIndex === 1
-
-  if (isFirst) {
-    // disable it on the UI
-    makeButtonDisabled(event.target)
-  } else {
-    // enable it on the UI
-    makeButtonEnabled(event.target)
-  }
-
   LocalStorageManager.save(
     LEARN__STATE__QUESTION_INDEX_KEY(currentState),
     previousIndex
   )
+
+  // UI Changes
+  const isFirst = previousIndex === 1
+  ElementUtils.switchButtonActivation(event.target, isFirst)
 
   setLearnTabElements(
     previousIndex,
@@ -123,20 +127,14 @@ document.getElementById('learn-next').addEventListener('click', (event) => {
   const totalNumberOfQuestions =
     QuestionManager.getTotalNumberOfLearnQuestions(currentState)
 
-  const isLast = nextIndex === totalNumberOfQuestions
-
-  if (isLast) {
-    // disable it on the UI
-    makeButtonDisabled(event.target)
-  } else {
-    // enable it on the UI
-    makeButtonEnabled(event.target)
-  }
-
   LocalStorageManager.save(
     LEARN__STATE__QUESTION_INDEX_KEY(currentState),
     nextIndex
   )
+
+  // UI Changes
+  const isLast = nextIndex === totalNumberOfQuestions
+  ElementUtils.switchButtonActivation(event.target, isLast)
 
   setLearnTabElements(
     nextIndex,
@@ -458,16 +456,6 @@ const switchLearnAnswers = (
       }
     }
   })
-}
-
-const makeButtonDisabled = (element) => {
-  element.style.opacity = '0.5'
-  element.style.pointerEvents = 'none'
-}
-
-const makeButtonEnabled = (element) => {
-  element.style.opacity = 'inherit'
-  element.style.pointerEvents = 'inherit'
 }
 
 // jQuery for Dropdown
