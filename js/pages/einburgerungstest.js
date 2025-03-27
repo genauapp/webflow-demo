@@ -22,12 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
     LEARN_QUESTION_USER_ANSWER_KEY,
     DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
   )
+  // set current state to default one
 
   // get recent local storage items
-  const currentState = LocalStorageManager.load(
-    LEARN_STATE_KEY,
-    DEFAULT_VALUE.LEARN_STATE
-  )
+  LocalStorageManager.save(LEARN_STATE_KEY, DEFAULT_VALUE.LEARN_STATE)
   const currentLearnQuestionIndex = LocalStorageManager.load(
     LEARN__STATE__QUESTION_INDEX_KEY(currentState),
     DEFAULT_VALUE.LEARN_QUESTION_INDEX
@@ -35,11 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // get most recent question info
   const recentQuestion = QuestionManager.getCurrentLearnQuestion(
-    currentState,
+    DEFAULT_VALUE.LEARN_STATE,
     currentLearnQuestionIndex
   )
-  const totalNumberOfQuestions =
-    QuestionManager.getTotalNumberOfLearnQuestions(currentState)
+  const totalNumberOfQuestions = QuestionManager.getTotalNumberOfLearnQuestions(
+    DEFAULT_VALUE.LEARN_STATE
+  )
 
   setLearnTabElements(
     currentLearnQuestionIndex,
