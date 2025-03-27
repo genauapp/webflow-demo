@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 // On Previous Click
-document.getElementById('learn-previous').addEventListener('click', () => {
+document.getElementById('learn-previous').addEventListener('click', (event) => {
   // set user answer to default one
   LocalStorageManager.save(
     LEARN_QUESTION_USER_ANSWER_KEY,
@@ -77,8 +77,13 @@ document.getElementById('learn-previous').addEventListener('click', () => {
   const isFirst = currentLearnQuestionIndex === 1
 
   if (isFirst) {
+    // disable it on the UI
+    makeButtonDisabled(event.target)
     return
   }
+
+  // enable it on the UI
+  makeButtonEnabled(event.target)
 
   LocalStorageManager.save(
     LEARN__STATE__QUESTION_INDEX_KEY(currentState),
@@ -95,7 +100,7 @@ document.getElementById('learn-previous').addEventListener('click', () => {
 })
 
 // On Next Click
-document.getElementById('learn-next').addEventListener('click', () => {
+document.getElementById('learn-next').addEventListener('click', (event) => {
   // set user answer to default one
   LocalStorageManager.save(
     LEARN_QUESTION_USER_ANSWER_KEY,
@@ -122,8 +127,13 @@ document.getElementById('learn-next').addEventListener('click', () => {
   const isLast = currentLearnQuestionIndex === totalNumberOfQuestions
 
   if (isLast) {
+    // disable it on the UI
+    makeButtonDisabled(event.target)
     return
   }
+
+  // enable it on the UI
+  makeButtonEnabled(event.target)
 
   LocalStorageManager.save(
     LEARN__STATE__QUESTION_INDEX_KEY(currentState),
@@ -450,6 +460,16 @@ const switchLearnAnswers = (
       }
     }
   })
+}
+
+const makeButtonDisabled = (element) => {
+  element.style.opacity = '0.5'
+  element.style.pointerEvents = 'none'
+}
+
+const makeButtonEnabled = (element) => {
+  element.style.opacity = 'inherit'
+  element.style.pointerEvents = 'inherit'
 }
 
 // jQuery for Dropdown
