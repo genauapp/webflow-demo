@@ -141,8 +141,8 @@ document.getElementById('learn-next').addEventListener('click', (event) => {
   ElementUtils.switchButtonActivation(event.target, isLast)
 
   const newPreviousIsFirst = currentLearnQuestionIndex === 1
-  const previousButton = document.getElementById('learn-next')
-  ElementUtils.switchButtonActivation(previousButton, newPreviousIsFirst)
+  const newPreviousButton = document.getElementById('learn-previous')
+  ElementUtils.switchButtonActivation(newPreviousButton, newPreviousIsFirst)
 
   setLearnTabElements(
     nextIndex,
