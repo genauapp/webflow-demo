@@ -11,7 +11,7 @@ import {
 
 // On Tab Click
 export const testTabClickHandler = (event) => {
-  // const testTabElement = event.target
+  const testTabElement = event.target
   console.log('I am clicked!')
 
   // get recent local storage items
@@ -118,7 +118,7 @@ document.getElementById('test-next').addEventListener('click', (event) => {
 })
 
 const loseProgressionClickHandler = (event) => {
-  console.log('clicked')
+  console.log(`lose progression is triggered via click of: ${event.target}`)
 
   const userConfirmed = window.confirm(
     'Are you sure you want to leave? Your progress will be lost.'

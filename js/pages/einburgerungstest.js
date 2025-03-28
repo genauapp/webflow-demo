@@ -148,7 +148,7 @@ document.getElementById('learn-next').addEventListener('click', (event) => {
 // On State Change
 document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
   stateLink.addEventListener('click', function (event) {
-    event.preventDefault()
+    // event.preventDefault()
     // set updated local storage item
     const currentState = stateLink.getAttribute('data-option')
     LocalStorageManager.save(CURRENT_STATE_KEY, currentState)
