@@ -56,7 +56,66 @@ export const testTabClickHandler = (event) => {
 }
 
 // On Previous Click
+document.getElementById('test-previous').addEventListener('click', (event) => {
+  const testProgression = LocalStorageManager.load(TEST_PROGRESSION_KEY)
+
+  const updatedTestProgression = {
+    ...testProgression,
+    currentIndex: testProgression.currentIndex - 1,
+  }
+
+  LocalStorageManager.save(TEST_PROGRESSION_KEY, updatedTestProgression)
+
+  // get previous question info
+  const previousQuestion = QuestionManager.getCurrentTestQuestion(
+    updatedTestProgression.currentIndex,
+    updatedTestProgression.questions
+  )
+
+  // UI Changes
+  // // show new previous/next buttons
+  switchTestPreviousNextButtons(
+    updatedTestProgression.currentIndex,
+    updatedTestProgression.questions.length
+  )
+  // // show previous question
+  setTestTabElements(
+    updatedTestProgression.currentIndex,
+    updatedTestProgression.questions.length,
+    previousQuestion
+  )
+})
+
 // On Next Click
+document.getElementById('test-next').addEventListener('click', (event) => {
+  const testProgression = LocalStorageManager.load(TEST_PROGRESSION_KEY)
+
+  const updatedTestProgression = {
+    ...testProgression,
+    currentIndex: testProgression.currentIndex + 1,
+  }
+
+  LocalStorageManager.save(TEST_PROGRESSION_KEY, updatedTestProgression)
+
+  // get next question info
+  const nextQuestion = QuestionManager.getCurrentTestQuestion(
+    updatedTestProgression.currentIndex,
+    updatedTestProgression.questions
+  )
+
+  // UI Changes
+  // // show new previous/next buttons
+  switchTestPreviousNextButtons(
+    updatedTestProgression.currentIndex,
+    updatedTestProgression.questions.length
+  )
+  // // show next question
+  setTestTabElements(
+    updatedTestProgression.currentIndex,
+    updatedTestProgression.questions.length,
+    nextQuestion
+  )
+})
 
 // On (State Content) Load?
 // // Reload new random test questions
@@ -132,8 +191,7 @@ const answerClickHandler = (event) => {
 const setTestTabElements = (
   currentQuestionIndex,
   totalNumberOfQuestions,
-  currentQuestion,
-  correctAnswerIndex
+  currentQuestion
 ) => {
   document.getElementById('test-question-index').innerText =
     currentQuestionIndex
@@ -145,10 +203,10 @@ const setTestTabElements = (
   document.getElementById('test-question-description-label').innerText =
     currentQuestion.question
 
-  switchTestAnswers(currentQuestion, correctAnswerIndex)
+  switchTestAnswers(currentQuestion)
 }
 
-const switchTestAnswers = (question, correctAnswerIndex) => {
+const switchTestAnswers = (question) => {
   question.answers.forEach((answer, i) => {
     const answerElement = document.getElementById(
       `test-current-question-answer-${i + 1}`

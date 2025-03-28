@@ -119,7 +119,7 @@ document.getElementById('learn-next').addEventListener('click', (event) => {
 
   const nextIndex = currentLearnQuestionIndex + 1
 
-  // get previous question info
+  // get next question info
   const nextQuestion = QuestionManager.getCurrentLearnQuestion(
     currentState,
     nextIndex
