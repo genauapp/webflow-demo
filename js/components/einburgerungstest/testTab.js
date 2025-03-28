@@ -109,7 +109,6 @@ const setTestTabElements = (
   totalNumberOfQuestions,
   currentQuestion
 ) => {
-  // Update the UI for the test tab (use placeholder IDs for test tab elements)
   document.getElementById('test-question-index').innerText =
     currentQuestionIndex
   document.getElementById('test-questions-length').innerText =
@@ -131,14 +130,16 @@ const switchTestAnswers = (question) => {
 
     const newAnswerElement = answerElement.cloneNode(true)
     answerElement.parentNode.replaceChild(newAnswerElement, answerElement)
-    newAnswerElement.innerText = answer
+    newAnswerElement.innerText = answer.text
 
     // user answered
-    if (question.answers.some((q) => q.isSelected)) {
+    if (question.answers.some((a) => a.isSelected)) {
+      newAnswerElement.removeAttribute('answer-index')
+
       // answer is selected
       if (answer.isSelected) {
         // element is the correct answer
-        if (answer === question.correct_answer) {
+        if (answer.text === question.correct_answer) {
           newAnswerElement.classList.remove('inactive')
           newAnswerElement.classList.remove('wrong')
           newAnswerElement.classList.add('active')
@@ -165,12 +166,6 @@ const switchTestAnswers = (question) => {
 
       newAnswerElement.setAttribute('answer-index', i + 1)
       newAnswerElement.addEventListener('click', answerClickHandler)
-
-      // // element is the correct answer
-      // if (answer === question.correct_answer) {
-      // }
-      // // element is not the correct answer
-      // else {}
     }
   })
 }

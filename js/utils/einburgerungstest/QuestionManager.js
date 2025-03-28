@@ -59,23 +59,17 @@ export default class QuestionManager {
     const testQuestionsByNationwide = questions.filter(
       (question) => question.state === STATE_NATIONWIDE
     ).map(question => {
-      const testQuestion = {
-        ...question,
-        isSelected: false,
-      }
+      const updatedQuestion = QuestionManager.getQuestionWithImprovedAnswers(question)
 
-      return testQuestion 
+      return updatedQuestion
     })
 
     const testQuestionsByState = questions.filter(
       (question) => question.state === state
     ).map(question => {
-      const testQuestion = {
-        ...question,
-        isSelected: false
-      }
+      const updatedQuestion = QuestionManager.getQuestionWithImprovedAnswers(question)
 
-      return testQuestion
+      return updatedQuestion
     })
 
     const testQuestions = [
@@ -84,6 +78,24 @@ export default class QuestionManager {
     ]
 
     return testQuestions
+  }
+
+  static getQuestionWithImprovedAnswers = (question) => {
+          // add isSelected property to each answer
+          const updatedAnswers = question.answers.map(answer => {
+            return {
+            text: answer,
+            isSelected: false,
+            }
+          })
+    
+          // update answers to include this new property for each
+          const testQuestion = {
+            ...question,
+            answers: [...updatedAnswers]
+          }
+    
+          return testQuestion
   }
 
   static getCurrentTestQuestion = (
