@@ -28,7 +28,7 @@ export const testTabClickHandler = (event) => {
     .getElementById('learn-tab')
     .addEventListener('click', loseProgressionClickHandler)
   document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
-    stateLink.addEventListener('click', loseProgressionClickHandler)
+    stateLink.addEventListener('click', loseProgressionClickHandler, true) // true means capturing
   })
 
   // get recent local storage items
