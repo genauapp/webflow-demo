@@ -323,7 +323,7 @@ const correctAnswerClickHandler = (event) => {
   )
 }
 
-// TODO: On Test Tab Click
+// On Test Tab Click
 document
   .getElementById('test-tab')
   .addEventListener('click', testTabClickHandler)

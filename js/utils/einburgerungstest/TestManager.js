@@ -1,4 +1,4 @@
-import { TEST_SCORE_TO_PASS } from '../../constants/test.ts'
+import { TEST_SCORE_TO_PASS } from '../../constants/test.js'
 
 export default class TestManager {
   static checkTestIsCompleted = (questions) => {
