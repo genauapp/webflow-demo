@@ -1,5 +1,5 @@
 import questionsJson from '../../../json/einburgerungstest/questions.json' with { type: 'json' }
-import { NATIONWIDE_TEST_QUESTION_LIST_SIZE, STATEWIDE_TEST_QUESTION_LIST_SIZE } from '../../constants/questions.js'
+import { ALL_NATIONWIDE_TEST_QUESTION_LIST_SIZE, NATIONWIDE_TEST_QUESTION_LIST_SIZE, STATEWIDE_TEST_QUESTION_LIST_SIZE } from '../../constants/questions.js'
 import { STATE_NATIONWIDE } from '../../constants/states.js'
 import { ListUtils } from '../ListUtils.js'
 
@@ -17,16 +17,16 @@ export default class QuestionManager {
       return []
     }
 
-    const learnQuestionsByNationwide = questions.filter(
-      (question) => question.state === STATE_NATIONWIDE
-    )
+    // const learnQuestionsByNationwide = questions.filter(
+    //   (question) => question.state === STATE_NATIONWIDE
+    // )
 
     const learnQuestionsByState = questions.filter(
       (question) => question.state === state
     )
 
     const learnQuestions = [
-      ...learnQuestionsByNationwide,
+      // ...learnQuestionsByNationwide,
       ...learnQuestionsByState
     ]
 
@@ -58,28 +58,20 @@ export default class QuestionManager {
       return []
     }
 
-    // create nationwide questions
-    const testQuestionsByNationwide = questions.filter(
-      (question) => question.state === STATE_NATIONWIDE
-    )
-    const randomTestQuestionsByNationWide = ListUtils.getRandomItems(testQuestionsByNationwide, NATIONWIDE_TEST_QUESTION_LIST_SIZE)
-    const updatedTestQuestionsByNationWide = randomTestQuestionsByNationWide.map(question => {
-      const updatedQuestion = QuestionManager.getTestQuestionWithImprovedAnswers(question)
+    // selected state is nationwide
+    if (state === STATE_NATIONWIDE) {
+      const updatedTestQuestionsByNationWide = QuestionManager.getRandomTestQuestionsByState(questions, state, ALL_NATIONWIDE_TEST_QUESTION_LIST_SIZE)
 
-      return updatedQuestion
-    })
+      // shuffle them
+      const shuffledTestQuestions = ListUtils.shuffleArray(updatedTestQuestionsByNationWide)
+      return shuffledTestQuestions
+    }
+
+    // create nationwide questions
+    const updatedTestQuestionsByNationWide = QuestionManager.getRandomTestQuestionsByState(questions, state, NATIONWIDE_TEST_QUESTION_LIST_SIZE)
 
     // create statewide questions
-    const testQuestionsByState = questions.filter(
-          (question) => question.state === state
-        )
-    const randomTestQuestionsByState = ListUtils.getRandomItems(testQuestionsByState, STATEWIDE_TEST_QUESTION_LIST_SIZE)
-    const updatedTestQuestionsByState = randomTestQuestionsByState.map(question => {
-          const updatedQuestion = QuestionManager.getTestQuestionWithImprovedAnswers(question)
-    
-          return updatedQuestion
-    })
-
+    const updatedTestQuestionsByState = QuestionManager.getRandomTestQuestionsByState(questions, state, STATEWIDE_TEST_QUESTION_LIST_SIZE)
 
     // merge nationwide and statewide question lists
     const testQuestions = [
@@ -90,11 +82,24 @@ export default class QuestionManager {
     // shuffle them
     const shuffledTestQuestions = ListUtils.shuffleArray(testQuestions)
 
-    // console.log(`new list: ${JSON.stringify(shuffledTestQuestions, null, 2)}`)
+    console.log(`new list: ${JSON.stringify(shuffledTestQuestions, null, 2)}`)
 
     return shuffledTestQuestions
   }
 
+  static getRandomTestQuestionsByState = (questions, state, numberOfRandomItems) => {
+    const testQuestionsByState = questions.filter(
+      (question) => question.state === state
+    )
+    const randomTestQuestionsByState = ListUtils.getRandomItems(testQuestionsByState, numberOfRandomItems)
+    const updatedTestQuestionsByState = randomTestQuestionsByState.map(question => {
+      const updatedQuestion = QuestionManager.getTestQuestionWithImprovedAnswers(question)
+
+      return updatedQuestion
+    })
+
+    return updatedTestQuestionsByState
+  }
 
   static getTestQuestionWithImprovedAnswers = (question) => {
           // add isSelected property to each answer

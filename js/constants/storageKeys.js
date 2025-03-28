@@ -1,3 +1,5 @@
+import { STATE_NATIONWIDE } from './states'
+
 export const CURRENT_STATE_KEY = 'CURRENT_STATE'
 export const SHOULD_SHOW_ANSWER_KEY = 'SHOULD_SHOW_ANSWER'
 export const LEARN__STATE__QUESTION_INDEX_KEY = (state) => {
@@ -9,7 +11,7 @@ export const TEST_QUESTION_USER_ANSWER_KEY = 'TEST_QUESTION_USER_ANSWER'
 export const TEST_PROGRESSION_KEY = 'TEST_PROGRESSION'
 
 export class DEFAULT_VALUE {
-  static CURRENT_STATE = 'Berlin'
+  static CURRENT_STATE = STATE_NATIONWIDE
 
   static SHOULD_SHOW_ANSWER = true
   static LEARN_QUESTION_INDEX = 1
