@@ -26,7 +26,7 @@ export const testTabClickHandler = (event) => {
 
   document
     .getElementById('learn-tab')
-    .addEventListener('click', loseProgressionClickHandler)
+    .addEventListener('click', loseProgressionClickHandler, true)
   document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
     stateLink.addEventListener('click', loseProgressionClickHandler, true) // true means capturing
   })
