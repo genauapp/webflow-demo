@@ -159,9 +159,9 @@ const loseProgressionClickHandler = (event) => {
 
   // // remove event listeners from state and learn tabs for losing progression
   const learnTabElement = document.getElementById('learn-tab')
-  learnTabElement.removeEventListener('click', loseProgressionClickHandler)
+  learnTabElement.removeEventListener('click', loseProgressionClickHandler, true)
   document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
-    stateLink.removeEventListener('click', loseProgressionClickHandler)
+    stateLink.removeEventListener('click', loseProgressionClickHandler, true)
   })
   // // click on learn tab imperatively
   learnTabElement.click()
