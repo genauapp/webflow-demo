@@ -117,10 +117,25 @@ document.getElementById('test-next').addEventListener('click', (event) => {
   )
 })
 
+const loseProgressionClickHandler = (event) => {
+  console.log('clicked')
+
+  const userConfirmed = window.confirm(
+    'Are you sure you want to leave? Your progress will be lost.'
+  )
+  if (!userConfirmed) {
+    event.preventDefault() // Prevents the action if user cancels
+  }
+}
+
 // On (State Content) Load?
 // // Reload new random test questions
 // On State Change
 // // Tell that they are going to lose progression
+// On State Change
+document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
+  stateLink.addEventListener('click', loseProgressionClickHandler)
+})
 
 // On Test Tab's User Answer
 // // on wrong answer
