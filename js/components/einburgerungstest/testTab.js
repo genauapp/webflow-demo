@@ -146,7 +146,8 @@ const loseProgressionClickHandler = (event) => {
 
   if (!userConfirmed) {
     event.preventDefault() // Prevents the action if user cancels
-    return
+    event.stopPropagation()
+    return false
   }
 
   // else
