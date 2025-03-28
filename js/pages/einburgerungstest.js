@@ -264,7 +264,7 @@ document.getElementById('show-answers-option').addEventListener('click', () => {
 
 // On Learn Tab's User Answer
 // // on wrong answer
-const wrongAnswerEventListener = (event) => {
+const wrongAnswerClickHandler = (event) => {
   const userAnswer = {
     answered: true,
     wasCorrect: false,
@@ -295,7 +295,7 @@ const wrongAnswerEventListener = (event) => {
 }
 
 // // on correct answer
-const correctAnswerEventListener = (event) => {
+const correctAnswerClickHandler = (event) => {
   const userAnswer = {
     answered: true,
     wasCorrect: true,
@@ -381,8 +381,8 @@ const switchLearnAnswers = (
       newAnswerElement.removeAttribute('wrong-input')
       newAnswerElement.removeAttribute('correct-input')
 
-      // answerElement.removeEventListener('click', wrongAnswerEventListener)
-      // answerElement.removeEventListener('click', correctAnswerEventListener)
+      // answerElement.removeEventListener('click', wrongAnswerClickHandler)
+      // answerElement.removeEventListener('click', correctAnswerClickHandler)
 
       newAnswerElement.classList.remove('wrong')
       // newAnswerElement.style.backgroundColor = '#fff0'
@@ -407,24 +407,24 @@ const switchLearnAnswers = (
         // answer is correct
         if (answer === correctAnswer) {
           newAnswerElement.removeAttribute('wrong-input')
-          // answerElement.removeEventListener('click', wrongAnswerEventListener)
+          // answerElement.removeEventListener('click', wrongAnswerClickHandler)
 
           newAnswerElement.setAttribute('correct-input', true)
-          newAnswerElement.addEventListener('click', correctAnswerEventListener)
+          newAnswerElement.addEventListener('click', correctAnswerClickHandler)
         }
         // answer is incorrect
         else {
           newAnswerElement.removeAttribute('wrong-input')
           newAnswerElement.removeAttribute('correct-input')
-          // answerElement.removeEventListener('click', correctAnswerEventListener)
+          // answerElement.removeEventListener('click', correctAnswerClickHandler)
 
-          newAnswerElement.addEventListener('click', wrongAnswerEventListener)
+          newAnswerElement.addEventListener('click', wrongAnswerClickHandler)
         }
       }
       // user answered
       else {
-        // answerElement.removeEventListener('click', wrongAnswerEventListener)
-        // answerElement.removeEventListener('click', correctAnswerEventListener)
+        // answerElement.removeEventListener('click', wrongAnswerClickHandler)
+        // answerElement.removeEventListener('click', correctAnswerClickHandler)
         // answered correctly
         if (userAnswer.wasCorrect) {
           // element is the correct answer

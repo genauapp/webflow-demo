@@ -9,6 +9,7 @@ import {
   TEST_PROGRESSION_KEY,
 } from '../../constants/storageKeys.js'
 
+// On Tab Click
 export const testTabClickHandler = (event) => {
   // const testTabElement = event.target
   console.log('I am clicked!')
@@ -52,6 +53,51 @@ export const testTabClickHandler = (event) => {
   )
 
   //   testTabElement.removeEventListener('click', testTabClickHandler)
+}
+
+// On Previous Click
+// On Next Click
+
+// On (State Content) Load?
+// // Reload new random test questions
+// On State Change
+// // Tell that they are going to lose progression
+
+// On Test Tab's User Answer
+// // on wrong answer
+// // on correct answer
+const answerClickHandler = (event) => {
+  const correctAnswerElement = event.target
+  const answerIndex = correctAnswerElement.getAttribute('answer-index') // starts from 1
+
+  const currentState = LocalStorageManager.load(CURRENT_STATE_KEY)
+  const testProgression = LocalStorageManager.load(TEST_PROGRESSION_KEY)
+
+  const updatedQuestions = testProgression.questions
+    .filter((q, i) => i + 1 === testProgression.currentIndex)
+    .map((question) =>
+      question.answers
+        .filter((a, i) => i + 1 === answerIndex)
+        .map((answer) => answer.isSelected === true)
+    )
+
+  const answeredQuestion = updatedQuestions.filter(
+    (question, i) => i + 1 === testProgression.currentIndex
+  )[0]
+
+  const updatedTestProgression = {
+    testId: testProgression.testId,
+    state: currentState,
+    questions: [...updatedQuestions],
+    currentIndex: testProgression.currentIndex,
+    isCompleted: testProgression.isCompleted, // todo: check if it's finished later
+    startedAt: testProgression.startedAt,
+    completedAt: testProgression.completedAt, // todo: check if it's finished later
+  }
+
+  LocalStorageManager.save(TEST_PROGRESSION_KEY, updatedTestProgression)
+
+  switchTestAnswers(answeredQuestion)
 }
 
 /** UI Changes
@@ -116,6 +162,15 @@ const switchTestAnswers = (question) => {
       newAnswerElement.classList.remove('active')
       newAnswerElement.classList.remove('wrong')
       newAnswerElement.classList.add('inactive')
+
+      newAnswerElement.setAttribute('answer-index', i + 1)
+      newAnswerElement.addEventListener('click', answerClickHandler)
+
+      // // element is the correct answer
+      // if (answer === question.correct_answer) {
+      // }
+      // // element is not the correct answer
+      // else {}
     }
   })
 }
