@@ -1,5 +1,7 @@
 import questionsJson from '../../../json/einburgerungstest/questions.json' with { type: 'json' }
+import { NATIONWIDE_TEST_QUESTION_LIST_SIZE, STATEWIDE_TEST_QUESTION_LIST_SIZE } from '../../constants/questions.js'
 import { STATE_NATIONWIDE } from '../../constants/states.js'
+import { ListUtils } from '../ListUtils.js'
 
 export default class QuestionManager {
   static getLearnQuestionsByState = (state) => {
@@ -56,32 +58,45 @@ export default class QuestionManager {
       return []
     }
 
+    // create nationwide questions
     const testQuestionsByNationwide = questions.filter(
       (question) => question.state === STATE_NATIONWIDE
-    ).map(question => {
-      const updatedQuestion = QuestionManager.getQuestionWithImprovedAnswers(question)
+    )
+    const randomTestQuestionsByNationWide = ListUtils.getRandomItems(testQuestionsByNationwide, NATIONWIDE_TEST_QUESTION_LIST_SIZE)
+    const updatedTestQuestionsByNationWide = randomTestQuestionsByNationWide.map(question => {
+      const updatedQuestion = QuestionManager.getTestQuestionWithImprovedAnswers(question)
 
       return updatedQuestion
     })
 
+    // create statewide questions
     const testQuestionsByState = questions.filter(
-      (question) => question.state === state
-    ).map(question => {
-      const updatedQuestion = QuestionManager.getQuestionWithImprovedAnswers(question)
-
-      return updatedQuestion
+          (question) => question.state === state
+        )
+    const randomTestQuestionsByState = ListUtils.getRandomItems(testQuestionsByState, STATEWIDE_TEST_QUESTION_LIST_SIZE)
+    const updatedTestQuestionsByState = randomTestQuestionsByState.map(question => {
+          const updatedQuestion = QuestionManager.getTestQuestionWithImprovedAnswers(question)
+    
+          return updatedQuestion
     })
 
+
+    // merge nationwide and statewide question lists
     const testQuestions = [
-      ...testQuestionsByNationwide,
-      ...testQuestionsByState
+      ...updatedTestQuestionsByNationWide,
+      ...updatedTestQuestionsByState
     ]
 
-    return testQuestions
+    // shuffle them
+    const shuffledTestQuestions = ListUtils.shuffleArray(testQuestions)
+
+    console.log(`new list: ${shuffledTestQuestions}`)
+
+    return shuffledTestQuestions
   }
 
 
-  static getQuestionWithImprovedAnswers = (question) => {
+  static getTestQuestionWithImprovedAnswers = (question) => {
           // add isSelected property to each answer
           const updatedAnswers = question.answers.map((answer, index) => {
             return {
