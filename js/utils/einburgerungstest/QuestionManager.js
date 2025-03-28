@@ -90,7 +90,7 @@ export default class QuestionManager {
     // shuffle them
     const shuffledTestQuestions = ListUtils.shuffleArray(testQuestions)
 
-    console.log(`new list: ${shuffledTestQuestions}`)
+    console.log(`new list: ${JSON.stringify(shuffledTestQuestions, null, 2)}`)
 
     return shuffledTestQuestions
   }
