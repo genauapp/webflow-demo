@@ -135,9 +135,9 @@ const loseProgressionClickHandler = (event) => {
 // On (State Content) Load?
 // // Reload new random test questions
 // On State Change
-document
-  .getElementById('state-dropdown-container')
-  .addEventListener('click', loseProgressionClickHandler)
+document.getElementById('state-dropdown-link').forEach((stateLink) => {
+  stateLink.addEventListener('click', loseProgressionClickHandler)
+})
 
 // On Tab Change
 document
