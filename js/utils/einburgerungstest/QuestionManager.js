@@ -64,6 +64,7 @@ export default class QuestionManager {
 
       // shuffle them
       const shuffledTestQuestions = ListUtils.shuffleArray(updatedTestQuestionsByNationWide)
+      // console.log(`new list: ${JSON.stringify(shuffledTestQuestions, null, 2)}`)
       return shuffledTestQuestions
     }
 
@@ -82,7 +83,7 @@ export default class QuestionManager {
     // shuffle them
     const shuffledTestQuestions = ListUtils.shuffleArray(testQuestions)
 
-    console.log(`new list: ${JSON.stringify(shuffledTestQuestions, null, 2)}`)
+    // console.log(`new list: ${JSON.stringify(shuffledTestQuestions, null, 2)}`)
 
     return shuffledTestQuestions
   }

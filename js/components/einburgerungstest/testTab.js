@@ -2,6 +2,7 @@ import LocalStorageManager from '../../utils/LocalStorageManager.js'
 import QuestionManager from '../../utils/einburgerungstest/QuestionManager.js'
 import DateUtils from '../../utils/DateUtils.js'
 import ElementUtils from '../../utils/ElementUtils.js'
+import TestManager from '../../utils/einburgerungstest/TestManager.js'
 
 import {
   CURRENT_STATE_KEY,
@@ -11,8 +12,7 @@ import {
 
 // On Tab Click
 export const testTabClickHandler = (event) => {
-  const testTabElement = event.target
-  console.log('I am clicked!')
+  event.target.removeEventListener('click', testTabClickHandler)
 
   // get recent local storage items
   const currentState = LocalStorageManager.load(
@@ -130,11 +130,13 @@ const loseProgressionClickHandler = (event) => {
   }
 
   // else
-  // document.getElementById('learn-tab').click()
+  hideTestResultsModal()
+  document
+    .getElementById('test-tab')
+    .addEventListener('click', testTabClickHandler)
+  document.getElementById('learn-tab').click()
 }
 
-// On (State Content) Load?
-// // Reload new random test questions
 // On State Change
 document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
   stateLink.addEventListener('click', loseProgressionClickHandler)
@@ -157,7 +159,6 @@ const answerClickHandler = (event) => {
   const answerIndexAttr = correctAnswerElement.getAttribute('answer-index') // starts from 1
   const answerIndex = parseInt(answerIndexAttr)
 
-  const currentState = LocalStorageManager.load(CURRENT_STATE_KEY)
   const testProgression = LocalStorageManager.load(TEST_PROGRESSION_KEY)
 
   const updatedQuestions = testProgression.questions.map(
@@ -198,12 +199,26 @@ const answerClickHandler = (event) => {
 
   const updatedTestProgression = {
     testId: testProgression.testId,
-    state: currentState,
+    state: testProgression.state,
     questions: [...updatedQuestions],
     currentIndex: testProgression.currentIndex,
-    isCompleted: testProgression.isCompleted, // todo: check if it's finished later
     startedAt: testProgression.startedAt,
-    completedAt: testProgression.completedAt, // todo: check if it's finished later
+    isCompleted: testProgression.isCompleted,
+    completedAt: testProgression.completedAt,
+    score: testProgression.score,
+  }
+
+  // complete test if all questions are answered
+  if (TestManager.checkTestIsCompleted(updatedQuestions)) {
+    updatedTestProgression.isCompleted = true
+    updatedTestProgression.completedAt = DateUtils.getCurrentDateTime()
+    updatedTestProgression.score = TestManager.calculateScore(
+      updatedTestProgression.questions
+    )
+    showTestResultsModal(
+      updatedTestProgression,
+      TestManager.isTestResultSuccessful(updatedTestProgression.score)
+    )
   }
 
   LocalStorageManager.save(TEST_PROGRESSION_KEY, updatedTestProgression)
@@ -301,4 +316,29 @@ const switchTestPreviousNextButtons = (
     totalNumberOfQuestions,
     { prevButton: previousButton, nextButton: nextButton }
   )
+}
+
+const showTestResultsModal = (progression, isPassed) => {
+  document.getElementById('test-results-modal').style.visibility = 'visible'
+
+  if (isPassed) {
+    document.getElementById('test-modal-success-message').style.visibility =
+      'visible'
+    document.getElementById('test-modal-failure-message').style.visibility =
+      'hidden'
+  } else {
+    document.getElementById('test-modal-failure-message').style.visibility =
+      'visible'
+    document.getElementById('test-modal-success-message').style.visibility =
+      'hidden'
+  }
+
+  document.getElementById('test-total-correct-answers').innerText =
+    progression.score
+  document.getElementById('test-total-wrong-answers').innerText =
+    progression.questions.length - progression.score
+}
+
+const hideTestResultsModal = () => {
+  document.getElementById('test-results-modal').style.visibility = 'hidden'
 }

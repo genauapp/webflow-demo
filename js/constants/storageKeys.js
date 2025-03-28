@@ -30,9 +30,10 @@ export class DEFAULT_VALUE {
       state: currentState,
       questions: [...testQuestions],
       currentIndex: 1,
-      isCompleted: false,
       startedAt: startedAt,
+      isCompleted: false,
       completedAt: null,
+      score: 0,
     }
   }
 }
