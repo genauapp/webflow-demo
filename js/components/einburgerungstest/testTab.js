@@ -73,13 +73,31 @@ const answerClickHandler = (event) => {
   const currentState = LocalStorageManager.load(CURRENT_STATE_KEY)
   const testProgression = LocalStorageManager.load(TEST_PROGRESSION_KEY)
 
-  const updatedQuestions = testProgression.questions
-    .filter((q, i) => i + 1 === testProgression.currentIndex)
-    .map((question) =>
-      question.answers
-        .filter((a, i) => i + 1 === answerIndex)
-        .map((answer) => answer.isSelected === true)
-    )
+  const updatedQuestions = testProgression.questions.map(
+    (question, questionI) => {
+      if (questionI + 1 === testProgression.currentIndex) {
+        const updatedQuestion = question.answers.map((answer, answerI) => {
+          if (answerI + 1 === answerIndex) {
+            return {
+              ...answer,
+              isSelected: true,
+            }
+          } else {
+            return {
+              ...answer,
+            }
+          }
+        })
+        return {
+          ...updatedQuestion,
+        }
+      } else {
+        return {
+          ...question,
+        }
+      }
+    }
+  )
 
   const answeredQuestion = updatedQuestions.filter(
     (question, i) => i + 1 === testProgression.currentIndex
