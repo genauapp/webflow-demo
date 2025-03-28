@@ -10,9 +10,14 @@ import {
   TEST_PROGRESSION_KEY,
 } from '../../constants/storageKeys.js'
 
+// On Initial Load
+document.addEventListener('DOMContentLoaded', () => {
+  // remove test progression
+  LocalStorageManager.remove(TEST_PROGRESSION_KEY)
+})
+
 // On Tab Click
 export const testTabClickHandler = (event) => {
-  // event.target.removeEventListener('click', testTabClickHandler)
   // do nothing if test tab is selected
   if (event.currentTarget.ariaSelected === 'true') {
     event.preventDefault()
@@ -145,11 +150,8 @@ const loseProgressionClickHandler = (event) => {
   }
 
   // else
-  // // reset test progression
-  LocalStorageManager.save(
-    TEST_PROGRESSION_KEY,
-    DEFAULT_VALUE.TEST_PROGRESSION(null, null, [], null)
-  )
+  // // remove test progression
+  LocalStorageManager.remove(TEST_PROGRESSION_KEY)
 
   // // hide test results modal if any
   hideTestResultsModal()
@@ -163,17 +165,6 @@ const loseProgressionClickHandler = (event) => {
   // // click on learn tab imperatively
   learnTabElement.click()
 }
-
-// On State Change
-document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
-  const testProgression = LocalStorageManager.load(TEST_PROGRESSION_KEY)
-
-  if (document.getElementById('test-tab').ariaSelected === 'true') {
-    stateLink.addEventListener('click', loseProgressionClickHandler)
-  } else {
-    stateLink.removeEventListener('click', loseProgressionClickHandler)
-  }
-})
 
 // On Test Tab's User Answer
 // // on wrong answer
