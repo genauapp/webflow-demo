@@ -14,7 +14,7 @@ import {
 export const testTabClickHandler = (event) => {
   // event.target.removeEventListener('click', testTabClickHandler)
   // do nothing if test tab is selected
-  if (event.target.getAttribute('aria-selected') === "true") {
+  if (event.target.ariaSelected === 'true') {
     event.preventDefault()
     return
   }
