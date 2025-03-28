@@ -68,7 +68,8 @@ export const testTabClickHandler = (event) => {
 // // on correct answer
 const answerClickHandler = (event) => {
   const correctAnswerElement = event.target
-  const answerIndex = correctAnswerElement.getAttribute('answer-index') // starts from 1
+  const answerIndexAttr = correctAnswerElement.getAttribute('answer-index') // starts from 1
+  const answerIndex = parseInt(answerIndexAttr)
 
   const currentState = LocalStorageManager.load(CURRENT_STATE_KEY)
   const testProgression = LocalStorageManager.load(TEST_PROGRESSION_KEY)
