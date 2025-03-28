@@ -341,6 +341,6 @@ const hideTestResultsModal = () => {
   const modalElement = document.getElementById('test-results-modal')
 
   if (modalElement) {
-    modalElement.style.display = 'block'
+    modalElement.style.display = 'none'
   }
 }
