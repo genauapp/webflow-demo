@@ -12,7 +12,12 @@ import {
 
 // On Tab Click
 export const testTabClickHandler = (event) => {
-  event.target.removeEventListener('click', testTabClickHandler)
+  // event.target.removeEventListener('click', testTabClickHandler)
+  // do nothing if test tab is selected
+  if (event.target.getAttribute('aria-selected') === "true") {
+    event.preventDefault()
+    return
+  }
 
   // get recent local storage items
   const currentState = LocalStorageManager.load(
@@ -143,13 +148,13 @@ document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
 })
 
 // On Tab Change
-document
-  .getElementById('learn-tab')
-  .addEventListener('click', loseProgressionClickHandler)
+// document
+//   .getElementById('learn-tab')
+//   .addEventListener('click', loseProgressionClickHandler)
 
-document
-  .getElementById('test-tab')
-  .addEventListener('click', loseProgressionClickHandler)
+// document
+//   .getElementById('test-tab')
+//   .addEventListener('click', loseProgressionClickHandler)
 
 // On Test Tab's User Answer
 // // on wrong answer
