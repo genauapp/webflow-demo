@@ -130,7 +130,7 @@ const loseProgressionClickHandler = (event) => {
   }
 
   // else
-  document.getElementById('learn-tab').click()
+  // document.getElementById('learn-tab').click()
 }
 
 // On (State Content) Load?
@@ -143,6 +143,10 @@ document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
 // On Tab Change
 document
   .getElementById('learn-tab')
+  .addEventListener('click', loseProgressionClickHandler)
+
+document
+  .getElementById('test-tab')
   .addEventListener('click', loseProgressionClickHandler)
 
 // On Test Tab's User Answer
