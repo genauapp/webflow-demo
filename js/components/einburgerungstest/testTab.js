@@ -117,6 +117,7 @@ document.getElementById('test-next').addEventListener('click', (event) => {
   )
 })
 
+// // Tell that they are going to lose progression
 const loseProgressionClickHandler = (event) => {
   console.log(`lose progression is triggered via click of: ${event.target}`)
 
@@ -126,16 +127,22 @@ const loseProgressionClickHandler = (event) => {
   if (!userConfirmed) {
     event.preventDefault() // Prevents the action if user cancels
   }
+
+  // else
+  document.getElementById('learn-tab').click()
 }
 
 // On (State Content) Load?
 // // Reload new random test questions
 // On State Change
-// // Tell that they are going to lose progression
-// On State Change
-document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
-  stateLink.addEventListener('click', loseProgressionClickHandler)
-})
+document
+  .getElementById('state-dropdown-container')
+  .addEventListener('click', loseProgressionClickHandler)
+
+// On Tab Change
+document
+  .getElementById('learn-tab')
+  .addEventListener('click', loseProgressionClickHandler)
 
 // On Test Tab's User Answer
 // // on wrong answer
