@@ -80,9 +80,10 @@ export default class QuestionManager {
     return testQuestions
   }
 
+
   static getQuestionWithImprovedAnswers = (question) => {
           // add isSelected property to each answer
-          const updatedAnswers = question.answers.map(answer => {
+          const updatedAnswers = question.answers.map((answer, index) => {
             return {
             text: answer,
             isSelected: false,
@@ -97,6 +98,23 @@ export default class QuestionManager {
     
           return testQuestion
   }
+
+  // starting from 1
+  static getCorrectAnswerIndex = (question) => {
+    const correctAnswerIndex = question.answers.map((answer, index) => {
+      if (answer.text === question.correct_answer) {
+        return index + 1
+      }
+      // else
+      return null
+      
+    })
+    // clean nulls
+    .filter(a => a !== null)[0]
+
+    return correctAnswerIndex
+  }
+
 
   static getCurrentTestQuestion = (
     currentIndex,

@@ -132,7 +132,8 @@ const answerClickHandler = (event) => {
 const setTestTabElements = (
   currentQuestionIndex,
   totalNumberOfQuestions,
-  currentQuestion
+  currentQuestion,
+  correctAnswerIndex
 ) => {
   document.getElementById('test-question-index').innerText =
     currentQuestionIndex
@@ -144,10 +145,10 @@ const setTestTabElements = (
   document.getElementById('test-question-description-label').innerText =
     currentQuestion.question
 
-  switchTestAnswers(currentQuestion)
+  switchTestAnswers(currentQuestion, correctAnswerIndex)
 }
 
-const switchTestAnswers = (question) => {
+const switchTestAnswers = (question, correctAnswerIndex) => {
   question.answers.forEach((answer, i) => {
     const answerElement = document.getElementById(
       `test-current-question-answer-${i + 1}`
@@ -178,9 +179,18 @@ const switchTestAnswers = (question) => {
       }
       // answer is not selected
       else {
-        newAnswerElement.classList.remove('active')
-        newAnswerElement.classList.remove('wrong')
-        newAnswerElement.classList.add('inactive')
+        // element is the correct answer
+        if (answer.text === question.correct_answer) {
+          newAnswerElement.classList.remove('inactive')
+          newAnswerElement.classList.remove('wrong')
+          newAnswerElement.classList.add('active')
+        }
+        // element is not the correct answer
+        else {
+          newAnswerElement.classList.remove('active')
+          newAnswerElement.classList.remove('wrong')
+          newAnswerElement.classList.add('inactive')
+        }
       }
     }
     // user did not answer
