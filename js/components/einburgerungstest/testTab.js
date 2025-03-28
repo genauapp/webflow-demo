@@ -319,18 +319,16 @@ const switchTestPreviousNextButtons = (
 }
 
 const showTestResultsModal = (progression, isPassed) => {
-  document.getElementById('test-results-modal').style.visibility = 'visible'
+  document.getElementById('test-results-modal').style.display = 'block'
 
   if (isPassed) {
-    document.getElementById('test-modal-success-message').style.visibility =
-      'visible'
-    document.getElementById('test-modal-failure-message').style.visibility =
-      'hidden'
+    document.getElementById('test-modal-success-message').style.display =
+      'block'
+    document.getElementById('test-modal-failure-message').style.display = 'none'
   } else {
-    document.getElementById('test-modal-failure-message').style.visibility =
-      'visible'
-    document.getElementById('test-modal-success-message').style.visibility =
-      'hidden'
+    document.getElementById('test-modal-failure-message').style.display =
+      'block'
+    document.getElementById('test-modal-success-message').style.display = 'none'
   }
 
   document.getElementById('test-total-correct-answers').innerText =
@@ -340,5 +338,9 @@ const showTestResultsModal = (progression, isPassed) => {
 }
 
 const hideTestResultsModal = () => {
-  document.getElementById('test-results-modal').style.visibility = 'hidden'
+  const modalElement = document.getElementById('test-results-modal')
+
+  if (modalElement) {
+    modalElement.style.display = 'block'
+  }
 }
