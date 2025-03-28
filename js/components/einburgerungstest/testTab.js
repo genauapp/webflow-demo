@@ -14,10 +14,14 @@ import {
 export const testTabClickHandler = (event) => {
   // event.target.removeEventListener('click', testTabClickHandler)
   // do nothing if test tab is selected
-  if (event.target.ariaSelected === 'true') {
+  if (event.currentTarget.ariaSelected === 'true') {
     event.preventDefault()
     return
   }
+
+  document
+    .getElementById('learn-tab')
+    .addEventListener('click', loseProgressionClickHandler)
 
   // get recent local storage items
   const currentState = LocalStorageManager.load(
@@ -124,7 +128,9 @@ document.getElementById('test-next').addEventListener('click', (event) => {
 
 // // Tell that they are going to lose progression
 const loseProgressionClickHandler = (event) => {
-  console.log(`lose progression is triggered via click of: ${event.target}`)
+  console.log(
+    `lose progression is triggered via click of: ${event.currentTarget}`
+  )
 
   const userConfirmed = window.confirm(
     'Are you sure you want to leave? Your progress will be lost.'
@@ -136,25 +142,15 @@ const loseProgressionClickHandler = (event) => {
 
   // else
   hideTestResultsModal()
-  document
-    .getElementById('test-tab')
-    .addEventListener('click', testTabClickHandler)
-  document.getElementById('learn-tab').click()
+  const learnTabElement = document.getElementById('learn-tab')
+  learnTabElement.removeEventListener('click', loseProgressionClickHandler)
+  learnTabElement.click()
 }
 
 // On State Change
 document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
   stateLink.addEventListener('click', loseProgressionClickHandler)
 })
-
-// On Tab Change
-// document
-//   .getElementById('learn-tab')
-//   .addEventListener('click', loseProgressionClickHandler)
-
-// document
-//   .getElementById('test-tab')
-//   .addEventListener('click', loseProgressionClickHandler)
 
 // On Test Tab's User Answer
 // // on wrong answer
