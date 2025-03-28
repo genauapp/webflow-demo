@@ -1,4 +1,4 @@
-import { STATE_NATIONWIDE } from './states'
+import { STATE_NATIONWIDE } from './states.js'
 
 export const CURRENT_STATE_KEY = 'CURRENT_STATE'
 export const SHOULD_SHOW_ANSWER_KEY = 'SHOULD_SHOW_ANSWER'
