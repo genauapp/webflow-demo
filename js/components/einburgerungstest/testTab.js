@@ -77,7 +77,8 @@ const answerClickHandler = (event) => {
   const updatedQuestions = testProgression.questions.map(
     (question, questionI) => {
       if (questionI + 1 === testProgression.currentIndex) {
-        const updatedQuestion = question.answers.map((answer, answerI) => {
+        // update answer with newly selected one
+        const updatedAnswers = question.answers.map((answer, answerI) => {
           if (answerI + 1 === answerIndex) {
             return {
               ...answer,
@@ -89,13 +90,18 @@ const answerClickHandler = (event) => {
             }
           }
         })
-        return {
-          ...updatedQuestion,
-        }
-      } else {
-        return {
+
+        // update question with new answers
+        const updatedQuestion = {
           ...question,
+          answers: updatedAnswers,
         }
+
+        return updatedQuestion
+      }
+      // else
+      return {
+        ...question,
       }
     }
   )
