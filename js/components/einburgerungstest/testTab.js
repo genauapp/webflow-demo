@@ -22,6 +22,9 @@ export const testTabClickHandler = (event) => {
   document
     .getElementById('learn-tab')
     .addEventListener('click', loseProgressionClickHandler)
+  document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
+    stateLink.addEventListener('click', loseProgressionClickHandler)
+  })
 
   // get recent local storage items
   const currentState = LocalStorageManager.load(
@@ -128,28 +131,51 @@ document.getElementById('test-next').addEventListener('click', (event) => {
 
 // // Tell that they are going to lose progression
 const loseProgressionClickHandler = (event) => {
-  console.log(
-    `lose progression is triggered via click of: ${event.currentTarget}`
-  )
+  // console.log(
+  //   `lose progression is triggered via click of: ${event.currentTarget}`
+  // )
 
   const userConfirmed = window.confirm(
     'Are you sure you want to leave? Your progress will be lost.'
   )
+
   if (!userConfirmed) {
     event.preventDefault() // Prevents the action if user cancels
     return
   }
 
   // else
+  // // reset test progression
+  LocalStorageManager.save(
+    TEST_PROGRESSION_KEY,
+    DEFAULT_VALUE.TEST_PROGRESSION(null, null, [], null)
+  )
+
+  // // hide test results modal if any
   hideTestResultsModal()
+
+  // // remove event listeners from state and learn tabs for losing progression
   const learnTabElement = document.getElementById('learn-tab')
   learnTabElement.removeEventListener('click', loseProgressionClickHandler)
+  document
+    .getElementById('learn-tab')
+    .addEventListener('click', loseProgressionClickHandler)
+  document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
+    stateLink.removeEventListener('click', loseProgressionClickHandler)
+  })
+  // // click on learn tab imperatively
   learnTabElement.click()
 }
 
 // On State Change
 document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
-  stateLink.addEventListener('click', loseProgressionClickHandler)
+  const testProgression = LocalStorageManager.load(TEST_PROGRESSION_KEY)
+
+  if (document.getElementById('test-tab').ariaSelected === 'true') {
+    stateLink.addEventListener('click', loseProgressionClickHandler)
+  } else {
+    stateLink.removeEventListener('click', loseProgressionClickHandler)
+  }
 })
 
 // On Test Tab's User Answer
