@@ -69,8 +69,7 @@ export default class QuestionManager {
     }
 
     // create nationwide questions
-    const updatedTestQuestionsByNationWide = QuestionManager.getRandomTestQuestionsByState(questions, state, NATIONWIDE_TEST_QUESTION_LIST_SIZE)
-
+    const updatedTestQuestionsByNationWide = QuestionManager.getRandomTestQuestionsByState(questions, STATE_NATIONWIDE, NATIONWIDE_TEST_QUESTION_LIST_SIZE)
     // create statewide questions
     const updatedTestQuestionsByState = QuestionManager.getRandomTestQuestionsByState(questions, state, STATEWIDE_TEST_QUESTION_LIST_SIZE)
 
