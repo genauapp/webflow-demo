@@ -16,6 +16,48 @@ document.addEventListener('DOMContentLoaded', () => {
   LocalStorageManager.remove(TEST_PROGRESSION_KEY)
 })
 
+const initializeTest = () => {
+  // Attach lose progression listeners to the learn tab and state dropdowns
+  document
+    .getElementById('learn-tab')
+    .addEventListener('click', loseProgressionClickHandler, true)
+  document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
+    stateLink.addEventListener('click', loseProgressionClickHandler, true)
+  })
+
+  // Load current state and questions
+  const currentState = LocalStorageManager.load(CURRENT_STATE_KEY)
+  const testQuestions = QuestionManager.getTestQuestionsByState(currentState)
+
+  // Create new test progression
+  const initialTestProgression = DEFAULT_VALUE.TEST_PROGRESSION(
+    crypto.randomUUID(),
+    currentState,
+    testQuestions,
+    DateUtils.getCurrentDateTime()
+  )
+
+  // Save the test progression
+  LocalStorageManager.save(TEST_PROGRESSION_KEY, initialTestProgression)
+
+  // Get first question info
+  const firstQuestion = QuestionManager.getCurrentTestQuestion(
+    initialTestProgression.currentIndex,
+    initialTestProgression.questions
+  )
+
+  // UI Changes
+  switchTestPreviousNextButtons(
+    initialTestProgression.currentIndex,
+    initialTestProgression.questions.length
+  )
+  setTestTabElements(
+    initialTestProgression.currentIndex,
+    initialTestProgression.questions.length,
+    firstQuestion
+  )
+}
+
 // On Tab Click
 export const testTabClickHandler = (event) => {
   // do nothing if test tab is selected
@@ -24,53 +66,58 @@ export const testTabClickHandler = (event) => {
     return
   }
 
-  document
-    .getElementById('learn-tab')
-    .addEventListener('click', loseProgressionClickHandler, true)
-  document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
-    stateLink.addEventListener('click', loseProgressionClickHandler, true) // true means capturing
+  // Call the common initialization logic
+  initializeTest()
+}
+
+// On Repeat Click
+document
+  .getElementById('test-results-repeat-button')
+  .addEventListener('click', () => {
+    // Load the current test progression
+    const currentProgression = LocalStorageManager.load(TEST_PROGRESSION_KEY)
+
+    // Reset the test progression using your helper function
+    const repeatedQuestions = TestManager.resetCompletedTest(
+      currentProgression.questions
+    )
+
+    const resettedTestProgression = DEFAULT_VALUE.TEST_PROGRESSION(
+      crypto.randomUUID(),
+      currentProgression.state,
+      repeatedQuestions,
+      DateUtils.getCurrentDateTime()
+    )
+
+    LocalStorageManager.save(TEST_PROGRESSION_KEY, resettedTestProgression)
+
+    // Hide the test results modal if it's visible
+    hideTestResultsModal()
+
+    // Get the first question for the repeated test
+    const firstQuestion = QuestionManager.getCurrentTestQuestion(
+      resettedTestProgression.currentIndex,
+      resettedTestProgression.questions
+    )
+
+    // Update UI: adjust previous/next buttons and set the question elements
+    switchTestPreviousNextButtons(
+      resettedTestProgression.currentIndex,
+      resettedTestProgression.questions.length
+    )
+    setTestTabElements(
+      resettedTestProgression.currentIndex,
+      resettedTestProgression.questions.length,
+      firstQuestion
+    )
   })
 
-  // get recent local storage items
-  const currentState = LocalStorageManager.load(
-    CURRENT_STATE_KEY,
-    DEFAULT_VALUE.CURRENT_STATE
-  )
-
-  // load questions
-  const testQuestions = QuestionManager.getTestQuestionsByState(currentState)
-
-  const initialTestProgression = DEFAULT_VALUE.TEST_PROGRESSION(
-    crypto.randomUUID(),
-    currentState,
-    testQuestions,
-    DateUtils.getCurrentDateTime()
-  )
-
-  // set test progression to default one
-  LocalStorageManager.save(TEST_PROGRESSION_KEY, initialTestProgression)
-
-  // get first question info
-  const firstQuestion = QuestionManager.getCurrentTestQuestion(
-    initialTestProgression.currentIndex,
-    initialTestProgression.questions
-  )
-
-  // UI Changes
-  // // show initial previous/next buttons
-  switchTestPreviousNextButtons(
-    initialTestProgression.currentIndex,
-    initialTestProgression.questions.length
-  )
-  // // show initial question
-  setTestTabElements(
-    initialTestProgression.currentIndex,
-    initialTestProgression.questions.length,
-    firstQuestion
-  )
-
-  //   testTabElement.removeEventListener('click', testTabClickHandler)
-}
+// On Try New Click
+document
+  .getElementById('test-results-try-new-button')
+  .addEventListener('click', () => {
+    initializeTest()
+  })
 
 // On Previous Click
 document.getElementById('test-previous').addEventListener('click', (event) => {
@@ -245,50 +292,6 @@ const answerClickHandler = (event) => {
 
   switchTestAnswers(answeredQuestion)
 }
-
-// On Repeat Click
-document
-  .getElementById('test-results-repeat-button')
-  .addEventListener('click', () => {
-    // Load the current test progression
-    const currentProgression = LocalStorageManager.load(TEST_PROGRESSION_KEY)
-
-    // Reset the test progression using your helper function
-    const repeatedQuestions = TestManager.resetCompletedTest(
-      currentProgression.questions
-    )
-
-    const resettedTestProgression = DEFAULT_VALUE.TEST_PROGRESSION(
-      crypto.randomUUID(),
-      currentProgression.state,
-      repeatedQuestions,
-      DateUtils.getCurrentDateTime()
-    )
-
-    LocalStorageManager.save(TEST_PROGRESSION_KEY, resettedTestProgression)
-
-    // Hide the test results modal if it's visible
-    hideTestResultsModal()
-
-    // Get the first question for the repeated test
-    const firstQuestion = QuestionManager.getCurrentTestQuestion(
-      resettedTestProgression.currentIndex,
-      resettedTestProgression.questions
-    )
-
-    // Update UI: adjust previous/next buttons and set the question elements
-    switchTestPreviousNextButtons(
-      resettedTestProgression.currentIndex,
-      resettedTestProgression.questions.length
-    )
-    setTestTabElements(
-      resettedTestProgression.currentIndex,
-      resettedTestProgression.questions.length,
-      firstQuestion
-    )
-  })
-
-// On Try More Click
 
 /** UI Changes
  * They are only responsible for displaying whatever they receive as parameter
