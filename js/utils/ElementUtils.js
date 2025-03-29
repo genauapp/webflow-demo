@@ -32,12 +32,28 @@ export default class ElementUtils {
   }
 
   static showSkeleton(skeletonElementId, hidingElementId) {
-    document.getElementById(skeletonElementId).display = 'flex'
-    document.getElementById(hidingElementId).display = 'none'
+    const skeletonContainer = document.getElementById(skeletonElementId)
+    const hidingElementContainer = document.getElementById(hidingElementId)
+
+    if (skeletonContainer) {
+      skeletonContainer.display = 'flex'
+    }
+
+    if (hidingElementContainer) {
+      hidingElementContainer.display = 'none'
+    }
   }
 
   static hideSkeleton = (skeletonElementId, showingElementId) => {
-    document.getElementById(skeletonElementId).display = 'none'
-    document.getElementById(showingElementId).display = 'flex'
+    const skeletonContainer = document.getElementById(skeletonElementId)
+    const showingElementContainer = document.getElementById(showingElementId)
+
+    if (skeletonContainer) {
+      skeletonContainer.display = 'none'
+    }
+
+    if (showingElementContainer) {
+      showingElementContainer.display = 'flex'
+    }
   }
 }
