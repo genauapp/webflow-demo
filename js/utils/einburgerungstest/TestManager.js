@@ -17,16 +17,15 @@ export default class TestManager {
 
   static resetCompletedTest = (questions) => {
     const resettedQuestions = questions.map((q) => {
-      const resettedAnswers = q.answers.map((a) => {
-        const resettedAnswer = {
-          ...a,
-          isSelected: false,
-        }
+      const resettedAnswers = q.answers.map((a) => ({
+        ...a,
+        isSelected: false,
+      }))
 
-        return resettedAnswer
-      })
-
-      return resettedAnswers
+      return {
+        ...q,
+        answers: resettedAnswers,
+      }
     })
 
     const shuffledQuestions = ListUtils.shuffleArray(resettedQuestions)
