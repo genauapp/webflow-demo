@@ -15,6 +15,8 @@ import { testTabClickHandler } from '../components/einburgerungstest/testTab.js'
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', () => {
+  showLearnSkeleton()
+
   // set toggle to default one
   LocalStorageManager.save(
     SHOULD_SHOW_ANSWER_KEY,
@@ -44,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
   )
 
   // UI Changes
+  hideLearnSkeleton()
   // // show initial previous/next buttons
   switchLearnPreviousNextButtons(
     currentLearnQuestionIndex,
@@ -148,6 +151,7 @@ document.getElementById('learn-next').addEventListener('click', (event) => {
 // On State Change
 document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
   stateLink.addEventListener('click', function (event) {
+    showLearnSkeleton()
     // event.preventDefault()
     // set updated local storage item
     const currentState = stateLink.getAttribute('data-option')
@@ -176,6 +180,7 @@ document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
       QuestionManager.getTotalNumberOfLearnQuestions(currentState)
 
     // update ui
+    hideLearnSkeleton()
     // // show updated state header
     document.getElementById('dropdown-header').innerText = currentState
     // // show updated previous/next buttons
@@ -482,6 +487,14 @@ const switchLearnPreviousNextButtons = (
     totalNumberOfQuestions,
     { prevButton: previousButton, nextButton: nextButton }
   )
+}
+
+const showLearnSkeleton = () => {
+  ElementUtils.showSkeleton('learn-question-container', 'skeleton-container')
+}
+
+const hideLearnSkeleton = () => {
+  ElementUtils.hideSkeleton('learn-question-container', 'skeleton-container')
 }
 
 // jQuery for Dropdown

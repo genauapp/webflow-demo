@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 const initializeTest = () => {
+  showTestSkeleton()
+
   // Attach lose progression listeners to the learn tab and state dropdowns
   document
     .getElementById('learn-tab')
@@ -47,6 +49,7 @@ const initializeTest = () => {
   )
 
   // UI Changes
+  hideTestSkeleton()
   hideTestResultsModal()
   switchTestPreviousNextButtons(
     initialTestProgression.currentIndex,
@@ -74,6 +77,8 @@ export const testTabClickHandler = (event) => {
 document
   .getElementById('test-results-repeat-button')
   .addEventListener('click', () => {
+    showTestSkeleton()
+
     // Load the current test progression
     const currentProgression = LocalStorageManager.load(TEST_PROGRESSION_KEY)
 
@@ -98,6 +103,7 @@ document
     )
 
     // Update UI
+    hideTestSkeleton()
     hideTestResultsModal()
     switchTestPreviousNextButtons(
       resettedTestProgression.currentIndex,
@@ -411,4 +417,12 @@ const hideTestResultsModal = () => {
   if (modalElement) {
     modalElement.style.display = 'none'
   }
+}
+
+const showTestSkeleton = () => {
+  ElementUtils.showSkeleton('skeleton-container', 'test-question-container')
+}
+
+const hideTestSkeleton = () => {
+  ElementUtils.hideSkeleton('skeleton-container', 'test-question-container')
 }

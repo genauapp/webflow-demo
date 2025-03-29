@@ -30,4 +30,14 @@ export default class ElementUtils {
     ElementUtils.switchButtonActivation(prevButton, isPreviousFirst)
     ElementUtils.switchButtonActivation(nextButton, isNextLast)
   }
+
+  static showSkeleton(skeletonElementId, hidingElementId) {
+    document.getElementById(skeletonElementId).display = 'flex'
+    document.getElementById(hidingElementId).display = 'none'
+  }
+
+  static hideSkeleton = (skeletonElementId, showingElementId) => {
+    document.getElementById(skeletonElementId).display = 'none'
+    document.getElementById(showingElementId).display = 'flex'
+  }
 }
