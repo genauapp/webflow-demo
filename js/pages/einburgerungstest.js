@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
   )
   // // show initial question
   setLearnTabElements(
+    DEFAULT_VALUE.CURRENT_STATE,
     currentLearnQuestionIndex,
     totalNumberOfQuestions,
     DEFAULT_VALUE.SHOULD_SHOW_ANSWER,
@@ -94,6 +95,7 @@ document.getElementById('learn-previous').addEventListener('click', (event) => {
   switchLearnPreviousNextButtons(previousIndex, totalNumberOfQuestions)
   // // show previous question
   setLearnTabElements(
+    currentState,
     previousIndex,
     totalNumberOfQuestions,
     shouldShowAnswer,
@@ -137,6 +139,7 @@ document.getElementById('learn-next').addEventListener('click', (event) => {
   switchLearnPreviousNextButtons(nextIndex, totalNumberOfQuestions)
   // // show next question
   setLearnTabElements(
+    currentState,
     nextIndex,
     totalNumberOfQuestions,
     shouldShowAnswer,
@@ -185,6 +188,7 @@ document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
     )
     // // show updated question
     setLearnTabElements(
+      currentState,
       currentLearnQuestionIndex,
       totalNumberOfQuestions,
       shouldShowAnswer,
@@ -334,12 +338,15 @@ document
  * */
 
 const setLearnTabElements = (
+  currentState,
   currentQuestionIndex,
   totalNumberOfQuestions,
   shouldShowAnswer,
   currentQuestion,
   userAnswer
 ) => {
+  document.getElementById('learn-question-state-label').innerText = currentState
+
   document.getElementById('learn-question-index').innerText =
     currentQuestionIndex
   document.getElementById('learn-questions-length').innerText =

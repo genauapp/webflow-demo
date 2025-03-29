@@ -53,6 +53,7 @@ const initializeTest = () => {
     initialTestProgression.questions.length
   )
   setTestTabElements(
+    initialTestProgression.state,
     initialTestProgression.currentIndex,
     initialTestProgression.questions.length,
     firstQuestion
@@ -104,6 +105,7 @@ document
       resettedTestProgression.questions.length
     )
     setTestTabElements(
+      resettedTestProgression.state,
       resettedTestProgression.currentIndex,
       resettedTestProgression.questions.length,
       firstQuestion
@@ -142,6 +144,7 @@ document.getElementById('test-previous').addEventListener('click', (event) => {
   )
   // // show previous question
   setTestTabElements(
+    updatedTestProgression.state,
     updatedTestProgression.currentIndex,
     updatedTestProgression.questions.length,
     previousQuestion
@@ -173,6 +176,7 @@ document.getElementById('test-next').addEventListener('click', (event) => {
   )
   // // show next question
   setTestTabElements(
+    updatedTestProgression.state,
     updatedTestProgression.currentIndex,
     updatedTestProgression.questions.length,
     nextQuestion
@@ -296,10 +300,13 @@ const answerClickHandler = (event) => {
  * NO ACCESS to Local Storage or Question managers
  * */
 const setTestTabElements = (
+  currentState,
   currentQuestionIndex,
   totalNumberOfQuestions,
   currentQuestion
 ) => {
+  document.getElementById('test-question-state-label').innerText = currentState
+
   document.getElementById('test-question-index').innerText =
     currentQuestionIndex
   document.getElementById('test-questions-length').innerText =
