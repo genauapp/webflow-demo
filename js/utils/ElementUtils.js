@@ -35,12 +35,12 @@ export default class ElementUtils {
     const skeletonContainer = document.getElementById(skeletonElementId)
     const hidingElementContainer = document.getElementById(hidingElementId)
 
-    if (skeletonContainer) {
-      skeletonContainer.style.display = 'flex'
-    }
-
     if (hidingElementContainer) {
       hidingElementContainer.style.display = 'none'
+    }
+
+    if (skeletonContainer) {
+      skeletonContainer.style.display = 'flex'
     }
   }
 
