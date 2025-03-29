@@ -40,7 +40,7 @@ export default class ElementUtils {
     }
 
     if (hidingElementContainer) {
-      hidingElementContainer.display = 'none'
+      hidingElementContainer.style.display = 'none'
     }
   }
 
