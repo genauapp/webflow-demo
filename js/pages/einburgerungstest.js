@@ -490,11 +490,11 @@ const switchLearnPreviousNextButtons = (
 }
 
 const showLearnSkeleton = () => {
-  ElementUtils.showSkeleton('learn-question-container', 'skeleton-container')
+  ElementUtils.showSkeleton('skeleton-container', 'learn-question-container')
 }
 
 const hideLearnSkeleton = () => {
-  ElementUtils.hideSkeleton('learn-question-container', 'skeleton-container')
+  ElementUtils.hideSkeleton('skeleton-container', 'learn-question-container')
 }
 
 // jQuery for Dropdown
