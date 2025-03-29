@@ -17,8 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 const initializeTest = () => {
-  showTestSkeleton()
-
   // Attach lose progression listeners to the learn tab and state dropdowns
   document
     .getElementById('learn-tab')
@@ -49,7 +47,6 @@ const initializeTest = () => {
   )
 
   // UI Changes
-  hideTestSkeleton()
   hideTestResultsModal()
   switchTestPreviousNextButtons(
     initialTestProgression.currentIndex,
@@ -120,7 +117,9 @@ document
 document
   .getElementById('test-results-try-new-button')
   .addEventListener('click', () => {
+    showTestSkeleton()
     initializeTest()
+    hideTestSkeleton()
   })
 
 // On Previous Click
