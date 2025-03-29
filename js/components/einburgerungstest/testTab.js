@@ -47,6 +47,7 @@ const initializeTest = () => {
   )
 
   // UI Changes
+  hideTestResultsModal()
   switchTestPreviousNextButtons(
     initialTestProgression.currentIndex,
     initialTestProgression.questions.length
@@ -66,7 +67,6 @@ export const testTabClickHandler = (event) => {
     return
   }
 
-  // Call the common initialization logic
   initializeTest()
 }
 
@@ -91,16 +91,14 @@ document
 
     LocalStorageManager.save(TEST_PROGRESSION_KEY, resettedTestProgression)
 
-    // Hide the test results modal if it's visible
-    hideTestResultsModal()
-
     // Get the first question for the repeated test
     const firstQuestion = QuestionManager.getCurrentTestQuestion(
       resettedTestProgression.currentIndex,
       resettedTestProgression.questions
     )
 
-    // Update UI: adjust previous/next buttons and set the question elements
+    // Update UI
+    hideTestResultsModal()
     switchTestPreviousNextButtons(
       resettedTestProgression.currentIndex,
       resettedTestProgression.questions.length
