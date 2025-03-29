@@ -36,7 +36,7 @@ export default class ElementUtils {
     const hidingElementContainer = document.getElementById(hidingElementId)
 
     if (skeletonContainer) {
-      skeletonContainer.display = 'flex'
+      skeletonContainer.style.display = 'flex'
     }
 
     if (hidingElementContainer) {
@@ -49,11 +49,11 @@ export default class ElementUtils {
     const showingElementContainer = document.getElementById(showingElementId)
 
     if (skeletonContainer) {
-      skeletonContainer.display = 'none'
+      skeletonContainer.style.display = 'none'
     }
 
     if (showingElementContainer) {
-      showingElementContainer.display = 'flex'
+      showingElementContainer.style.display = 'flex'
     }
   }
 }
