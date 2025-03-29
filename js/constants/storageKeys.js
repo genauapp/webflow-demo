@@ -28,7 +28,7 @@ export class DEFAULT_VALUE {
     return {
       testId: testId,
       state: currentState,
-      questions: [...testQuestions],
+      questions: testQuestions,
       currentIndex: 1,
       startedAt: startedAt,
       isCompleted: false,
