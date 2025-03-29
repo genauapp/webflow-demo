@@ -159,7 +159,11 @@ const loseProgressionClickHandler = (event) => {
 
   // // remove event listeners from state and learn tabs for losing progression
   const learnTabElement = document.getElementById('learn-tab')
-  learnTabElement.removeEventListener('click', loseProgressionClickHandler, true)
+  learnTabElement.removeEventListener(
+    'click',
+    loseProgressionClickHandler,
+    true
+  )
   document.querySelectorAll('.state-dropdown-link').forEach((stateLink) => {
     stateLink.removeEventListener('click', loseProgressionClickHandler, true)
   })
@@ -241,6 +245,50 @@ const answerClickHandler = (event) => {
 
   switchTestAnswers(answeredQuestion)
 }
+
+// On Repeat Click
+document
+  .getElementById('test-results-repeat-button')
+  .addEventListener('click', () => {
+    // Load the current test progression
+    const currentProgression = LocalStorageManager.load(TEST_PROGRESSION_KEY)
+
+    // Reset the test progression using your helper function
+    const repeatedQuestions = TestManager.resetCompletedTest(
+      currentProgression.questions
+    )
+
+    const resettedTestProgression = DEFAULT_VALUE.TEST_PROGRESSION(
+      crypto.randomUUID(),
+      currentProgression.state,
+      repeatedQuestions,
+      DateUtils.getCurrentDateTime()
+    )
+
+    LocalStorageManager.save(TEST_PROGRESSION_KEY, resettedTestProgression)
+
+    // Hide the test results modal if it's visible
+    hideTestResultsModal()
+
+    // Get the first question for the repeated test
+    const firstQuestion = QuestionManager.getCurrentTestQuestion(
+      resettedTestProgression.currentIndex,
+      resettedTestProgression.questions
+    )
+
+    // Update UI: adjust previous/next buttons and set the question elements
+    switchTestPreviousNextButtons(
+      resettedTestProgression.currentIndex,
+      resettedTestProgression.questions.length
+    )
+    setTestTabElements(
+      resettedTestProgression.currentIndex,
+      resettedTestProgression.questions.length,
+      firstQuestion
+    )
+  })
+
+// On Try More Click
 
 /** UI Changes
  * They are only responsible for displaying whatever they receive as parameter

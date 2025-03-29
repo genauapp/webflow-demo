@@ -1,4 +1,5 @@
 import { TEST_SCORE_TO_PASS } from '../../constants/test.js'
+import { ListUtils } from '../ListUtils.js'
 
 export default class TestManager {
   static checkTestIsCompleted = (questions) => {
@@ -12,6 +13,25 @@ export default class TestManager {
       )
       return total + (isCorrect ? 1 : 0)
     }, 0)
+  }
+
+  static resetCompletedTest = (questions) => {
+    const resettedQuestions = questions.map((q) => {
+      const resettedAnswers = q.answers.map((a) => {
+        const resettedAnswer = {
+          ...a,
+          isSelected: false,
+        }
+
+        return resettedAnswer
+      })
+
+      return resettedAnswers
+    })
+
+    const shuffledQuestions = ListUtils.shuffleArray(resettedQuestions)
+
+    return shuffledQuestions
   }
 
   static isTestResultSuccessful = (score) => {
