@@ -340,7 +340,7 @@ const setLearnTabElements = (
   currentQuestion,
   userAnswer
 ) => {
-  document.getElementById('learn-selected-state-label').innerText =
+  document.getElementById('learn-question-state-label').innerText =
     currentQuestion.state
 
   document.getElementById('learn-question-index').innerText =

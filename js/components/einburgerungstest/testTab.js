@@ -300,7 +300,7 @@ const setTestTabElements = (
   totalNumberOfQuestions,
   currentQuestion
 ) => {
-  document.getElementById('learn-question-state-label').innerText =
+  document.getElementById('test-question-state-label').innerText =
     currentQuestion.state
 
   document.getElementById('test-question-index').innerText =
