@@ -3978,7 +3978,7 @@
     "id": 1,
     "question": "Welches Wappen gehört zur Freien Hansestadt Bremen?",
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
-    "correctAnswer": "Bild 4",
+    "correct_answer": "Bild 4",
     "state": "Bremen",
     "image": "true"
   },
@@ -3986,7 +3986,7 @@
     "id": 2,
     "question": "Welches ist ein Stadtteil von Bremen?",
     "answers": ["Altona", "Hemelingen", "Pankow", "Babelsberg"],
-    "correctAnswer": "Hemelingen",
+    "correct_answer": "Hemelingen",
     "state": "Bremen",
     "image": ""
   },
@@ -3994,7 +3994,7 @@
     "id": 3,
     "question": "Für wie viele Jahre wird das Landesparlament in Bremen gewählt?",
     "answers": ["3", "4", "5", "6"],
-    "correctAnswer": "4",
+    "correct_answer": "4",
     "state": "Bremen",
     "image": ""
   },
@@ -4002,7 +4002,7 @@
     "id": 4,
     "question": "Ab welchem Alter darf man in Bremen bei den Wahlen zur Bürgerschaft (Landtag) wählen?",
     "answers": ["14", "16", "18", "20"],
-    "correctAnswer": "16",
+    "correct_answer": "16",
     "state": "Bremen",
     "image": ""
   },
@@ -4010,7 +4010,7 @@
     "id": 5,
     "question": "Welche Farben hat die Landesflagge von Bremen?",
     "answers": ["blau-weiß-rot", "rot-weiß", "grün-weiß-rot", "schwarz-gold"],
-    "correctAnswer": "rot-weiß",
+    "correct_answer": "rot-weiß",
     "state": "Bremen",
     "image": ""
   },
@@ -4023,7 +4023,7 @@
       "bei den Kirchen",
       "bei der Verbraucherzentrale"
     ],
-    "correctAnswer": "bei der Landeszentrale für politische Bildung",
+    "correct_answer": "bei der Landeszentrale für politische Bildung",
     "state": "Bremen",
     "image": ""
   },
@@ -4031,7 +4031,7 @@
     "id": 7,
     "question": "Was ist ein deutscher Stadtstaat?",
     "answers": ["Bremen", "München", "Frankfurt", "Erfurt"],
-    "correctAnswer": "Bremen",
+    "correct_answer": "Bremen",
     "state": "Bremen",
     "image": ""
   },
@@ -4039,7 +4039,7 @@
     "id": 8,
     "question": "Welches Bundesland ist Bremen?",
     "answers": ["1", "2", "3", "4"],
-    "correctAnswer": "3",
+    "correct_answer": "3",
     "state": "Bremen",
     "image": "true"
   },
@@ -4052,7 +4052,7 @@
       "Präsidentin/Präsident des Senates",
       "Regierende Bürgermeisterin/Regierender Bürgermeister"
     ],
-    "correctAnswer": "Präsidentin/Präsident des Senates",
+    "correct_answer": "Präsidentin/Präsident des Senates",
     "state": "Bremen",
     "image": ""
   },
@@ -4065,7 +4065,7 @@
       "Justizsenatorin/Justizsenator",
       "Innensenatorin/Innensenator"
     ],
-    "correctAnswer": "Senatorin/Senator für Außenbeziehungen",
+    "correct_answer": "Senatorin/Senator für Außenbeziehungen",
     "state": "Bremen",
     "image": ""
   },
