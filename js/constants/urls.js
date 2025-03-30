@@ -14,7 +14,7 @@
 // export const ASSETS_BASE_URL = `${ASSETS_BASE_URL}'
 // STAGING
 export const ASSETS_BASE_URL =
-  'https://cdn.jsdelivr.net/gh/chatonode/genau-webflow-demo@d12a240'
+  'https://cdn.jsdelivr.net/gh/chatonode/genau-webflow-demo@4ccb5c4'
 
 /* WORD LEARN/EXERCISE **/
 
