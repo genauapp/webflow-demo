@@ -17,6 +17,10 @@ import vc1c2 from '../../json/c1-c2/verb.json' with { type: 'json' }
 import adjc1c2 from '../../json/c1-c2/adjective.json' with { type: 'json' }
 import advc1c2 from '../../json/c1-c2/adverb.json' with { type: 'json' }
 
+import vEinburger from '../../json/einburgerungstest/verb.json' with { type: 'json' }
+import adjEinburger from '../../json/einburgerungstest/adjective.json' with { type: 'json' }
+import advEinburger from '../../json/einburgerungstest/adverb.json' with { type: 'json' }
+
 let staticWordLists = {
   b1telcpt1: {
     verb: va1a2,
@@ -37,6 +41,16 @@ let staticWordLists = {
     verb: vc1c2,
     adjective: adjc1c2,
     adverb: advc1c2
+  },
+  b1telcpt4: {
+    verb: vc1c2,
+    adjective: adjc1c2,
+    adverb: advc1c2
+  },
+  einburgerungstest: {
+    verb: vEinburger,
+    adjective: adjEinburger,
+    adverb: advEinburger
   }
 }
 
@@ -65,6 +79,12 @@ let learnedWithLearnWords = {
     adjective: [],
     adverb: [],
   },
+  einburgerungstest: {
+    noun: [],
+    verb: [],
+    adjective: [],
+    adverb: [],
+  },
 }
 
 export let learnedWithExerciseWords = {
@@ -72,6 +92,7 @@ export let learnedWithExerciseWords = {
   b1telcpt2: { noun: [], verb: [], adjective: [], adverb: [] },
   b1telcpt3: { noun: [], verb: [], adjective: [], adverb: [] },
   b1telcpt4: { noun: [], verb: [], adjective: [], adverb: [] },
+  einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] },
 }
 
 let inProgressWords = {
@@ -79,11 +100,12 @@ let inProgressWords = {
   b1telcpt2: { noun: [], verb: [], adjective: [], adverb: [] },
   b1telcpt3: { noun: [], verb: [], adjective: [], adverb: [] },
   b1telcpt4: { noun: [], verb: [], adjective: [], adverb: [] },
+  einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] },
 }
 
 // Global variables
 let currentLevel = 'b1telcpt1'
-export const levels = ['b1telcpt1', 'b1telcpt2', 'b1telcpt3', 'b1telcpt4']
+export const levels = ['b1telcpt1', 'b1telcpt2', 'b1telcpt3', 'b1telcpt4', 'einburgerungstest']
 
 let currentType = 'noun'
 export const types = ['noun', 'verb', 'adjective', 'adverb']
@@ -100,6 +122,7 @@ const learnedWords = LocalStorageManager.load('learnedWords', {
   b1telcpt2: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
   b1telcpt3: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
   b1telcpt4: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
+  einburgerungstest: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
 })
 
 const correctAnswerWordsCounter = LocalStorageManager.load('correctAnswerWordsCounter', {
@@ -107,6 +130,7 @@ const correctAnswerWordsCounter = LocalStorageManager.load('correctAnswerWordsCo
   b1telcpt2: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
   b1telcpt3: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
   b1telcpt4: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
+  einburgerungstest: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
 })
 
 let initialTotalWords = 0 // Yeni eklenen değişken
@@ -357,6 +381,7 @@ function updateTopicNames(selectedOption) {
     b1telcpt2: 'Level: A2 - B1',
     b1telcpt3: 'Level: B1 - B2',
     b1telcpt4: 'Level: C1 - C2',
+    einburgerungstest: 'Einbürgerungstest',
   }
 
   const topicName = topicNames[selectedOption] || 'Level: A1 - A2'
@@ -1569,7 +1594,7 @@ function navigateToPage(pageId) {
 }
 
 const clearDeprecatedLocalStorageItems = () => {
-  const currentAppVersion = "1.0.5"
+  const currentAppVersion = "1.0.6"
   const APP_VERSION = LocalStorageManager.load('APP_VERSION', null)
   
   if (APP_VERSION === null || APP_VERSION !== currentAppVersion) {
