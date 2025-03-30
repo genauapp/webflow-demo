@@ -13,7 +13,7 @@
 // PROD
 // export const ASSETS_BASE_URL = 'https://chatonode.github.io/genau-webflow-demo'
 // STAGING
-export const ASSETS_BASE_URL = 'https://cdn.jsdelivr.net/gh/chatonode/genau-webflow-demo@9afeef7'
+export const ASSETS_BASE_URL = 'https://cdn.jsdelivr.net/gh/chatonode/genau-webflow-demo@d12a240'
 
 /* WORD LEARN/EXERCISE **/
 
