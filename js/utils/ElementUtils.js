@@ -1,4 +1,5 @@
 import { ASSETS_BASE_URL } from '../constants/urls.js'
+import WordUtils from './WordUtils.js'
 
 export default class ElementUtils {
   static switchButtonActivation = (button, isDisabled) => {
@@ -78,8 +79,10 @@ export default class ElementUtils {
       }
 
       // url-encode state and id
-      const encodedState = encodeURIComponent(question.state)
+      // const normalizedState = WordUtils.replaceUmlauts(question.state)
+      const encodedState = encodeURIComponent(normalizedState)
       const encodedId = encodeURIComponent(question.id)
+
       realImage.src = `${ASSETS_BASE_URL}/assets/images/einburgerungstest/questions/${encodedState}/${encodedId}.png`
     } else {
       imageElement.style.display = 'none'
