@@ -76,7 +76,11 @@ export default class ElementUtils {
         // Optionally handle load errors
         console.error('Failed to load image')
       }
-      realImage.src = `${ASSETS_BASE_URL}/assets/images/einburgerungstest/questions/${question.state}/${question.id}.png`
+
+      // url-encode state and id
+      const encodedState = encodeURIComponent(question.state)
+      const encodedId = encodeURIComponent(question.id)
+      realImage.src = `${ASSETS_BASE_URL}/assets/images/einburgerungstest/questions/${encodedState}/${encodedId}.png`
     } else {
       imageElement.style.display = 'none'
     }
