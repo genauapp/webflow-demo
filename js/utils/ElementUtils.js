@@ -1,3 +1,5 @@
+import { ASSETS_BASE_URL } from '../constants/urls.js'
+
 export default class ElementUtils {
   static switchButtonActivation = (button, isDisabled) => {
     if (isDisabled) {
@@ -61,7 +63,7 @@ export default class ElementUtils {
     const imageElement = document.getElementById(imageElementId)
 
     if (question.has_image) {
-      const imageUrl = `/assets/images/einburgerungstest/questions/${question.state}/${question.id}.png`
+      const imageUrl = `${ASSETS_BASE_URL}/assets/images/einburgerungstest/questions/${question.state}/${question.id}.png`
       imageElement.src = imageUrl
       imageElement.style.display = 'flex'
     } else {
