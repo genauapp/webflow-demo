@@ -64,7 +64,7 @@ export default class ElementUtils {
 
     if (question.has_image) {
       // Show a placeholder while loading
-      imageElement.src = `${ASSETS_BASE_URL}/assets/svg/placeholder.svg`
+      imageElement.src = `https://cdn.prod.website-files.com/677da6ae8464f53ea15d73ac/67e97dd7bd1a0d94d2e0c10b_Img-Placeholder.svg`
       imageElement.style.display = 'flex'
 
       const realImage = new Image()
