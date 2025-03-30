@@ -1585,7 +1585,7 @@
     "id": 130,
     "question": "Welcher Stimmzettel wäre bei einer Bundestagswahl gültig?",
     "answers": ["1", "2", "3", "4"],
-    "correct_answer": "4",
+    "correct_answer": "1",
     "state": "Bundesweit",
     "image": "true"
   },
@@ -2492,7 +2492,7 @@
     "id": 209,
     "question": "Welches war das Wappen der Deutschen Demokratischen Republik?",
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
-    "correct_answer": "Bild 3",
+    "correct_answer": "Bild 4",
     "state": "Bundesweit",
     "image": "true"
   },
@@ -2678,7 +2678,7 @@
     "id": 226,
     "question": "Welche ist die Flagge der Europäischen Union?",
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
-    "correct_answer": "Bild 1",
+    "correct_answer": "Bild 2",
     "state": "Bundesweit",
     "image": "true"
   },
@@ -3588,7 +3588,7 @@
     "id": 1,
     "question": "Welches Wappen gehört zum Bundesland Baden-Württemberg?",
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
-    "correct_answer": "Bild 2",
+    "correct_answer": "Bild 1",
     "state": "Baden-Württemberg",
     "image": "true"
   },
@@ -3654,7 +3654,7 @@
     "id": 8,
     "question": "Welches Bundesland ist Baden-Württemberg?",
     "answers": ["1", "2", "3", "4"],
-    "correct_answer": "1",
+    "correct_answer": "2",
     "state": "Baden-Württemberg",
     "image": "true"
   },
@@ -3688,7 +3688,7 @@
     "id": 1,
     "question": "Welches Wappen gehört zum Freistaat Bayern?",
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
-    "correct_answer": "Bild 3",
+    "correct_answer": "Bild 2",
     "state": "Bayern",
     "image": "true"
   },
@@ -3749,7 +3749,7 @@
     "id": 8,
     "question": "Welches Bundesland ist Bayern?",
     "answers": ["1", "2", "3", "4"],
-    "correct_answer": "2",
+    "correct_answer": "4",
     "state": "Bayern",
     "image": "true"
   },
@@ -3783,7 +3783,7 @@
     "id": 1,
     "question": "Welches Wappen gehört zum Bundesland Berlin?",
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
-    "correct_answer": "Bild 1",
+    "correct_answer": "Bild 4",
     "state": "Berlin",
     "image": "true"
   },
@@ -3844,7 +3844,7 @@
     "id": 8,
     "question": "Welches Bundesland ist Berlin?",
     "answers": ["1", "2", "3", "4"],
-    "correct_answer": "3",
+    "correct_answer": "4",
     "state": "Berlin",
     "image": "true"
   },
@@ -3978,7 +3978,7 @@
     "id": 1,
     "question": "Welches Wappen gehört zur Freien Hansestadt Bremen?",
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
-    "correct_answer": "Bild 4",
+    "correct_answer": "Bild 3",
     "state": "Bremen",
     "image": "true"
   },
@@ -4073,7 +4073,7 @@
     "id": 1,
     "question": "Welches Wappen gehört zur Freien und Hansestadt Hamburg?",
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
-    "correct_answer": "Bild 1",
+    "correct_answer": "Bild 2",
     "state": "Hamburg",
     "image": "true"
   },
@@ -4139,7 +4139,7 @@
     "id": 8,
     "question": "Welches Bundesland ist Hamburg?",
     "answers": ["1", "2", "3", "4"],
-    "correct_answer": "1",
+    "correct_answer": "3",
     "state": "Hamburg",
     "image": "true"
   },
@@ -4173,7 +4173,7 @@
     "id": 1,
     "question": "Welches Wappen gehört zum Bundesland Hessen?",
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
-    "correct_answer": "Bild 2",
+    "correct_answer": "Bild 1",
     "state": "Hessen",
     "image": "true"
   },
@@ -4234,7 +4234,7 @@
     "id": 8,
     "question": "Welches Bundesland ist Hessen?",
     "answers": ["1", "2", "3", "4"],
-    "correct_answer": "3",
+    "correct_answer": "4",
     "state": "Hessen",
     "image": "true"
   },
@@ -4268,7 +4268,7 @@
     "id": 1,
     "question": "Welches Wappen gehört zum Bundesland Mecklenburg-Vorpommern?",
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
-    "correct_answer": "Bild 2",
+    "correct_answer": "Bild 3",
     "state": "Mecklenburg-Vorpommern",
     "image": "true"
   },
@@ -4373,7 +4373,7 @@
     "id": 1,
     "question": "Welches Wappen gehört zum Bundesland Niedersachsen?",
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
-    "correct_answer": "Bild 1",
+    "correct_answer": "Bild 3",
     "state": "Niedersachsen",
     "image": "true"
   },
@@ -4444,7 +4444,7 @@
     "id": 8,
     "question": "Welches Bundesland ist Niedersachsen?",
     "answers": ["1", "2", "3", "4"],
-    "correct_answer": "2",
+    "correct_answer": "1",
     "state": "Niedersachsen",
     "image": "true"
   },
@@ -4478,7 +4478,7 @@
     "id": 1,
     "question": "Welches Wappen gehört zum Bundesland Nordrhein-Westfalen?",
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
-    "correct_answer": "Bild 1",
+    "correct_answer": "Bild 2",
     "state": "Nordrhein-Westfalen",
     "image": "true"
   },
@@ -4544,7 +4544,7 @@
     "id": 8,
     "question": "Welches Bundesland ist Nordrhein-Westfalen?",
     "answers": ["1", "2", "3", "4"],
-    "correct_answer": "2",
+    "correct_answer": "3",
     "state": "Nordrhein-Westfalen",
     "image": "true"
   },
@@ -4644,7 +4644,7 @@
     "id": 8,
     "question": "Welches Bundesland ist Rheinland-Pfalz?",
     "answers": ["1", "2", "3", "4"],
-    "correct_answer": "3",
+    "correct_answer": "1",
     "state": "Rheinland-Pfalz",
     "image": "true"
   },
@@ -4678,7 +4678,7 @@
     "id": 1,
     "question": "Welches Wappen gehört zum Bundesland Saarland?",
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
-    "correct_answer": "Bild 1",
+    "correct_answer": "Bild 4",
     "state": "Saarland",
     "image": "true"
   },
@@ -4783,7 +4783,7 @@
     "id": 1,
     "question": "Welches Wappen gehört zum Freistaat Sachsen?",
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
-    "correct_answer": "Bild 1",
+    "correct_answer": "Bild 4",
     "state": "Sachsen",
     "image": "true"
   },
@@ -4844,7 +4844,7 @@
     "id": 8,
     "question": "Welches Bundesland ist Sachsen?",
     "answers": ["1", "2", "3", "4"],
-    "correct_answer": "1",
+    "correct_answer": "4",
     "state": "Sachsen",
     "image": "true"
   },
@@ -4878,7 +4878,7 @@
     "id": 1,
     "question": "Welches Wappen gehört zum Bundesland Sachsen-Anhalt?",
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
-    "correct_answer": "Bild 1",
+    "correct_answer": "Bild 4",
     "state": "Sachsen-Anhalt",
     "image": "true"
   },
@@ -4939,7 +4939,7 @@
     "id": 8,
     "question": "Welches Bundesland ist Sachsen-Anhalt?",
     "answers": ["1", "2", "3", "4"],
-    "correct_answer": "1",
+    "correct_answer": "3",
     "state": "Sachsen-Anhalt",
     "image": "true"
   },
@@ -4973,7 +4973,7 @@
     "id": 1,
     "question": "Welches Wappen gehört zum Bundesland Schleswig-Holstein?",
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
-    "correct_answer": "Bild 1",
+    "correct_answer": "Bild 3",
     "state": "Schleswig-Holstein",
     "image": "true"
   },
@@ -5039,7 +5039,7 @@
     "id": 8,
     "question": "Welches Bundesland ist Schleswig-Holstein?",
     "answers": ["1", "2", "3", "4"],
-    "correct_answer": "1",
+    "correct_answer": "4",
     "state": "Schleswig-Holstein",
     "image": "true"
   },
@@ -5073,7 +5073,7 @@
     "id": 1,
     "question": "Welches Wappen gehört zum Freistaat Thüringen?",
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
-    "correct_answer": "Bild 2",
+    "correct_answer": "Bild 4",
     "state": "Thüringen",
     "image": "true"
   },
@@ -5134,7 +5134,7 @@
     "id": 8,
     "question": "Welches Bundesland ist Thüringen?",
     "answers": ["1", "2", "3", "4"],
-    "correct_answer": "2",
+    "correct_answer": "4",
     "state": "Thüringen",
     "image": "true"
   },
