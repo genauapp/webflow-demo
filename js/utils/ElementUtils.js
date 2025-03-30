@@ -63,9 +63,20 @@ export default class ElementUtils {
     const imageElement = document.getElementById(imageElementId)
 
     if (question.has_image) {
-      const imageUrl = `${ASSETS_BASE_URL}/assets/images/einburgerungstest/questions/${question.state}/${question.id}.png`
-      imageElement.src = imageUrl
+      // Show a placeholder while loading
+      imageElement.src = `${ASSETS_BASE_URL}/assets/svg/placeholder.svg`
       imageElement.style.display = 'flex'
+
+      const realImage = new Image()
+      realImage.onload = function () {
+        // Replace placeholder with the loaded image
+        imageElement.src = realImage.src
+      }
+      realImage.onerror = function () {
+        // Optionally handle load errors
+        console.error('Failed to load image')
+      }
+      realImage.src = `${ASSETS_BASE_URL}/assets/images/einburgerungstest/questions/${question.state}/${question.id}.png`
     } else {
       imageElement.style.display = 'none'
     }
