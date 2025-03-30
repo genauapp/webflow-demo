@@ -10,7 +10,7 @@
     ],
     "correct_answer": "hier Meinungsfreiheit gilt.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 2,
@@ -23,7 +23,7 @@
     ],
     "correct_answer": "Religionsunterricht teilnimmt.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 3,
@@ -36,7 +36,7 @@
     ],
     "correct_answer": "Alle Einwohnerinnen/Einwohner und der Staat müssen sich an die Gesetze halten.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 4,
@@ -49,7 +49,7 @@
     ],
     "correct_answer": "Meinungsfreiheit",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 5,
@@ -62,7 +62,7 @@
     ],
     "correct_answer": "Die Wählerin/der Wähler darf bei der Wahl weder beeinflusst noch zu einer bestimmten Stimmabgabe gezwungen werden und keine Nachteile durch die Wahl haben.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 6,
@@ -75,7 +75,7 @@
     ],
     "correct_answer": "Grundgesetz",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 7,
@@ -88,7 +88,7 @@
     ],
     "correct_answer": "Glaubens- und Gewissensfreiheit",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 8,
@@ -101,7 +101,7 @@
     ],
     "correct_answer": "Alle sollen gleich viel Geld haben.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 9,
@@ -114,7 +114,7 @@
     ],
     "correct_answer": "Asyl",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 10,
@@ -127,7 +127,7 @@
     ],
     "correct_answer": "die Geldstrafe",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 11,
@@ -140,7 +140,7 @@
     ],
     "correct_answer": "Grundgesetz",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 12,
@@ -153,7 +153,7 @@
     ],
     "correct_answer": "Nein, denn die Pressefreiheit ist ein Grundrecht. Sie kann nicht abgeschafft werden.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 13,
@@ -166,7 +166,7 @@
     ],
     "correct_answer": "alle Abgeordneten, die nicht zu der Regierungspartei/den Regierungsparteien gehören.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 14,
@@ -179,7 +179,7 @@
     ],
     "correct_answer": "meine Meinung im Internet äußern kann.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 15,
@@ -192,7 +192,7 @@
     ],
     "correct_answer": "Zwangsarbeit",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 16,
@@ -205,7 +205,7 @@
     ],
     "correct_answer": "bei der öffentlichen Verbreitung falscher Behauptungen über einzelne Personen",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 17,
@@ -218,7 +218,7 @@
     ],
     "correct_answer": "Ungleichbehandlung der Bürgerinnen und Bürger durch den Staat.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 18,
@@ -231,7 +231,7 @@
     ],
     "correct_answer": "die Unantastbarkeit der Menschenwürde",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 19,
@@ -244,7 +244,7 @@
     ],
     "correct_answer": "Man darf sich seinen Wohnort selbst aussuchen.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 20,
@@ -257,7 +257,7 @@
     ],
     "correct_answer": "verfassungswidrig.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 21,
@@ -265,7 +265,7 @@
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
     "correct_answer": "Bild 1",
     "state": "Bundesweit",
-    "image": "images/question21.png"
+    "has_image": true
   },
   {
     "id": 22,
@@ -273,7 +273,7 @@
     "answers": ["Monarchie", "Diktatur", "Republik", "Fürstentum"],
     "correct_answer": "Republik",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 23,
@@ -286,7 +286,7 @@
     ],
     "correct_answer": "bei einer Firma oder Behörde beschäftigt.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 24,
@@ -294,7 +294,7 @@
     "answers": ["14", "15", "16", "17"],
     "correct_answer": "16",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 25,
@@ -307,7 +307,7 @@
     ],
     "correct_answer": "Elsass-Lothringen",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 26,
@@ -320,7 +320,7 @@
     ],
     "correct_answer": "ein demokratischer und sozialer Bundesstaat.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 27,
@@ -333,7 +333,7 @@
     ],
     "correct_answer": "ein Bundesstaat.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 28,
@@ -346,7 +346,7 @@
     ],
     "correct_answer": "das wahlberechtigte Volk",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 29,
@@ -354,7 +354,7 @@
     "answers": ["Löwe", "Adler", "Bär", "Pferd"],
     "correct_answer": "Adler",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 30,
@@ -367,7 +367,7 @@
     ],
     "correct_answer": "Pressezensur",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 31,
@@ -375,7 +375,7 @@
     "answers": ["Einheit.", "Koalition.", "Ministerium.", "Fraktion."],
     "correct_answer": "Koalition.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 32,
@@ -383,7 +383,7 @@
     "answers": ["Gesetzgebung", "Regierung", "Presse", "Rechtsprechung"],
     "correct_answer": "Presse",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 33,
@@ -396,7 +396,7 @@
     ],
     "correct_answer": "sind Staat und Religionsgemeinschaften voneinander getrennt.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 34,
@@ -409,7 +409,7 @@
     ],
     "correct_answer": "eine Monarchie",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 35,
@@ -422,7 +422,7 @@
     ],
     "correct_answer": "Sozialabgaben",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 36,
@@ -435,7 +435,7 @@
     ],
     "correct_answer": "die Krankenversicherung",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 37,
@@ -448,7 +448,7 @@
     ],
     "correct_answer": "Ministerpräsidentin/Ministerpräsident",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 38,
@@ -461,7 +461,7 @@
     ],
     "correct_answer": "Bundesstaat.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 39,
@@ -474,7 +474,7 @@
     ],
     "correct_answer": "eine eigene Regierung",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 40,
@@ -487,7 +487,7 @@
     ],
     "correct_answer": "Einigkeit und Recht und Freiheit …",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 41,
@@ -500,7 +500,7 @@
     ],
     "correct_answer": "weil dadurch die unterschiedlichen Meinungen der Bürgerinnen und Bürger vertreten werden",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 42,
@@ -513,7 +513,7 @@
     ],
     "correct_answer": "das Parlament",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 43,
@@ -526,7 +526,7 @@
     ],
     "correct_answer": "wenn sie gegen die Verfassung kämpft",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 44,
@@ -539,7 +539,7 @@
     ],
     "correct_answer": "Die Bundespräsidentin/den Bundespräsidenten",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 45,
@@ -552,7 +552,7 @@
     ],
     "correct_answer": "Sozialversicherung",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 46,
@@ -565,7 +565,7 @@
     ],
     "correct_answer": "Er baut Straßen und Schulen.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 47,
@@ -578,7 +578,7 @@
     ],
     "correct_answer": "Er bezahlt für alle Staatsangehörigen Urlaubsreisen.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 48,
@@ -591,7 +591,7 @@
     ],
     "correct_answer": "die Bürgerversammlung",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 49,
@@ -604,7 +604,7 @@
     ],
     "correct_answer": "die Bundesländer",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 50,
@@ -617,7 +617,7 @@
     ],
     "correct_answer": "soziale Marktwirtschaft.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 51,
@@ -630,7 +630,7 @@
     ],
     "correct_answer": "Menschen von einer Privatpolizei ohne Grund verhaftet werden.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 52,
@@ -643,7 +643,7 @@
     ],
     "correct_answer": "Volke aus.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 53,
@@ -656,7 +656,7 @@
     ],
     "correct_answer": "Der Staat muss die Gesetze einhalten.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 54,
@@ -664,7 +664,7 @@
     "answers": ["Legislative", "Judikative", "Exekutive", "Direktive"],
     "correct_answer": "Direktive",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 55,
@@ -677,7 +677,7 @@
     ],
     "correct_answer": "den Bundestagssitz in Berlin",
     "state": "Bundesweit",
-    "image": "images/question55.png"
+    "has_image": true
   },
   {
     "id": 56,
@@ -685,7 +685,7 @@
     "answers": ["Pfarramt", "Ordnungsamt", "Finanzamt", "Auswärtiges Amt"],
     "correct_answer": "Ordnungsamt",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 57,
@@ -698,7 +698,7 @@
     ],
     "correct_answer": "eine Abgeordnete/ein Abgeordneter der stärksten Fraktion",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 58,
@@ -711,7 +711,7 @@
     ],
     "correct_answer": "die Bundespräsidentin/der Bundespräsident",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 59,
@@ -724,7 +724,7 @@
     ],
     "correct_answer": "vor etwa 1700 Jahren",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 60,
@@ -732,7 +732,7 @@
     "answers": ["Exekutive.", "Legislative.", "Direktive.", "Judikative."],
     "correct_answer": "Legislative.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 61,
@@ -745,7 +745,7 @@
     ],
     "correct_answer": "Die Staatsgewalt geht vom Volke aus.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 62,
@@ -753,7 +753,7 @@
     "answers": ["Kommunalwahl", "Landtagswahl", "Europawahl", "Bundestagswahl"],
     "correct_answer": "Landtagswahl",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 63,
@@ -766,7 +766,7 @@
     ],
     "correct_answer": "die Gerichte",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 64,
@@ -779,7 +779,7 @@
     ],
     "correct_answer": "Bund, Länder und Kommunen.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 65,
@@ -792,7 +792,7 @@
     ],
     "correct_answer": "das Bundeskabinett zu bilden.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 66,
@@ -805,7 +805,7 @@
     ],
     "correct_answer": "Berlin und München",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 67,
@@ -818,7 +818,7 @@
     ],
     "correct_answer": "Schulpolitik",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 68,
@@ -831,7 +831,7 @@
     ],
     "correct_answer": "weil es nach dem Grundgesetz seine Aufgabe ist",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 69,
@@ -839,7 +839,7 @@
     "answers": ["Stadträte", "Landräte", "Gemeinden", "Bezirksämter"],
     "correct_answer": "Gemeinden",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 70,
@@ -852,7 +852,7 @@
     ],
     "correct_answer": "Sie/Er schlägt die Kanzlerin/den Kanzler zur Wahl vor.",
     "state": "Bundesweit",
-    "image": "images/question70.png"
+    "has_image": true
   },
   {
     "id": 71,
@@ -865,7 +865,7 @@
     ],
     "correct_answer": "in Berlin, weil sich dort das Bundeskanzleramt und der Bundestag befinden.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 72,
@@ -878,7 +878,7 @@
     ],
     "correct_answer": "Olaf Scholz",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 73,
@@ -891,7 +891,7 @@
     ],
     "correct_answer": "CDU/CSU und SPD.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 74,
@@ -904,7 +904,7 @@
     ],
     "correct_answer": "Bundestag",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 75,
@@ -917,7 +917,7 @@
     ],
     "correct_answer": "Frank-Walter Steinmeier",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 76,
@@ -930,7 +930,7 @@
     ],
     "correct_answer": "Christlich Demokratische Union",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 77,
@@ -943,7 +943,7 @@
     ],
     "correct_answer": "die deutsche Armee",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 78,
@@ -956,7 +956,7 @@
     ],
     "correct_answer": "Sozialdemokratische Partei Deutschlands",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 79,
@@ -969,7 +969,7 @@
     ],
     "correct_answer": "Freie Demokratische Partei",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 80,
@@ -982,7 +982,7 @@
     ],
     "correct_answer": "Bundesverfassungsgericht",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 81,
@@ -995,7 +995,7 @@
     ],
     "correct_answer": "der Bundestag",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 82,
@@ -1008,7 +1008,7 @@
     ],
     "correct_answer": "die Bundeskanzlerin/der Bundeskanzler",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 83,
@@ -1021,7 +1021,7 @@
     ],
     "correct_answer": "der Bundestag",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 84,
@@ -1034,7 +1034,7 @@
     ],
     "correct_answer": "repräsentiert das Land.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 85,
@@ -1047,7 +1047,7 @@
     ],
     "correct_answer": "die Regierungsvertreter der Bundesländer",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 86,
@@ -1060,7 +1060,7 @@
     ],
     "correct_answer": "die Bundesversammlung",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 87,
@@ -1073,7 +1073,7 @@
     ],
     "correct_answer": "die Bundespräsidentin/der Bundespräsident",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 88,
@@ -1086,7 +1086,7 @@
     ],
     "correct_answer": "kontrolliert die Regierung.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 89,
@@ -1094,7 +1094,7 @@
     "answers": ["Verband", "Ältestenrat", "Fraktion", "Opposition"],
     "correct_answer": "Fraktion",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 90,
@@ -1107,7 +1107,7 @@
     ],
     "correct_answer": "den Bundesrat.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 91,
@@ -1120,7 +1120,7 @@
     ],
     "correct_answer": "schwieriger, wenn dadurch die Mehrheit im Bundesrat verändert wird.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 92,
@@ -1133,7 +1133,7 @@
     ],
     "correct_answer": "Christlich Soziale Union",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 93,
@@ -1146,7 +1146,7 @@
     ],
     "correct_answer": "mehr Sitze erhält die Partei im Parlament.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 94,
@@ -1154,7 +1154,7 @@
     "answers": ["16", "18", "21", "23"],
     "correct_answer": "18",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 95,
@@ -1167,7 +1167,7 @@
     ],
     "correct_answer": "Schulpflicht",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 96,
@@ -1180,7 +1180,7 @@
     ],
     "correct_answer": "mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 97,
@@ -1188,7 +1188,7 @@
     "answers": ["Sozialversicherung", "Sozialhilfe", "Kindergeld", "Wohngeld"],
     "correct_answer": "Sozialversicherung",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 98,
@@ -1201,7 +1201,7 @@
     ],
     "correct_answer": "kann die Regierung ihre Mehrheit verlieren.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 99,
@@ -1214,7 +1214,7 @@
     ],
     "correct_answer": "Arbeitgeberinnen/Arbeitgeber und Arbeitnehmerinnen/Arbeitnehmer",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 100,
@@ -1227,7 +1227,7 @@
     ],
     "correct_answer": "die Lebensversicherung",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 101,
@@ -1240,7 +1240,7 @@
     ],
     "correct_answer": "Arbeitnehmerinnen und Arbeitnehmer.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 102,
@@ -1253,7 +1253,7 @@
     ],
     "correct_answer": "Bundesverdienstkreuz",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 103,
@@ -1266,7 +1266,7 @@
     ],
     "correct_answer": "von SPD, FDP und Bündnis 90/Die Grünen in einer Regierung",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 104,
@@ -1279,7 +1279,7 @@
     ],
     "correct_answer": "Die Frau bekommt ein Kind und ihr Chef weiß das.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 105,
@@ -1292,7 +1292,7 @@
     ],
     "correct_answer": "Sie zählen die Stimmen nach dem Ende der Wahl.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 106,
@@ -1305,7 +1305,7 @@
     ],
     "correct_answer": "Sie zählen die Stimmen nach dem Ende der Wahl.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 107,
@@ -1313,7 +1313,7 @@
     "answers": ["2 Jahre", "4 Jahre", "6 Jahre", "8 Jahre"],
     "correct_answer": "4 Jahre",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 108,
@@ -1326,7 +1326,7 @@
     ],
     "correct_answer": "Bürgerin/Bürger der Bundesrepublik Deutschland ist und mindestens 18 Jahre alt ist.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 109,
@@ -1339,7 +1339,7 @@
     ],
     "correct_answer": "alle vier Jahre",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 110,
@@ -1347,7 +1347,7 @@
     "answers": ["2 Jahre", "3 Jahre", "4 Jahre", "5 Jahre"],
     "correct_answer": "4 Jahre",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 111,
@@ -1360,7 +1360,7 @@
     ],
     "correct_answer": "der öffentliche Aufruf zur Vernichtung Israels",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 112,
@@ -1373,7 +1373,7 @@
     ],
     "correct_answer": "geheim.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 113,
@@ -1386,7 +1386,7 @@
     ],
     "correct_answer": "die meisten Stimmen bekommt.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 114,
@@ -1394,7 +1394,7 @@
     "answers": ["eine Pflicht.", "ein Recht.", "ein Zwang.", "eine Last."],
     "correct_answer": "ein Recht.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 115,
@@ -1407,7 +1407,7 @@
     ],
     "correct_answer": "Man kann wählen.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 116,
@@ -1420,7 +1420,7 @@
     ],
     "correct_answer": "aktives Wahlrecht.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 117,
@@ -1428,7 +1428,7 @@
     "answers": ["3%", "4%", "5%", "6%"],
     "correct_answer": "5%",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 118,
@@ -1441,7 +1441,7 @@
     ],
     "correct_answer": "alle Menschen",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 119,
@@ -1454,7 +1454,7 @@
     ],
     "correct_answer": "Jede Person kann ohne Zwang entscheiden, ob sie wählen möchte und wen sie wählen möchte.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 120,
@@ -1467,7 +1467,7 @@
     ],
     "correct_answer": "Mehrheits- und Verhältniswahlrecht.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 121,
@@ -1475,7 +1475,7 @@
     "answers": ["5%-Hürde.", "Zulassungsgrenze.", "Basiswert.", "Richtlinie."],
     "correct_answer": "5%-Hürde.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 122,
@@ -1488,7 +1488,7 @@
     ],
     "correct_answer": "frei, gleich, geheim.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 123,
@@ -1501,7 +1501,7 @@
     ],
     "correct_answer": "Mindestanteil an Wählerstimmen, um ins Parlament zu kommen",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 124,
@@ -1514,7 +1514,7 @@
     ],
     "correct_answer": "des Parlaments für Deutschland.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 125,
@@ -1527,7 +1527,7 @@
     ],
     "correct_answer": "nach dem Willen der Wählermehrheit den Wechsel der Regierung zu ermöglichen.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 126,
@@ -1540,7 +1540,7 @@
     ],
     "correct_answer": "eine Wahlbenachrichtigung von der Gemeinde",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 127,
@@ -1553,7 +1553,7 @@
     ],
     "correct_answer": "viele kleine Parteien die Regierungsbildung erschweren.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 128,
@@ -1566,7 +1566,7 @@
     ],
     "correct_answer": "Abgeordnete.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 129,
@@ -1579,7 +1579,7 @@
     ],
     "correct_answer": "der Bundestag.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 130,
@@ -1587,7 +1587,7 @@
     "answers": ["1", "2", "3", "4"],
     "correct_answer": "1",
     "state": "Bundesweit",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 131,
@@ -1600,7 +1600,7 @@
     ],
     "correct_answer": "das Oberhaupt einer Gemeinde.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 132,
@@ -1613,7 +1613,7 @@
     ],
     "correct_answer": "Sie arbeiten freiwillig und unbezahlt in Vereinen und Verbänden.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 133,
@@ -1626,7 +1626,7 @@
     ],
     "correct_answer": "Man kann durch Briefwahl seine Stimme abgeben.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 134,
@@ -1639,7 +1639,7 @@
     ],
     "correct_answer": "Ich beteilige mich an einer Bürgerinitiative für die Erhaltung der Buslinie oder gründe selber eine Initiative.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 135,
@@ -1652,7 +1652,7 @@
     ],
     "correct_answer": "Arbeitnehmerinnen und Arbeitnehmer",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 136,
@@ -1665,7 +1665,7 @@
     ],
     "correct_answer": "ungerechtfertigter Kündigung durch Ihre Chefin/Ihren Chef.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 137,
@@ -1678,7 +1678,7 @@
     ],
     "correct_answer": "das Arbeitsgericht",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 138,
@@ -1691,7 +1691,7 @@
     ],
     "correct_answer": "Kündigungsschutzklage erheben",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 139,
@@ -1704,7 +1704,7 @@
     ],
     "correct_answer": "eine Straftat begangen hat und angeklagt wird.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 140,
@@ -1717,7 +1717,7 @@
     ],
     "correct_answer": "entscheidet mit Richterinnen/Richtern über Schuld und Strafe.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 141,
@@ -1730,7 +1730,7 @@
     ],
     "correct_answer": "eine Rechtsanwältin/ein Rechtsanwalt",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 142,
@@ -1743,7 +1743,7 @@
     ],
     "correct_answer": "arbeitet an einem Gericht und spricht Urteile.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 143,
@@ -1751,7 +1751,7 @@
     "answers": ["Judikative.", "Exekutive.", "Operative.", "Legislative."],
     "correct_answer": "Judikative.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 144,
@@ -1764,7 +1764,7 @@
     ],
     "correct_answer": "rechtsprechenden Gewalt.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 145,
@@ -1772,7 +1772,7 @@
     "answers": ["Judikative", "Exekutive", "Presse", "Legislative"],
     "correct_answer": "Judikative",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 146,
@@ -1780,7 +1780,7 @@
     "answers": ["Programm", "Prozedur", "Protokoll", "Prozess"],
     "correct_answer": "Prozess",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 147,
@@ -1793,7 +1793,7 @@
     ],
     "correct_answer": "Recht sprechen",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 148,
@@ -1806,7 +1806,7 @@
     ],
     "correct_answer": "die Einhaltung von Gesetzen zu überwachen",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 149,
@@ -1819,7 +1819,7 @@
     ],
     "correct_answer": "den Holocaust leugnen",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 150,
@@ -1832,7 +1832,7 @@
     ],
     "correct_answer": "eine ehrenamtliche Richterin/ein ehrenamtlicher Richter.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 151,
@@ -1845,7 +1845,7 @@
     ],
     "correct_answer": "die DDR",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 152,
@@ -1858,7 +1858,7 @@
     ],
     "correct_answer": "1933 bis 1945",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 153,
@@ -1871,7 +1871,7 @@
     ],
     "correct_answer": "Ende des Zweiten Weltkriegs in Europa",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 154,
@@ -1879,7 +1879,7 @@
     "answers": ["1933", "1945", "1949", "1961"],
     "correct_answer": "1945",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 155,
@@ -1892,7 +1892,7 @@
     ],
     "correct_answer": "1933 bis 1945",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 156,
@@ -1900,7 +1900,7 @@
     "answers": ["1923", "1927", "1933", "1936"],
     "correct_answer": "1933",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 157,
@@ -1913,7 +1913,7 @@
     ],
     "correct_answer": "eine Diktatur.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 158,
@@ -1921,7 +1921,7 @@
     "answers": ["Diktatur.", "Demokratie.", "Monarchie.", "Räterepublik."],
     "correct_answer": "Diktatur.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 159,
@@ -1934,7 +1934,7 @@
     ],
     "correct_answer": "freie Wahlen",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 160,
@@ -1947,7 +1947,7 @@
     ],
     "correct_answer": "der Zweite Weltkrieg",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 161,
@@ -1960,7 +1960,7 @@
     ],
     "correct_answer": "des staatlichen Rassismus",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 162,
@@ -1973,7 +1973,7 @@
     ],
     "correct_answer": "das Attentat auf Hitler am 20. Juli 1944.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 163,
@@ -1981,7 +1981,7 @@
     "answers": ["1925", "1930", "1938", "1945"],
     "correct_answer": "1938",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 164,
@@ -1994,7 +1994,7 @@
     ],
     "correct_answer": "Jüdische Geschäfte und Synagogen werden durch Nationalsozialisten und ihre Anhänger zerstört.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 165,
@@ -2007,7 +2007,7 @@
     ],
     "correct_answer": "Konrad Adenauer",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 166,
@@ -2020,7 +2020,7 @@
     ],
     "correct_answer": "bei den Montagsdemonstrationen 1989 in der DDR",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 167,
@@ -2033,7 +2033,7 @@
     ],
     "correct_answer": "USA, Sowjetunion, Großbritannien, Frankreich",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 168,
@@ -2041,7 +2041,7 @@
     "answers": ["USA", "Sowjetunion", "Frankreich", "Japan"],
     "correct_answer": "Japan",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 169,
@@ -2049,7 +2049,7 @@
     "answers": ["1939", "1945", "1949", "1951"],
     "correct_answer": "1949",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 170,
@@ -2062,7 +2062,7 @@
     ],
     "correct_answer": "das Verbot von Parteien",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 171,
@@ -2075,7 +2075,7 @@
     ],
     "correct_answer": "richtet sich nach Angebot und Nachfrage, aber der Staat sorgt für einen sozialen Ausgleich.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 172,
@@ -2088,7 +2088,7 @@
     ],
     "correct_answer": "sowjetischen Besatzungszone",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 173,
@@ -2101,7 +2101,7 @@
     ],
     "correct_answer": "des Nordatlantikpakts (NATO).",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 174,
@@ -2109,7 +2109,7 @@
     "answers": ["1947", "1949", "1953", "1956"],
     "correct_answer": "1949",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 175,
@@ -2117,7 +2117,7 @@
     "answers": ["3", "4", "5", "6"],
     "correct_answer": "4",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 176,
@@ -2130,7 +2130,7 @@
     ],
     "correct_answer": "1=Großbritannien, 2=Sowjetunion, 3=USA, 4=Frankreich",
     "state": "Bundesweit",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 177,
@@ -2138,7 +2138,7 @@
     "answers": ["München", "Berlin", "Dresden", "Frankfurt/Oder"],
     "correct_answer": "Berlin",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 178,
@@ -2151,7 +2151,7 @@
     ],
     "correct_answer": "Die Sowjetunion unterbrach den gesamten Verkehr auf dem Landwege.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 179,
@@ -2164,7 +2164,7 @@
     ],
     "correct_answer": "durch die bedingungslose Kapitulation Deutschlands",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 180,
@@ -2177,7 +2177,7 @@
     ],
     "correct_answer": "Konrad Adenauer.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 181,
@@ -2190,7 +2190,7 @@
     ],
     "correct_answer": "Er bat Polen und die polnischen Juden um Vergebung.",
     "state": "Bundesweit",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 182,
@@ -2198,7 +2198,7 @@
     "answers": ["Basilika", "Moschee", "Synagoge", "Kirche"],
     "correct_answer": "Synagoge",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 183,
@@ -2206,7 +2206,7 @@
     "answers": ["40er Jahre", "50er Jahre", "70er Jahre", "80er Jahre"],
     "correct_answer": "50er Jahre",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 184,
@@ -2219,7 +2219,7 @@
     ],
     "correct_answer": "eine Resolution der Vereinten Nationen",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 185,
@@ -2232,7 +2232,7 @@
     ],
     "correct_answer": "des Warschauer Pakts gegen den Westen",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 186,
@@ -2240,7 +2240,7 @@
     "answers": ["1. Mai", "17. Juni", "20. Juli", "9. November"],
     "correct_answer": "17. Juni",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 187,
@@ -2253,7 +2253,7 @@
     ],
     "correct_answer": "DDR",
     "state": "Bundesweit",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 188,
@@ -2261,7 +2261,7 @@
     "answers": ["1953", "1956", "1959", "1961"],
     "correct_answer": "1961",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 189,
@@ -2269,7 +2269,7 @@
     "answers": ["1919", "1933", "1961", "1990"],
     "correct_answer": "1961",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 190,
@@ -2282,7 +2282,7 @@
     ],
     "correct_answer": "Deutsche Demokratische Republik",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 191,
@@ -2290,7 +2290,7 @@
     "answers": ["1987", "1989", "1992", "1995"],
     "correct_answer": "1989",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 192,
@@ -2298,7 +2298,7 @@
     "answers": ["Brandenburg", "Bayern", "Saarland", "Hessen"],
     "correct_answer": "Brandenburg",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 193,
@@ -2311,7 +2311,7 @@
     ],
     "correct_answer": "durch eine Mauer geteilt.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 194,
@@ -2319,7 +2319,7 @@
     "answers": ["Einheit.", "Nation.", "Bundesländer.", "Städte."],
     "correct_answer": "Einheit.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 195,
@@ -2327,7 +2327,7 @@
     "answers": ["Hessen", "Sachsen-Anhalt", "Nordrhein-Westfalen", "Saarland"],
     "correct_answer": "Sachsen-Anhalt",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 196,
@@ -2340,7 +2340,7 @@
     ],
     "correct_answer": "von einer Diktatur zur Demokratie.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 197,
@@ -2348,7 +2348,7 @@
     "answers": ["Thüringen", "Hessen", "Bayern", "Bremen"],
     "correct_answer": "Thüringen",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 198,
@@ -2356,7 +2356,7 @@
     "answers": ["Bayern", "Niedersachsen", "Sachsen", "Baden-Württemberg"],
     "correct_answer": "Sachsen",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 199,
@@ -2369,7 +2369,7 @@
     ],
     "correct_answer": "das Ministerium für Staatssicherheit.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 200,
@@ -2382,7 +2382,7 @@
     ],
     "correct_answer": "Mecklenburg-Vorpommern",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 201,
@@ -2395,7 +2395,7 @@
     ],
     "correct_answer": "Mecklenburg-Vorpommern, Brandenburg, Sachsen, Sachsen-Anhalt, Thüringen",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 202,
@@ -2408,7 +2408,7 @@
     ],
     "correct_answer": "zum Warschauer Pakt",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 203,
@@ -2421,7 +2421,7 @@
     ],
     "correct_answer": "Planwirtschaft",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 204,
@@ -2434,7 +2434,7 @@
     ],
     "correct_answer": "Die heutigen fünf östlichen Bundesländer sind der Bundesrepublik Deutschland beigetreten.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 205,
@@ -2447,7 +2447,7 @@
     ],
     "correct_answer": "zur Europäischen Union.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 206,
@@ -2460,7 +2460,7 @@
     ],
     "correct_answer": "an die Opfer des Nationalsozialismus",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 207,
@@ -2473,7 +2473,7 @@
     ],
     "correct_answer": "im Warschauer Pakt",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 208,
@@ -2486,7 +2486,7 @@
     ],
     "correct_answer": "der Geheimdienst der DDR",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 209,
@@ -2494,7 +2494,7 @@
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
     "correct_answer": "Bild 4",
     "state": "Bundesweit",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 210,
@@ -2507,7 +2507,7 @@
     ],
     "correct_answer": "landesweite Streiks und ein Volksaufstand",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 211,
@@ -2520,7 +2520,7 @@
     ],
     "correct_answer": "Willy Brandt",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 212,
@@ -2533,7 +2533,7 @@
     ],
     "correct_answer": "Bundesrepublik Deutschland",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 213,
@@ -2541,7 +2541,7 @@
     "answers": ["70 Millionen", "78 Millionen", "84 Millionen", "90 Millionen"],
     "correct_answer": "84 Millionen",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 214,
@@ -2554,7 +2554,7 @@
     ],
     "correct_answer": "schwarz-rot-gold",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 215,
@@ -2567,7 +2567,7 @@
     ],
     "correct_answer": "Helmut Kohl",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 216,
@@ -2580,7 +2580,7 @@
     ],
     "correct_answer": "der Bundesadler",
     "state": "Bundesweit",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 217,
@@ -2593,7 +2593,7 @@
     ],
     "correct_answer": "1949 bis 1990",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 218,
@@ -2601,7 +2601,7 @@
     "answers": ["4", "5", "6", "7"],
     "correct_answer": "5",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 219,
@@ -2609,7 +2609,7 @@
     "answers": ["1933", "1949", "1971", "1990"],
     "correct_answer": "1990",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 220,
@@ -2622,7 +2622,7 @@
     ],
     "correct_answer": "an die Opfer des Nationalsozialismus (Tag der Befreiung des Vernichtungslagers Auschwitz)",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 221,
@@ -2635,7 +2635,7 @@
     ],
     "correct_answer": "Deutsche können in viele Länder Europas ohne Passkontrolle reisen.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 222,
@@ -2643,7 +2643,7 @@
     "answers": ["Ungarn", "Portugal", "Spanien", "Schweiz"],
     "correct_answer": "Schweiz",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 223,
@@ -2651,7 +2651,7 @@
     "answers": ["Rumänien", "Bulgarien", "Polen", "Griechenland"],
     "correct_answer": "Polen",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 224,
@@ -2664,7 +2664,7 @@
     ],
     "correct_answer": "Europäische Union",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 225,
@@ -2672,7 +2672,7 @@
     "answers": ["Tschechien", "Norwegen", "Spanien", "Österreich"],
     "correct_answer": "Österreich",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 226,
@@ -2680,7 +2680,7 @@
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
     "correct_answer": "Bild 2",
     "state": "Bundesweit",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 227,
@@ -2688,7 +2688,7 @@
     "answers": ["Finnland", "Dänemark", "Norwegen", "Schweden"],
     "correct_answer": "Dänemark",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 228,
@@ -2701,7 +2701,7 @@
     ],
     "correct_answer": "Deutsche Wiedervereinigung",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 229,
@@ -2709,7 +2709,7 @@
     "answers": ["Spanien", "Bulgarien", "Norwegen", "Luxemburg"],
     "correct_answer": "Luxemburg",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 230,
@@ -2717,7 +2717,7 @@
     "answers": ["5 Jahre.", "6 Jahre.", "7 Jahre.", "8 Jahre."],
     "correct_answer": "5 Jahre.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 231,
@@ -2730,7 +2730,7 @@
     ],
     "correct_answer": "Der Begriff meint den Zusammenschluss europäischer Staaten zur EU.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 232,
@@ -2743,7 +2743,7 @@
     ],
     "correct_answer": "die Abgeordneten des Europäischen Parlaments",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 233,
@@ -2751,7 +2751,7 @@
     "answers": ["Tschechien", "Bulgarien", "Griechenland", "Portugal"],
     "correct_answer": "Tschechien",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 234,
@@ -2759,7 +2759,7 @@
     "answers": ["London", "Paris", "Berlin", "Straßburg"],
     "correct_answer": "Straßburg",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 235,
@@ -2772,7 +2772,7 @@
     ],
     "correct_answer": "Frieden und Sicherheit in den Ländern der EU",
     "state": "Bundesweit",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 236,
@@ -2780,7 +2780,7 @@
     "answers": ["21", "23", "25", "27"],
     "correct_answer": "27",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 237,
@@ -2793,7 +2793,7 @@
     ],
     "correct_answer": "Gründung der Europäischen Wirtschaftsgemeinschaft (EWG)",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 238,
@@ -2806,7 +2806,7 @@
     ],
     "correct_answer": "Straßburg, Luxemburg und Brüssel",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 239,
@@ -2819,7 +2819,7 @@
     ],
     "correct_answer": "durch die \"Römischen Verträge\"",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 240,
@@ -2827,7 +2827,7 @@
     "answers": ["1995", "1998", "2002", "2005"],
     "correct_answer": "2002",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 241,
@@ -2840,7 +2840,7 @@
     ],
     "correct_answer": "Sie muss einen Antrag bei der Elterngeldstelle stellen.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 242,
@@ -2853,7 +2853,7 @@
     ],
     "correct_answer": "die Eltern/die Erziehungsberechtigten",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 243,
@@ -2866,7 +2866,7 @@
     ],
     "correct_answer": "Sie müssen die Demonstration anmelden.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 244,
@@ -2879,7 +2879,7 @@
     ],
     "correct_answer": "das Abitur",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 245,
@@ -2892,7 +2892,7 @@
     ],
     "correct_answer": "Anne (13 Jahre) und Tim (25 Jahre)",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 246,
@@ -2900,7 +2900,7 @@
     "answers": ["16", "18", "19", "21"],
     "correct_answer": "18",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 247,
@@ -2913,7 +2913,7 @@
     ],
     "correct_answer": "Mutterschutz",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 248,
@@ -2926,7 +2926,7 @@
     ],
     "correct_answer": "der Eltern.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 249,
@@ -2934,7 +2934,7 @@
     "answers": ["der Staat", "die Eltern", "die Verwandten", "die Schulen"],
     "correct_answer": "die Eltern",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 250,
@@ -2947,7 +2947,7 @@
     ],
     "correct_answer": "gut ausgebildet ist.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 251,
@@ -2960,7 +2960,7 @@
     ],
     "correct_answer": "kann man dafür bestraft werden.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 252,
@@ -2973,7 +2973,7 @@
     ],
     "correct_answer": "darf man zur gleichen Zeit nur mit einer Partnerin/einem Partner verheiratet sein.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 253,
@@ -2986,7 +2986,7 @@
     ],
     "correct_answer": "beim Einwohnermeldeamt",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 254,
@@ -2999,7 +2999,7 @@
     ],
     "correct_answer": "Die Ehegatten führen mindestens ein Jahr getrennt ihr eigenes Leben. Danach ist die Scheidung möglich.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 255,
@@ -3007,7 +3007,7 @@
     "answers": ["Ordnungsamt.", "Schulamt.", "Jugendamt.", "Gesundheitsamt."],
     "correct_answer": "Jugendamt.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 256,
@@ -3020,7 +3020,7 @@
     ],
     "correct_answer": "eine Gaststättenerlaubnis von der zuständigen Behörde",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 257,
@@ -3033,7 +3033,7 @@
     ],
     "correct_answer": "einem Abendgymnasium.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 258,
@@ -3046,7 +3046,7 @@
     ],
     "correct_answer": "Es kann ein Kind, das geschlagen wird oder hungern muss, aus der Familie nehmen.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 259,
@@ -3059,7 +3059,7 @@
     ],
     "correct_answer": "Lehrstellensuche.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 260,
@@ -3072,7 +3072,7 @@
     ],
     "correct_answer": "Anwesenheitspflicht.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 261,
@@ -3085,7 +3085,7 @@
     ],
     "correct_answer": "einem Abendgymnasium.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 262,
@@ -3098,7 +3098,7 @@
     ],
     "correct_answer": "Niemand darf z.B. wegen einer Behinderung benachteiligt werden.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 263,
@@ -3111,7 +3111,7 @@
     ],
     "correct_answer": "werden bestraft.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 264,
@@ -3124,7 +3124,7 @@
     ],
     "correct_answer": "am Rosenmontag",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 265,
@@ -3137,7 +3137,7 @@
     ],
     "correct_answer": "zum Standesamt",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 266,
@@ -3150,7 +3150,7 @@
     ],
     "correct_answer": "um 22 Uhr",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 267,
@@ -3163,7 +3163,7 @@
     ],
     "correct_answer": "Sie müssen die Entscheidung der volljährigen Tochter respektieren.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 268,
@@ -3176,7 +3176,7 @@
     ],
     "correct_answer": "Sie kann die Theorie-Prüfung vielleicht in ihrer Muttersprache machen. Es gibt mehr als zehn Sprachen zur Auswahl.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 269,
@@ -3189,7 +3189,7 @@
     ],
     "correct_answer": "einen Kindergartenplatz.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 270,
@@ -3202,7 +3202,7 @@
     ],
     "correct_answer": "zur Weiterbildung.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 271,
@@ -3215,7 +3215,7 @@
     ],
     "correct_answer": "einen Tannenbaum schmücken",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 272,
@@ -3228,7 +3228,7 @@
     ],
     "correct_answer": "Ein Mann ist mit zwei Frauen zur selben Zeit verheiratet.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 273,
@@ -3241,7 +3241,7 @@
     ],
     "correct_answer": "zum Jugendamt.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 274,
@@ -3254,7 +3254,7 @@
     ],
     "correct_answer": "das Briefgeheimnis",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 275,
@@ -3267,7 +3267,7 @@
     ],
     "correct_answer": "die Unterstützung einer Anwältin/eines Anwalts",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 276,
@@ -3280,7 +3280,7 @@
     ],
     "correct_answer": "Ich kann mich bei der Behördenleiterin/beim Behördenleiter beschweren.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 277,
@@ -3293,7 +3293,7 @@
     ],
     "correct_answer": "Mutter ist.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 278,
@@ -3306,7 +3306,7 @@
     ],
     "correct_answer": "im Rollstuhl sitzt.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 279,
@@ -3319,7 +3319,7 @@
     ],
     "correct_answer": "Regeln, an die sich alle Bewohnerinnen und Bewohner halten müssen.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 280,
@@ -3332,7 +3332,7 @@
     ],
     "correct_answer": "Einspruch einlegen.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 281,
@@ -3345,7 +3345,7 @@
     ],
     "correct_answer": "Gleichbehandlung",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 282,
@@ -3358,7 +3358,7 @@
     ],
     "correct_answer": "Wahlhelferin/Wahlhelfer",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 283,
@@ -3371,7 +3371,7 @@
     ],
     "correct_answer": "Ich lege Widerspruch bei der Behörde ein.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 284,
@@ -3384,7 +3384,7 @@
     ],
     "correct_answer": "Erwachsene müssen auch nach der Ausbildung immer weiter lernen.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 285,
@@ -3397,7 +3397,7 @@
     ],
     "correct_answer": "Umsatzsteuer",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 286,
@@ -3410,7 +3410,7 @@
     ],
     "correct_answer": "der Betriebsrat",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 287,
@@ -3423,7 +3423,7 @@
     ],
     "correct_answer": "die Kündigungsfrist",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 288,
@@ -3436,7 +3436,7 @@
     ],
     "correct_answer": "aus den nationalsozialistischen Verbrechen gegen Juden",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 289,
@@ -3449,7 +3449,7 @@
     ],
     "correct_answer": "er eine dunkle Haut hat.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 290,
@@ -3462,7 +3462,7 @@
     ],
     "correct_answer": "den Fernseher reklamieren",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 291,
@@ -3475,7 +3475,7 @@
     ],
     "correct_answer": "es eine Kirchensteuer gibt, die an die Einkommen- und Lohnsteuer geknüpft ist.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 292,
@@ -3488,7 +3488,7 @@
     ],
     "correct_answer": "Jeder kann glauben, was er möchte.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 293,
@@ -3501,7 +3501,7 @@
     ],
     "correct_answer": "Eier bemalen",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 294,
@@ -3514,7 +3514,7 @@
     ],
     "correct_answer": "christlicher Feiertag.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 295,
@@ -3527,7 +3527,7 @@
     ],
     "correct_answer": "das Christentum",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 296,
@@ -3540,7 +3540,7 @@
     ],
     "correct_answer": "die Adventszeit.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 297,
@@ -3548,7 +3548,7 @@
     "answers": ["Italien", "Polen", "Marokko", "Türkei"],
     "correct_answer": "Türkei",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 298,
@@ -3561,7 +3561,7 @@
     ],
     "correct_answer": "Vietnam, Polen, Mosambik.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 299,
@@ -3574,7 +3574,7 @@
     ],
     "correct_answer": "Gastarbeiterinnen/Gastarbeiter.",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 300,
@@ -3582,7 +3582,7 @@
     "answers": ["Italien", "Spanien", "Portugal", "Türkei"],
     "correct_answer": "Italien",
     "state": "Bundesweit",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 1,
@@ -3590,7 +3590,7 @@
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
     "correct_answer": "Bild 1",
     "state": "Baden-Württemberg",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 2,
@@ -3603,7 +3603,7 @@
     ],
     "correct_answer": "Neckar-Odenwald-Kreis",
     "state": "Baden-Württemberg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 3,
@@ -3611,7 +3611,7 @@
     "answers": ["3", "4", "5", "6"],
     "correct_answer": "5",
     "state": "Baden-Württemberg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 4,
@@ -3619,7 +3619,7 @@
     "answers": ["14", "16", "18", "20"],
     "correct_answer": "16",
     "state": "Baden-Württemberg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 5,
@@ -3627,7 +3627,7 @@
     "answers": ["blau-weiß-rot", "schwarz-gold", "weiß-blau", "grün-weiß-rot"],
     "correct_answer": "schwarz-gold",
     "state": "Baden-Württemberg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 6,
@@ -3640,7 +3640,7 @@
     ],
     "correct_answer": "bei der Landeszentrale für politische Bildung",
     "state": "Baden-Württemberg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 7,
@@ -3648,7 +3648,7 @@
     "answers": ["Heidelberg.", "Stuttgart.", "Karlsruhe.", "Mannheim."],
     "correct_answer": "Stuttgart.",
     "state": "Baden-Württemberg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 8,
@@ -3656,7 +3656,7 @@
     "answers": ["1", "2", "3", "4"],
     "correct_answer": "2",
     "state": "Baden-Württemberg",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 9,
@@ -3669,7 +3669,7 @@
     ],
     "correct_answer": "Ministerpräsidentin/Ministerpräsident",
     "state": "Baden-Württemberg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 10,
@@ -3682,7 +3682,7 @@
     ],
     "correct_answer": "Außenministerin/Außenminister",
     "state": "Baden-Württemberg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 1,
@@ -3690,7 +3690,7 @@
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
     "correct_answer": "Bild 2",
     "state": "Bayern",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 2,
@@ -3698,7 +3698,7 @@
     "answers": ["Prignitz", "Rhein-Sieg-Kreis", "Nordfriesland", "Altötting"],
     "correct_answer": "Altötting",
     "state": "Bayern",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 3,
@@ -3706,7 +3706,7 @@
     "answers": ["3", "4", "5", "6"],
     "correct_answer": "5",
     "state": "Bayern",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 4,
@@ -3714,7 +3714,7 @@
     "answers": ["14", "16", "18", "20"],
     "correct_answer": "18",
     "state": "Bayern",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 5,
@@ -3722,7 +3722,7 @@
     "answers": ["blau-weiß-rot", "weiß-blau", "grün-weiß-rot", "schwarz-gelb"],
     "correct_answer": "weiß-blau",
     "state": "Bayern",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 6,
@@ -3735,7 +3735,7 @@
     ],
     "correct_answer": "bei der Landeszentrale für politische Bildung",
     "state": "Bayern",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 7,
@@ -3743,7 +3743,7 @@
     "answers": ["Ingolstadt.", "Regensburg.", "Nürnberg.", "München."],
     "correct_answer": "München.",
     "state": "Bayern",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 8,
@@ -3751,7 +3751,7 @@
     "answers": ["1", "2", "3", "4"],
     "correct_answer": "4",
     "state": "Bayern",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 9,
@@ -3764,7 +3764,7 @@
     ],
     "correct_answer": "Ministerpräsidentin/Ministerpräsident",
     "state": "Bayern",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 10,
@@ -3777,7 +3777,7 @@
     ],
     "correct_answer": "Außenministerin/Außenminister",
     "state": "Bayern",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 1,
@@ -3785,7 +3785,7 @@
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
     "correct_answer": "Bild 4",
     "state": "Berlin",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 2,
@@ -3793,7 +3793,7 @@
     "answers": ["Altona", "Prignitz", "Pankow", "Mecklenburgische Seenplatte"],
     "correct_answer": "Pankow",
     "state": "Berlin",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 3,
@@ -3801,7 +3801,7 @@
     "answers": ["3", "4", "5", "6"],
     "correct_answer": "5",
     "state": "Berlin",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 4,
@@ -3809,7 +3809,7 @@
     "answers": ["14", "16", "18", "20"],
     "correct_answer": "16",
     "state": "Berlin",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 5,
@@ -3817,7 +3817,7 @@
     "answers": ["blau-weiß-rot", "weiß-rot", "grün-weiß-rot", "schwarz-gold"],
     "correct_answer": "weiß-rot",
     "state": "Berlin",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 6,
@@ -3830,7 +3830,7 @@
     ],
     "correct_answer": "bei der Landeszentrale für politische Bildung",
     "state": "Berlin",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 7,
@@ -3838,7 +3838,7 @@
     "answers": ["Berlin", "Saarland", "Brandenburg", "Hessen"],
     "correct_answer": "Berlin",
     "state": "Berlin",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 8,
@@ -3846,7 +3846,7 @@
     "answers": ["1", "2", "3", "4"],
     "correct_answer": "4",
     "state": "Berlin",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 9,
@@ -3859,7 +3859,7 @@
     ],
     "correct_answer": "Regierende Bürgermeisterin/Regierender Bürgermeister",
     "state": "Berlin",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 10,
@@ -3872,7 +3872,7 @@
     ],
     "correct_answer": "Senatorin/Senator für Außenbeziehungen",
     "state": "Berlin",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 1,
@@ -3880,7 +3880,7 @@
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
     "correct_answer": "Bild 1",
     "state": "Brandenburg",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 2,
@@ -3893,7 +3893,7 @@
     ],
     "correct_answer": "Prignitz",
     "state": "Brandenburg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 3,
@@ -3901,7 +3901,7 @@
     "answers": ["3", "4", "5", "6"],
     "correct_answer": "5",
     "state": "Brandenburg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 4,
@@ -3909,7 +3909,7 @@
     "answers": ["14", "16", "18", "20"],
     "correct_answer": "16",
     "state": "Brandenburg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 5,
@@ -3917,7 +3917,7 @@
     "answers": ["blau-weiß-rot", "rot-weiß", "grün-weiß-rot", "schwarz-gelb"],
     "correct_answer": "rot-weiß",
     "state": "Brandenburg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 6,
@@ -3930,7 +3930,7 @@
     ],
     "correct_answer": "bei der Landeszentrale für politische Bildung",
     "state": "Brandenburg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 7,
@@ -3938,7 +3938,7 @@
     "answers": ["Potsdam.", "Cottbus.", "Brandenburg.", "Frankfurt/Oder."],
     "correct_answer": "Potsdam.",
     "state": "Brandenburg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 8,
@@ -3946,7 +3946,7 @@
     "answers": ["1", "2", "3", "4"],
     "correct_answer": "4",
     "state": "Brandenburg",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 9,
@@ -3959,7 +3959,7 @@
     ],
     "correct_answer": "Ministerpräsidentin/Ministerpräsident",
     "state": "Brandenburg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 10,
@@ -3972,7 +3972,7 @@
     ],
     "correct_answer": "Außenministerin/Außenminister",
     "state": "Brandenburg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 1,
@@ -3980,7 +3980,7 @@
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
     "correct_answer": "Bild 3",
     "state": "Bremen",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 2,
@@ -3988,7 +3988,7 @@
     "answers": ["Altona", "Hemelingen", "Pankow", "Babelsberg"],
     "correct_answer": "Hemelingen",
     "state": "Bremen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 3,
@@ -3996,7 +3996,7 @@
     "answers": ["3", "4", "5", "6"],
     "correct_answer": "4",
     "state": "Bremen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 4,
@@ -4004,7 +4004,7 @@
     "answers": ["14", "16", "18", "20"],
     "correct_answer": "16",
     "state": "Bremen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 5,
@@ -4012,7 +4012,7 @@
     "answers": ["blau-weiß-rot", "rot-weiß", "grün-weiß-rot", "schwarz-gold"],
     "correct_answer": "rot-weiß",
     "state": "Bremen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 6,
@@ -4025,7 +4025,7 @@
     ],
     "correct_answer": "bei der Landeszentrale für politische Bildung",
     "state": "Bremen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 7,
@@ -4033,7 +4033,7 @@
     "answers": ["Bremen", "München", "Frankfurt", "Erfurt"],
     "correct_answer": "Bremen",
     "state": "Bremen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 8,
@@ -4041,7 +4041,7 @@
     "answers": ["1", "2", "3", "4"],
     "correct_answer": "3",
     "state": "Bremen",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 9,
@@ -4054,7 +4054,7 @@
     ],
     "correct_answer": "Präsidentin/Präsident des Senates",
     "state": "Bremen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 10,
@@ -4067,7 +4067,7 @@
     ],
     "correct_answer": "Senatorin/Senator für Außenbeziehungen",
     "state": "Bremen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 1,
@@ -4075,7 +4075,7 @@
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
     "correct_answer": "Bild 2",
     "state": "Hamburg",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 2,
@@ -4088,7 +4088,7 @@
     ],
     "correct_answer": "Altona",
     "state": "Hamburg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 3,
@@ -4096,7 +4096,7 @@
     "answers": ["3", "4", "5", "6"],
     "correct_answer": "5",
     "state": "Hamburg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 4,
@@ -4104,7 +4104,7 @@
     "answers": ["14", "16", "18", "20"],
     "correct_answer": "16",
     "state": "Hamburg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 5,
@@ -4112,7 +4112,7 @@
     "answers": ["blau-weiß-rot", "weiß-rot", "grün-weiß-rot", "schwarz-gelb"],
     "correct_answer": "weiß-rot",
     "state": "Hamburg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 6,
@@ -4125,7 +4125,7 @@
     ],
     "correct_answer": "bei der Landeszentrale für politische Bildung",
     "state": "Hamburg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 7,
@@ -4133,7 +4133,7 @@
     "answers": ["Hamburg", "Sachsen", "Bayern", "Thüringen"],
     "correct_answer": "Hamburg",
     "state": "Hamburg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 8,
@@ -4141,7 +4141,7 @@
     "answers": ["1", "2", "3", "4"],
     "correct_answer": "3",
     "state": "Hamburg",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 9,
@@ -4154,7 +4154,7 @@
     ],
     "correct_answer": "Erste Bürgermeisterin/Erster Bürgermeister",
     "state": "Hamburg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 10,
@@ -4167,7 +4167,7 @@
     ],
     "correct_answer": "Senatorin/Senator für Außenbeziehungen",
     "state": "Hamburg",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 1,
@@ -4175,7 +4175,7 @@
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
     "correct_answer": "Bild 1",
     "state": "Hessen",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 2,
@@ -4183,7 +4183,7 @@
     "answers": ["Ammerland", "Altötting", "Prignitz", "Main-Taunus-Kreis"],
     "correct_answer": "Main-Taunus-Kreis",
     "state": "Hessen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 3,
@@ -4191,7 +4191,7 @@
     "answers": ["3", "4", "5", "6"],
     "correct_answer": "5",
     "state": "Hessen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 4,
@@ -4199,7 +4199,7 @@
     "answers": ["14", "16", "18", "20"],
     "correct_answer": "18",
     "state": "Hessen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 5,
@@ -4207,7 +4207,7 @@
     "answers": ["blau-weiß-rot", "rot-weiß", "schwarz-gold", "grün-weiß-rot"],
     "correct_answer": "rot-weiß",
     "state": "Hessen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 6,
@@ -4220,7 +4220,7 @@
     ],
     "correct_answer": "bei der Landeszentrale für politische Bildung",
     "state": "Hessen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 7,
@@ -4228,7 +4228,7 @@
     "answers": ["Kassel.", "Darmstadt.", "Frankfurt.", "Wiesbaden."],
     "correct_answer": "Wiesbaden.",
     "state": "Hessen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 8,
@@ -4236,7 +4236,7 @@
     "answers": ["1", "2", "3", "4"],
     "correct_answer": "4",
     "state": "Hessen",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 9,
@@ -4249,7 +4249,7 @@
     ],
     "correct_answer": "Ministerpräsidentin/Ministerpräsident",
     "state": "Hessen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 10,
@@ -4262,7 +4262,7 @@
     ],
     "correct_answer": "Außenministerin/Außenminister",
     "state": "Hessen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 1,
@@ -4270,7 +4270,7 @@
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
     "correct_answer": "Bild 3",
     "state": "Mecklenburg-Vorpommern",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 2,
@@ -4283,7 +4283,7 @@
     ],
     "correct_answer": "Mecklenburgische Seenplatte",
     "state": "Mecklenburg-Vorpommern",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 3,
@@ -4291,7 +4291,7 @@
     "answers": ["3", "4", "5", "6"],
     "correct_answer": "5",
     "state": "Mecklenburg-Vorpommern",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 4,
@@ -4299,7 +4299,7 @@
     "answers": ["14", "16", "18", "20"],
     "correct_answer": "16",
     "state": "Mecklenburg-Vorpommern",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 5,
@@ -4312,7 +4312,7 @@
     ],
     "correct_answer": "blau-weiß-gelb-rot",
     "state": "Mecklenburg-Vorpommern",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 6,
@@ -4325,7 +4325,7 @@
     ],
     "correct_answer": "bei der Landeszentrale für politische Bildung",
     "state": "Mecklenburg-Vorpommern",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 7,
@@ -4333,7 +4333,7 @@
     "answers": ["Greifswald.", "Schwerin.", "Rostock.", "Wismar."],
     "correct_answer": "Schwerin.",
     "state": "Mecklenburg-Vorpommern",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 8,
@@ -4341,7 +4341,7 @@
     "answers": ["1", "2", "3", "4"],
     "correct_answer": "3",
     "state": "Mecklenburg-Vorpommern",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 9,
@@ -4354,7 +4354,7 @@
     ],
     "correct_answer": "Ministerpräsidentin/Ministerpräsident",
     "state": "Mecklenburg-Vorpommern",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 10,
@@ -4367,7 +4367,7 @@
     ],
     "correct_answer": "Außenministerin/Außenminister",
     "state": "Mecklenburg-Vorpommern",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 1,
@@ -4375,7 +4375,7 @@
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
     "correct_answer": "Bild 3",
     "state": "Niedersachsen",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 2,
@@ -4388,7 +4388,7 @@
     ],
     "correct_answer": "Ammerland",
     "state": "Niedersachsen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 3,
@@ -4396,7 +4396,7 @@
     "answers": ["3", "4", "5", "6"],
     "correct_answer": "5",
     "state": "Niedersachsen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 4,
@@ -4404,7 +4404,7 @@
     "answers": ["14", "16", "18", "20"],
     "correct_answer": "16",
     "state": "Niedersachsen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 5,
@@ -4417,7 +4417,7 @@
     ],
     "correct_answer": "schwarz-rot-gold",
     "state": "Niedersachsen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 6,
@@ -4430,7 +4430,7 @@
     ],
     "correct_answer": "bei der Landeszentrale für politische Bildung",
     "state": "Niedersachsen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 7,
@@ -4438,7 +4438,7 @@
     "answers": ["Hannover.", "Braunschweig.", "Wolfsburg.", "Osnabrück."],
     "correct_answer": "Hannover.",
     "state": "Niedersachsen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 8,
@@ -4446,7 +4446,7 @@
     "answers": ["1", "2", "3", "4"],
     "correct_answer": "1",
     "state": "Niedersachsen",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 9,
@@ -4459,7 +4459,7 @@
     ],
     "correct_answer": "Ministerpräsidentin/Ministerpräsident",
     "state": "Niedersachsen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 10,
@@ -4472,7 +4472,7 @@
     ],
     "correct_answer": "Außenministerin/Außenminister",
     "state": "Niedersachsen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 1,
@@ -4480,7 +4480,7 @@
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
     "correct_answer": "Bild 2",
     "state": "Nordrhein-Westfalen",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 2,
@@ -4493,7 +4493,7 @@
     ],
     "correct_answer": "Rhein-Sieg-Kreis",
     "state": "Nordrhein-Westfalen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 3,
@@ -4501,7 +4501,7 @@
     "answers": ["3", "4", "5", "6"],
     "correct_answer": "5",
     "state": "Nordrhein-Westfalen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 4,
@@ -4509,7 +4509,7 @@
     "answers": ["14", "16", "18", "20"],
     "correct_answer": "16",
     "state": "Nordrhein-Westfalen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 5,
@@ -4517,7 +4517,7 @@
     "answers": ["rot-weiß", "grün-weiß-rot", "schwarz-gold", "blau-weiß-rot"],
     "correct_answer": "grün-weiß-rot",
     "state": "Nordrhein-Westfalen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 6,
@@ -4530,7 +4530,7 @@
     ],
     "correct_answer": "bei der Landeszentrale für politische Bildung",
     "state": "Nordrhein-Westfalen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 7,
@@ -4538,7 +4538,7 @@
     "answers": ["Köln.", "Bonn.", "Düsseldorf.", "Dortmund."],
     "correct_answer": "Düsseldorf.",
     "state": "Nordrhein-Westfalen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 8,
@@ -4546,7 +4546,7 @@
     "answers": ["1", "2", "3", "4"],
     "correct_answer": "3",
     "state": "Nordrhein-Westfalen",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 9,
@@ -4559,7 +4559,7 @@
     ],
     "correct_answer": "Ministerpräsidentin/Ministerpräsident",
     "state": "Nordrhein-Westfalen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 10,
@@ -4572,7 +4572,7 @@
     ],
     "correct_answer": "Außenministerin/Außenminister",
     "state": "Nordrhein-Westfalen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 1,
@@ -4580,7 +4580,7 @@
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
     "correct_answer": "Bild 1",
     "state": "Rheinland-Pfalz",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 2,
@@ -4588,7 +4588,7 @@
     "answers": ["Westerwaldkreis", "Altötting", "Emsland", "Prignitz"],
     "correct_answer": "Westerwaldkreis",
     "state": "Rheinland-Pfalz",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 3,
@@ -4596,7 +4596,7 @@
     "answers": ["3", "4", "5", "6"],
     "correct_answer": "5",
     "state": "Rheinland-Pfalz",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 4,
@@ -4604,7 +4604,7 @@
     "answers": ["14", "16", "18", "20"],
     "correct_answer": "18",
     "state": "Rheinland-Pfalz",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 5,
@@ -4617,7 +4617,7 @@
     ],
     "correct_answer": "schwarz-rot-gold",
     "state": "Rheinland-Pfalz",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 6,
@@ -4630,7 +4630,7 @@
     ],
     "correct_answer": "bei der Landeszentrale für politische Bildung",
     "state": "Rheinland-Pfalz",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 7,
@@ -4638,7 +4638,7 @@
     "answers": ["Mainz.", "Kaiserslautern.", "Ludwigshafen.", "Koblenz."],
     "correct_answer": "Mainz.",
     "state": "Rheinland-Pfalz",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 8,
@@ -4646,7 +4646,7 @@
     "answers": ["1", "2", "3", "4"],
     "correct_answer": "1",
     "state": "Rheinland-Pfalz",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 9,
@@ -4659,7 +4659,7 @@
     ],
     "correct_answer": "Ministerpräsidentin/Ministerpräsident",
     "state": "Rheinland-Pfalz",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 10,
@@ -4672,7 +4672,7 @@
     ],
     "correct_answer": "Außenministerin/Außenminister",
     "state": "Rheinland-Pfalz",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 1,
@@ -4680,7 +4680,7 @@
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
     "correct_answer": "Bild 4",
     "state": "Saarland",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 2,
@@ -4693,7 +4693,7 @@
     ],
     "correct_answer": "Neunkirchen",
     "state": "Saarland",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 3,
@@ -4701,7 +4701,7 @@
     "answers": ["3", "4", "5", "6"],
     "correct_answer": "5",
     "state": "Saarland",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 4,
@@ -4709,7 +4709,7 @@
     "answers": ["14", "16", "18", "20"],
     "correct_answer": "18",
     "state": "Saarland",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 5,
@@ -4722,7 +4722,7 @@
     ],
     "correct_answer": "schwarz-rot-gold",
     "state": "Saarland",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 6,
@@ -4735,7 +4735,7 @@
     ],
     "correct_answer": "bei der Landeszentrale für politische Bildung",
     "state": "Saarland",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 7,
@@ -4743,7 +4743,7 @@
     "answers": ["Neunkirchen.", "Homburg.", "Saarbrücken.", "Völklingen."],
     "correct_answer": "Saarbrücken.",
     "state": "Saarland",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 8,
@@ -4751,7 +4751,7 @@
     "answers": ["1", "2", "3", "4"],
     "correct_answer": "1",
     "state": "Saarland",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 9,
@@ -4764,7 +4764,7 @@
     ],
     "correct_answer": "Ministerpräsidentin/Ministerpräsident",
     "state": "Saarland",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 10,
@@ -4777,7 +4777,7 @@
     ],
     "correct_answer": "Außenministerin/Außenminister",
     "state": "Saarland",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 1,
@@ -4785,7 +4785,7 @@
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
     "correct_answer": "Bild 4",
     "state": "Sachsen",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 2,
@@ -4793,7 +4793,7 @@
     "answers": ["Vogtlandkreis", "Altötting", "Uckermark", "Nordfriesland"],
     "correct_answer": "Vogtlandkreis",
     "state": "Sachsen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 3,
@@ -4801,7 +4801,7 @@
     "answers": ["3", "4", "5", "6"],
     "correct_answer": "5",
     "state": "Sachsen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 4,
@@ -4809,7 +4809,7 @@
     "answers": ["14", "16", "18", "20"],
     "correct_answer": "18",
     "state": "Sachsen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 5,
@@ -4817,7 +4817,7 @@
     "answers": ["blau-weiß-rot", "weiß-grün", "grün-weiß-rot", "schwarz-gelb"],
     "correct_answer": "weiß-grün",
     "state": "Sachsen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 6,
@@ -4830,7 +4830,7 @@
     ],
     "correct_answer": "bei der Landeszentrale für politische Bildung",
     "state": "Sachsen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 7,
@@ -4838,7 +4838,7 @@
     "answers": ["Leipzig.", "Dresden.", "Chemnitz.", "Zwickau."],
     "correct_answer": "Dresden.",
     "state": "Sachsen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 8,
@@ -4846,7 +4846,7 @@
     "answers": ["1", "2", "3", "4"],
     "correct_answer": "4",
     "state": "Sachsen",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 9,
@@ -4859,7 +4859,7 @@
     ],
     "correct_answer": "Ministerpräsidentin/Ministerpräsident",
     "state": "Sachsen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 10,
@@ -4872,7 +4872,7 @@
     ],
     "correct_answer": "Außenministerin/Außenminister",
     "state": "Sachsen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 1,
@@ -4880,7 +4880,7 @@
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
     "correct_answer": "Bild 4",
     "state": "Sachsen-Anhalt",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 2,
@@ -4888,7 +4888,7 @@
     "answers": ["Ammerland", "Altötting", "Uckermark", "Börde"],
     "correct_answer": "Börde",
     "state": "Sachsen-Anhalt",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 3,
@@ -4896,7 +4896,7 @@
     "answers": ["3", "4", "5", "6"],
     "correct_answer": "5",
     "state": "Sachsen-Anhalt",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 4,
@@ -4904,7 +4904,7 @@
     "answers": ["14", "16", "18", "20"],
     "correct_answer": "16",
     "state": "Sachsen-Anhalt",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 5,
@@ -4912,7 +4912,7 @@
     "answers": ["blau-weiß-rot", "gelb-schwarz", "grün-weiß-rot", "weiß-rot"],
     "correct_answer": "gelb-schwarz",
     "state": "Sachsen-Anhalt",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 6,
@@ -4925,7 +4925,7 @@
     ],
     "correct_answer": "bei der Landeszentrale für politische Bildung",
     "state": "Sachsen-Anhalt",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 7,
@@ -4933,7 +4933,7 @@
     "answers": ["Halle.", "Dessau.", "Magdeburg.", "Wittenberg."],
     "correct_answer": "Magdeburg.",
     "state": "Sachsen-Anhalt",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 8,
@@ -4941,7 +4941,7 @@
     "answers": ["1", "2", "3", "4"],
     "correct_answer": "3",
     "state": "Sachsen-Anhalt",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 9,
@@ -4954,7 +4954,7 @@
     ],
     "correct_answer": "Ministerpräsidentin/Ministerpräsident",
     "state": "Sachsen-Anhalt",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 10,
@@ -4967,7 +4967,7 @@
     ],
     "correct_answer": "Außenministerin/Außenminister",
     "state": "Sachsen-Anhalt",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 1,
@@ -4975,7 +4975,7 @@
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
     "correct_answer": "Bild 3",
     "state": "Schleswig-Holstein",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 2,
@@ -4988,7 +4988,7 @@
     ],
     "correct_answer": "Nordfriesland",
     "state": "Schleswig-Holstein",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 3,
@@ -4996,7 +4996,7 @@
     "answers": ["3", "4", "5", "6"],
     "correct_answer": "5",
     "state": "Schleswig-Holstein",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 4,
@@ -5004,7 +5004,7 @@
     "answers": ["14", "16", "18", "20"],
     "correct_answer": "16",
     "state": "Schleswig-Holstein",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 5,
@@ -5012,7 +5012,7 @@
     "answers": ["weiß-blau", "blau-weiß-rot", "weiß-rot", "grün-weiß-rot"],
     "correct_answer": "blau-weiß-rot",
     "state": "Schleswig-Holstein",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 6,
@@ -5025,7 +5025,7 @@
     ],
     "correct_answer": "beim / bei der Landesbeauftragten für politische Bildung",
     "state": "Schleswig-Holstein",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 7,
@@ -5033,7 +5033,7 @@
     "answers": ["Husum.", "Flensburg.", "Lübeck.", "Kiel."],
     "correct_answer": "Kiel.",
     "state": "Schleswig-Holstein",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 8,
@@ -5041,7 +5041,7 @@
     "answers": ["1", "2", "3", "4"],
     "correct_answer": "4",
     "state": "Schleswig-Holstein",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 9,
@@ -5054,7 +5054,7 @@
     ],
     "correct_answer": "Ministerpräsidentin/Ministerpräsident",
     "state": "Schleswig-Holstein",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 10,
@@ -5067,7 +5067,7 @@
     ],
     "correct_answer": "Außenministerin/Außenminister",
     "state": "Schleswig-Holstein",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 1,
@@ -5075,7 +5075,7 @@
     "answers": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
     "correct_answer": "Bild 4",
     "state": "Thüringen",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 2,
@@ -5083,7 +5083,7 @@
     "answers": ["Ammerland", "Altötting", "Nordfriesland", "Wartburgkreis"],
     "correct_answer": "Wartburgkreis",
     "state": "Thüringen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 3,
@@ -5091,7 +5091,7 @@
     "answers": ["3", "4", "5", "6"],
     "correct_answer": "5",
     "state": "Thüringen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 4,
@@ -5099,7 +5099,7 @@
     "answers": ["14", "16", "18", "20"],
     "correct_answer": "16",
     "state": "Thüringen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 5,
@@ -5107,7 +5107,7 @@
     "answers": ["blau-weiß-rot", "weiß-rot", "grün-weiß-rot", "schwarz-gold"],
     "correct_answer": "weiß-rot",
     "state": "Thüringen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 6,
@@ -5120,7 +5120,7 @@
     ],
     "correct_answer": "bei der Landeszentrale für politische Bildung",
     "state": "Thüringen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 7,
@@ -5128,7 +5128,7 @@
     "answers": ["Eisenach", "Erfurt", "Gera", "Jena"],
     "correct_answer": "Erfurt",
     "state": "Thüringen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 8,
@@ -5136,7 +5136,7 @@
     "answers": ["1", "2", "3", "4"],
     "correct_answer": "4",
     "state": "Thüringen",
-    "image": "true"
+    "has_image": true
   },
   {
     "id": 9,
@@ -5149,7 +5149,7 @@
     ],
     "correct_answer": "Ministerpräsidentin/Ministerpräsident",
     "state": "Thüringen",
-    "image": ""
+    "has_image": false
   },
   {
     "id": 10,
@@ -5162,6 +5162,6 @@
     ],
     "correct_answer": "Außenministerin/Außenminister",
     "state": "Thüringen",
-    "image": ""
+    "has_image": false
   }
 ]
