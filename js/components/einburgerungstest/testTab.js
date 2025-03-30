@@ -307,11 +307,13 @@ const setTestTabElements = (
 ) => {
   document.getElementById('test-question-state-label').innerText =
     currentQuestion.state
-
   document.getElementById('test-question-index').innerText =
     currentQuestionIndex
   document.getElementById('test-questions-length').innerText =
     totalNumberOfQuestions
+
+  ElementUtils.showImageIfExists('test-question-image', currentQuestion)
+
   document.getElementById(
     'test-current-question-index-label'
   ).innerText = `Aufgabe ${currentQuestionIndex}`

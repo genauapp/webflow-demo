@@ -347,11 +347,12 @@ const setLearnTabElements = (
 ) => {
   document.getElementById('learn-question-state-label').innerText =
     currentQuestion.state
-
   document.getElementById('learn-question-index').innerText =
     currentQuestionIndex
   document.getElementById('learn-questions-length').innerText =
     totalNumberOfQuestions
+
+  ElementUtils.showImageIfExists('learn-question-image', currentQuestion)
 
   document.getElementById(
     'learn-current-question-index-label'

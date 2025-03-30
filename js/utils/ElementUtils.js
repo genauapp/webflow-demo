@@ -56,4 +56,16 @@ export default class ElementUtils {
       showingElementContainer.style.display = 'flex'
     }
   }
+
+  static showImageIfExists(imageElementId, question) {
+    const imageElement = document.getElementById(imageElementId)
+
+    if (question.has_image) {
+      const imageUrl = `/assets/images/einburgerungstest/questions/${question.state}/${question.id}.png`
+      imageElement.src = imageUrl
+      imageElement.style.display = 'flex'
+    } else {
+      imageElement.style.display = 'none'
+    }
+  }
 }
