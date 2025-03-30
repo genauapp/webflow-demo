@@ -1,5 +1,5 @@
 import { ASSETS_BASE_URL } from '../constants/urls.js'
-import WordUtils from './WordUtils.js'
+import WordUtils from './LetterUtils.js'
 
 export default class ElementUtils {
   static switchButtonActivation = (button, isDisabled) => {
