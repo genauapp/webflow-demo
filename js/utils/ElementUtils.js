@@ -79,8 +79,8 @@ export default class ElementUtils {
       }
 
       // url-encode state and id
-      // const normalizedState = WordUtils.replaceUmlauts(question.state)
-      const encodedState = encodeURIComponent(question.state)
+      const normalizedState = WordUtils.replaceUmlauts(question.state)
+      const encodedState = encodeURIComponent(normalizedState)
       const encodedId = encodeURIComponent(question.id)
 
       realImage.src = `${ASSETS_BASE_URL}/assets/images/einburgerungstest/questions/${encodedState}/${encodedId}.png`
