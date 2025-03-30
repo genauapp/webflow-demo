@@ -11,7 +11,7 @@
 // }
 
 // PROD
-// export const ASSETS_BASE_URL = 'https://chatonode.github.io/genau-webflow-demo'
+// export const ASSETS_BASE_URL = `${ASSETS_BASE_URL}'
 // STAGING
 export const ASSETS_BASE_URL =
   'https://cdn.jsdelivr.net/gh/chatonode/genau-webflow-demo@d12a240'
@@ -19,55 +19,35 @@ export const ASSETS_BASE_URL =
 /* WORD LEARN/EXERCISE **/
 
 const JSON_URLS_NOUN = {
-  b1telcpt1:
-    'https://chatonode.github.io/genau-webflow-demo/json/a1-a2/noun.json',
-  b1telcpt2:
-    'https://chatonode.github.io/genau-webflow-demo/json/a2-b1/noun.json',
-  b1telcpt3:
-    'https://chatonode.github.io/genau-webflow-demo/json/b1-b2/noun.json',
-  b1telcpt4:
-    'https://chatonode.github.io/genau-webflow-demo/json/c1-c2/noun.json',
-  einburgerungstest:
-    'https://chatonode.github.io/genau-webflow-demo/json/einburgerungstest/noun.json',
+  b1telcpt1: `${ASSETS_BASE_URL}/json/a1-a2/noun.json`,
+  b1telcpt2: `${ASSETS_BASE_URL}/json/a2-b1/noun.json`,
+  b1telcpt3: `${ASSETS_BASE_URL}/json/b1-b2/noun.json`,
+  b1telcpt4: `${ASSETS_BASE_URL}/json/c1-c2/noun.json`,
+  einburgerungstest: `${ASSETS_BASE_URL}/json/einburgerungstest/noun.json`,
 }
 
 const JSON_URLS_VERB = {
-  b1telcpt1:
-    'https://chatonode.github.io/genau-webflow-demo/json/a1-a2/verb.json',
-  b1telcpt2:
-    'https://chatonode.github.io/genau-webflow-demo/json/a2-b1/verb.json',
-  b1telcpt3:
-    'https://chatonode.github.io/genau-webflow-demo/json/b1-b2/verb.json',
-  b1telcpt4:
-    'https://chatonode.github.io/genau-webflow-demo/json/c1-c2/verb.json',
-  einburgerungstest:
-    'https://chatonode.github.io/genau-webflow-demo/json/einburgerungstest/verb.json',
+  b1telcpt1: `${ASSETS_BASE_URL}/json/a1-a2/verb.`,
+  b1telcpt2: `${ASSETS_BASE_URL}/json/a2-b1/verb.`,
+  b1telcpt3: `${ASSETS_BASE_URL}/json/b1-b2/verb.`,
+  b1telcpt4: `${ASSETS_BASE_URL}/json/c1-c2/verb.`,
+  einburgerungstest: `${ASSETS_BASE_URL}/json/einburgerungstest/verb.`,
 }
 
 const JSON_URLS_ADJECTIVE = {
-  b1telcpt1:
-    'https://chatonode.github.io/genau-webflow-demo/json/a1-a2/adjective.json',
-  b1telcpt2:
-    'https://chatonode.github.io/genau-webflow-demo/json/a2-b1/adjective.json',
-  b1telcpt3:
-    'https://chatonode.github.io/genau-webflow-demo/json/b1-b2/adjective.json',
-  b1telcpt4:
-    'https://chatonode.github.io/genau-webflow-demo/json/c1-c2/adjective.json',
-  einburgerungstest:
-    'https://chatonode.github.io/genau-webflow-demo/json/einburgerungstest/adjective.json',
+  b1telcpt1: `${ASSETS_BASE_URL}/json/a1-a2/adjective.`,
+  b1telcpt2: `${ASSETS_BASE_URL}/json/a2-b1/adjective.`,
+  b1telcpt3: `${ASSETS_BASE_URL}/json/b1-b2/adjective.`,
+  b1telcpt4: `${ASSETS_BASE_URL}/json/c1-c2/adjective.`,
+  einburgerungstest: `${ASSETS_BASE_URL}/json/einburgerungstest/adjective.`,
 }
 
 const JSON_URLS_ADVERB = {
-  b1telcpt1:
-    'https://chatonode.github.io/genau-webflow-demo/json/a1-a2/adverb.json',
-  b1telcpt2:
-    'https://chatonode.github.io/genau-webflow-demo/json/a2-b1/adverb.json',
-  b1telcpt3:
-    'https://chatonode.github.io/genau-webflow-demo/json/b1-b2/adverb.json',
-  b1telcpt4:
-    'https://chatonode.github.io/genau-webflow-demo/json/c1-c2/adverb.json',
-  einburgerungstest:
-    'https://chatonode.github.io/genau-webflow-demo/json/einburgerungstest/adverb.json',
+  b1telcpt1: `${ASSETS_BASE_URL}/json/a1-a2/adverb.`,
+  b1telcpt2: `${ASSETS_BASE_URL}/json/a2-b1/adverb.`,
+  b1telcpt3: `${ASSETS_BASE_URL}/json/b1-b2/adverb.`,
+  b1telcpt4: `${ASSETS_BASE_URL}/json/c1-c2/adverb.`,
+  einburgerungstest: `${ASSETS_BASE_URL}/json/einburgerungstest/adverb.`,
 }
 
 export const JSON_URLS = {
