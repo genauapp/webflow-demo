@@ -14,7 +14,7 @@
 // export const ASSETS_BASE_URL = `${ASSETS_BASE_URL}'
 // STAGING
 export const ASSETS_BASE_URL =
-  'https://cdn.jsdelivr.net/gh/chatonode/genau-webflow-demo@f438374'
+  'https://cdn.jsdelivr.net/gh/chatonode/genau-webflow-demo@d12a240'
 
 /* WORD LEARN/EXERCISE **/
 
@@ -27,27 +27,27 @@ const JSON_URLS_NOUN = {
 }
 
 const JSON_URLS_VERB = {
-  b1telcpt1: `${ASSETS_BASE_URL}/json/a1-a2/verb.`,
-  b1telcpt2: `${ASSETS_BASE_URL}/json/a2-b1/verb.`,
-  b1telcpt3: `${ASSETS_BASE_URL}/json/b1-b2/verb.`,
-  b1telcpt4: `${ASSETS_BASE_URL}/json/c1-c2/verb.`,
-  einburgerungstest: `${ASSETS_BASE_URL}/json/einburgerungstest/verb.`,
+  b1telcpt1: `${ASSETS_BASE_URL}/json/a1-a2/verb.json`,
+  b1telcpt2: `${ASSETS_BASE_URL}/json/a2-b1/verb.json`,
+  b1telcpt3: `${ASSETS_BASE_URL}/json/b1-b2/verb.json`,
+  b1telcpt4: `${ASSETS_BASE_URL}/json/c1-c2/verb.json`,
+  einburgerungstest: `${ASSETS_BASE_URL}/json/einburgerungstest/verb.json`,
 }
 
 const JSON_URLS_ADJECTIVE = {
-  b1telcpt1: `${ASSETS_BASE_URL}/json/a1-a2/adjective.`,
-  b1telcpt2: `${ASSETS_BASE_URL}/json/a2-b1/adjective.`,
-  b1telcpt3: `${ASSETS_BASE_URL}/json/b1-b2/adjective.`,
-  b1telcpt4: `${ASSETS_BASE_URL}/json/c1-c2/adjective.`,
-  einburgerungstest: `${ASSETS_BASE_URL}/json/einburgerungstest/adjective.`,
+  b1telcpt1: `${ASSETS_BASE_URL}/json/a1-a2/adjective.json`,
+  b1telcpt2: `${ASSETS_BASE_URL}/json/a2-b1/adjective.json`,
+  b1telcpt3: `${ASSETS_BASE_URL}/json/b1-b2/adjective.json`,
+  b1telcpt4: `${ASSETS_BASE_URL}/json/c1-c2/adjective.json`,
+  einburgerungstest: `${ASSETS_BASE_URL}/json/einburgerungstest/adjective.json`,
 }
 
 const JSON_URLS_ADVERB = {
-  b1telcpt1: `${ASSETS_BASE_URL}/json/a1-a2/adverb.`,
-  b1telcpt2: `${ASSETS_BASE_URL}/json/a2-b1/adverb.`,
-  b1telcpt3: `${ASSETS_BASE_URL}/json/b1-b2/adverb.`,
-  b1telcpt4: `${ASSETS_BASE_URL}/json/c1-c2/adverb.`,
-  einburgerungstest: `${ASSETS_BASE_URL}/json/einburgerungstest/adverb.`,
+  b1telcpt1: `${ASSETS_BASE_URL}/json/a1-a2/adverb.json`,
+  b1telcpt2: `${ASSETS_BASE_URL}/json/a2-b1/adverb.json`,
+  b1telcpt3: `${ASSETS_BASE_URL}/json/b1-b2/adverb.json`,
+  b1telcpt4: `${ASSETS_BASE_URL}/json/c1-c2/adverb.json`,
+  einburgerungstest: `${ASSETS_BASE_URL}/json/einburgerungstest/adverb.json`,
 }
 
 export const JSON_URLS = {
