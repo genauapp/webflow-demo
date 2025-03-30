@@ -10,7 +10,10 @@
 //     'https://script.googleusercontent.com/macros/echo?user_content_key=X5GmhOorbYcFAO9AlOBaKeigyKoSTW3fsY_nKBLZH6yNSgHGmqEU7BW-sShIapltxLFruSb5AYWrB4wVzGmkJIPVhIyUWXSYm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnJZ31fvYy2gsmZkeRqZLyZW-rzexs4eP9SbReR_KHkVIG4bpUFOqrAIxJMj1cgsZLrxKiHKDk848jFZLaVWSAKXiKlrA50qxHQ&lib=MmEIQx_PXkRyMvxX9OmNoYFLDhaBgl_dE',
 // }
 
-export const ASSETS_BASE_URL = 'https://chatonode.github.io/genau-webflow-demo'
+// PROD
+// export const ASSETS_BASE_URL = 'https://chatonode.github.io/genau-webflow-demo'
+// STAGING
+export const ASSETS_BASE_URL = 'https://cdn.jsdelivr.net/gh/chatonode/genau-webflow-demo@db00087'
 
 /* WORD LEARN/EXERCISE **/
 
