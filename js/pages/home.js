@@ -1366,18 +1366,18 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 // E-mail Form
-document.addEventListener('DOMContentLoaded', function () {
-  document
-    .getElementById('email-form')
-    .addEventListener('submit', function (event) {
-      event.preventDefault() // Formun hemen gönderilmesini engeller
-      gtag_report_conversion()
+// document.addEventListener('DOMContentLoaded', function () {
+//   document
+//     .getElementById('email-form')
+//     .addEventListener('submit', function (event) {
+//       event.preventDefault() // Formun hemen gönderilmesini engeller
+//       gtag_report_conversion()
 
-      setTimeout(() => {
-        this.submit() // Google Ads dönüşüm takibinin ardından formu gönder
-      }, 300) // 300ms bekleyerek Google Ads dönüşümünün çalışmasını bekler
-    })
-})
+//       setTimeout(() => {
+//         this.submit() // Google Ads dönüşüm takibinin ardından formu gönder
+//       }, 300) // 300ms bekleyerek Google Ads dönüşümünün çalışmasını bekler
+//     })
+// })
 
 function updateExerciseCounter() {
   // correctAnswerWordsCounter[currentLevel][currentType]++
