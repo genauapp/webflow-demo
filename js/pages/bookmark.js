@@ -121,7 +121,13 @@ function removeFavorite(index) {
   listFavorites() // Listeyi yeniden yükle
 }
 
-const levels = ['b1telcpt1', 'b1telcpt2', 'b1telcpt3', 'b1telcpt4']
+const levels = [
+  'b1telcpt1',
+  'b1telcpt2',
+  'b1telcpt3',
+  'b1telcpt4',
+  'einburgerungstest',
+]
 const types = ['noun', 'verb', 'adjective', 'adverb']
 
 function listLearnedWords() {
@@ -144,6 +150,7 @@ function listLearnedWords() {
     b1telcpt2: { noun: [], verb: [], adjective: [], adverb: [] },
     b1telcpt3: { noun: [], verb: [], adjective: [], adverb: [] },
     b1telcpt4: { noun: [], verb: [], adjective: [], adverb: [] },
+    einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] },
   }
 
   console.log(JSON.stringify(learnedWithExerciseWords))
