@@ -283,7 +283,7 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
       // UI'ı güncelle
       document.getElementById(
         'remainingWordsCountLearn-' + currentType
-      ).innerText = learnedWords[currentLevel][currentType]
+      ).innerText = learnedWithLearnWords[currentLevel][currentType].length
       document.getElementById(
         'remainingWordsCountExercise-' + currentType
       ).innerText = learnedWithExerciseWords[currentLevel][currentType].length
@@ -292,7 +292,7 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
       updateTopicNames(selectedOption)
 
       // İndeksleri sıfırla
-      currentLearnIndex = learnedWords[currentLevel][currentType]
+      currentLearnIndex = learnedWithLearnWords[currentLevel][currentType].length
       currentExerciseIndex = learnedWithExerciseWords[currentLevel][currentType].length
 
       try {
@@ -342,7 +342,7 @@ async function loadWords(topic) {
 
     document.getElementById(
       'remainingWordsCountLearn-' + currentType
-    ).innerText = learnedWords[currentLevel][currentType]
+    ).innerText = learnedWithLearnWords[currentLevel][currentType].length
     document.getElementById(
       'remainingWordsCountExercise-' + currentType
     ).innerText = learnedWithExerciseWords[currentLevel][currentType].length
@@ -1181,7 +1181,7 @@ function iKnowLearn() {
   if (
     !kelimeListesi.length ||
     currentLearnIndex >= kelimeListesi.length ||
-    learnedWords[currentLevel][currentType] >= initialTotalWords
+    learnedWithLearnWords[currentLevel][currentType].length >= initialTotalWords
   ) {
     const iKnowButton = document.getElementById(
       `iKnowButtonLearn-${currentType}`
@@ -1209,9 +1209,9 @@ function iKnowLearn() {
     seviye: currentWord.seviye || 'N/A',
   })
 
-  if (learnedWords[currentLevel][currentType] < initialTotalWords) {
-    learnedWords[currentLevel][currentType]++
-    LocalStorageManager.save('learnedWords', learnedWords)
+  if (learnedWithLearnWords[currentLevel][currentType].length < initialTotalWords) {
+    // learnedWords[currentLevel][currentType]++
+    // LocalStorageManager.save('learnedWords', learnedWords)
 
     learnedWithLearnWords[currentLevel][currentType].push({
       almanca: currentWord.almanca,
@@ -1224,11 +1224,11 @@ function iKnowLearn() {
 
     document.getElementById(
       'remainingWordsCountLearn-' + currentType
-    ).innerText = learnedWords[currentLevel][currentType]
+    ).innerText = learnedWithLearnWords[currentLevel][currentType].length
     document.getElementById('totalWordsCountLearn-' + currentType).innerText =
       initialTotalWords
 
-    if (learnedWords[currentLevel][currentType] >= initialTotalWords) {
+    if (learnedWithLearnWords[currentLevel][currentType].length >= initialTotalWords) {
       showModal('You learned all words! 🎉')
       const iKnowButton = document.getElementById(
         `iKnowButtonLearn-${currentType}`
@@ -1549,7 +1549,7 @@ function navigateToPage(pageId) {
     hideSkeleton()
 
     // Sayfa değişiminde buton kontrolü
-    if (learnedWords[currentLevel][currentType] >= initialTotalWords) {
+    if (learnedWithLearnWords[currentLevel][currentType].length >= initialTotalWords) {
       document.getElementById(
         'iKnowButtonLearn-' + currentType
       ).style.visibility = 'hidden'
@@ -1608,7 +1608,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     showExerciseWord()
 
     // Sayfa yüklendiğinde buton kontrolü
-    if (learnedWords[currentLevel][currentType] >= initialTotalWords) {
+    if (learnedWithLearnWords[currentLevel][currentType].length >= initialTotalWords) {
       document.getElementById(
         'iKnowButtonLearn-' + currentType
       ).style.visibility = 'hidden'
