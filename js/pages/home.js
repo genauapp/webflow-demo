@@ -1594,7 +1594,7 @@ function navigateToPage(pageId) {
 }
 
 const clearDeprecatedLocalStorageItems = () => {
-  const currentAppVersion = "1.0.6"
+  const currentAppVersion = "1.1.0"
   const APP_VERSION = LocalStorageManager.load('APP_VERSION', null)
   
   if (APP_VERSION === null || APP_VERSION !== currentAppVersion) {
