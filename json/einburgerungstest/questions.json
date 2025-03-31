@@ -4234,7 +4234,7 @@
     "id": 8,
     "question": "Welches Bundesland ist Hessen?",
     "answers": ["1", "2", "3", "4"],
-    "correct_answer": "4",
+    "correct_answer": "3",
     "state": "Hessen",
     "has_image": true
   },
