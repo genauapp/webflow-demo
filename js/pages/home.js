@@ -470,8 +470,10 @@ function showExerciseWord() {
   inProgressWords =
     LocalStorageManager.load('inProgressWords', inProgressWords)
 
+    const currentLevel = LocalStorageManager.load(CURRENT_LEVEL_KEY)
   learnedWithExerciseWords =
     LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
+    
     
 
   // 🟢 `kelimeListesi` içinden `learnedWords`'de olanları çıkar
@@ -548,7 +550,7 @@ function showExerciseWord() {
       if (ExerciseUtils.shouldUseOwnMeaning()) {
         exerciseTranslationText = ingilizce
       } else {
-        exerciseTranslationText = ExerciseUtils.getRandomTranslationResult(currentWord, staticWordLists)
+        exerciseTranslationText = ExerciseUtils.getRandomTranslationResult(currentLevel, currentWord, staticWordLists)
         // todo: transfer data for checking the answer later
         const buttonWrong = document.getElementById(
           'wrongButton-' + currentType
