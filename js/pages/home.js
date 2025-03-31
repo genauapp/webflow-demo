@@ -1,5 +1,6 @@
 import { JSON_URLS } from '../constants/urls.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
+import ExerciseUtils from '../utils/home/ExerciseUtils.js'
 
 import va1a2 from '../../json/a1-a2/verb.json' with { type: 'json' }
 import adja1a2 from '../../json/a1-a2/adjective.json' with { type: 'json' }
@@ -452,45 +453,6 @@ function showLearnWord() {
   updateFavoriteIcons()
 }
 
-function getRandomNumber(max) {
-  // Ensure max is a non-negative number
-  if (typeof max !== 'number' || max < 0) {
-    throw new Error("The 'max' parameter must be a non-negative number.")
-  }
-  // Returns a random integer between 0 and max (inclusive)
-  return Math.floor(Math.random() * (max + 1))
-}
-
-function shouldUseOwnMeaning() {
-  // Math.random() returns a number between 0 (inclusive) and 1 (exclusive).
-  // If the number is less than 0.6, that's a 60% chance.
-  const useOwnMeaning = Math.random() < 0.6
-  console.log(
-    'decided as: ' + (useOwnMeaning ? 'own meaning' : 'different meaning')
-  )
-  return useOwnMeaning
-}
-
-function getRandomTranslationResult(selectedWord) {
-  const kelimeListesiInstance = staticWordLists[currentLevel][currentType]
-  const filteredKelimeListesiExercise = kelimeListesiInstance.filter(
-    (kelimeExercise) => kelimeExercise.almanca !== selectedWord.almanca
-  )
-
-  console.log('kelime listesi exercise Instance:')
-  console.log(kelimeListesiInstance)
-  console.log('filtered kelime listesi exercise:')
-  console.log(filteredKelimeListesiExercise)
-
-  const randomIndex = getRandomNumber(filteredKelimeListesiExercise.length - 1)
-
-  console.log(filteredKelimeListesiExercise[randomIndex])
-
-  const randomResult = filteredKelimeListesiExercise[randomIndex].ingilizce
-
-  return randomResult
-}
-
 function showExerciseWord() {
   if (!kelimeListesiExercise.length) {
     // Liste boşsa UI'ı temizle
@@ -583,10 +545,10 @@ function showExerciseWord() {
       currentType === 'adjective' ||
       currentType === 'adverb'
     ) {
-      if (shouldUseOwnMeaning()) {
+      if (ExerciseUtils.shouldUseOwnMeaning()) {
         exerciseTranslationText = ingilizce
       } else {
-        exerciseTranslationText = getRandomTranslationResult(currentWord)
+        exerciseTranslationText = ExerciseUtils.getRandomTranslationResult(currentWord, staticWordLists)
         // todo: transfer data for checking the answer later
         const buttonWrong = document.getElementById(
           'wrongButton-' + currentType
