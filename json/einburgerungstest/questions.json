@@ -5039,7 +5039,7 @@
     "id": 8,
     "question": "Welches Bundesland ist Schleswig-Holstein?",
     "answers": ["1", "2", "3", "4"],
-    "correct_answer": "4",
+    "correct_answer": "1",
     "state": "Schleswig-Holstein",
     "has_image": true
   },
