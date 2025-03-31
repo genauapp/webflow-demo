@@ -11,8 +11,8 @@ export default class ExerciseUtils {
     return useOwnMeaning
   }
 
-  static getRandomTranslationResult = (selectedWord, staticWordLists) => {
-    const kelimeListesiInstance = staticWordLists[currentLevel][currentType]
+  static getRandomTranslationResult = (currentLevel, selectedWord, staticWordLists) => {
+    const kelimeListesiInstance = staticWordLists[currentLevel][selectedWord.type]
     const filteredKelimeListesiExercise = kelimeListesiInstance.filter(
       (kelimeExercise) => kelimeExercise.almanca !== selectedWord.almanca
     )
