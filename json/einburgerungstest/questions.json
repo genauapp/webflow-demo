@@ -4318,7 +4318,7 @@
     "id": 6,
     "question": "Die Landeshauptstadt von Mecklenburg-Vorpommern heißt …",
     "answers": ["Greifswald.", "Schwerin.", "Rostock.", "Wismar."],
-    "correct_answer": "Greifswald.",
+    "correct_answer": "Schwerin.",
     "state": "Mecklenburg-Vorpommern",
     "has_image": false
   },
