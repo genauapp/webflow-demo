@@ -61,7 +61,7 @@ export default class ElementUtils {
   }
 
   static showImageIfExists(imageElementId, question) {
-    const imageContainerElement = document.getElementById(
+    const imageContainerElement = document.getElementsByClassName(
       'einburgerungstest-image-container'
     )
     const imageElement = document.getElementById(imageElementId)
