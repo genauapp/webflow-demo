@@ -60,9 +60,9 @@ export default class ElementUtils {
     }
   }
 
-  static showImageIfExists(imageElementId, question) {
-    const imageContainerElement = document.getElementsByClassName(
-      'einburgerungstest-image-container'
+  static showImageIfExists(imageElementId, imageContainerElementId, question) {
+    const imageContainerElement = document.getElementsById(
+      imageContainerElementId
     )
     const imageElement = document.getElementById(imageElementId)
 
