@@ -312,7 +312,7 @@ const setTestTabElements = (
   document.getElementById('test-questions-length').innerText =
     totalNumberOfQuestions
 
-  ElementUtils.showImageIfExists('test-question-image', currentQuestion)
+  ElementUtils.showImageIfExists('test-question-image', 'test-question-image-container', currentQuestion)
 
   document.getElementById(
     'test-current-question-index-label'

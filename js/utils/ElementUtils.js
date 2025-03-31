@@ -60,10 +60,14 @@ export default class ElementUtils {
     }
   }
 
-  static showImageIfExists(imageElementId, question) {
+  static showImageIfExists(imageElementId, imageContainerElementId, question) {
+    const imageContainerElement = document.getElementById(
+      imageContainerElementId
+    )
     const imageElement = document.getElementById(imageElementId)
 
     if (question.has_image) {
+      imageContainerElement.style.display = 'flex'
       // Show a placeholder while loading
       imageElement.src = `https://cdn.prod.website-files.com/677da6ae8464f53ea15d73ac/67e97dd7bd1a0d94d2e0c10b_Img-Placeholder.svg`
       imageElement.style.display = 'flex'
@@ -87,6 +91,7 @@ export default class ElementUtils {
 
       realImage.src = `${ASSETS_BASE_URL}/assets/images/einburgerungstest/questions/${encodedState}/${encodedId}.png`
     } else {
+      imageContainerElement.style.display = 'none'
       imageElement.style.display = 'none'
     }
   }
