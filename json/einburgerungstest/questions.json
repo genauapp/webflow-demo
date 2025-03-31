@@ -5134,7 +5134,7 @@
     "id": 8,
     "question": "Welches Bundesland ist Thüringen?",
     "answers": ["1", "2", "3", "4"],
-    "correct_answer": "4",
+    "correct_answer": "2",
     "state": "Thüringen",
     "has_image": true
   },
