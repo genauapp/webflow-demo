@@ -20,6 +20,7 @@ import advc1c2 from '../../json/c1-c2/adverb.json' with { type: 'json' }
 import vEinburger from '../../json/einburgerungstest/verb.json' with { type: 'json' }
 import adjEinburger from '../../json/einburgerungstest/adjective.json' with { type: 'json' }
 import advEinburger from '../../json/einburgerungstest/adverb.json' with { type: 'json' }
+import { DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY, LEARNED_WITH_LEARN_WORDS_KEY } from '../constants/storageKeys.js'
 
 let staticWordLists = {
   b1telcpt1: {
@@ -54,46 +55,9 @@ let staticWordLists = {
   }
 }
 
-let learnedWithLearnWords = {
-  b1telcpt1: {
-    noun: [],
-    verb: [],
-    adjective: [],
-    adverb: [],
-  },
-  b1telcpt2: {
-    noun: [],
-    verb: [],
-    adjective: [],
-    adverb: [],
-  },
-  b1telcpt3: {
-    noun: [],
-    verb: [],
-    adjective: [],
-    adverb: [],
-  },
-  b1telcpt4: {
-    noun: [],
-    verb: [],
-    adjective: [],
-    adverb: [],
-  },
-  einburgerungstest: {
-    noun: [],
-    verb: [],
-    adjective: [],
-    adverb: [],
-  },
-}
+let learnedWithLearnWords = DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS
 
-export let learnedWithExerciseWords = {
-  b1telcpt1: { noun: [], verb: [], adjective: [], adverb: [] },
-  b1telcpt2: { noun: [], verb: [], adjective: [], adverb: [] },
-  b1telcpt3: { noun: [], verb: [], adjective: [], adverb: [] },
-  b1telcpt4: { noun: [], verb: [], adjective: [], adverb: [] },
-  einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] },
-}
+export let learnedWithExerciseWords = DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS
 
 let inProgressWords = {
   b1telcpt1: { noun: [], verb: [], adjective: [], adverb: [] },
@@ -117,13 +81,13 @@ let currentExerciseIndex = 0
 let totalWordsLearn = 0
 let totalWordsExercise = 0
 
-const learnedWords = LocalStorageManager.load('learnedWords', {
-  b1telcpt1: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
-  b1telcpt2: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
-  b1telcpt3: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
-  b1telcpt4: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
-  einburgerungstest: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
-})
+// const learnedWords = LocalStorageManager.load('learnedWords', {
+//   b1telcpt1: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
+//   b1telcpt2: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
+//   b1telcpt3: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
+//   b1telcpt4: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
+//   einburgerungstest: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
+// })
 
 // const correctAnswerWordsCounter = LocalStorageManager.load('correctAnswerWordsCounter', {
 //   b1telcpt1: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
@@ -545,7 +509,7 @@ function showExerciseWord() {
     LocalStorageManager.load('inProgressWords', inProgressWords)
 
   learnedWithExerciseWords =
-    LocalStorageManager.load('learnedWithExerciseWords', learnedWithExerciseWords)
+    LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
     
 
   // 🟢 `kelimeListesi` içinden `learnedWords`'de olanları çıkar
@@ -678,7 +642,7 @@ function checkNonNounAnswer(userInput) {
 
   inProgressWords = LocalStorageManager.load('inProgressWords', inProgressWords)
   learnedWithExerciseWords =
-    LocalStorageManager.load('learnedWithExerciseWords', learnedWithExerciseWords)
+    LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
     
 
   const inProgressIndex = inProgressWords[currentLevel][currentType].findIndex(
@@ -774,7 +738,7 @@ function checkNonNounAnswer(userInput) {
         }
         // inProgressWords.splice(inProgressIndex, 1); // inProgressWords'ten çıkar
         console.log(
-          `'${currentWord.almanca}' learnedWithExerciseWords listesine taşındı.`
+          `'${currentWord.almanca}' ${LEARNED_WITH_EXERCISE_WORDS_KEY} listesine taşındı.`
         )
       } else {
         playSound(
@@ -815,7 +779,7 @@ function checkNonNounAnswer(userInput) {
       showExerciseWord()
     }, 1000)
     LocalStorageManager.save(
-      'learnedWithExerciseWords',
+      LEARNED_WITH_EXERCISE_WORDS_KEY,
       learnedWithExerciseWords
     )
   } else {
@@ -893,7 +857,7 @@ function checkNounAnswer(userArtikel) {
   )
   inProgressWords = LocalStorageManager.load('inProgressWords', inProgressWords)
   learnedWithExerciseWords =
-    LocalStorageManager.load('learnedWithExerciseWords', learnedWithExerciseWords)
+    LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
     
 
   const inProgressIndex = inProgressWords[currentLevel][currentType].findIndex(
@@ -995,7 +959,7 @@ function checkNounAnswer(userArtikel) {
         }
         // inProgressWords.splice(inProgressIndex, 1); // inProgressWords'ten çıkar
         console.log(
-          `'${currentWord.almanca}' learnedWithExerciseWords listesine taşındı.`
+          `'${currentWord.almanca}' ${LEARNED_WITH_EXERCISE_WORDS_KEY} listesine taşındı.`
         )
       } else {
         playSound(
@@ -1037,7 +1001,7 @@ function checkNounAnswer(userArtikel) {
       showExerciseWord()
     }, 1000)
     LocalStorageManager.save(
-      'learnedWithExerciseWords',
+      LEARNED_WITH_EXERCISE_WORDS_KEY,
       learnedWithExerciseWords
     )
   } else {
@@ -1199,15 +1163,15 @@ function iKnowLearn() {
   }
 
   learnedWithLearnWords =
-    LocalStorageManager.load('learnedWithLearnWords', learnedWithLearnWords)
+    LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
   const currentWord = kelimeListesi[currentLearnIndex]
 
   // Kelimeyi öğrenilenlere ekle
-  learnedWithLearnWords[currentLevel][currentType].push({
-    almanca: currentWord.almanca,
-    ingilizce: currentWord.ingilizce,
-    seviye: currentWord.seviye || 'N/A',
-  })
+  // learnedWithLearnWords[currentLevel][currentType].push({
+  //   almanca: currentWord.almanca,
+  //   ingilizce: currentWord.ingilizce,
+  //   seviye: currentWord.seviye || 'N/A',
+  // })
 
   if (learnedWithLearnWords[currentLevel][currentType].length < initialTotalWords) {
     // learnedWords[currentLevel][currentType]++
@@ -1218,7 +1182,7 @@ function iKnowLearn() {
       ingilizce: currentWord.ingilizce,
       seviye: currentWord.seviye || 'N/A',
     })
-    LocalStorageManager.save('learnedWithLearnWords', learnedWithLearnWords)
+    LocalStorageManager.save(LEARNED_WITH_LEARN_WORDS_KEY, learnedWithLearnWords)
 
     kelimeListesi.splice(currentLearnIndex, 1)
 
@@ -1586,9 +1550,9 @@ const clearDeprecatedLocalStorageItems = () => {
   if (APP_VERSION === null || APP_VERSION !== currentAppVersion) {
     LocalStorageManager.remove('lastSelectedTopic')
     LocalStorageManager.remove('inProgressWords')
-    LocalStorageManager.remove('learnedWithExerciseWords')
-    LocalStorageManager.remove('learnedWords')
-    LocalStorageManager.remove('learnedWithLearnWords')
+    LocalStorageManager.remove(LEARNED_WITH_LEARN_WORDS_KEY)
+    LocalStorageManager.remove(LEARNED_WITH_EXERCISE_WORDS_KEY)
+    // LocalStorageManager.remove('learnedWords')
     // LocalStorageManager.remove('correctAnswerWordsCounter')
     LocalStorageManager.remove('favoriteWords')
 
