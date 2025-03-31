@@ -352,7 +352,11 @@ const setLearnTabElements = (
   document.getElementById('learn-questions-length').innerText =
     totalNumberOfQuestions
 
-  ElementUtils.showImageIfExists('learn-question-image', currentQuestion)
+  ElementUtils.showImageIfExists(
+    'learn-question-image',
+    'learn-question-image-container',
+    currentQuestion
+  )
 
   document.getElementById(
     'learn-current-question-index-label'
