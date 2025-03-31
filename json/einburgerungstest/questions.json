@@ -4749,7 +4749,7 @@
     "id": 8,
     "question": "Welches Bundesland ist das Saarland?",
     "answers": ["1", "2", "3", "4"],
-    "correct_answer": "1",
+    "correct_answer": "2",
     "state": "Saarland",
     "has_image": true
   },
