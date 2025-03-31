@@ -3,6 +3,7 @@ import { STATE_NATIONWIDE } from './states.js'
 /*
   Homepage
 */
+export const CURRENT_LEVEL_KEY = 'CURRENT_LEVEL'
 export const LEARNED_WITH_LEARN_WORDS_KEY = 'LEARNED_WITH_LEARN_WORDS'
 export const LEARNED_WITH_EXERCISE_WORDS_KEY = 'LEARNED_WITH_EXERCISE_WORDS'
 /*
@@ -23,6 +24,8 @@ export class DEFAULT_VALUE {
   /** 
   Homepage
   */
+  static CURRENT_LEVEL = 'b1telcpt1'
+
   static LEARNED_WITH_LEARN_WORDS = {
     b1telcpt1: {
       noun: [],

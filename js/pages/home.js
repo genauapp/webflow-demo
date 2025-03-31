@@ -20,7 +20,7 @@ import advc1c2 from '../../json/c1-c2/adverb.json' with { type: 'json' }
 import vEinburger from '../../json/einburgerungstest/verb.json' with { type: 'json' }
 import adjEinburger from '../../json/einburgerungstest/adjective.json' with { type: 'json' }
 import advEinburger from '../../json/einburgerungstest/adverb.json' with { type: 'json' }
-import { DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY, LEARNED_WITH_LEARN_WORDS_KEY } from '../constants/storageKeys.js'
+import { CURRENT_LEVEL_KEY, DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY, LEARNED_WITH_LEARN_WORDS_KEY } from '../constants/storageKeys.js'
 
 let staticWordLists = {
   b1telcpt1: {
@@ -100,9 +100,9 @@ let totalWordsExercise = 0
 let initialTotalWords = 0 // Yeni eklenen değişken
 
 async function executeInitialLoadAndShow() {
-  const lastSelectedTopic = LocalStorageManager.load('lastSelectedTopic', 'b1telcpt1')
-  await loadWords(lastSelectedTopic)
-  console.log(currentType + 's ARE LOADED')
+  const currentLevel = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
+  await loadWords(currentLevel)
+  console.log(`LEVEL ${currentLevel} | ${currentType}s ARE LOADED`)
   showLearnWord()
   showExerciseWord()
 }
@@ -233,14 +233,14 @@ function showLearnElements() {
 document.querySelectorAll('.level-dropdown-link').forEach((link) => {
   link.addEventListener('click', async function (event) {
     event.preventDefault()
-    const selectedOption = link.getAttribute('data-option')
+    const updatedLevel = link.getAttribute('data-option')
     const selectedText = link.innerText
 
     // Seçilen option'ı localStorage'a kaydet
-    LocalStorageManager.save('lastSelectedTopic', selectedOption)
-    updateLevel(selectedOption)
+    LocalStorageManager.save(CURRENT_LEVEL_KEY, updatedLevel)
+    updateLevel(updatedLevel)
 
-    if (selectedOption) {
+    if (updatedLevel) {
       // Dropdown başlığını güncelle
       document.getElementById('dropdownHeader').innerText = selectedText
 
@@ -253,14 +253,14 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
       ).innerText = learnedWithExerciseWords[currentLevel][currentType].length
 
       // Seçilen konu başlığını güncelle
-      updateTopicNames(selectedOption)
+      updateTopicNames(updatedLevel)
 
       // İndeksleri sıfırla
       currentLearnIndex = learnedWithLearnWords[currentLevel][currentType].length
       currentExerciseIndex = learnedWithExerciseWords[currentLevel][currentType].length
 
       try {
-        await loadWords(selectedOption)
+        await loadWords(updatedLevel)
         console.log('JSON başarıyla yüklendi.')
         showLearnWord()
         showExerciseWord()
@@ -1548,13 +1548,14 @@ const clearDeprecatedLocalStorageItems = () => {
   const APP_VERSION = LocalStorageManager.load('APP_VERSION', null)
   
   if (APP_VERSION === null || APP_VERSION !== currentAppVersion) {
-    LocalStorageManager.remove('lastSelectedTopic')
-    LocalStorageManager.remove('inProgressWords')
+    LocalStorageManager.remove(CURRENT_LEVEL_KEY)
     LocalStorageManager.remove(LEARNED_WITH_LEARN_WORDS_KEY)
     LocalStorageManager.remove(LEARNED_WITH_EXERCISE_WORDS_KEY)
+    LocalStorageManager.remove('inProgressWords')
+    LocalStorageManager.remove('favoriteWords')
+    // LocalStorageManager.remove('lastSelectedTopic')
     // LocalStorageManager.remove('learnedWords')
     // LocalStorageManager.remove('correctAnswerWordsCounter')
-    LocalStorageManager.remove('favoriteWords')
 
     LocalStorageManager.save('APP_VERSION', currentAppVersion)
   }
@@ -1565,9 +1566,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   clearDeprecatedLocalStorageItems()
 
   try {
-    const lastSelectedTopic = 'b1telcpt1'
-    LocalStorageManager.save('lastSelectedTopic', lastSelectedTopic)
-    await loadWords(lastSelectedTopic)
+    const currentLevel = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
+    await loadWords(currentLevel)
     showLearnWord()
     showExerciseWord()
 
