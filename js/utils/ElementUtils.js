@@ -61,7 +61,7 @@ export default class ElementUtils {
   }
 
   static showImageIfExists(imageElementId, imageContainerElementId, question) {
-    const imageContainerElement = document.getElementsById(
+    const imageContainerElement = document.getElementById(
       imageContainerElementId
     )
     const imageElement = document.getElementById(imageElementId)
