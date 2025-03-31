@@ -125,13 +125,13 @@ const learnedWords = LocalStorageManager.load('learnedWords', {
   einburgerungstest: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
 })
 
-const correctAnswerWordsCounter = LocalStorageManager.load('correctAnswerWordsCounter', {
-  b1telcpt1: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
-  b1telcpt2: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
-  b1telcpt3: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
-  b1telcpt4: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
-  einburgerungstest: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
-})
+// const correctAnswerWordsCounter = LocalStorageManager.load('correctAnswerWordsCounter', {
+//   b1telcpt1: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
+//   b1telcpt2: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
+//   b1telcpt3: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
+//   b1telcpt4: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
+//   einburgerungstest: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
+// })
 
 let initialTotalWords = 0 // Yeni eklenen değişken
 
@@ -280,34 +280,20 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
       // Dropdown başlığını güncelle
       document.getElementById('dropdownHeader').innerText = selectedText
 
-      // // Sayaçları sıfırla
-      // Object.entries(learnedWords).forEach(([key, _]) => {
-      //   learnedWords[key] = 0
-      // })
-      // LocalStorageManager.save('learnedWords', learnedWords)
-
-      // Object.entries(correctAnswerWordsCounter).forEach(([key, _]) => {
-      //   correctAnswerWordsCounter[key] = 0
-      // })
-      // LocalStorageManager.save(
-      //   'correctAnswerWordsCounter',
-      //   correctAnswerWordsCounter
-      // )
-
       // UI'ı güncelle
       document.getElementById(
         'remainingWordsCountLearn-' + currentType
       ).innerText = learnedWords[currentLevel][currentType]
       document.getElementById(
         'remainingWordsCountExercise-' + currentType
-      ).innerText = correctAnswerWordsCounter[currentLevel][currentType]
+      ).innerText = learnedWithExerciseWords[currentLevel][currentType].length
 
       // Seçilen konu başlığını güncelle
       updateTopicNames(selectedOption)
 
       // İndeksleri sıfırla
       currentLearnIndex = learnedWords[currentLevel][currentType]
-      currentExerciseIndex = correctAnswerWordsCounter[currentLevel][currentType]
+      currentExerciseIndex = learnedWithExerciseWords[currentLevel][currentType].length
 
       try {
         await loadWords(selectedOption)
@@ -359,7 +345,7 @@ async function loadWords(topic) {
     ).innerText = learnedWords[currentLevel][currentType]
     document.getElementById(
       'remainingWordsCountExercise-' + currentType
-    ).innerText = correctAnswerWordsCounter[currentLevel][currentType]
+    ).innerText = learnedWithExerciseWords[currentLevel][currentType].length
     document.getElementById('totalWordsCountLearn-' + currentType).innerText =
       totalWordsLearn
     document.getElementById(
@@ -579,12 +565,12 @@ function showExerciseWord() {
   }
 
   if (
-    correctAnswerWordsCounter[currentLevel][currentType] ===
+    learnedWithExerciseWords[currentLevel][currentType].length ===
     kelimeListesiExercise.length
   ) {
     document.getElementById(
       'remainingWordsCountExercise-' + currentType
-    ).innerText = correctAnswerWordsCounter[currentLevel][currentType]
+    ).innerText = learnedWithExerciseWords[currentLevel][currentType].length
     showModal('You completed all exercise words! 🎉')
     document.getElementById('exampleLearn-' + currentType).innerText =
       'You learned all of the words, go to exercise section.'
@@ -1430,20 +1416,20 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 function updateExerciseCounter() {
-  correctAnswerWordsCounter[currentLevel][currentType]++
-  LocalStorageManager.save(
-    'correctAnswerWordsCounter',
-    correctAnswerWordsCounter
-  )
+  // correctAnswerWordsCounter[currentLevel][currentType]++
+  // LocalStorageManager.save(
+  //   'correctAnswerWordsCounter',
+  //   correctAnswerWordsCounter
+  // )
 
   document.getElementById(
     'remainingWordsCountExercise-' + currentType
-  ).innerText = correctAnswerWordsCounter[currentLevel][currentType]
+  ).innerText = learnedWithExerciseWords[currentLevel][currentType].length
   document.getElementById('totalWordsCountExercise-' + currentType).innerText =
     initialTotalWords
 
   if (
-    correctAnswerWordsCounter[currentLevel][currentType] >= initialTotalWords
+    learnedWithExerciseWords[currentLevel][currentType].length >= initialTotalWords
   ) {
     showModalExercise('You completed all exercise words! 🎉')
 
@@ -1594,7 +1580,7 @@ function navigateToPage(pageId) {
 }
 
 const clearDeprecatedLocalStorageItems = () => {
-  const currentAppVersion = "1.1.0"
+  const currentAppVersion = "1.1.1"
   const APP_VERSION = LocalStorageManager.load('APP_VERSION', null)
   
   if (APP_VERSION === null || APP_VERSION !== currentAppVersion) {
@@ -1603,7 +1589,7 @@ const clearDeprecatedLocalStorageItems = () => {
     LocalStorageManager.remove('learnedWithExerciseWords')
     LocalStorageManager.remove('learnedWords')
     LocalStorageManager.remove('learnedWithLearnWords')
-    LocalStorageManager.remove('correctAnswerWordsCounter')
+    // LocalStorageManager.remove('correctAnswerWordsCounter')
     LocalStorageManager.remove('favoriteWords')
 
     LocalStorageManager.save('APP_VERSION', currentAppVersion)
