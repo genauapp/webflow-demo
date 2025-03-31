@@ -4039,7 +4039,7 @@
     "id": 8,
     "question": "Welches Bundesland ist Bremen?",
     "answers": ["1", "2", "3", "4"],
-    "correct_answer": "3",
+    "correct_answer": "1",
     "state": "Bremen",
     "has_image": true
   },
@@ -4316,6 +4316,14 @@
   },
   {
     "id": 6,
+    "question": "Die Landeshauptstadt von Mecklenburg-Vorpommern heißt …",
+    "answers": ["Greifswald.", "Schwerin.", "Rostock.", "Wismar."],
+    "correct_answer": "Greifswald.",
+    "state": "Mecklenburg-Vorpommern",
+    "has_image": false
+  },
+  {
+    "id": 7,
     "question": "Wo können Sie sich in Mecklenburg-Vorpommern über politische Themen informieren?",
     "answers": [
       "bei der Landeszentrale für politische Bildung",
@@ -4324,14 +4332,6 @@
       "bei der Verbraucherzentrale"
     ],
     "correct_answer": "bei der Landeszentrale für politische Bildung",
-    "state": "Mecklenburg-Vorpommern",
-    "has_image": false
-  },
-  {
-    "id": 7,
-    "question": "Die Landeshauptstadt von Mecklenburg-Vorpommern heißt …",
-    "answers": ["Greifswald.", "Schwerin.", "Rostock.", "Wismar."],
-    "correct_answer": "Schwerin.",
     "state": "Mecklenburg-Vorpommern",
     "has_image": false
   },
@@ -4434,17 +4434,17 @@
   },
   {
     "id": 7,
-    "question": "Die Landeshauptstadt von Niedersachsen heißt …",
-    "answers": ["Hannover.", "Braunschweig.", "Wolfsburg.", "Osnabrück."],
-    "correct_answer": "Hannover.",
+    "question": "Welches Bundesland ist Niedersachsen?",
+    "answers": ["1", "2", "3", "4"],
+    "correct_answer": "1",
     "state": "Niedersachsen",
     "has_image": false
   },
   {
     "id": 8,
-    "question": "Welches Bundesland ist Niedersachsen?",
-    "answers": ["1", "2", "3", "4"],
-    "correct_answer": "1",
+    "question": "Die Landeshauptstadt von Niedersachsen heißt …",
+    "answers": ["Hannover.", "Braunschweig.", "Wolfsburg.", "Osnabrück."],
+    "correct_answer": "Hannover.",
     "state": "Niedersachsen",
     "has_image": true
   },
