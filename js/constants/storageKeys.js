@@ -1,5 +1,14 @@
 import { STATE_NATIONWIDE } from './states.js'
 
+/*
+  Homepage
+*/
+export const LEARNED_WITH_LEARN_WORDS_KEY = 'LEARNED_WITH_LEARN_WORDS'
+export const LEARNED_WITH_EXERCISE_WORDS_KEY = 'LEARNED_WITH_EXERCISE_WORDS'
+/*
+  Einbürgerungstest
+*/
+
 export const CURRENT_STATE_KEY = 'CURRENT_STATE'
 export const SHOULD_SHOW_ANSWER_KEY = 'SHOULD_SHOW_ANSWER'
 export const LEARN__STATE__QUESTION_INDEX_KEY = (state) => {
@@ -11,6 +20,53 @@ export const TEST_QUESTION_USER_ANSWER_KEY = 'TEST_QUESTION_USER_ANSWER'
 export const TEST_PROGRESSION_KEY = 'TEST_PROGRESSION'
 
 export class DEFAULT_VALUE {
+  /** 
+  Homepage
+  */
+  static LEARNED_WITH_LEARN_WORDS = {
+    b1telcpt1: {
+      noun: [],
+      verb: [],
+      adjective: [],
+      adverb: [],
+    },
+    b1telcpt2: {
+      noun: [],
+      verb: [],
+      adjective: [],
+      adverb: [],
+    },
+    b1telcpt3: {
+      noun: [],
+      verb: [],
+      adjective: [],
+      adverb: [],
+    },
+    b1telcpt4: {
+      noun: [],
+      verb: [],
+      adjective: [],
+      adverb: [],
+    },
+    einburgerungstest: {
+      noun: [],
+      verb: [],
+      adjective: [],
+      adverb: [],
+    },
+  }
+
+  static LEARNED_WITH_EXERCISE_WORDS = {
+    b1telcpt1: { noun: [], verb: [], adjective: [], adverb: [] },
+    b1telcpt2: { noun: [], verb: [], adjective: [], adverb: [] },
+    b1telcpt3: { noun: [], verb: [], adjective: [], adverb: [] },
+    b1telcpt4: { noun: [], verb: [], adjective: [], adverb: [] },
+    einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] },
+  }
+
+  /** 
+  Einbürgerungstest
+  */
   static CURRENT_STATE = STATE_NATIONWIDE
 
   static SHOULD_SHOW_ANSWER = true
