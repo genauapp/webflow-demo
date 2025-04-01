@@ -1440,8 +1440,9 @@ const repeatButtonClickHandler =  (event) =>{
 
   const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
   const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
+  const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY)
 
-  repeatLearn(level, wordType)
+  repeatLearn(level, wordType, learnedWithLearnWords)
 }
 
 function setupListenerForIknowAndLearn(iKnowButton, repeatButton) {
