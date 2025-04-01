@@ -1250,7 +1250,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
         buttonDer.style.visibility = 'visible'
         buttonDie.style.visibility = 'visible'
         buttonDas.style.visibility = 'visible'
-        showExerciseWord(level, wordType)
+        showExerciseWord(level, wordType, learnedWithExerciseWords)
       }, 3000)
     }
     console.log(`'${currentExerciseIndex}' index bu sayiya güncellendi.`)
