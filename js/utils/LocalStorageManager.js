@@ -1,4 +1,4 @@
-import { APP_VERSION_KEY, DEFAULT_VALUE } from '../constants/storageKeys'
+import { APP_VERSION_KEY, DEFAULT_VALUE } from '../constants/storageKeys.js'
 
 export default class LocalStorageManager {
   /**
