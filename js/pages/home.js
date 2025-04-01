@@ -1281,8 +1281,9 @@ const nonNounWrongAnswerClickHandler = (event) => {
 
     const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
+    const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
 
-    checkNonNounAnswer(false, level, wordType)
+    checkNonNounAnswer(false, level, wordType, learnedWithExerciseWords)
 } 
 
 const nonNounCorrectAnswerClickHandler = (event) => {
@@ -1290,8 +1291,9 @@ const nonNounCorrectAnswerClickHandler = (event) => {
 
   const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
   const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
+  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
 
-  checkNonNounAnswer(true, level, wordType)
+  checkNonNounAnswer(true, level, wordType, learnedWithExerciseWords)
 } 
 
 document
