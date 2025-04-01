@@ -1686,12 +1686,12 @@ function showModal(message, wordType) {
 
   closeButton.addEventListener('click', function () {
     modal.style.display = 'none' // **Kapatma butonuna tıklanınca gizle**
-    resetLearnButtons(wordType) // **🔥 Butonları tekrar aktif et**
+    // resetLearnButtons(wordType) // **🔥 Butonları tekrar aktif et**
   })
 
   setTimeout(() => {
     modal.style.display = 'none' // **3 saniye sonra otomatik kapanır**
-    resetLearnButtons(wordType) // **🔥 Butonları tekrar aktif et**
+    // resetLearnButtons(wordType) // **🔥 Butonları tekrar aktif et**
   }, 3000)
 }
 
