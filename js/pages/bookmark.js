@@ -1,3 +1,10 @@
+import LocalStorageManager from "../utils/LocalStorageManager.js"
+
+// On Initial Load
+document.addEventListener('DOMContentLoaded', () => {
+  LocalStorageManager.clearDeprecatedLocalStorageItems()
+})
+
 function listFavorites() {
   const favoritesContainer = document.getElementById('favoritesContainer')
 
