@@ -1,9 +1,14 @@
 import { STATE_NATIONWIDE } from './states.js'
 
 /*
+  App
+*/
+export const APP_VERSION_KEY = 'APP_VERSION'
+/*
   Homepage
 */
 export const CURRENT_LEVEL_KEY = 'CURRENT_LEVEL'
+export const CURRENT_WORD_TYPE_KEY = 'CURRENT_WORD_TYPE'
 export const LEARNED_WITH_LEARN_WORDS_KEY = 'LEARNED_WITH_LEARN_WORDS'
 export const LEARNED_WITH_EXERCISE_WORDS_KEY = 'LEARNED_WITH_EXERCISE_WORDS'
 /*
@@ -21,10 +26,16 @@ export const TEST_QUESTION_USER_ANSWER_KEY = 'TEST_QUESTION_USER_ANSWER'
 export const TEST_PROGRESSION_KEY = 'TEST_PROGRESSION'
 
 export class DEFAULT_VALUE {
+  /**
+   * App
+   */
+  static APP_VERSION = '1.1.2'
+
   /** 
   Homepage
   */
   static CURRENT_LEVEL = 'b1telcpt1'
+  static CURRENT_WORD_TYPE = 'noun'
 
   static LEARNED_WITH_LEARN_WORDS = {
     b1telcpt1: {
