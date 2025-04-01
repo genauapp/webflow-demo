@@ -172,50 +172,66 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
 })
 
 // On Word Type Change
-Webflow.push(() => {
+document.getElementById('nounTab').addEventListener('click', async () => {
   const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
   const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
   const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
 
+  console.log('Noun seçildi.')
+  const nounType = types[0]
+  LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, nounType)
 
-  console.log('Webflow tamamen yüklendi.')
-  const nounTab = document.getElementById('nounTab')
-  const verbTab = document.getElementById('verbTab')
-  const adjectiveTab = document.getElementById('adjectiveTab')
-  const adverbTab = document.getElementById('adverbTab')
-
-  nounTab.addEventListener('click', async () => {
-    console.log('Noun seçildi.')
-    const nounType = types[0]
-    LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, nounType)
-
-    await executeInitialLoadAndShow(level, nounType, learnedWithLearnWords, learnedWithExerciseWords)
-  })
-
-  verbTab.addEventListener('click', async () => {
-    console.log('Verb seçildi.')
-    const verbType = types[1]
-    LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, verbType)
-
-    await executeInitialLoadAndShow(level, verbType, learnedWithLearnWords, learnedWithExerciseWords)
-  })
-
-  adjectiveTab.addEventListener('click', async () => {
-    console.log('Adjective seçildi.')
-    const adjectiveType = types[2]
-    LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, adjectiveType)
-
-    await executeInitialLoadAndShow(level, adjectiveType, learnedWithLearnWords, learnedWithExerciseWords)
-  })
-
-  adverbTab.addEventListener('click', async () => {
-    console.log('Adverb seçildi.')
-    const adverbType = types[3]
-    LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, adverbType)
-
-    await executeInitialLoadAndShow(level, adverbType, learnedWithLearnWords, learnedWithExerciseWords)
-  })
+  await executeInitialLoadAndShow(level, nounType, learnedWithLearnWords, learnedWithExerciseWords)
 })
+
+document.getElementById('verbTab').addEventListener('click', async () => {
+  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+  const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
+  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
+
+  console.log('Verb seçildi.')
+  const verbType = types[1]
+  LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, verbType)
+
+  await executeInitialLoadAndShow(level, verbType, learnedWithLearnWords, learnedWithExerciseWords)
+})
+
+document.getElementById('adjectiveTab').addEventListener('click', async () => {
+  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+  const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
+  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
+
+  console.log('Adjective seçildi.')
+  const adjectiveType = types[2]
+  LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, adjectiveType)
+
+  await executeInitialLoadAndShow(level, adjectiveType, learnedWithLearnWords, learnedWithExerciseWords)
+})
+
+document.getElementById('adverbTab').addEventListener('click', async () => {
+  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+  const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
+  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
+
+  console.log('Adverb seçildi.')
+  const adverbType = types[3]
+  LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, adverbType)
+
+  await executeInitialLoadAndShow(level, adverbType, learnedWithLearnWords, learnedWithExerciseWords)
+})
+
+// On Word Type Change
+// Webflow.push(() => {
+
+
+//   console.log('Webflow tamamen yüklendi.')
+//   const nounTab = document.getElementById('nounTab')
+//   const verbTab = document.getElementById('verbTab')
+//   const adjectiveTab = document.getElementById('adjectiveTab')
+//   const adverbTab = document.getElementById('adverbTab')
+
+
+// })
 
 async function executeInitialLoadAndShow(level, wordType, learnedWithLearnWords, learnedWithExerciseWords) {
   try {
