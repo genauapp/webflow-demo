@@ -408,41 +408,35 @@ function iKnowLearn(level, wordType, learnedWithLearnWords) {
   //   currentLearnIndex >= kelimeListesi.length ||
   //   learnedWithLearnWords[level][wordType].length >= initialTotalWords
   // ) {
-    if (
-      !kelimeListesi.length ||
-      currentLearnIndex > learnedWithLearnWords[level][wordType].length ||
-      learnedWithLearnWords[level][wordType].length >= initialTotalWords
-    ) {
-      console.log(`!kelimeListesi.length: ${!kelimeListesi.length}`)
-  console.log(`currentLearnIndex: ${currentLearnIndex} ||| >= ||| learnedWithLearnWords[level][wordType].length: ${learnedWithLearnWords[level][wordType].length}`)
-  console.log(`learnedWithLearnWords[level][wordType].length: ${learnedWithLearnWords[level][wordType].length} ||| >= ||| initialTotalWords: ${initialTotalWords}`)
-    const iKnowButton = document.getElementById(
-      `iKnowButtonLearn-${wordType}`
-    )
-    const repeatButton = document.getElementById(
-      `repeatButtonLearn-${wordType}`
-    )
-    if (iKnowButton) {
-      iKnowButton.style.visibility = 'hidden'
-    }
-    if (repeatButton) {
-      repeatButton.style.visibility = 'hidden'
-    }
-    return
-  }
+  //   if (
+  //     !kelimeListesi.length ||
+  //     currentLearnIndex > learnedWithLearnWords[level][wordType].length ||
+  //     learnedWithLearnWords[level][wordType].length >= initialTotalWords
+  //   ) {
+  //     console.log(`!kelimeListesi.length: ${!kelimeListesi.length}`)
+  // console.log(`currentLearnIndex: ${currentLearnIndex} ||| >= ||| kelimeListesi.length: ${learnedWithLearnWords[level][wordType].length}`)
+  // console.log(`learnedWithLearnWords[level][wordType].length: ${learnedWithLearnWords[level][wordType].length} ||| >= ||| initialTotalWords: ${initialTotalWords}`)
+  //   const iKnowButton = document.getElementById(
+  //     `iKnowButtonLearn-${wordType}`
+  //   )
+  //   const repeatButton = document.getElementById(
+  //     `repeatButtonLearn-${wordType}`
+  //   )
+  //   if (iKnowButton) {
+  //     iKnowButton.style.visibility = 'hidden'
+  //   }
+  //   if (repeatButton) {
+  //     repeatButton.style.visibility = 'hidden'
+  //   }
+  //   return
+  // }
+
+  console.log(`current level: ${level}`)
+  console.log(`current wordType: ${wordType}`)
+  console.log(`current learnedWithLearnWords: ${learnedWithLearnWords}`)
+  console.log(`current kelimeListesi: ${kelimeListesi}`)
 
   const currentWord = kelimeListesi[currentLearnIndex]
-
-  // Kelimeyi öğrenilenlere ekle
-  // learnedWithLearnWords[currentLevel][currentType].push({
-  //   almanca: currentWord.almanca,
-  //   ingilizce: currentWord.ingilizce,
-  //   seviye: currentWord.seviye || 'N/A',
-  // })
-
-  if (learnedWithLearnWords[level][wordType].length < initialTotalWords) {
-    // learnedWords[currentLevel][currentType]++
-    // LocalStorageManager.save('learnedWords', learnedWords)
 
     learnedWithLearnWords[level][wordType].push({
       almanca: currentWord.almanca,
@@ -450,14 +444,6 @@ function iKnowLearn(level, wordType, learnedWithLearnWords) {
       seviye: currentWord.seviye || 'N/A',
     })
     LocalStorageManager.save(LEARNED_WITH_LEARN_WORDS_KEY, learnedWithLearnWords)
-
-    kelimeListesi.splice(currentLearnIndex, 1)
-
-    document.getElementById(
-      `remainingWordsCountLearn-${wordType}`
-    ).innerText = learnedWithLearnWords[level][wordType].length
-    document.getElementById(`totalWordsCountLearn-${wordType}`).innerText =
-      initialTotalWords
 
     if (learnedWithLearnWords[level][wordType].length >= initialTotalWords) {
       showModal('You learned all words! 🎉', wordType)
@@ -475,11 +461,19 @@ function iKnowLearn(level, wordType, learnedWithLearnWords) {
       }
     }
 
+    kelimeListesi.splice(currentLearnIndex, 1)
+
+    document.getElementById(
+      `remainingWordsCountLearn-${wordType}`
+    ).innerText = learnedWithLearnWords[level][wordType].length
+    document.getElementById(`totalWordsCountLearn-${wordType}`).innerText =
+      initialTotalWords
+
     if (kelimeListesi.length > 0) {
       currentLearnIndex = currentLearnIndex % kelimeListesi.length
       showLearnWord(level, wordType, learnedWithLearnWords)
     }
-  }
+  
 }
 
 // On Learn: Add to Favorites Click
@@ -1431,33 +1425,37 @@ function setupEventListeners() {
   }
 }
 
+const iKnowButtonClickHandler =  (event) =>{
+  event.preventDefault()
+
+  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
+  const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY)
+
+  iKnowLearn(level, wordType, learnedWithLearnWords)
+}
+
+const repeatButtonClickHandler =  (event) =>{
+  event.preventDefault()
+
+  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
+
+  repeatLearn(level, wordType)
+}
+
 function setupListenerForIknowAndLearn(iKnowButton, repeatButton) {
+  // I Know button
+  if (iKnowButton && !iKnowButton.hasAttribute('listener-attached')) {
+    iKnowButton.addEventListener('click', iKnowButtonClickHandler)
+    iKnowButton.setAttribute('listener-attached', 'true')
+  }
   // Repeat button
   if (repeatButton && !repeatButton.hasAttribute('listener-attached')) {
-    repeatButton.addEventListener('click', function (event) {
-      event.preventDefault()
-
-      const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
-      const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
-
-      repeatLearn(level, wordType)
-    })
+    repeatButton.addEventListener('click', repeatButtonClickHandler)
     repeatButton.setAttribute('listener-attached', 'true')
   }
 
-  // I Know button
-  if (iKnowButton && !iKnowButton.hasAttribute('listener-attached')) {
-    iKnowButton.addEventListener('click', function (event) {
-      event.preventDefault()
-
-      const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
-      const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
-      const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY)
-
-      iKnowLearn(level, wordType, learnedWithLearnWords)
-    })
-    iKnowButton.setAttribute('listener-attached', 'true')
-  }
 }
 
 // UI visibility functions
@@ -1589,6 +1587,33 @@ function updateFavoriteIcons(wordType) {
   }
 }
 
+const resetLearnButtons = (wordType) => {
+
+    const iKnowButton = document.getElementById(`iKnowButtonLearn-${wordType}`)
+    const repeatButton = document.getElementById(`repeatButtonLearn-${wordType}`)
+  
+
+    if (iKnowButton && repeatButton) {
+      // **Butonları tekrar görünür hale getir**
+      iKnowButton.style.visibility = 'visible'
+      repeatButton.style.visibility = 'visible'
+
+      // **Önce eski event listener'ları kaldır**
+      const newIKnowButton = iKnowButton.cloneNode(true)
+      const newRepeatButton = repeatButton.cloneNode(true)
+
+      iKnowButton.parentNode.replaceChild(newIKnowButton, iKnowButton)
+      repeatButton.parentNode.replaceChild(newRepeatButton, repeatButton)
+
+      // **Yeni event listener'ları ekleyelim**
+      newIKnowButton.addEventListener('click', iKnowButtonClickHandler)
+      newRepeatButton.addEventListener('click', repeatButtonClickHandler)
+
+
+      console.log('🔥 I Know, Repeat butonları tekrar aktif hale getirildi.')
+    }
+}  
+
 
 function resetExerciseButtons(wordType) {
   if (wordType === 'noun') {
@@ -1661,12 +1686,12 @@ function showModal(message, wordType) {
 
   closeButton.addEventListener('click', function () {
     modal.style.display = 'none' // **Kapatma butonuna tıklanınca gizle**
-    resetExerciseButtons(wordType) // **🔥 Butonları tekrar aktif et**
+    resetLearnButtons(wordType) // **🔥 Butonları tekrar aktif et**
   })
 
   setTimeout(() => {
     modal.style.display = 'none' // **3 saniye sonra otomatik kapanır**
-    resetExerciseButtons(wordType) // **🔥 Butonları tekrar aktif et**
+    resetLearnButtons(wordType) // **🔥 Butonları tekrar aktif et**
   }, 3000)
 }
 
