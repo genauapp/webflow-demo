@@ -429,7 +429,7 @@ function iKnowLearn(level, wordType) {
       initialTotalWords
 
     if (learnedWithLearnWords[level][wordType].length >= initialTotalWords) {
-      showModal('You learned all words! 🎉')
+      showModal('You learned all words! 🎉', wordType)
       const iKnowButton = document.getElementById(
         `iKnowButtonLearn-${wordType}`
       )
@@ -695,7 +695,7 @@ function showExerciseWord(level, wordType) {
     document.getElementById(
       `remainingWordsCountExercise-${wordType}`
     ).innerText = learnedWithExerciseWords[level][wordType].length
-    showModal('You completed all exercise words! 🎉')
+    showModal('You completed all exercise words! 🎉', wordType)
     document.getElementById(`exampleLearn-${wordType}`).innerText =
       'You learned all of the words, go to exercise section.'
 
@@ -1496,7 +1496,7 @@ function updateExerciseCounter(level, wordType) {
   if (
     learnedWithExerciseWords[level][wordType].length >= initialTotalWords
   ) {
-    showModalExercise('You completed all exercise words! 🎉')
+    showModalExercise('You completed all exercise words! 🎉', wordType)
 
     if (wordType === 'noun') {
       document.getElementById('buttonDer').style.visibility = 'hidden'
