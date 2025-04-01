@@ -581,6 +581,14 @@ function artikelRenk(artikel) {
 }
 
 function showLearnWord(level, wordType, learnedWithLearnWords) {
+  const iKnowButton = document.getElementById(
+    `iKnowButtonLearn-${wordType}`
+  )
+  const repeatButton = document.getElementById(
+    `repeatButtonLearn-${wordType}`
+  )
+
+
   if (!kelimeListesi || kelimeListesi.length === 0) {
     document.getElementById(`wordLearn-${wordType}`).innerText =
       'No words to display.'
@@ -589,12 +597,6 @@ function showLearnWord(level, wordType, learnedWithLearnWords) {
     document.getElementById(`levelTagLearn-${wordType}`).innerText = ''
     document.getElementById(`ruleLearn-${wordType}`).innerText = '' // Kural boş
 
-    const iKnowButton = document.getElementById(
-      `iKnowButtonLearn-${wordType}`
-    )
-    const repeatButton = document.getElementById(
-      `repeatButtonLearn-${wordType}`
-    )
 
     if (iKnowButton) {
       iKnowButton.style.visibility = 'hidden'
@@ -604,6 +606,9 @@ function showLearnWord(level, wordType, learnedWithLearnWords) {
     }
     return
   }
+
+  iKnowButton.style.visibility = 'visible'
+  repeatButton.style.visibility = 'visible'
 
   const { almanca, ingilizce, ornek, highlight, seviye, kural } =
     kelimeListesi[currentLearnIndex]
