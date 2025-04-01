@@ -59,10 +59,6 @@ let staticWordLists = {
   }
 }
 
-let learnedWithLearnWords = DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS
-
-export let learnedWithExerciseWords = DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS
-
 let inProgressWords = {
   b1telcpt1: { noun: [], verb: [], adjective: [], adverb: [] },
   b1telcpt2: { noun: [], verb: [], adjective: [], adverb: [] },
@@ -94,10 +90,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   const defaultWordType = DEFAULT_VALUE.CURRENT_WORD_TYPE
   LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, defaultWordType)
 
+  const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
+  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
+
   showSkeleton(defaultWordType)
 
   try {
-    await executeInitialLoadAndShow(defaultLevel, defaultWordType)
+    await executeInitialLoadAndShow(defaultLevel, defaultWordType, learnedWithLearnWords, learnedWithExerciseWords)
 
     // Sayfa yüklendiğinde buton kontrolü
     if (learnedWithLearnWords[defaultLevel][defaultWordType].length >= initialTotalWords) {
@@ -140,10 +139,13 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
     event.preventDefault()
     const updatedLevel = link.getAttribute('data-option')
     const selectedText = link.innerText
-
     // Seçilen option'ı localStorage'a kaydet
     LocalStorageManager.save(CURRENT_LEVEL_KEY, updatedLevel)
+
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
+    const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
+    const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
+  
 
     if (updatedLevel) {
       // Dropdown başlığını güncelle
@@ -164,7 +166,7 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
       currentLearnIndex = learnedWithLearnWords[updatedLevel][wordType].length
       currentExerciseIndex = learnedWithExerciseWords[updatedLevel][wordType].length
 
-      await executeInitialLoadAndShow(updatedLevel, wordType)
+      await executeInitialLoadAndShow(updatedLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords)
     }
   })
 })
@@ -172,6 +174,9 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
 // On Word Type Change
 Webflow.push(() => {
   const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+  const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
+  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
+
 
   console.log('Webflow tamamen yüklendi.')
   const nounTab = document.getElementById('nounTab')
@@ -184,7 +189,7 @@ Webflow.push(() => {
     const nounType = types[0]
     LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, nounType)
 
-    await executeInitialLoadAndShow(level, nounType)
+    await executeInitialLoadAndShow(level, nounType, learnedWithLearnWords, learnedWithExerciseWords)
   })
 
   verbTab.addEventListener('click', async () => {
@@ -192,7 +197,7 @@ Webflow.push(() => {
     const verbType = types[1]
     LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, verbType)
 
-    await executeInitialLoadAndShow(level, verbType)
+    await executeInitialLoadAndShow(level, verbType, learnedWithLearnWords, learnedWithExerciseWords)
   })
 
   adjectiveTab.addEventListener('click', async () => {
@@ -200,7 +205,7 @@ Webflow.push(() => {
     const adjectiveType = types[2]
     LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, adjectiveType)
 
-    await executeInitialLoadAndShow(level, adjectiveType)
+    await executeInitialLoadAndShow(level, adjectiveType, learnedWithLearnWords, learnedWithExerciseWords)
   })
 
   adverbTab.addEventListener('click', async () => {
@@ -208,24 +213,24 @@ Webflow.push(() => {
     const adverbType = types[3]
     LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, adverbType)
 
-    await executeInitialLoadAndShow(level, adverbType)
+    await executeInitialLoadAndShow(level, adverbType, learnedWithLearnWords, learnedWithExerciseWords)
   })
 })
 
-async function executeInitialLoadAndShow(level, wordType) {
+async function executeInitialLoadAndShow(level, wordType, learnedWithLearnWords, learnedWithExerciseWords) {
   try {
-    await loadWords(level, wordType)
+    await loadWords(level, wordType, learnedWithLearnWords, learnedWithExerciseWords)
     console.log(`LEVEL ${level} | ${wordType}s ARE LOADED`)
     console.log('JSON başarıyla yüklendi.')
-    showLearnWord(level, wordType)
-    showExerciseWord(level, wordType)
+    showLearnWord(level, wordType, learnedWithLearnWords)
+    showExerciseWord(level, wordType, learnedWithExerciseWords)
   } catch (error) {
     console.error('Kelime yükleme hatası:', error)
   }
 }
 
 // Kelime yükleme fonksiyonu
-async function loadWords(level, wordType) {
+async function loadWords(level, wordType, learnedWithLearnWords, learnedWithExerciseWords) {
 
   try {
     showSkeleton(wordType)
@@ -318,6 +323,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 function navigateToPage(pageId) {
   const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
   const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
+  const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
+  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
+
+
 
   showSkeleton(wordType)
   setTimeout(() => {
@@ -359,7 +368,7 @@ function navigateToPage(pageId) {
 }
 
 // On Learn: Repeat Click
-function repeatLearn(level, wordType) {
+function repeatLearn(level, wordType, learnedWithLearnWords) {
   if (!kelimeListesi.length || currentLearnIndex >= kelimeListesi.length) {
     console.log('No words to repeat')
     return
@@ -373,11 +382,11 @@ function repeatLearn(level, wordType) {
   currentLearnIndex = currentLearnIndex % kelimeListesi.length
 
   // Show the next word
-  showLearnWord(level, wordType)
+  showLearnWord(level, wordType, learnedWithLearnWords)
 }
 
 // On Learn: I Know Click
-function iKnowLearn(level, wordType) {
+function iKnowLearn(level, wordType, learnedWithLearnWords) {
   if (
     !kelimeListesi.length ||
     currentLearnIndex >= kelimeListesi.length ||
@@ -398,8 +407,6 @@ function iKnowLearn(level, wordType) {
     return
   }
 
-  learnedWithLearnWords =
-    LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
   const currentWord = kelimeListesi[currentLearnIndex]
 
   // Kelimeyi öğrenilenlere ekle
@@ -446,7 +453,7 @@ function iKnowLearn(level, wordType) {
 
     if (kelimeListesi.length > 0) {
       currentLearnIndex = currentLearnIndex % kelimeListesi.length
-      showLearnWord(level, wordType)
+      showLearnWord(level, wordType, learnedWithLearnWords)
     }
   }
 }
@@ -557,7 +564,7 @@ function artikelRenk(artikel) {
   return 'black'
 }
 
-function showLearnWord(level, wordType) {
+function showLearnWord(level, wordType, learnedWithLearnWords) {
   if (!kelimeListesi || kelimeListesi.length === 0) {
     document.getElementById(`wordLearn-${wordType}`).innerText =
       'No words to display.'
@@ -650,7 +657,7 @@ function showLearnWord(level, wordType) {
   updateFavoriteIcons(wordType)
 }
 
-function showExerciseWord(level, wordType) {
+function showExerciseWord(level, wordType, learnedWithExerciseWords) {
   if (!kelimeListesiExercise.length) {
     // Liste boşsa UI'ı temizle
     document.getElementById(`levelTagExercise-${wordType}`).innerText = ''
@@ -666,10 +673,6 @@ function showExerciseWord(level, wordType) {
 
   inProgressWords =
     LocalStorageManager.load('inProgressWords', inProgressWords)
-
-  learnedWithExerciseWords =
-    LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
-    
     
 
   // 🟢 `kelimeListesi` içinden `learnedWords`'de olanları çıkar
@@ -806,7 +809,7 @@ document
     checkNounAnswer('das')
   })
 
-function checkNonNounAnswer(isUserInputCorrect, level, wordType) {
+function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExerciseWords) {
     // Eğer liste boşsa veya index liste dışındaysa, işlemi durdur
     if (
       !kelimeListesiExercise.length ||
@@ -817,9 +820,6 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType) {
     }
   
     inProgressWords = LocalStorageManager.load('inProgressWords', inProgressWords)
-    learnedWithExerciseWords =
-      LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
-      
   
   
     const currentWord = kelimeListesiExercise[currentExerciseIndex]
@@ -909,7 +909,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType) {
               `progressRight-${wordType}`
             ).style.opacity = '1'
           }
-          updateExerciseCounter()
+          updateExerciseCounter(level, wordType, learnedWithExerciseWords)
           kelimeListesiExercise.splice(currentExerciseIndex, 1)
           currentExerciseIndex--
           if (currentExerciseIndex >= kelimeListesiExercise.length) {
@@ -959,7 +959,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType) {
         // document.getElementById('correctAnswerField').innerHTML = '___' // Tekrar boş bırak
         buttonWrong.style.visibility = 'visible'
         buttonCorrect.style.visibility = 'visible'
-        showExerciseWord(level, wordType)
+        showExerciseWord(level, wordType, learnedWithExerciseWords)
       }, 1000)
       LocalStorageManager.save(
         LEARNED_WITH_EXERCISE_WORDS_KEY,
@@ -1010,7 +1010,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType) {
         // document.getElementById('correctAnswerField').innerHTML = '___' // Tekrar boş bırak
         buttonWrong.style.visibility = 'visible'
         buttonCorrect.style.visibility = 'visible'
-        showExerciseWord(level, wordType)
+        showExerciseWord(level, wordType, learnedWithExerciseWords)
       }, 3000)
     }
   
@@ -1018,7 +1018,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType) {
     LocalStorageManager.save('inProgressWords', inProgressWords)
 }
   
-function checkNounAnswer(userArtikel, level, wordType) {
+function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords) {
     // Eğer liste boşsa veya index liste dışındaysa, işlemi durdur
     if (
       !kelimeListesiExercise.length ||
@@ -1039,9 +1039,6 @@ function checkNounAnswer(userArtikel, level, wordType) {
       `'${kelimeListesiExercise.length}' kelime listesi uzunlugu böyleydi.`
     )
     inProgressWords = LocalStorageManager.load('inProgressWords', inProgressWords)
-    learnedWithExerciseWords =
-      LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
-      
   
     const inProgressIndex = inProgressWords[level][wordType].findIndex(
       (item) => item.almanca === currentWord.almanca
@@ -1130,7 +1127,7 @@ function checkNounAnswer(userArtikel, level, wordType) {
               `progressRight-${wordType}`
             ).style.opacity = '1'
           }
-          updateExerciseCounter(level, wordType)
+          updateExerciseCounter(level, wordType, learnedWithExerciseWords)
           kelimeListesiExercise.splice(currentExerciseIndex, 1)
           currentExerciseIndex--
           if (currentExerciseIndex >= kelimeListesiExercise.length) {
@@ -1181,7 +1178,7 @@ function checkNounAnswer(userArtikel, level, wordType) {
         buttonDer.style.visibility = 'visible'
         buttonDie.style.visibility = 'visible'
         buttonDas.style.visibility = 'visible'
-        showExerciseWord(level, wordType)
+        showExerciseWord(level, wordType, learnedWithExerciseWords)
       }, 1000)
       LocalStorageManager.save(
         LEARNED_WITH_EXERCISE_WORDS_KEY,
@@ -1402,8 +1399,9 @@ function setupListenerForIknowAndLearn(iKnowButton, repeatButton) {
 
       const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
       const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
+      const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY)
 
-      iKnowLearn(level, wordType)
+      iKnowLearn(level, wordType, learnedWithLearnWords)
     })
     iKnowButton.setAttribute('listener-attached', 'true')
   }
@@ -1480,7 +1478,7 @@ function showLearnElements(wordType) {
 //     })
 // })
 
-function updateExerciseCounter(level, wordType) {
+function updateExerciseCounter(level, wordType, learnedWithExerciseWords) {
   // correctAnswerWordsCounter[currentLevel][currentType]++
   // LocalStorageManager.save(
   //   'correctAnswerWordsCounter',
