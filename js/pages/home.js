@@ -788,26 +788,46 @@ function showExerciseWord(level, wordType, learnedWithExerciseWords) {
   document.getElementById(`feedbackMessage-${wordType}`).innerText = ''
 }
 
+export const nounDerAnswerClickHandler = function (event) {
+  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
+  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
+  
+  event.preventDefault() // Sayfanın yukarı kaymasını engeller
+  checkNounAnswer('der', level, wordType, learnedWithExerciseWords)
+}
+
+export const nounDieAnswerClickHandler = function (event) {
+  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
+  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
+  
+  event.preventDefault() // Sayfanın yukarı kaymasını engeller
+  checkNounAnswer('die', level, wordType, learnedWithExerciseWords)
+}
+
+export const nounDasAnswerClickHandler =  (event) => {
+  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
+  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
+  
+  event.preventDefault() // Sayfanın yukarı kaymasını engeller
+  checkNounAnswer('das', level, wordType, learnedWithExerciseWords)
+}
+
+
+
 document
   .getElementById('buttonDer')
-  .addEventListener('click', function (event) {
-    event.preventDefault() // Sayfanın yukarı kaymasını engeller
-    checkNounAnswer('der')
-  })
+  .addEventListener('click', nounDasAnswerClickHandler)
 
 document
   .getElementById('buttonDie')
-  .addEventListener('click', function (event) {
-    event.preventDefault()
-    checkNounAnswer('die')
-  })
+  .addEventListener('click', nounDieAnswerClickHandler)
 
 document
   .getElementById('buttonDas')
-  .addEventListener('click', function (event) {
-    event.preventDefault()
-    checkNounAnswer('das')
-  })
+  .addEventListener('click', nounDasAnswerClickHandler)
 
 function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExerciseWords) {
     // Eğer liste boşsa veya index liste dışındaysa, işlemi durdur
@@ -1262,6 +1282,8 @@ document
   .getElementById('wrongButton-verb')
   .addEventListener('click', nonNounWrongAnswerClickHandler)
 
+
+  
 document
   .getElementById('correctButton-verb')
   .addEventListener('click', nonNounCorrectAnswerClickHandler)
@@ -1559,20 +1581,11 @@ function resetExerciseButtons(wordType) {
       buttonDas.parentNode.replaceChild(newButtonDas, buttonDas)
 
       // **Yeni event listener'ları ekleyelim**
-      newButtonDer.addEventListener('click', function (event) {
-        event.preventDefault()
-        checkNounAnswer('der')
-      })
+      newButtonDer.addEventListener('click', nounDerAnswerClickHandler)
 
-      newButtonDie.addEventListener('click', function (event) {
-        event.preventDefault()
-        checkNounAnswer('die')
-      })
+      newButtonDie.addEventListener('click', nounDieAnswerClickHandler)
 
-      newButtonDas.addEventListener('click', function (event) {
-        event.preventDefault()
-        checkNounAnswer('das')
-      })
+      newButtonDas.addEventListener('click', nounDasAnswerClickHandler)
 
       console.log('🔥 Der, Die, Das butonları tekrar aktif hale getirildi.')
     }
