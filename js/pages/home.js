@@ -89,46 +89,48 @@ let initialTotalWords = 0 // Yeni eklenen değişken
 document.addEventListener('DOMContentLoaded', async () => {
   LocalStorageManager.clearDeprecatedLocalStorageItems()
 
-  const recentLevel = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
-  const recentWordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
+  const defaultLevel = DEFAULT_VALUE.CURRENT_LEVEL
+  LocalStorageManager.save(CURRENT_LEVEL_KEY, defaultLevel)
+  const defaultWordType = DEFAULT_VALUE.CURRENT_WORD_TYPE
+  LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, defaultWordType)
 
-  showSkeleton(recentWordType)
+  showSkeleton(defaultWordType)
 
   try {
-    await executeInitialLoadAndShow(recentLevel, recentWordType)
+    await executeInitialLoadAndShow(defaultLevel, defaultWordType)
 
     // Sayfa yüklendiğinde buton kontrolü
-    if (learnedWithLearnWords[recentLevel][recentWordType].length >= initialTotalWords) {
+    if (learnedWithLearnWords[defaultLevel][defaultWordType].length >= initialTotalWords) {
       document.getElementById(
-        'iKnowButtonLearn-' + recentWordType
+        'iKnowButtonLearn-' + defaultWordType
       ).style.visibility = 'hidden'
       document.getElementById(
-        'repeatButtonLearn-' + recentWordType
+        'repeatButtonLearn-' + defaultWordType
       ).style.visibility = 'hidden'
     }
     if (
-      learnedWithExerciseWords[recentLevel][recentWordType] >= initialTotalWords
+      learnedWithExerciseWords[defaultLevel][defaultWordType] >= initialTotalWords
     ) {
-      if (recentWordType === 'noun') {
+      if (defaultWordType === 'noun') {
         document.getElementById('buttonDer').style.visibility = 'hidden'
         document.getElementById('buttonDie').style.visibility = 'hidden'
         document.getElementById('buttonDas').style.visibility = 'hidden'
       } else if (
-        recentWordType === 'verb' ||
-        recentWordType === 'adjective' ||
-        recentWordType === 'adverb'
+        defaultWordType === 'verb' ||
+        defaultWordType === 'adjective' ||
+        defaultWordType === 'adverb'
       ) {
-        document.getElementById(`wrongButton-${recentWordType}`).style.visibility =
+        document.getElementById(`wrongButton-${defaultWordType}`).style.visibility =
           'hidden'
         document.getElementById(
-          `correctButton-${recentWordType}`
+          `correctButton-${defaultWordType}`
         ).style.visibility = 'hidden'
       }
     }
   } catch (error) {
     console.error('Başlangıç yüklemesi hatası:', error)
   } finally {
-    hideSkeleton(recentWordType)
+    hideSkeleton(defaultWordType)
   }
 })
 
