@@ -819,7 +819,7 @@ export const nounDasAnswerClickHandler =  (event) => {
 
 document
   .getElementById('buttonDer')
-  .addEventListener('click', nounDasAnswerClickHandler)
+  .addEventListener('click', nounDerAnswerClickHandler)
 
 document
   .getElementById('buttonDie')
