@@ -1515,6 +1515,10 @@ function updateExerciseCounter(level, wordType) {
   }
 }
 
+function isItInFavorites(currentWord, favoriteWords) {
+  return favoriteWords.some((word) => word.almanca === currentWord.almanca)
+}
+
 function updateFavoriteIcons(wordType) {
   const inFavImage = document.getElementById(`infav-${wordType}`)
   const outFavImage = document.getElementById(`outfav-${wordType}`)
