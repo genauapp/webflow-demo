@@ -403,11 +403,19 @@ function repeatLearn(level, wordType, learnedWithLearnWords) {
 
 // On Learn: I Know Click
 function iKnowLearn(level, wordType, learnedWithLearnWords) {
-  if (
-    !kelimeListesi.length ||
-    currentLearnIndex >= kelimeListesi.length ||
-    learnedWithLearnWords[level][wordType].length >= initialTotalWords
-  ) {
+  // if (
+  //   !kelimeListesi.length ||
+  //   currentLearnIndex >= kelimeListesi.length ||
+  //   learnedWithLearnWords[level][wordType].length >= initialTotalWords
+  // ) {
+    if (
+      !kelimeListesi.length ||
+      currentLearnIndex > learnedWithLearnWords[level][wordType].length ||
+      learnedWithLearnWords[level][wordType].length >= initialTotalWords
+    ) {
+      console.log(`!kelimeListesi.length: ${!kelimeListesi.length}`)
+  console.log(`currentLearnIndex: ${currentLearnIndex} ||| >= ||| learnedWithLearnWords[level][wordType].length: ${learnedWithLearnWords[level][wordType].length}`)
+  console.log(`learnedWithLearnWords[level][wordType].length: ${learnedWithLearnWords[level][wordType].length} ||| >= ||| initialTotalWords: ${initialTotalWords}`)
     const iKnowButton = document.getElementById(
       `iKnowButtonLearn-${wordType}`
     )
