@@ -718,7 +718,8 @@ function showExerciseWord(level, wordType, learnedWithExerciseWords) {
 
   if (
     learnedWithExerciseWords[level][wordType].length ===
-    kelimeListesiExercise.length
+    // kelimeListesiExercise.length
+    totalWordsExercise
   ) {
     document.getElementById(
       `remainingWordsCountExercise-${wordType}`
