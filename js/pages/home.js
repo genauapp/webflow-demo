@@ -431,10 +431,26 @@ function iKnowLearn(level, wordType, learnedWithLearnWords) {
   //   return
   // }
 
+  if (learnedWithLearnWords[level][wordType].length + 1 === initialTotalWords) {
+    showModal('You learned all words! 🎉', wordType)
+    // const iKnowButton = document.getElementById(
+    //   `iKnowButtonLearn-${wordType}`
+    // )
+    // const repeatButton = document.getElementById(
+    //   `repeatButtonLearn-${wordType}`
+    // )
+    // if (iKnowButton) {
+    //   iKnowButton.style.visibility = 'hidden'
+    // }
+    // if (repeatButton) {
+    //   repeatButton.style.visibility = 'hidden'
+    // }
+  }
+
   console.log(`current level: ${level}`)
   console.log(`current wordType: ${wordType}`)
-  console.log(`current learnedWithLearnWords: ${learnedWithLearnWords}`)
-  console.log(`current kelimeListesi: ${kelimeListesi}`)
+  console.log(`current learnedWithLearnWords: ${JSON.stringify(learnedWithLearnWords)}`)
+  console.log(`current kelimeListesi: ${JSON.stringify(kelimeListesi)}`)
 
   const currentWord = kelimeListesi[currentLearnIndex]
 
@@ -445,21 +461,7 @@ function iKnowLearn(level, wordType, learnedWithLearnWords) {
     })
     LocalStorageManager.save(LEARNED_WITH_LEARN_WORDS_KEY, learnedWithLearnWords)
 
-    if (learnedWithLearnWords[level][wordType].length >= initialTotalWords) {
-      showModal('You learned all words! 🎉', wordType)
-      const iKnowButton = document.getElementById(
-        `iKnowButtonLearn-${wordType}`
-      )
-      const repeatButton = document.getElementById(
-        `repeatButtonLearn-${wordType}`
-      )
-      if (iKnowButton) {
-        iKnowButton.style.visibility = 'hidden'
-      }
-      if (repeatButton) {
-        repeatButton.style.visibility = 'hidden'
-      }
-    }
+
 
     kelimeListesi.splice(currentLearnIndex, 1)
 
@@ -469,10 +471,10 @@ function iKnowLearn(level, wordType, learnedWithLearnWords) {
     document.getElementById(`totalWordsCountLearn-${wordType}`).innerText =
       initialTotalWords
 
-    if (kelimeListesi.length > 0) {
-      currentLearnIndex = currentLearnIndex % kelimeListesi.length
-      showLearnWord(level, wordType, learnedWithLearnWords)
-    }
+    // if (kelimeListesi.length > 0) {
+    //   currentLearnIndex = currentLearnIndex % kelimeListesi.length
+    // }
+    showLearnWord(level, wordType, learnedWithLearnWords)
   
 }
 
@@ -591,7 +593,8 @@ function showLearnWord(level, wordType, learnedWithLearnWords) {
   )
 
 
-  if (!kelimeListesi || kelimeListesi.length === 0) {
+  // if (!kelimeListesi || kelimeListesi.length === 0) {
+  if (learnedWithLearnWords[level][wordType].length === totalWordsLearn) {
     document.getElementById(`wordLearn-${wordType}`).innerText =
       'No words to display.'
     document.getElementById(`translationLearn-${wordType}`).innerText = ''
