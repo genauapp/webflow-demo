@@ -695,6 +695,13 @@ function showExerciseWord(level, wordType, learnedWithExerciseWords) {
   //   return
   // }
 
+  // updated indexes
+  document.getElementById(
+    `remainingWordsCountExercise-${wordType}`
+  ).innerText = learnedWithExerciseWords[level][wordType].length
+  document.getElementById('totalWordsCountExercise-' + wordType).innerText =
+  totalWordsExercise
+
   const buttonDer = document.getElementById('buttonDer')
   const buttonDie = document.getElementById('buttonDie')
   const buttonDas = document.getElementById('buttonDas')
@@ -888,15 +895,8 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
       currentExerciseIndex = 0
       return
     }
-
-    document.getElementById(
-      `remainingWordsCountExercise-${wordType}`
-    ).innerText = learnedWithExerciseWords[level][wordType].length
-    document.getElementById('totalWordsCountExercise-' + wordType).innerText =
-    totalWordsExercise
   
     inProgressWords = LocalStorageManager.load('inProgressWords', inProgressWords)
-  
   
     const currentWord = kelimeListesiExercise[currentExerciseIndex]
     const { almanca, ingilizce, kural } = currentWord
@@ -1105,12 +1105,6 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
       return
     }
 
-    document.getElementById(
-      `remainingWordsCountExercise-${wordType}`
-    ).innerText = learnedWithExerciseWords[level][wordType].length
-    document.getElementById('totalWordsCountExercise-' + wordType).innerText =
-    totalWordsExercise
-  
     const currentWord = kelimeListesiExercise[currentExerciseIndex]
     const { artikel, kural, kelime } = currentWord
     const buttonDer = document.getElementById('buttonDer')
