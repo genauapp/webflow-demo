@@ -840,7 +840,7 @@ function showExerciseWord(level, wordType, learnedWithExerciseWords) {
     document.getElementById('correctAnswerField').innerHTML = '___'
   }
 
-  document.getElementById(`feedbackMessage-${wordType}`).innerText = ''
+  // document.getElementById(`feedbackMessage-${wordType}`).innerText = ''
 }
 
 export const nounDerAnswerClickHandler = function (event) {
@@ -1106,9 +1106,9 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
   
     const currentWord = kelimeListesiExercise[currentExerciseIndex]
     const { artikel, kural, kelime } = currentWord
-    // var buttonDer = document.getElementById('buttonDer')
-    // var buttonDie = document.getElementById('buttonDie')
-    // var buttonDas = document.getElementById('buttonDas')
+    const buttonDer = document.getElementById('buttonDer')
+    const buttonDie = document.getElementById('buttonDie')
+    const buttonDas = document.getElementById('buttonDas')
   
     console.log(`'${currentExerciseIndex}' index böyleydi.`)
     console.log(
@@ -1120,9 +1120,9 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
       (item) => item.almanca === currentWord.almanca
     )
   
-    // buttonDer.style.visibility = 'hidden'
-    // buttonDie.style.visibility = 'hidden'
-    // buttonDas.style.visibility = 'hidden'
+    buttonDer.style.visibility = 'hidden'
+    buttonDie.style.visibility = 'hidden'
+    buttonDas.style.visibility = 'hidden'
     console.log('Butonlar geçici olarak devre dışı bırakıldı.')
   
     if (userArtikel.toLowerCase() === artikel.toLowerCase()) {
@@ -1340,8 +1340,6 @@ const nonNounCorrectAnswerClickHandler = (event) => {
 document
   .getElementById('wrongButton-verb')
   .addEventListener('click', nonNounWrongAnswerClickHandler)
-
-
   
 document
   .getElementById('correctButton-verb')
@@ -1368,23 +1366,6 @@ document
 function setupEventListeners() {
   try {
     // Butonları ID ile seçelim
-    // const iKnowButton = document.getElementById(
-    //   `iKnowButtonLearn-${currentType}`
-    // )
-    // const repeatButton = document.getElementById(
-    //   `repeatButtonLearn-${currentType}`
-    // )
-
-    // const iKnowButtons = document.querySelectorAll('.i-know-buttons')
-    // const repeatButtons = document.querySelectorAll('.repeat-buttons')
-
-    // iKnowButtons.forEach((iKnowButton, index) => {
-    //   setupListenerForIknowAndLearn(iKnowButton, repeatButtons[index])
-    // })
-
-    // const repeatButtonVerb = document.getElementById('repeatButtonLearnVerb')
-    // const iKnowButtonVerb = document.getElementById('iKnowButtonLearnVerb')
-
     const iKnowButtonNoun = document.getElementById(`iKnowButtonLearn-noun`)
     const repeatButtonNoun = document.getElementById(`repeatButtonLearn-noun`)
     const iKnowButtonVerb = document.getElementById(`iKnowButtonLearn-verb`)
