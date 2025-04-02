@@ -888,6 +888,12 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
       currentExerciseIndex = 0
       return
     }
+
+    document.getElementById(
+      `remainingWordsCountExercise-${wordType}`
+    ).innerText = learnedWithExerciseWords[level][wordType].length
+    document.getElementById('totalWordsCountExercise-' + wordType).innerText =
+    totalWordsExercise
   
     inProgressWords = LocalStorageManager.load('inProgressWords', inProgressWords)
   
