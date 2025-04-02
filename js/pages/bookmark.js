@@ -1,3 +1,4 @@
+import { DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY } from "../constants/storageKeys.js"
 import LocalStorageManager from "../utils/LocalStorageManager.js"
 
 // On Initial Load
@@ -150,17 +151,7 @@ function listLearnedWords() {
 
   learnedWordsContainer.innerHTML = '' // Mevcut listeyi temizle
 
-  const learnedWithExerciseWords = JSON.parse(
-    localStorage.getItem('learnedWithExerciseWords')
-  ) || {
-    b1telcpt1: { noun: [], verb: [], adjective: [], adverb: [] },
-    b1telcpt2: { noun: [], verb: [], adjective: [], adverb: [] },
-    b1telcpt3: { noun: [], verb: [], adjective: [], adverb: [] },
-    b1telcpt4: { noun: [], verb: [], adjective: [], adverb: [] },
-    einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] },
-  }
-
-  console.log(JSON.stringify(learnedWithExerciseWords))
+  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
 
   const allEmpty = levels.every((level) =>
     types.every((type) => learnedWithExerciseWords[level][type].length === 0)
