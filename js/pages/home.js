@@ -683,11 +683,52 @@ function showLearnWord(level, wordType, learnedWithLearnWords) {
 }
 
 function showExerciseWord(level, wordType, learnedWithExerciseWords) {
-  if (!kelimeListesiExercise.length) {
-    // Liste boşsa UI'ı temizle
+  // if (!kelimeListesiExercise.length) {
+  //   // Liste boşsa UI'ı temizle
+  //   document.getElementById(`levelTagExercise-${wordType}`).innerText = ''
+  //   document.getElementById(`exerciseWord-${wordType}`).innerText = ''
+  //   document.getElementById(`exerciseTranslation-${wordType}`).innerText = ''
+  //   return
+  // }
+
+  const buttonDer = document.getElementById('buttonDer')
+  const buttonDie = document.getElementById('buttonDie')
+  const buttonDas = document.getElementById('buttonDas')
+  const buttonWrong = document.getElementById(`wrongButton-${wordType}`)
+  const buttonCorrect = document.getElementById(`correctButton-${wordType}`)
+
+  if (
+    learnedWithExerciseWords[level][wordType].length ===
+    // kelimeListesiExercise.length
+    totalWordsExercise
+  ) {
     document.getElementById(`levelTagExercise-${wordType}`).innerText = ''
     document.getElementById(`exerciseWord-${wordType}`).innerText = ''
     document.getElementById(`exerciseTranslation-${wordType}`).innerText = ''
+
+    document.getElementById(
+      `remainingWordsCountExercise-${wordType}`
+    ).innerText = learnedWithExerciseWords[level][wordType].length
+    document.getElementById('totalWordsCountExercise-' + wordType).innerText =
+    totalWordsExercise
+    document.getElementById(`exampleLearn-${wordType}`).innerText =
+      'You learned all of the words, go to learn section.'
+      document.getElementById(
+        `feedbackMessage-${wordType}`
+      ).innerText = `You completed all exercise words! 🎉`
+
+    if (wordType === 'noun') {
+      buttonDer.style.visibility = 'hidden'
+      buttonDie.style.visibility = 'hidden'
+      buttonDas.style.visibility = 'hidden'
+    } else if (['verb', 'adjective', 'adverb'].includes(wordType)) {
+      buttonWrong.style.visibility =
+        'hidden'
+      buttonCorrect.style.visibility =
+        'hidden'
+    }
+
+
     return
   }
 
@@ -714,34 +755,6 @@ function showExerciseWord(level, wordType, learnedWithExerciseWords) {
     document.getElementById(`levelTagExercise-${wordType}`).innerText = ''
     console.log('Kelime listesi boş. Gösterilecek kelime yok.')
     return
-  }
-
-  if (
-    learnedWithExerciseWords[level][wordType].length ===
-    // kelimeListesiExercise.length
-    totalWordsExercise
-  ) {
-    document.getElementById(
-      `remainingWordsCountExercise-${wordType}`
-    ).innerText = learnedWithExerciseWords[level][wordType].length
-    showModal('You completed all exercise words! 🎉', wordType)
-    document.getElementById(`exampleLearn-${wordType}`).innerText =
-      'You learned all of the words, go to exercise section.'
-
-    if (wordType === 'noun') {
-      buttonDer.style.visibility = 'hidden'
-      buttonDie.style.visibility = 'hidden'
-      buttonDas.style.visibility = 'hidden'
-    } else {
-      document.getElementById(`wrongButton-${wordType}`).style.visibility =
-        'hidden'
-      document.getElementById(`correctButton-${wordType}`).style.visibility =
-        'hidden'
-    }
-
-    document.getElementById(
-      `feedbackMessage-${wordType}`
-    ).innerText = `You completed all exercise words! 🎉`
   }
 
   const currentWord = kelimeListesiExercise[currentExerciseIndex]
@@ -955,7 +968,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
               `progressRight-${wordType}`
             ).style.opacity = '1'
           }
-          updateExerciseCounter(level, wordType, learnedWithExerciseWords)
+          // updateExerciseCounter(level, wordType, learnedWithExerciseWords)
           kelimeListesiExercise.splice(currentExerciseIndex, 1)
           currentExerciseIndex--
           if (currentExerciseIndex >= kelimeListesiExercise.length) {
@@ -969,6 +982,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
           console.log(
             `'${currentWord.almanca}' ${LEARNED_WITH_EXERCISE_WORDS_KEY} listesine taşındı.`
           )
+          showExerciseWord(level, wordType, learnedWithExerciseWords)
         } else {
           playSound(
             'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/correct.mp3'
@@ -1003,8 +1017,8 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
   
       setTimeout(() => {
         // document.getElementById('correctAnswerField').innerHTML = '___' // Tekrar boş bırak
-        buttonWrong.style.visibility = 'visible'
-        buttonCorrect.style.visibility = 'visible'
+        // buttonWrong.style.visibility = 'visible'
+        // buttonCorrect.style.visibility = 'visible'
         showExerciseWord(level, wordType, learnedWithExerciseWords)
       }, 1000)
       LocalStorageManager.save(
@@ -1054,8 +1068,8 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
         'red'
       setTimeout(() => {
         // document.getElementById('correctAnswerField').innerHTML = '___' // Tekrar boş bırak
-        buttonWrong.style.visibility = 'visible'
-        buttonCorrect.style.visibility = 'visible'
+        // buttonWrong.style.visibility = 'visible'
+        // buttonCorrect.style.visibility = 'visible'
         showExerciseWord(level, wordType, learnedWithExerciseWords)
       }, 3000)
     }
@@ -1076,9 +1090,9 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
   
     const currentWord = kelimeListesiExercise[currentExerciseIndex]
     const { artikel, kural, kelime } = currentWord
-    var buttonDer = document.getElementById('buttonDer')
-    var buttonDie = document.getElementById('buttonDie')
-    var buttonDas = document.getElementById('buttonDas')
+    // var buttonDer = document.getElementById('buttonDer')
+    // var buttonDie = document.getElementById('buttonDie')
+    // var buttonDas = document.getElementById('buttonDas')
   
     console.log(`'${currentExerciseIndex}' index böyleydi.`)
     console.log(
@@ -1090,9 +1104,9 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
       (item) => item.almanca === currentWord.almanca
     )
   
-    buttonDer.style.visibility = 'hidden'
-    buttonDie.style.visibility = 'hidden'
-    buttonDas.style.visibility = 'hidden'
+    // buttonDer.style.visibility = 'hidden'
+    // buttonDie.style.visibility = 'hidden'
+    // buttonDas.style.visibility = 'hidden'
     console.log('Butonlar geçici olarak devre dışı bırakıldı.')
   
     if (userArtikel.toLowerCase() === artikel.toLowerCase()) {
@@ -1173,7 +1187,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
               `progressRight-${wordType}`
             ).style.opacity = '1'
           }
-          updateExerciseCounter(level, wordType, learnedWithExerciseWords)
+          // updateExerciseCounter(level, wordType, learnedWithExerciseWords)
           kelimeListesiExercise.splice(currentExerciseIndex, 1)
           currentExerciseIndex--
           if (currentExerciseIndex >= kelimeListesiExercise.length) {
@@ -1187,6 +1201,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
           console.log(
             `'${currentWord.almanca}' ${LEARNED_WITH_EXERCISE_WORDS_KEY} listesine taşındı.`
           )
+          showExerciseWord(level, wordType, learnedWithExerciseWords)
         } else {
           playSound(
             'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/correct.mp3'
@@ -1221,9 +1236,9 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
   
       setTimeout(() => {
         document.getElementById('correctAnswerField').innerHTML = '___' // Tekrar boş bırak
-        buttonDer.style.visibility = 'visible'
-        buttonDie.style.visibility = 'visible'
-        buttonDas.style.visibility = 'visible'
+        // buttonDer.style.visibility = 'visible'
+        // buttonDie.style.visibility = 'visible'
+        // buttonDas.style.visibility = 'visible'
         showExerciseWord(level, wordType, learnedWithExerciseWords)
       }, 1000)
       LocalStorageManager.save(
@@ -1273,9 +1288,9 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
         'red'
       setTimeout(() => {
         document.getElementById('correctAnswerField').innerHTML = '___' // Tekrar boş bırak
-        buttonDer.style.visibility = 'visible'
-        buttonDie.style.visibility = 'visible'
-        buttonDas.style.visibility = 'visible'
+        // buttonDer.style.visibility = 'visible'
+        // buttonDie.style.visibility = 'visible'
+        // buttonDas.style.visibility = 'visible'
         showExerciseWord(level, wordType, learnedWithExerciseWords)
       }, 3000)
     }
@@ -1711,12 +1726,12 @@ function showModalExercise(message, wordType) {
 
   closeButton.addEventListener('click', function () {
     modal.style.display = 'none' // **Kapatma butonuna tıklanınca gizle**
-    resetExerciseButtons(wordType) // **🔥 Butonları tekrar aktif et**
+    // resetExerciseButtons(wordType) // **🔥 Butonları tekrar aktif et**
   })
 
   setTimeout(() => {
     modal.style.display = 'none' // **3 saniye sonra otomatik kapanır**
-    resetExerciseButtons(wordType) // **🔥 Butonları tekrar aktif et**
+    // resetExerciseButtons(wordType) // **🔥 Butonları tekrar aktif et**
   }, 3000)
 }
 
