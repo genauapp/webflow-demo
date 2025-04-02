@@ -1,5 +1,5 @@
 import { TEST_SCORE_TO_PASS } from '../../constants/test.js'
-import { ListUtils } from '../ListUtils.js'
+import ListUtils from '../ListUtils.js'
 
 export default class TestManager {
   static checkTestIsCompleted = (questions) => {
