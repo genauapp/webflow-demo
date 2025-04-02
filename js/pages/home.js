@@ -895,7 +895,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
       currentExerciseIndex = 0
       return
     }
-  
+
     inProgressWords = LocalStorageManager.load('inProgressWords', inProgressWords)
   
     const currentWord = kelimeListesiExercise[currentExerciseIndex]
@@ -970,7 +970,14 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
             ingilizce: currentWord.ingilizce,
             seviye: currentWord.seviye || 'N/A',
           })
+
+          LocalStorageManager.save(LEARNED_WITH_EXERCISE_WORDS_KEY, learnedWithExerciseWords)
   
+          // if exercise is ended
+          if (learnedWithExerciseWords[level][wordType].length === totalWordsExercise) {
+            showModalExercise('You completed all exercise words! 🎉', wordType)
+          }
+
           if (
             inProgressWords[level][wordType][inProgressIndex]
               .counter === 3
@@ -1189,6 +1196,14 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
             ingilizce: currentWord.ingilizce,
             seviye: currentWord.seviye || 'N/A',
           })
+
+          LocalStorageManager.save(LEARNED_WITH_EXERCISE_WORDS_KEY, learnedWithExerciseWords)
+
+          // if exercise is ended
+          if (learnedWithExerciseWords[level][wordType].length === totalWordsExercise) {
+             showModalExercise('You completed all exercise words! 🎉', wordType)
+          }
+        
   
           if (
             inProgressWords[level][wordType][inProgressIndex]
