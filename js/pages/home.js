@@ -615,7 +615,7 @@ function showLearnWord(level, wordType, learnedWithLearnWords) {
   repeatButton.style.visibility = 'visible'
 
   const { almanca, ingilizce, ornek, highlight, seviye, kural } =
-    kelimeListesi[totalWordsLearn - currentLearnIndex]
+    kelimeListesi[currentLearnIndex]
 
   if (learnedWithLearnWords[level][wordType].length > 0) {
     kelimeListesi = kelimeListesi.filter(
