@@ -840,7 +840,7 @@ function showExerciseWord(level, wordType, learnedWithExerciseWords) {
     document.getElementById('correctAnswerField').innerHTML = '___'
   }
 
-  // document.getElementById(`feedbackMessage-${wordType}`).innerText = ''
+  document.getElementById(`feedbackMessage-${wordType}`).innerText = ''
 }
 
 export const nounDerAnswerClickHandler = function (event) {
