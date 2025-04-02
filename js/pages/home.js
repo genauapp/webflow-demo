@@ -593,6 +593,7 @@ function showLearnWord(level, wordType, learnedWithLearnWords) {
 
 
   // if (!kelimeListesi || kelimeListesi.length === 0) {
+  // max index -> hiding buttons, early return
   if (learnedWithLearnWords[level][wordType].length === totalWordsLearn) {
     document.getElementById(`wordLearn-${wordType}`).innerText =
       'No words to display.'
@@ -611,6 +612,9 @@ function showLearnWord(level, wordType, learnedWithLearnWords) {
     return
   }
 
+  
+  // else
+  // // reactivate buttons
   iKnowButton.style.visibility = 'visible'
   repeatButton.style.visibility = 'visible'
 
@@ -697,6 +701,7 @@ function showExerciseWord(level, wordType, learnedWithExerciseWords) {
   const buttonWrong = document.getElementById(`wrongButton-${wordType}`)
   const buttonCorrect = document.getElementById(`correctButton-${wordType}`)
 
+  // max index -> hiding buttons, early return
   if (
     learnedWithExerciseWords[level][wordType].length ===
     // kelimeListesiExercise.length
@@ -711,8 +716,8 @@ function showExerciseWord(level, wordType, learnedWithExerciseWords) {
     ).innerText = learnedWithExerciseWords[level][wordType].length
     document.getElementById('totalWordsCountExercise-' + wordType).innerText =
     totalWordsExercise
-    document.getElementById(`exampleLearn-${wordType}`).innerText =
-      'You learned all of the words, go to learn section.'
+    // document.getElementById(`exampleLearn-${wordType}`).innerText =
+    //   'You learned all of the words, go to learn section.'
       document.getElementById(
         `feedbackMessage-${wordType}`
       ).innerText = `You completed all exercise words! 🎉`
@@ -727,9 +732,20 @@ function showExerciseWord(level, wordType, learnedWithExerciseWords) {
       buttonCorrect.style.visibility =
         'hidden'
     }
-
-
     return
+  }
+
+  // else
+  // // reactivate buttons
+  if (wordType === 'noun') {
+    buttonDer.style.visibility = 'visible'
+    buttonDie.style.visibility = 'visible'
+    buttonDas.style.visibility = 'visible'
+  } else if (['verb', 'adjective', 'adverb'].includes(wordType)) {
+    buttonWrong.style.visibility =
+      'visible'
+    buttonCorrect.style.visibility =
+      'visible'
   }
 
   // Index kontrolü
