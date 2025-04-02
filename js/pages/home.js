@@ -711,11 +711,6 @@ function showExerciseWord(level, wordType, learnedWithExerciseWords) {
     document.getElementById(`exerciseWord-${wordType}`).innerText = ''
     document.getElementById(`exerciseTranslation-${wordType}`).innerText = ''
 
-    document.getElementById(
-      `remainingWordsCountExercise-${wordType}`
-    ).innerText = learnedWithExerciseWords[level][wordType].length
-    document.getElementById('totalWordsCountExercise-' + wordType).innerText =
-    totalWordsExercise
     // document.getElementById(`exampleLearn-${wordType}`).innerText =
     //   'You learned all of the words, go to learn section.'
       document.getElementById(
@@ -1103,6 +1098,12 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
       currentExerciseIndex = 0
       return
     }
+
+    document.getElementById(
+      `remainingWordsCountExercise-${wordType}`
+    ).innerText = learnedWithExerciseWords[level][wordType].length
+    document.getElementById('totalWordsCountExercise-' + wordType).innerText =
+    totalWordsExercise
   
     const currentWord = kelimeListesiExercise[currentExerciseIndex]
     const { artikel, kural, kelime } = currentWord
