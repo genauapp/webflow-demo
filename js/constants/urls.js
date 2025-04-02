@@ -11,10 +11,10 @@
 // }
 
 // PROD
-// export const ASSETS_BASE_URL = `${ASSETS_BASE_URL}'
+export const ASSETS_BASE_URL = `https://chatonode.github.io/genau-webflow-demo/`
 // STAGING
-export const ASSETS_BASE_URL =
-  'https://cdn.jsdelivr.net/gh/chatonode/genau-webflow-demo@4ccb5c4'
+// export const ASSETS_BASE_URL =
+//   'https://cdn.jsdelivr.net/gh/chatonode/genau-webflow-demo@4ccb5c4'
 
 /* WORD LEARN/EXERCISE **/
 

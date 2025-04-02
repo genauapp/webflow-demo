@@ -15,6 +15,8 @@ import { testTabClickHandler } from '../components/einburgerungstest/testTab.js'
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', () => {
+  LocalStorageManager.clearDeprecatedLocalStorageItems()
+  
   showLearnSkeleton()
 
   // set toggle to default one

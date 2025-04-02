@@ -1,3 +1,5 @@
+import { APP_VERSION_KEY, DEFAULT_VALUE } from '../constants/storageKeys.js'
+
 export default class LocalStorageManager {
   /**
    * Save data to localStorage under the given key.
@@ -81,5 +83,29 @@ export default class LocalStorageManager {
   // Removes data from localStorage
   static remove(key) {
     localStorage.removeItem(key)
+  }
+
+  // Clears storage
+  static clear() {
+    localStorage.clear()
+  }
+
+  static clearDeprecatedLocalStorageItems = () => {
+    const currentAppVersion = DEFAULT_VALUE.APP_VERSION
+    const APP_VERSION = LocalStorageManager.load(APP_VERSION_KEY, null)
+
+    if (APP_VERSION === null || APP_VERSION !== currentAppVersion) {
+      // LocalStorageManager.remove(CURRENT_LEVEL_KEY)
+      // LocalStorageManager.remove(LEARNED_WITH_LEARN_WORDS_KEY)
+      // LocalStorageManager.remove(LEARNED_WITH_EXERCISE_WORDS_KEY)
+      // LocalStorageManager.remove('inProgressWords')
+      // LocalStorageManager.remove('favoriteWords')
+      // LocalStorageManager.remove('lastSelectedTopic')
+      // LocalStorageManager.remove('learnedWords')
+      // LocalStorageManager.remove('correctAnswerWordsCounter')
+
+      LocalStorageManager.clear()
+      LocalStorageManager.save(APP_VERSION_KEY, currentAppVersion)
+    }
   }
 }

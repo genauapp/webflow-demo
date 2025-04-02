@@ -1,4 +1,4 @@
-export class ListUtils {
+export default class ListUtils {
   static shuffleArray = (arr) => {
     const shuffled = [...arr]
     for (let i = shuffled.length - 1; i > 0; i--) {
