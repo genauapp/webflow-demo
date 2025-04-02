@@ -431,6 +431,7 @@ function iKnowLearn(level, wordType, learnedWithLearnWords) {
   //   return
   // }
 
+
   if (learnedWithLearnWords[level][wordType].length + 1 === initialTotalWords) {
     showModal('You learned all words! 🎉', wordType)
     // const iKnowButton = document.getElementById(
@@ -449,15 +450,13 @@ function iKnowLearn(level, wordType, learnedWithLearnWords) {
 
   console.log(`current level: ${level}`)
   console.log(`current wordType: ${wordType}`)
-  console.log(`current learnedWithLearnWords: ${JSON.stringify(learnedWithLearnWords)}`)
+  console.log(`current learnedWithLearnWords[${level}][${wordType}]: ${JSON.stringify(learnedWithLearnWords[level][wordType])}`)
   console.log(`current kelimeListesi: ${JSON.stringify(kelimeListesi)}`)
 
-  const currentWord = kelimeListesi[currentLearnIndex]
+  const currentWord = kelimeListesi[totalWordsLearn - currentLearnIndex]
 
     learnedWithLearnWords[level][wordType].push({
-      almanca: currentWord.almanca,
-      ingilizce: currentWord.ingilizce,
-      seviye: currentWord.seviye || 'N/A',
+      ...currentWord
     })
     LocalStorageManager.save(LEARNED_WITH_LEARN_WORDS_KEY, learnedWithLearnWords)
 
