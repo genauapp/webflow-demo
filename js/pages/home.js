@@ -1006,7 +1006,9 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
           console.log(
             `'${currentWord.almanca}' ${LEARNED_WITH_EXERCISE_WORDS_KEY} listesine taşındı.`
           )
-          showExerciseWord(level, wordType, learnedWithExerciseWords)
+          setTimeout(() => {
+            showExerciseWord(level, wordType, learnedWithExerciseWords)
+          }, 1000)
         } else {
           playSound(
             'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/correct.mp3'
@@ -1233,7 +1235,9 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
           console.log(
             `'${currentWord.almanca}' ${LEARNED_WITH_EXERCISE_WORDS_KEY} listesine taşındı.`
           )
-          showExerciseWord(level, wordType, learnedWithExerciseWords)
+          setTimeout(() => {
+            showExerciseWord(level, wordType, learnedWithExerciseWords)
+          }, 1000)
         } else {
           playSound(
             'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/correct.mp3'
