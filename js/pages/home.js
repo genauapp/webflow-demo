@@ -1006,7 +1006,12 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
           console.log(
             `'${currentWord.almanca}' ${LEARNED_WITH_EXERCISE_WORDS_KEY} listesine taşındı.`
           )
-          showExerciseWord(level, wordType, learnedWithExerciseWords)
+          setTimeout(() => {
+            // document.getElementById('correctAnswerField').innerHTML = '___' // Tekrar boş bırak
+            // buttonWrong.style.visibility = 'visible'
+            // buttonCorrect.style.visibility = 'visible'
+            showExerciseWord(level, wordType, learnedWithExerciseWords)
+          }, 1000)
         } else {
           playSound(
             'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/correct.mp3'
