@@ -1007,9 +1007,6 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
             `'${currentWord.almanca}' ${LEARNED_WITH_EXERCISE_WORDS_KEY} listesine taşındı.`
           )
           setTimeout(() => {
-            // document.getElementById('correctAnswerField').innerHTML = '___' // Tekrar boş bırak
-            // buttonWrong.style.visibility = 'visible'
-            // buttonCorrect.style.visibility = 'visible'
             showExerciseWord(level, wordType, learnedWithExerciseWords)
           }, 1000)
         } else {
@@ -1238,7 +1235,9 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
           console.log(
             `'${currentWord.almanca}' ${LEARNED_WITH_EXERCISE_WORDS_KEY} listesine taşındı.`
           )
-          showExerciseWord(level, wordType, learnedWithExerciseWords)
+          setTimeout(() => {
+            showExerciseWord(level, wordType, learnedWithExerciseWords)
+          }, 1000)
         } else {
           playSound(
             'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/correct.mp3'
