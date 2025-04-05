@@ -59,6 +59,7 @@ let staticWordLists = {
   }
 }
 
+// yeni comment
 let inProgressWords = {
   b1telcpt1: { noun: [], verb: [], adjective: [], adverb: [] },
   b1telcpt2: { noun: [], verb: [], adjective: [], adverb: [] },
