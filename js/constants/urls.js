@@ -11,7 +11,7 @@
 // }
 
 // PROD
-export const ASSETS_BASE_URL = `https://chatonode.github.io/genau-webflow-demo/`
+export const ASSETS_BASE_URL = `https://genauapp.github.io/webflow-demo/`
 // STAGING
 // export const ASSETS_BASE_URL =
 //   'https://cdn.jsdelivr.net/gh/chatonode/genau-webflow-demo@4ccb5c4'
