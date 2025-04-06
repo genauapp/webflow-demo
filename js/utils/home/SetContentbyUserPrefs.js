@@ -1,5 +1,3 @@
-import { DEFAULT_VALUE } from "../../constants/storageKeys";
-
 const levelContainer = document.getElementById("topicDropdown");
 const deckContainers = document.getElementsByClassName("Deck");
 const nounTab = document.getElementById("nounTab");
