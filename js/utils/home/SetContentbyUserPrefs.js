@@ -13,6 +13,7 @@ export default function SetContentbyUserPrefs(level) {
     levelBlinkInterval = blinkBorder(levelContainer);
   } else {
     clearBlinkEffect(levelContainer, levelBlinkInterval);
+    clearAllDeckBlinkEffects(); // <-- Tüm deck efektlerini önce temizle
 
     deckBlinkIntervals = Array.from(deckContainers).map(el => {
       return blinkBorder(el);
@@ -44,4 +45,14 @@ function blinkBorder(element, times = Infinity, interval = 400) {
 function clearBlinkEffect(element, intervalId) {
   clearInterval(intervalId);
   element.style.border = "";
+}
+
+function clearAllDeckBlinkEffects() {
+  deckBlinkIntervals.forEach((intervalId, index) => {
+    clearInterval(intervalId);
+    if (deckContainers[index]) {
+      deckContainers[index].style.border = "";
+    }
+  });
+  deckBlinkIntervals = [];
 }
