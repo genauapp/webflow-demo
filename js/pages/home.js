@@ -130,6 +130,8 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
       currentLearnIndex = learnedWithLearnWords[updatedLevel][wordType].length
       currentExerciseIndex = learnedWithExerciseWords[updatedLevel][wordType].length
 
+      SetContentbyUserPrefs(updatedLevel);
+
       await executeInitialLoadAndShow(updatedLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords)
     }
   })
