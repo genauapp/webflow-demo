@@ -4,6 +4,7 @@ import { LEARN_ELEMENT_IDS } from '../constants/elements.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
 import ExerciseUtils from '../utils/home/ExerciseUtils.js'
 import ListUtils from '../utils/ListUtils.js'
+import SetContentbyUserPrefs from '../utils/home/SetContentbyUserPrefs.js'
 
 import va1a2 from '../../json/a1-a2/verb.json' with { type: 'json' }
 import adja1a2 from '../../json/a1-a2/adjective.json' with { type: 'json' }
@@ -91,6 +92,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   const defaultWordType = DEFAULT_VALUE.CURRENT_WORD_TYPE
   LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, defaultWordType)
   showSkeleton(defaultWordType)
+  SetContentbyUserPrefs()
+  
 })
 
 // On Level Change
