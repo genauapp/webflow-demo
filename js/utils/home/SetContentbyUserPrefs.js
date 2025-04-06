@@ -1,3 +1,10 @@
+const levelContainer = document.getElementById("topicDropdown");
+const deckContainers = document.getElementsByClassName("Deck");
+const nounTab = document.getElementById("nounTab");
+const verbTab = document.getElementById("verbTab");
+const adjectiveTab = document.getElementById("adjectiveTab");
+const adverbTab = document.getElementById("adverbTab");
+
 let levelBlinkInterval = null;
 let deckBlinkIntervals = [];
 
@@ -7,7 +14,7 @@ export default function SetContentbyUserPrefs(level) {
   } else {
     clearBlinkEffect(levelContainer, levelBlinkInterval);
 
-    deckBlinkIntervals = Array.from(deckContainers).map((el) => {
+    deckBlinkIntervals = Array.from(deckContainers).map(el => {
       return blinkBorder(el);
     });
   }
