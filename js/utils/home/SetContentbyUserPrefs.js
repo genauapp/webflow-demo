@@ -1,4 +1,4 @@
-import { CURRENT_LEVEL_KEY } from "../../constants/storageKeys";
+import { DEFAULT_VALUE } from "../../constants/storageKeys";
 
 const levelContainer = document.getElementById("topicDropdown");
 const deckContainers = document.getElementsByClassName("Deck");
@@ -8,12 +8,10 @@ const adjectiveTab = document.getElementById("adjectiveTab");
 const adverbTab = document.getElementById("adverbTab");
 
 export default function SetContentbyUserPrefs() {
-    if (CURRENT_LEVEL_KEY === null || ""){
-        let levelBlink = blinkBorder(levelContainer);
-    }
-
+  if (DEFAULT_VALUE.CURRENT_LEVEL === null || "") {
+    blinkBorder(levelContainer);
+  }
 }
-
 
 function blinkBorder(element, times = Infinity, interval = 400) {
   let visible = false;
@@ -21,26 +19,26 @@ function blinkBorder(element, times = Infinity, interval = 400) {
   const max = times * 2; // Yanıp sönme = 2 adım
 
   const blink = setInterval(() => {
-    element.style.border = visible ? '2px solid limegreen' : '2px solid transparent';
+    element.style.border = visible
+      ? "2px solid limegreen"
+      : "2px solid transparent";
     visible = !visible;
     count++;
 
     if (times !== Infinity && count >= max) {
       clearInterval(blink);
-      element.style.border = '';
+      element.style.border = "";
     }
   }, interval);
 
   return blink; // clearInterval ile sonradan durdurulabilir
 }
 
-
 // Kullanıcı nountab'a tıklarsa:
 //nounElem.addEventListener("click", () => {
 // clearInterval(nounBlink);
 //  nounElem.style.border = "";
 
-  // verbtab yanıp sönmeye başlasın
-  //blinkBorder(verbElem);
+// verbtab yanıp sönmeye başlasın
+//blinkBorder(verbElem);
 //});
-
