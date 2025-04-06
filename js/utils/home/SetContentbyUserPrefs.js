@@ -7,8 +7,8 @@ const verbTab = document.getElementById("verbTab");
 const adjectiveTab = document.getElementById("adjectiveTab");
 const adverbTab = document.getElementById("adverbTab");
 
-export default function SetContentbyUserPrefs() {
-  if (DEFAULT_VALUE.CURRENT_LEVEL === null || "") {
+export default function SetContentbyUserPrefs(level) {
+  if (level === null || "") {
     blinkBorder(levelContainer);
   }
 }

@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const defaultWordType = DEFAULT_VALUE.CURRENT_WORD_TYPE
   LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, defaultWordType)
   showSkeleton(defaultWordType)
-  SetContentbyUserPrefs()
+  SetContentbyUserPrefs(defaultLevel)
   
 })
 
