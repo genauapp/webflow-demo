@@ -119,8 +119,8 @@ document.querySelectorAll('.deck').forEach((elem) => {
   elem.addEventListener('click', async function (event) {
     event.preventDefault()
     const selectedCategory = elem.getAttribute('data-option')
-    console.log("updated category: " + updatedCategory)
-    LocalStorageManager.save(CURRENT_CATEGORY_KEY, updatedCategory)
+    console.log("updated category: " + selectedCategory)
+    LocalStorageManager.save(CURRENT_CATEGORY_KEY, selectedCategory)
     const currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
     console.log("current category: " + currentCategory)
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
