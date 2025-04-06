@@ -7,7 +7,7 @@ const adverbTab = document.getElementById("adverbTab");
 
 export default function SetContentbyUserPrefs(level) {
     console.log(level)
-  if (level === null || "") {
+  if (level === null || level === "") {
     console.log(levelContainer);
     blinkBorder(levelContainer);
   }
