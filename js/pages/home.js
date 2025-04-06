@@ -102,6 +102,7 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
     event.preventDefault()
     const updatedLevel = link.getAttribute('data-option')
     const selectedText = link.innerText
+    const currentCategory = DEFAULT_VALUE.CURRENT_CATEGORY
     // Seçilen option'ı localStorage'a kaydet
     LocalStorageManager.save(CURRENT_LEVEL_KEY, updatedLevel)  
 
@@ -109,7 +110,7 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
       // Dropdown başlığını güncelle
       document.getElementById('dropdownHeader').innerText = selectedText
       // blinkeffect'i tetikle
-      SetContentbyUserPrefs(updatedLevel)
+      SetContentbyUserPrefs(updatedLevel, currentCategory)
     }
   })
 })
