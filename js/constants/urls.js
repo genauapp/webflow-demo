@@ -9,10 +9,10 @@ export const ASSETS_BASE_URL = `https://genauapp.github.io/webflow-demo/`
 const JSON_URLS_NOUN = {
   b1telcpt1: 
   {
-    default: `${ASSETS_BASE_URL}/json/a1-a2/default/noun.json`,
-    dirty: `${ASSETS_BASE_URL}/json/a1-a2/dirty/noun.json`,
-    doctor: `${ASSETS_BASE_URL}/json/a1-a2/doctor/noun.json`,
-    music: `${ASSETS_BASE_URL}/json/a1-a2/music/noun.json`
+    default: `${ASSETS_BASE_URL}json/a1-a2/default/noun.json`,
+    dirty: `${ASSETS_BASE_URL}json/a1-a2/dirty/noun.json`,
+    doctor: `${ASSETS_BASE_URL}json/a1-a2/doctor/noun.json`,
+    music: `${ASSETS_BASE_URL}json/a1-a2/music/noun.json`
   },
   b1telcpt2:
   {
