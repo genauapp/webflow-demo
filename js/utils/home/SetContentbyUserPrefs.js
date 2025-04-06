@@ -6,7 +6,9 @@ const adjectiveTab = document.getElementById("adjectiveTab");
 const adverbTab = document.getElementById("adverbTab");
 
 export default function SetContentbyUserPrefs(level) {
+    console.log(level)
   if (level === null || "") {
+    console.log(levelContainer);
     blinkBorder(levelContainer);
   }
 }
