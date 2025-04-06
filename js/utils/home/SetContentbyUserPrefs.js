@@ -14,6 +14,9 @@ export default function SetContentbyUserPrefs(level, category) {
     deckBlinkIntervals = Array.from(deckContainers).map(el => {
       return blinkBorder(el);
     });
+  } else {
+    clearBlinkEffect(levelContainer, levelBlinkInterval);
+    clearAllDeckBlinkEffects();
   }
 }
 

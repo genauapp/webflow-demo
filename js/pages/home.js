@@ -130,7 +130,7 @@ document.querySelectorAll('.deck').forEach((elem) => {
 
       SetContentbyUserPrefs(currentLevel, updatedCategory);
 
-      await executeInitialLoadAndShow(updatedLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords)
+      await executeInitialLoadAndShow(currentLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords)
     }
   })
 })
