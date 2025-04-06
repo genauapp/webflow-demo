@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   LocalStorageManager.save(CURRENT_LEVEL_KEY, defaultLevel)
   const defaultWordType = DEFAULT_VALUE.CURRENT_WORD_TYPE
   LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, defaultWordType)
-  //showSkeleton(defaultWordType)
+  showSkeleton(defaultWordType)
 })
 
 // On Level Change
