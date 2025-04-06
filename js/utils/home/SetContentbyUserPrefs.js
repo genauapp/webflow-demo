@@ -10,9 +10,9 @@ export default function SetContentbyUserPrefs(level) {
     blinkBorder(levelContainer);
   } else if (level !== null || level !== "") {
     clearBlinkEffect(levelContainer)
-    deckContainers.array.forEach(element => {
-        blinkBorder(element)
-    });    
+    Array.from(document.getElementsByClassName("Deck")).forEach(el => {
+        blinkBorder(el)
+      });
   }
 }
 
