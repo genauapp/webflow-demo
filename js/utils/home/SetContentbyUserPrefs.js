@@ -6,10 +6,13 @@ const adjectiveTab = document.getElementById("adjectiveTab");
 const adverbTab = document.getElementById("adverbTab");
 
 export default function SetContentbyUserPrefs(level) {
-    console.log(level)
   if (level === null || level === "") {
-    console.log(levelContainer);
     blinkBorder(levelContainer);
+  } else if (level !== null || level !== "") {
+    clearBlinkEffect(levelContainer)
+    deckContainers.array.forEach(element => {
+        blinkBorder(element)
+    });    
   }
 }
 
@@ -34,11 +37,8 @@ function blinkBorder(element, times = Infinity, interval = 400) {
   return blink; // clearInterval ile sonradan durdurulabilir
 }
 
-// Kullanıcı nountab'a tıklarsa:
-//nounElem.addEventListener("click", () => {
-// clearInterval(nounBlink);
-//  nounElem.style.border = "";
+function clearBlinkEffect(element) {
+    clearInterval(element)
+    element.style.border = "";
+}
 
-// verbtab yanıp sönmeye başlasın
-//blinkBorder(verbElem);
-//});
