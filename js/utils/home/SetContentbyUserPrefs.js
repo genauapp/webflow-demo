@@ -1,5 +1,5 @@
 const levelContainer = document.getElementById("topicDropdown");
-const deckContainers = document.getElementsByClassName("Deck");
+const deckContainers = document.getElementsByClassName("deck");
 const nounTab = document.getElementById("nounTab");
 const verbTab = document.getElementById("verbTab");
 const adjectiveTab = document.getElementById("adjectiveTab");
