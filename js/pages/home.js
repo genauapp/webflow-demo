@@ -91,6 +91,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   LocalStorageManager.save(CURRENT_LEVEL_KEY, defaultLevel)
   const defaultWordType = DEFAULT_VALUE.CURRENT_WORD_TYPE
   LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, defaultWordType)
+  const defaultCategory = DEFAULT_VALUE.CURRENT_CATEGORY
+  LocalStorageManager.save(CURRENT_CATEGORY_KEY, defaultCategory)
   showSkeleton(defaultWordType)
   console.log(defaultLevel)
   SetContentbyUserPrefs(defaultLevel)
@@ -114,21 +116,6 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
     if (updatedLevel) {
       // Dropdown başlığını güncelle
       document.getElementById('dropdownHeader').innerText = selectedText
-
-      // UI'ı güncelle
-      document.getElementById(
-        'remainingWordsCountLearn-' + wordType
-      ).innerText = learnedWithLearnWords[updatedLevel][wordType].length
-      document.getElementById(
-        'remainingWordsCountExercise-' + wordType
-      ).innerText = learnedWithExerciseWords[updatedLevel][wordType].length
-
-      // Seçilen konu başlığını güncelle
-      updateTopicNames(updatedLevel, wordType)
-
-      // İndeksleri sıfırla
-      currentLearnIndex = learnedWithLearnWords[updatedLevel][wordType].length
-      currentExerciseIndex = learnedWithExerciseWords[updatedLevel][wordType].length
 
       SetContentbyUserPrefs(updatedLevel);
 

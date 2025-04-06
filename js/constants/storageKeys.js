@@ -153,10 +153,110 @@ export class DEFAULT_VALUE {
   };
 
   static LEARNED_WITH_EXERCISE_WORDS = {
-    b1telcpt1: { noun: [], verb: [], adjective: [], adverb: [] },
-    b1telcpt2: { noun: [], verb: [], adjective: [], adverb: [] },
-    b1telcpt3: { noun: [], verb: [], adjective: [], adverb: [] },
-    b1telcpt4: { noun: [], verb: [], adjective: [], adverb: [] },
+    b1telcpt1: {
+      default: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      dirty: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      doctor: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      music: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    b1telcpt2: {
+      default: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      dirty: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      doctor: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      music: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    b1telcpt3: {
+      default: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      dirty: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      doctor: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      music: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    b1telcpt4: {
+      default: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      dirty: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      doctor: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      music: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
     einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] },
   };
 
