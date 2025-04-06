@@ -8,6 +8,10 @@ export default function SetContentbyUserPrefs(level, category) {
   if (level === "" && category === "") {
     levelBlinkInterval = blinkBorder(levelContainer);
   } else if(level !== "" && category === "") {
+    console.log(level)
+    console.log(level!=="")
+    console.log(category)
+    console.log(category === "")
     clearBlinkEffect(levelContainer, levelBlinkInterval);
     clearAllDeckBlinkEffects(); // <-- Tüm deck efektlerini önce temizle
 
