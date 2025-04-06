@@ -86,7 +86,6 @@ let initialTotalWords = 0 // Yeni eklenen değişken
 // On Initial Load
 document.addEventListener('DOMContentLoaded', async () => {
   LocalStorageManager.clearDeprecatedLocalStorageItems()
-
   const defaultLevel = DEFAULT_VALUE.CURRENT_LEVEL
   LocalStorageManager.save(CURRENT_LEVEL_KEY, defaultLevel)
   const defaultWordType = DEFAULT_VALUE.CURRENT_WORD_TYPE
@@ -94,9 +93,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const defaultCategory = DEFAULT_VALUE.CURRENT_CATEGORY
   LocalStorageManager.save(CURRENT_CATEGORY_KEY, defaultCategory)
   showSkeleton(defaultWordType)
-  console.log(defaultLevel)
-  SetContentbyUserPrefs(defaultLevel)
-  
+  SetContentbyUserPrefs(defaultLevel, defaultCategory)
 })
 
 // On Level Change
@@ -106,18 +103,31 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
     const updatedLevel = link.getAttribute('data-option')
     const selectedText = link.innerText
     // Seçilen option'ı localStorage'a kaydet
-    LocalStorageManager.save(CURRENT_LEVEL_KEY, updatedLevel)
-
-    const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
-    const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
-    const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
-  
+    LocalStorageManager.save(CURRENT_LEVEL_KEY, updatedLevel)  
 
     if (updatedLevel) {
       // Dropdown başlığını güncelle
       document.getElementById('dropdownHeader').innerText = selectedText
+      // blinkeffect'i tetikle
+      SetContentbyUserPrefs(updatedLevel)
+    }
+  })
+})
 
-      SetContentbyUserPrefs(updatedLevel);
+document.querySelectorAll('.deck').forEach((elem) => {
+  elem.addEventListener('click', async function (event) {
+    event.preventDefault()
+    const updatedCategory = elem.getAttribute('data-option')
+    LocalStorageManager.save(CURRENT_CATEGORY_KEY, updatedCategory)
+
+    const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
+    const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
+    const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
+    const currentLevel = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+
+    if (updatedCategory) {
+
+      SetContentbyUserPrefs(currentLevel, updatedCategory);
 
       await executeInitialLoadAndShow(updatedLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords)
     }
@@ -172,19 +182,6 @@ document.getElementById('adverbTab').addEventListener('click', async () => {
 
   await executeInitialLoadAndShow(level, adverbType, learnedWithLearnWords, learnedWithExerciseWords)
 })
-
-// On Word Type Change
-// Webflow.push(() => {
-
-
-//   console.log('Webflow tamamen yüklendi.')
-//   const nounTab = document.getElementById('nounTab')
-//   const verbTab = document.getElementById('verbTab')
-//   const adjectiveTab = document.getElementById('adjectiveTab')
-//   const adverbTab = document.getElementById('adverbTab')
-
-
-// })
 
 async function executeInitialLoadAndShow(level, wordType, learnedWithLearnWords, learnedWithExerciseWords) {
   try {

@@ -1,17 +1,13 @@
 const levelContainer = document.getElementById("topicDropdown");
 const deckContainers = document.getElementsByClassName("deck");
-const nounTab = document.getElementById("nounTab");
-const verbTab = document.getElementById("verbTab");
-const adjectiveTab = document.getElementById("adjectiveTab");
-const adverbTab = document.getElementById("adverbTab");
 
 let levelBlinkInterval = null;
 let deckBlinkIntervals = [];
 
-export default function SetContentbyUserPrefs(level) {
-  if (level === null || level === "") {
+export default function SetContentbyUserPrefs(level, category) {
+  if (level === "" && category === "") {
     levelBlinkInterval = blinkBorder(levelContainer);
-  } else {
+  } else if(level !== "" && category === "") {
     clearBlinkEffect(levelContainer, levelBlinkInterval);
     clearAllDeckBlinkEffects(); // <-- Tüm deck efektlerini önce temizle
 
