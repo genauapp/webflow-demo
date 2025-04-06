@@ -90,48 +90,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   LocalStorageManager.save(CURRENT_LEVEL_KEY, defaultLevel)
   const defaultWordType = DEFAULT_VALUE.CURRENT_WORD_TYPE
   LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, defaultWordType)
-
-  const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
-  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
-
   showSkeleton(defaultWordType)
-
-  try {
-    await executeInitialLoadAndShow(defaultLevel, defaultWordType, learnedWithLearnWords, learnedWithExerciseWords)
-
-    // Sayfa yüklendiğinde buton kontrolü
-    if (learnedWithLearnWords[defaultLevel][defaultWordType].length >= initialTotalWords) {
-      document.getElementById(
-        'iKnowButtonLearn-' + defaultWordType
-      ).style.visibility = 'hidden'
-      document.getElementById(
-        'repeatButtonLearn-' + defaultWordType
-      ).style.visibility = 'hidden'
-    }
-    if (
-      learnedWithExerciseWords[defaultLevel][defaultWordType] >= initialTotalWords
-    ) {
-      if (defaultWordType === 'noun') {
-        document.getElementById('buttonDer').style.visibility = 'hidden'
-        document.getElementById('buttonDie').style.visibility = 'hidden'
-        document.getElementById('buttonDas').style.visibility = 'hidden'
-      } else if (
-        defaultWordType === 'verb' ||
-        defaultWordType === 'adjective' ||
-        defaultWordType === 'adverb'
-      ) {
-        document.getElementById(`wrongButton-${defaultWordType}`).style.visibility =
-          'hidden'
-        document.getElementById(
-          `correctButton-${defaultWordType}`
-        ).style.visibility = 'hidden'
-      }
-    }
-  } catch (error) {
-    console.error('Başlangıç yüklemesi hatası:', error)
-  } finally {
-    hideSkeleton(defaultWordType)
-  }
 })
 
 // On Level Change
