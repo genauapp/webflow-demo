@@ -118,17 +118,20 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
 document.querySelectorAll('.deck').forEach((elem) => {
   elem.addEventListener('click', async function (event) {
     event.preventDefault()
-    const updatedCategory = elem.getAttribute('data-option')
+    const selectedCategory = elem.getAttribute('data-option')
+    console.log("updated category: " + updatedCategory)
     LocalStorageManager.save(CURRENT_CATEGORY_KEY, updatedCategory)
-
+    const currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
+    console.log("current category: " + currentCategory)
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
     const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
     const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
     const currentLevel = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+    
 
-    if (updatedCategory) {
+    if (selectedCategory) {
 
-      SetContentbyUserPrefs(currentLevel, updatedCategory);
+      SetContentbyUserPrefs(currentLevel, selectedCategory);
 
       await executeInitialLoadAndShow(currentLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords)
     }
