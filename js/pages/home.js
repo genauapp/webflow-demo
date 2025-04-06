@@ -162,10 +162,110 @@ let staticWordLists = {
 
 // yeni comment
 let inProgressWords = {
-  b1telcpt1: { noun: [], verb: [], adjective: [], adverb: [] },
-  b1telcpt2: { noun: [], verb: [], adjective: [], adverb: [] },
-  b1telcpt3: { noun: [], verb: [], adjective: [], adverb: [] },
-  b1telcpt4: { noun: [], verb: [], adjective: [], adverb: [] },
+  b1telcpt1: {
+    default: {
+      noun: [],
+      verb: [],
+      adjective: [],
+      adverb: [],
+    },
+    dirty: {
+      noun: [],
+      verb: [],
+      adjective: [],
+      adverb: [],
+    },
+    doctor: {
+      noun: [],
+      verb: [],
+      adjective: [],
+      adverb: [],
+    },
+    music: {
+      noun: [],
+      verb: [],
+      adjective: [],
+      adverb: [],
+    },
+  },
+  b1telcpt2: {
+    default: {
+      noun: [],
+      verb: [],
+      adjective: [],
+      adverb: [],
+    },
+    dirty: {
+      noun: [],
+      verb: [],
+      adjective: [],
+      adverb: [],
+    },
+    doctor: {
+      noun: [],
+      verb: [],
+      adjective: [],
+      adverb: [],
+    },
+    music: {
+      noun: [],
+      verb: [],
+      adjective: [],
+      adverb: [],
+    },
+  },
+  b1telcpt3: {
+    default: {
+      noun: [],
+      verb: [],
+      adjective: [],
+      adverb: [],
+    },
+    dirty: {
+      noun: [],
+      verb: [],
+      adjective: [],
+      adverb: [],
+    },
+    doctor: {
+      noun: [],
+      verb: [],
+      adjective: [],
+      adverb: [],
+    },
+    music: {
+      noun: [],
+      verb: [],
+      adjective: [],
+      adverb: [],
+    },
+  },
+  b1telcpt4: {
+    default: {
+      noun: [],
+      verb: [],
+      adjective: [],
+      adverb: [],
+    },
+    dirty: {
+      noun: [],
+      verb: [],
+      adjective: [],
+      adverb: [],
+    },
+    doctor: {
+      noun: [],
+      verb: [],
+      adjective: [],
+      adverb: [],
+    },
+    music: {
+      noun: [],
+      verb: [],
+      adjective: [],
+      adverb: [],
+    },
+  },
   einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] },
 }
 
@@ -234,7 +334,7 @@ document.querySelectorAll('.deck').forEach((elem) => {
 
       SetContentbyUserPrefs(currentLevel, selectedCategory);
 
-      await executeInitialLoadAndShow(currentLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords)
+      await executeInitialLoadAndShow(currentLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, selectedCategory)
     }
   })
 })
@@ -242,6 +342,7 @@ document.querySelectorAll('.deck').forEach((elem) => {
 // On Word Type Change
 document.getElementById('nounTab').addEventListener('click', async () => {
   const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
   const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
   const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
 
@@ -249,11 +350,12 @@ document.getElementById('nounTab').addEventListener('click', async () => {
   const nounType = types[0]
   LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, nounType)
 
-  await executeInitialLoadAndShow(level, nounType, learnedWithLearnWords, learnedWithExerciseWords)
+  await executeInitialLoadAndShow(level, nounType, learnedWithLearnWords, learnedWithExerciseWords, category)
 })
 
 document.getElementById('verbTab').addEventListener('click', async () => {
   const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
   const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
   const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
 
@@ -261,11 +363,12 @@ document.getElementById('verbTab').addEventListener('click', async () => {
   const verbType = types[1]
   LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, verbType)
 
-  await executeInitialLoadAndShow(level, verbType, learnedWithLearnWords, learnedWithExerciseWords)
+  await executeInitialLoadAndShow(level, verbType, learnedWithLearnWords, learnedWithExerciseWords, category)
 })
 
 document.getElementById('adjectiveTab').addEventListener('click', async () => {
   const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
   const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
   const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
 
@@ -273,11 +376,12 @@ document.getElementById('adjectiveTab').addEventListener('click', async () => {
   const adjectiveType = types[2]
   LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, adjectiveType)
 
-  await executeInitialLoadAndShow(level, adjectiveType, learnedWithLearnWords, learnedWithExerciseWords)
+  await executeInitialLoadAndShow(level, adjectiveType, learnedWithLearnWords, learnedWithExerciseWords,category)
 })
 
 document.getElementById('adverbTab').addEventListener('click', async () => {
   const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
   const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
   const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
 
@@ -285,23 +389,21 @@ document.getElementById('adverbTab').addEventListener('click', async () => {
   const adverbType = types[3]
   LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, adverbType)
 
-  await executeInitialLoadAndShow(level, adverbType, learnedWithLearnWords, learnedWithExerciseWords)
+  await executeInitialLoadAndShow(level, adverbType, learnedWithLearnWords, learnedWithExerciseWords, category)
 })
 
-async function executeInitialLoadAndShow(level, wordType, learnedWithLearnWords, learnedWithExerciseWords) {
+async function executeInitialLoadAndShow(level, wordType, learnedWithLearnWords, learnedWithExerciseWords, category) {
   try {
-    await loadWords(level, wordType, learnedWithLearnWords, learnedWithExerciseWords)
-    console.log(`LEVEL ${level} | ${wordType}s ARE LOADED`)
-    console.log('JSON başarıyla yüklendi.')
-    showLearnWord(level, wordType, learnedWithLearnWords)
-    showExerciseWord(level, wordType, learnedWithExerciseWords)
+    await loadWords(level, wordType, learnedWithLearnWords, learnedWithExerciseWords, category)
+    showLearnWord(level, wordType, learnedWithLearnWords, category)
+    showExerciseWord(level, wordType, learnedWithExerciseWords, category)
   } catch (error) {
     console.error('Kelime yükleme hatası:', error)
   }
 }
 
 // Kelime yükleme fonksiyonu
-async function loadWords(level, wordType, learnedWithLearnWords, learnedWithExerciseWords) {
+async function loadWords(level, wordType, learnedWithLearnWords, learnedWithExerciseWords, category) {
 
   try {
     showSkeleton(wordType)
@@ -314,7 +416,7 @@ async function loadWords(level, wordType, learnedWithLearnWords, learnedWithExer
       feedbackMessage.innerText = ''
     }
 
-    const response = await fetch(JSON_URLS[wordType][level])
+    const response = await fetch(JSON_URLS[wordType][level][category])
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
@@ -336,10 +438,10 @@ async function loadWords(level, wordType, learnedWithLearnWords, learnedWithExer
 
     document.getElementById(
     `remainingWordsCountLearn-${wordType}`
-    ).innerText = learnedWithLearnWords[level][wordType].length
+    ).innerText = learnedWithLearnWords[level][category][wordType].length
     document.getElementById(
       `remainingWordsCountExercise-${wordType}`
-    ).innerText = learnedWithExerciseWords[level][wordType].length
+    ).innerText = learnedWithExerciseWords[level][category][wordType].length
     document.getElementById(`totalWordsCountLearn-${wordType}`).innerText =
       totalWordsLearn
     document.getElementById(
@@ -357,7 +459,7 @@ async function loadWords(level, wordType, learnedWithLearnWords, learnedWithExer
 // On Page Changes
 document.addEventListener('DOMContentLoaded', async () => {
   try {
-    const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+    //const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
     setupEventListeners()
 
@@ -439,7 +541,7 @@ function navigateToPage(pageId) {
 }
 
 // On Learn: Repeat Click
-function repeatLearn(level, wordType, learnedWithLearnWords) {
+function repeatLearn(level, wordType, learnedWithLearnWords, category) {
   if (!kelimeListesi.length || currentLearnIndex >= kelimeListesi.length) {
     console.log('No words to repeat')
     return
@@ -453,82 +555,32 @@ function repeatLearn(level, wordType, learnedWithLearnWords) {
   currentLearnIndex = currentLearnIndex % kelimeListesi.length
 
   // Show the next word
-  showLearnWord(level, wordType, learnedWithLearnWords)
+  showLearnWord(level, wordType, learnedWithLearnWords, category)
 }
 
 // On Learn: I Know Click
-function iKnowLearn(level, wordType, learnedWithLearnWords) {
-  // if (
-  //   !kelimeListesi.length ||
-  //   currentLearnIndex >= kelimeListesi.length ||
-  //   learnedWithLearnWords[level][wordType].length >= initialTotalWords
-  // ) {
-  //   if (
-  //     !kelimeListesi.length ||
-  //     currentLearnIndex > learnedWithLearnWords[level][wordType].length ||
-  //     learnedWithLearnWords[level][wordType].length >= initialTotalWords
-  //   ) {
-  //     console.log(`!kelimeListesi.length: ${!kelimeListesi.length}`)
-  // console.log(`currentLearnIndex: ${currentLearnIndex} ||| >= ||| kelimeListesi.length: ${learnedWithLearnWords[level][wordType].length}`)
-  // console.log(`learnedWithLearnWords[level][wordType].length: ${learnedWithLearnWords[level][wordType].length} ||| >= ||| initialTotalWords: ${initialTotalWords}`)
-  //   const iKnowButton = document.getElementById(
-  //     `iKnowButtonLearn-${wordType}`
-  //   )
-  //   const repeatButton = document.getElementById(
-  //     `repeatButtonLearn-${wordType}`
-  //   )
-  //   if (iKnowButton) {
-  //     iKnowButton.style.visibility = 'hidden'
-  //   }
-  //   if (repeatButton) {
-  //     repeatButton.style.visibility = 'hidden'
-  //   }
-  //   return
-  // }
-
-
-  if (learnedWithLearnWords[level][wordType].length + 1 === initialTotalWords) {
+function iKnowLearn(level, wordType, learnedWithLearnWords, category) {
+ 
+  if (learnedWithLearnWords[level][category][wordType].length + 1 === initialTotalWords) {
     showModal('You learned all words! 🎉', wordType)
-    // const iKnowButton = document.getElementById(
-    //   `iKnowButtonLearn-${wordType}`
-    // )
-    // const repeatButton = document.getElementById(
-    //   `repeatButtonLearn-${wordType}`
-    // )
-    // if (iKnowButton) {
-    //   iKnowButton.style.visibility = 'hidden'
-    // }
-    // if (repeatButton) {
-    //   repeatButton.style.visibility = 'hidden'
-    // }
   }
-
-  console.log(`current level: ${level}`)
-  console.log(`current wordType: ${wordType}`)
-  console.log(`current learnedWithLearnWords[${level}][${wordType}]: ${JSON.stringify(learnedWithLearnWords[level][wordType])}`)
-  console.log(`current kelimeListesi: ${JSON.stringify(kelimeListesi)}`)
 
   const currentWord = kelimeListesi[totalWordsLearn - currentLearnIndex]
 
-    learnedWithLearnWords[level][wordType].push({
+    learnedWithLearnWords[level][category][wordType].push({
       ...currentWord
     })
     LocalStorageManager.save(LEARNED_WITH_LEARN_WORDS_KEY, learnedWithLearnWords)
-
-
 
     kelimeListesi.splice(currentLearnIndex, 1)
 
     document.getElementById(
       `remainingWordsCountLearn-${wordType}`
-    ).innerText = learnedWithLearnWords[level][wordType].length
+    ).innerText = learnedWithLearnWords[level][category][wordType].length
     document.getElementById(`totalWordsCountLearn-${wordType}`).innerText =
       initialTotalWords
 
-    // if (kelimeListesi.length > 0) {
-    //   currentLearnIndex = currentLearnIndex % kelimeListesi.length
-    // }
-    showLearnWord(level, wordType, learnedWithLearnWords)
+    showLearnWord(level, wordType, learnedWithLearnWords, category)
   
 }
 
@@ -638,7 +690,7 @@ function artikelRenk(artikel) {
   return 'black'
 }
 
-function showLearnWord(level, wordType, learnedWithLearnWords) {
+function showLearnWord(level, wordType, learnedWithLearnWords, category) {
   const iKnowButton = document.getElementById(
     `iKnowButtonLearn-${wordType}`
   )
@@ -646,17 +698,13 @@ function showLearnWord(level, wordType, learnedWithLearnWords) {
     `repeatButtonLearn-${wordType}`
   )
 
-
-  // if (!kelimeListesi || kelimeListesi.length === 0) {
-  // max index -> hiding buttons, early return
-  if (learnedWithLearnWords[level][wordType].length === totalWordsLearn) {
+  if (learnedWithLearnWords[level][category][wordType].length === totalWordsLearn) {
     document.getElementById(`wordLearn-${wordType}`).innerText =
       'No words to display.'
     document.getElementById(`translationLearn-${wordType}`).innerText = ''
     document.getElementById(`exampleLearn-${wordType}`).innerText = ''
     document.getElementById(`levelTagLearn-${wordType}`).innerText = ''
     document.getElementById(`ruleLearn-${wordType}`).innerText = '' // Kural boş
-
 
     if (iKnowButton) {
       iKnowButton.style.visibility = 'hidden'
@@ -666,8 +714,6 @@ function showLearnWord(level, wordType, learnedWithLearnWords) {
     }
     return
   }
-
-  
   // else
   // // reactivate buttons
   iKnowButton.style.visibility = 'visible'
@@ -676,10 +722,10 @@ function showLearnWord(level, wordType, learnedWithLearnWords) {
   const { almanca, ingilizce, ornek, highlight, seviye, kural } =
     kelimeListesi[currentLearnIndex]
 
-  if (learnedWithLearnWords[level][wordType].length > 0) {
+  if (learnedWithLearnWords[level][category][wordType].length > 0) {
     kelimeListesi = kelimeListesi.filter(
       (word) =>
-        !learnedWithLearnWords[level][wordType].some(
+        !learnedWithLearnWords[level][category][wordType].some(
           (learned) => learned.almanca === word.almanca
         )
     )
@@ -741,19 +787,11 @@ function showLearnWord(level, wordType, learnedWithLearnWords) {
   updateFavoriteIcons(wordType)
 }
 
-function showExerciseWord(level, wordType, learnedWithExerciseWords) {
-  // if (!kelimeListesiExercise.length) {
-  //   // Liste boşsa UI'ı temizle
-  //   document.getElementById(`levelTagExercise-${wordType}`).innerText = ''
-  //   document.getElementById(`exerciseWord-${wordType}`).innerText = ''
-  //   document.getElementById(`exerciseTranslation-${wordType}`).innerText = ''
-  //   return
-  // }
-
+function showExerciseWord(level, wordType, learnedWithExerciseWords, category) {
   // updated indexes
   document.getElementById(
     `remainingWordsCountExercise-${wordType}`
-  ).innerText = learnedWithExerciseWords[level][wordType].length
+  ).innerText = learnedWithExerciseWords[level][category][wordType].length
   document.getElementById('totalWordsCountExercise-' + wordType).innerText =
   totalWordsExercise
 
@@ -765,8 +803,7 @@ function showExerciseWord(level, wordType, learnedWithExerciseWords) {
 
   // max index -> hiding buttons, early return
   if (
-    learnedWithExerciseWords[level][wordType].length ===
-    // kelimeListesiExercise.length
+    learnedWithExerciseWords[level][category][wordType].length ===
     totalWordsExercise
   ) {
     document.getElementById(`levelTagExercise-${wordType}`).innerText = ''
@@ -815,10 +852,10 @@ function showExerciseWord(level, wordType, learnedWithExerciseWords) {
     
 
   // 🟢 `kelimeListesi` içinden `learnedWords`'de olanları çıkar
-  if (learnedWithExerciseWords[level][wordType].length > 0) {
+  if (learnedWithExerciseWords[level][category][wordType].length > 0) {
     kelimeListesiExercise = kelimeListesiExercise.filter(
       (word) =>
-        !learnedWithExerciseWords[level][wordType].some(
+        !learnedWithExerciseWords[level][category][wordType].some(
           (learned) => learned.almanca === word.almanca
         )
     )
@@ -831,7 +868,7 @@ function showExerciseWord(level, wordType, learnedWithExerciseWords) {
   }
 
   const currentWord = kelimeListesiExercise[currentExerciseIndex]
-  const progressWord = inProgressWords[level][wordType].find(
+  const progressWord = inProgressWords[level][category][wordType].find(
     (item) => item.almanca === currentWord.almanca
   )
 
@@ -861,7 +898,7 @@ function showExerciseWord(level, wordType, learnedWithExerciseWords) {
       if (ExerciseUtils.shouldUseOwnMeaning()) {
         exerciseTranslationText = ingilizce
       } else {
-        exerciseTranslationText = ExerciseUtils.getRandomTranslationResult(level, currentWord, staticWordLists)
+        exerciseTranslationText = ExerciseUtils.getRandomTranslationResult(level, currentWord, staticWordLists, category)
         // todo: transfer data for checking the answer later
         const buttonWrong = document.getElementById(
           `wrongButton-${wordType}`
@@ -902,32 +939,33 @@ function showExerciseWord(level, wordType, learnedWithExerciseWords) {
 
 export const nounDerAnswerClickHandler = function (event) {
   const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+  const category =LocalStorageManager.load(CURRENT_CATEGORY_KEY)
   const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
   const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
   
   event.preventDefault() // Sayfanın yukarı kaymasını engeller
-  checkNounAnswer('der', level, wordType, learnedWithExerciseWords)
+  checkNounAnswer('der', level, wordType, learnedWithExerciseWords, category)
 }
 
 export const nounDieAnswerClickHandler = function (event) {
   const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+  const category =LocalStorageManager.load(CURRENT_CATEGORY_KEY)
   const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
   const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
   
   event.preventDefault() // Sayfanın yukarı kaymasını engeller
-  checkNounAnswer('die', level, wordType, learnedWithExerciseWords)
+  checkNounAnswer('die', level, wordType, learnedWithExerciseWords, category)
 }
 
 export const nounDasAnswerClickHandler =  (event) => {
   const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+  const category =LocalStorageManager.load(CURRENT_CATEGORY_KEY)
   const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
   const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
   
   event.preventDefault() // Sayfanın yukarı kaymasını engeller
-  checkNounAnswer('das', level, wordType, learnedWithExerciseWords)
+  checkNounAnswer('das', level, wordType, learnedWithExerciseWords, category)
 }
-
-
 
 document
   .getElementById('buttonDer')
@@ -941,7 +979,7 @@ document
   .getElementById('buttonDas')
   .addEventListener('click', nounDasAnswerClickHandler)
 
-function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExerciseWords) {
+function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExerciseWords, category) {
     // Eğer liste boşsa veya index liste dışındaysa, işlemi durdur
     if (
       !kelimeListesiExercise.length ||
@@ -959,7 +997,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
     const buttonCorrect = document.getElementById(`correctButton-${wordType}`)
   
   
-    const inProgressIndex = inProgressWords[level][wordType].findIndex(
+    const inProgressIndex = inProgressWords[level][category][wordType].findIndex(
       (item) => item.almanca === almanca
     )
   
@@ -979,7 +1017,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
         playSound(
           'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/correct.mp3'
         )
-        inProgressWords[level][wordType].push({
+        inProgressWords[level][category][wordType].push({
           type: currentWord.type,
           almanca: currentWord.almanca,
           counter: 1,
@@ -1003,9 +1041,9 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
           currentExerciseIndex = 0
         }
       } else {
-        inProgressWords[level][wordType][inProgressIndex].counter += 1
+        inProgressWords[level][category][wordType][inProgressIndex].counter += 1
         if (
-          inProgressWords[level][wordType][inProgressIndex].counter ===
+          inProgressWords[level][category][wordType][inProgressIndex].counter ===
           2
         ) {
           document.getElementById(`progressMiddle-${wordType}`).style.opacity =
@@ -1013,13 +1051,13 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
         }
         //3 kere bilindiyse learnede ekle
         if (
-          inProgressWords[level][wordType][inProgressIndex].counter >= 3
+          inProgressWords[level][category][wordType][inProgressIndex].counter >= 3
         ) {
           playSound(
             'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/streak.mp3'
           )
   
-          learnedWithExerciseWords[level][wordType].push({
+          learnedWithExerciseWords[level][category][wordType].push({
             type: currentWord.type,
             almanca: currentWord.almanca,
             ingilizce: currentWord.ingilizce,
@@ -1029,12 +1067,12 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
           LocalStorageManager.save(LEARNED_WITH_EXERCISE_WORDS_KEY, learnedWithExerciseWords)
   
           // if exercise is ended
-          if (learnedWithExerciseWords[level][wordType].length === totalWordsExercise) {
+          if (learnedWithExerciseWords[level][category][wordType].length === totalWordsExercise) {
             showModalExercise('You completed all exercise words! 🎉', wordType)
           }
 
           if (
-            inProgressWords[level][wordType][inProgressIndex]
+            inProgressWords[level][category][wordType][inProgressIndex]
               .counter === 3
           ) {
             document.getElementById(
@@ -1062,7 +1100,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
             `'${currentWord.almanca}' ${LEARNED_WITH_EXERCISE_WORDS_KEY} listesine taşındı.`
           )
           setTimeout(() => {
-            showExerciseWord(level, wordType, learnedWithExerciseWords)
+            showExerciseWord(level, wordType, learnedWithExerciseWords, category)
           }, 1000)
         } else {
           playSound(
@@ -1070,7 +1108,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
           )
           kelimeListesiExercise.splice(currentExerciseIndex, 1)
           if (
-            inProgressWords[level][wordType][inProgressIndex]
+            inProgressWords[level][category][wordType][inProgressIndex]
               .counter === 1
           ) {
             kelimeListesiExercise.splice(
@@ -1097,10 +1135,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
       }
   
       setTimeout(() => {
-        // document.getElementById('correctAnswerField').innerHTML = '___' // Tekrar boş bırak
-        // buttonWrong.style.visibility = 'visible'
-        // buttonCorrect.style.visibility = 'visible'
-        showExerciseWord(level, wordType, learnedWithExerciseWords)
+        showExerciseWord(level, wordType, learnedWithExerciseWords, category)
       }, 1000)
       LocalStorageManager.save(
         LEARNED_WITH_EXERCISE_WORDS_KEY,
@@ -1116,7 +1151,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
           kelimeListesiExercise.push(currentWord)
         }
   
-        inProgressWords[level][wordType][inProgressIndex].counter = 0
+        inProgressWords[level][category][wordType][inProgressIndex].counter = 0
         document.getElementById(`progressRight-${wordType}`).style.opacity =
           '0.5'
         document.getElementById(`progressMiddle-${wordType}`).style.opacity =
@@ -1151,7 +1186,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
         // document.getElementById('correctAnswerField').innerHTML = '___' // Tekrar boş bırak
         // buttonWrong.style.visibility = 'visible'
         // buttonCorrect.style.visibility = 'visible'
-        showExerciseWord(level, wordType, learnedWithExerciseWords)
+        showExerciseWord(level, wordType, learnedWithExerciseWords, category)
       }, 3000)
     }
   
@@ -1159,7 +1194,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
     LocalStorageManager.save('inProgressWords', inProgressWords)
 }
   
-function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords) {
+function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords, category) {
     // Eğer liste boşsa veya index liste dışındaysa, işlemi durdur
     if (
       !kelimeListesiExercise.length ||
@@ -1181,7 +1216,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
     )
     inProgressWords = LocalStorageManager.load('inProgressWords', inProgressWords)
   
-    const inProgressIndex = inProgressWords[level][wordType].findIndex(
+    const inProgressIndex = inProgressWords[level][category][wordType].findIndex(
       (item) => item.almanca === currentWord.almanca
     )
   
@@ -1207,7 +1242,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
         playSound(
           'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/correct.mp3'
         )
-        inProgressWords[level][wordType].push({
+        inProgressWords[level][category][wordType].push({
           type: currentWord.type,
           almanca: currentWord.almanca,
           counter: 1,
@@ -1231,9 +1266,9 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
           currentExerciseIndex = 0
         }
       } else {
-        inProgressWords[level][wordType][inProgressIndex].counter += 1
+        inProgressWords[level][category][wordType][inProgressIndex].counter += 1
         if (
-          inProgressWords[level][wordType][inProgressIndex].counter ===
+          inProgressWords[level][wordType][category][inProgressIndex].counter ===
           2
         ) {
           document.getElementById(`progressMiddle-${wordType}`).style.opacity =
@@ -1241,13 +1276,13 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
         }
         //3 kere bilindiyse learnede ekle
         if (
-          inProgressWords[level][wordType][inProgressIndex].counter >= 3
+          inProgressWords[level][category][wordType][inProgressIndex].counter >= 3
         ) {
           playSound(
             'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/streak.mp3'
           )
   
-          learnedWithExerciseWords[level][wordType].push({
+          learnedWithExerciseWords[level][category][wordType].push({
             type: currentWord.type,
             almanca: currentWord.almanca,
             ingilizce: currentWord.ingilizce,
@@ -1257,13 +1292,13 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
           LocalStorageManager.save(LEARNED_WITH_EXERCISE_WORDS_KEY, learnedWithExerciseWords)
 
           // if exercise is ended
-          if (learnedWithExerciseWords[level][wordType].length === totalWordsExercise) {
+          if (learnedWithExerciseWords[level][category][wordType].length === totalWordsExercise) {
              showModalExercise('You completed all exercise words! 🎉', wordType)
           }
         
   
           if (
-            inProgressWords[level][wordType][inProgressIndex]
+            inProgressWords[level][category][wordType][inProgressIndex]
               .counter === 3
           ) {
             document.getElementById(
@@ -1291,7 +1326,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
             `'${currentWord.almanca}' ${LEARNED_WITH_EXERCISE_WORDS_KEY} listesine taşındı.`
           )
           setTimeout(() => {
-            showExerciseWord(level, wordType, learnedWithExerciseWords)
+            showExerciseWord(level, wordType, learnedWithExerciseWords, category)
           }, 1000)
         } else {
           playSound(
@@ -1299,7 +1334,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
           )
           kelimeListesiExercise.splice(currentExerciseIndex, 1)
           if (
-            inProgressWords[level][wordType][inProgressIndex]
+            inProgressWords[level][category][wordType][inProgressIndex]
               .counter === 1
           ) {
             kelimeListesiExercise.splice(
@@ -1330,7 +1365,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
         // buttonDer.style.visibility = 'visible'
         // buttonDie.style.visibility = 'visible'
         // buttonDas.style.visibility = 'visible'
-        showExerciseWord(level, wordType, learnedWithExerciseWords)
+        showExerciseWord(level, wordType, learnedWithExerciseWords, category)
       }, 1000)
       LocalStorageManager.save(
         LEARNED_WITH_EXERCISE_WORDS_KEY,
@@ -1346,7 +1381,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
           kelimeListesiExercise.push(currentWord)
         }
   
-        inProgressWords[level][wordType][inProgressIndex].counter = 0
+        inProgressWords[level][category][wordType][inProgressIndex].counter = 0
         document.getElementById(`progressRight-${wordType}`).style.opacity =
           '0.5'
         document.getElementById(`progressMiddle-${wordType}`).style.opacity =
@@ -1382,7 +1417,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords)
         // buttonDer.style.visibility = 'visible'
         // buttonDie.style.visibility = 'visible'
         // buttonDas.style.visibility = 'visible'
-        showExerciseWord(level, wordType, learnedWithExerciseWords)
+        showExerciseWord(level, wordType, learnedWithExerciseWords, category)
       }, 3000)
     }
     console.log(`'${currentExerciseIndex}' index bu sayiya güncellendi.`)
@@ -1396,20 +1431,22 @@ const nonNounWrongAnswerClickHandler = (event) => {
     event.preventDefault() // Sayfanın yukarı kaymasını engeller
 
     const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+    const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
     const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
 
-    checkNonNounAnswer(false, level, wordType, learnedWithExerciseWords)
+    checkNonNounAnswer(false, level, wordType, learnedWithExerciseWords, category)
 } 
 
 const nonNounCorrectAnswerClickHandler = (event) => {
   event.preventDefault() // Sayfanın yukarı kaymasını engeller
 
   const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
   const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
   const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
 
-  checkNonNounAnswer(true, level, wordType, learnedWithExerciseWords)
+  checkNonNounAnswer(true, level, wordType, learnedWithExerciseWords, category)
 } 
 
 document
@@ -1519,20 +1556,22 @@ const iKnowButtonClickHandler =  (event) =>{
   event.preventDefault()
 
   const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
   const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
   const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY)
 
-  iKnowLearn(level, wordType, learnedWithLearnWords)
+  iKnowLearn(level, wordType, learnedWithLearnWords, category)
 }
 
 const repeatButtonClickHandler =  (event) =>{
   event.preventDefault()
 
   const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
   const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
   const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY)
 
-  repeatLearn(level, wordType, learnedWithLearnWords)
+  repeatLearn(level, wordType, learnedWithLearnWords, category)
 }
 
 function setupListenerForIknowAndLearn(iKnowButton, repeatButton) {
@@ -1546,7 +1585,6 @@ function setupListenerForIknowAndLearn(iKnowButton, repeatButton) {
     repeatButton.addEventListener('click', repeatButtonClickHandler)
     repeatButton.setAttribute('listener-attached', 'true')
   }
-
 }
 
 // UI visibility functions
@@ -1620,7 +1658,7 @@ function showLearnElements(wordType) {
 //     })
 // })
 
-function updateExerciseCounter(level, wordType, learnedWithExerciseWords) {
+function updateExerciseCounter(level, wordType, learnedWithExerciseWords, category) {
   // correctAnswerWordsCounter[currentLevel][currentType]++
   // LocalStorageManager.save(
   //   'correctAnswerWordsCounter',
@@ -1629,12 +1667,12 @@ function updateExerciseCounter(level, wordType, learnedWithExerciseWords) {
 
   document.getElementById(
     'remainingWordsCountExercise-' + wordType
-  ).innerText = learnedWithExerciseWords[level][wordType].length
+  ).innerText = learnedWithExerciseWords[level][category][wordType].length
   document.getElementById('totalWordsCountExercise-' + wordType).innerText =
     initialTotalWords
 
   if (
-    learnedWithExerciseWords[level][wordType].length >= initialTotalWords
+    learnedWithExerciseWords[level][category][wordType].length >= initialTotalWords
   ) {
     showModalExercise('You completed all exercise words! 🎉', wordType)
 
@@ -1683,7 +1721,6 @@ const resetLearnButtons = (wordType) => {
     const iKnowButton = document.getElementById(`iKnowButtonLearn-${wordType}`)
     const repeatButton = document.getElementById(`repeatButtonLearn-${wordType}`)
   
-
     if (iKnowButton && repeatButton) {
       // **Butonları tekrar görünür hale getir**
       iKnowButton.style.visibility = 'visible'
@@ -1699,9 +1736,6 @@ const resetLearnButtons = (wordType) => {
       // **Yeni event listener'ları ekleyelim**
       newIKnowButton.addEventListener('click', iKnowButtonClickHandler)
       newRepeatButton.addEventListener('click', repeatButtonClickHandler)
-
-
-      console.log('🔥 I Know, Repeat butonları tekrar aktif hale getirildi.')
     }
 }  
 
@@ -1759,10 +1793,6 @@ function resetExerciseButtons(wordType) {
       // **Yeni event listener'ları ekleyelim**
       newButtonWrong.addEventListener('click', nonNounWrongAnswerClickHandler)
       newButtonCorrect.addEventListener('click', nonNounCorrectAnswerClickHandler)
-
-      console.log(
-        `🔥 Correct-${wordType}, Wrong-${wordType} butonları tekrar aktif hale getirildi.`
-      )
     }
   }
 }
