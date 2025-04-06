@@ -102,7 +102,7 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
     event.preventDefault()
     const updatedLevel = link.getAttribute('data-option')
     const selectedText = link.innerText
-    const currentCategory = DEFAULT_VALUE.CURRENT_CATEGORY
+    const currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
     // Seçilen option'ı localStorage'a kaydet
     LocalStorageManager.save(CURRENT_LEVEL_KEY, updatedLevel)  
 
