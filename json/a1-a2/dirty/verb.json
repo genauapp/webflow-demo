@@ -1,0 +1,137 @@
+[
+  {
+    "almanca": "sein",
+    "ingilizce": "to be",
+    "seviye": "A1",
+    "ornek": "Ich bin Maria.",
+    "kelime": "sein ",
+    "kural": "Like in many languages, the verb ‚sein‘ looks very different when conjugated. Learn the conjugation!",
+    "type": "verb"
+  },
+  {
+    "almanca": "kommen",
+    "ingilizce": "to come",
+    "seviye": "A1",
+    "ornek": "Ich komme aus Deutschland.",
+    "kelime": "kommen",
+    "kural": "",
+    "type": "verb"
+  },
+  {
+    "almanca": "heißen",
+    "ingilizce": "to be called",
+    "seviye": "A1",
+    "ornek": "Wie heißt du?",
+    "kelime": "heißen ",
+    "kural": "",
+    "type": "verb"
+  },
+  {
+    "almanca": "gehen",
+    "ingilizce": "to go",
+    "seviye": "A1",
+    "ornek": "Wie geht es dir?",
+    "kelime": "gehen",
+    "kural": "The most important German small talk question literally translates to ‚How is it going with you?‘",
+    "type": "verb"
+  },
+  {
+    "almanca": "wohnen",
+    "ingilizce": "to live somewhere",
+    "seviye": "A1",
+    "ornek": "Ich wohne in Berlin.",
+    "kelime": "wohnen",
+    "kural": "There are two different verbs in German for ‘to live’ and ‘to live somewhere’",
+    "type": "verb"
+  },
+  {
+    "almanca": "buchstabieren",
+    "ingilizce": "to spell",
+    "seviye": "A1",
+    "ornek": "Bitte buchstabiere deinen Namen!",
+    "kelime": "buchstabieren ",
+    "kural": "",
+    "type": "verb"
+  },
+  {
+    "almanca": "denken",
+    "ingilizce": "to think",
+    "seviye": "A1",
+    "ornek": "Das denke ich auch.",
+    "kelime": "denken",
+    "kural": "",
+    "type": "verb"
+  },
+  {
+    "almanca": "haben",
+    "ingilizce": "to have",
+    "seviye": "A1",
+    "ornek": "Er hat einen Bruder und eine Schwester.",
+    "kelime": "haben",
+    "kural": "",
+    "type": "verb"
+  },
+  {
+    "almanca": "studieren",
+    "ingilizce": "to study",
+    "seviye": "A1",
+    "ornek": "Ich studiere an der Universität in Leipzig.",
+    "kelime": "studieren",
+    "kural": "Beware of this false friend: ‚studieren‘ in German is only used for studying at a ‚Universität‘ or ‚Fachhochschule‘, not general studying i.e. in a German class.",
+    "type": "verb"
+  },
+  {
+    "almanca": "sprechen",
+    "ingilizce": "to speak",
+    "seviye": "A1",
+    "ornek": "Ich spreche Englisch, Türkisch und ein bisschen Deutsch.",
+    "kelime": "sprechen",
+    "kural": "When conjugating this verb, note that the vocal changes from ‚e‘ to ‚i‘ in 2. and 3. person singular.",
+    "type": "verb"
+  },
+  {
+    "almanca": "verdienen",
+    "ingilizce": "to earn",
+    "seviye": "A2",
+    "ornek": "Sie verdient 2800€ im Monat.",
+    "kelime": "verdienen",
+    "kural": "Just like in English, you can use ‚verdienen‘ when talking about money, but also respect etc.",
+    "type": "verb"
+  },
+  {
+    "almanca": "einpacken",
+    "ingilizce": "to pack into, to wrap",
+    "seviye": "A2",
+    "ornek": "Hast du dein Buch schon eingepackt?",
+    "kelime": "einpacken",
+    "kural": " ‚packen‘ and ‚einpacken‘ are not the same like in English. ‚einpacken‘ means that you put an object, like a book, into another, like a bag – or wrapping paper!",
+    "type": "verb"
+  },
+  {
+    "almanca": "erzählen",
+    "ingilizce": "to tell",
+    "seviye": "A2",
+    "ornek": "Erzähl mal! Was hast du heute gelernt?",
+    "kelime": "erzählen",
+    "kural": "",
+    "type": "verb"
+  },
+  {
+    "almanca": "passieren",
+    "ingilizce": "to happen",
+    "seviye": "A2",
+    "ornek": "Kein Problem, das passiert!",
+    "kelime": "passieren",
+    "kural": "The verb ‚passieren‘ in ist most common use (to happen) can only be combined with ‚inactive‘ subjects like ‚es‘, ‚das‘, ‚sowas‘, never ‚active subjects‘ like ‚ich‘, ‚er‘ etc.",
+    "type": "verb"
+  },
+  {
+    "almanca": "kriegen",
+    "ingilizce": "to get",
+    "seviye": "A2",
+    "ornek": "Wir haben noch keine Information gekriegt.",
+    "kelime": "kriegen",
+    "kural": "‘bekommen‘ and ‚kriegen‘ are interchangeable.",
+    "type": "verb"
+  }
+]

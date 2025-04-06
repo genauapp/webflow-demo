@@ -1,0 +1,58 @@
+[
+  {
+    "almanca": "rot",
+    "ingilizce": "red",
+    "seviye": "A1",
+    "ornek": "Das T-Shirt ist rot.",
+    "kelime": "rot",
+    "type": "adjective"
+  },
+  {
+    "almanca": "gelb",
+    "ingilizce": "yellow",
+    "seviye": "A1",
+    "ornek": "Der Textmarker ist gelb.",
+    "kelime": "gelb",
+    "type": "adjective"
+  },
+  {
+    "almanca": "grün",
+    "ingilizce": "green",
+    "seviye": "A1",
+    "ornek": "Der Apfel ist grün.",
+    "kelime": "grün",
+    "type": "adjective"
+  },
+  {
+    "almanca": "blau",
+    "ingilizce": "blue",
+    "seviye": "A1",
+    "ornek": "Das Handy ist blau.",
+    "kelime": "blau",
+    "type": "adjective"
+  },
+  {
+    "almanca": "braun",
+    "ingilizce": "brown",
+    "seviye": "A1",
+    "ornek": "Die Katze ist braun.",
+    "kelime": "braun",
+    "type": "adjective"
+  },
+  {
+    "almanca": "sauer",
+    "ingilizce": "sour, angry",
+    "seviye": "A2",
+    "ornek": "Warum ist sie sauer?",
+    "kelime": "sauer",
+    "type": "adjective"
+  },
+  {
+    "almanca": "glücklich",
+    "ingilizce": "happy",
+    "seviye": "A2",
+    "ornek": "Du siehst glücklich aus!",
+    "kelime": "glücklich",
+    "type": "adjective"
+  }
+]

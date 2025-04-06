@@ -1,0 +1,182 @@
+[
+  {
+    "almanca": "widerspiegeln",
+    "ingilizce": "to reflect, mirror",
+    "seviye": "C1",
+    "ornek": "Das Verhalten spiegelt seine Einstellung wider.",
+    "kelime": "widerspiegeln",
+    "kural": "Separable verb, past: 'spiegelte wider', 'widergespiegelt'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "voraussetzen",
+    "ingilizce": "to assume, presuppose",
+    "seviye": "C1",
+    "ornek": "Diese Aufgabe setzt viel Wissen voraus.",
+    "kelime": "voraussetzen",
+    "kural": "Separable regular verb, past: 'setzte voraus', 'vorausgesetzt'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "wahrnehmen",
+    "ingilizce": "to perceive",
+    "seviye": "C1",
+    "ornek": "Ich nehme einen Unterschied wahr.",
+    "kelime": "wahrnehmen",
+    "kural": "Separable irregular verb, vowel change: e → i, past: 'nahm wahr', 'wahrgenommen'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "hervorgehen",
+    "ingilizce": "to emerge, result",
+    "seviye": "C2",
+    "ornek": "Aus dem Bericht geht hervor, dass die Zahlen steigen.",
+    "kelime": "hervorgehen",
+    "kural": "Separable irregular verb, past: 'ging hervor', 'hervorgegangen'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "sich auseinandersetzen",
+    "ingilizce": "to deal with, engage critically",
+    "seviye": "C1",
+    "ornek": "Sie setzt sich intensiv mit dem Thema auseinander.",
+    "kelime": "sich auseinandersetzen",
+    "kural": "Separable reflexive regular verb, past: 'setzte auseinander', 'auseinandergesetzt'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "zurückgreifen",
+    "ingilizce": "to fall back on, resort to",
+    "seviye": "C2",
+    "ornek": "Im Notfall kann man auf alte Methoden zurückgreifen.",
+    "kelime": "zurückgreifen",
+    "kural": "Separable irregular verb, past: 'griff zurück', 'zurückgegriffen'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "beeinträchtigen",
+    "ingilizce": "to impair, negatively affect",
+    "seviye": "C1",
+    "ornek": "Lärm kann die Konzentration beeinträchtigen.",
+    "kelime": "beeinträchtigen",
+    "kural": "Regular verb, inseparable prefix 'be-'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "entfallen",
+    "ingilizce": "to be omitted, to lapse",
+    "seviye": "C2",
+    "ornek": "Die Prüfung entfällt dieses Jahr.",
+    "kelime": "entfallen",
+    "kural": "Irregular verb, vowel change: a → ä, past: 'entfiel', 'entfallen'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "unterbinden",
+    "ingilizce": "to suppress, prevent",
+    "seviye": "C2",
+    "ornek": "Die Polizei unterbindet illegale Aktivitäten.",
+    "kelime": "unterbinden",
+    "kural": "Irregular verb, past: 'unterband', 'unterbunden'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "vorherrschen",
+    "ingilizce": "to prevail, dominate",
+    "seviye": "C1",
+    "ornek": "In dieser Region herrscht ein mildes Klima vor.",
+    "kelime": "vorherrschen",
+    "kural": "Separable regular verb, past: 'herrschte vor', 'vorherrscht'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "vorliegen",
+    "ingilizce": "to be present, to exist",
+    "seviye": "C1",
+    "ornek": "Es liegt noch kein Ergebnis vor.",
+    "kelime": "vorliegen",
+    "kural": "Separable irregular verb, past: 'lag vor', 'vorgelegen'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "erörtern",
+    "ingilizce": "to discuss in detail",
+    "seviye": "C1",
+    "ornek": "Das Thema wurde ausführlich erörtert.",
+    "kelime": "erörtern",
+    "kural": "Regular verb.",
+    "type": "verb"
+  },
+  {
+    "almanca": "veranschaulichen",
+    "ingilizce": "to illustrate, exemplify",
+    "seviye": "C1",
+    "ornek": "Er veranschaulicht seine Argumente mit Beispielen.",
+    "kelime": "veranschaulichen",
+    "kural": "Regular verb, inseparable prefix 'ver-'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "entbehren",
+    "ingilizce": "to do without, lack",
+    "seviye": "C2",
+    "ornek": "Er kann seine Hilfe nicht entbehren.",
+    "kelime": "entbehren",
+    "kural": "Regular verb, inseparable prefix 'ent-'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "unterliegen",
+    "ingilizce": "to be subject to, succumb",
+    "seviye": "C2",
+    "ornek": "Das Produkt unterliegt strengen Kontrollen.",
+    "kelime": "unterliegen",
+    "kural": "Irregular verb, past: 'unterlag', 'unterlegen'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "anstreben",
+    "ingilizce": "to strive for",
+    "seviye": "C1",
+    "ornek": "Er strebt eine Beförderung an.",
+    "kelime": "anstreben",
+    "kural": "Separable regular verb, past: 'strebte an', 'angestrebt'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "vorsehen",
+    "ingilizce": "to plan, provide for",
+    "seviye": "C2",
+    "ornek": "Das Gesetz sieht vor, dass ...",
+    "kelime": "vorsehen",
+    "kural": "Separable irregular verb, vowel change: e → ie, past: 'sah vor', 'vorgesehen'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "eintreten für",
+    "ingilizce": "to advocate for",
+    "seviye": "C1",
+    "ornek": "Er tritt für den Umweltschutz ein.",
+    "kelime": "eintreten für",
+    "kural": "Separable irregular verb, past: 'trat ein', 'eingetreten'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "zurückführen auf",
+    "ingilizce": "to attribute to",
+    "seviye": "C1",
+    "ornek": "Die Probleme lassen sich auf falsche Entscheidungen zurückführen.",
+    "kelime": "zurückführen auf",
+    "kural": "Separable regular verb, past: 'führte zurück', 'zurückgeführt'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "auslösen",
+    "ingilizce": "to trigger, cause",
+    "seviye": "C1",
+    "ornek": "Das Ereignis hat große Diskussionen ausgelöst.",
+    "kelime": "auslösen",
+    "kural": "Separable regular verb, past: 'löste aus', 'ausgelöst'.",
+    "type": "verb"
+  }
+]

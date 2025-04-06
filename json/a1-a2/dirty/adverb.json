@@ -1,0 +1,35 @@
+[
+  {
+    "almanca": "miteinander",
+    "ingilizce": "with each other",
+    "seviye": "A1",
+    "ornek": "Im Kurs sprechen wir Deutsch miteinander.",
+    "kelime": "miteinander",
+    "type": "adverb"
+  },
+  {
+    "almanca": "bisschen",
+    "ingilizce": "little",
+    "seviye": "A1",
+    "ornek": "Er kommt heute ein bisschen später.",
+    "kelime": "bisschen",
+    "kural": "99% of the time combined with ‚ein‘: ‚ein bisschen‘. Careful: ONLY for quantity, not for size.",
+    "type": "adverb"
+  },
+  {
+    "almanca": "besonders",
+    "ingilizce": "especially",
+    "seviye": "A2",
+    "ornek": "Deutsch lernen macht Spaß. Besonders das Sprechen!",
+    "kelime": "besonders",
+    "type": "adverb"
+  },
+  {
+    "almanca": "nachts",
+    "ingilizce": "at night",
+    "seviye": "A2",
+    "ornek": "Nachts sollte man die Heizung herunterstellen.",
+    "kelime": "nachts",
+    "type": "adverb"
+  }
+]

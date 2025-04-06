@@ -1,0 +1,82 @@
+[
+  {
+    "almanca": "allerdings",
+    "ingilizce": "however, indeed",
+    "seviye": "B2",
+    "ornek": "Das ist möglich, allerdings sehr teuer.",
+    "kelime": "allerdings",
+    "type": "adverb"
+  },
+  {
+    "almanca": "außerdem",
+    "ingilizce": "besides, furthermore",
+    "seviye": "B1",
+    "ornek": "Ich habe keine Zeit und außerdem kein Geld.",
+    "kelime": "außerdem",
+    "type": "adverb"
+  },
+  {
+    "almanca": "deshalb",
+    "ingilizce": "therefore",
+    "seviye": "B1",
+    "ornek": "Es regnet, deshalb bleibe ich zu Hause.",
+    "kelime": "deshalb",
+    "type": "adverb"
+  },
+  {
+    "almanca": "dennoch",
+    "ingilizce": "nevertheless",
+    "seviye": "B2",
+    "ornek": "Es war kalt, dennoch ging er schwimmen.",
+    "kelime": "dennoch",
+    "type": "adverb"
+  },
+  {
+    "almanca": "folglich",
+    "ingilizce": "consequently",
+    "seviye": "B2",
+    "ornek": "Er hat viel gelernt, folglich hat er die Prüfung bestanden.",
+    "kelime": "folglich",
+    "type": "adverb"
+  },
+  {
+    "almanca": "inzwischen",
+    "ingilizce": "meanwhile",
+    "seviye": "B1",
+    "ornek": "Ich koche, du kannst inzwischen den Tisch decken.",
+    "kelime": "inzwischen",
+    "type": "adverb"
+  },
+  {
+    "almanca": "meistens",
+    "ingilizce": "mostly, usually",
+    "seviye": "B1",
+    "ornek": "Meistens gehe ich am Wochenende joggen.",
+    "kelime": "meistens",
+    "type": "adverb"
+  },
+  {
+    "almanca": "daher",
+    "ingilizce": "hence, therefore",
+    "seviye": "B2",
+    "ornek": "Er ist krank, daher bleibt er im Bett.",
+    "kelime": "daher",
+    "type": "adverb"
+  },
+  {
+    "almanca": "stets",
+    "ingilizce": "always, constantly",
+    "seviye": "B2",
+    "ornek": "Er ist stets freundlich zu seinen Kollegen.",
+    "kelime": "stets",
+    "type": "adverb"
+  },
+  {
+    "almanca": "übrigens",
+    "ingilizce": "by the way",
+    "seviye": "B1",
+    "ornek": "Übrigens, hast du meine E-Mail bekommen?",
+    "kelime": "übrigens",
+    "type": "adverb"
+  }
+]

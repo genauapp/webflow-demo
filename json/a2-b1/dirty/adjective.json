@@ -1,0 +1,66 @@
+[
+  {
+    "almanca": "mutig",
+    "ingilizce": "courageous",
+    "seviye": "A2",
+    "ornek": "Mein Cousin ist echt sehr mutig. Dieses Jahr geht er allein in Australien wandern!",
+    "kelime": "mutig",
+    "type": "adjective"
+  },
+  {
+    "almanca": "ängstlich",
+    "ingilizce": "fearful",
+    "seviye": "A2",
+    "ornek": "Leider ist meine Tochter ein sehr ängstliches Kind.",
+    "kelime": "ängstlich",
+    "type": "adjective"
+  },
+  {
+    "almanca": "optimistisch",
+    "ingilizce": "optimistic",
+    "seviye": "A2",
+    "ornek": "Ich bin optimistisch, dass ich die Prüfung bestehe.",
+    "kelime": "optimistisch",
+    "type": "adjective"
+  },
+  {
+    "almanca": "klasse",
+    "ingilizce": "super",
+    "seviye": "B1",
+    "ornek": "Klasse gemacht!",
+    "kelime": "klasse",
+    "type": "adjective"
+  },
+  {
+    "almanca": "nützlich",
+    "ingilizce": "useful",
+    "seviye": " B1",
+    "ornek": "Ein Wörterbuch ist ein nützliches Hilfsmittel.",
+    "kelime": "nützlich",
+    "type": "adjective"
+  },
+  {
+    "almanca": "finanziell",
+    "ingilizce": "monetär, Geld-",
+    "seviye": "B1",
+    "ornek": "Ich bin aktuell arbeitslos, deshalb ist meine finanzielle Situation nicht besonders gut.",
+    "kelime": "finanziell",
+    "type": "adjective"
+  },
+  {
+    "almanca": "schlank",
+    "ingilizce": "Das Gegenteil ist ‚dick‘ (nur für Personen)",
+    "seviye": "B1",
+    "ornek": "Wow, du bist so schlank! Hast du abgenommen?",
+    "kelime": "schlank",
+    "type": "adjective"
+  },
+  {
+    "almanca": "arm",
+    "ingilizce": "Das Gegenteil ist ‚reich‘",
+    "seviye": "B1",
+    "ornek": "Als ich Kind war, waren wir sehr arm. Wir hatten nicht genug Geld und mussten immer sparen.",
+    "kelime": "arm",
+    "type": "adjective"
+  }
+]

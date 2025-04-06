@@ -1,0 +1,211 @@
+[
+  {
+    "type": "noun",
+    "almanca": "der Lehrer",
+    "ingilizce": "teacher (male)",
+    "seviye": "A1",
+    "ornek": "Der Lehrer erklärt die Aufgabe.",
+    "artikel": "der",
+    "kelime": "Lehrer",
+    "kural": "Masculine nouns referring to professions typically take 'der'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "almanca": "der Sommer",
+    "ingilizce": "summer",
+    "seviye": "A1",
+    "ornek": "Der Sommer ist meine Lieblingsjahreszeit.",
+    "artikel": "der",
+    "kelime": "Sommer",
+    "kural": "Seasons always take 'der'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "almanca": "der Apfel",
+    "ingilizce": "apple",
+    "seviye": "A1",
+    "ornek": "Der Apfel ist rot.",
+    "artikel": "der",
+    "kelime": "Apfel",
+    "kural": "Most trees and fruits take 'der', except for exceptions like 'die Banane'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "almanca": "der Montag",
+    "ingilizce": "Monday",
+    "seviye": "A1",
+    "ornek": "Der Montag ist der erste Tag der Woche.",
+    "artikel": "der",
+    "kelime": "Montag",
+    "kural": "Days of the week always take 'der'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "almanca": "der Computer",
+    "ingilizce": "computer",
+    "seviye": "A2",
+    "ornek": "Mein Computer ist sehr schnell.",
+    "artikel": "der",
+    "kelime": "Computer",
+    "kural": "Nouns ending in '-er' (derived from English) usually take 'der'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "almanca": "die Freundschaft",
+    "ingilizce": "friendship",
+    "seviye": "A2",
+    "ornek": "Unsere Freundschaft ist stark.",
+    "artikel": "die",
+    "kelime": "Freundschaft",
+    "kural": "Nouns ending in '-schaft' always take 'die'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "almanca": "die Gesundheit",
+    "ingilizce": "health",
+    "seviye": "A2",
+    "ornek": "Gesundheit ist sehr wichtig.",
+    "artikel": "die",
+    "kelime": "Gesundheit",
+    "kural": "Nouns ending in '-heit' always take 'die'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "almanca": "die Möglichkeit",
+    "ingilizce": "possibility",
+    "seviye": "A2",
+    "ornek": "Es gibt viele Möglichkeiten.",
+    "artikel": "die",
+    "kelime": "Möglichkeit",
+    "kural": "Nouns ending in '-keit' always take 'die'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "almanca": "die Meinung",
+    "ingilizce": "opinion",
+    "seviye": "A2",
+    "ornek": "Meine Meinung ist anders als deine.",
+    "artikel": "die",
+    "kelime": "Meinung",
+    "kural": "Nouns ending in '-ung' always take 'die'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "almanca": "die Bäckerei",
+    "ingilizce": "bakery",
+    "seviye": "A2",
+    "ornek": "Ich kaufe Brot in der Bäckerei.",
+    "artikel": "die",
+    "kelime": "Bäckerei",
+    "kural": "Nouns ending in '-ei' always take 'die'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "almanca": "die Banane",
+    "ingilizce": "banana",
+    "seviye": "A1",
+    "ornek": "Ich esse eine Banane.",
+    "artikel": "die",
+    "kelime": "Banane",
+    "kural": "Most fruits take 'die', except for exceptions like 'der Apfel'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "almanca": "das Mädchen",
+    "ingilizce": "girl",
+    "seviye": "A1",
+    "ornek": "Das Mädchen spielt im Park.",
+    "artikel": "das",
+    "kelime": "Mädchen",
+    "kural": "Nouns ending in '-chen' always take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "almanca": "das Fräulein",
+    "ingilizce": "young lady",
+    "seviye": "A2",
+    "ornek": "Das Fräulein ist sehr nett.",
+    "artikel": "das",
+    "kelime": "Fräulein",
+    "kural": "Nouns ending in '-lein' always take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "almanca": "das Instrument",
+    "ingilizce": "instrument",
+    "seviye": "A2",
+    "ornek": "Ich spiele ein Instrument.",
+    "artikel": "das",
+    "kelime": "Instrument",
+    "kural": "Nouns ending in '-ment' always take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "almanca": "das Museum",
+    "ingilizce": "museum",
+    "seviye": "A2",
+    "ornek": "Das Museum ist sehr interessant.",
+    "artikel": "das",
+    "kelime": "Museum",
+    "kural": "Nouns ending in '-um' always take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "almanca": "das Beispiel",
+    "ingilizce": "example",
+    "seviye": "A2",
+    "ornek": "Kannst du ein Beispiel geben?",
+    "artikel": "das",
+    "kelime": "Beispiel",
+    "kural": "Nouns starting with 'Bei-' and ending in '-spiel' take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "almanca": "das Hotel",
+    "ingilizce": "hotel",
+    "seviye": "A1",
+    "ornek": "Das Hotel liegt im Stadtzentrum.",
+    "artikel": "das",
+    "kelime": "Hotel",
+    "kural": "Most foreign words borrowed from English or French take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "almanca": "das Fenster",
+    "ingilizce": "window",
+    "seviye": "A1",
+    "ornek": "Das Fenster ist offen.",
+    "artikel": "das",
+    "kelime": "Fenster",
+    "kural": "Words ending in '-er' that are not masculine take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "almanca": "das Gespräch",
+    "ingilizce": "conversation",
+    "seviye": "A2",
+    "ornek": "Wir hatten ein interessantes Gespräch.",
+    "artikel": "das",
+    "kelime": "Gespräch",
+    "kural": "Most nouns starting with 'Ge-' take 'das'.",
+    "highlight": ""
+  }
+]
