@@ -330,7 +330,7 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
       SetContentbyUserPrefs(updatedLevel, currentCategory)
       return
     }
-    if (currentCategory !== "" ) {
+    if (isRegularLevel(updatedLevel) && currentCategory !== "" ) {
       await executeInitialLoadAndShow(updatedLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, currentCategory)
     }
   })
@@ -352,7 +352,8 @@ document.querySelectorAll('.deck').forEach((elem) => {
 
     if (selectedCategory) {
 
-      SetContentbyUserPrefs(currentLevel, selectedCategory);
+      SetContentbyUserPrefs(currentLevel, currentCategory);
+      showOrHideMainContent(currentLevel, currentCategory);
 
       await executeInitialLoadAndShow(currentLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, selectedCategory)
     }
