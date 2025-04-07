@@ -37,7 +37,7 @@ const JSON_URLS_NOUN = {
   },
   einburgerungstest: 
   {
-    einburgerunstest:`${ASSETS_BASE_URL}/json/einburgerungstest/noun.json`
+    einburgerungstest:`${ASSETS_BASE_URL}/json/einburgerungstest/noun.json`
   }
 }
 
@@ -72,7 +72,7 @@ const JSON_URLS_VERB = {
   },
   einburgerungstest: 
   {
-    einburgerunstest:`${ASSETS_BASE_URL}/json/einburgerungstest/verb.json`
+    einburgerungstest:`${ASSETS_BASE_URL}/json/einburgerungstest/verb.json`
   }
 }
 
@@ -107,7 +107,7 @@ const JSON_URLS_ADJECTIVE = {
   },
   einburgerungstest: 
   {
-    einburgerunstest:`${ASSETS_BASE_URL}/json/einburgerungstest/adjective.json`
+    einburgerungstest:`${ASSETS_BASE_URL}/json/einburgerungstest/adjective.json`
   }
 }
 
@@ -142,7 +142,7 @@ const JSON_URLS_ADVERB = {
   },
   einburgerungstest: 
   {
-    einburgerunstest:`${ASSETS_BASE_URL}/json/einburgerungstest/adverb.json`
+    einburgerungstest:`${ASSETS_BASE_URL}/json/einburgerungstest/adverb.json`
   }
 }
 
