@@ -2,23 +2,7 @@ import { APP_VERSION_KEY, DEFAULT_VALUE } from '../constants/storageKeys.js'
 
 export default class LocalStorageManager {
   /**
-   * Save data to localStorage under the given key.
-   *
-   * The function handles different data types:
-   *
-   * 1. **Objects and Arrays**:
-   *    - If data is an object (or array) and not null, it is serialized using JSON.stringify.
-   *
-   * 2. **Strings**:
-   *    - For strings, we check if the string appears to be valid JSON by checking if it starts with
-   *      '{' or '[' (and correspondingly ends with '}' or ']').
-   *    - We attempt to parse it. If parsing is successful, we assume the string is already a JSON string and
-   *      store it as is, to avoid double-stringification.
-   *    - Otherwise, we treat it as a plain string.
-   *
-   * 3. **Other Primitives (numbers, booleans, etc.)**:
-   *    - They are stored directly.
-   *
+
    * **Important:**
    * Make sure you pass raw data (objects, arrays, or plain primitives) into this method. If you pre-stringify the data,
    * this function might end up stringifying it again, causing issues on load.
@@ -95,14 +79,6 @@ export default class LocalStorageManager {
     const APP_VERSION = LocalStorageManager.load(APP_VERSION_KEY, null)
 
     if (APP_VERSION === null || APP_VERSION !== currentAppVersion) {
-      // LocalStorageManager.remove(CURRENT_LEVEL_KEY)
-      // LocalStorageManager.remove(LEARNED_WITH_LEARN_WORDS_KEY)
-      // LocalStorageManager.remove(LEARNED_WITH_EXERCISE_WORDS_KEY)
-      // LocalStorageManager.remove('inProgressWords')
-      // LocalStorageManager.remove('favoriteWords')
-      // LocalStorageManager.remove('lastSelectedTopic')
-      // LocalStorageManager.remove('learnedWords')
-      // LocalStorageManager.remove('correctAnswerWordsCounter')
 
       LocalStorageManager.clear()
       LocalStorageManager.save(APP_VERSION_KEY, currentAppVersion)

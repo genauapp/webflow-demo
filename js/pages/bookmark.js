@@ -1,6 +1,6 @@
 import { DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY } from "../constants/storageKeys.js"
 import LocalStorageManager from "../utils/LocalStorageManager.js"
-import { levels, categories } from "../constants/props.js"
+import { levels, categories, types } from "../constants/props.js"
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', () => {
@@ -129,8 +129,6 @@ function removeFavorite(index) {
   localStorage.setItem('favoriteWords', JSON.stringify(favoriteWords))
   listFavorites() // Listeyi yeniden yükle
 }
-
-const types = ['noun', 'verb', 'adjective', 'adverb']
 
 function listLearnedWords() {
   const learnedWordsContainer = document.getElementById('learnedWordsContainer')
