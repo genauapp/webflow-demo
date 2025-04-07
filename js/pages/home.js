@@ -320,7 +320,7 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
       SetContentbyUserPrefs(updatedLevel, "")
       showOrHideDecks(updatedLevel)
       showOrHideMainContent(updatedLevel)
-      await executeInitialLoadAndShow(updatedLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, currentCategory)
+      await executeInitialLoadAndShow(updatedLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, 'einburgerungstest')
     }
 
     if (isRegularLevel(updatedLevel) && currentCategory === "") {

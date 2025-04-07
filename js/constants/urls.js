@@ -35,7 +35,10 @@ const JSON_URLS_NOUN = {
     doctor: `${ASSETS_BASE_URL}/json/c1-c2/doctor/noun.json`,
     music: `${ASSETS_BASE_URL}/json/c1-c2/music/noun.json`
   },
-  einburgerungstest: `${ASSETS_BASE_URL}/json/einburgerungstest/noun.json`,
+  einburgerungstest: 
+  {
+    einburgerunstest:`${ASSETS_BASE_URL}/json/einburgerungstest/noun.json`
+  }
 }
 
 const JSON_URLS_VERB = {
@@ -67,7 +70,10 @@ const JSON_URLS_VERB = {
     doctor: `${ASSETS_BASE_URL}/json/c1-c2/doctor/verb.json`,
     music: `${ASSETS_BASE_URL}/json/c1-c2/music/verb.json`,
   },
-  einburgerungstest: `${ASSETS_BASE_URL}/json/einburgerungstest/verb.json`,
+  einburgerungstest: 
+  {
+    einburgerunstest:`${ASSETS_BASE_URL}/json/einburgerungstest/verb.json`
+  }
 }
 
 const JSON_URLS_ADJECTIVE = {
@@ -99,7 +105,10 @@ const JSON_URLS_ADJECTIVE = {
     doctor: `${ASSETS_BASE_URL}/json/c1-c2/doctor/adjective.json`,
     music: `${ASSETS_BASE_URL}/json/c1-c2/music/adjective.json`,
   },
-  einburgerungstest: `${ASSETS_BASE_URL}/json/einburgerungstest/adjective.json`,
+  einburgerungstest: 
+  {
+    einburgerunstest:`${ASSETS_BASE_URL}/json/einburgerungstest/adjective.json`
+  }
 }
 
 const JSON_URLS_ADVERB = {
@@ -131,7 +140,10 @@ const JSON_URLS_ADVERB = {
     doctor: `${ASSETS_BASE_URL}/json/c1-c2/doctor/adverb.json`,
     music: `${ASSETS_BASE_URL}/json/c1-c2/music/adverb.json`,
   },
-  einburgerungstest: `${ASSETS_BASE_URL}/json/einburgerungstest/adverb.json`,
+  einburgerungstest: 
+  {
+    einburgerunstest:`${ASSETS_BASE_URL}/json/einburgerungstest/adverb.json`
+  }
 }
 
 export const JSON_URLS = {
