@@ -5,6 +5,7 @@ import LocalStorageManager from '../utils/LocalStorageManager.js'
 import ExerciseUtils from '../utils/home/ExerciseUtils.js'
 import ListUtils from '../utils/ListUtils.js'
 import SetContentbyUserPrefs from '../utils/home/SetContentbyUserPrefs.js'
+import { types } from '../constants/props.js'
 //#region import Json files
 import verbdefault1 from '../../json/a1-a2/default/verb.json' with { type: 'json' }
 import verbdefault2 from '../../json/a2-b1/default/verb.json' with { type: 'json' }
@@ -272,12 +273,6 @@ let inProgressWords = {
     einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] }
   },
 }
-
-// Global variables
-
-export const levels = ['b1telcpt1', 'b1telcpt2', 'b1telcpt3', 'b1telcpt4', 'einburgerungstest']
-export const types = ['noun', 'verb', 'adjective', 'adverb']
-export const categories = ['default', 'dirty', 'doctor', 'music', 'einburgerungstest']
 
 let kelimeListesi = []
 let kelimeListesiExercise = []
