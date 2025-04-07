@@ -266,7 +266,9 @@ let inProgressWords = {
       adverb: [],
     },
   },
-  einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] },
+  einburgerungstest: {
+    einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] }
+  },
 }
 
 // Global variables
