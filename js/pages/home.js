@@ -295,6 +295,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   LocalStorageManager.save(CURRENT_CATEGORY_KEY, defaultCategory)
   showSkeleton(defaultWordType)
   SetContentbyUserPrefs(defaultLevel, defaultCategory)
+  showOrHideDecks(defaultLevel)
 })
 
 // On Level Change
@@ -304,14 +305,24 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
     const updatedLevel = link.getAttribute('data-option')
     const selectedText = link.innerText
     const currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
+    const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
+    const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
+    const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY)
+
     // Seçilen option'ı localStorage'a kaydet
     LocalStorageManager.save(CURRENT_LEVEL_KEY, updatedLevel)  
 
-    if (updatedLevel) {
-      // Dropdown başlığını güncelle
-      document.getElementById('dropdownHeader').innerText = selectedText
+    // Dropdown başlığını güncelle
+    document.getElementById('dropdownHeader').innerText = selectedText
+
+    if (isRegularLevel(updatedLevel) && currentCategory === "") {
+      showOrHideDecks(updatedLevel)
       // blinkeffect'i tetikle
       SetContentbyUserPrefs(updatedLevel, currentCategory)
+      return
+    }
+    if (currentCategory !== "" ) {
+      await executeInitialLoadAndShow(updatedLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, currentCategory)
     }
   })
 })
@@ -1840,6 +1851,20 @@ function showModalExercise(message, wordType) {
 function playSound(audioUrl) {
   const audio = new Audio(audioUrl)
   audio.play()
+}
+
+function isRegularLevel (level) {
+  return level !== DEFAULT_VALUE.CURRENT_LEVEL || level !== "einburgerungstest"
+}
+
+function showOrHideDecks (level) {
+  document.querySelectorAll('.deck').forEach((elem) => {
+    if (isRegularLevel(level)) {
+      elem.style.display = 'flex'
+      return
+    }
+    elem.style.display = 'none'
+  })
 }
 
 function gtag_report_conversion(url) {
