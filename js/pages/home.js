@@ -1879,7 +1879,7 @@ function showOrHideDecks (level) {
 }
 
 function showOrHideMainContent (level, category) {
-  if (level === 'einburgerungtest') {
+  if (level === 'einburgerungstest') {
     document.getElementById('contentContainer').style.display = 'block'
     document.getElementById('warnImage').style.display = 'none'
     return
