@@ -301,6 +301,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   SetContentbyUserPrefs(defaultLevel, defaultCategory)
   showOrHideDecks(defaultLevel)
   showOrHideMainContent(defaultLevel, defaultCategory)
+  console.log(window.location.href)
 })
 
 // On Level Change
