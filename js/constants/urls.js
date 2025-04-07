@@ -1,18 +1,18 @@
 // PROD
-export const ASSETS_BASE_URL = `https://genauapp.github.io/webflow-demo/`
+//export const ASSETS_BASE_URL = `https://genauapp.github.io/webflow-demo/`
 // STAGING
-// export const ASSETS_BASE_URL =
-//   'https://cdn.jsdelivr.net/gh/chatonode/genau-webflow-demo@4ccb5c4'
+export const ASSETS_BASE_URL =
+   'https://cdn.jsdelivr.net/gh/genauapp/webflow-demo@3db2fa6'
 
 /* WORD LEARN/EXERCISE **/
 
 const JSON_URLS_NOUN = {
   b1telcpt1: 
   {
-    default: `${ASSETS_BASE_URL}json/a1-a2/default/noun.json`,
-    dirty: `${ASSETS_BASE_URL}json/a1-a2/dirty/noun.json`,
-    doctor: `${ASSETS_BASE_URL}json/a1-a2/doctor/noun.json`,
-    music: `${ASSETS_BASE_URL}json/a1-a2/music/noun.json`
+    default: `${ASSETS_BASE_URL}/json/a1-a2/default/noun.json`,
+    dirty: `${ASSETS_BASE_URL}/json/a1-a2/dirty/noun.json`,
+    doctor: `${ASSETS_BASE_URL}/json/a1-a2/doctor/noun.json`,
+    music: `${ASSETS_BASE_URL}/json/a1-a2/music/noun.json`
   },
   b1telcpt2:
   {
