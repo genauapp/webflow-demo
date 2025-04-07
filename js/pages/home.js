@@ -296,6 +296,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   showSkeleton(defaultWordType)
   SetContentbyUserPrefs(defaultLevel, defaultCategory)
   showOrHideDecks(defaultLevel)
+  showOrHideMainContent(defaultLevel, defaultCategory)
 })
 
 // On Level Change
@@ -306,14 +307,21 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
     const selectedText = link.innerText
     const currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
-    const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
-    const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY)
+    const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
+    const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
 
     // Seçilen option'ı localStorage'a kaydet
     LocalStorageManager.save(CURRENT_LEVEL_KEY, updatedLevel)  
 
     // Dropdown başlığını güncelle
     document.getElementById('dropdownHeader').innerText = selectedText
+
+    if (updatedLevel === 'einburgerungstest') {
+      SetContentbyUserPrefs(updatedLevel, "")
+      showOrHideDecks(updatedLevel)
+      showOrHideMainContent(updatedLevel)
+      await executeInitialLoadAndShow(updatedLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, currentCategory)
+    }
 
     if (isRegularLevel(updatedLevel) && currentCategory === "") {
       showOrHideDecks(updatedLevel)
@@ -1857,14 +1865,31 @@ function isRegularLevel (level) {
   return !(level === DEFAULT_VALUE.CURRENT_LEVEL || level === "einburgerungstest")
 }
 
+function isSelected (prop) {
+  return !(prop === DEFAULT_VALUE.CURRENT_CATEGORY || prop === null)
+}
+
 function showOrHideDecks (level) {
-  document.querySelectorAll('.deck').forEach((elem) => {
-    if (isRegularLevel(level)) {
-      elem.style.display = 'block'
+  if (isRegularLevel(level)) {
+      document.getElementById('decksContainer').style.display = 'flex'
       return
-    }
-    elem.style.display = 'none'
-  })
+  }
+  document.getElementById('decksContainer').style.display = 'none'
+  return
+}
+
+function showOrHideMainContent (level, category) {
+  if (level === 'einburgerungtest') {
+    document.getElementById('contentContainer').style.display = 'block'
+    document.getElementById('warnImage').style.display = 'none'
+    return
+  }
+  if (isRegularLevel(level) && isSelected(category))
+  {
+    document.getElementById('contentContainer').style.display = 'block'
+    document.getElementById('warnImage').style.display = 'none'
+    return
+  }
 }
 
 function gtag_report_conversion(url) {
