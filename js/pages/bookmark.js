@@ -1,5 +1,6 @@
 import { DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY } from "../constants/storageKeys.js"
 import LocalStorageManager from "../utils/LocalStorageManager.js"
+import { categories } from "./home.js"
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', () => {
@@ -153,9 +154,9 @@ function listLearnedWords() {
 
   const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
 
-  const allEmpty = levels.every((level) =>
-    types.every((type) => learnedWithExerciseWords[level][type].length === 0)
-  )
+  const allEmpty = levels.every((level) => categories.every((category) => 
+    types.every((type) => learnedWithExerciseWords[level][category][type].length === 0)
+  ))
 
   if (allEmpty) {
     // Learned words  yokken gösterilecek mesaj
