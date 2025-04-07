@@ -153,9 +153,11 @@ let staticWordLists = {
     }
   },
   einburgerungstest: {
-    verb: vEinburger,
-    adjective: adjEinburger,
-    adverb: advEinburger
+    einburgerungstest: {
+      verb: vEinburger,
+      adjective: adjEinburger,
+      adverb: advEinburger
+    }
   }
 }
 //#endregion
