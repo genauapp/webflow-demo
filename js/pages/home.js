@@ -317,6 +317,7 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
     document.getElementById('dropdownHeader').innerText = selectedText
 
     if (updatedLevel === 'einburgerungstest') {
+      LocalStorageManager.save(CURRENT_CATEGORY_KEY, 'einburgerungstest')
       SetContentbyUserPrefs(updatedLevel, "")
       showOrHideDecks(updatedLevel)
       showOrHideMainContent(updatedLevel)

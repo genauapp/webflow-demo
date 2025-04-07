@@ -145,11 +145,8 @@ export class DEFAULT_VALUE {
       },
     },
     einburgerungstest: {
-      noun: [],
-      verb: [],
-      adjective: [],
-      adverb: [],
-    },
+      einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] }
+    }
   };
 
   static LEARNED_WITH_EXERCISE_WORDS = {
@@ -257,8 +254,9 @@ export class DEFAULT_VALUE {
         adverb: [],
       },
     },
-    einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] },
-  };
+    einburgerungstest: {
+      einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] }
+  }};
 
   /** 
   Einbürgerungstest
