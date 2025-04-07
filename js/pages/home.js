@@ -1292,7 +1292,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords,
       } else {
         inProgressWords[level][category][wordType][inProgressIndex].counter += 1
         if (
-          inProgressWords[level][wordType][category][inProgressIndex].counter ===
+          inProgressWords[level][category][wordType][inProgressIndex].counter ===
           2
         ) {
           document.getElementById(`progressMiddle-${wordType}`).style.opacity =
