@@ -1854,13 +1854,13 @@ function playSound(audioUrl) {
 }
 
 function isRegularLevel (level) {
-  return level !== DEFAULT_VALUE.CURRENT_LEVEL || level !== "einburgerungstest"
+  return !(level === DEFAULT_VALUE.CURRENT_LEVEL || level === "einburgerungstest")
 }
 
 function showOrHideDecks (level) {
   document.querySelectorAll('.deck').forEach((elem) => {
     if (isRegularLevel(level)) {
-      elem.style.display = 'flex'
+      elem.style.display = 'block'
       return
     }
     elem.style.display = 'none'
