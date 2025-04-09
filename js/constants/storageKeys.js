@@ -35,9 +35,9 @@ export class DEFAULT_VALUE {
   /** 
   Homepage
   */
-  static CURRENT_LEVEL = "";
+  static CURRENT_LEVEL = "b1telcpt1";
   static CURRENT_WORD_TYPE = "noun";
-  static CURRENT_CATEGORY = "";
+  static CURRENT_CATEGORY = "default";
 
   static LEARNED_WITH_LEARN_WORDS = {
     b1telcpt1: {

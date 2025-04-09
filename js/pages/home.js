@@ -292,11 +292,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, defaultWordType)
   const defaultCategory = DEFAULT_VALUE.CURRENT_CATEGORY
   LocalStorageManager.save(CURRENT_CATEGORY_KEY, defaultCategory)
+  const defaultLearnedWithLearnWords = DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS
+  LocalStorageManager.save(LEARNED_WITH_LEARN_WORDS_KEY, defaultLearnedWithLearnWords)
+  const defaultLearnedWithExerciseWords = DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS
+  LocalStorageManager.save(LEARNED_WITH_EXERCISE_WORDS_KEY, defaultLearnedWithExerciseWords)
   showSkeleton(defaultWordType)
-  SetContentbyUserPrefs(defaultLevel, defaultCategory)
-  showOrHideDecks(defaultLevel)
-  showOrHideMainContent(defaultLevel, defaultCategory)
-  console.log(window.location.href)
+  await executeInitialLoadAndShow(defaultLevel, defaultWordType, defaultLearnedWithLearnWords, defaultLearnedWithExerciseWords, defaultCategory) 
 })
 
 // On Level Change
@@ -318,21 +319,11 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
 
     if (updatedLevel === 'einburgerungstest') {
       LocalStorageManager.save(CURRENT_CATEGORY_KEY, 'einburgerungstest')
-      SetContentbyUserPrefs(updatedLevel, "")
-      showOrHideDecks(updatedLevel)
-      showOrHideMainContent(updatedLevel)
+      showOrHideDecks('einburgerungstest')
       await executeInitialLoadAndShow(updatedLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, 'einburgerungstest')
-    }
-
-    if (isRegularLevel(updatedLevel) && currentCategory === "") {
-      showOrHideDecks(updatedLevel)
-      // blinkeffect'i tetikle
-      SetContentbyUserPrefs(updatedLevel, currentCategory)
       return
-    }
-    if (isRegularLevel(updatedLevel) && currentCategory !== "" ) {
-      await executeInitialLoadAndShow(updatedLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, currentCategory)
-    }
+    }    
+      await executeInitialLoadAndShow(updatedLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, currentCategory) 
   })
 })
 
@@ -348,15 +339,8 @@ document.querySelectorAll('.deck').forEach((elem) => {
     const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
     const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
     const currentLevel = LocalStorageManager.load(CURRENT_LEVEL_KEY)
-    
 
-    if (selectedCategory) {
-
-      SetContentbyUserPrefs(currentLevel, currentCategory);
-      showOrHideMainContent(currentLevel, currentCategory);
-
-      await executeInitialLoadAndShow(currentLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, selectedCategory)
-    }
+    await executeInitialLoadAndShow(currentLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, selectedCategory)
   })
 })
 
