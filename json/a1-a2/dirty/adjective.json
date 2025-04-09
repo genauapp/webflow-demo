@@ -1,58 +1,32 @@
 [
   {
-    "almanca": "rot",
-    "ingilizce": "red",
+    "almanca": "offiziell",
+    "ingilizce": "official",
     "seviye": "A1",
-    "ornek": "Das T-Shirt ist rot.",
-    "kelime": "rot",
-    "type": "adjective"
+    "ornek": "Das ist ein offizielles Dokument.",
+    "kelime": "offiziell",
+    "kural": "Adjectives ending in '-ell' are usually descriptive of status.",
+    "type": "adjective",
+    "category": "Behörden"
   },
   {
-    "almanca": "gelb",
-    "ingilizce": "yellow",
+    "almanca": "gültig",
+    "ingilizce": "valid",
     "seviye": "A1",
-    "ornek": "Der Textmarker ist gelb.",
-    "kelime": "gelb",
-    "type": "adjective"
+    "ornek": "Der Ausweis ist noch gültig.",
+    "kelime": "gültig",
+    "kural": "Often used with documents or ID cards.",
+    "type": "adjective",
+    "category": "Behörden"
   },
   {
-    "almanca": "grün",
-    "ingilizce": "green",
+    "almanca": "notwendig",
+    "ingilizce": "necessary",
     "seviye": "A1",
-    "ornek": "Der Apfel ist grün.",
-    "kelime": "grün",
-    "type": "adjective"
-  },
-  {
-    "almanca": "blau",
-    "ingilizce": "blue",
-    "seviye": "A1",
-    "ornek": "Das Handy ist blau.",
-    "kelime": "blau",
-    "type": "adjective"
-  },
-  {
-    "almanca": "braun",
-    "ingilizce": "brown",
-    "seviye": "A1",
-    "ornek": "Die Katze ist braun.",
-    "kelime": "braun",
-    "type": "adjective"
-  },
-  {
-    "almanca": "sauer",
-    "ingilizce": "sour, angry",
-    "seviye": "A2",
-    "ornek": "Warum ist sie sauer?",
-    "kelime": "sauer",
-    "type": "adjective"
-  },
-  {
-    "almanca": "glücklich",
-    "ingilizce": "happy",
-    "seviye": "A2",
-    "ornek": "Du siehst glücklich aus!",
-    "kelime": "glücklich",
-    "type": "adjective"
+    "ornek": "Ein Visum ist für die Reise notwendig.",
+    "kelime": "notwendig",
+    "kural": "Compound adjective: 'not' (need) + 'wendig' (turn).",
+    "type": "adjective",
+    "category": "Behörden"
   }
 ]

@@ -1,35 +1,32 @@
 [
   {
-    "almanca": "miteinander",
-    "ingilizce": "with each other",
+    "almanca": "oft",
+    "ingilizce": "often",
     "seviye": "A1",
-    "ornek": "Im Kurs sprechen wir Deutsch miteinander.",
-    "kelime": "miteinander",
-    "type": "adverb"
+    "ornek": "Ich bin oft krank.",
+    "kelime": "oft",
+    "kural": "Frequency adverbs can be used before or after the verb.",
+    "type": "adverb",
+    "category": "Gesundheit"
   },
   {
-    "almanca": "bisschen",
-    "ingilizce": "little",
+    "almanca": "kaum",
+    "ingilizce": "hardly",
     "seviye": "A1",
-    "ornek": "Er kommt heute ein bisschen später.",
-    "kelime": "bisschen",
-    "kural": "99% of the time combined with ‚ein‘: ‚ein bisschen‘. Careful: ONLY for quantity, not for size.",
-    "type": "adverb"
+    "ornek": "Ich kann kaum sprechen.",
+    "kelime": "kaum",
+    "kural": "Negation-related adverb, often used with modal verbs.",
+    "type": "adverb",
+    "category": "Gesundheit"
   },
   {
-    "almanca": "besonders",
-    "ingilizce": "especially",
-    "seviye": "A2",
-    "ornek": "Deutsch lernen macht Spaß. Besonders das Sprechen!",
-    "kelime": "besonders",
-    "type": "adverb"
-  },
-  {
-    "almanca": "nachts",
-    "ingilizce": "at night",
-    "seviye": "A2",
-    "ornek": "Nachts sollte man die Heizung herunterstellen.",
-    "kelime": "nachts",
-    "type": "adverb"
+    "almanca": "besser",
+    "ingilizce": "better",
+    "seviye": "A1",
+    "ornek": "Ich fühle mich besser.",
+    "kelime": "besser",
+    "kural": "Comparative form of 'gut', often used with 'fühlen'.",
+    "type": "adverb",
+    "category": "Gesundheit"
   }
 ]

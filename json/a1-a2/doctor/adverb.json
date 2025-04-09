@@ -1,35 +1,32 @@
 [
   {
-    "almanca": "miteinander",
-    "ingilizce": "with each other",
+    "almanca": "draußen",
+    "ingilizce": "outside",
     "seviye": "A1",
-    "ornek": "Im Kurs sprechen wir Deutsch miteinander.",
-    "kelime": "miteinander",
-    "type": "adverb"
+    "ornek": "Die Kinder spielen draußen.",
+    "kelime": "draußen",
+    "kural": "Place adverbs often follow the verb.",
+    "type": "adverb",
+    "category": "Einkaufen"
   },
   {
-    "almanca": "bisschen",
-    "ingilizce": "little",
+    "almanca": "billigerweise",
+    "ingilizce": "cheaply",
     "seviye": "A1",
-    "ornek": "Er kommt heute ein bisschen später.",
-    "kelime": "bisschen",
-    "kural": "99% of the time combined with ‚ein‘: ‚ein bisschen‘. Careful: ONLY for quantity, not for size.",
-    "type": "adverb"
+    "ornek": "Man bekommt die Produkte billigerweise im Angebot.",
+    "kelime": "billigerweise",
+    "kural": "Adverbs ending in '-erweise' describe manner.",
+    "type": "adverb",
+    "category": "Einkaufen"
   },
   {
-    "almanca": "besonders",
-    "ingilizce": "especially",
-    "seviye": "A2",
-    "ornek": "Deutsch lernen macht Spaß. Besonders das Sprechen!",
-    "kelime": "besonders",
-    "type": "adverb"
-  },
-  {
-    "almanca": "nachts",
-    "ingilizce": "at night",
-    "seviye": "A2",
-    "ornek": "Nachts sollte man die Heizung herunterstellen.",
-    "kelime": "nachts",
-    "type": "adverb"
+    "almanca": "schnell",
+    "ingilizce": "quickly",
+    "seviye": "A1",
+    "ornek": "Ich kaufe schnell ein.",
+    "kelime": "schnell",
+    "kural": "Some adjectives can function directly as adverbs without changes.",
+    "type": "adverb",
+    "category": "Einkaufen"
   }
 ]

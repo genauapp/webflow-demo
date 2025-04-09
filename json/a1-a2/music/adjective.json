@@ -1,58 +1,32 @@
 [
   {
-    "almanca": "rot",
-    "ingilizce": "red",
+    "almanca": "krank",
+    "ingilizce": "sick",
     "seviye": "A1",
-    "ornek": "Das T-Shirt ist rot.",
-    "kelime": "rot",
-    "type": "adjective"
+    "ornek": "Er ist heute krank und bleibt zu Hause.",
+    "kelime": "krank",
+    "kural": "Describes health conditions.",
+    "type": "adjective",
+    "category": "Gesundheit"
   },
   {
-    "almanca": "gelb",
-    "ingilizce": "yellow",
+    "almanca": "gesund",
+    "ingilizce": "healthy",
     "seviye": "A1",
-    "ornek": "Der Textmarker ist gelb.",
-    "kelime": "gelb",
-    "type": "adjective"
+    "ornek": "Ich esse viel Obst, das ist gesund.",
+    "kelime": "gesund",
+    "kural": "Opposite of 'krank', used with 'sein' or 'bleiben'.",
+    "type": "adjective",
+    "category": "Gesundheit"
   },
   {
-    "almanca": "grün",
-    "ingilizce": "green",
+    "almanca": "fiebrig",
+    "ingilizce": "feverish",
     "seviye": "A1",
-    "ornek": "Der Apfel ist grün.",
-    "kelime": "grün",
-    "type": "adjective"
-  },
-  {
-    "almanca": "blau",
-    "ingilizce": "blue",
-    "seviye": "A1",
-    "ornek": "Das Handy ist blau.",
-    "kelime": "blau",
-    "type": "adjective"
-  },
-  {
-    "almanca": "braun",
-    "ingilizce": "brown",
-    "seviye": "A1",
-    "ornek": "Die Katze ist braun.",
-    "kelime": "braun",
-    "type": "adjective"
-  },
-  {
-    "almanca": "sauer",
-    "ingilizce": "sour, angry",
-    "seviye": "A2",
-    "ornek": "Warum ist sie sauer?",
-    "kelime": "sauer",
-    "type": "adjective"
-  },
-  {
-    "almanca": "glücklich",
-    "ingilizce": "happy",
-    "seviye": "A2",
-    "ornek": "Du siehst glücklich aus!",
-    "kelime": "glücklich",
-    "type": "adjective"
+    "ornek": "Das Kind sieht fiebrig aus.",
+    "kelime": "fiebrig",
+    "kural": "Adjective describing symptoms, ends in '-ig'.",
+    "type": "adjective",
+    "category": "Gesundheit"
   }
 ]

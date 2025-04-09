@@ -1,35 +1,32 @@
 [
   {
-    "almanca": "miteinander",
-    "ingilizce": "with each other",
+    "almanca": "persönlich",
+    "ingilizce": "personally",
     "seviye": "A1",
-    "ornek": "Im Kurs sprechen wir Deutsch miteinander.",
-    "kelime": "miteinander",
-    "type": "adverb"
+    "ornek": "Sie müssen persönlich erscheinen.",
+    "kelime": "persönlich",
+    "kural": "Many adjectives can function as adverbs in German.",
+    "type": "adverb",
+    "category": "Behörden"
   },
   {
-    "almanca": "bisschen",
-    "ingilizce": "little",
+    "almanca": "später",
+    "ingilizce": "later",
     "seviye": "A1",
-    "ornek": "Er kommt heute ein bisschen später.",
-    "kelime": "bisschen",
-    "kural": "99% of the time combined with ‚ein‘: ‚ein bisschen‘. Careful: ONLY for quantity, not for size.",
-    "type": "adverb"
+    "ornek": "Kommen Sie bitte später wieder.",
+    "kelime": "später",
+    "kural": "Comparative form of 'spät', used for time.",
+    "type": "adverb",
+    "category": "Behörden"
   },
   {
-    "almanca": "besonders",
-    "ingilizce": "especially",
-    "seviye": "A2",
-    "ornek": "Deutsch lernen macht Spaß. Besonders das Sprechen!",
-    "kelime": "besonders",
-    "type": "adverb"
-  },
-  {
-    "almanca": "nachts",
-    "ingilizce": "at night",
-    "seviye": "A2",
-    "ornek": "Nachts sollte man die Heizung herunterstellen.",
-    "kelime": "nachts",
-    "type": "adverb"
+    "almanca": "vorher",
+    "ingilizce": "beforehand",
+    "seviye": "A1",
+    "ornek": "Bitte melden Sie sich vorher an.",
+    "kelime": "vorher",
+    "kural": "Time adverb indicating prior action.",
+    "type": "adverb",
+    "category": "Behörden"
   }
 ]
