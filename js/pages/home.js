@@ -350,13 +350,13 @@ document.querySelectorAll('.deck').forEach((elem) => {
       elem.style.border = '2px solid black'
       elem.style.borderRadius = '16px'
       document.querySelectorAll('.deck').forEach((deck) => {
-        if (deck.classList.contains('isSelected')) {
-            deck.classList.remove('isSelected')
+        if (deck.classList.contains('selectedIMG')) {
+            deck.classList.remove('selectedIMG')
             deck.style.border = ''
             deck.style.borderRadius = ''
         }
     })
-    elem.classList.add('isSelected')
+    elem.classList.add('selectedIMG')
     }
     await executeInitialLoadAndShow(currentLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, selectedCategory)
   })
