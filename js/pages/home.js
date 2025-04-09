@@ -322,7 +322,10 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
       showOrHideDecks('einburgerungstest')
       await executeInitialLoadAndShow(updatedLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, 'einburgerungstest')
       return
-    }    
+    }
+    if (currentCategory === 'einburgerungstest' && isRegularLevel(updatedLevel)) {
+      await executeInitialLoadAndShow(updatedLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, 'default')
+    }
       await executeInitialLoadAndShow(updatedLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, currentCategory) 
   })
 })
