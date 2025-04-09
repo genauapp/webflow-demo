@@ -338,14 +338,26 @@ document.querySelectorAll('.deck').forEach((elem) => {
     event.preventDefault()
     const selectedCategory = elem.getAttribute('data-option')
     console.log("updated category: " + selectedCategory)
-    LocalStorageManager.save(CURRENT_CATEGORY_KEY, selectedCategory)
     const currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
+    LocalStorageManager.save(CURRENT_CATEGORY_KEY, selectedCategory)
     console.log("current category: " + currentCategory)
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
     const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
     const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
     const currentLevel = LocalStorageManager.load(CURRENT_LEVEL_KEY)
-
+    
+    if (!elem.classList.contains('selectedIMG')) {
+      elem.style.border = '2px solid black'
+      elem.style.borderRadius = '16px'
+      document.querySelectorAll('.deck').forEach((deck) => {
+        if (deck.classList.contains('isSelected')) {
+            deck.classList.remove('isSelected')
+            deck.style.border = ''
+            deck.style.borderRadius = ''
+        }
+    })
+    elem.classList.add('isSelected')
+    }
     await executeInitialLoadAndShow(currentLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, selectedCategory)
   })
 })
