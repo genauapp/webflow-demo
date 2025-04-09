@@ -326,6 +326,7 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
     if (currentCategory === 'einburgerungstest' && isRegularLevel(updatedLevel)) {
       showOrHideDecks(updatedLevel)
       await executeInitialLoadAndShow(updatedLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, 'default')
+      return
     }
       await executeInitialLoadAndShow(updatedLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, currentCategory) 
   })
