@@ -346,17 +346,17 @@ document.querySelectorAll('.deck').forEach((elem) => {
     const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
     const currentLevel = LocalStorageManager.load(CURRENT_LEVEL_KEY)
     
-    if (!elem.classList.contains('selectedIMG')) {
+    if (!elem.classList.contains('selectedimg')) {
       elem.style.border = '2px solid black'
       elem.style.borderRadius = '16px'
       document.querySelectorAll('.deck').forEach((deck) => {
-        if (deck.classList.contains('selectedIMG')) {
-            deck.classList.remove('selectedIMG')
+        if (deck.classList.contains('selectedimg')) {
+            deck.classList.remove('selectedimg')
             deck.style.border = ''
             deck.style.borderRadius = ''
         }
     })
-    elem.classList.add('selectedIMG')
+    elem.classList.add('selectedimg')
     }
     await executeInitialLoadAndShow(currentLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, selectedCategory)
   })
