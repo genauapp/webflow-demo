@@ -1855,11 +1855,11 @@ function playSound(audioUrl) {
 }
 
 function isRegularLevel (level) {
-  return !(level === DEFAULT_VALUE.CURRENT_LEVEL || level === "einburgerungstest")
+  return !(level === '' || level === "einburgerungstest")
 }
 
 function isSelected (prop) {
-  return !(prop === DEFAULT_VALUE.CURRENT_CATEGORY || prop === null)
+  return !(prop === '' || prop === null)
 }
 
 function showOrHideDecks (level) {
