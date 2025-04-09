@@ -292,8 +292,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, defaultWordType)
   const defaultCategory = DEFAULT_VALUE.CURRENT_CATEGORY
   LocalStorageManager.save(CURRENT_CATEGORY_KEY, defaultCategory)
-  const defaultLearnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, defaultLearnedWithLearnWords)
-  const defaultLearnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, defaultLearnedWithExerciseWords)
+  const defaultLearnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, LEARNED_WITH_LEARN_WORDS)
+  const defaultLearnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, LEARNED_WITH_EXERCISE_WORDS)
   
   showSkeleton(defaultWordType)
   await executeInitialLoadAndShow(defaultLevel, defaultWordType, defaultLearnedWithLearnWords, defaultLearnedWithExerciseWords, defaultCategory) 
