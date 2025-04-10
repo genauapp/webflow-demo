@@ -24,25 +24,8 @@ function listFavorites() {
 
   if (favoriteWords.length === 0) {
     // Favori kelime yokken gösterilecek mesaj
-    favoritesContainer.style.display = 'flex' // Flex düzen
-    favoritesContainer.style.justifyContent = 'center' // Yatayda ortala
-    favoritesContainer.style.alignItems = 'center' // Dikeyde ortala
-    favoritesContainer.style.textAlign = 'center' // Yazıları ortala
-
-    const noFavoritesMessage = document.createElement('div')
-    noFavoritesMessage.style.color = '#666' // Gri renk
-    noFavoritesMessage.style.fontFamily = 'Montserrat, sans-serif' // Font ailesi
-    noFavoritesMessage.style.fontSize = '16px' // Font boyutu
-    noFavoritesMessage.style.fontWeight = '500' // Yazı kalınlığı
-    noFavoritesMessage.style.padding = '16px' // Mesaj için padding
-    noFavoritesMessage.style.lineHeight = '1.5' // Satır yüksekliği
-    noFavoritesMessage.innerHTML = `
-      <p>No favorites added yet!</p>
-      <p>Click the "Add to Favorites" button to start saving words 🌟</p>
-    `
-
-    favoritesContainer.appendChild(noFavoritesMessage)
-    return
+  showNoWordsMessage(favoritesContainer)
+  return
   }
 
   // Favori kelimeler mevcutsa düzeni geri yükle
@@ -145,30 +128,10 @@ function listLearnedWords() {
 
   const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
 
-  const allEmpty = levels.every((level) => categories.every((category) => 
-    types.every((type) => learnedWithExerciseWords[level][category][type].length === 0)
-  ))
+  // Learned words  yokken gösterilecek mesaj
+  if (areAllWordListsEmpty(learnedWithExerciseWords)) {
 
-  if (allEmpty) {
-    // Learned words  yokken gösterilecek mesaj
-    learnedWordsContainer.style.display = 'flex' // Flex düzen
-    learnedWordsContainer.style.justifyContent = 'center' // Yatayda ortala
-    learnedWordsContainer.style.alignItems = 'center' // Dikeyde ortala
-    learnedWordsContainer.style.textAlign = 'center' // Yazıları ortala
-
-    const noLearnedWordsMessage = document.createElement('div')
-    noLearnedWordsMessage.style.color = '#666' // Gri renk
-    noLearnedWordsMessage.style.fontFamily = 'Montserrat, sans-serif' // Font ailesi
-    noLearnedWordsMessage.style.fontSize = '16px' // Font boyutu
-    noLearnedWordsMessage.style.fontWeight = '500' // Yazı kalınlığı
-    noLearnedWordsMessage.style.padding = '16px' // Mesaj için padding
-    noLearnedWordsMessage.style.lineHeight = '1.5' // Satır yüksekliği
-    noLearnedWordsMessage.innerHTML = `
-    <p>No words learned yet!</p>
-    <p>Go to the "Exercise" and answer correctly a word three times in a row!!!</p>
-  `
-
-    learnedWordsContainer.appendChild(noLearnedWordsMessage)
+    showNoWordsMessage(learnedWordsContainer)
     return
   }
 
@@ -248,6 +211,61 @@ function listLearnedWords() {
       })
     })
   })
+}
+
+function showNoWordsMessage(elem) {
+
+  elem.style.display = 'flex' // Flex düzen
+  elem.style.justifyContent = 'center' // Yatayda ortala
+  elem.style.alignItems = 'center' // Dikeyde ortala
+  elem.style.textAlign = 'center' // Yazıları ortala
+
+  const noWordsMessageElement = document.createElement('div')
+  noWordsMessageElement.style.color = '#666' // Gri renk
+  noWordsMessageElement.style.fontFamily = 'Montserrat, sans-serif' // Font ailesi
+  noWordsMessageElement.style.fontSize = '16px' // Font boyutu
+  noWordsMessageElement.style.fontWeight = '500' // Yazı kalınlığı
+  noWordsMessageElement.style.padding = '16px' // Mesaj için padding
+  noWordsMessageElement.style.lineHeight = '1.5' // Satır yüksekliği
+
+  if (elem.id === 'learnedWordsContainer') {
+    noWordsMessageElement.innerHTML = `
+      <p>No words learned yet!</p>
+      <p>Go to the "Exercise" and answer correctly a word three times in a row!!!</p>
+    `
+    elem.appendChild(noWordsMessageElement)
+    return
+  }
+
+  if (elem.id === 'favoritesContainer') {
+    noWordsMessageElement.innerHTML = `
+      <p>No favorites added yet!</p>
+      <p>Click the "Add to Favorites" button to start saving words 🌟</p>
+    `
+
+    elem.appendChild(noWordsMessageElement)
+    return
+  }
+}
+
+function areAllWordListsEmpty(data) {
+  for (const level of levels) {
+    const levelObj = data[level];
+    if (!levelObj) continue;
+
+    for (const category of categories) {
+      const categoryObj = levelObj[category];
+      if (!categoryObj) continue;
+
+      for (const type of types) {
+        const wordList = categoryObj[type];
+        if (Array.isArray(wordList) && wordList.length > 0) {
+          return false; // Eğer herhangi bir liste doluysa false döner
+        }
+      }
+    }
+  }
+  return true; // Hepsi boşsa true döner
 }
 
 // Sayfa yüklendiğinde favorileri listele
