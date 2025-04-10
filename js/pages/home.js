@@ -865,7 +865,7 @@ function showExerciseWord(level, wordType, learnedWithExerciseWords, category) {
   }
 
   // Index kontrolü
-  if (currentExerciseIndex > kelimeListesiExercise.length) {
+  if (currentExerciseIndex >= kelimeListesiExercise.length) {
     currentExerciseIndex = 0
   }
 
@@ -1005,7 +1005,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
   // Eğer liste boşsa veya index liste dışındaysa, işlemi durdur
   if (
     !kelimeListesiExercise.length ||
-    currentExerciseIndex > kelimeListesiExercise.length
+    currentExerciseIndex >= kelimeListesiExercise.length
   ) {
     currentExerciseIndex = 0
     return
@@ -1047,7 +1047,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
       document.getElementById('progressLeft-' + wordType).style.opacity = '1'
 
       // Liste manipülasyonlarından sonra index kontrolü
-      if (currentExerciseIndex > kelimeListesiExercise.length) {
+      if (currentExerciseIndex >= kelimeListesiExercise.length) {
         currentExerciseIndex = 0
       }
 
@@ -1059,7 +1059,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
       }
 
       currentExerciseIndex++
-      if (currentExerciseIndex > kelimeListesiExercise.length) {
+      if (currentExerciseIndex >= kelimeListesiExercise.length) {
         currentExerciseIndex = 0
       }
     } else {
@@ -1110,7 +1110,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
         // updateExerciseCounter(level, wordType, learnedWithExerciseWords)
         kelimeListesiExercise.splice(currentExerciseIndex, 1)
         currentExerciseIndex--
-        if (currentExerciseIndex > kelimeListesiExercise.length) {
+        if (currentExerciseIndex >= kelimeListesiExercise.length) {
           currentExerciseIndex =
             currentExerciseIndex % kelimeListesiExercise.length
           if (currentExerciseIndex == 0) {
@@ -1146,7 +1146,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
           )[0]
         }
         currentExerciseIndex++
-        if (currentExerciseIndex > kelimeListesiExercise.length) {
+        if (currentExerciseIndex >= kelimeListesiExercise.length) {
           currentExerciseIndex =
             currentExerciseIndex % kelimeListesiExercise.length
           if (currentExerciseIndex == 0) {
@@ -1182,7 +1182,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
         '0.5'
 
       currentExerciseIndex++
-      if (currentExerciseIndex > kelimeListesiExercise.length) {
+      if (currentExerciseIndex >= kelimeListesiExercise.length) {
         currentExerciseIndex =
           currentExerciseIndex % kelimeListesiExercise.length
         if (currentExerciseIndex == 0) {
@@ -1191,7 +1191,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
       }
     } else {
       currentExerciseIndex++
-      if (currentExerciseIndex > kelimeListesiExercise.length) {
+      if (currentExerciseIndex >= kelimeListesiExercise.length) {
         currentExerciseIndex =
           currentExerciseIndex % kelimeListesiExercise.length
         if (currentExerciseIndex == 0) {
@@ -1220,7 +1220,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords,
   // Eğer liste boşsa veya index liste dışındaysa, işlemi durdur
   if (
     !kelimeListesiExercise.length ||
-    currentExerciseIndex > kelimeListesiExercise.length
+    currentExerciseIndex >= kelimeListesiExercise.length
   ) {
     currentExerciseIndex = 0
     return
