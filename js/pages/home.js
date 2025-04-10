@@ -66,88 +66,88 @@ import advEinburger from '../../json/einburgerungstest/adverb.json' with { type:
 //#region static json Arrays
 let staticWordLists = {
   b1telcpt1: {
-    default : {
+    default: {
       verb: verbdefault1,
       adjective: adjectivedefault1,
       adverb: adverbdefault1
     },
-    dirty : {
+    dirty: {
       verb: verbdirty1,
       adjective: adjectivedirty1,
       adverb: adverbdirty1
     },
-    doctor : {
+    doctor: {
       verb: verbdoctor1,
       adjective: adjectivedoctor1,
       adverb: adverbdoctor1
     },
-    music : {
+    music: {
       verb: verbmusic1,
       adjective: adjectivemusic1,
       adverb: adverbmusic1
     }
   },
   b1telcpt2: {
-    default : {
+    default: {
       verb: verbdefault2,
       adjective: adjectivedefault2,
       adverb: adverbdefault2
     },
-    dirty : {
+    dirty: {
       verb: verbdirty2,
       adjective: adjectivedirty2,
       adverb: adverbdirty2
     },
-    doctor : {
+    doctor: {
       verb: verbdoctor2,
       adjective: adjectivedoctor2,
       adverb: adverbdoctor2
     },
-    music : {
+    music: {
       verb: verbmusic2,
       adjective: adjectivemusic2,
       adverb: adverbmusic2
     }
   },
   b1telcpt3: {
-    default : {
+    default: {
       verb: verbdefault3,
       adjective: adjectivedefault3,
       adverb: adverbdefault3
     },
-    dirty : {
+    dirty: {
       verb: verbdirty3,
       adjective: adjectivedirty3,
       adverb: adverbdirty3
     },
-    doctor : {
+    doctor: {
       verb: verbdoctor3,
       adjective: adjectivedoctor3,
       adverb: adverbdoctor3
     },
-    music : {
+    music: {
       verb: verbmusic3,
       adjective: adjectivemusic3,
       adverb: adverbmusic3
     }
   },
   b1telcpt4: {
-    default : {
+    default: {
       verb: verbdefault4,
       adjective: adjectivedefault4,
       adverb: adverbdefault4
     },
-    dirty : {
+    dirty: {
       verb: verbdirty4,
       adjective: adjectivedirty4,
       adverb: adverbdirty4
     },
-    doctor : {
+    doctor: {
       verb: verbdoctor4,
       adjective: adjectivedoctor4,
       adverb: adverbdoctor4
     },
-    music : {
+    music: {
       verb: verbmusic4,
       adjective: adjectivemusic4,
       adverb: adverbmusic4
@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const defaultLearnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
   console.log("learnedwithexercise: " + defaultLearnedWithExerciseWords)
   showSkeleton(defaultWordType)
-  await executeInitialLoadAndShow(defaultLevel, defaultWordType, defaultLearnedWithLearnWords, defaultLearnedWithExerciseWords, defaultCategory) 
+  await executeInitialLoadAndShow(defaultLevel, defaultWordType, defaultLearnedWithLearnWords, defaultLearnedWithExerciseWords, defaultCategory)
 })
 
 // On Level Change
@@ -312,7 +312,7 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
     const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
 
     // Seçilen option'ı localStorage'a kaydet
-    LocalStorageManager.save(CURRENT_LEVEL_KEY, updatedLevel)  
+    LocalStorageManager.save(CURRENT_LEVEL_KEY, updatedLevel)
 
     // Dropdown başlığını güncelle
     document.getElementById('dropdownHeader').innerText = selectedText
@@ -330,7 +330,7 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
       await executeInitialLoadAndShow(updatedLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, LocalStorageManager.load(CURRENT_CATEGORY_KEY))
       return
     }
-      await executeInitialLoadAndShow(updatedLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, currentCategory) 
+    await executeInitialLoadAndShow(updatedLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, currentCategory)
   })
 })
 
@@ -346,19 +346,20 @@ document.querySelectorAll('.deck').forEach((elem) => {
     const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
     const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
     const currentLevel = LocalStorageManager.load(CURRENT_LEVEL_KEY)
-    
+
     if (!elem.classList.contains('selectedimg')) {
       elem.style.border = '2px solid black'
       elem.style.borderRadius = '16px'
       document.querySelectorAll('.deck').forEach((deck) => {
         if (deck.classList.contains('selectedimg')) {
-            deck.classList.remove('selectedimg')
-            deck.style.border = ''
-            deck.style.borderRadius = ''
+          deck.classList.remove('selectedimg')
+          deck.style.border = ''
+          deck.style.borderRadius = ''
         }
-    })
-    elem.classList.add('selectedimg')
+      })
+      elem.classList.add('selectedimg')
     }
+    
     await executeInitialLoadAndShow(currentLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, selectedCategory)
   })
 })
@@ -373,7 +374,6 @@ document.getElementById('nounTab').addEventListener('click', async () => {
   console.log('Noun seçildi.')
   const nounType = types[0]
   LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, nounType)
-
   await executeInitialLoadAndShow(level, nounType, learnedWithLearnWords, learnedWithExerciseWords, category)
 })
 
@@ -400,7 +400,7 @@ document.getElementById('adjectiveTab').addEventListener('click', async () => {
   const adjectiveType = types[2]
   LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, adjectiveType)
 
-  await executeInitialLoadAndShow(level, adjectiveType, learnedWithLearnWords, learnedWithExerciseWords,category)
+  await executeInitialLoadAndShow(level, adjectiveType, learnedWithLearnWords, learnedWithExerciseWords, category)
 })
 
 document.getElementById('adverbTab').addEventListener('click', async () => {
@@ -417,6 +417,7 @@ document.getElementById('adverbTab').addEventListener('click', async () => {
 })
 
 async function executeInitialLoadAndShow(level, wordType, learnedWithLearnWords, learnedWithExerciseWords, category) {
+  checkCurrentIndexes()
   try {
     await loadWords(level, wordType, learnedWithLearnWords, learnedWithExerciseWords, category)
     showLearnWord(level, wordType, learnedWithLearnWords, category)
@@ -461,7 +462,7 @@ async function loadWords(level, wordType, learnedWithLearnWords, learnedWithExer
     //localStorage.setItem("learnedWithExerciseWords", JSON.stringify([]));
 
     document.getElementById(
-    `remainingWordsCountLearn-${wordType}`
+      `remainingWordsCountLearn-${wordType}`
     ).innerText = learnedWithLearnWords[level][category][wordType].length
     document.getElementById(
       `remainingWordsCountExercise-${wordType}`
@@ -584,28 +585,28 @@ function repeatLearn(level, wordType, learnedWithLearnWords, category) {
 
 // On Learn: I Know Click
 function iKnowLearn(level, wordType, learnedWithLearnWords, category) {
- 
+
   if (learnedWithLearnWords[level][category][wordType].length + 1 === initialTotalWords) {
     showModal('You learned all words! 🎉', wordType)
   }
 
   const currentWord = kelimeListesi[totalWordsLearn - currentLearnIndex]
 
-    learnedWithLearnWords[level][category][wordType].push({
-      ...currentWord
-    })
-    LocalStorageManager.save(LEARNED_WITH_LEARN_WORDS_KEY, learnedWithLearnWords)
+  learnedWithLearnWords[level][category][wordType].push({
+    ...currentWord
+  })
+  LocalStorageManager.save(LEARNED_WITH_LEARN_WORDS_KEY, learnedWithLearnWords)
 
-    kelimeListesi.splice(currentLearnIndex, 1)
+  kelimeListesi.splice(currentLearnIndex, 1)
 
-    document.getElementById(
-      `remainingWordsCountLearn-${wordType}`
-    ).innerText = learnedWithLearnWords[level][category][wordType].length
-    document.getElementById(`totalWordsCountLearn-${wordType}`).innerText =
-      initialTotalWords
+  document.getElementById(
+    `remainingWordsCountLearn-${wordType}`
+  ).innerText = learnedWithLearnWords[level][category][wordType].length
+  document.getElementById(`totalWordsCountLearn-${wordType}`).innerText =
+    initialTotalWords
 
-    showLearnWord(level, wordType, learnedWithLearnWords, category)
-  
+  showLearnWord(level, wordType, learnedWithLearnWords, category)
+
 }
 
 // On Learn: Add to Favorites Click
@@ -629,7 +630,7 @@ const addToFavorites = () => {
   }
 
   const currentWord = kelimeListesi[currentLearnIndex]
-  let favoriteWords = LocalStorageManager.load('favoriteWords', []) 
+  let favoriteWords = LocalStorageManager.load('favoriteWords', [])
 
   // Favorilere ekle
   favoriteWords.push({
@@ -791,7 +792,7 @@ function showLearnWord(level, wordType, learnedWithLearnWords, category) {
 
   const ruleLearnElement = document.getElementById('ruleLearn-' + wordType)
   const isAdjectiveOrAdverb =
-  wordType === 'adjective' || wordType === 'adverb'
+    wordType === 'adjective' || wordType === 'adverb'
 
   // Kural setini göster
   if (!kural || isAdjectiveOrAdverb) {
@@ -817,7 +818,7 @@ function showExerciseWord(level, wordType, learnedWithExerciseWords, category) {
     `remainingWordsCountExercise-${wordType}`
   ).innerText = learnedWithExerciseWords[level][category][wordType].length
   document.getElementById('totalWordsCountExercise-' + wordType).innerText =
-  totalWordsExercise
+    totalWordsExercise
 
   const buttonDer = document.getElementById('buttonDer')
   const buttonDie = document.getElementById('buttonDie')
@@ -836,9 +837,9 @@ function showExerciseWord(level, wordType, learnedWithExerciseWords, category) {
 
     // document.getElementById(`exampleLearn-${wordType}`).innerText =
     //   'You learned all of the words, go to learn section.'
-      document.getElementById(
-        `feedbackMessage-${wordType}`
-      ).innerText = `You completed all exercise words! 🎉`
+    document.getElementById(
+      `feedbackMessage-${wordType}`
+    ).innerText = `You completed all exercise words! 🎉`
 
     if (wordType === 'noun') {
       buttonDer.style.visibility = 'hidden'
@@ -873,7 +874,7 @@ function showExerciseWord(level, wordType, learnedWithExerciseWords, category) {
 
   inProgressWords =
     LocalStorageManager.load('inProgressWords', inProgressWords)
-    
+
 
   // 🟢 `kelimeListesi` içinden `learnedWords`'de olanları çıkar
   if (learnedWithExerciseWords[level][category][wordType].length > 0) {
@@ -963,30 +964,30 @@ function showExerciseWord(level, wordType, learnedWithExerciseWords, category) {
 
 export const nounDerAnswerClickHandler = function (event) {
   const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
-  const category =LocalStorageManager.load(CURRENT_CATEGORY_KEY)
+  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
   const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
   const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
-  
+
   event.preventDefault() // Sayfanın yukarı kaymasını engeller
   checkNounAnswer('der', level, wordType, learnedWithExerciseWords, category)
 }
 
 export const nounDieAnswerClickHandler = function (event) {
   const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
-  const category =LocalStorageManager.load(CURRENT_CATEGORY_KEY)
+  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
   const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
   const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
-  
+
   event.preventDefault() // Sayfanın yukarı kaymasını engeller
   checkNounAnswer('die', level, wordType, learnedWithExerciseWords, category)
 }
 
-export const nounDasAnswerClickHandler =  (event) => {
+export const nounDasAnswerClickHandler = (event) => {
   const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
-  const category =LocalStorageManager.load(CURRENT_CATEGORY_KEY)
+  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
   const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
   const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
-  
+
   event.preventDefault() // Sayfanın yukarı kaymasını engeller
   checkNounAnswer('das', level, wordType, learnedWithExerciseWords, category)
 }
@@ -1004,194 +1005,149 @@ document
   .addEventListener('click', nounDasAnswerClickHandler)
 
 function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExerciseWords, category) {
-    // Eğer liste boşsa veya index liste dışındaysa, işlemi durdur
-    if (
-      !kelimeListesiExercise.length ||
-      currentExerciseIndex >= kelimeListesiExercise.length
-    ) {
-      currentExerciseIndex = 0
-      return
-    }
+  // Eğer liste boşsa veya index liste dışındaysa, işlemi durdur
+  if (
+    !kelimeListesiExercise.length ||
+    currentExerciseIndex >= kelimeListesiExercise.length
+  ) {
+    currentExerciseIndex = 0
+    return
+  }
 
-    inProgressWords = LocalStorageManager.load('inProgressWords', inProgressWords)
-  
-    const currentWord = kelimeListesiExercise[currentExerciseIndex]
-    const { almanca, ingilizce, kural } = currentWord
-    const buttonWrong = document.getElementById(`wrongButton-${wordType}`)
-    const buttonCorrect = document.getElementById(`correctButton-${wordType}`)
-  
-  
-    const inProgressIndex = inProgressWords[level][category][wordType].findIndex(
-      (item) => item.almanca === almanca
-    )
-  
-    buttonWrong.style.visibility = 'hidden'
-    buttonCorrect.style.visibility = 'hidden'
-  
-    const isAnswerCorrect = !buttonWrong.hasAttribute('wrong-but')
-  
-    if (isUserInputCorrect === isAnswerCorrect) {
-      document.getElementById(`feedbackMessage-${wordType}`).innerText =
-        'Correct! 🎉'
-      document.getElementById(`feedbackMessage-${wordType}`).style.color =
-        'green'
-  
-      //InProgress listesine kelimeyi ekle - Eger hic dogru bilinmemisse yeni ekle daha önce bilinmisse progress i arttir
-      if (inProgressIndex === -1) {
+  inProgressWords = LocalStorageManager.load('inProgressWords', inProgressWords)
+
+  const currentWord = kelimeListesiExercise[currentExerciseIndex]
+  const { almanca, ingilizce, kural } = currentWord
+  const buttonWrong = document.getElementById(`wrongButton-${wordType}`)
+  const buttonCorrect = document.getElementById(`correctButton-${wordType}`)
+
+
+  const inProgressIndex = inProgressWords[level][category][wordType].findIndex(
+    (item) => item.almanca === almanca
+  )
+
+  buttonWrong.style.visibility = 'hidden'
+  buttonCorrect.style.visibility = 'hidden'
+
+  const isAnswerCorrect = !buttonWrong.hasAttribute('wrong-but')
+
+  if (isUserInputCorrect === isAnswerCorrect) {
+    document.getElementById(`feedbackMessage-${wordType}`).innerText =
+      'Correct! 🎉'
+    document.getElementById(`feedbackMessage-${wordType}`).style.color =
+      'green'
+
+    //InProgress listesine kelimeyi ekle - Eger hic dogru bilinmemisse yeni ekle daha önce bilinmisse progress i arttir
+    if (inProgressIndex === -1) {
+      playSound(
+        'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/correct.mp3'
+      )
+      inProgressWords[level][category][wordType].push({
+        type: currentWord.type,
+        almanca: currentWord.almanca,
+        counter: 1,
+      })
+      document.getElementById('progressLeft-' + wordType).style.opacity = '1'
+
+      // Liste manipülasyonlarından sonra index kontrolü
+      if (currentExerciseIndex >= kelimeListesiExercise.length) {
+        currentExerciseIndex = 0
+      }
+
+      kelimeListesiExercise.splice(currentExerciseIndex, 1)
+      if (kelimeListesiExercise.length > currentExerciseIndex + 4) {
+        kelimeListesiExercise.splice(currentExerciseIndex + 4, 0, currentWord)
+      } else {
+        kelimeListesiExercise.push(currentWord)
+      }
+
+      currentExerciseIndex++
+      if (currentExerciseIndex >= kelimeListesiExercise.length) {
+        currentExerciseIndex = 0
+      }
+    } else {
+      inProgressWords[level][category][wordType][inProgressIndex].counter += 1
+      if (
+        inProgressWords[level][category][wordType][inProgressIndex].counter ===
+        2
+      ) {
+        document.getElementById(`progressMiddle-${wordType}`).style.opacity =
+          '1'
+      }
+      //3 kere bilindiyse learnede ekle
+      if (
+        inProgressWords[level][category][wordType][inProgressIndex].counter >= 3
+      ) {
+        playSound(
+          'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/streak.mp3'
+        )
+
+        learnedWithExerciseWords[level][category][wordType].push({
+          type: currentWord.type,
+          almanca: currentWord.almanca,
+          ingilizce: currentWord.ingilizce,
+          seviye: currentWord.seviye || 'N/A',
+        })
+
+        LocalStorageManager.save(LEARNED_WITH_EXERCISE_WORDS_KEY, learnedWithExerciseWords)
+
+        // if exercise is ended
+        if (learnedWithExerciseWords[level][category][wordType].length === totalWordsExercise) {
+          showModalExercise('You completed all exercise words! 🎉', wordType)
+        }
+
+        if (
+          inProgressWords[level][category][wordType][inProgressIndex]
+            .counter === 3
+        ) {
+          document.getElementById(
+            `feedbackMessage-${wordType}`
+          ).innerText = `This word: ${currentWord.almanca} added to learned list!🏆`
+          document.getElementById(
+            `feedbackMessage-${wordType}`
+          ).style.color = 'green'
+          document.getElementById(
+            `progressRight-${wordType}`
+          ).style.opacity = '1'
+        }
+        // updateExerciseCounter(level, wordType, learnedWithExerciseWords)
+        kelimeListesiExercise.splice(currentExerciseIndex, 1)
+        currentExerciseIndex--
+        if (currentExerciseIndex >= kelimeListesiExercise.length) {
+          currentExerciseIndex =
+            currentExerciseIndex % kelimeListesiExercise.length
+          if (currentExerciseIndex == 0) {
+            currentExerciseIndex++
+          }
+        }
+        // inProgressWords.splice(inProgressIndex, 1); // inProgressWords'ten çıkar
+        console.log(
+          `'${currentWord.almanca}' ${LEARNED_WITH_EXERCISE_WORDS_KEY} listesine taşındı.`
+        )
+        setTimeout(() => {
+          showExerciseWord(level, wordType, learnedWithExerciseWords, category)
+        }, 1000)
+      } else {
         playSound(
           'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/correct.mp3'
         )
-        inProgressWords[level][category][wordType].push({
-          type: currentWord.type,
-          almanca: currentWord.almanca,
-          counter: 1,
-        })
-        document.getElementById('progressLeft-' + wordType).style.opacity = '1'
-  
-        // Liste manipülasyonlarından sonra index kontrolü
-        if (currentExerciseIndex >= kelimeListesiExercise.length) {
-          currentExerciseIndex = 0
-        }
-  
         kelimeListesiExercise.splice(currentExerciseIndex, 1)
-        if (kelimeListesiExercise.length > currentExerciseIndex + 4) {
-          kelimeListesiExercise.splice(currentExerciseIndex + 4, 0, currentWord)
-        } else {
-          kelimeListesiExercise.push(currentWord)
-        }
-  
-        currentExerciseIndex++
-        if (currentExerciseIndex >= kelimeListesiExercise.length) {
-          currentExerciseIndex = 0
-        }
-      } else {
-        inProgressWords[level][category][wordType][inProgressIndex].counter += 1
         if (
-          inProgressWords[level][category][wordType][inProgressIndex].counter ===
-          2
+          inProgressWords[level][category][wordType][inProgressIndex]
+            .counter === 1
         ) {
-          document.getElementById(`progressMiddle-${wordType}`).style.opacity =
-            '1'
-        }
-        //3 kere bilindiyse learnede ekle
-        if (
-          inProgressWords[level][category][wordType][inProgressIndex].counter >= 3
-        ) {
-          playSound(
-            'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/streak.mp3'
-          )
-  
-          learnedWithExerciseWords[level][category][wordType].push({
-            type: currentWord.type,
-            almanca: currentWord.almanca,
-            ingilizce: currentWord.ingilizce,
-            seviye: currentWord.seviye || 'N/A',
-          })
-
-          LocalStorageManager.save(LEARNED_WITH_EXERCISE_WORDS_KEY, learnedWithExerciseWords)
-  
-          // if exercise is ended
-          if (learnedWithExerciseWords[level][category][wordType].length === totalWordsExercise) {
-            showModalExercise('You completed all exercise words! 🎉', wordType)
-          }
-
-          if (
-            inProgressWords[level][category][wordType][inProgressIndex]
-              .counter === 3
-          ) {
-            document.getElementById(
-              `feedbackMessage-${wordType}`
-            ).innerText = `This word: ${currentWord.almanca} added to learned list!🏆`
-            document.getElementById(
-              `feedbackMessage-${wordType}`
-            ).style.color = 'green'
-            document.getElementById(
-              `progressRight-${wordType}`
-            ).style.opacity = '1'
-          }
-          // updateExerciseCounter(level, wordType, learnedWithExerciseWords)
-          kelimeListesiExercise.splice(currentExerciseIndex, 1)
-          currentExerciseIndex--
-          if (currentExerciseIndex >= kelimeListesiExercise.length) {
-            currentExerciseIndex =
-              currentExerciseIndex % kelimeListesiExercise.length
-            if (currentExerciseIndex == 0) {
-              currentExerciseIndex++
-            }
-          }
-          // inProgressWords.splice(inProgressIndex, 1); // inProgressWords'ten çıkar
-          console.log(
-            `'${currentWord.almanca}' ${LEARNED_WITH_EXERCISE_WORDS_KEY} listesine taşındı.`
-          )
-          setTimeout(() => {
-            showExerciseWord(level, wordType, learnedWithExerciseWords, category)
-          }, 1000)
+          kelimeListesiExercise.splice(
+            currentExerciseIndex + 8,
+            0,
+            currentWord
+          )[0]
         } else {
-          playSound(
-            'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/correct.mp3'
-          )
-          kelimeListesiExercise.splice(currentExerciseIndex, 1)
-          if (
-            inProgressWords[level][category][wordType][inProgressIndex]
-              .counter === 1
-          ) {
-            kelimeListesiExercise.splice(
-              currentExerciseIndex + 8,
-              0,
-              currentWord
-            )[0]
-          } else {
-            kelimeListesiExercise.splice(
-              currentExerciseIndex + 12,
-              0,
-              currentWord
-            )[0]
-          }
-          currentExerciseIndex++
-          if (currentExerciseIndex >= kelimeListesiExercise.length) {
-            currentExerciseIndex =
-              currentExerciseIndex % kelimeListesiExercise.length
-            if (currentExerciseIndex == 0) {
-              currentExerciseIndex++
-            }
-          }
+          kelimeListesiExercise.splice(
+            currentExerciseIndex + 12,
+            0,
+            currentWord
+          )[0]
         }
-      }
-  
-      setTimeout(() => {
-        showExerciseWord(level, wordType, learnedWithExerciseWords, category)
-      }, 1000)
-      LocalStorageManager.save(
-        LEARNED_WITH_EXERCISE_WORDS_KEY,
-        learnedWithExerciseWords
-      )
-    } else {
-      if (inProgressIndex !== -1) {
-        kelimeListesiExercise.splice(currentExerciseIndex, 1)
-  
-        if (kelimeListesiExercise.length > currentExerciseIndex + 10) {
-          kelimeListesiExercise.splice(currentExerciseIndex + 10, 0, currentWord)
-        } else {
-          kelimeListesiExercise.push(currentWord)
-        }
-  
-        inProgressWords[level][category][wordType][inProgressIndex].counter = 0
-        document.getElementById(`progressRight-${wordType}`).style.opacity =
-          '0.5'
-        document.getElementById(`progressMiddle-${wordType}`).style.opacity =
-          '0.5'
-        document.getElementById(`progressLeft-${wordType}`).style.opacity =
-          '0.5'
-  
-        currentExerciseIndex++
-        if (currentExerciseIndex >= kelimeListesiExercise.length) {
-          currentExerciseIndex =
-            currentExerciseIndex % kelimeListesiExercise.length
-          if (currentExerciseIndex == 0) {
-            currentExerciseIndex++
-          }
-        }
-      } else {
         currentExerciseIndex++
         if (currentExerciseIndex >= kelimeListesiExercise.length) {
           currentExerciseIndex =
@@ -1201,227 +1157,223 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
           }
         }
       }
-      document.getElementById(
-        `feedbackMessage-${wordType}`
-      ).innerText = `Upps! Try again. 💪`
-      document.getElementById(`feedbackMessage-${wordType}`).style.color =
-        'red'
-      setTimeout(() => {
-        // document.getElementById('correctAnswerField').innerHTML = '___' // Tekrar boş bırak
-        // buttonWrong.style.visibility = 'visible'
-        // buttonCorrect.style.visibility = 'visible'
-        showExerciseWord(level, wordType, learnedWithExerciseWords, category)
-      }, 3000)
     }
-  
-    buttonWrong.removeAttribute('wrong-but')
-    LocalStorageManager.save('inProgressWords', inProgressWords)
+
+    setTimeout(() => {
+      showExerciseWord(level, wordType, learnedWithExerciseWords, category)
+    }, 1000)
+    LocalStorageManager.save(
+      LEARNED_WITH_EXERCISE_WORDS_KEY,
+      learnedWithExerciseWords
+    )
+  } else {
+    if (inProgressIndex !== -1) {
+      kelimeListesiExercise.splice(currentExerciseIndex, 1)
+
+      if (kelimeListesiExercise.length > currentExerciseIndex + 10) {
+        kelimeListesiExercise.splice(currentExerciseIndex + 10, 0, currentWord)
+      } else {
+        kelimeListesiExercise.push(currentWord)
+      }
+
+      inProgressWords[level][category][wordType][inProgressIndex].counter = 0
+      document.getElementById(`progressRight-${wordType}`).style.opacity =
+        '0.5'
+      document.getElementById(`progressMiddle-${wordType}`).style.opacity =
+        '0.5'
+      document.getElementById(`progressLeft-${wordType}`).style.opacity =
+        '0.5'
+
+      currentExerciseIndex++
+      if (currentExerciseIndex >= kelimeListesiExercise.length) {
+        currentExerciseIndex =
+          currentExerciseIndex % kelimeListesiExercise.length
+        if (currentExerciseIndex == 0) {
+          currentExerciseIndex++
+        }
+      }
+    } else {
+      currentExerciseIndex++
+      if (currentExerciseIndex >= kelimeListesiExercise.length) {
+        currentExerciseIndex =
+          currentExerciseIndex % kelimeListesiExercise.length
+        if (currentExerciseIndex == 0) {
+          currentExerciseIndex++
+        }
+      }
+    }
+    document.getElementById(
+      `feedbackMessage-${wordType}`
+    ).innerText = `Upps! Try again. 💪`
+    document.getElementById(`feedbackMessage-${wordType}`).style.color =
+      'red'
+    setTimeout(() => {
+      // document.getElementById('correctAnswerField').innerHTML = '___' // Tekrar boş bırak
+      // buttonWrong.style.visibility = 'visible'
+      // buttonCorrect.style.visibility = 'visible'
+      showExerciseWord(level, wordType, learnedWithExerciseWords, category)
+    }, 3000)
+  }
+
+  buttonWrong.removeAttribute('wrong-but')
+  LocalStorageManager.save('inProgressWords', inProgressWords)
 }
-  
-function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords, category) {
-    // Eğer liste boşsa veya index liste dışındaysa, işlemi durdur
-    if (
-      !kelimeListesiExercise.length ||
-      currentExerciseIndex >= kelimeListesiExercise.length
-    ) {
-      currentExerciseIndex = 0
-      return
-    }
 
-    const currentWord = kelimeListesiExercise[currentExerciseIndex]
-    const { artikel, kural, kelime } = currentWord
-    const buttonDer = document.getElementById('buttonDer')
-    const buttonDie = document.getElementById('buttonDie')
-    const buttonDas = document.getElementById('buttonDas')
-  
-    console.log(`'${currentExerciseIndex}' index böyleydi.`)
-    console.log(
-      `'${kelimeListesiExercise.length}' kelime listesi uzunlugu böyleydi.`
-    )
-    inProgressWords = LocalStorageManager.load('inProgressWords', inProgressWords)
-  
-    const inProgressIndex = inProgressWords[level][category][wordType].findIndex(
-      (item) => item.almanca === currentWord.almanca
-    )
-  
-    buttonDer.style.visibility = 'hidden'
-    buttonDie.style.visibility = 'hidden'
-    buttonDas.style.visibility = 'hidden'
-    console.log('Butonlar geçici olarak devre dışı bırakıldı.')
-  
-    if (userArtikel.toLowerCase() === artikel.toLowerCase()) {
-      document.getElementById(`feedbackMessage-${wordType}`).innerText =
-        'Correct! 🎉'
-      document.getElementById(`feedbackMessage-${wordType}`).style.color =
-        'green'
-  
-      // Doğru artikeli göster
-      const renk = artikelRenk(artikel)
-      document.getElementById(
-        'correctAnswerField'
-      ).innerHTML = `<span style="color: ${renk};">${artikel}</span>`
-  
-      //InProgress listesine kelimeyi ekle - Eger hic dogru bilinmemisse yeni ekle daha önce bilinmisse progress i arttir
-      if (inProgressIndex === -1) {
+function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords, category) {
+  // Eğer liste boşsa veya index liste dışındaysa, işlemi durdur
+  if (
+    !kelimeListesiExercise.length ||
+    currentExerciseIndex >= kelimeListesiExercise.length
+  ) {
+    currentExerciseIndex = 0
+    return
+  }
+
+  const currentWord = kelimeListesiExercise[currentExerciseIndex]
+  const { artikel, kural, kelime } = currentWord
+  const buttonDer = document.getElementById('buttonDer')
+  const buttonDie = document.getElementById('buttonDie')
+  const buttonDas = document.getElementById('buttonDas')
+
+  console.log(`'${currentExerciseIndex}' index böyleydi.`)
+  console.log(
+    `'${kelimeListesiExercise.length}' kelime listesi uzunlugu böyleydi.`
+  )
+  inProgressWords = LocalStorageManager.load('inProgressWords', inProgressWords)
+
+  const inProgressIndex = inProgressWords[level][category][wordType].findIndex(
+    (item) => item.almanca === currentWord.almanca
+  )
+
+  buttonDer.style.visibility = 'hidden'
+  buttonDie.style.visibility = 'hidden'
+  buttonDas.style.visibility = 'hidden'
+  console.log('Butonlar geçici olarak devre dışı bırakıldı.')
+
+  if (userArtikel.toLowerCase() === artikel.toLowerCase()) {
+    document.getElementById(`feedbackMessage-${wordType}`).innerText =
+      'Correct! 🎉'
+    document.getElementById(`feedbackMessage-${wordType}`).style.color =
+      'green'
+
+    // Doğru artikeli göster
+    const renk = artikelRenk(artikel)
+    document.getElementById(
+      'correctAnswerField'
+    ).innerHTML = `<span style="color: ${renk};">${artikel}</span>`
+
+    //InProgress listesine kelimeyi ekle - Eger hic dogru bilinmemisse yeni ekle daha önce bilinmisse progress i arttir
+    if (inProgressIndex === -1) {
+      playSound(
+        'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/correct.mp3'
+      )
+      inProgressWords[level][category][wordType].push({
+        type: currentWord.type,
+        almanca: currentWord.almanca,
+        counter: 1,
+      })
+      document.getElementById(`progressLeft-${wordType}`).style.opacity = '1'
+
+      // Liste manipülasyonlarından sonra index kontrolü
+      if (currentExerciseIndex >= kelimeListesiExercise.length) {
+        currentExerciseIndex = 0
+      }
+
+      kelimeListesiExercise.splice(currentExerciseIndex, 1)
+      if (kelimeListesiExercise.length > currentExerciseIndex + 4) {
+        kelimeListesiExercise.splice(currentExerciseIndex + 4, 0, currentWord)
+      } else {
+        kelimeListesiExercise.push(currentWord)
+      }
+
+      currentExerciseIndex++
+      if (currentExerciseIndex >= kelimeListesiExercise.length) {
+        currentExerciseIndex = 0
+      }
+    } else {
+      inProgressWords[level][category][wordType][inProgressIndex].counter += 1
+      if (
+        inProgressWords[level][category][wordType][inProgressIndex].counter ===
+        2
+      ) {
+        document.getElementById(`progressMiddle-${wordType}`).style.opacity =
+          '1'
+      }
+      //3 kere bilindiyse learnede ekle
+      if (
+        inProgressWords[level][category][wordType][inProgressIndex].counter >= 3
+      ) {
+        playSound(
+          'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/streak.mp3'
+        )
+
+        learnedWithExerciseWords[level][category][wordType].push({
+          type: currentWord.type,
+          almanca: currentWord.almanca,
+          ingilizce: currentWord.ingilizce,
+          seviye: currentWord.seviye || 'N/A',
+        })
+
+        LocalStorageManager.save(LEARNED_WITH_EXERCISE_WORDS_KEY, learnedWithExerciseWords)
+
+        // if exercise is ended
+        if (learnedWithExerciseWords[level][category][wordType].length === totalWordsExercise) {
+          showModalExercise('You completed all exercise words! 🎉', wordType)
+        }
+
+
+        if (
+          inProgressWords[level][category][wordType][inProgressIndex]
+            .counter === 3
+        ) {
+          document.getElementById(
+            `feedbackMessage-${wordType}`
+          ).innerText = `This word: ${currentWord.almanca} added to learned list!🏆`
+          document.getElementById(
+            `feedbackMessage-${wordType}`
+          ).style.color = 'green'
+          document.getElementById(
+            `progressRight-${wordType}`
+          ).style.opacity = '1'
+        }
+        // updateExerciseCounter(level, wordType, learnedWithExerciseWords)
+        kelimeListesiExercise.splice(currentExerciseIndex, 1)
+        currentExerciseIndex--
+        if (currentExerciseIndex >= kelimeListesiExercise.length) {
+          currentExerciseIndex =
+            currentExerciseIndex % kelimeListesiExercise.length
+          if (currentExerciseIndex == 0) {
+            currentExerciseIndex++
+          }
+        }
+        // inProgressWords.splice(inProgressIndex, 1); // inProgressWords'ten çıkar
+        console.log(
+          `'${currentWord.almanca}' ${LEARNED_WITH_EXERCISE_WORDS_KEY} listesine taşındı.`
+        )
+        setTimeout(() => {
+          showExerciseWord(level, wordType, learnedWithExerciseWords, category)
+        }, 1000)
+      } else {
         playSound(
           'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/correct.mp3'
         )
-        inProgressWords[level][category][wordType].push({
-          type: currentWord.type,
-          almanca: currentWord.almanca,
-          counter: 1,
-        })
-        document.getElementById(`progressLeft-${wordType}`).style.opacity = '1'
-  
-        // Liste manipülasyonlarından sonra index kontrolü
-        if (currentExerciseIndex >= kelimeListesiExercise.length) {
-          currentExerciseIndex = 0
-        }
-  
         kelimeListesiExercise.splice(currentExerciseIndex, 1)
-        if (kelimeListesiExercise.length > currentExerciseIndex + 4) {
-          kelimeListesiExercise.splice(currentExerciseIndex + 4, 0, currentWord)
-        } else {
-          kelimeListesiExercise.push(currentWord)
-        }
-  
-        currentExerciseIndex++
-        if (currentExerciseIndex >= kelimeListesiExercise.length) {
-          currentExerciseIndex = 0
-        }
-      } else {
-        inProgressWords[level][category][wordType][inProgressIndex].counter += 1
         if (
-          inProgressWords[level][category][wordType][inProgressIndex].counter ===
-          2
+          inProgressWords[level][category][wordType][inProgressIndex]
+            .counter === 1
         ) {
-          document.getElementById(`progressMiddle-${wordType}`).style.opacity =
-            '1'
-        }
-        //3 kere bilindiyse learnede ekle
-        if (
-          inProgressWords[level][category][wordType][inProgressIndex].counter >= 3
-        ) {
-          playSound(
-            'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/streak.mp3'
-          )
-  
-          learnedWithExerciseWords[level][category][wordType].push({
-            type: currentWord.type,
-            almanca: currentWord.almanca,
-            ingilizce: currentWord.ingilizce,
-            seviye: currentWord.seviye || 'N/A',
-          })
-
-          LocalStorageManager.save(LEARNED_WITH_EXERCISE_WORDS_KEY, learnedWithExerciseWords)
-
-          // if exercise is ended
-          if (learnedWithExerciseWords[level][category][wordType].length === totalWordsExercise) {
-             showModalExercise('You completed all exercise words! 🎉', wordType)
-          }
-        
-  
-          if (
-            inProgressWords[level][category][wordType][inProgressIndex]
-              .counter === 3
-          ) {
-            document.getElementById(
-              `feedbackMessage-${wordType}`
-            ).innerText = `This word: ${currentWord.almanca} added to learned list!🏆`
-            document.getElementById(
-              `feedbackMessage-${wordType}`
-            ).style.color = 'green'
-            document.getElementById(
-              `progressRight-${wordType}`
-            ).style.opacity = '1'
-          }
-          // updateExerciseCounter(level, wordType, learnedWithExerciseWords)
-          kelimeListesiExercise.splice(currentExerciseIndex, 1)
-          currentExerciseIndex--
-          if (currentExerciseIndex >= kelimeListesiExercise.length) {
-            currentExerciseIndex =
-              currentExerciseIndex % kelimeListesiExercise.length
-            if (currentExerciseIndex == 0) {
-              currentExerciseIndex++
-            }
-          }
-          // inProgressWords.splice(inProgressIndex, 1); // inProgressWords'ten çıkar
-          console.log(
-            `'${currentWord.almanca}' ${LEARNED_WITH_EXERCISE_WORDS_KEY} listesine taşındı.`
-          )
-          setTimeout(() => {
-            showExerciseWord(level, wordType, learnedWithExerciseWords, category)
-          }, 1000)
+          kelimeListesiExercise.splice(
+            currentExerciseIndex + 8,
+            0,
+            currentWord
+          )[0]
         } else {
-          playSound(
-            'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/correct.mp3'
-          )
-          kelimeListesiExercise.splice(currentExerciseIndex, 1)
-          if (
-            inProgressWords[level][category][wordType][inProgressIndex]
-              .counter === 1
-          ) {
-            kelimeListesiExercise.splice(
-              currentExerciseIndex + 8,
-              0,
-              currentWord
-            )[0]
-          } else {
-            kelimeListesiExercise.splice(
-              currentExerciseIndex + 12,
-              0,
-              currentWord
-            )[0]
-          }
-          currentExerciseIndex++
-          if (currentExerciseIndex >= kelimeListesiExercise.length) {
-            currentExerciseIndex =
-              currentExerciseIndex % kelimeListesiExercise.length
-            if (currentExerciseIndex == 0) {
-              currentExerciseIndex++
-            }
-          }
+          kelimeListesiExercise.splice(
+            currentExerciseIndex + 12,
+            0,
+            currentWord
+          )[0]
         }
-      }
-  
-      setTimeout(() => {
-        document.getElementById('correctAnswerField').innerHTML = '___' // Tekrar boş bırak
-        // buttonDer.style.visibility = 'visible'
-        // buttonDie.style.visibility = 'visible'
-        // buttonDas.style.visibility = 'visible'
-        showExerciseWord(level, wordType, learnedWithExerciseWords, category)
-      }, 1000)
-      LocalStorageManager.save(
-        LEARNED_WITH_EXERCISE_WORDS_KEY,
-        learnedWithExerciseWords
-      )
-    } else {
-      if (inProgressIndex !== -1) {
-        kelimeListesiExercise.splice(currentExerciseIndex, 1)
-  
-        if (kelimeListesiExercise.length > currentExerciseIndex + 10) {
-          kelimeListesiExercise.splice(currentExerciseIndex + 10, 0, currentWord)
-        } else {
-          kelimeListesiExercise.push(currentWord)
-        }
-  
-        inProgressWords[level][category][wordType][inProgressIndex].counter = 0
-        document.getElementById(`progressRight-${wordType}`).style.opacity =
-          '0.5'
-        document.getElementById(`progressMiddle-${wordType}`).style.opacity =
-          '0.5'
-        document.getElementById(`progressLeft-${wordType}`).style.opacity =
-          '0.5'
-  
-        currentExerciseIndex++
-        if (currentExerciseIndex >= kelimeListesiExercise.length) {
-          currentExerciseIndex =
-            currentExerciseIndex % kelimeListesiExercise.length
-          if (currentExerciseIndex == 0) {
-            currentExerciseIndex++
-          }
-        }
-      } else {
         currentExerciseIndex++
         if (currentExerciseIndex >= kelimeListesiExercise.length) {
           currentExerciseIndex =
@@ -1431,36 +1383,85 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords,
           }
         }
       }
-      document.getElementById(
-        `feedbackMessage-${wordType}`
-      ).innerText = `Upps! ⚠️ ${kural}`
-      document.getElementById(`feedbackMessage-${wordType}`).style.color =
-        'red'
-      setTimeout(() => {
-        document.getElementById('correctAnswerField').innerHTML = '___' // Tekrar boş bırak
-        // buttonDer.style.visibility = 'visible'
-        // buttonDie.style.visibility = 'visible'
-        // buttonDas.style.visibility = 'visible'
-        showExerciseWord(level, wordType, learnedWithExerciseWords, category)
-      }, 3000)
     }
-    console.log(`'${currentExerciseIndex}' index bu sayiya güncellendi.`)
-    console.log(
-      `'${kelimeListesiExercise.length}' liste uzunlugu bu sayiya güncellendi.`
+
+    setTimeout(() => {
+      document.getElementById('correctAnswerField').innerHTML = '___' // Tekrar boş bırak
+      // buttonDer.style.visibility = 'visible'
+      // buttonDie.style.visibility = 'visible'
+      // buttonDas.style.visibility = 'visible'
+      showExerciseWord(level, wordType, learnedWithExerciseWords, category)
+    }, 1000)
+    LocalStorageManager.save(
+      LEARNED_WITH_EXERCISE_WORDS_KEY,
+      learnedWithExerciseWords
     )
-    LocalStorageManager.save('inProgressWords', inProgressWords)
+  } else {
+    if (inProgressIndex !== -1) {
+      kelimeListesiExercise.splice(currentExerciseIndex, 1)
+
+      if (kelimeListesiExercise.length > currentExerciseIndex + 10) {
+        kelimeListesiExercise.splice(currentExerciseIndex + 10, 0, currentWord)
+      } else {
+        kelimeListesiExercise.push(currentWord)
+      }
+
+      inProgressWords[level][category][wordType][inProgressIndex].counter = 0
+      document.getElementById(`progressRight-${wordType}`).style.opacity =
+        '0.5'
+      document.getElementById(`progressMiddle-${wordType}`).style.opacity =
+        '0.5'
+      document.getElementById(`progressLeft-${wordType}`).style.opacity =
+        '0.5'
+
+      currentExerciseIndex++
+      if (currentExerciseIndex >= kelimeListesiExercise.length) {
+        currentExerciseIndex =
+          currentExerciseIndex % kelimeListesiExercise.length
+        if (currentExerciseIndex == 0) {
+          currentExerciseIndex++
+        }
+      }
+    } else {
+      currentExerciseIndex++
+      if (currentExerciseIndex >= kelimeListesiExercise.length) {
+        currentExerciseIndex =
+          currentExerciseIndex % kelimeListesiExercise.length
+        if (currentExerciseIndex == 0) {
+          currentExerciseIndex++
+        }
+      }
+    }
+    document.getElementById(
+      `feedbackMessage-${wordType}`
+    ).innerText = `Upps! ⚠️ ${kural}`
+    document.getElementById(`feedbackMessage-${wordType}`).style.color =
+      'red'
+    setTimeout(() => {
+      document.getElementById('correctAnswerField').innerHTML = '___' // Tekrar boş bırak
+      // buttonDer.style.visibility = 'visible'
+      // buttonDie.style.visibility = 'visible'
+      // buttonDas.style.visibility = 'visible'
+      showExerciseWord(level, wordType, learnedWithExerciseWords, category)
+    }, 3000)
+  }
+  console.log(`'${currentExerciseIndex}' index bu sayiya güncellendi.`)
+  console.log(
+    `'${kelimeListesiExercise.length}' liste uzunlugu bu sayiya güncellendi.`
+  )
+  LocalStorageManager.save('inProgressWords', inProgressWords)
 }
 
 const nonNounWrongAnswerClickHandler = (event) => {
-    event.preventDefault() // Sayfanın yukarı kaymasını engeller
+  event.preventDefault() // Sayfanın yukarı kaymasını engeller
 
-    const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
-    const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
-    const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
-    const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
+  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
+  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
+  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
 
-    checkNonNounAnswer(false, level, wordType, learnedWithExerciseWords, category)
-} 
+  checkNonNounAnswer(false, level, wordType, learnedWithExerciseWords, category)
+}
 
 const nonNounCorrectAnswerClickHandler = (event) => {
   event.preventDefault() // Sayfanın yukarı kaymasını engeller
@@ -1471,12 +1472,12 @@ const nonNounCorrectAnswerClickHandler = (event) => {
   const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
 
   checkNonNounAnswer(true, level, wordType, learnedWithExerciseWords, category)
-} 
+}
 
 document
   .getElementById('wrongButton-verb')
   .addEventListener('click', nonNounWrongAnswerClickHandler)
-  
+
 document
   .getElementById('correctButton-verb')
   .addEventListener('click', nonNounCorrectAnswerClickHandler)
@@ -1576,7 +1577,7 @@ function setupEventListeners() {
   }
 }
 
-const iKnowButtonClickHandler =  (event) =>{
+const iKnowButtonClickHandler = (event) => {
   event.preventDefault()
 
   const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
@@ -1587,7 +1588,7 @@ const iKnowButtonClickHandler =  (event) =>{
   iKnowLearn(level, wordType, learnedWithLearnWords, category)
 }
 
-const repeatButtonClickHandler =  (event) =>{
+const repeatButtonClickHandler = (event) => {
   event.preventDefault()
 
   const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
@@ -1659,7 +1660,7 @@ function showLearnElements(wordType) {
     const element = document.getElementById(id)
     if (element) {
       const isAdjectiveOrAdverb =
-      wordType === 'adjective' || wordType === 'adverb'
+        wordType === 'adjective' || wordType === 'adverb'
       const isElementRuleLearn = id === `ruleLearn-${wordType}`
 
       element.style.display =
@@ -1728,7 +1729,7 @@ function updateFavoriteIcons(wordType) {
   const outFavImage = document.getElementById(`outfav-${wordType}`)
 
   const currentWord = kelimeListesi[currentLearnIndex]
-  const favoriteWords = LocalStorageManager.load('favoriteWords', []) 
+  const favoriteWords = LocalStorageManager.load('favoriteWords', [])
   const isFavorite = isItInFavorites(currentWord, favoriteWords)
 
   if (isFavorite) {
@@ -1742,26 +1743,26 @@ function updateFavoriteIcons(wordType) {
 
 const resetLearnButtons = (wordType) => {
 
-    const iKnowButton = document.getElementById(`iKnowButtonLearn-${wordType}`)
-    const repeatButton = document.getElementById(`repeatButtonLearn-${wordType}`)
-  
-    if (iKnowButton && repeatButton) {
-      // **Butonları tekrar görünür hale getir**
-      iKnowButton.style.visibility = 'visible'
-      repeatButton.style.visibility = 'visible'
+  const iKnowButton = document.getElementById(`iKnowButtonLearn-${wordType}`)
+  const repeatButton = document.getElementById(`repeatButtonLearn-${wordType}`)
 
-      // **Önce eski event listener'ları kaldır**
-      const newIKnowButton = iKnowButton.cloneNode(true)
-      const newRepeatButton = repeatButton.cloneNode(true)
+  if (iKnowButton && repeatButton) {
+    // **Butonları tekrar görünür hale getir**
+    iKnowButton.style.visibility = 'visible'
+    repeatButton.style.visibility = 'visible'
 
-      iKnowButton.parentNode.replaceChild(newIKnowButton, iKnowButton)
-      repeatButton.parentNode.replaceChild(newRepeatButton, repeatButton)
+    // **Önce eski event listener'ları kaldır**
+    const newIKnowButton = iKnowButton.cloneNode(true)
+    const newRepeatButton = repeatButton.cloneNode(true)
 
-      // **Yeni event listener'ları ekleyelim**
-      newIKnowButton.addEventListener('click', iKnowButtonClickHandler)
-      newRepeatButton.addEventListener('click', repeatButtonClickHandler)
-    }
-}  
+    iKnowButton.parentNode.replaceChild(newIKnowButton, iKnowButton)
+    repeatButton.parentNode.replaceChild(newRepeatButton, repeatButton)
+
+    // **Yeni event listener'ları ekleyelim**
+    newIKnowButton.addEventListener('click', iKnowButtonClickHandler)
+    newRepeatButton.addEventListener('click', repeatButtonClickHandler)
+  }
+}
 
 
 function resetExerciseButtons(wordType) {
@@ -1866,31 +1867,42 @@ function playSound(audioUrl) {
   audio.play()
 }
 
-function isRegularLevel (level) {
+function isRegularLevel(level) {
   return !(level === '' || level === "einburgerungstest")
 }
 
-function isSelected (prop) {
+function isSelected(prop) {
   return !(prop === '' || prop === null)
 }
 
-function showOrHideDecks (level) {
+function checkCurrentIndexes() {
+  if (currentExerciseIndex < 0 || currentLearnIndex < 0) {
+    if (currentExerciseIndex < 0) {
+      currentExerciseIndex = 0
+    }
+    if (currentLearnIndex < 0) {
+      currentLearnIndex = 0
+    }
+  }
+  return
+}
+
+function showOrHideDecks(level) {
   if (isRegularLevel(level)) {
-      document.getElementById('decksContainer').style.display = 'flex'
-      return
+    document.getElementById('decksContainer').style.display = 'flex'
+    return
   }
   document.getElementById('decksContainer').style.display = 'none'
   return
 }
 
-function showOrHideMainContent (level, category) {
+function showOrHideMainContent(level, category) {
   if (level === 'einburgerungstest') {
     document.getElementById('contentContainer').style.display = 'block'
     document.getElementById('warnImage').style.display = 'none'
     return
   }
-  if (isRegularLevel(level) && isSelected(category))
-  {
+  if (isRegularLevel(level) && isSelected(category)) {
     document.getElementById('contentContainer').style.display = 'block'
     document.getElementById('warnImage').style.display = 'none'
     return
