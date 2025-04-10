@@ -1110,7 +1110,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
         // updateExerciseCounter(level, wordType, learnedWithExerciseWords)
         kelimeListesiExercise.splice(currentExerciseIndex, 1)
         currentExerciseIndex--
-        if (currentExerciseIndex >= kelimeListesiExercise.length) {
+        if (currentExerciseIndex > kelimeListesiExercise.length) {
           currentExerciseIndex =
             currentExerciseIndex % kelimeListesiExercise.length
           if (currentExerciseIndex == 0) {
@@ -1146,7 +1146,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
           )[0]
         }
         currentExerciseIndex++
-        if (currentExerciseIndex >= kelimeListesiExercise.length) {
+        if (currentExerciseIndex > kelimeListesiExercise.length) {
           currentExerciseIndex =
             currentExerciseIndex % kelimeListesiExercise.length
           if (currentExerciseIndex == 0) {
@@ -1182,7 +1182,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
         '0.5'
 
       currentExerciseIndex++
-      if (currentExerciseIndex >= kelimeListesiExercise.length) {
+      if (currentExerciseIndex > kelimeListesiExercise.length) {
         currentExerciseIndex =
           currentExerciseIndex % kelimeListesiExercise.length
         if (currentExerciseIndex == 0) {
@@ -1191,7 +1191,7 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
       }
     } else {
       currentExerciseIndex++
-      if (currentExerciseIndex >= kelimeListesiExercise.length) {
+      if (currentExerciseIndex > kelimeListesiExercise.length) {
         currentExerciseIndex =
           currentExerciseIndex % kelimeListesiExercise.length
         if (currentExerciseIndex == 0) {
