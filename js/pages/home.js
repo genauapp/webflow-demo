@@ -359,7 +359,7 @@ document.querySelectorAll('.deck').forEach((elem) => {
       })
       elem.classList.add('selectedimg')
     }
-    
+
     await executeInitialLoadAndShow(currentLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, selectedCategory)
   })
 })
@@ -834,9 +834,6 @@ function showExerciseWord(level, wordType, learnedWithExerciseWords, category) {
     document.getElementById(`levelTagExercise-${wordType}`).innerText = ''
     document.getElementById(`exerciseWord-${wordType}`).innerText = ''
     document.getElementById(`exerciseTranslation-${wordType}`).innerText = ''
-
-    // document.getElementById(`exampleLearn-${wordType}`).innerText =
-    //   'You learned all of the words, go to learn section.'
     document.getElementById(
       `feedbackMessage-${wordType}`
     ).innerText = `You completed all exercise words! 🎉`
@@ -868,7 +865,7 @@ function showExerciseWord(level, wordType, learnedWithExerciseWords, category) {
   }
 
   // Index kontrolü
-  if (currentExerciseIndex >= kelimeListesiExercise.length) {
+  if (currentExerciseIndex > kelimeListesiExercise.length) {
     currentExerciseIndex = 0
   }
 
