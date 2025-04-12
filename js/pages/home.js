@@ -1051,12 +1051,17 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
         currentExerciseIndex = 0
       }
 
+      /*
       kelimeListesiExercise.splice(currentExerciseIndex, 1)
       if (kelimeListesiExercise.length > currentExerciseIndex + 4) {
         kelimeListesiExercise.splice(currentExerciseIndex + 4, 0, currentWord)
       } else {
         kelimeListesiExercise.push(currentWord)
       }
+      */
+      kelimeListesiExercise.splice(currentExerciseIndex, 1);
+      const randomPosition = Math.floor(Math.random() * (kelimeListesiExercise.length - currentExerciseIndex)) + currentExerciseIndex + 1;
+      kelimeListesiExercise.splice(randomPosition, 0, currentWord);
 
       currentExerciseIndex++
       if (currentExerciseIndex >= kelimeListesiExercise.length) {
@@ -1167,11 +1172,16 @@ function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExer
     if (inProgressIndex !== -1) {
       kelimeListesiExercise.splice(currentExerciseIndex, 1)
 
+      /*
       if (kelimeListesiExercise.length > currentExerciseIndex + 10) {
         kelimeListesiExercise.splice(currentExerciseIndex + 10, 0, currentWord)
       } else {
         kelimeListesiExercise.push(currentWord)
       }
+      */
+
+      const randomPosition = Math.floor(Math.random() * (kelimeListesiExercise.length - currentExerciseIndex)) + currentExerciseIndex + 1;
+      kelimeListesiExercise.splice(randomPosition, 0, currentWord);
 
       inProgressWords[level][category][wordType][inProgressIndex].counter = 0
       document.getElementById(`progressRight-${wordType}`).style.opacity =
