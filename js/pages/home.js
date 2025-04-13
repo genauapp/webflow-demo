@@ -352,7 +352,7 @@ async function loadWords(level, wordType, learnedWithLearnWords, learnedWithExer
     ListUtils.shuffleArray(wordListExercise)
 
     // LocalStorage'daki progress listelerini temizle
-    LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
+    LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, DEFAULT_VALUE.IN_PROGRESS_WORDS)
     //localStorage.setItem("learnedWithExerciseWords", JSON.stringify([]));
 
     document.getElementById(
