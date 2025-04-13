@@ -25,13 +25,12 @@ export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, 
     totalWordsExercise = wordList.length
     const inProgressWords = LocalStorageManager.load(IN_PROGRESS_WORDS_KEY, DEFAULT_VALUE.IN_PROGRESS_WORDS)
     const currentWord = wordListExercise[currentExerciseIndex]
-    const { almanca } = currentWord
     const buttonWrong = document.getElementById(`wrongButton-${wordType}`)
     const buttonCorrect = document.getElementById(`correctButton-${wordType}`)
 
     // is current word in inProgressWords
     const inProgressIndex = inProgressWords[level][category][wordType].findIndex(
-        (item) => item.almanca === almanca
+        (item) => item.almanca === currentWord.almanca
     )
 
     buttonWrong.style.visibility = 'hidden'
@@ -85,7 +84,6 @@ export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, 
             ) {
                 document.getElementById(`progressMiddle-${wordType}`).style.opacity =
                     '1'
-                LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
             }
             //3 kere bilindiyse learnede ekle
             if (
@@ -101,77 +99,44 @@ export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, 
                     ingilizce: currentWord.ingilizce,
                     seviye: currentWord.seviye || 'N/A',
                 })
-                LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
                 LocalStorageManager.save(LEARNED_WITH_EXERCISE_WORDS_KEY, learnedWithExerciseWords)
 
                 // if exercise is ended
                 if (learnedWithExerciseWords[level][category][wordType].length === totalWordsExercise) {
                     showModalExercise('You completed all exercise words! 🎉', wordType)
                 }
-
-                if (
-                    inProgressWords[level][category][wordType][inProgressIndex]
-                        .counter === 3
-                ) {
-                    document.getElementById(
-                        `feedbackMessage-${wordType}`
-                    ).innerText = `This word: ${currentWord.almanca} added to learned list!🏆`
-                    document.getElementById(
-                        `feedbackMessage-${wordType}`
-                    ).style.color = 'green'
-                    document.getElementById(
-                        `progressRight-${wordType}`
-                    ).style.opacity = '1'
-                    LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
-                }
+                document.getElementById(
+                    `feedbackMessage-${wordType}`
+                ).innerText = `This word: ${currentWord.almanca} added to learned list!🏆`
+                document.getElementById(
+                    `feedbackMessage-${wordType}`
+                ).style.color = 'green'
+                document.getElementById(
+                    `progressRight-${wordType}`
+                ).style.opacity = '1'
 
                 // updateExerciseCounter(level, wordType, learnedWithExerciseWords)
+                // Remove the current word from the exercise list
                 wordListExercise.splice(currentExerciseIndex, 1)
+                // Decrement the current exercise index
                 currentExerciseIndex--
+                // Ensure the current exercise index is within bounds
                 if (currentExerciseIndex >= wordListExercise.length) {
-                    currentExerciseIndex =
-                        currentExerciseIndex % wordListExercise.length
+                    currentExerciseIndex = currentExerciseIndex % wordListExercise.length
+                    // If the index is zero, increment it to avoid out-of-bounds error
                     if (currentExerciseIndex == 0) {
                         currentExerciseIndex++
                     }
                 }
-                // inProgressWords.splice(inProgressIndex, 1); // inProgressWords'ten çıkar
-                console.log(
-                    `'${currentWord.almanca}' ${LEARNED_WITH_EXERCISE_WORDS_KEY} listesine taşındı.`
-                )
+
+                LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, wordListExercise)
+                // Remove the current word from the inProgressWords list
+                inProgressWords[level][category][wordType].splice(inProgressIndex, 1);
+                LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords);
+
                 setTimeout(() => {
                     showExerciseWord(level, wordType, learnedWithExerciseWords, category)
                 }, 1000)
-            } else {
-                playSound(
-                    'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/correct.mp3'
-                )
-                wordListExercise.splice(currentExerciseIndex, 1)
-                if (
-                    inProgressWords[level][category][wordType][inProgressIndex]
-                        .counter === 1
-                ) {
-                    wordListExercise.splice(
-                        currentExerciseIndex + 8,
-                        0,
-                        currentWord
-                    )[0]
-                } else {
-                    wordListExercise.splice(
-                        currentExerciseIndex + 12,
-                        0,
-                        currentWord
-                    )[0]
-                }
-                LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
-                currentExerciseIndex++
-                if (currentExerciseIndex >= wordListExercise.length) {
-                    currentExerciseIndex =
-                        currentExerciseIndex % wordListExercise.length
-                    if (currentExerciseIndex == 0) {
-                        currentExerciseIndex++
-                    }
-                }
             }
         }
 
