@@ -315,7 +315,7 @@ async function executeInitialLoadAndShow(level, wordType, learnedWithLearnWords,
   try {
     await loadWords(level, wordType, learnedWithLearnWords, learnedWithExerciseWords, category)
     showLearnWord(level, wordType, learnedWithLearnWords, category)
-    showExerciseWord()
+    showExerciseWord(0)
   } catch (error) {
     console.error('Kelime yükleme hatası:', error)
   }
@@ -660,7 +660,7 @@ function showLearnWord(level, wordType, learnedWithLearnWords, category) {
   updateFavoriteIcons(wordType)
 }
 
-export function showExerciseWord() {
+export function showExerciseWord(currentIndex) {
   const level = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
   const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
   const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
@@ -717,8 +717,8 @@ export function showExerciseWord() {
   }
 
   // Index kontrolü
-  if (currentExerciseIndex >= wordListExercise.length) {
-    currentExerciseIndex = 0
+  if (currentIndex >= wordListExercise.length) {
+    currentIndex = 0
   }
 
   inProgressWords = LocalStorageManager.load(IN_PROGRESS_WORDS_KEY, DEFAULT_VALUE.IN_PROGRESS_WORDS)
@@ -741,13 +741,13 @@ export function showExerciseWord() {
     return
   }
 
-  const currentWord = wordListExercise[currentExerciseIndex]
+  const currentWord = wordListExercise[currentIndex]
   const progressWord = inProgressWords[level][category][wordType].find(
     (item) => item.almanca === currentWord.almanca
   )
 
   const { kelime, ingilizce, seviye } =
-    wordListExercise[currentExerciseIndex]
+    wordListExercise[currentIndex]
   // const renk = artikelRenk(artikel)
 
   // Kelimenin Almanca kısmını göster
@@ -988,7 +988,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords,
           `'${currentWord.almanca}' ${LEARNED_WITH_EXERCISE_WORDS_KEY} listesine taşındı.`
         )
         setTimeout(() => {
-          showExerciseWord()
+          showExerciseWord(currentExerciseIndex)
         }, 1000)
       } else {
         playSound(
@@ -1027,7 +1027,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords,
       // buttonDer.style.visibility = 'visible'
       // buttonDie.style.visibility = 'visible'
       // buttonDas.style.visibility = 'visible'
-      showExerciseWord()
+      showExerciseWord(currentExerciseIndex)
     }, 1000)
     LocalStorageManager.save(
       LEARNED_WITH_EXERCISE_WORDS_KEY,
@@ -1080,7 +1080,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords,
       // buttonDer.style.visibility = 'visible'
       // buttonDie.style.visibility = 'visible'
       // buttonDas.style.visibility = 'visible'
-      showExerciseWord()
+      showExerciseWord(currentExerciseIndex)
     }, 3000)
   }
   console.log(`'${currentExerciseIndex}' index bu sayiya güncellendi.`)
