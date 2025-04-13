@@ -155,7 +155,7 @@ document.getElementById('adverbTab').addEventListener('click', async () => {
 async function executeInitialLoadAndShow() {
   try {
     await loadWords()
-    showLearnWord(level, wordType, learnedWithLearnWords, category)
+    showLearnWord()
     showExerciseWord(0)
   } catch (error) {
     console.error('Kelime yükleme hatası:', error)
@@ -269,7 +269,7 @@ function repeatLearn(level, wordType, learnedWithLearnWords, category) {
   currentLearnIndex = currentLearnIndex % wordList.length
 
   // Show the next word
-  showLearnWord(level, wordType, learnedWithLearnWords, category)
+  showLearnWord()
 }
 
 // On Learn: I Know Click
@@ -294,7 +294,7 @@ function iKnowLearn(level, wordType, learnedWithLearnWords, category) {
   document.getElementById(`totalWordsCountLearn-${wordType}`).innerText =
     initialTotalWords
 
-  showLearnWord(level, wordType, learnedWithLearnWords, category)
+  showLearnWord()
 
 }
 
@@ -382,7 +382,11 @@ function artikelRenk(artikel) {
   return 'black'
 }
 
-function showLearnWord(level, wordType, learnedWithLearnWords, category) {
+function showLearnWord() {
+  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
+  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
+  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY, DEFAULT_VALUE.CURRENT_CATEGORY)
+  const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
   const iKnowButton = document.getElementById(
     `iKnowButtonLearn-${wordType}`
   )
