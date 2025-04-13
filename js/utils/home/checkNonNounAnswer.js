@@ -133,7 +133,7 @@ export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, 
                 LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords);
 
                 setTimeout(() => {
-                    showExerciseWord()
+                    showExerciseWord(currentExerciseIndex)
                 }, 1000)
             }
         }
@@ -144,7 +144,7 @@ export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, 
         )
 
         setTimeout(() => {
-            showExerciseWord()
+            showExerciseWord(currentExerciseIndex)
         }, 1000)
 
     } else {
@@ -197,7 +197,7 @@ export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, 
             'red'
         setTimeout(() => {
 
-            showExerciseWord()
+            showExerciseWord(currentExerciseIndex)
         }, 3000)
     }
 
