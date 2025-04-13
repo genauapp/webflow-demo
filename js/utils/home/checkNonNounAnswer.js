@@ -118,8 +118,6 @@ export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, 
                 // updateExerciseCounter(level, wordType, learnedWithExerciseWords)
                 // Remove the current word from the exercise list
                 wordListExercise.splice(currentExerciseIndex, 1)
-                // Decrement the current exercise index
-                currentExerciseIndex--
                 // Ensure the current exercise index is within bounds
                 if (currentExerciseIndex >= wordListExercise.length) {
                     currentExerciseIndex = currentExerciseIndex % wordListExercise.length
@@ -163,6 +161,7 @@ export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, 
 
             const randomPosition = Math.floor(Math.random() * (wordListExercise.length - currentExerciseIndex)) + currentExerciseIndex + 1;
             wordListExercise.splice(randomPosition, 0, currentWord);
+            LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, wordListExercise)
 
             inProgressWords[level][category][wordType][inProgressIndex].counter = 0
             document.getElementById(`progressRight-${wordType}`).style.opacity =
