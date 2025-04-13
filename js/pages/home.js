@@ -763,7 +763,7 @@ export function showExerciseWord(level, wordType, learnedWithExerciseWords, cate
     currentExerciseIndex = 0
   }
 
-  inProgressWords = LocalStorageManager.load(IN_PROGRESS_WORDS_KEY, inProgressWords)
+  inProgressWords = LocalStorageManager.load(IN_PROGRESS_WORDS_KEY, DEFAULT_VALUE.IN_PROGRESS_WORDS)
 
 
   // 🟢 `kelimeListesi` içinden `learnedWords`'de olanları çıkar
