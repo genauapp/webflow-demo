@@ -5,11 +5,12 @@ import playSound from "./PlaySound.js"
 
 let wordListExercise = []
 let currentExerciseIndex = 0
+let totalWordsExercise = 0
+
 
 export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExerciseWords, category) {
-    console.log(wordListExercise)
     wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
-    console.log(wordListExercise)
+    totalWordsExercise = wordListExercise.length
     // Eğer liste boşsa veya index liste dışındaysa, işlemi durdur
     if (
       !wordListExercise.length ||
@@ -71,7 +72,6 @@ export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, 
         wordListExercise.splice(currentExerciseIndex, 1);
         const randomPosition = Math.floor(Math.random() * (wordListExercise.length - currentExerciseIndex)) + currentExerciseIndex + 1;
         wordListExercise.splice(randomPosition, 0, currentWord);
-        LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, wordListExercise)
   
         currentExerciseIndex++
         if (currentExerciseIndex >= wordListExercise.length) {
