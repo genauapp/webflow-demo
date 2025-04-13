@@ -18,7 +18,7 @@ export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, 
       return
     }
   
-    const inProgressWords = LocalStorageManager.load('inProgressWords', {})
+    const inProgressWords = LocalStorageManager.load(IN_PROGRESS_WORDS_KEY, {})
   
     const currentWord = wordListExercise[currentExerciseIndex]
     const { almanca, ingilizce, kural } = currentWord
@@ -238,5 +238,5 @@ export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, 
     }
   
     buttonWrong.removeAttribute('wrong-but')
-    LocalStorageManager.save('inProgressWords', inProgressWords)
+    LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
   }

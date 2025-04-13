@@ -1129,7 +1129,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords,
   console.log(
     `'${wordListExercise.length}' liste uzunlugu bu sayiya güncellendi.`
   )
-  LocalStorageManager.save('inProgressWords', inProgressWords)
+  LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
 }
 
 const nonNounWrongAnswerClickHandler = (event) => {
