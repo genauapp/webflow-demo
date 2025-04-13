@@ -413,54 +413,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 })
 
-// On Page Navigation
-function navigateToPage(pageId) {
-  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
-  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
-  const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
-  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
-
-
-
-  showSkeleton(wordType)
-  setTimeout(() => {
-    document.querySelectorAll('.page').forEach((page) => {
-      page.style.display = 'none'
-    })
-    document.getElementById(pageId).style.display = 'block'
-    hideSkeleton(recentWordType)
-
-    // Sayfa değişiminde buton kontrolü
-    if (learnedWithLearnWords[level][wordType].length >= initialTotalWords) {
-      document.getElementById(
-        'iKnowButtonLearn-' + wordType
-      ).style.visibility = 'hidden'
-      document.getElementById(
-        'repeatButtonLearn-' + wordType
-      ).style.visibility = 'hidden'
-    }
-    if (
-      learnedWithExerciseWords[level][wordType] >= initialTotalWords
-    ) {
-      if (wordType === 'noun') {
-        document.getElementById('buttonDer').style.visibility = 'hidden'
-        document.getElementById('buttonDie').style.visibility = 'hidden'
-        document.getElementById('buttonDas').style.visibility = 'hidden'
-      } else if (
-        wordType === 'verb' ||
-        wordType === 'adjective' ||
-        wordType === 'adverb'
-      ) {
-        document.getElementById(`wrongButton-${wordType}`).style.visibility =
-          'hidden'
-        document.getElementById(
-          `correctButton-${wordType}`
-        ).style.visibility = 'hidden'
-      }
-    }
-  }, 500)
-}
-
 // On Learn: Repeat Click
 function repeatLearn(level, wordType, learnedWithLearnWords, category) {
   if (!wordList.length || currentLearnIndex >= wordList.length) {

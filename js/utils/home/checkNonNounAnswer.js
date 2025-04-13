@@ -1,4 +1,4 @@
-import { DEFAULT_VALUE, IN_PROGRESS_WORDS_KEY, WORD_LIST_EXERCISE_KEY, LEARNED_WITH_EXERCISE_WORDS_KEY } from "../../constants/storageKeys.js"
+import { DEFAULT_VALUE, IN_PROGRESS_WORDS_KEY, WORD_LIST_EXERCISE_KEY, LEARNED_WITH_EXERCISE_WORDS_KEY, WORD_LIST_KEY } from "../../constants/storageKeys.js"
 import LocalStorageManager from "../LocalStorageManager.js"
 import { showExerciseWord } from "../../pages/home.js"
 import playSound from "./PlaySound.js"
@@ -11,6 +11,7 @@ let totalWordsExercise = 0
 
 export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, category) {
     let wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
+    let wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
     // Eğer liste boşsa veya index liste dışındaysa, işlemi durdur
     if (
         !wordListExercise.length ||
@@ -21,7 +22,7 @@ export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, 
     }
 
     let learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
-    totalWordsExercise = wordListExercise.length
+    totalWordsExercise = wordList.length
     const inProgressWords = LocalStorageManager.load(IN_PROGRESS_WORDS_KEY, DEFAULT_VALUE.IN_PROGRESS_WORDS)
     const currentWord = wordListExercise[currentExerciseIndex]
     const { almanca } = currentWord
