@@ -1,4 +1,4 @@
-import { DEFAULT_VALUE, IN_PROGRESS_WORDS_KEY, WORD_LIST_EXERCISE_KEY, LEARNED_WITH_EXERCISE_WORDS_KEY, WORD_LIST_KEY } from "../../constants/storageKeys.js"
+import { DEFAULT_VALUE, IN_PROGRESS_WORDS_KEY, WORD_LIST_EXERCISE_KEY, LEARNED_WITH_EXERCISE_WORDS_KEY, WORD_LIST_KEY, CURRENT_LEVEL_KEY, CURRENT_CATEGORY_KEY, CURRENT_WORD_TYPE_KEY } from "../../constants/storageKeys.js"
 import LocalStorageManager from "../LocalStorageManager.js"
 import playSound from "./PlaySound.js"
 import { showModalExercise } from "./ModalManager.js"
@@ -6,9 +6,12 @@ import showExerciseWord from "./ShowExerciseWord.js"
 
 let currentExerciseIndex = 0
 
-export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, category) {
+export default function checkNonNounAnswer(isUserInputCorrect) {
     let wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
     let wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
+    const level = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
+    const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY, DEFAULT_VALUE.CURRENT_CATEGORY)
+    const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
     // Eğer liste boşsa veya index liste dışındaysa, işlemi durdur
     if (
         !wordListExercise.length ||

@@ -369,28 +369,6 @@ function removeFavorite() {
   updateFavoriteIcons(wordType)
 }
 
-// Konu başlıklarını güncelleme fonksiyonu
-function updateTopicNames(level, wordType) {
-  const topicNames = {
-    b1telcpt1: 'Level: A1 - A2',
-    b1telcpt2: 'Level: A2 - B1',
-    b1telcpt3: 'Level: B1 - B2',
-    b1telcpt4: 'Level: C1 - C2',
-    einburgerungstest: 'Einbürgerungstest',
-  }
-
-  const topicName = topicNames[level] || 'Level: A1 - A2'
-  if (document.getElementById(`selectedTopicName-${wordType}`)) {
-    document.getElementById(`selectedTopicName-${wordType}`).innerText =
-      topicName
-  }
-  if (document.getElementById(`selectedTopicNameExercise-${wordType}`)) {
-    document.getElementById(
-      `selectedTopicNameExercise-${wordType}`
-    ).innerText = topicName
-  }
-}
-
 function artikelRenk(artikel) {
   if (artikel.toLowerCase() === 'der') {
     return 'blue'
@@ -530,24 +508,12 @@ document
 
 const nonNounWrongAnswerClickHandler = (event) => {
   event.preventDefault() // Sayfanın yukarı kaymasını engeller
-
-  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
-  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
-  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
-  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
-
-  checkNonNounAnswer(false, level, wordType, category)
+  checkNonNounAnswer(false)
 }
 
 const nonNounCorrectAnswerClickHandler = (event) => {
   event.preventDefault() // Sayfanın yukarı kaymasını engeller
-
-  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
-  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
-  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
-  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
-
-  checkNonNounAnswer(true, level, wordType, category)
+  checkNonNounAnswer(true)
 }
 
 document
@@ -745,57 +711,6 @@ function showLearnElements(wordType) {
   })
 }
 
-// E-mail Form
-// document.addEventListener('DOMContentLoaded', function () {
-//   document
-//     .getElementById('email-form')
-//     .addEventListener('submit', function (event) {
-//       event.preventDefault() // Formun hemen gönderilmesini engeller
-//       gtag_report_conversion()
-
-//       setTimeout(() => {
-//         this.submit() // Google Ads dönüşüm takibinin ardından formu gönder
-//       }, 300) // 300ms bekleyerek Google Ads dönüşümünün çalışmasını bekler
-//     })
-// })
-
-function updateExerciseCounter(level, wordType, learnedWithExerciseWords, category) {
-  // correctAnswerWordsCounter[currentLevel][currentType]++
-  // LocalStorageManager.save(
-  //   'correctAnswerWordsCounter',
-  //   correctAnswerWordsCounter
-  // )
-
-  document.getElementById(
-    'remainingWordsCountExercise-' + wordType
-  ).innerText = learnedWithExerciseWords[level][category][wordType].length
-  document.getElementById('totalWordsCountExercise-' + wordType).innerText =
-    initialTotalWords
-
-  if (
-    learnedWithExerciseWords[level][category][wordType].length >= initialTotalWords
-  ) {
-    showModalExercise('You completed all exercise words! 🎉', wordType)
-
-    if (wordType === 'noun') {
-      document.getElementById('buttonDer').style.visibility = 'hidden'
-      document.getElementById('buttonDie').style.visibility = 'hidden'
-      document.getElementById('buttonDas').style.visibility = 'hidden'
-    } else if (
-      wordType === 'verb' ||
-      wordType === 'adjective' ||
-      wordType === 'adverb'
-    ) {
-      document.getElementById(`wrongButton-${wordType}`).style.visibility =
-        'hidden'
-      document.getElementById(`correctButton-${wordType}`).style.visibility =
-        'hidden'
-    }
-    document.getElementById(`feedbackMessage-${wordType}`).innerText =
-      'You completed all exercise words! 🎉'
-  }
-}
-
 function isItInFavorites(currentWord, favoriteWords) {
   return favoriteWords.some((word) => word.almanca === currentWord.almanca)
 }
@@ -817,93 +732,8 @@ function updateFavoriteIcons(wordType) {
   }
 }
 
-const resetLearnButtons = (wordType) => {
-
-  const iKnowButton = document.getElementById(`iKnowButtonLearn-${wordType}`)
-  const repeatButton = document.getElementById(`repeatButtonLearn-${wordType}`)
-
-  if (iKnowButton && repeatButton) {
-    // **Butonları tekrar görünür hale getir**
-    iKnowButton.style.visibility = 'visible'
-    repeatButton.style.visibility = 'visible'
-
-    // **Önce eski event listener'ları kaldır**
-    const newIKnowButton = iKnowButton.cloneNode(true)
-    const newRepeatButton = repeatButton.cloneNode(true)
-
-    iKnowButton.parentNode.replaceChild(newIKnowButton, iKnowButton)
-    repeatButton.parentNode.replaceChild(newRepeatButton, repeatButton)
-
-    // **Yeni event listener'ları ekleyelim**
-    newIKnowButton.addEventListener('click', iKnowButtonClickHandler)
-    newRepeatButton.addEventListener('click', repeatButtonClickHandler)
-  }
-}
-
-
-function resetExerciseButtons(wordType) {
-  if (wordType === 'noun') {
-    var buttonDer = document.getElementById('buttonDer')
-    var buttonDie = document.getElementById('buttonDie')
-    var buttonDas = document.getElementById('buttonDas')
-
-    if (buttonDer && buttonDie && buttonDas) {
-      // **Butonları tekrar görünür hale getir**
-      buttonDer.style.visibility = 'visible'
-      buttonDie.style.visibility = 'visible'
-      buttonDas.style.visibility = 'visible'
-
-      // **Önce eski event listener'ları kaldır**
-      var newButtonDer = buttonDer.cloneNode(true)
-      var newButtonDie = buttonDie.cloneNode(true)
-      var newButtonDas = buttonDas.cloneNode(true)
-
-      buttonDer.parentNode.replaceChild(newButtonDer, buttonDer)
-      buttonDie.parentNode.replaceChild(newButtonDie, buttonDie)
-      buttonDas.parentNode.replaceChild(newButtonDas, buttonDas)
-
-      // **Yeni event listener'ları ekleyelim**
-      newButtonDer.addEventListener('click', nounDerAnswerClickHandler)
-
-      newButtonDie.addEventListener('click', nounDieAnswerClickHandler)
-
-      newButtonDas.addEventListener('click', nounDasAnswerClickHandler)
-
-      console.log('🔥 Der, Die, Das butonları tekrar aktif hale getirildi.')
-    }
-  } else if (
-    wordType === 'verb' ||
-    wordType === 'adjective' ||
-    wordType === 'adverb'
-  ) {
-    var buttonWrong = document.getElementById(`wrongButton-${wordType}`)
-    var buttonCorrect = document.getElementById(`correctButton-${wordType}`)
-
-    if (buttonWrong && buttonCorrect) {
-      // **Butonları tekrar görünür hale getir**
-      buttonWrong.style.visibility = 'visible'
-      buttonCorrect.style.visibility = 'visible'
-
-      // **Önce eski event listener'ları kaldır**
-      var newButtonWrong = buttonWrong.cloneNode(true)
-      var newButtonCorrect = buttonCorrect.cloneNode(true)
-
-      buttonWrong.parentNode.replaceChild(newButtonWrong, buttonWrong)
-      buttonCorrect.parentNode.replaceChild(newButtonCorrect, buttonCorrect)
-
-      // **Yeni event listener'ları ekleyelim**
-      newButtonWrong.addEventListener('click', nonNounWrongAnswerClickHandler)
-      newButtonCorrect.addEventListener('click', nonNounCorrectAnswerClickHandler)
-    }
-  }
-}
-
 function isRegularLevel(level) {
   return !(level === '' || level === "einburgerungstest")
-}
-
-function isSelected(prop) {
-  return !(prop === '' || prop === null)
 }
 
 function showOrHideDecks(level) {
@@ -913,34 +743,6 @@ function showOrHideDecks(level) {
   }
   document.getElementById('decksContainer').style.display = 'none'
   return
-}
-
-function showOrHideMainContent(level, category) {
-  if (level === 'einburgerungstest') {
-    document.getElementById('contentContainer').style.display = 'block'
-    document.getElementById('warnImage').style.display = 'none'
-    return
-  }
-  if (isRegularLevel(level) && isSelected(category)) {
-    document.getElementById('contentContainer').style.display = 'block'
-    document.getElementById('warnImage').style.display = 'none'
-    return
-  }
-}
-
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof url !== 'undefined') {
-      window.location = url
-    }
-  }
-
-  gtag('event', 'conversion', {
-    send_to: 'AW-16867938378/ChUxCNiDnZ8aEMqgoes-',
-    event_callback: callback,
-  })
-
-  return false // Sayfanın hemen yönlendirilmesini engeller, gtag'ın çalışmasını bekler.
 }
 
 $('a').click(function () {
