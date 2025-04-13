@@ -315,7 +315,7 @@ async function executeInitialLoadAndShow(level, wordType, learnedWithLearnWords,
   try {
     await loadWords(level, wordType, learnedWithLearnWords, learnedWithExerciseWords, category)
     showLearnWord(level, wordType, learnedWithLearnWords, category)
-    showExerciseWord(level, wordType, learnedWithExerciseWords, category)
+    showExerciseWord()
   } catch (error) {
     console.error('Kelime yükleme hatası:', error)
   }
@@ -660,7 +660,11 @@ function showLearnWord(level, wordType, learnedWithLearnWords, category) {
   updateFavoriteIcons(wordType)
 }
 
-export function showExerciseWord(level, wordType, learnedWithExerciseWords, category) {
+export function showExerciseWord() {
+  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
+  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
+  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
+  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY, DEFAULT_VALUE.CURRENT_CATEGORY)
   // updated indexes
   document.getElementById(
     `remainingWordsCountExercise-${wordType}`
@@ -984,7 +988,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords,
           `'${currentWord.almanca}' ${LEARNED_WITH_EXERCISE_WORDS_KEY} listesine taşındı.`
         )
         setTimeout(() => {
-          showExerciseWord(level, wordType, learnedWithExerciseWords, category)
+          showExerciseWord()
         }, 1000)
       } else {
         playSound(
@@ -1023,7 +1027,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords,
       // buttonDer.style.visibility = 'visible'
       // buttonDie.style.visibility = 'visible'
       // buttonDas.style.visibility = 'visible'
-      showExerciseWord(level, wordType, learnedWithExerciseWords, category)
+      showExerciseWord()
     }, 1000)
     LocalStorageManager.save(
       LEARNED_WITH_EXERCISE_WORDS_KEY,
@@ -1076,7 +1080,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords,
       // buttonDer.style.visibility = 'visible'
       // buttonDie.style.visibility = 'visible'
       // buttonDas.style.visibility = 'visible'
-      showExerciseWord(level, wordType, learnedWithExerciseWords, category)
+      showExerciseWord()
     }, 3000)
   }
   console.log(`'${currentExerciseIndex}' index bu sayiya güncellendi.`)
