@@ -2,10 +2,12 @@ import { DEFAULT_VALUE, WORD_LIST_EXERCISE_KEY } from "../../constants/storageKe
 import LocalStorageManager from "../LocalStorageManager.js"
 import { showExerciseWord } from "../../pages/home.js"
 
-let wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
+let wordListExercise = []
 let currentExerciseIndex = 0
 
 export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExerciseWords, category) {
+    console.log(wordListExercise)
+    wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
     console.log(wordListExercise)
     // Eğer liste boşsa veya index liste dışındaysa, işlemi durdur
     if (
