@@ -11,6 +11,8 @@ let totalWordsExercise = 0
 export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExerciseWords, category) {
     wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
     totalWordsExercise = wordListExercise.length
+    console.log('wordList: ' + wordListExercise)
+    console.log('totalWordsExercise: ' + totalWordsExercise)
     // Eğer liste boşsa veya index liste dışındaysa, işlemi durdur
     if (
       !wordListExercise.length ||
