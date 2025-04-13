@@ -152,9 +152,9 @@ document.getElementById('adverbTab').addEventListener('click', async () => {
   await executeInitialLoadAndShow(level, adverbType, learnedWithLearnWords, learnedWithExerciseWords, category)
 })
 
-async function executeInitialLoadAndShow(level, wordType, learnedWithLearnWords, learnedWithExerciseWords, category) {
+async function executeInitialLoadAndShow() {
   try {
-    await loadWords(level, wordType, learnedWithLearnWords, learnedWithExerciseWords, category)
+    await loadWords()
     showLearnWord(level, wordType, learnedWithLearnWords, category)
     showExerciseWord(0)
   } catch (error) {
@@ -163,8 +163,12 @@ async function executeInitialLoadAndShow(level, wordType, learnedWithLearnWords,
 }
 
 // Kelime yükleme fonksiyonu
-async function loadWords(level, wordType, learnedWithLearnWords, learnedWithExerciseWords, category) {
-
+async function loadWords() {
+  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
+  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY, DEFAULT_VALUE.CURRENT_CATEGORY)
+  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
+  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
+  const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
   try {
     showSkeleton(wordType)
 
@@ -184,15 +188,11 @@ async function loadWords(level, wordType, learnedWithLearnWords, learnedWithExer
 
     const data = await response.json()
     wordList = [...data]
-    LocalStorageManager.save(WORD_LIST_KEY, wordList)
     wordListExercise = [...data]
-    LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, wordListExercise)
-    initialTotalWords = data.length
-    totalWordsExercise = initialTotalWords
-    totalWordsLearn = initialTotalWords
 
-    ListUtils.shuffleArray(wordList)
-    ListUtils.shuffleArray(wordListExercise)
+    LocalStorageManager.save(WORD_LIST_KEY, ListUtils.shuffleArray(wordList))
+    LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, ListUtils.shuffleArray(wordListExercise))
+    
 
     // LocalStorage'daki progress listelerini temizle
     LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, DEFAULT_VALUE.IN_PROGRESS_WORDS)
@@ -205,10 +205,10 @@ async function loadWords(level, wordType, learnedWithLearnWords, learnedWithExer
       `remainingWordsCountExercise-${wordType}`
     ).innerText = learnedWithExerciseWords[level][category][wordType].length
     document.getElementById(`totalWordsCountLearn-${wordType}`).innerText =
-      totalWordsLearn
+      wordList.length
     document.getElementById(
       `totalWordsCountExercise-${wordType}`
-    ).innerText = totalWordsExercise
+    ).innerText = wordList.length
 
     hideSkeleton(wordType)
   } catch (error) {
