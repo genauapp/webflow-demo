@@ -2,7 +2,6 @@ import { CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE, LEARNED_WITH_E
 import { JSON_URLS } from '../constants/urls.js'
 import { LEARN_ELEMENT_IDS } from '../constants/elements.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
-import ExerciseUtils from '../utils/home/ExerciseUtils.js'
 import ListUtils from '../utils/ListUtils.js'
 import playSound from '../utils/home/PlaySound.js'
 import { types } from '../constants/props.js'

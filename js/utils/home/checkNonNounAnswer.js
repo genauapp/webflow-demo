@@ -1,6 +1,5 @@
 import { DEFAULT_VALUE, IN_PROGRESS_WORDS_KEY, WORD_LIST_EXERCISE_KEY, LEARNED_WITH_EXERCISE_WORDS_KEY, WORD_LIST_KEY } from "../../constants/storageKeys.js"
 import LocalStorageManager from "../LocalStorageManager.js"
-import { showExerciseWord } from "../../pages/home.js"
 import playSound from "./PlaySound.js"
 import { showModalExercise } from "./ModalManager.js"
 import showExerciseWord from "./ShowExerciseWord.js"
