@@ -952,7 +952,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords,
         counter: 1,
       })
       document.getElementById(`progressLeft-${wordType}`).style.opacity = '1'
-
+      LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
       // Liste manipülasyonlarından sonra index kontrolü
       if (currentExerciseIndex >= wordListExercise.length) {
         currentExerciseIndex = 0
@@ -977,7 +977,8 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords,
       ) {
         document.getElementById(`progressMiddle-${wordType}`).style.opacity =
           '1'
-      }
+          LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
+        }
       //3 kere bilindiyse learnede ekle
       if (
         inProgressWords[level][category][wordType][inProgressIndex].counter >= 3
@@ -1014,6 +1015,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords,
           document.getElementById(
             `progressRight-${wordType}`
           ).style.opacity = '1'
+          LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
         }
         // updateExerciseCounter(level, wordType, learnedWithExerciseWords)
         wordListExercise.splice(currentExerciseIndex, 1)
@@ -1075,6 +1077,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords,
       LEARNED_WITH_EXERCISE_WORDS_KEY,
       learnedWithExerciseWords
     )
+    LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
   } else {
     if (inProgressIndex !== -1) {
       wordListExercise.splice(currentExerciseIndex, 1)
@@ -1092,7 +1095,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords,
         '0.5'
       document.getElementById(`progressLeft-${wordType}`).style.opacity =
         '0.5'
-
+        LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
       currentExerciseIndex++
       if (currentExerciseIndex >= wordListExercise.length) {
         currentExerciseIndex =
