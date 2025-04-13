@@ -1,4 +1,4 @@
-export default function showModal(message, wordType) {
+export function showModal(message, wordType) {
     var modal = document.getElementById(`customModal-${wordType}`)
     var modalMessage = document.getElementById(`modalMessage-${wordType}`)
     var closeButton = document.querySelector('.close-button')
@@ -17,7 +17,7 @@ export default function showModal(message, wordType) {
     }, 3000)
   }
   
-  export default function showModalExercise(message, wordType) {
+  export function showModalExercise(message, wordType) {
     var modal = document.getElementById(`customModalExercise-${wordType}`)
     var modalMessage = document.getElementById(
       `modalMessageExercise-${wordType}`
