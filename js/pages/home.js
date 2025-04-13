@@ -166,7 +166,6 @@ let staticWordLists = {
 
 // yeni comment
 let inProgressWords = {}
-
 let kelimeListesi = []
 let wordListExercise = []
 let currentLearnIndex = 0
@@ -764,8 +763,7 @@ export function showExerciseWord(level, wordType, learnedWithExerciseWords, cate
     currentExerciseIndex = 0
   }
 
-  inProgressWords =
-    LocalStorageManager.load('inProgressWords', inProgressWords)
+  inProgressWords = LocalStorageManager.load(IN_PROGRESS_WORDS_KEY, inProgressWords)
 
 
   // 🟢 `kelimeListesi` içinden `learnedWords`'de olanları çıkar
@@ -918,7 +916,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords,
   console.log(
     `'${wordListExercise.length}' kelime listesi uzunlugu böyleydi.`
   )
-  inProgressWords = LocalStorageManager.load('inProgressWords', inProgressWords)
+  inProgressWords = LocalStorageManager.load(IN_PROGRESS_WORDS_KEY, inProgressWords)
 
   const inProgressIndex = inProgressWords[level][category][wordType].findIndex(
     (item) => item.almanca === currentWord.almanca
