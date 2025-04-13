@@ -1,4 +1,4 @@
-import { DEFAULT_VALUE, WORD_LIST_EXERCISE_KEY } from "../../constants/storageKeys.js"
+import { DEFAULT_VALUE, IN_PROGRESS_WORDS_KEY, WORD_LIST_EXERCISE_KEY } from "../../constants/storageKeys.js"
 import LocalStorageManager from "../LocalStorageManager.js"
 import { showExerciseWord } from "../../pages/home.js"
 
@@ -18,7 +18,7 @@ export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, 
       return
     }
   
-    const inProgressWords = LocalStorageManager.load('inProgressWords', inProgressWords)
+    const inProgressWords = LocalStorageManager.load('inProgressWords', {})
   
     const currentWord = wordListExercise[currentExerciseIndex]
     const { almanca, ingilizce, kural } = currentWord
@@ -51,6 +51,7 @@ export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, 
           almanca: currentWord.almanca,
           counter: 1,
         })
+        LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
         document.getElementById('progressLeft-' + wordType).style.opacity = '1'
   
         // Liste manipülasyonlarından sonra index kontrolü
@@ -77,12 +78,14 @@ export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, 
         }
       } else {
         inProgressWords[level][category][wordType][inProgressIndex].counter += 1
+        LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
         if (
           inProgressWords[level][category][wordType][inProgressIndex].counter ===
           2
         ) {
           document.getElementById(`progressMiddle-${wordType}`).style.opacity =
             '1'
+            LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
         }
         //3 kere bilindiyse learnede ekle
         if (
@@ -98,7 +101,7 @@ export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, 
             ingilizce: currentWord.ingilizce,
             seviye: currentWord.seviye || 'N/A',
           })
-  
+          LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
           LocalStorageManager.save(LEARNED_WITH_EXERCISE_WORDS_KEY, learnedWithExerciseWords)
   
           // if exercise is ended
@@ -119,7 +122,9 @@ export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, 
             document.getElementById(
               `progressRight-${wordType}`
             ).style.opacity = '1'
-          }
+            LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
+        }
+          
           // updateExerciseCounter(level, wordType, learnedWithExerciseWords)
           wordListExercise.splice(currentExerciseIndex, 1)
           currentExerciseIndex--
@@ -158,6 +163,7 @@ export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, 
               currentWord
             )[0]
           }
+          LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
           currentExerciseIndex++
           if (currentExerciseIndex >= wordListExercise.length) {
             currentExerciseIndex =
@@ -217,6 +223,7 @@ export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, 
           }
         }
       }
+      LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
       document.getElementById(
         `feedbackMessage-${wordType}`
       ).innerText = `Upps! Try again. 💪`

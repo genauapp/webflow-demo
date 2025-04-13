@@ -13,6 +13,7 @@ export const CURRENT_WORD_TYPE_KEY = "CURRENT_WORD_TYPE";
 export const LEARNED_WITH_LEARN_WORDS_KEY = "LEARNED_WITH_LEARN_WORDS";
 export const LEARNED_WITH_EXERCISE_WORDS_KEY = "LEARNED_WITH_EXERCISE_WORDS";
 export const WORD_LIST_EXERCISE_KEY = "WORD_LIST_EXERCISE";
+export const IN_PROGRESS_WORDS_KEY = "IN_PROGRESS_WORDS";
 /*
   Einbürgerungstest
 */
@@ -260,6 +261,116 @@ export class DEFAULT_VALUE {
       einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] }
     }
   };
+
+  static IN_PROGRESS_WORDS = {
+    b1telcpt1: {
+      default: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      dirty: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      doctor: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      music: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    b1telcpt2: {
+      default: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      dirty: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      doctor: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      music: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    b1telcpt3: {
+      default: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      dirty: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      doctor: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      music: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    b1telcpt4: {
+      default: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      dirty: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      doctor: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      music: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    einburgerungstest: {
+      einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] }
+    },
+  }
 
   /** 
   Einbürgerungstest

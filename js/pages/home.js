@@ -1,4 +1,4 @@
-import { CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY, LEARNED_WITH_LEARN_WORDS_KEY, CURRENT_CATEGORY_KEY, WORD_LIST_EXERCISE_KEY } from '../constants/storageKeys.js'
+import { CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY, LEARNED_WITH_LEARN_WORDS_KEY, CURRENT_CATEGORY_KEY, WORD_LIST_EXERCISE_KEY, IN_PROGRESS_WORDS_KEY } from '../constants/storageKeys.js'
 import { JSON_URLS } from '../constants/urls.js'
 import { LEARN_ELEMENT_IDS } from '../constants/elements.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
@@ -165,115 +165,7 @@ let staticWordLists = {
 //#endregion
 
 // yeni comment
-let inProgressWords = {
-  b1telcpt1: {
-    default: {
-      noun: [],
-      verb: [],
-      adjective: [],
-      adverb: [],
-    },
-    dirty: {
-      noun: [],
-      verb: [],
-      adjective: [],
-      adverb: [],
-    },
-    doctor: {
-      noun: [],
-      verb: [],
-      adjective: [],
-      adverb: [],
-    },
-    music: {
-      noun: [],
-      verb: [],
-      adjective: [],
-      adverb: [],
-    },
-  },
-  b1telcpt2: {
-    default: {
-      noun: [],
-      verb: [],
-      adjective: [],
-      adverb: [],
-    },
-    dirty: {
-      noun: [],
-      verb: [],
-      adjective: [],
-      adverb: [],
-    },
-    doctor: {
-      noun: [],
-      verb: [],
-      adjective: [],
-      adverb: [],
-    },
-    music: {
-      noun: [],
-      verb: [],
-      adjective: [],
-      adverb: [],
-    },
-  },
-  b1telcpt3: {
-    default: {
-      noun: [],
-      verb: [],
-      adjective: [],
-      adverb: [],
-    },
-    dirty: {
-      noun: [],
-      verb: [],
-      adjective: [],
-      adverb: [],
-    },
-    doctor: {
-      noun: [],
-      verb: [],
-      adjective: [],
-      adverb: [],
-    },
-    music: {
-      noun: [],
-      verb: [],
-      adjective: [],
-      adverb: [],
-    },
-  },
-  b1telcpt4: {
-    default: {
-      noun: [],
-      verb: [],
-      adjective: [],
-      adverb: [],
-    },
-    dirty: {
-      noun: [],
-      verb: [],
-      adjective: [],
-      adverb: [],
-    },
-    doctor: {
-      noun: [],
-      verb: [],
-      adjective: [],
-      adverb: [],
-    },
-    music: {
-      noun: [],
-      verb: [],
-      adjective: [],
-      adverb: [],
-    },
-  },
-  einburgerungstest: {
-    einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] }
-  },
-}
+let inProgressWords = {}
 
 let kelimeListesi = []
 let wordListExercise = []
@@ -461,7 +353,7 @@ async function loadWords(level, wordType, learnedWithLearnWords, learnedWithExer
     ListUtils.shuffleArray(wordListExercise)
 
     // LocalStorage'daki progress listelerini temizle
-    LocalStorageManager.save('inProgressWords', inProgressWords)
+    LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
     //localStorage.setItem("learnedWithExerciseWords", JSON.stringify([]));
 
     document.getElementById(
