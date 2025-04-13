@@ -7,6 +7,7 @@ import ListUtils from '../utils/ListUtils.js'
 import playSound from '../utils/home/PlaySound.js'
 import { types } from '../constants/props.js'
 import checkNonNounAnswer from '../utils/home/checkNonNounAnswer.js'
+import { showModal, showModalExercise } from '../utils/home/ModalManager.js'
 //#region import Json files
 import verbdefault1 from '../../json/a1-a2/default/verb.json' with { type: 'json' }
 import verbdefault2 from '../../json/a2-b1/default/verb.json' with { type: 'json' }
@@ -789,7 +790,7 @@ export function showExerciseWord(level, wordType, learnedWithExerciseWords, cate
   )
 
   const { kelime, ingilizce, seviye } =
-  wordListExercise[currentExerciseIndex]
+    wordListExercise[currentExerciseIndex]
   // const renk = artikelRenk(artikel)
 
   // Kelimenin Almanca kısmını göster
@@ -975,8 +976,8 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords,
       ) {
         document.getElementById(`progressMiddle-${wordType}`).style.opacity =
           '1'
-          LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
-        }
+        LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
+      }
       //3 kere bilindiyse learnede ekle
       if (
         inProgressWords[level][category][wordType][inProgressIndex].counter >= 3
@@ -1093,7 +1094,7 @@ function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords,
         '0.5'
       document.getElementById(`progressLeft-${wordType}`).style.opacity =
         '0.5'
-        LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
+      LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
       currentExerciseIndex++
       if (currentExerciseIndex >= wordListExercise.length) {
         currentExerciseIndex =
@@ -1500,46 +1501,6 @@ function resetExerciseButtons(wordType) {
       newButtonCorrect.addEventListener('click', nonNounCorrectAnswerClickHandler)
     }
   }
-}
-
-function showModal(message, wordType) {
-  var modal = document.getElementById(`customModal-${wordType}`)
-  var modalMessage = document.getElementById(`modalMessage-${wordType}`)
-  var closeButton = document.querySelector('.close-button')
-
-  modalMessage.innerText = message // **Mesajı değiştir**
-  modal.style.display = 'block' // **Modali aç**
-
-  closeButton.addEventListener('click', function () {
-    modal.style.display = 'none' // **Kapatma butonuna tıklanınca gizle**
-    // resetLearnButtons(wordType) // **🔥 Butonları tekrar aktif et**
-  })
-
-  setTimeout(() => {
-    modal.style.display = 'none' // **3 saniye sonra otomatik kapanır**
-    // resetLearnButtons(wordType) // **🔥 Butonları tekrar aktif et**
-  }, 3000)
-}
-
-function showModalExercise(message, wordType) {
-  var modal = document.getElementById(`customModalExercise-${wordType}`)
-  var modalMessage = document.getElementById(
-    `modalMessageExercise-${wordType}`
-  )
-  var closeButton = document.querySelector('.close-button')
-
-  modalMessage.innerText = message // **Mesajı değiştir**
-  modal.style.display = 'block' // **Modali aç**
-
-  closeButton.addEventListener('click', function () {
-    modal.style.display = 'none' // **Kapatma butonuna tıklanınca gizle**
-    // resetExerciseButtons(wordType) // **🔥 Butonları tekrar aktif et**
-  })
-
-  setTimeout(() => {
-    modal.style.display = 'none' // **3 saniye sonra otomatik kapanır**
-    // resetExerciseButtons(wordType) // **🔥 Butonları tekrar aktif et**
-  }, 3000)
 }
 
 function isRegularLevel(level) {
