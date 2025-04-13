@@ -4,10 +4,7 @@ import playSound from "./PlaySound.js"
 import { showModalExercise } from "./ModalManager.js"
 import showExerciseWord from "./ShowExerciseWord.js"
 
-
 let currentExerciseIndex = 0
-let totalWordsExercise = 0
-
 
 export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, category) {
     let wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
@@ -22,7 +19,6 @@ export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, 
     }
 
     let learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
-    totalWordsExercise = wordList.length
     const inProgressWords = LocalStorageManager.load(IN_PROGRESS_WORDS_KEY, DEFAULT_VALUE.IN_PROGRESS_WORDS)
     const currentWord = wordListExercise[currentExerciseIndex]
     const buttonWrong = document.getElementById(`wrongButton-${wordType}`)
@@ -102,7 +98,7 @@ export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, 
                 LocalStorageManager.save(LEARNED_WITH_EXERCISE_WORDS_KEY, learnedWithExerciseWords)
 
                 // if exercise is ended
-                if (learnedWithExerciseWords[level][category][wordType].length === totalWordsExercise) {
+                if (learnedWithExerciseWords[level][category][wordType].length === wordList.length) {
                     showModalExercise('You completed all exercise words! 🎉', wordType)
                 }
                 document.getElementById(
