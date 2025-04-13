@@ -4,6 +4,7 @@ import { showExerciseWord } from "../../pages/home.js"
 
 let wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
 let currentExerciseIndex = 0
+console.log(wordListExercise)
 
 export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, learnedWithExerciseWords, category) {
     // Eğer liste boşsa veya index liste dışındaysa, işlemi durdur
