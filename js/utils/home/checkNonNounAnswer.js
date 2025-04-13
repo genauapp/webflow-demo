@@ -1,6 +1,7 @@
 import { DEFAULT_VALUE, IN_PROGRESS_WORDS_KEY, WORD_LIST_EXERCISE_KEY } from "../../constants/storageKeys.js"
 import LocalStorageManager from "../LocalStorageManager.js"
 import { showExerciseWord } from "../../pages/home.js"
+import playSound from "./PlaySound.js"
 
 let wordListExercise = []
 let currentExerciseIndex = 0

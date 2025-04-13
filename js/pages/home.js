@@ -4,7 +4,7 @@ import { LEARN_ELEMENT_IDS } from '../constants/elements.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
 import ExerciseUtils from '../utils/home/ExerciseUtils.js'
 import ListUtils from '../utils/ListUtils.js'
-import SetContentbyUserPrefs from '../utils/home/SetContentbyUserPrefs.js'
+import playSound from '../utils/home/PlaySound.js'
 import { types } from '../constants/props.js'
 import checkNonNounAnswer from '../utils/home/checkNonNounAnswer.js'
 //#region import Json files
@@ -1540,11 +1540,6 @@ function showModalExercise(message, wordType) {
     modal.style.display = 'none' // **3 saniye sonra otomatik kapanır**
     // resetExerciseButtons(wordType) // **🔥 Butonları tekrar aktif et**
   }, 3000)
-}
-
-function playSound(audioUrl) {
-  const audio = new Audio(audioUrl)
-  audio.play()
 }
 
 function isRegularLevel(level) {
