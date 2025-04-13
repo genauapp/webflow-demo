@@ -1,4 +1,4 @@
-import { CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY, LEARNED_WITH_LEARN_WORDS_KEY, CURRENT_CATEGORY_KEY, WORD_LIST_EXERCISE_KEY, IN_PROGRESS_WORDS_KEY } from '../constants/storageKeys.js'
+import { CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY, LEARNED_WITH_LEARN_WORDS_KEY, CURRENT_CATEGORY_KEY, WORD_LIST_EXERCISE_KEY, IN_PROGRESS_WORDS_KEY, WORD_LIST, WORD_LIST_KEY } from '../constants/storageKeys.js'
 import { JSON_URLS } from '../constants/urls.js'
 import { LEARN_ELEMENT_IDS } from '../constants/elements.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
@@ -167,7 +167,7 @@ let staticWordLists = {
 
 // yeni comment
 let inProgressWords = {}
-let kelimeListesi = []
+let wordList = []
 let wordListExercise = []
 let currentLearnIndex = 0
 let currentExerciseIndex = 0
@@ -342,14 +342,15 @@ async function loadWords(level, wordType, learnedWithLearnWords, learnedWithExer
     }
 
     const data = await response.json()
-    kelimeListesi = [...data]
+    wordList = [...data]
+    LocalStorageManager.save(WORD_LIST_KEY, wordList)
     wordListExercise = [...data]
     LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, wordListExercise)
     initialTotalWords = data.length
     totalWordsExercise = initialTotalWords
     totalWordsLearn = initialTotalWords
 
-    ListUtils.shuffleArray(kelimeListesi)
+    ListUtils.shuffleArray(wordList)
     ListUtils.shuffleArray(wordListExercise)
 
     // LocalStorage'daki progress listelerini temizle
@@ -462,17 +463,17 @@ function navigateToPage(pageId) {
 
 // On Learn: Repeat Click
 function repeatLearn(level, wordType, learnedWithLearnWords, category) {
-  if (!kelimeListesi.length || currentLearnIndex >= kelimeListesi.length) {
+  if (!wordList.length || currentLearnIndex >= wordList.length) {
     console.log('No words to repeat')
     return
   }
 
   // Get current word and move it to the end
-  const currentWord = kelimeListesi.splice(currentLearnIndex, 1)[0]
-  kelimeListesi.push(currentWord)
+  const currentWord = wordList.splice(currentLearnIndex, 1)[0]
+  wordList.push(currentWord)
 
   // Keep the index within bounds
-  currentLearnIndex = currentLearnIndex % kelimeListesi.length
+  currentLearnIndex = currentLearnIndex % wordList.length
 
   // Show the next word
   showLearnWord(level, wordType, learnedWithLearnWords, category)
@@ -485,14 +486,14 @@ function iKnowLearn(level, wordType, learnedWithLearnWords, category) {
     showModal('You learned all words! 🎉', wordType)
   }
 
-  const currentWord = kelimeListesi[totalWordsLearn - currentLearnIndex]
+  const currentWord = wordList[totalWordsLearn - currentLearnIndex]
 
   learnedWithLearnWords[level][category][wordType].push({
     ...currentWord
   })
   LocalStorageManager.save(LEARNED_WITH_LEARN_WORDS_KEY, learnedWithLearnWords)
 
-  kelimeListesi.splice(currentLearnIndex, 1)
+  wordList.splice(currentLearnIndex, 1)
 
   document.getElementById(
     `remainingWordsCountLearn-${wordType}`
@@ -514,7 +515,7 @@ const addToFavorites = () => {
     `favoritesFeedback-${wordType}`
   )
 
-  if (kelimeListesi.length === 0 || currentLearnIndex >= kelimeListesi.length) {
+  if (wordList.length === 0 || currentLearnIndex >= wordList.length) {
     feedbackElement.innerText = 'No word to add to favorites!'
     feedbackElement.style.color = 'red'
     feedbackElement.style.display = 'block'
@@ -524,7 +525,7 @@ const addToFavorites = () => {
     return
   }
 
-  const currentWord = kelimeListesi[currentLearnIndex]
+  const currentWord = wordList[currentLearnIndex]
   let favoriteWords = LocalStorageManager.load('favoriteWords', [])
 
   // Favorilere ekle
@@ -557,7 +558,7 @@ function removeFavorite() {
   const feedbackElement = document.getElementById(
     `favoritesFeedback-${wordType}`
   )
-  const currentWord = kelimeListesi[currentLearnIndex]
+  const currentWord = wordList[currentLearnIndex]
   let favoriteWords = LocalStorageManager.load('favoriteWords', [])
   favoriteWords = favoriteWords.filter(
     (word) => word.almanca !== currentWord.almanca
@@ -640,10 +641,10 @@ function showLearnWord(level, wordType, learnedWithLearnWords, category) {
   repeatButton.style.visibility = 'visible'
 
   const { almanca, ingilizce, ornek, highlight, seviye, kural } =
-    kelimeListesi[currentLearnIndex]
+    wordList[currentLearnIndex]
 
   if (learnedWithLearnWords[level][category][wordType].length > 0) {
-    kelimeListesi = kelimeListesi.filter(
+    wordList = wordList.filter(
       (word) =>
         !learnedWithLearnWords[level][category][wordType].some(
           (learned) => learned.almanca === word.almanca
@@ -662,7 +663,7 @@ function showLearnWord(level, wordType, learnedWithLearnWords, category) {
           `<span class="highlight">$1</span>`
         )
       }
-      const renk = artikelRenk(kelimeListesi[currentLearnIndex].artikel)
+      const renk = artikelRenk(wordList[currentLearnIndex].artikel)
       document.getElementById(
         'wordLearn-' + wordType
       ).innerHTML = `<span style="color: ${renk};">${highlightedWord}</span>`
@@ -767,7 +768,7 @@ export function showExerciseWord(level, wordType, learnedWithExerciseWords, cate
   inProgressWords = LocalStorageManager.load(IN_PROGRESS_WORDS_KEY, DEFAULT_VALUE.IN_PROGRESS_WORDS)
 
 
-  // 🟢 `kelimeListesi` içinden `learnedWords`'de olanları çıkar
+  // 🟢 `wordList` içinden `learnedWords`'de olanları çıkar
   if (learnedWithExerciseWords[level][category][wordType].length > 0) {
     wordListExercise = wordListExercise.filter(
       (word) =>
@@ -1141,7 +1142,7 @@ const nonNounWrongAnswerClickHandler = (event) => {
   const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
   const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
 
-  checkNonNounAnswer(false, level, wordType, learnedWithExerciseWords, category)
+  checkNonNounAnswer(false, level, wordType, category)
 }
 
 const nonNounCorrectAnswerClickHandler = (event) => {
@@ -1152,7 +1153,7 @@ const nonNounCorrectAnswerClickHandler = (event) => {
   const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
   const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY)
 
-  checkNonNounAnswer(true, level, wordType, learnedWithExerciseWords, category)
+  checkNonNounAnswer(true, level, wordType, category)
 }
 
 document
@@ -1409,7 +1410,7 @@ function updateFavoriteIcons(wordType) {
   const inFavImage = document.getElementById(`infav-${wordType}`)
   const outFavImage = document.getElementById(`outfav-${wordType}`)
 
-  const currentWord = kelimeListesi[currentLearnIndex]
+  const currentWord = wordList[currentLearnIndex]
   const favoriteWords = LocalStorageManager.load('favoriteWords', [])
   const isFavorite = isItInFavorites(currentWord, favoriteWords)
 

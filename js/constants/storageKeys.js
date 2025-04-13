@@ -13,6 +13,7 @@ export const CURRENT_WORD_TYPE_KEY = "CURRENT_WORD_TYPE";
 export const LEARNED_WITH_LEARN_WORDS_KEY = "LEARNED_WITH_LEARN_WORDS";
 export const LEARNED_WITH_EXERCISE_WORDS_KEY = "LEARNED_WITH_EXERCISE_WORDS";
 export const WORD_LIST_EXERCISE_KEY = "WORD_LIST_EXERCISE";
+export const WORD_LIST_KEY = "WORD_LIST";
 export const IN_PROGRESS_WORDS_KEY = "IN_PROGRESS_WORDS";
 /*
   Einbürgerungstest
@@ -32,12 +33,13 @@ export class DEFAULT_VALUE {
   /**
    * App
    */
-  static APP_VERSION = "1.2.4";
+  static APP_VERSION = "1.2.45";
 
   /** 
   Homepage
   */
   static WORD_LIST_EXERCISE = [];
+  static WORD_LIST = [];
   static CURRENT_LEVEL = "b1telcpt1";
   static CURRENT_WORD_TYPE = "noun";
   static CURRENT_CATEGORY = "default";
