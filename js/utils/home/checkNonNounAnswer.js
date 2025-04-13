@@ -3,6 +3,7 @@ import LocalStorageManager from "../LocalStorageManager.js"
 import { showExerciseWord } from "../../pages/home.js"
 import playSound from "./PlaySound.js"
 import { showModalExercise } from "./ModalManager.js"
+import showExerciseWord from "./ShowExerciseWord.js"
 
 
 let currentExerciseIndex = 0
