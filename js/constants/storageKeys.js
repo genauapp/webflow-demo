@@ -12,6 +12,7 @@ export const CURRENT_CATEGORY_KEY = "CURRENT_CATEGORY";
 export const CURRENT_WORD_TYPE_KEY = "CURRENT_WORD_TYPE";
 export const LEARNED_WITH_LEARN_WORDS_KEY = "LEARNED_WITH_LEARN_WORDS";
 export const LEARNED_WITH_EXERCISE_WORDS_KEY = "LEARNED_WITH_EXERCISE_WORDS";
+export const WORD_LIST_EXERCISE_KEY = "WORD_LIST_EXERCISE";
 /*
   Einbürgerungstest
 */
@@ -35,6 +36,7 @@ export class DEFAULT_VALUE {
   /** 
   Homepage
   */
+  static WORD_LIST_EXERCISE = [];
   static CURRENT_LEVEL = "b1telcpt1";
   static CURRENT_WORD_TYPE = "noun";
   static CURRENT_CATEGORY = "default";
@@ -256,7 +258,8 @@ export class DEFAULT_VALUE {
     },
     einburgerungstest: {
       einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] }
-  }};
+    }
+  };
 
   /** 
   Einbürgerungstest
