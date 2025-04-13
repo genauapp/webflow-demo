@@ -1,6 +1,6 @@
-import { DEFAULT_VALUE, WORD_LIST_EXERCISE_KEY } from "../../constants/storageKeys"
-import LocalStorageManager from "../LocalStorageManager"
-import { showExerciseWord } from "../../pages/home"
+import { DEFAULT_VALUE, WORD_LIST_EXERCISE_KEY } from "../../constants/storageKeys.js"
+import LocalStorageManager from "../LocalStorageManager.js"
+import { showExerciseWord } from "../../pages/home.js"
 
 let wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
 let currentExerciseIndex = 0
