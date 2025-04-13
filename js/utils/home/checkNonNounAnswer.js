@@ -135,18 +135,20 @@ export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, 
                 LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords);
 
                 setTimeout(() => {
-                    showExerciseWord(level, wordType, learnedWithExerciseWords, category)
+                    showExerciseWord()
                 }, 1000)
             }
         }
 
-        setTimeout(() => {
-            showExerciseWord(level, wordType, learnedWithExerciseWords, category)
-        }, 1000)
         LocalStorageManager.save(
             LEARNED_WITH_EXERCISE_WORDS_KEY,
             learnedWithExerciseWords
         )
+
+        setTimeout(() => {
+            showExerciseWord()
+        }, 1000)
+
     } else {
         if (inProgressIndex !== -1) {
             wordListExercise.splice(currentExerciseIndex, 1)
@@ -195,10 +197,8 @@ export default function checkNonNounAnswer(isUserInputCorrect, level, wordType, 
         document.getElementById(`feedbackMessage-${wordType}`).style.color =
             'red'
         setTimeout(() => {
-            // document.getElementById('correctAnswerField').innerHTML = '___' // Tekrar boş bırak
-            // buttonWrong.style.visibility = 'visible'
-            // buttonCorrect.style.visibility = 'visible'
-            showExerciseWord(level, wordType, learnedWithExerciseWords, category)
+
+            showExerciseWord()
         }, 3000)
     }
 
