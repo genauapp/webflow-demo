@@ -5,9 +5,10 @@ import LocalStorageManager from '../utils/LocalStorageManager.js'
 import ListUtils from '../utils/ListUtils.js'
 import { types } from '../constants/props.js'
 import checkNonNounAnswer from '../utils/home/checkNonNounAnswer.js'
-import { showModal, showModalExercise } from '../utils/home/ModalManager.js'
+import { showModal } from '../utils/home/ModalManager.js'
 import showExerciseWord from '../utils/home/ShowExerciseWord.js'
 import checkNounAnswer from '../utils/home/checkNounAnswer.js'
+import showLearnWord from '../utils/home/showLearnWord.js'
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', async () => {
