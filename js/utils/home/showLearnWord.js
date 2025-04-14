@@ -3,7 +3,7 @@ import LocalStorageManager from "../LocalStorageManager.js"
 import { updateFavoriteIcons } from "../../pages/home.js"
 
 
-function artikelRenk(artikel) {
+export function artikelRenk(artikel) {
     if (artikel.toLowerCase() === 'der') {
       return 'blue'
     }

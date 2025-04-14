@@ -3,6 +3,7 @@ import LocalStorageManager from "../LocalStorageManager.js"
 import playSound from "./PlaySound.js"
 import { showModalExercise } from "./ModalManager.js"
 import showExerciseWord from "./ShowExerciseWord.js"
+import { artikelRenk } from "./showLearnWord.js"
 
 export default function checkNounAnswer(userArtikel) {
     let wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
