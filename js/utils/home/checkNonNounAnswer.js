@@ -33,24 +33,28 @@ export default function checkNonNounAnswer(isUserInputCorrect) {
         )
 
         //InProgress listesine kelimeyi ekle - Eger hic dogru bilinmemisse yeni ekle daha önce bilinmisse progress i arttir
-        InProgressManager(currentWord, true)
+        InProgressManager(true)
 
         ListUtils.shuffleArray(wordListExercise)
         LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, wordListExercise)
+
         setTimeout(() => {
             showExerciseWord()
         }, 1000)
         buttonWrong.removeAttribute('wrong-but')
         return
     } else {
-        InProgressManager(currentWord, false)
+        InProgressManager(false)
         document.getElementById(
             `feedbackMessage-${wordType}`
         ).innerText = `Upps! Try again. 💪`
         document.getElementById(`feedbackMessage-${wordType}`).style.color =
             'red'
-        setTimeout(() => {
+            
+        ListUtils.shuffleArray(wordListExercise)
+        LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, wordListExercise)
 
+        setTimeout(() => {
             showExerciseWord()
         }, 3000)
         buttonWrong.removeAttribute('wrong-but')
