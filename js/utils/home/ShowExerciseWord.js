@@ -1,9 +1,9 @@
-import { DEFAULT_VALUE, IN_PROGRESS_WORDS_KEY, WORD_LIST_EXERCISE_KEY, WORD_LIST_KEY, CURRENT_CATEGORY_KEY, CURRENT_LEVEL_KEY, LEARNED_WITH_EXERCISE_WORDS_KEY, CURRENT_WORD_TYPE_KEY } from "../../constants/storageKeys.js"
+import { DEFAULT_VALUE, IN_PROGRESS_WORDS_KEY, WORD_LIST_EXERCISE_KEY, WORD_LIST_KEY, CURRENT_CATEGORY_KEY, CURRENT_LEVEL_KEY, LEARNED_WITH_EXERCISE_WORDS_KEY, CURRENT_WORD_TYPE_KEY, CURRENT_EXERCISE_INDEX_KEY } from "../../constants/storageKeys.js"
 import LocalStorageManager from "../LocalStorageManager.js"
 import ExerciseUtils from "./ExerciseUtils.js"
 import { staticWordLists } from "../../constants/urls.js"
 
-export default function showExerciseWord(currentIndex) {
+export default function showExerciseWord() {
     const wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
     let wordListExercise= LocalStorageManager.load(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
     const level = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
@@ -11,6 +11,7 @@ export default function showExerciseWord(currentIndex) {
     const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
     const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY, DEFAULT_VALUE.CURRENT_CATEGORY)
     const inProgressWords = LocalStorageManager.load(IN_PROGRESS_WORDS_KEY, DEFAULT_VALUE.IN_PROGRESS_WORDS)
+    let currentIndex = LocalStorageManager.load(CURRENT_EXERCISE_INDEX_KEY, DEFAULT_VALUE.CURRENT_EXERCISE_INDEX)
     // updated indexes
     document.getElementById(
       `remainingWordsCountExercise-${wordType}`
@@ -64,6 +65,7 @@ export default function showExerciseWord(currentIndex) {
     // Index kontrolü
     if (currentIndex >= wordListExercise.length) {
       currentIndex = 0
+      LocalStorageManager.save(CURRENT_EXERCISE_INDEX_KEY, currentIndex)
     }
 
     // 🟢 `wordList` içinden `learnedWords`'de olanları çıkar

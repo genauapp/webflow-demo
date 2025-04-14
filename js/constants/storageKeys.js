@@ -15,6 +15,8 @@ export const LEARNED_WITH_EXERCISE_WORDS_KEY = "LEARNED_WITH_EXERCISE_WORDS";
 export const WORD_LIST_EXERCISE_KEY = "WORD_LIST_EXERCISE";
 export const WORD_LIST_KEY = "WORD_LIST";
 export const IN_PROGRESS_WORDS_KEY = "IN_PROGRESS_WORDS";
+export const CURRENT_EXERCISE_INDEX_KEY = "CURRENT_EXERCISE_INDEX"
+export const CURRENT_LEARN_INDEX_KEY = "CURRENT_LEARN_INDEX"
 /*
   Einbürgerungstest
 */
@@ -43,6 +45,8 @@ export class DEFAULT_VALUE {
   static CURRENT_LEVEL = "b1telcpt1";
   static CURRENT_WORD_TYPE = "noun";
   static CURRENT_CATEGORY = "default";
+  static CURRENT_LEARN_INDEX = 0
+  static CURRENT_EXERCISE_INDEX = 0
 
   static LEARNED_WITH_LEARN_WORDS = {
     b1telcpt1: {

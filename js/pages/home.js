@@ -155,7 +155,7 @@ document.getElementById('adverbTab').addEventListener('click', async () => {
 async function executeInitialLoadAndShow() {
   try {
     await loadWords()
-    showLearnWord()
+    showLearnWord(0)
     showExerciseWord(0)
   } catch (error) {
     console.error('Kelime yükleme hatası:', error)
@@ -255,7 +255,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 })
 
 // On Learn: Repeat Click
-function repeatLearn(level, wordType, learnedWithLearnWords, category) {
+function repeatLearn() {
+  const wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
   if (!wordList.length || currentLearnIndex >= wordList.length) {
     console.log('No words to repeat')
     return
@@ -535,13 +536,7 @@ const iKnowButtonClickHandler = (event) => {
 
 const repeatButtonClickHandler = (event) => {
   event.preventDefault()
-
-  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
-  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
-  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
-  const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY)
-
-  repeatLearn(level, wordType, learnedWithLearnWords, category)
+  repeatLearn()
 }
 
 function setupListenerForIknowAndLearn(iKnowButton, repeatButton) {

@@ -1,10 +1,8 @@
-import { DEFAULT_VALUE, IN_PROGRESS_WORDS_KEY, WORD_LIST_EXERCISE_KEY, LEARNED_WITH_EXERCISE_WORDS_KEY, WORD_LIST_KEY, CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, CURRENT_CATEGORY_KEY } from "../../constants/storageKeys.js"
+import { DEFAULT_VALUE, IN_PROGRESS_WORDS_KEY, WORD_LIST_EXERCISE_KEY, LEARNED_WITH_EXERCISE_WORDS_KEY, WORD_LIST_KEY, CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, CURRENT_CATEGORY_KEY, CURRENT_EXERCISE_INDEX_KEY } from "../../constants/storageKeys.js"
 import LocalStorageManager from "../LocalStorageManager.js"
 import playSound from "./PlaySound.js"
 import { showModalExercise } from "./ModalManager.js"
 import showExerciseWord from "./ShowExerciseWord.js"
-
-let currentExerciseIndex = 0
 
 export default function checkNounAnswer(userArtikel) {
     let wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
@@ -13,13 +11,15 @@ export default function checkNounAnswer(userArtikel) {
     const level = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
     let learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
-    let inProgressWords = LocalStorageManager.load(IN_PROGRESS_WORDS_KEY, inProgressWords)
+    let inProgressWords = LocalStorageManager.load(IN_PROGRESS_WORDS_KEY, DEFAULT_VALUE.inProgressWords)
+    let currentExerciseIndex = LocalStorageManager.load(CURRENT_EXERCISE_INDEX_KEY, DEFAULT_VALUE.CURRENT_EXERCISE_INDEX)
     // Eğer liste boşsa veya index liste dışındaysa, işlemi durdur
     if (
       !wordListExercise.length ||
       currentExerciseIndex >= wordListExercise.length
     ) {
       currentExerciseIndex = 0
+      LocalStorageManager.save(CURRENT_EXERCISE_INDEX_KEY, currentExerciseIndex)
       return
     }
   
@@ -64,6 +64,7 @@ export default function checkNounAnswer(userArtikel) {
         // Liste manipülasyonlarından sonra index kontrolü
         if (currentExerciseIndex >= wordListExercise.length) {
           currentExerciseIndex = 0
+          LocalStorageManager.save(CURRENT_EXERCISE_INDEX_KEY, currentExerciseIndex)
         }
   
         wordListExercise.splice(currentExerciseIndex, 1);
@@ -75,6 +76,7 @@ export default function checkNounAnswer(userArtikel) {
         if (currentExerciseIndex >= wordListExercise.length) {
           currentExerciseIndex = 0
         }
+        LocalStorageManager.save(CURRENT_EXERCISE_INDEX_KEY, currentExerciseIndex)
       } else {
         inProgressWords[level][category][wordType][inProgressIndex].counter += 1
         if (
@@ -128,9 +130,10 @@ export default function checkNounAnswer(userArtikel) {
           // inProgressWords.splice(inProgressIndex, 1); // inProgressWords'ten çıkar
           inProgressWords[level][category][wordType].splice(inProgressIndex, 1);
           LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords);
+          LocalStorageManager.save(CURRENT_EXERCISE_INDEX_KEY, currentExerciseIndex)
 
           setTimeout(() => {
-            showExerciseWord(currentExerciseIndex)
+            showExerciseWord()
           }, 1000)
         }
       }
@@ -140,7 +143,7 @@ export default function checkNounAnswer(userArtikel) {
         // buttonDer.style.visibility = 'visible'
         // buttonDie.style.visibility = 'visible'
         // buttonDas.style.visibility = 'visible'
-        showExerciseWord(currentExerciseIndex)
+        showExerciseWord()
       }, 1000)
       LocalStorageManager.save(
         LEARNED_WITH_EXERCISE_WORDS_KEY,
@@ -171,6 +174,7 @@ export default function checkNounAnswer(userArtikel) {
             currentExerciseIndex++
           }
         }
+        LocalStorageManager.save(CURRENT_EXERCISE_INDEX_KEY, currentExerciseIndex)
       } else {
         currentExerciseIndex++
         if (currentExerciseIndex >= wordListExercise.length) {
@@ -180,6 +184,7 @@ export default function checkNounAnswer(userArtikel) {
             currentExerciseIndex++
           }
         }
+        LocalStorageManager.save(CURRENT_EXERCISE_INDEX_KEY, currentExerciseIndex)
       }
       document.getElementById(
         `feedbackMessage-${wordType}`
@@ -191,7 +196,7 @@ export default function checkNounAnswer(userArtikel) {
         // buttonDer.style.visibility = 'visible'
         // buttonDie.style.visibility = 'visible'
         // buttonDas.style.visibility = 'visible'
-        showExerciseWord(currentExerciseIndex)
+        showExerciseWord()
       }, 3000)
     }
     console.log(`'${currentExerciseIndex}' index bu sayiya güncellendi.`)
