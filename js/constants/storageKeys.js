@@ -17,6 +17,8 @@ export const WORD_LIST_KEY = "WORD_LIST";
 export const IN_PROGRESS_WORDS_KEY = "IN_PROGRESS_WORDS";
 export const CURRENT_EXERCISE_INDEX_KEY = "CURRENT_EXERCISE_INDEX"
 export const CURRENT_LEARN_INDEX_KEY = "CURRENT_LEARN_INDEX"
+export const TOTAL_WORD_EXERCISE_KEY = "TOTAL_WORD_EXERCISE"
+export const TOTAL_WORD_LEARN_KEY = "TOTAL_WORD_LEARN"
 /*
   Einbürgerungstest
 */
@@ -35,7 +37,7 @@ export class DEFAULT_VALUE {
   /**
    * App
    */
-  static APP_VERSION = "1.2.45";
+  static APP_VERSION = "1.2.5";
 
   /** 
   Homepage
@@ -47,6 +49,8 @@ export class DEFAULT_VALUE {
   static CURRENT_CATEGORY = "default";
   static CURRENT_LEARN_INDEX = 0
   static CURRENT_EXERCISE_INDEX = 0
+  static TOTAL_WORD_LEARN = 0
+  static TOTAL_WORD_EXERCISE = 0
 
   static LEARNED_WITH_LEARN_WORDS = {
     b1telcpt1: {

@@ -1,4 +1,4 @@
-import { CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY, LEARNED_WITH_LEARN_WORDS_KEY, CURRENT_CATEGORY_KEY, WORD_LIST_EXERCISE_KEY, IN_PROGRESS_WORDS_KEY, WORD_LIST_KEY } from '../constants/storageKeys.js'
+import { CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY, LEARNED_WITH_LEARN_WORDS_KEY, CURRENT_CATEGORY_KEY, WORD_LIST_EXERCISE_KEY, IN_PROGRESS_WORDS_KEY, WORD_LIST_KEY, TOTAL_WORD_EXERCISE_KEY, TOTAL_WORD_LEARN_KEY, CURRENT_LEARN_INDEX_KEY } from '../constants/storageKeys.js'
 import { JSON_URLS } from '../constants/urls.js'
 import { LEARN_ELEMENT_IDS } from '../constants/elements.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
@@ -8,15 +8,6 @@ import checkNonNounAnswer from '../utils/home/checkNonNounAnswer.js'
 import { showModal, showModalExercise } from '../utils/home/ModalManager.js'
 import showExerciseWord from '../utils/home/ShowExerciseWord.js'
 import checkNounAnswer from '../utils/home/checkNounAnswer.js'
-
-// yeni comment
-let wordList = []
-let wordListExercise = []
-let currentLearnIndex = 0
-let totalWordsLearn = 0
-let totalWordsExercise = 0
-
-let initialTotalWords = 0 // Yeni eklenen değişken
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', async () => {
@@ -155,8 +146,8 @@ document.getElementById('adverbTab').addEventListener('click', async () => {
 async function executeInitialLoadAndShow() {
   try {
     await loadWords()
-    showLearnWord(0)
-    showExerciseWord(0)
+    showLearnWord()
+    showExerciseWord()
   } catch (error) {
     console.error('Kelime yükleme hatası:', error)
   }
@@ -169,6 +160,11 @@ async function loadWords() {
   const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
   const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
   const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
+  let totalWordsLearn = 0
+  let totalWordsExercise = 0
+  let wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
+  let wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
+
   try {
     showSkeleton(wordType)
 
@@ -189,6 +185,11 @@ async function loadWords() {
     const data = await response.json()
     wordList = [...data]
     wordListExercise = [...data]
+    totalWordsExercise = wordList.length
+    totalWordsLearn = wordList.length
+
+    LocalStorageManager.save(TOTAL_WORD_EXERCISE_KEY, totalWordsExercise)
+    LocalStorageManager.save(TOTAL_WORD_LEARN_KEY, totalWordsLearn)
 
     LocalStorageManager.save(WORD_LIST_KEY, ListUtils.shuffleArray(wordList))
     LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, ListUtils.shuffleArray(wordListExercise))
@@ -205,10 +206,10 @@ async function loadWords() {
       `remainingWordsCountExercise-${wordType}`
     ).innerText = learnedWithExerciseWords[level][category][wordType].length
     document.getElementById(`totalWordsCountLearn-${wordType}`).innerText =
-      wordList.length
+      totalWordsLearn
     document.getElementById(
       `totalWordsCountExercise-${wordType}`
-    ).innerText = wordList.length
+    ).innerText = totalWordsExercise
 
     hideSkeleton(wordType)
   } catch (error) {
@@ -256,8 +257,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // On Learn: Repeat Click
 function repeatLearn() {
+  const totalWordsLearn = LocalStorageManager.load(TOTAL_WORD_LEARN_KEY, DEFAULT_VALUE.TOTAL_WORD_LEARN)
   const wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
-  if (!wordList.length || currentLearnIndex >= wordList.length) {
+  let currentLearnIndex = LocalStorageManager.load(CURRENT_LEARN_INDEX_KEY, DEFAULT_VALUE.CURRENT_LEARN_INDEX)
+
+  if (totalWordsLearn === 0 || currentLearnIndex >= totalWordsLearn) {
     console.log('No words to repeat')
     return
   }
@@ -265,18 +269,28 @@ function repeatLearn() {
   // Get current word and move it to the end
   const currentWord = wordList.splice(currentLearnIndex, 1)[0]
   wordList.push(currentWord)
+  LocalStorageManager.save(WORD_LIST_KEY, wordList)
 
   // Keep the index within bounds
-  currentLearnIndex = currentLearnIndex % wordList.length
+  currentLearnIndex = currentLearnIndex % totalWordsLearn
+  LocalStorageManager.save(CURRENT_LEARN_INDEX_KEY, currentLearnIndex)
 
   // Show the next word
   showLearnWord()
 }
 
 // On Learn: I Know Click
-function iKnowLearn(level, wordType, learnedWithLearnWords, category) {
+function iKnowLearn() {
 
-  if (learnedWithLearnWords[level][category][wordType].length + 1 === initialTotalWords) {
+  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
+  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
+  let learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
+  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY, DEFAULT_VALUE.CURRENT_CATEGORY)
+  let currentLearnIndex = LocalStorageManager.load(CURRENT_LEARN_INDEX_KEY, DEFAULT_VALUE.CURRENT_LEARN_INDEX)
+  const totalWordsLearn = LocalStorageManager.load(TOTAL_WORD_LEARN_KEY, DEFAULT_VALUE.TOTAL_WORD_LEARN)
+  let wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
+
+  if (learnedWithLearnWords[level][category][wordType].length === totalWordsLearn) {
     showModal('You learned all words! 🎉', wordType)
   }
 
@@ -288,20 +302,21 @@ function iKnowLearn(level, wordType, learnedWithLearnWords, category) {
   LocalStorageManager.save(LEARNED_WITH_LEARN_WORDS_KEY, learnedWithLearnWords)
 
   wordList.splice(currentLearnIndex, 1)
+  LocalStorageManager.save(WORD_LIST_KEY, wordList)
 
   document.getElementById(
     `remainingWordsCountLearn-${wordType}`
   ).innerText = learnedWithLearnWords[level][category][wordType].length
-  document.getElementById(`totalWordsCountLearn-${wordType}`).innerText =
-    initialTotalWords
 
   showLearnWord()
-
 }
 
 // On Learn: Add to Favorites Click
 const addToFavorites = () => {
   const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
+  const totalWordsLearn = LocalStorageManager.load(TOTAL_WORD_LEARN_KEY, DEFAULT_VALUE.TOTAL_WORD_LEARN)
+  const wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
+  const currentLearnIndex = LocalStorageManager.load(CURRENT_LEARN_INDEX_KEY, DEFAULT_VALUE.CURRENT_LEARN_INDEX)
 
   const inFavImage = document.getElementById(`infav-${wordType}`)
   const outFavImage = document.getElementById(`outfav-${wordType}`)
@@ -309,7 +324,7 @@ const addToFavorites = () => {
     `favoritesFeedback-${wordType}`
   )
 
-  if (wordList.length === 0 || currentLearnIndex >= wordList.length) {
+  if (wordList.length === 0 || currentLearnIndex >= totalWordsLearn) {
     feedbackElement.innerText = 'No word to add to favorites!'
     feedbackElement.style.color = 'red'
     feedbackElement.style.display = 'block'
@@ -347,6 +362,8 @@ const addToFavorites = () => {
 // On Learn: Remove from Favorites Click
 function removeFavorite() {
   const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
+  const wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
+  const currentLearnIndex = LocalStorageManager.load(CURRENT_LEARN_INDEX_KEY, DEFAULT_VALUE.CURRENT_LEARN_INDEX)
 
   // Favorilerden kaldır
   const feedbackElement = document.getElementById(
@@ -367,7 +384,7 @@ function removeFavorite() {
     feedbackElement.style.display = 'none'
   }, 2000)
   // Görselleri güncelle
-  updateFavoriteIcons(wordType)
+  updateFavoriteIcons()
 }
 
 function artikelRenk(artikel) {
@@ -525,13 +542,7 @@ function setupEventListeners() {
 
 const iKnowButtonClickHandler = (event) => {
   event.preventDefault()
-
-  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
-  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
-  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
-  const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY)
-
-  iKnowLearn(level, wordType, learnedWithLearnWords, category)
+  iKnowLearn()
 }
 
 const repeatButtonClickHandler = (event) => {
@@ -609,17 +620,20 @@ function showLearnElements(wordType) {
   })
 }
 
-function isItInFavorites(currentWord, favoriteWords) {
+function isItInFavorites(currentWord) {
+  const favoriteWords = LocalStorageManager.load('favoriteWords', [])
   return favoriteWords.some((word) => word.almanca === currentWord.almanca)
 }
 
-export function updateFavoriteIcons(wordType) {
+export function updateFavoriteIcons() {
+  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
+  const wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
+  const currentLearnIndex = LocalStorageManager.load(CURRENT_LEARN_INDEX_KEY, DEFAULT_VALUE.CURRENT_LEARN_INDEX)
   const inFavImage = document.getElementById(`infav-${wordType}`)
   const outFavImage = document.getElementById(`outfav-${wordType}`)
 
   const currentWord = wordList[currentLearnIndex]
-  const favoriteWords = LocalStorageManager.load('favoriteWords', [])
-  const isFavorite = isItInFavorites(currentWord, favoriteWords)
+  const isFavorite = isItInFavorites(currentWord)
 
   if (isFavorite) {
     inFavImage.style.display = 'block' // Görseli görünür yap
