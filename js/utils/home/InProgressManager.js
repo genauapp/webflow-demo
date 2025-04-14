@@ -1,5 +1,5 @@
 import { CURRENT_CATEGORY_KEY, CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE, IN_PROGRESS_WORDS_KEY, LEARNED_WITH_EXERCISE_WORDS_KEY, WORD_LIST_EXERCISE_KEY } from "../../constants/storageKeys.js"
-import LocalStorageManager from "../LocalStorageManage.jsr"
+import LocalStorageManager from "../LocalStorageManage.js"
 import playSound from "./PlaySound.js"
 
 export default function InProgressManager(isAnswerCorrect) {
