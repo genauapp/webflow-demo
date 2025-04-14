@@ -133,12 +133,7 @@ export default function checkNonNounAnswer(isUserInputCorrect) {
                 if (learnedWithExerciseWords[level][category][wordType].length === totalWordsExercise) {
                     showModalExercise('You completed all exercise words! 🎉', wordType)
                     LocalStorageManager.save(CURRENT_EXERCISE_INDEX_KEY, DEFAULT_VALUE.CURRENT_EXERCISE_INDEX)
-                    
-                    LocalStorageManager.save(
-                        LEARNED_WITH_EXERCISE_WORDS_KEY,
-                        learnedWithExerciseWords
-                    )
-                    return
+                    LocalStorageManager.save(LEARNED_WITH_EXERCISE_WORDS_KEY, learnedWithExerciseWords)
                 }
 
                 setTimeout(() => {
