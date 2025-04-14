@@ -1,4 +1,4 @@
-import { DEFAULT_VALUE, IN_PROGRESS_WORDS_KEY, WORD_LIST_EXERCISE_KEY, LEARNED_WITH_EXERCISE_WORDS_KEY, WORD_LIST_KEY, CURRENT_LEVEL_KEY, CURRENT_CATEGORY_KEY, CURRENT_WORD_TYPE_KEY, CURRENT_EXERCISE_INDEX_KEY } from "../../constants/storageKeys.js"
+import { DEFAULT_VALUE, IN_PROGRESS_WORDS_KEY, WORD_LIST_EXERCISE_KEY, LEARNED_WITH_EXERCISE_WORDS_KEY, WORD_LIST_KEY, CURRENT_LEVEL_KEY, CURRENT_CATEGORY_KEY, CURRENT_WORD_TYPE_KEY, CURRENT_EXERCISE_INDEX_KEY, TOTAL_WORD_EXERCISE_KEY } from "../../constants/storageKeys.js"
 import LocalStorageManager from "../LocalStorageManager.js"
 import playSound from "./PlaySound.js"
 import { showModalExercise } from "./ModalManager.js"
@@ -6,11 +6,11 @@ import showExerciseWord from "./ShowExerciseWord.js"
 
 export default function checkNonNounAnswer(isUserInputCorrect) {
     let wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
-    let wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
     const level = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
     const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY, DEFAULT_VALUE.CURRENT_CATEGORY)
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
     let currentExerciseIndex = LocalStorageManager.load(CURRENT_EXERCISE_INDEX_KEY, DEFAULT_VALUE.CURRENT_EXERCISE_INDEX)
+    const totalWordsExercise = LocalStorageManager.load(TOTAL_WORD_EXERCISE_KEY, DEFAULT_VALUE.TOTAL_WORD_EXERCISE)
     // Eğer liste boşsa veya index liste dışındaysa, işlemi durdur
     if (
         !wordListExercise.length ||
@@ -103,10 +103,6 @@ export default function checkNonNounAnswer(isUserInputCorrect) {
                 })
                 LocalStorageManager.save(LEARNED_WITH_EXERCISE_WORDS_KEY, learnedWithExerciseWords)
 
-                // if exercise is ended
-                if (learnedWithExerciseWords[level][category][wordType].length === wordList.length) {
-                    showModalExercise('You completed all exercise words! 🎉', wordType)
-                }
                 document.getElementById(
                     `feedbackMessage-${wordType}`
                 ).innerText = `This word: ${currentWord.almanca} added to learned list!🏆`
@@ -124,8 +120,8 @@ export default function checkNonNounAnswer(isUserInputCorrect) {
                 if (currentExerciseIndex >= wordListExercise.length) {
                     currentExerciseIndex = currentExerciseIndex % wordListExercise.length
                     // If the index is zero, increment it to avoid out-of-bounds error
-                    if (currentExerciseIndex == 0) {
-                        currentExerciseIndex++
+                    if (currentExerciseIndex < 0) {
+                        currentExerciseIndex = 0
                     }
                 }
                 LocalStorageManager.save(CURRENT_EXERCISE_INDEX_KEY, currentExerciseIndex)
@@ -133,6 +129,17 @@ export default function checkNonNounAnswer(isUserInputCorrect) {
                 // Remove the current word from the inProgressWords list
                 inProgressWords[level][category][wordType].splice(inProgressIndex, 1);
                 LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords);
+
+                if (learnedWithExerciseWords[level][category][wordType].length === totalWordsExercise) {
+                    showModalExercise('You completed all exercise words! 🎉', wordType)
+                    LocalStorageManager.save(CURRENT_EXERCISE_INDEX_KEY, DEFAULT_VALUE.CURRENT_EXERCISE_INDEX)
+                    
+                    LocalStorageManager.save(
+                        LEARNED_WITH_EXERCISE_WORDS_KEY,
+                        learnedWithExerciseWords
+                    )
+                    return
+                }
 
                 setTimeout(() => {
                     showExerciseWord()
@@ -177,8 +184,8 @@ export default function checkNonNounAnswer(isUserInputCorrect) {
             if (currentExerciseIndex >= wordListExercise.length) {
                 currentExerciseIndex =
                     currentExerciseIndex % wordListExercise.length
-                if (currentExerciseIndex == 0) {
-                    currentExerciseIndex++
+                if (currentExerciseIndex < 0) {
+                    currentExerciseIndex = 0
                 }
             }
             LocalStorageManager.save(CURRENT_EXERCISE_INDEX_KEY, currentExerciseIndex)
@@ -187,8 +194,8 @@ export default function checkNonNounAnswer(isUserInputCorrect) {
             if (currentExerciseIndex >= wordListExercise.length) {
                 currentExerciseIndex =
                     currentExerciseIndex % wordListExercise.length
-                if (currentExerciseIndex == 0) {
-                    currentExerciseIndex++
+                if (currentExerciseIndex < 0) {
+                    currentExerciseIndex = 0
                 }
             }
             LocalStorageManager.save(CURRENT_EXERCISE_INDEX_KEY, currentExerciseIndex)
