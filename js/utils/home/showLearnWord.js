@@ -2,6 +2,20 @@ import { DEFAULT_VALUE, WORD_LIST_KEY, CURRENT_CATEGORY_KEY, CURRENT_LEVEL_KEY, 
 import LocalStorageManager from "../LocalStorageManager.js"
 import { updateFavoriteIcons } from "../../pages/home.js"
 
+
+function artikelRenk(artikel) {
+    if (artikel.toLowerCase() === 'der') {
+      return 'blue'
+    }
+    if (artikel.toLowerCase() === 'die') {
+      return 'red'
+    }
+    if (artikel.toLowerCase() === 'das') {
+      return 'green'
+    }
+    return 'black'
+  }
+
 export default function showLearnWord() {
     const level = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
@@ -9,7 +23,7 @@ export default function showLearnWord() {
     const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
     const wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
     let currentLearnIndex = LocalStorageManager.load(CURRENT_LEARN_INDEX_KEY, DEFAULT_VALUE.CURRENT_LEARN_INDEX)
-    
+
     const iKnowButton = document.getElementById(
         `iKnowButtonLearn-${wordType}`
     )

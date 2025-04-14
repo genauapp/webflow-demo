@@ -388,19 +388,6 @@ function removeFavorite() {
   updateFavoriteIcons()
 }
 
-function artikelRenk(artikel) {
-  if (artikel.toLowerCase() === 'der') {
-    return 'blue'
-  }
-  if (artikel.toLowerCase() === 'die') {
-    return 'red'
-  }
-  if (artikel.toLowerCase() === 'das') {
-    return 'green'
-  }
-  return 'black'
-}
-
 export const nounDerAnswerClickHandler = function (event) {
   event.preventDefault() // Sayfanın yukarı kaymasını engeller
   checkNounAnswer('der')
