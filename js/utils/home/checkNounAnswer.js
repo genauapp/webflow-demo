@@ -43,8 +43,8 @@ export default function checkNounAnswer(userArtikel) {
     //InProgress listesine kelimeyi ekle - Eger hic dogru bilinmemisse yeni ekle daha önce bilinmisse progress i arttir
     InProgressManager(true)
 
-    ListUtils.shuffleArray(wordListExercise)
-    LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, wordListExercise)
+    const shuffledList = ListUtils.shuffleArray(wordListExercise)
+    LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, shuffledList)
 
     setTimeout(() => {
       document.getElementById('correctAnswerField').innerHTML = '___' // Tekrar boş bırak
@@ -60,8 +60,9 @@ export default function checkNounAnswer(userArtikel) {
     document.getElementById(`feedbackMessage-${wordType}`).style.color =
       'red'
 
-    ListUtils.shuffleArray(wordListExercise)
-    LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, wordListExercise)
+    const shuffledList = ListUtils.shuffleArray(wordListExercise)
+    LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, shuffledList)
+    
     setTimeout(() => {
       document.getElementById('correctAnswerField').innerHTML = '___' // Tekrar boş bırak
       showExerciseWord()
