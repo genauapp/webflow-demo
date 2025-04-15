@@ -1,6 +1,6 @@
 import { DEFAULT_VALUE, WORD_LIST_KEY, CURRENT_CATEGORY_KEY, CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, LEARNED_WITH_LEARN_WORDS_KEY, CURRENT_LEARN_INDEX_KEY } from "../../constants/storageKeys.js"
 import LocalStorageManager from "../LocalStorageManager.js"
-import { updateFavoriteIcons } from "../../pages/home.js"
+import { updateFavoriteIcons } from "./UIUtils.js"
 
 
 export function artikelRenk(artikel) {

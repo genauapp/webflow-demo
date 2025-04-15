@@ -9,23 +9,19 @@ import { showModal } from '../utils/home/ModalManager.js'
 import showExerciseWord from '../utils/home/ShowExerciseWord.js'
 import checkNounAnswer from '../utils/home/checkNounAnswer.js'
 import showLearnWord from '../utils/home/showLearnWord.js'
+import { isRegularLevel, showSkeleton,hideSkeleton, showOrHideDecks, updateFavoriteIcons } from '../utils/home/UIUtils.js'
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', async () => {
   LocalStorageManager.clearDeprecatedLocalStorageItems()
-  const defaultLevel = DEFAULT_VALUE.CURRENT_LEVEL
-  LocalStorageManager.save(CURRENT_LEVEL_KEY, defaultLevel)
-  const defaultWordType = DEFAULT_VALUE.CURRENT_WORD_TYPE
-  LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, defaultWordType)
-  const defaultCategory = DEFAULT_VALUE.CURRENT_CATEGORY
-  LocalStorageManager.save(CURRENT_CATEGORY_KEY, defaultCategory)
-  const defaultWordListExercise = DEFAULT_VALUE.WORD_LIST_EXERCISE
-  LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, defaultWordListExercise)
-  const defaultLearnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
-  const defaultLearnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
+  LocalStorageManager.save(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
+  LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
+  LocalStorageManager.save(CURRENT_CATEGORY_KEY, DEFAULT_VALUE.CURRENT_CATEGORY)
+  LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
+  LocalStorageManager.save(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
 
-  showSkeleton(defaultWordType)
-  await executeInitialLoadAndShow(defaultLevel, defaultWordType, defaultLearnedWithLearnWords, defaultLearnedWithExerciseWords, defaultCategory)
+  showSkeleton(DEFAULT_VALUE.CURRENT_WORD_TYPE)
+  await executeInitialLoadAndShow()
 })
 
 // On Level Change
@@ -35,10 +31,6 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
     const updatedLevel = link.getAttribute('data-option')
     const selectedText = link.innerText
     const currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
-    const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
-    const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
-    const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
-
     // Seçilen option'ı localStorage'a kaydet
     LocalStorageManager.save(CURRENT_LEVEL_KEY, updatedLevel)
 
@@ -48,17 +40,17 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
     if (updatedLevel === 'einburgerungstest') {
       LocalStorageManager.save(CURRENT_CATEGORY_KEY, 'einburgerungstest')
       showOrHideDecks('einburgerungstest')
-      await executeInitialLoadAndShow(updatedLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, 'einburgerungstest')
+      await executeInitialLoadAndShow()
       return
     }
     if (currentCategory === 'einburgerungstest' && isRegularLevel(updatedLevel)) {
       showOrHideDecks(updatedLevel)
       const lastSelectedDeck = document.querySelector('.selectedimg').getAttribute('data-option')
       LocalStorageManager.save(CURRENT_CATEGORY_KEY, lastSelectedDeck)
-      await executeInitialLoadAndShow(updatedLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, LocalStorageManager.load(CURRENT_CATEGORY_KEY))
+      await executeInitialLoadAndShow()
       return
     }
-    await executeInitialLoadAndShow(updatedLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, currentCategory)
+    await executeInitialLoadAndShow()
   })
 })
 
@@ -66,14 +58,7 @@ document.querySelectorAll('.deck').forEach((elem) => {
   elem.addEventListener('click', async function (event) {
     event.preventDefault()
     const selectedCategory = elem.getAttribute('data-option')
-    console.log("updated category: " + selectedCategory)
-    const currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
     LocalStorageManager.save(CURRENT_CATEGORY_KEY, selectedCategory)
-    console.log("current category: " + currentCategory)
-    const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
-    const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
-    const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
-    const currentLevel = LocalStorageManager.load(CURRENT_LEVEL_KEY)
 
     if (!elem.classList.contains('selectedimg')) {
       elem.style.border = '2px solid black'
@@ -88,60 +73,40 @@ document.querySelectorAll('.deck').forEach((elem) => {
       elem.classList.add('selectedimg')
     }
 
-    await executeInitialLoadAndShow(currentLevel, wordType, learnedWithLearnWords, learnedWithExerciseWords, selectedCategory)
+    await executeInitialLoadAndShow()
   })
 })
 
 // On Word Type Change
 document.getElementById('nounTab').addEventListener('click', async () => {
-  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
-  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
-  const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
-  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
-
   console.log('Noun seçildi.')
   const nounType = types[0]
   LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, nounType)
-  await executeInitialLoadAndShow(level, nounType, learnedWithLearnWords, learnedWithExerciseWords, category)
+  await executeInitialLoadAndShow()
 })
 
 document.getElementById('verbTab').addEventListener('click', async () => {
-  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
-  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
-  const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
-  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
-
   console.log('Verb seçildi.')
   const verbType = types[1]
   LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, verbType)
 
-  await executeInitialLoadAndShow(level, verbType, learnedWithLearnWords, learnedWithExerciseWords, category)
+  await executeInitialLoadAndShow()
 })
 
 document.getElementById('adjectiveTab').addEventListener('click', async () => {
-  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
-  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
-  const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
-  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
-
   console.log('Adjective seçildi.')
   const adjectiveType = types[2]
   LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, adjectiveType)
 
-  await executeInitialLoadAndShow(level, adjectiveType, learnedWithLearnWords, learnedWithExerciseWords, category)
+  await executeInitialLoadAndShow()
 })
 
 document.getElementById('adverbTab').addEventListener('click', async () => {
-  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
-  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
-  const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
-  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
-
   console.log('Adverb seçildi.')
   const adverbType = types[3]
   LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, adverbType)
 
-  await executeInitialLoadAndShow(level, adverbType, learnedWithLearnWords, learnedWithExerciseWords, category)
+  await executeInitialLoadAndShow()
 })
 
 async function executeInitialLoadAndShow() {
@@ -191,26 +156,14 @@ async function loadWords() {
 
     LocalStorageManager.save(TOTAL_WORD_EXERCISE_KEY, totalWordsExercise)
     LocalStorageManager.save(TOTAL_WORD_LEARN_KEY, totalWordsLearn)
-
     LocalStorageManager.save(WORD_LIST_KEY, ListUtils.shuffleArray(wordList))
     LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, ListUtils.shuffleArray(wordListExercise))
-    
-
-    // LocalStorage'daki progress listelerini temizle
     LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, DEFAULT_VALUE.IN_PROGRESS_WORDS)
-    //localStorage.setItem("learnedWithExerciseWords", JSON.stringify([]));
 
-    document.getElementById(
-      `remainingWordsCountLearn-${wordType}`
-    ).innerText = learnedWithLearnWords[level][category][wordType].length
-    document.getElementById(
-      `remainingWordsCountExercise-${wordType}`
-    ).innerText = learnedWithExerciseWords[level][category][wordType].length
-    document.getElementById(`totalWordsCountLearn-${wordType}`).innerText =
-      totalWordsLearn
-    document.getElementById(
-      `totalWordsCountExercise-${wordType}`
-    ).innerText = totalWordsExercise
+    document.getElementById(`remainingWordsCountLearn-${wordType}`).innerText = learnedWithLearnWords[level][category][wordType].length
+    document.getElementById(`remainingWordsCountExercise-${wordType}`).innerText = learnedWithExerciseWords[level][category][wordType].length
+    document.getElementById(`totalWordsCountLearn-${wordType}`).innerText = totalWordsLearn
+    document.getElementById(`totalWordsCountExercise-${wordType}`).innerText = totalWordsExercise
 
     hideSkeleton(wordType)
   } catch (error) {
@@ -549,100 +502,6 @@ function setupListenerForIknowAndLearn(iKnowButton, repeatButton) {
     repeatButton.addEventListener('click', repeatButtonClickHandler)
     repeatButton.setAttribute('listener-attached', 'true')
   }
-}
-
-// UI visibility functions
-function showSkeleton(wordType) {
-  const skeletonState = document.getElementById('skeletonState')
-  const favoritesContainer = document.getElementById('favoritesContainer')
-
-  if (skeletonState) {
-    skeletonState.style.display = 'flex'
-  }
-  if (favoritesContainer) {
-    favoritesContainer.style.display = 'none'
-  }
-
-  hideLearnElements(wordType)
-}
-
-function hideSkeleton(wordType) {
-  const skeletonState = document.getElementById('skeletonState')
-  const favoritesContainer = document.getElementById('favoritesContainer')
-
-  if (skeletonState) {
-    skeletonState.style.display = 'none'
-  }
-  if (favoritesContainer) {
-    favoritesContainer.style.display = 'block'
-  }
-
-  showLearnElements(wordType)
-}
-
-// Learn elements visibility
-function hideLearnElements(wordType) {
-  const elementIds = [...LEARN_ELEMENT_IDS(wordType)]
-
-  elementIds.forEach((id) => {
-    const element = document.getElementById(id)
-    if (element) {
-      element.style.display = 'none'
-    }
-  })
-}
-
-function showLearnElements(wordType) {
-  const elementIds = [...LEARN_ELEMENT_IDS(wordType)]
-
-  elementIds.forEach((id) => {
-    const element = document.getElementById(id)
-    if (element) {
-      const isAdjectiveOrAdverb =
-        wordType === 'adjective' || wordType === 'adverb'
-      const isElementRuleLearn = id === `ruleLearn-${wordType}`
-
-      element.style.display =
-        isAdjectiveOrAdverb && isElementRuleLearn ? 'none' : 'block'
-    }
-  })
-}
-
-function isItInFavorites(currentWord) {
-  const favoriteWords = LocalStorageManager.load('favoriteWords', [])
-  return favoriteWords.some((word) => word.almanca === currentWord.almanca)
-}
-
-export function updateFavoriteIcons() {
-  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
-  const wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
-  const currentLearnIndex = LocalStorageManager.load(CURRENT_LEARN_INDEX_KEY, DEFAULT_VALUE.CURRENT_LEARN_INDEX)
-  const inFavImage = document.getElementById(`infav-${wordType}`)
-  const outFavImage = document.getElementById(`outfav-${wordType}`)
-
-  const currentWord = wordList[currentLearnIndex]
-  const isFavorite = isItInFavorites(currentWord)
-
-  if (isFavorite) {
-    inFavImage.style.display = 'block' // Görseli görünür yap
-    outFavImage.style.display = 'none' // Diğerini gizle
-  } else {
-    inFavImage.style.display = 'none' // Görseli gizle
-    outFavImage.style.display = 'block' // Diğerini görünür yap
-  }
-}
-
-function isRegularLevel(level) {
-  return !(level === '' || level === "einburgerungstest")
-}
-
-function showOrHideDecks(level) {
-  if (isRegularLevel(level)) {
-    document.getElementById('decksContainer').style.display = 'flex'
-    return
-  }
-  document.getElementById('decksContainer').style.display = 'none'
-  return
 }
 
 $('a').click(function () {
