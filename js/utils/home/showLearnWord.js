@@ -5,23 +5,23 @@ import { updateFavoriteIcons } from "./UIUtils.js"
 
 export function artikelRenk(artikel) {
     if (artikel.toLowerCase() === 'der') {
-      return 'blue'
+        return 'blue'
     }
     if (artikel.toLowerCase() === 'die') {
-      return 'red'
+        return 'red'
     }
     if (artikel.toLowerCase() === 'das') {
-      return 'green'
+        return 'green'
     }
     return 'black'
-  }
+}
 
 export default function showLearnWord() {
     const level = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
     const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY, DEFAULT_VALUE.CURRENT_CATEGORY)
     const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
-    const wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
+    let wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
     let currentLearnIndex = LocalStorageManager.load(CURRENT_LEARN_INDEX_KEY, DEFAULT_VALUE.CURRENT_LEARN_INDEX)
 
     const iKnowButton = document.getElementById(
@@ -62,6 +62,7 @@ export default function showLearnWord() {
                     (learned) => learned.almanca === word.almanca
                 )
         )
+        LocalStorageManager.save(WORD_LIST_KEY, wordList)
     }
 
     switch (wordType) {
@@ -99,8 +100,7 @@ export default function showLearnWord() {
         ornek || 'N/A'
 
     const ruleLearnElement = document.getElementById('ruleLearn-' + wordType)
-    const isAdjectiveOrAdverb =
-        wordType === 'adjective' || wordType === 'adverb'
+    const isAdjectiveOrAdverb = wordType === 'adjective' || wordType === 'adverb'
 
     // Kural setini göster
     if (!kural || isAdjectiveOrAdverb) {
