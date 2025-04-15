@@ -1,4 +1,4 @@
-import { DEFAULT_VALUE, IN_PROGRESS_WORDS_KEY, WORD_LIST_EXERCISE_KEY, LEARNED_WITH_EXERCISE_WORDS_KEY, WORD_LIST_KEY, CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, CURRENT_CATEGORY_KEY, CURRENT_EXERCISE_INDEX_KEY } from "../../constants/storageKeys.js"
+import { DEFAULT_VALUE, WORD_LIST_EXERCISE_KEY, CURRENT_WORD_TYPE_KEY } from "../../constants/storageKeys.js"
 import LocalStorageManager from "../LocalStorageManager.js"
 import playSound from "./PlaySound.js"
 import showExerciseWord from "./ShowExerciseWord.js"
