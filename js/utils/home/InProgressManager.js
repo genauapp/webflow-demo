@@ -54,6 +54,12 @@ export default function InProgressManager(isAnswerCorrect) {
       return
     } else {
       inProgressWords[level][category][wordType][inProgressIndex].counter += 1
+      if (inProgressWords[level][category][wordType][inProgressIndex].counter ===1) {
+        document.getElementById(`progressLeft-${wordType}`).style.opacity =
+          '1'
+        LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
+        return
+      }
       if (
         inProgressWords[level][category][wordType][inProgressIndex].counter ===
         2

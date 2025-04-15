@@ -211,7 +211,6 @@ function listLearnedWords() {
   });
 }
 
-
 function showNoWordsMessage(elem) {
 
   elem.style.display = 'flex' // Flex düzen
