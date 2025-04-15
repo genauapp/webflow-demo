@@ -43,6 +43,9 @@ export default function InProgressManager(isAnswerCorrect) {
                     seviye: currentWord.seviye || 'N/A',
                 })
                 LocalStorageManager.save(LEARNED_WITH_EXERCISE_WORDS_KEY, learnedWithExerciseWords)
+                // Remove the current word from the wordListExercise array
+                wordListExercise.splice(0, 1);
+                LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, wordListExercise);
 
                 document.getElementById(
                     `feedbackMessage-${wordType}`
