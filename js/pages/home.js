@@ -1,15 +1,15 @@
 import { CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY, LEARNED_WITH_LEARN_WORDS_KEY, CURRENT_CATEGORY_KEY, WORD_LIST_EXERCISE_KEY, IN_PROGRESS_WORDS_KEY, WORD_LIST_KEY, TOTAL_WORD_EXERCISE_KEY, TOTAL_WORD_LEARN_KEY, CURRENT_LEARN_INDEX_KEY } from '../constants/storageKeys.js'
 import { JSON_URLS } from '../constants/urls.js'
-import { LEARN_ELEMENT_IDS } from '../constants/elements.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
 import ListUtils from '../utils/ListUtils.js'
 import { types } from '../constants/props.js'
+import { removeFavorite, addToFavorites } from '../utils/home/AddOrRemoveFavs.js'
+import { iKnowLearn, repeatLearn } from '../utils/home/LearnUtils.js'
 import checkNonNounAnswer from '../utils/home/checkNonNounAnswer.js'
-import { showModal } from '../utils/home/ModalManager.js'
 import showExerciseWord from '../utils/home/ShowExerciseWord.js'
 import checkNounAnswer from '../utils/home/checkNounAnswer.js'
 import showLearnWord from '../utils/home/showLearnWord.js'
-import { isRegularLevel, showSkeleton,hideSkeleton, showOrHideDecks, updateFavoriteIcons } from '../utils/home/UIUtils.js'
+import { isRegularLevel, showSkeleton,hideSkeleton, showOrHideDecks } from '../utils/home/UIUtils.js'
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', async () => {
@@ -208,138 +208,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.error('Error in DOMContentLoaded:', error)
   }
 })
-
-// On Learn: Repeat Click
-function repeatLearn() {
-  const totalWordsLearn = LocalStorageManager.load(TOTAL_WORD_LEARN_KEY, DEFAULT_VALUE.TOTAL_WORD_LEARN)
-  const wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
-  let currentLearnIndex = LocalStorageManager.load(CURRENT_LEARN_INDEX_KEY, DEFAULT_VALUE.CURRENT_LEARN_INDEX)
-
-  if (totalWordsLearn === 0 || currentLearnIndex >= totalWordsLearn) {
-    console.log('No words to repeat')
-    return
-  }
-
-  // Get current word and move it to the end
-  const currentWord = wordList.splice(currentLearnIndex, 1)[0]
-  wordList.push(currentWord)
-  LocalStorageManager.save(WORD_LIST_KEY, wordList)
-
-  // Keep the index within bounds
-  currentLearnIndex = currentLearnIndex % totalWordsLearn
-  LocalStorageManager.save(CURRENT_LEARN_INDEX_KEY, currentLearnIndex)
-
-  // Show the next word
-  showLearnWord()
-}
-
-// On Learn: I Know Click
-function iKnowLearn() {
-
-  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
-  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
-  let learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
-  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY, DEFAULT_VALUE.CURRENT_CATEGORY)
-  let currentLearnIndex = LocalStorageManager.load(CURRENT_LEARN_INDEX_KEY, DEFAULT_VALUE.CURRENT_LEARN_INDEX)
-  const totalWordsLearn = LocalStorageManager.load(TOTAL_WORD_LEARN_KEY, DEFAULT_VALUE.TOTAL_WORD_LEARN)
-  let wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
-
-  if (learnedWithLearnWords[level][category][wordType].length === totalWordsLearn) {
-    showModal('You learned all words! 🎉', wordType)
-  }
-
-  const currentWord = wordList[totalWordsLearn - currentLearnIndex]
-
-  learnedWithLearnWords[level][category][wordType].push({
-    ...currentWord
-  })
-  LocalStorageManager.save(LEARNED_WITH_LEARN_WORDS_KEY, learnedWithLearnWords)
-
-  wordList.splice(currentLearnIndex, 1)
-  LocalStorageManager.save(WORD_LIST_KEY, wordList)
-
-  document.getElementById(
-    `remainingWordsCountLearn-${wordType}`
-  ).innerText = learnedWithLearnWords[level][category][wordType].length
-
-  showLearnWord()
-}
-
-// On Learn: Add to Favorites Click
-const addToFavorites = () => {
-  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
-  const totalWordsLearn = LocalStorageManager.load(TOTAL_WORD_LEARN_KEY, DEFAULT_VALUE.TOTAL_WORD_LEARN)
-  const wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
-  const currentLearnIndex = LocalStorageManager.load(CURRENT_LEARN_INDEX_KEY, DEFAULT_VALUE.CURRENT_LEARN_INDEX)
-
-  const inFavImage = document.getElementById(`infav-${wordType}`)
-  const outFavImage = document.getElementById(`outfav-${wordType}`)
-  const feedbackElement = document.getElementById(
-    `favoritesFeedback-${wordType}`
-  )
-
-  if (wordList.length === 0 || currentLearnIndex >= totalWordsLearn) {
-    feedbackElement.innerText = 'No word to add to favorites!'
-    feedbackElement.style.color = 'red'
-    feedbackElement.style.display = 'block'
-    setTimeout(() => {
-      feedbackElement.style.display = 'none'
-    }, 3000)
-    return
-  }
-
-  const currentWord = wordList[currentLearnIndex]
-  let favoriteWords = LocalStorageManager.load('favoriteWords', [])
-
-  // Favorilere ekle
-  favoriteWords.push({
-    type: currentWord.type,
-    almanca: currentWord.almanca,
-    ingilizce: currentWord.ingilizce,
-    seviye: currentWord.seviye || 'N/A',
-  })
-  LocalStorageManager.save('favoriteWords', favoriteWords)
-
-  feedbackElement.innerText = `"${currentWord.almanca}" has been added to favorites!`
-  feedbackElement.style.color = 'green'
-
-  // Görselleri güncelle
-  inFavImage.style.display = 'block' // infav göster
-  outFavImage.style.display = 'none' // outfav gizle
-
-  feedbackElement.style.display = 'block'
-  setTimeout(() => {
-    feedbackElement.style.display = 'none'
-  }, 2000)
-}
-
-// On Learn: Remove from Favorites Click
-function removeFavorite() {
-  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
-  const wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
-  const currentLearnIndex = LocalStorageManager.load(CURRENT_LEARN_INDEX_KEY, DEFAULT_VALUE.CURRENT_LEARN_INDEX)
-
-  // Favorilerden kaldır
-  const feedbackElement = document.getElementById(
-    `favoritesFeedback-${wordType}`
-  )
-  const currentWord = wordList[currentLearnIndex]
-  let favoriteWords = LocalStorageManager.load('favoriteWords', [])
-  favoriteWords = favoriteWords.filter(
-    (word) => word.almanca !== currentWord.almanca
-  )
-  LocalStorageManager.save('favoriteWords', favoriteWords)
-
-  feedbackElement.innerText = `"${currentWord.almanca}" has been removed from favorites.`
-  feedbackElement.style.color = 'orange'
-
-  feedbackElement.style.display = 'block'
-  setTimeout(() => {
-    feedbackElement.style.display = 'none'
-  }, 2000)
-  // Görselleri güncelle
-  updateFavoriteIcons()
-}
 
 export const nounDerAnswerClickHandler = function (event) {
   event.preventDefault() // Sayfanın yukarı kaymasını engeller

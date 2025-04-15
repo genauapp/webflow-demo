@@ -1,3 +1,7 @@
+import { LEARN_ELEMENT_IDS } from '../../constants/elements.js'
+import LocalStorageManager from '../LocalStorageManager.js'
+import { DEFAULT_VALUE, CURRENT_WORD_TYPE_KEY, CURRENT_LEARN_INDEX_KEY, WORD_LIST_KEY } from '../../constants/storageKeys.js'
+
 // UI visibility functions
 export function showSkeleton(wordType) {
     const skeletonState = document.getElementById('skeletonState')
@@ -64,6 +68,7 @@ export function updateFavoriteIcons() {
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
     const wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
     const currentLearnIndex = LocalStorageManager.load(CURRENT_LEARN_INDEX_KEY, DEFAULT_VALUE.CURRENT_LEARN_INDEX)
+
     const inFavImage = document.getElementById(`infav-${wordType}`)
     const outFavImage = document.getElementById(`outfav-${wordType}`)
 
