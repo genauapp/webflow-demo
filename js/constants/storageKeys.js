@@ -375,32 +375,6 @@ export class DEFAULT_VALUE {
   };
 
   static IN_PROGRESS_WORDS = {
-    b1telcpt1: {
-      default: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-      dirty: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-      doctor: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-      music: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-    },
     a1: {
       alltag: {
         noun: [],
