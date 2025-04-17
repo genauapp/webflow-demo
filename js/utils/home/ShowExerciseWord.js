@@ -1,7 +1,6 @@
 import { DEFAULT_VALUE, IN_PROGRESS_WORDS_KEY, WORD_LIST_EXERCISE_KEY, CURRENT_CATEGORY_KEY, CURRENT_LEVEL_KEY, LEARNED_WITH_EXERCISE_WORDS_KEY, CURRENT_WORD_TYPE_KEY, TOTAL_WORD_EXERCISE_KEY } from "../../constants/storageKeys.js"
 import LocalStorageManager from "../LocalStorageManager.js"
 import ExerciseUtils from "./ExerciseUtils.js"
-import { staticWordLists } from "../../constants/urls.js"
 import { showModalExercise } from "./ModalManager.js"
 
 export default function showExerciseWord() {
@@ -100,7 +99,7 @@ export default function showExerciseWord() {
         if (ExerciseUtils.shouldUseOwnMeaning()) {
           exerciseTranslationText = ingilizce
         } else {
-          exerciseTranslationText = ExerciseUtils.getRandomTranslationResult(level, currentWord, staticWordLists, category)
+          exerciseTranslationText = ExerciseUtils.getRandomTranslationResult()
           // todo: transfer data for checking the answer later
           const buttonWrong = document.getElementById(
             `wrongButton-${wordType}`

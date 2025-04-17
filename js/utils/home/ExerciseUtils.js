@@ -1,7 +1,6 @@
-import { CURRENT_CATEGORY_KEY, CURRENT_LEVEL_KEY, DEFAULT_VALUE, WORD_LIST_EXERCISE_KEY } from '../../constants/storageKeys.js'
+import { DEFAULT_VALUE, WORD_LIST_EXERCISE_KEY } from '../../constants/storageKeys.js'
 import LocalStorageManager from '../LocalStorageManager.js'
 import NumberUtils from '../NumberUtils.js'
-import { staticWordLists } from '../../constants/urls.js'
 
 export default class ExerciseUtils {
   static shouldUseOwnMeaning = () => {
@@ -15,21 +14,19 @@ export default class ExerciseUtils {
   }
 
   static getRandomTranslationResult = () => {
-    const currentLevel = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
     const wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
     const selectedWord = wordListExercise[0]
-    const currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY, DEFAULT_VALUE.CURRENT_CATEGORY)
-    const kelimeListesiInstance = staticWordLists[currentLevel][currentCategory][selectedWord.type]
+    const wordListExerciseInstance = wordListExercise
     
-    const filteredKelimeListesiExercise = kelimeListesiInstance.filter(
+    const filteredWordList = wordListExerciseInstance.filter(
       (kelimeExercise) => kelimeExercise.almanca !== selectedWord.almanca
     )
 
     const randomIndex = NumberUtils.getRandomNumber(
-      filteredKelimeListesiExercise.length - 1
+      filteredWordList.length - 1
     )
 
-    const randomResult = filteredKelimeListesiExercise[randomIndex].ingilizce
+    const randomResult = filteredWordList[randomIndex].ingilizce
 
     return randomResult
   }
