@@ -43,7 +43,10 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
     LocalStorageManager.save(CURRENT_LEVEL_KEY, updatedLevel)
 
     // Load Deck Props for specific Level
-    loadDeckProps()
+    if(isRegularLevel(updatedLevel)){
+      loadDeckProps()
+    }
+
 
     // Dropdown başlığını güncelle
     document.getElementById('dropdownHeader').innerText = selectedText
