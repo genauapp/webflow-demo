@@ -45,7 +45,7 @@ export class DEFAULT_VALUE {
   static WORD_LIST = [];
   static CURRENT_LEVEL = "a1";
   static CURRENT_WORD_TYPE = "noun";
-  static CURRENT_CATEGORY = "default";
+  static CURRENT_CATEGORY = "alltag";
   static CURRENT_LEARN_INDEX = 0
   static TOTAL_WORD_LEARN = 0
   static TOTAL_WORD_EXERCISE = 0
