@@ -101,13 +101,13 @@ export function showOrHideDecks(level) {
 export function loadDeckProps() {
     const level = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
     const deckContainers = document.querySelectorAll('.deck-container')
-    for(let i = 0; i >= categories[level].length-1; i++) {
-        const deckTitle = categories[level][i].nameEng
-        const deckImgURL = categories[level][i].imgUrl
-        const deckShortName = categories[level][i].nameShort
+    categories[level].forEach((item, i) => {
+        const deckTitle = item.nameEng;
+        const deckImgURL = item.imgUrl;
+        const deckShortName = item.nameShort;
 
-        deckContainers[i].children[0].src = deckImgURL
-        deckContainers[i].children[1].innerText = deckTitle
-        deckContainers[i].dataset.option = deckShortName
-    }
+        deckContainers[i].children[0].src = deckImgURL;
+        deckContainers[i].children[1].innerText = deckTitle;
+        deckContainers[i].dataset.option = deckShortName;
+    });
 }
