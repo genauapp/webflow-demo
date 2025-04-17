@@ -1,6 +1,7 @@
 import { LEARN_ELEMENT_IDS } from '../../constants/elements.js'
 import LocalStorageManager from '../LocalStorageManager.js'
-import { DEFAULT_VALUE, CURRENT_WORD_TYPE_KEY, CURRENT_LEARN_INDEX_KEY, WORD_LIST_KEY } from '../../constants/storageKeys.js'
+import { DEFAULT_VALUE, CURRENT_WORD_TYPE_KEY, CURRENT_LEARN_INDEX_KEY, WORD_LIST_KEY, CURRENT_LEVEL_KEY } from '../../constants/storageKeys.js'
+import { categories } from '../../constants/props.js'
 
 // UI visibility functions
 export function showSkeleton(wordType) {
@@ -85,7 +86,7 @@ export function updateFavoriteIcons() {
 }
 
 export function isRegularLevel(level) {
-    return !(level === '' || level === "einburgerungstest")
+    return !(level === '' || level === "einburgerungstest" || level === 'passive-level')
 }
 
 export function showOrHideDecks(level) {
@@ -95,4 +96,18 @@ export function showOrHideDecks(level) {
     }
     document.getElementById('decksContainer').style.display = 'none'
     return
+}
+
+export function loadDeckProps() {
+    const level = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
+    const deckContainers = document.querySelectorAll('.deck-container')
+    for(let i = 0; i >= categories[level].length-1; i++) {
+        const deckTitle = categories[level][i].nameEng
+        const deckImgURL = categories[level][i].imgUrl
+        const deckShortName = categories[level][i].nameShort
+
+        deckContainers[i].children[0].src = deckImgURL
+        deckContainers[i].children[1].innerText = deckTitle
+        deckContainers[i].dataset.option = deckShortName
+    }
 }

@@ -1,5 +1,5 @@
 import { CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY, LEARNED_WITH_LEARN_WORDS_KEY, CURRENT_CATEGORY_KEY, WORD_LIST_EXERCISE_KEY, IN_PROGRESS_WORDS_KEY, WORD_LIST_KEY, TOTAL_WORD_EXERCISE_KEY, TOTAL_WORD_LEARN_KEY, CURRENT_LEARN_INDEX_KEY } from '../constants/storageKeys.js'
-import { JSON_URLS, ASSETS_BASE_URL } from '../constants/urls.js'
+import { ASSETS_BASE_URL } from '../constants/urls.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
 import ListUtils from '../utils/ListUtils.js'
 import { types } from '../constants/props.js'
@@ -9,7 +9,7 @@ import checkNonNounAnswer from '../utils/home/checkNonNounAnswer.js'
 import showExerciseWord from '../utils/home/ShowExerciseWord.js'
 import checkNounAnswer from '../utils/home/checkNounAnswer.js'
 import showLearnWord from '../utils/home/showLearnWord.js'
-import { isRegularLevel, showSkeleton,hideSkeleton, showOrHideDecks } from '../utils/home/UIUtils.js'
+import { isRegularLevel, showSkeleton,hideSkeleton, showOrHideDecks, loadDeckProps } from '../utils/home/UIUtils.js'
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', async () => {
@@ -31,6 +31,7 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
     
     // Avoid errors for C1 and C2 levels which are not fully implemented
     if (link.classList.contains('passive-level')) {
+      showOrHideDecks('passive-level')
       return
     }
     
@@ -40,6 +41,9 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
     
     // Save selected option to localStorage
     LocalStorageManager.save(CURRENT_LEVEL_KEY, updatedLevel)
+
+    // Load Deck Props for specific Level
+    loadDeckProps()
 
     // Dropdown başlığını güncelle
     document.getElementById('dropdownHeader').innerText = selectedText
@@ -52,7 +56,7 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
     }
     if (currentCategory === 'einburgerungstest' && isRegularLevel(updatedLevel)) {
       showOrHideDecks(updatedLevel)
-      const lastSelectedDeck = document.querySelector('.selectedimg').getAttribute('data-option')
+      const lastSelectedDeck = document.querySelector('.selected-deck-img').getAttribute('data-option')
       LocalStorageManager.save(CURRENT_CATEGORY_KEY, lastSelectedDeck)
       await executeInitialLoadAndShow()
       return
@@ -67,17 +71,19 @@ document.querySelectorAll('.deck-container').forEach((elem) => {
     const selectedCategory = elem.getAttribute('data-option')
     LocalStorageManager.save(CURRENT_CATEGORY_KEY, selectedCategory)
 
-    if (!elem.classList.contains('selectedimg')) {
-      elem.style.border = '2px solid black'
-      elem.style.borderRadius = '16px'
-      document.querySelectorAll('.deck').forEach((deck) => {
-        if (deck.classList.contains('selectedimg')) {
-          deck.classList.remove('selectedimg')
-          deck.style.border = ''
-          deck.style.borderRadius = ''
+    if (!elem.children[0].classList.contains('selected-deck-img')) {
+      elem.children[0].style.border = '2px solid black'
+      elem.children[0].style.borderRadius = '16px'
+      //remove selected class from all deck images
+      document.querySelectorAll('.deck-img').forEach((deckimg) => {
+        if (deck.classList.contains('selected-deck-img')) {
+          deckimg.classList.remove('selected-deck-img')
+          deckimg.style.border = ''
+          deckimg.style.borderRadius = ''
         }
       })
-      elem.classList.add('selectedimg')
+      // add selected class into selected image
+      elem.children[0].classList.add('selected-deck-img')
     }
 
     await executeInitialLoadAndShow()
