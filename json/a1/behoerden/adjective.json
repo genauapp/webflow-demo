@@ -1,0 +1,203 @@
+[
+    {
+        "almanca": "wichtig",
+        "ingilizce": "important",
+        "seviye": "A1",
+        "ornek": "Der Termin ist wichtig.",
+        "kelime": "wichtig",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_01"
+    },
+    {
+        "almanca": "nötig",
+        "ingilizce": "necessary",
+        "seviye": "A1",
+        "ornek": "Ein Pass ist nötig.",
+        "kelime": "nötig",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_02"
+    },
+    {
+        "almanca": "bereit",
+        "ingilizce": "ready",
+        "seviye": "A1",
+        "ornek": "Ich bin bereit für den Termin.",
+        "kelime": "bereit",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_03"
+    },
+    {
+        "almanca": "offen",
+        "ingilizce": "open",
+        "seviye": "A1",
+        "ornek": "Das Amt ist offen.",
+        "kelime": "offen",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_04"
+    },
+    {
+        "almanca": "geschlossen",
+        "ingilizce": "closed",
+        "seviye": "A1",
+        "ornek": "Die Behörde ist heute geschlossen.",
+        "kelime": "geschlossen",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_05"
+    },
+    {
+        "almanca": "freundlich",
+        "ingilizce": "friendly",
+        "seviye": "A1",
+        "ornek": "Die Mitarbeiterin ist freundlich.",
+        "kelime": "freundlich",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_06"
+    },
+    {
+        "almanca": "unfreundlich",
+        "ingilizce": "unfriendly",
+        "seviye": "A1",
+        "ornek": "Der Sachbearbeiter war unfreundlich.",
+        "kelime": "unfreundlich",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_07"
+    },
+    {
+        "almanca": "leer",
+        "ingilizce": "empty",
+        "seviye": "A1",
+        "ornek": "Das Wartezimmer ist leer.",
+        "kelime": "leer",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_08"
+    },
+    {
+        "almanca": "voll",
+        "ingilizce": "full",
+        "seviye": "A1",
+        "ornek": "Die Behörde ist voll.",
+        "kelime": "voll",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_09"
+    },
+    {
+        "almanca": "neu",
+        "ingilizce": "new",
+        "seviye": "A1",
+        "ornek": "Ich brauche einen neuen Ausweis.",
+        "kelime": "neu",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_10"
+    },
+    {
+        "almanca": "gültig",
+        "ingilizce": "valid",
+        "seviye": "A1",
+        "ornek": "Der Pass ist noch gültig.",
+        "kelime": "gültig",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_11"
+    },
+    {
+        "almanca": "ungültig",
+        "ingilizce": "invalid",
+        "seviye": "A1",
+        "ornek": "Das Formular ist ungültig.",
+        "kelime": "ungültig",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_12"
+    },
+    {
+        "almanca": "offiziell",
+        "ingilizce": "official",
+        "seviye": "A1",
+        "ornek": "Das ist ein offizielles Schreiben.",
+        "kelime": "offiziell",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_13"
+    },
+    {
+        "almanca": "einfach",
+        "ingilizce": "simple",
+        "seviye": "A1",
+        "ornek": "Die Anmeldung ist einfach.",
+        "kelime": "einfach",
+        "kural": "Describes complexity.",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_14"
+    },
+    {
+        "almanca": "kompliziert",
+        "ingilizce": "complicated",
+        "seviye": "A1",
+        "ornek": "Der Antrag ist kompliziert.",
+        "kelime": "kompliziert",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_15"
+    },
+    {
+        "almanca": "lang",
+        "ingilizce": "long",
+        "seviye": "A1",
+        "ornek": "Die Wartezeit ist lang.",
+        "kelime": "lang",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_16"
+    },
+    {
+        "almanca": "kurz",
+        "ingilizce": "short",
+        "seviye": "A1",
+        "ornek": "Das Gespräch war kurz.",
+        "kelime": "kurz",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_17"
+    },
+    {
+        "almanca": "klar",
+        "ingilizce": "clear",
+        "seviye": "A1",
+        "ornek": "Die Information ist klar.",
+        "kelime": "klar",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_18"
+    },
+    {
+        "almanca": "unklar",
+        "ingilizce": "unclear",
+        "seviye": "A1",
+        "ornek": "Die Anweisung ist unklar.",
+        "kelime": "unklar",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_19"
+    },
+    {
+        "almanca": "richtig",
+        "ingilizce": "correct",
+        "seviye": "A1",
+        "ornek": "Die Angaben sind richtig.",
+        "kelime": "richtig",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_20"
+    }
+]

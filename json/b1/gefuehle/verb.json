@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "lieben",
+        "ingilizce": "to love",
+        "seviye": "B1",
+        "ornek": "Ich liebe meine Familie sehr.",
+        "kelime": "lieben",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Gefühle & Beziehungen",
+        "id": "verb_gefuehle_B1_01"
+    },
+    {
+        "almanca": "hassen",
+        "ingilizce": "to hate",
+        "seviye": "B1",
+        "ornek": "Man sollte niemanden hassen.",
+        "kelime": "hassen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Gefühle & Beziehungen",
+        "id": "verb_gefuehle_B1_02"
+    },
+    {
+        "almanca": "fühlen",
+        "ingilizce": "to feel",
+        "seviye": "B1",
+        "ornek": "Ich fühle mich heute traurig.",
+        "kelime": "fühlen",
+        "kural": "Reflexive usage common: sich fühlen.",
+        "type": "verb",
+        "category": "Gefühle & Beziehungen",
+        "id": "verb_gefuehle_B1_03"
+    },
+    {
+        "almanca": "verzeihen",
+        "ingilizce": "to forgive",
+        "seviye": "B1",
+        "ornek": "Kannst du mir verzeihen?",
+        "kelime": "verzeihen",
+        "kural": "Irregular verb: verzieh, verziehen.",
+        "type": "verb",
+        "category": "Gefühle & Beziehungen",
+        "id": "verb_gefuehle_B1_04"
+    },
+    {
+        "almanca": "vermissen",
+        "ingilizce": "to miss (someone)",
+        "seviye": "B1",
+        "ornek": "Ich vermisse dich sehr.",
+        "kelime": "vermissen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Gefühle & Beziehungen",
+        "id": "verb_gefuehle_B1_05"
+    },
+    {
+        "almanca": "sich streiten",
+        "ingilizce": "to argue",
+        "seviye": "B1",
+        "ornek": "Wir streiten uns oft wegen Kleinigkeiten.",
+        "kelime": "streiten",
+        "kural": "Reflexive and irregular verb.",
+        "type": "verb",
+        "category": "Gefühle & Beziehungen",
+        "id": "verb_gefuehle_B1_06"
+    },
+    {
+        "almanca": "sich versöhnen",
+        "ingilizce": "to reconcile",
+        "seviye": "B1",
+        "ornek": "Nach dem Streit haben wir uns versöhnt.",
+        "kelime": "versöhnen",
+        "kural": "Reflexive verb.",
+        "type": "verb",
+        "category": "Gefühle & Beziehungen",
+        "id": "verb_gefuehle_B1_07"
+    },
+    {
+        "almanca": "vertrauen",
+        "ingilizce": "to trust",
+        "seviye": "B1",
+        "ornek": "Ich vertraue dir.",
+        "kelime": "vertrauen",
+        "kural": "Verb with dative object.",
+        "type": "verb",
+        "category": "Gefühle & Beziehungen",
+        "id": "verb_gefuehle_B1_08"
+    },
+    {
+        "almanca": "sich verlieben",
+        "ingilizce": "to fall in love",
+        "seviye": "B1",
+        "ornek": "Er hat sich in sie verliebt.",
+        "kelime": "verlieben",
+        "kural": "Reflexive verb.",
+        "type": "verb",
+        "category": "Gefühle & Beziehungen",
+        "id": "verb_gefuehle_B1_09"
+    },
+    {
+        "almanca": "eifersüchtig sein",
+        "ingilizce": "to be jealous",
+        "seviye": "B1",
+        "ornek": "Er ist oft eifersüchtig.",
+        "kelime": "sein (eifersüchtig)",
+        "kural": "Adjective construction with 'sein'.",
+        "type": "verb",
+        "category": "Gefühle & Beziehungen",
+        "id": "verb_gefuehle_B1_10"
+    },
+    {
+        "almanca": "sich ärgern",
+        "ingilizce": "to get annoyed",
+        "seviye": "B1",
+        "ornek": "Ich ärgere mich über seine Worte.",
+        "kelime": "ärgern",
+        "kural": "Reflexive verb.",
+        "type": "verb",
+        "category": "Gefühle & Beziehungen",
+        "id": "verb_gefuehle_B1_11"
+    },
+    {
+        "almanca": "respektieren",
+        "ingilizce": "to respect",
+        "seviye": "B1",
+        "ornek": "Wir sollten einander respektieren.",
+        "kelime": "respektieren",
+        "kural": "Regular verb ending in -ieren.",
+        "type": "verb",
+        "category": "Gefühle & Beziehungen",
+        "id": "verb_gefuehle_B1_12"
+    },
+    {
+        "almanca": "trösten",
+        "ingilizce": "to comfort",
+        "seviye": "B1",
+        "ornek": "Ich tröste meinen Freund.",
+        "kelime": "trösten",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Gefühle & Beziehungen",
+        "id": "verb_gefuehle_B1_13"
+    },
+    {
+        "almanca": "weinen",
+        "ingilizce": "to cry",
+        "seviye": "B1",
+        "ornek": "Sie weint oft bei Filmen.",
+        "kelime": "weinen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Gefühle & Beziehungen",
+        "id": "verb_gefuehle_B1_14"
+    },
+    {
+        "almanca": "lächeln",
+        "ingilizce": "to smile",
+        "seviye": "B1",
+        "ornek": "Sie lächelt, wenn sie glücklich ist.",
+        "kelime": "lächeln",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Gefühle & Beziehungen",
+        "id": "verb_gefuehle_B1_15"
+    },
+    {
+        "almanca": "beleidigen",
+        "ingilizce": "to insult",
+        "seviye": "B1",
+        "ornek": "Er hat mich beleidigt.",
+        "kelime": "beleidigen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Gefühle & Beziehungen",
+        "id": "verb_gefuehle_B1_16"
+    },
+    {
+        "almanca": "sich entschuldigen",
+        "ingilizce": "to apologize",
+        "seviye": "B1",
+        "ornek": "Ich möchte mich bei dir entschuldigen.",
+        "kelime": "entschuldigen",
+        "kural": "Reflexive verb.",
+        "type": "verb",
+        "category": "Gefühle & Beziehungen",
+        "id": "verb_gefuehle_B1_17"
+    },
+    {
+        "almanca": "ermutigen",
+        "ingilizce": "to encourage",
+        "seviye": "B1",
+        "ornek": "Sie hat mich sehr ermutigt.",
+        "kelime": "ermutigen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Gefühle & Beziehungen",
+        "id": "verb_gefuehle_B1_18"
+    },
+    {
+        "almanca": "sich kümmern um",
+        "ingilizce": "to take care of",
+        "seviye": "B1",
+        "ornek": "Ich kümmere mich um meinen Bruder.",
+        "kelime": "kümmern",
+        "kural": "Reflexive verb with preposition.",
+        "type": "verb",
+        "category": "Gefühle & Beziehungen",
+        "id": "verb_gefuehle_B1_19"
+    },
+    {
+        "almanca": "sich schämen",
+        "ingilizce": "to be ashamed",
+        "seviye": "B1",
+        "ornek": "Er schämt sich für sein Verhalten.",
+        "kelime": "schämen",
+        "kural": "Reflexive verb.",
+        "type": "verb",
+        "category": "Gefühle & Beziehungen",
+        "id": "verb_gefuehle_B1_20"
+    }
+]

@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "das Amt",
+        "ingilizce": "office (public authority)",
+        "seviye": "A1",
+        "ornek": "Ich gehe zum Amt.",
+        "artikel": "das",
+        "kelime": "Amt",
+        "kural": "Many institutional nouns are neuter.",
+        "category": "Behoerden",
+        "id": "noun_behoerden_01"
+    },
+    {
+        "almanca": "der Termin",
+        "ingilizce": "appointment",
+        "seviye": "A1",
+        "ornek": "Ich habe einen Termin im Rathaus.",
+        "artikel": "der",
+        "kelime": "Termin",
+        "kural": "Scheduled events are usually masculine.",
+        "category": "Behoerden",
+        "id": "noun_behoerden_02"
+    },
+    {
+        "almanca": "die Anmeldung",
+        "ingilizce": "registration",
+        "seviye": "A1",
+        "ornek": "Ich mache die Anmeldung im Bürgeramt.",
+        "artikel": "die",
+        "kelime": "Anmeldung",
+        "kural": "Nouns ending in '-ung' are feminine.",
+        "category": "Behoerden",
+        "id": "noun_behoerden_03"
+    },
+    {
+        "almanca": "der Pass",
+        "ingilizce": "passport",
+        "seviye": "A1",
+        "ornek": "Ich brauche einen neuen Pass.",
+        "artikel": "der",
+        "kelime": "Pass",
+        "kural": "Official documents often take 'der'.",
+        "category": "Behoerden",
+        "id": "noun_behoerden_04"
+    },
+    {
+        "almanca": "die Geburtsurkunde",
+        "ingilizce": "birth certificate",
+        "seviye": "A1",
+        "ornek": "Ich zeige die Geburtsurkunde.",
+        "artikel": "die",
+        "kelime": "Geburtsurkunde",
+        "kural": "Documents ending in '-e' are often feminine.",
+        "category": "Behoerden",
+        "id": "noun_behoerden_05"
+    },
+    {
+        "almanca": "der Personalausweis",
+        "ingilizce": "ID card",
+        "seviye": "A1",
+        "ornek": "Ich zeige den Personalausweis.",
+        "artikel": "der",
+        "kelime": "Personalausweis",
+        "kural": "Compound word, usually masculine.",
+        "category": "Behoerden",
+        "id": "noun_behoerden_06"
+    },
+    {
+        "almanca": "die Behörde",
+        "ingilizce": "authority",
+        "seviye": "A1",
+        "ornek": "Die Behörde ist geöffnet.",
+        "artikel": "die",
+        "kelime": "Behörde",
+        "kural": "Institution nouns ending in '-e' are feminine.",
+        "category": "Behoerden",
+        "id": "noun_behoerden_07"
+    },
+    {
+        "almanca": "das Formular",
+        "ingilizce": "form",
+        "seviye": "A1",
+        "ornek": "Ich fülle das Formular aus.",
+        "artikel": "das",
+        "kelime": "Formular",
+        "kural": "Loanwords ending in '-ar' are neuter.",
+        "category": "Behoerden",
+        "id": "noun_behoerden_08"
+    },
+    {
+        "almanca": "der Antrag",
+        "ingilizce": "application",
+        "seviye": "A1",
+        "ornek": "Ich stelle einen Antrag.",
+        "artikel": "der",
+        "kelime": "Antrag",
+        "kural": "Masculine noun for official requests.",
+        "category": "Behoerden",
+        "id": "noun_behoerden_09"
+    },
+    {
+        "almanca": "die Frist",
+        "ingilizce": "deadline",
+        "seviye": "A1",
+        "ornek": "Die Frist endet morgen.",
+        "artikel": "die",
+        "kelime": "Frist",
+        "kural": "Time-related nouns often take 'die'.",
+        "category": "Behoerden",
+        "id": "noun_behoerden_10"
+    },
+    {
+        "almanca": "das Bürgeramt",
+        "ingilizce": "citizens' office",
+        "seviye": "A1",
+        "ornek": "Ich gehe zum Bürgeramt.",
+        "artikel": "das",
+        "kelime": "Bürgeramt",
+        "kural": "Compound noun with 'Amt' is neuter.",
+        "category": "Behoerden",
+        "id": "noun_behoerden_11"
+    },
+    {
+        "almanca": "die Versicherung",
+        "ingilizce": "insurance",
+        "seviye": "A1",
+        "ornek": "Ich brauche eine Krankenversicherung.",
+        "artikel": "die",
+        "kelime": "Versicherung",
+        "kural": "Nouns ending in '-ung' are feminine.",
+        "category": "Behoerden",
+        "id": "noun_behoerden_12"
+    },
+    {
+        "almanca": "der Sachbearbeiter",
+        "ingilizce": "caseworker",
+        "seviye": "A1",
+        "ornek": "Der Sachbearbeiter hilft mir.",
+        "artikel": "der",
+        "kelime": "Sachbearbeiter",
+        "kural": "Profession nouns ending in '-er' are masculine.",
+        "category": "Behoerden",
+        "id": "noun_behoerden_13"
+    },
+    {
+        "almanca": "die Sachbearbeiterin",
+        "ingilizce": "female caseworker",
+        "seviye": "A1",
+        "ornek": "Die Sachbearbeiterin ist freundlich.",
+        "artikel": "die",
+        "kelime": "Sachbearbeiterin",
+        "kural": "Feminine form of professions ends in '-in'.",
+        "category": "Behoerden",
+        "id": "noun_behoerden_14"
+    },
+    {
+        "almanca": "der Antragsteller",
+        "ingilizce": "applicant",
+        "seviye": "A1",
+        "ornek": "Der Antragsteller wartet.",
+        "artikel": "der",
+        "kelime": "Antragsteller",
+        "kural": "Compound profession words often masculine.",
+        "category": "Behoerden",
+        "id": "noun_behoerden_15"
+    },
+    {
+        "almanca": "die Unterlagen",
+        "ingilizce": "documents",
+        "seviye": "A1",
+        "ornek": "Ich bringe die Unterlagen mit.",
+        "artikel": "die",
+        "kelime": "Unterlagen",
+        "kural": "Plural noun, usually feminine.",
+        "category": "Behoerden",
+        "id": "noun_behoerden_16"
+    },
+    {
+        "almanca": "das Dokument",
+        "ingilizce": "document",
+        "seviye": "A1",
+        "ornek": "Das Dokument ist wichtig.",
+        "artikel": "das",
+        "kelime": "Dokument",
+        "kural": "Nouns ending in '-ment' are neuter.",
+        "category": "Behoerden",
+        "id": "noun_behoerden_17"
+    },
+    {
+        "almanca": "die Unterschrift",
+        "ingilizce": "signature",
+        "seviye": "A1",
+        "ornek": "Ich gebe meine Unterschrift.",
+        "artikel": "die",
+        "kelime": "Unterschrift",
+        "kural": "Abstract nouns ending in '-t' are feminine.",
+        "category": "Behoerden",
+        "id": "noun_behoerden_18"
+    },
+    {
+        "almanca": "das Visum",
+        "ingilizce": "visa",
+        "seviye": "A1",
+        "ornek": "Ich beantrage ein Visum.",
+        "artikel": "das",
+        "kelime": "Visum",
+        "kural": "Latin-based words ending in '-um' are neuter.",
+        "category": "Behoerden",
+        "id": "noun_behoerden_19"
+    },
+    {
+        "almanca": "die Steuer",
+        "ingilizce": "tax",
+        "seviye": "A1",
+        "ornek": "Ich muss die Steuer bezahlen.",
+        "artikel": "die",
+        "kelime": "Steuer",
+        "kural": "Financial terms ending in '-er' are usually feminine.",
+        "category": "Behoerden",
+        "id": "noun_behoerden_20"
+    }
+]

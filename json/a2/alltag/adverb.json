@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "täglich",
+        "ingilizce": "daily",
+        "seviye": "A2",
+        "ornek": "Ich putze täglich das Badezimmer.",
+        "kelime": "täglich",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_01"
+    },
+    {
+        "almanca": "regelmäßig",
+        "ingilizce": "regularly",
+        "seviye": "A2",
+        "ornek": "Ich mache regelmäßig Sport.",
+        "kelime": "regelmäßig",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_02"
+    },
+    {
+        "almanca": "selten",
+        "ingilizce": "rarely",
+        "seviye": "A2",
+        "ornek": "Ich gehe selten aus dem Haus.",
+        "kelime": "selten",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_03"
+    },
+    {
+        "almanca": "meistens",
+        "ingilizce": "mostly",
+        "seviye": "A2",
+        "ornek": "Ich bin meistens zu Hause.",
+        "kelime": "meistens",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_04"
+    },
+    {
+        "almanca": "oft",
+        "ingilizce": "often",
+        "seviye": "A2",
+        "ornek": "Ich telefoniere oft mit meiner Familie.",
+        "kelime": "oft",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_05"
+    },
+    {
+        "almanca": "gerne",
+        "ingilizce": "gladly",
+        "seviye": "A2",
+        "ornek": "Ich koche gerne.",
+        "kelime": "gerne",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_06"
+    },
+    {
+        "almanca": "allein",
+        "ingilizce": "alone",
+        "seviye": "A2",
+        "ornek": "Ich mache das allein.",
+        "kelime": "allein",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_07"
+    },
+    {
+        "almanca": "zusammen",
+        "ingilizce": "together",
+        "seviye": "A2",
+        "ornek": "Wir essen zusammen zu Abend.",
+        "kelime": "zusammen",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_08"
+    },
+    {
+        "almanca": "überall",
+        "ingilizce": "everywhere",
+        "seviye": "A2",
+        "ornek": "Ich habe überall gesucht.",
+        "kelime": "überall",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_09"
+    },
+    {
+        "almanca": "nirgendwo",
+        "ingilizce": "nowhere",
+        "seviye": "A2",
+        "ornek": "Ich finde den Schlüssel nirgendwo.",
+        "kelime": "nirgendwo",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_10"
+    },
+    {
+        "almanca": "draußen",
+        "ingilizce": "outside",
+        "seviye": "A2",
+        "ornek": "Die Kinder spielen draußen.",
+        "kelime": "draußen",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_11"
+    },
+    {
+        "almanca": "drinnen",
+        "ingilizce": "inside",
+        "seviye": "A2",
+        "ornek": "Wir bleiben heute drinnen.",
+        "kelime": "drinnen",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_12"
+    },
+    {
+        "almanca": "vorher",
+        "ingilizce": "beforehand",
+        "seviye": "A2",
+        "ornek": "Ich habe das vorher gemacht.",
+        "kelime": "vorher",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_13"
+    },
+    {
+        "almanca": "nachher",
+        "ingilizce": "afterwards",
+        "seviye": "A2",
+        "ornek": "Wir gehen nachher spazieren.",
+        "kelime": "nachher",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_14"
+    },
+    {
+        "almanca": "zu Hause",
+        "ingilizce": "at home",
+        "seviye": "A2",
+        "ornek": "Ich bleibe heute zu Hause.",
+        "kelime": "zu Hause",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_15"
+    },
+    {
+        "almanca": "unterwegs",
+        "ingilizce": "on the way",
+        "seviye": "A2",
+        "ornek": "Ich bin gerade unterwegs.",
+        "kelime": "unterwegs",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_16"
+    },
+    {
+        "almanca": "gleich",
+        "ingilizce": "soon",
+        "seviye": "A2",
+        "ornek": "Ich komme gleich.",
+        "kelime": "gleich",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_17"
+    },
+    {
+        "almanca": "eben",
+        "ingilizce": "just",
+        "seviye": "A2",
+        "ornek": "Ich habe eben angerufen.",
+        "kelime": "eben",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_18"
+    },
+    {
+        "almanca": "lange",
+        "ingilizce": "for a long time",
+        "seviye": "A2",
+        "ornek": "Ich warte schon lange.",
+        "kelime": "lange",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_19"
+    },
+    {
+        "almanca": "kurz",
+        "ingilizce": "briefly",
+        "seviye": "A2",
+        "ornek": "Ich habe nur kurz Zeit.",
+        "kelime": "kurz",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_20"
+    }
+]

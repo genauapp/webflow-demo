@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "der Supermarkt",
+        "ingilizce": "supermarket",
+        "seviye": "A1",
+        "ornek": "Ich kaufe im Supermarkt ein.",
+        "artikel": "der",
+        "kelime": "Supermarkt",
+        "kural": "Compound nouns ending in 'Markt' are masculine.",
+        "category": "Einkaufen",
+        "id": "noun_einkaufen_01"
+    },
+    {
+        "almanca": "die Banane",
+        "ingilizce": "banana",
+        "seviye": "A1",
+        "ornek": "Ich esse eine Banane.",
+        "artikel": "die",
+        "kelime": "Banane",
+        "kural": "Fruits ending in '-e' are typically feminine.",
+        "category": "Einkaufen",
+        "id": "noun_einkaufen_02"
+    },
+    {
+        "almanca": "das Brot",
+        "ingilizce": "bread",
+        "seviye": "A1",
+        "ornek": "Ich kaufe Brot beim Bäcker.",
+        "artikel": "das",
+        "kelime": "Brot",
+        "kural": "Most uncountable food items are neuter.",
+        "category": "Einkaufen",
+        "id": "noun_einkaufen_03"
+    },
+    {
+        "almanca": "die Milch",
+        "ingilizce": "milk",
+        "seviye": "A1",
+        "ornek": "Ich trinke morgens Milch.",
+        "artikel": "die",
+        "kelime": "Milch",
+        "kural": "Most dairy products are feminine.",
+        "category": "Einkaufen",
+        "id": "noun_einkaufen_04"
+    },
+    {
+        "almanca": "das Gemüse",
+        "ingilizce": "vegetables",
+        "seviye": "A1",
+        "ornek": "Ich kaufe frisches Gemüse.",
+        "artikel": "das",
+        "kelime": "Gemüse",
+        "kural": "Collective nouns starting with 'Ge-' are neuter.",
+        "category": "Einkaufen",
+        "id": "noun_einkaufen_05"
+    },
+    {
+        "almanca": "der Käse",
+        "ingilizce": "cheese",
+        "seviye": "A1",
+        "ornek": "Ich esse gern Käse.",
+        "artikel": "der",
+        "kelime": "Käse",
+        "kural": "Most dairy products take 'der'.",
+        "category": "Einkaufen",
+        "id": "noun_einkaufen_06"
+    },
+    {
+        "almanca": "die Tomate",
+        "ingilizce": "tomato",
+        "seviye": "A1",
+        "ornek": "Ich kaufe Tomaten für den Salat.",
+        "artikel": "die",
+        "kelime": "Tomate",
+        "kural": "Fruits/vegetables ending in '-e' are usually feminine.",
+        "category": "Einkaufen",
+        "id": "noun_einkaufen_07"
+    },
+    {
+        "almanca": "das Wasser",
+        "ingilizce": "water",
+        "seviye": "A1",
+        "ornek": "Ich trinke viel Wasser.",
+        "artikel": "das",
+        "kelime": "Wasser",
+        "kural": "Liquids and natural elements are neuter.",
+        "category": "Einkaufen",
+        "id": "noun_einkaufen_08"
+    },
+    {
+        "almanca": "der Apfel",
+        "ingilizce": "apple",
+        "seviye": "A1",
+        "ornek": "Ein Apfel am Tag ist gesund.",
+        "artikel": "der",
+        "kelime": "Apfel",
+        "kural": "Many single-syllable fruits take 'der'.",
+        "category": "Einkaufen",
+        "id": "noun_einkaufen_09"
+    },
+    {
+        "almanca": "die Schokolade",
+        "ingilizce": "chocolate",
+        "seviye": "A1",
+        "ornek": "Ich liebe Schokolade.",
+        "artikel": "die",
+        "kelime": "Schokolade",
+        "kural": "Nouns ending in '-ade' are feminine.",
+        "category": "Einkaufen",
+        "id": "noun_einkaufen_10"
+    },
+    {
+        "almanca": "der Reis",
+        "ingilizce": "rice",
+        "seviye": "A1",
+        "ornek": "Ich esse gern Reis mit Gemüse.",
+        "artikel": "der",
+        "kelime": "Reis",
+        "kural": "Some food items like grains are masculine.",
+        "category": "Einkaufen",
+        "id": "noun_einkaufen_11"
+    },
+    {
+        "almanca": "die Kartoffel",
+        "ingilizce": "potato",
+        "seviye": "A1",
+        "ornek": "Kartoffeln sind gesund.",
+        "artikel": "die",
+        "kelime": "Kartoffel",
+        "kural": "Vegetables ending in '-el' are often feminine.",
+        "category": "Einkaufen",
+        "id": "noun_einkaufen_12"
+    },
+    {
+        "almanca": "das Fleisch",
+        "ingilizce": "meat",
+        "seviye": "A1",
+        "ornek": "Ich esse kein Fleisch.",
+        "artikel": "das",
+        "kelime": "Fleisch",
+        "kural": "Meat and uncountable items are neuter.",
+        "category": "Einkaufen",
+        "id": "noun_einkaufen_13"
+    },
+    {
+        "almanca": "die Wurst",
+        "ingilizce": "sausage",
+        "seviye": "A1",
+        "ornek": "Ich nehme eine Bratwurst.",
+        "artikel": "die",
+        "kelime": "Wurst",
+        "kural": "Processed meat products often take 'die'.",
+        "category": "Einkaufen",
+        "id": "noun_einkaufen_14"
+    },
+    {
+        "almanca": "der Zucker",
+        "ingilizce": "sugar",
+        "seviye": "A1",
+        "ornek": "Zucker ist süß.",
+        "artikel": "der",
+        "kelime": "Zucker",
+        "kural": "Granular or crystalline substances are often masculine.",
+        "category": "Einkaufen",
+        "id": "noun_einkaufen_15"
+    },
+    {
+        "almanca": "das Salz",
+        "ingilizce": "salt",
+        "seviye": "A1",
+        "ornek": "Ich brauche mehr Salz.",
+        "artikel": "das",
+        "kelime": "Salz",
+        "kural": "Basic elements often take 'das'.",
+        "category": "Einkaufen",
+        "id": "noun_einkaufen_16"
+    },
+    {
+        "almanca": "die Tüte",
+        "ingilizce": "bag",
+        "seviye": "A1",
+        "ornek": "Ich nehme eine Tüte.",
+        "artikel": "die",
+        "kelime": "Tüte",
+        "kural": "Nouns ending in '-e' often take 'die'.",
+        "category": "Einkaufen",
+        "id": "noun_einkaufen_17"
+    },
+    {
+        "almanca": "der Einkauf",
+        "ingilizce": "shopping",
+        "seviye": "A1",
+        "ornek": "Der Einkauf dauert nicht lange.",
+        "artikel": "der",
+        "kelime": "Einkauf",
+        "kural": "Masculine nouns often denote actions/things ending in -kauf.",
+        "category": "Einkaufen",
+        "id": "noun_einkaufen_18"
+    },
+    {
+        "almanca": "die Kasse",
+        "ingilizce": "checkout",
+        "seviye": "A1",
+        "ornek": "Ich bezahle an der Kasse.",
+        "artikel": "die",
+        "kelime": "Kasse",
+        "kural": "Objects ending in '-e' are typically feminine.",
+        "category": "Einkaufen",
+        "id": "noun_einkaufen_19"
+    },
+    {
+        "almanca": "das Obst",
+        "ingilizce": "fruit",
+        "seviye": "A1",
+        "ornek": "Obst ist gesund.",
+        "artikel": "das",
+        "kelime": "Obst",
+        "kural": "Uncountable categories like 'fruit' are usually neuter.",
+        "category": "Einkaufen",
+        "id": "noun_einkaufen_20"
+    }
+]

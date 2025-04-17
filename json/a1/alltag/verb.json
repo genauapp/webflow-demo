@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "aufstehen",
+        "ingilizce": "to get up",
+        "seviye": "A1",
+        "ornek": "Ich stehe um 7 Uhr auf.",
+        "kelime": "aufstehen",
+        "kural": "Separable verb: ich stehe ... auf.",
+        "type": "verb",
+        "category": "Alltag",
+        "id": "verb_alltag_01"
+    },
+    {
+        "almanca": "essen",
+        "ingilizce": "to eat",
+        "seviye": "A1",
+        "ornek": "Ich esse gern Pizza.",
+        "kelime": "essen",
+        "kural": "Irregular verb: du isst, er isst.",
+        "type": "verb",
+        "category": "Alltag",
+        "id": "verb_alltag_02"
+    },
+    {
+        "almanca": "trinken",
+        "ingilizce": "to drink",
+        "seviye": "A1",
+        "ornek": "Ich trinke Wasser.",
+        "kelime": "trinken",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Alltag",
+        "id": "verb_alltag_03"
+    },
+    {
+        "almanca": "lesen",
+        "ingilizce": "to read",
+        "seviye": "A1",
+        "ornek": "Ich lese die Zeitung.",
+        "kelime": "lesen",
+        "kural": "Irregular verb: du liest, er liest.",
+        "type": "verb",
+        "category": "Alltag",
+        "id": "verb_alltag_04"
+    },
+    {
+        "almanca": "schlafen",
+        "ingilizce": "to sleep",
+        "seviye": "A1",
+        "ornek": "Ich schlafe acht Stunden.",
+        "kelime": "schlafen",
+        "kural": "Irregular verb: du schläfst, er schläft.",
+        "type": "verb",
+        "category": "Alltag",
+        "id": "verb_alltag_05"
+    },
+    {
+        "almanca": "arbeiten",
+        "ingilizce": "to work",
+        "seviye": "A1",
+        "ornek": "Ich arbeite im Büro.",
+        "kelime": "arbeiten",
+        "kural": "Regular verb with extra 'e' in 'du arbeitest'.",
+        "type": "verb",
+        "category": "Alltag",
+        "id": "verb_alltag_06"
+    },
+    {
+        "almanca": "lernen",
+        "ingilizce": "to learn",
+        "seviye": "A1",
+        "ornek": "Ich lerne Deutsch.",
+        "kelime": "lernen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Alltag",
+        "id": "verb_alltag_07"
+    },
+    {
+        "almanca": "fahren",
+        "ingilizce": "to drive",
+        "seviye": "A1",
+        "ornek": "Ich fahre zur Arbeit.",
+        "kelime": "fahren",
+        "kural": "Irregular verb: du fährst, er fährt.",
+        "type": "verb",
+        "category": "Alltag",
+        "id": "verb_alltag_08"
+    },
+    {
+        "almanca": "gehen",
+        "ingilizce": "to go",
+        "seviye": "A1",
+        "ornek": "Ich gehe nach Hause.",
+        "kelime": "gehen",
+        "kural": "Irregular verb: ging (Präteritum), gegangen (Perfekt).",
+        "type": "verb",
+        "category": "Alltag",
+        "id": "verb_alltag_09"
+    },
+    {
+        "almanca": "sehen",
+        "ingilizce": "to see",
+        "seviye": "A1",
+        "ornek": "Ich sehe einen Film.",
+        "kelime": "sehen",
+        "kural": "Irregular verb: du siehst, er sieht.",
+        "type": "verb",
+        "category": "Alltag",
+        "id": "verb_alltag_10"
+    },
+    {
+        "almanca": "hören",
+        "ingilizce": "to hear",
+        "seviye": "A1",
+        "ornek": "Ich höre Musik.",
+        "kelime": "hören",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Alltag",
+        "id": "verb_alltag_11"
+    },
+    {
+        "almanca": "telefonieren",
+        "ingilizce": "to make a phone call",
+        "seviye": "A1",
+        "ornek": "Ich telefoniere mit meiner Mutter.",
+        "kelime": "telefonieren",
+        "kural": "Regular verb, often with 'mit + Dativ'.",
+        "type": "verb",
+        "category": "Alltag",
+        "id": "verb_alltag_12"
+    },
+    {
+        "almanca": "putzen",
+        "ingilizce": "to clean",
+        "seviye": "A1",
+        "ornek": "Ich putze die Wohnung.",
+        "kelime": "putzen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Alltag",
+        "id": "verb_alltag_13"
+    },
+    {
+        "almanca": "kochen",
+        "ingilizce": "to cook",
+        "seviye": "A1",
+        "ornek": "Ich koche Pasta.",
+        "kelime": "kochen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Alltag",
+        "id": "verb_alltag_14"
+    },
+    {
+        "almanca": "machen",
+        "ingilizce": "to do/make",
+        "seviye": "A1",
+        "ornek": "Ich mache meine Hausaufgaben.",
+        "kelime": "machen",
+        "kural": "Very common regular verb.",
+        "type": "verb",
+        "category": "Alltag",
+        "id": "verb_alltag_15"
+    },
+    {
+        "almanca": "anrufen",
+        "ingilizce": "to call (on the phone)",
+        "seviye": "A1",
+        "ornek": "Ich rufe meinen Freund an.",
+        "kelime": "anrufen",
+        "kural": "Separable verb: ich rufe ... an.",
+        "type": "verb",
+        "category": "Alltag",
+        "id": "verb_alltag_16"
+    },
+    {
+        "almanca": "fernsehen",
+        "ingilizce": "to watch TV",
+        "seviye": "A1",
+        "ornek": "Ich sehe am Abend fern.",
+        "kelime": "fernsehen",
+        "kural": "Separable verb: ich sehe ... fern.",
+        "type": "verb",
+        "category": "Alltag",
+        "id": "verb_alltag_17"
+    },
+    {
+        "almanca": "aufmachen",
+        "ingilizce": "to open",
+        "seviye": "A1",
+        "ornek": "Ich mache die Tür auf.",
+        "kelime": "aufmachen",
+        "kural": "Separable verb: ich mache ... auf.",
+        "type": "verb",
+        "category": "Alltag",
+        "id": "verb_alltag_18"
+    },
+    {
+        "almanca": "zumachen",
+        "ingilizce": "to close",
+        "seviye": "A1",
+        "ornek": "Ich mache das Fenster zu.",
+        "kelime": "zumachen",
+        "kural": "Separable verb: ich mache ... zu.",
+        "type": "verb",
+        "category": "Alltag",
+        "id": "verb_alltag_19"
+    },
+    {
+        "almanca": "spielen",
+        "ingilizce": "to play",
+        "seviye": "A1",
+        "ornek": "Ich spiele gern Fußball.",
+        "kelime": "spielen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Alltag",
+        "id": "verb_alltag_20"
+    }
+]

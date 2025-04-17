@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "anrufen",
+        "ingilizce": "to call",
+        "seviye": "A2",
+        "ornek": "Ich rufe meine Mutter jeden Tag an.",
+        "kelime": "anrufen",
+        "kural": "Separable verb; ich rufe ... an.",
+        "type": "verb",
+        "category": "Medien & Kommunikation",
+        "id": "verb_medien_A2_01"
+    },
+    {
+        "almanca": "telefonieren",
+        "ingilizce": "to talk on the phone",
+        "seviye": "A2",
+        "ornek": "Ich telefoniere mit meinem Freund.",
+        "kelime": "telefonieren",
+        "kural": "Regular verb with '-ieren'.",
+        "type": "verb",
+        "category": "Medien & Kommunikation",
+        "id": "verb_medien_A2_02"
+    },
+    {
+        "almanca": "schreiben",
+        "ingilizce": "to write",
+        "seviye": "A2",
+        "ornek": "Ich schreibe eine E-Mail.",
+        "kelime": "schreiben",
+        "kural": "Irregular verb: schrieb, geschrieben.",
+        "type": "verb",
+        "category": "Medien & Kommunikation",
+        "id": "verb_medien_A2_03"
+    },
+    {
+        "almanca": "senden",
+        "ingilizce": "to send",
+        "seviye": "A2",
+        "ornek": "Ich sende dir die Nachricht gleich.",
+        "kelime": "senden",
+        "kural": "Can be regular or irregular depending on use.",
+        "type": "verb",
+        "category": "Medien & Kommunikation",
+        "id": "verb_medien_A2_04"
+    },
+    {
+        "almanca": "empfangen",
+        "ingilizce": "to receive",
+        "seviye": "A2",
+        "ornek": "Ich habe die E-Mail empfangen.",
+        "kelime": "empfangen",
+        "kural": "Irregular verb: empfing, empfangen.",
+        "type": "verb",
+        "category": "Medien & Kommunikation",
+        "id": "verb_medien_A2_05"
+    },
+    {
+        "almanca": "löschen",
+        "ingilizce": "to delete",
+        "seviye": "A2",
+        "ornek": "Ich lösche alte Nachrichten.",
+        "kelime": "löschen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Medien & Kommunikation",
+        "id": "verb_medien_A2_06"
+    },
+    {
+        "almanca": "speichern",
+        "ingilizce": "to save",
+        "seviye": "A2",
+        "ornek": "Ich speichere das Dokument.",
+        "kelime": "speichern",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Medien & Kommunikation",
+        "id": "verb_medien_A2_07"
+    },
+    {
+        "almanca": "installieren",
+        "ingilizce": "to install",
+        "seviye": "A2",
+        "ornek": "Ich installiere eine neue App.",
+        "kelime": "installieren",
+        "kural": "Regular verb with '-ieren'.",
+        "type": "verb",
+        "category": "Medien & Kommunikation",
+        "id": "verb_medien_A2_08"
+    },
+    {
+        "almanca": "surfen",
+        "ingilizce": "to surf (the internet)",
+        "seviye": "A2",
+        "ornek": "Ich surfe im Internet.",
+        "kelime": "surfen",
+        "kural": "Loanword; regular verb.",
+        "type": "verb",
+        "category": "Medien & Kommunikation",
+        "id": "verb_medien_A2_09"
+    },
+    {
+        "almanca": "klicken",
+        "ingilizce": "to click",
+        "seviye": "A2",
+        "ornek": "Du musst hier klicken.",
+        "kelime": "klicken",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Medien & Kommunikation",
+        "id": "verb_medien_A2_10"
+    },
+    {
+        "almanca": "einloggen",
+        "ingilizce": "to log in",
+        "seviye": "A2",
+        "ornek": "Ich logge mich ins System ein.",
+        "kelime": "einloggen",
+        "kural": "Separable verb with reflexive use.",
+        "type": "verb",
+        "category": "Medien & Kommunikation",
+        "id": "verb_medien_A2_11"
+    },
+    {
+        "almanca": "abmelden",
+        "ingilizce": "to log out / sign off",
+        "seviye": "A2",
+        "ornek": "Vergiss nicht, dich abzumelden.",
+        "kelime": "abmelden",
+        "kural": "Separable verb with reflexive use.",
+        "type": "verb",
+        "category": "Medien & Kommunikation",
+        "id": "verb_medien_A2_12"
+    },
+    {
+        "almanca": "kommunizieren",
+        "ingilizce": "to communicate",
+        "seviye": "A2",
+        "ornek": "Wir kommunizieren per E-Mail.",
+        "kelime": "kommunizieren",
+        "kural": "Regular verb with '-ieren'.",
+        "type": "verb",
+        "category": "Medien & Kommunikation",
+        "id": "verb_medien_A2_13"
+    },
+    {
+        "almanca": "informieren",
+        "ingilizce": "to inform",
+        "seviye": "A2",
+        "ornek": "Ich informiere dich später.",
+        "kelime": "informieren",
+        "kural": "Regular verb with '-ieren'.",
+        "type": "verb",
+        "category": "Medien & Kommunikation",
+        "id": "verb_medien_A2_14"
+    },
+    {
+        "almanca": "chatten",
+        "ingilizce": "to chat",
+        "seviye": "A2",
+        "ornek": "Ich chatte mit meinen Freunden.",
+        "kelime": "chatten",
+        "kural": "Loanword; regular verb.",
+        "type": "verb",
+        "category": "Medien & Kommunikation",
+        "id": "verb_medien_A2_15"
+    },
+    {
+        "almanca": "posten",
+        "ingilizce": "to post (online)",
+        "seviye": "A2",
+        "ornek": "Ich poste ein Foto auf Instagram.",
+        "kelime": "posten",
+        "kural": "Regular verb from English.",
+        "type": "verb",
+        "category": "Medien & Kommunikation",
+        "id": "verb_medien_A2_16"
+    },
+    {
+        "almanca": "teilen",
+        "ingilizce": "to share",
+        "seviye": "A2",
+        "ornek": "Ich teile das Video mit dir.",
+        "kelime": "teilen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Medien & Kommunikation",
+        "id": "verb_medien_A2_17"
+    },
+    {
+        "almanca": "suchen",
+        "ingilizce": "to search",
+        "seviye": "A2",
+        "ornek": "Ich suche Informationen im Netz.",
+        "kelime": "suchen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Medien & Kommunikation",
+        "id": "verb_medien_A2_18"
+    },
+    {
+        "almanca": "finden",
+        "ingilizce": "to find",
+        "seviye": "A2",
+        "ornek": "Ich finde keine Verbindung.",
+        "kelime": "finden",
+        "kural": "Irregular verb: fand, gefunden.",
+        "type": "verb",
+        "category": "Medien & Kommunikation",
+        "id": "verb_medien_A2_19"
+    },
+    {
+        "almanca": "antworten",
+        "ingilizce": "to answer",
+        "seviye": "A2",
+        "ornek": "Ich antworte auf deine Nachricht.",
+        "kelime": "antworten",
+        "kural": "Regular verb requiring dative case.",
+        "type": "verb",
+        "category": "Medien & Kommunikation",
+        "id": "verb_medien_A2_20"
+    }
+]

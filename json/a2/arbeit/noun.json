@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "der Chef",
+        "ingilizce": "boss (male)",
+        "seviye": "A2",
+        "ornek": "Der Chef ist heute nicht im Büro.",
+        "artikel": "der",
+        "kelime": "Chef",
+        "kural": "Occupational titles ending in consonants are often masculine.",
+        "category": "Arbeit & Behörden",
+        "id": "noun_arbeit_A2_01"
+    },
+    {
+        "almanca": "die Chefin",
+        "ingilizce": "boss (female)",
+        "seviye": "A2",
+        "ornek": "Die Chefin hat viele Aufgaben.",
+        "artikel": "die",
+        "kelime": "Chefin",
+        "kural": "Feminine form of job titles end in '-in'.",
+        "category": "Arbeit & Behörden",
+        "id": "noun_arbeit_A2_02"
+    },
+    {
+        "almanca": "der Kollege",
+        "ingilizce": "colleague (male)",
+        "seviye": "A2",
+        "ornek": "Mein Kollege hilft mir oft.",
+        "artikel": "der",
+        "kelime": "Kollege",
+        "kural": "Occupational titles are usually masculine.",
+        "category": "Arbeit & Behörden",
+        "id": "noun_arbeit_A2_03"
+    },
+    {
+        "almanca": "die Kollegin",
+        "ingilizce": "colleague (female)",
+        "seviye": "A2",
+        "ornek": "Meine Kollegin ist sehr nett.",
+        "artikel": "die",
+        "kelime": "Kollegin",
+        "kural": "Feminine form of 'Kollege'.",
+        "category": "Arbeit & Behörden",
+        "id": "noun_arbeit_A2_04"
+    },
+    {
+        "almanca": "der Arbeitsplatz",
+        "ingilizce": "workplace",
+        "seviye": "A2",
+        "ornek": "Mein Arbeitsplatz ist im Zentrum.",
+        "artikel": "der",
+        "kelime": "Arbeitsplatz",
+        "kural": "Compound with 'Platz' is masculine.",
+        "category": "Arbeit & Behörden",
+        "id": "noun_arbeit_A2_05"
+    },
+    {
+        "almanca": "die Arbeit",
+        "ingilizce": "work",
+        "seviye": "A2",
+        "ornek": "Die Arbeit macht Spaß.",
+        "artikel": "die",
+        "kelime": "Arbeit",
+        "kural": "Nouns ending in '-eit' are always feminine.",
+        "category": "Arbeit & Behörden",
+        "id": "noun_arbeit_A2_06"
+    },
+    {
+        "almanca": "das Büro",
+        "ingilizce": "office",
+        "seviye": "A2",
+        "ornek": "Ich arbeite in einem Büro.",
+        "artikel": "das",
+        "kelime": "Büro",
+        "kural": "Loanwords ending in '-o' are neuter.",
+        "category": "Arbeit & Behörden",
+        "id": "noun_arbeit_A2_07"
+    },
+    {
+        "almanca": "der Termin",
+        "ingilizce": "appointment",
+        "seviye": "A2",
+        "ornek": "Ich habe einen Termin beim Amt.",
+        "artikel": "der",
+        "kelime": "Termin",
+        "kural": "Loanwords ending in '-in' are masculine.",
+        "category": "Arbeit & Behörden",
+        "id": "noun_arbeit_A2_08"
+    },
+    {
+        "almanca": "die Behörde",
+        "ingilizce": "authority / government office",
+        "seviye": "A2",
+        "ornek": "Ich muss zur Behörde gehen.",
+        "artikel": "die",
+        "kelime": "Behörde",
+        "kural": "Words ending in '-e' often feminine.",
+        "category": "Arbeit & Behörden",
+        "id": "noun_arbeit_A2_09"
+    },
+    {
+        "almanca": "das Formular",
+        "ingilizce": "form",
+        "seviye": "A2",
+        "ornek": "Bitte füllen Sie das Formular aus.",
+        "artikel": "das",
+        "kelime": "Formular",
+        "kural": "Loanwords with '-ar' are often neuter.",
+        "category": "Arbeit & Behörden",
+        "id": "noun_arbeit_A2_10"
+    },
+    {
+        "almanca": "der Ausweis",
+        "ingilizce": "ID card",
+        "seviye": "A2",
+        "ornek": "Ich brauche meinen Ausweis.",
+        "artikel": "der",
+        "kelime": "Ausweis",
+        "kural": "Documents and cards usually take 'der'.",
+        "category": "Arbeit & Behörden",
+        "id": "noun_arbeit_A2_11"
+    },
+    {
+        "almanca": "die Unterschrift",
+        "ingilizce": "signature",
+        "seviye": "A2",
+        "ornek": "Hier fehlt noch die Unterschrift.",
+        "artikel": "die",
+        "kelime": "Unterschrift",
+        "kural": "Words ending in '-t' or '-schrift' are feminine.",
+        "category": "Arbeit & Behörden",
+        "id": "noun_arbeit_A2_12"
+    },
+    {
+        "almanca": "die Anmeldung",
+        "ingilizce": "registration",
+        "seviye": "A2",
+        "ornek": "Die Anmeldung erfolgt online.",
+        "artikel": "die",
+        "kelime": "Anmeldung",
+        "kural": "Nouns ending in '-ung' are always feminine.",
+        "category": "Arbeit & Behörden",
+        "id": "noun_arbeit_A2_13"
+    },
+    {
+        "almanca": "der Antrag",
+        "ingilizce": "application (formal)",
+        "seviye": "A2",
+        "ornek": "Ich stelle einen Antrag auf Unterstützung.",
+        "artikel": "der",
+        "kelime": "Antrag",
+        "kural": "Formal nouns with verbs often take 'der'.",
+        "category": "Arbeit & Behörden",
+        "id": "noun_arbeit_A2_14"
+    },
+    {
+        "almanca": "die Genehmigung",
+        "ingilizce": "approval",
+        "seviye": "A2",
+        "ornek": "Ich brauche eine Genehmigung.",
+        "artikel": "die",
+        "kelime": "Genehmigung",
+        "kural": "Nouns ending in '-ung' are feminine.",
+        "category": "Arbeit & Behörden",
+        "id": "noun_arbeit_A2_15"
+    },
+    {
+        "almanca": "das Gehalt",
+        "ingilizce": "salary",
+        "seviye": "A2",
+        "ornek": "Mein Gehalt ist gut.",
+        "artikel": "das",
+        "kelime": "Gehalt",
+        "kural": "Financial terms like 'Gehalt' are neuter.",
+        "category": "Arbeit & Behörden",
+        "id": "noun_arbeit_A2_16"
+    },
+    {
+        "almanca": "die Steuer",
+        "ingilizce": "tax",
+        "seviye": "A2",
+        "ornek": "Ich muss meine Steuer zahlen.",
+        "artikel": "die",
+        "kelime": "Steuer",
+        "kural": "Government-related nouns often feminine.",
+        "category": "Arbeit & Behörden",
+        "id": "noun_arbeit_A2_17"
+    },
+    {
+        "almanca": "das Amt",
+        "ingilizce": "office (official)",
+        "seviye": "A2",
+        "ornek": "Das Amt ist heute geschlossen.",
+        "artikel": "das",
+        "kelime": "Amt",
+        "kural": "Institutional nouns ending in '-t' are often neuter.",
+        "category": "Arbeit & Behörden",
+        "id": "noun_arbeit_A2_18"
+    },
+    {
+        "almanca": "die Bescheinigung",
+        "ingilizce": "certificate",
+        "seviye": "A2",
+        "ornek": "Ich brauche eine Bescheinigung vom Arzt.",
+        "artikel": "die",
+        "kelime": "Bescheinigung",
+        "kural": "Nouns ending in '-ung' are feminine.",
+        "category": "Arbeit & Behörden",
+        "id": "noun_arbeit_A2_19"
+    },
+    {
+        "almanca": "der Vertrag",
+        "ingilizce": "contract",
+        "seviye": "A2",
+        "ornek": "Ich unterschreibe den Vertrag morgen.",
+        "artikel": "der",
+        "kelime": "Vertrag",
+        "kural": "Legal and formal documents often masculine.",
+        "category": "Arbeit & Behörden",
+        "id": "noun_arbeit_A2_20"
+    }
+]

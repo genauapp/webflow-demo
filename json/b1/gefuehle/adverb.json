@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "ehrlich",
+        "ingilizce": "honestly",
+        "seviye": "B1",
+        "ornek": "Ich sage dir das ehrlich.",
+        "kelime": "ehrlich",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_01"
+    },
+    {
+        "almanca": "plötzlich",
+        "ingilizce": "suddenly",
+        "seviye": "B1",
+        "ornek": "Plötzlich wurde er wütend.",
+        "kelime": "plötzlich",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_02"
+    },
+    {
+        "almanca": "ständig",
+        "ingilizce": "constantly",
+        "seviye": "B1",
+        "ornek": "Sie streiten sich ständig.",
+        "kelime": "ständig",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_03"
+    },
+    {
+        "almanca": "gemeinsam",
+        "ingilizce": "together",
+        "seviye": "B1",
+        "ornek": "Wir verbringen viel Zeit gemeinsam.",
+        "kelime": "gemeinsam",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_04"
+    },
+    {
+        "almanca": "zufällig",
+        "ingilizce": "by chance",
+        "seviye": "B1",
+        "ornek": "Wir haben uns zufällig getroffen.",
+        "kelime": "zufällig",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_05"
+    },
+    {
+        "almanca": "bewusst",
+        "ingilizce": "consciously",
+        "seviye": "B1",
+        "ornek": "Ich habe das bewusst gemacht.",
+        "kelime": "bewusst",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_06"
+    },
+    {
+        "almanca": "vorsichtig",
+        "ingilizce": "carefully",
+        "seviye": "B1",
+        "ornek": "Er hat vorsichtig gesprochen.",
+        "kelime": "vorsichtig",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_07"
+    },
+    {
+        "almanca": "fröhlich",
+        "ingilizce": "cheerfully",
+        "seviye": "B1",
+        "ornek": "Sie lachte fröhlich.",
+        "kelime": "fröhlich",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_08"
+    },
+    {
+        "almanca": "traurig",
+        "ingilizce": "sadly",
+        "seviye": "B1",
+        "ornek": "Er ging traurig nach Hause.",
+        "kelime": "traurig",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_09"
+    },
+    {
+        "almanca": "wütend",
+        "ingilizce": "angrily",
+        "seviye": "B1",
+        "ornek": "Sie hat wütend reagiert.",
+        "kelime": "wütend",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_10"
+    },
+    {
+        "almanca": "ruhig",
+        "ingilizce": "calmly",
+        "seviye": "B1",
+        "ornek": "Bitte sprich ruhig mit mir.",
+        "kelime": "ruhig",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_11"
+    },
+    {
+        "almanca": "ehrgeizig",
+        "ingilizce": "ambitiously",
+        "seviye": "B1",
+        "ornek": "Er verfolgt sein Ziel ehrgeizig.",
+        "kelime": "ehrgeizig",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_12"
+    },
+    {
+        "almanca": "intensiv",
+        "ingilizce": "intensely",
+        "seviye": "B1",
+        "ornek": "Sie diskutierten intensiv.",
+        "kelime": "intensiv",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_13"
+    },
+    {
+        "almanca": "leidenschaftlich",
+        "ingilizce": "passionately",
+        "seviye": "B1",
+        "ornek": "Er küsste sie leidenschaftlich.",
+        "kelime": "leidenschaftlich",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_14"
+    },
+    {
+        "almanca": "genervt",
+        "ingilizce": "annoyedly",
+        "seviye": "B1",
+        "ornek": "Sie antwortete genervt.",
+        "kelime": "genervt",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_15"
+    },
+    {
+        "almanca": "freundlich",
+        "ingilizce": "kindly",
+        "seviye": "B1",
+        "ornek": "Er begrüßte mich freundlich.",
+        "kelime": "freundlich",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_16"
+    },
+    {
+        "almanca": "ehrgeizig",
+        "ingilizce": "ambitiously",
+        "seviye": "B1",
+        "ornek": "Sie arbeitet ehrgeizig an ihrem Ziel.",
+        "kelime": "ehrgeizig",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_17"
+    },
+    {
+        "almanca": "zufrieden",
+        "ingilizce": "contentedly",
+        "seviye": "B1",
+        "ornek": "Er lächelte zufrieden.",
+        "kelime": "zufrieden",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_18"
+    },
+    {
+        "almanca": "unzufrieden",
+        "ingilizce": "discontentedly",
+        "seviye": "B1",
+        "ornek": "Sie schaute unzufrieden.",
+        "kelime": "unzufrieden",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_19"
+    },
+    {
+        "almanca": "zärtlich",
+        "ingilizce": "tenderly",
+        "seviye": "B1",
+        "ornek": "Er küsste sie zärtlich.",
+        "kelime": "zärtlich",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_20"
+    }
+]

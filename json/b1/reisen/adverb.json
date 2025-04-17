@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "rechtzeitig",
+        "ingilizce": "on time",
+        "seviye": "B1",
+        "ornek": "Ich bin rechtzeitig am Bahnhof angekommen.",
+        "kelime": "rechtzeitig",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_01"
+    },
+    {
+        "almanca": "pünktlich",
+        "ingilizce": "punctually",
+        "seviye": "B1",
+        "ornek": "Der Zug fährt pünktlich ab.",
+        "kelime": "pünktlich",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_02"
+    },
+    {
+        "almanca": "spät",
+        "ingilizce": "late",
+        "seviye": "B1",
+        "ornek": "Wir kamen spät an.",
+        "kelime": "spät",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_03"
+    },
+    {
+        "almanca": "früh",
+        "ingilizce": "early",
+        "seviye": "B1",
+        "ornek": "Ich bin früh losgefahren.",
+        "kelime": "früh",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_04"
+    },
+    {
+        "almanca": "direkt",
+        "ingilizce": "directly",
+        "seviye": "B1",
+        "ornek": "Wir fahren direkt nach München.",
+        "kelime": "direkt",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_05"
+    },
+    {
+        "almanca": "unterwegs",
+        "ingilizce": "on the way",
+        "seviye": "B1",
+        "ornek": "Ich bin noch unterwegs.",
+        "kelime": "unterwegs",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_06"
+    },
+    {
+        "almanca": "draußen",
+        "ingilizce": "outside",
+        "seviye": "B1",
+        "ornek": "Wir warten draußen vor dem Hotel.",
+        "kelime": "draußen",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_07"
+    },
+    {
+        "almanca": "drinnen",
+        "ingilizce": "inside",
+        "seviye": "B1",
+        "ornek": "Wir warten drinnen in der Halle.",
+        "kelime": "drinnen",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_08"
+    },
+    {
+        "almanca": "hier",
+        "ingilizce": "here",
+        "seviye": "B1",
+        "ornek": "Wir bleiben hier über Nacht.",
+        "kelime": "hier",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_09"
+    },
+    {
+        "almanca": "dort",
+        "ingilizce": "there",
+        "seviye": "B1",
+        "ornek": "Unser Hotel ist dort drüben.",
+        "kelime": "dort",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_10"
+    },
+    {
+        "almanca": "überall",
+        "ingilizce": "everywhere",
+        "seviye": "B1",
+        "ornek": "Touristen sind überall in der Stadt.",
+        "kelime": "überall",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_11"
+    },
+    {
+        "almanca": "nirgendwo",
+        "ingilizce": "nowhere",
+        "seviye": "B1",
+        "ornek": "Ich finde meinen Koffer nirgendwo.",
+        "kelime": "nirgendwo",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_12"
+    },
+    {
+        "almanca": "vorher",
+        "ingilizce": "beforehand",
+        "seviye": "B1",
+        "ornek": "Man muss das Ticket vorher kaufen.",
+        "kelime": "vorher",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_13"
+    },
+    {
+        "almanca": "nachher",
+        "ingilizce": "afterwards",
+        "seviye": "B1",
+        "ornek": "Nachher gehen wir essen.",
+        "kelime": "nachher",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_14"
+    },
+    {
+        "almanca": "geradeaus",
+        "ingilizce": "straight ahead",
+        "seviye": "B1",
+        "ornek": "Gehen Sie geradeaus und dann links.",
+        "kelime": "geradeaus",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_15"
+    },
+    {
+        "almanca": "links",
+        "ingilizce": "left",
+        "seviye": "B1",
+        "ornek": "Biegen Sie links ab.",
+        "kelime": "links",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_16"
+    },
+    {
+        "almanca": "rechts",
+        "ingilizce": "right",
+        "seviye": "B1",
+        "ornek": "Die Haltestelle ist rechts.",
+        "kelime": "rechts",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_17"
+    },
+    {
+        "almanca": "schnell",
+        "ingilizce": "quickly",
+        "seviye": "B1",
+        "ornek": "Wir müssen schnell zum Bahnhof.",
+        "kelime": "schnell",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_18"
+    },
+    {
+        "almanca": "langsam",
+        "ingilizce": "slowly",
+        "seviye": "B1",
+        "ornek": "Der Zug fährt langsam.",
+        "kelime": "langsam",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_19"
+    },
+    {
+        "almanca": "endlich",
+        "ingilizce": "finally",
+        "seviye": "B1",
+        "ornek": "Endlich sind wir angekommen!",
+        "kelime": "endlich",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_20"
+    }
+]

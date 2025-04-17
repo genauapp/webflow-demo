@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "heute",
+        "ingilizce": "today",
+        "seviye": "A1",
+        "ornek": "Ich habe heute einen Termin.",
+        "kelime": "heute",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_01"
+    },
+    {
+        "almanca": "morgen",
+        "ingilizce": "tomorrow",
+        "seviye": "A1",
+        "ornek": "Ich gehe morgen zum Bürgeramt.",
+        "kelime": "morgen",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_02"
+    },
+    {
+        "almanca": "gestern",
+        "ingilizce": "yesterday",
+        "seviye": "A1",
+        "ornek": "Gestern war ich bei der Behörde.",
+        "kelime": "gestern",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_03"
+    },
+    {
+        "almanca": "bald",
+        "ingilizce": "soon",
+        "seviye": "A1",
+        "ornek": "Ich bekomme bald eine Antwort.",
+        "kelime": "bald",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_04"
+    },
+    {
+        "almanca": "jetzt",
+        "ingilizce": "now",
+        "seviye": "A1",
+        "ornek": "Ich bin jetzt dran.",
+        "kelime": "jetzt",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_05"
+    },
+    {
+        "almanca": "noch",
+        "ingilizce": "still / yet",
+        "seviye": "A1",
+        "ornek": "Ich warte noch.",
+        "kelime": "noch",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_06"
+    },
+    {
+        "almanca": "schon",
+        "ingilizce": "already",
+        "seviye": "A1",
+        "ornek": "Ich habe das Formular schon ausgefüllt.",
+        "kelime": "schon",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_07"
+    },
+    {
+        "almanca": "sofort",
+        "ingilizce": "immediately",
+        "seviye": "A1",
+        "ornek": "Ich komme sofort.",
+        "kelime": "sofort",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_08"
+    },
+    {
+        "almanca": "schnell",
+        "ingilizce": "quickly",
+        "seviye": "A1",
+        "ornek": "Ich erledige das schnell.",
+        "kelime": "schnell",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_09"
+    },
+    {
+        "almanca": "langsam",
+        "ingilizce": "slowly",
+        "seviye": "A1",
+        "ornek": "Der Prozess ist langsam.",
+        "kelime": "langsam",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_10"
+    },
+    {
+        "almanca": "pünktlich",
+        "ingilizce": "on time",
+        "seviye": "A1",
+        "ornek": "Ich bin pünktlich zum Termin.",
+        "kelime": "pünktlich",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_11"
+    },
+    {
+        "almanca": "oft",
+        "ingilizce": "often",
+        "seviye": "A1",
+        "ornek": "Ich muss oft Formulare ausfüllen.",
+        "kelime": "oft",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_12"
+    },
+    {
+        "almanca": "nie",
+        "ingilizce": "never",
+        "seviye": "A1",
+        "ornek": "Ich war noch nie beim Finanzamt.",
+        "kelime": "nie",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_13"
+    },
+    {
+        "almanca": "manchmal",
+        "ingilizce": "sometimes",
+        "seviye": "A1",
+        "ornek": "Manchmal ist die Behörde voll.",
+        "kelime": "manchmal",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_14"
+    },
+    {
+        "almanca": "immer",
+        "ingilizce": "always",
+        "seviye": "A1",
+        "ornek": "Ich nehme immer meinen Ausweis mit.",
+        "kelime": "immer",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_15"
+    },
+    {
+        "almanca": "nicht",
+        "ingilizce": "not",
+        "seviye": "A1",
+        "ornek": "Ich bin nicht vorbereitet.",
+        "kelime": "nicht",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_16"
+    },
+    {
+        "almanca": "vielleicht",
+        "ingilizce": "maybe",
+        "seviye": "A1",
+        "ornek": "Vielleicht bekomme ich den Termin.",
+        "kelime": "vielleicht",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_17"
+    },
+    {
+        "almanca": "dort",
+        "ingilizce": "there",
+        "seviye": "A1",
+        "ornek": "Die Behörde ist dort.",
+        "kelime": "dort",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_18"
+    },
+    {
+        "almanca": "hier",
+        "ingilizce": "here",
+        "seviye": "A1",
+        "ornek": "Ich bin hier für meinen Termin.",
+        "kelime": "hier",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_19"
+    },
+    {
+        "almanca": "genau",
+        "ingilizce": "exactly",
+        "seviye": "A1",
+        "ornek": "Genau um 9 Uhr ist mein Termin.",
+        "kelime": "genau",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_20"
+    }
+]

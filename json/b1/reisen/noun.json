@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "der Urlaub",
+        "ingilizce": "vacation",
+        "seviye": "B1",
+        "ornek": "Ich plane meinen nächsten Urlaub.",
+        "artikel": "der",
+        "kelime": "Urlaub",
+        "kural": "",
+        "category": "Reisen & Verkehr",
+        "id": "noun_reisen_B1_01"
+    },
+    {
+        "almanca": "die Reise",
+        "ingilizce": "trip",
+        "seviye": "B1",
+        "ornek": "Die Reise war sehr aufregend.",
+        "artikel": "die",
+        "kelime": "Reise",
+        "kural": "Words ending in '-e' are often feminine.",
+        "category": "Reisen & Verkehr",
+        "id": "noun_reisen_B1_02"
+    },
+    {
+        "almanca": "das Hotel",
+        "ingilizce": "hotel",
+        "seviye": "B1",
+        "ornek": "Wir übernachten im Hotel.",
+        "artikel": "das",
+        "kelime": "Hotel",
+        "kural": "Loanwords ending in '-el' are usually neuter.",
+        "category": "Reisen & Verkehr",
+        "id": "noun_reisen_B1_03"
+    },
+    {
+        "almanca": "die Unterkunft",
+        "ingilizce": "accommodation",
+        "seviye": "B1",
+        "ornek": "Die Unterkunft war sehr komfortabel.",
+        "artikel": "die",
+        "kelime": "Unterkunft",
+        "kural": "",
+        "category": "Reisen & Verkehr",
+        "id": "noun_reisen_B1_04"
+    },
+    {
+        "almanca": "der Pass",
+        "ingilizce": "passport",
+        "seviye": "B1",
+        "ornek": "Ich habe meinen Pass vergessen.",
+        "artikel": "der",
+        "kelime": "Pass",
+        "kural": "",
+        "category": "Reisen & Verkehr",
+        "id": "noun_reisen_B1_05"
+    },
+    {
+        "almanca": "das Visum",
+        "ingilizce": "visa",
+        "seviye": "B1",
+        "ornek": "Für die Einreise brauche ich ein Visum.",
+        "artikel": "das",
+        "kelime": "Visum",
+        "kural": "Words ending in '-um' are usually neuter.",
+        "category": "Reisen & Verkehr",
+        "id": "noun_reisen_B1_06"
+    },
+    {
+        "almanca": "die Buchung",
+        "ingilizce": "booking",
+        "seviye": "B1",
+        "ornek": "Die Buchung war einfach online.",
+        "artikel": "die",
+        "kelime": "Buchung",
+        "kural": "Words ending in '-ung' are always feminine.",
+        "category": "Reisen & Verkehr",
+        "id": "noun_reisen_B1_07"
+    },
+    {
+        "almanca": "der Fahrplan",
+        "ingilizce": "timetable",
+        "seviye": "B1",
+        "ornek": "Ich schaue auf den Fahrplan.",
+        "artikel": "der",
+        "kelime": "Fahrplan",
+        "kural": "",
+        "category": "Reisen & Verkehr",
+        "id": "noun_reisen_B1_08"
+    },
+    {
+        "almanca": "die Fahrkarte",
+        "ingilizce": "ticket",
+        "seviye": "B1",
+        "ornek": "Ich habe meine Fahrkarte online gekauft.",
+        "artikel": "die",
+        "kelime": "Fahrkarte",
+        "kural": "Compound noun ending in '-karte' is feminine.",
+        "category": "Reisen & Verkehr",
+        "id": "noun_reisen_B1_09"
+    },
+    {
+        "almanca": "der Zug",
+        "ingilizce": "train",
+        "seviye": "B1",
+        "ornek": "Der Zug hat Verspätung.",
+        "artikel": "der",
+        "kelime": "Zug",
+        "kural": "",
+        "category": "Reisen & Verkehr",
+        "id": "noun_reisen_B1_10"
+    },
+    {
+        "almanca": "die Bahn",
+        "ingilizce": "railway",
+        "seviye": "B1",
+        "ornek": "Die Bahn ist pünktlich.",
+        "artikel": "die",
+        "kelime": "Bahn",
+        "kural": "",
+        "category": "Reisen & Verkehr",
+        "id": "noun_reisen_B1_11"
+    },
+    {
+        "almanca": "der Flughafen",
+        "ingilizce": "airport",
+        "seviye": "B1",
+        "ornek": "Ich bin am Flughafen angekommen.",
+        "artikel": "der",
+        "kelime": "Flughafen",
+        "kural": "",
+        "category": "Reisen & Verkehr",
+        "id": "noun_reisen_B1_12"
+    },
+    {
+        "almanca": "das Flugzeug",
+        "ingilizce": "airplane",
+        "seviye": "B1",
+        "ornek": "Das Flugzeug startet bald.",
+        "artikel": "das",
+        "kelime": "Flugzeug",
+        "kural": "Nouns ending in '-zeug' are usually neuter.",
+        "category": "Reisen & Verkehr",
+        "id": "noun_reisen_B1_13"
+    },
+    {
+        "almanca": "die Abfahrt",
+        "ingilizce": "departure",
+        "seviye": "B1",
+        "ornek": "Die Abfahrt ist um 10 Uhr.",
+        "artikel": "die",
+        "kelime": "Abfahrt",
+        "kural": "Nouns ending in '-t' are often feminine.",
+        "category": "Reisen & Verkehr",
+        "id": "noun_reisen_B1_14"
+    },
+    {
+        "almanca": "die Ankunft",
+        "ingilizce": "arrival",
+        "seviye": "B1",
+        "ornek": "Unsere Ankunft war um Mitternacht.",
+        "artikel": "die",
+        "kelime": "Ankunft",
+        "kural": "",
+        "category": "Reisen & Verkehr",
+        "id": "noun_reisen_B1_15"
+    },
+    {
+        "almanca": "der Ausgang",
+        "ingilizce": "exit",
+        "seviye": "B1",
+        "ornek": "Der Ausgang befindet sich links.",
+        "artikel": "der",
+        "kelime": "Ausgang",
+        "kural": "",
+        "category": "Reisen & Verkehr",
+        "id": "noun_reisen_B1_16"
+    },
+    {
+        "almanca": "der Eingang",
+        "ingilizce": "entrance",
+        "seviye": "B1",
+        "ornek": "Der Eingang ist auf der rechten Seite.",
+        "artikel": "der",
+        "kelime": "Eingang",
+        "kural": "",
+        "category": "Reisen & Verkehr",
+        "id": "noun_reisen_B1_17"
+    },
+    {
+        "almanca": "die Route",
+        "ingilizce": "route",
+        "seviye": "B1",
+        "ornek": "Unsere Route führt durch die Berge.",
+        "artikel": "die",
+        "kelime": "Route",
+        "kural": "Loanword ending in '-e' often feminine.",
+        "category": "Reisen & Verkehr",
+        "id": "noun_reisen_B1_18"
+    },
+    {
+        "almanca": "das Gepäck",
+        "ingilizce": "luggage",
+        "seviye": "B1",
+        "ornek": "Mein Gepäck ist verloren gegangen.",
+        "artikel": "das",
+        "kelime": "Gepäck",
+        "kural": "",
+        "category": "Reisen & Verkehr",
+        "id": "noun_reisen_B1_19"
+    },
+    {
+        "almanca": "die Kreuzfahrt",
+        "ingilizce": "cruise",
+        "seviye": "B1",
+        "ornek": "Wir machen eine Kreuzfahrt im Sommer.",
+        "artikel": "die",
+        "kelime": "Kreuzfahrt",
+        "kural": "",
+        "category": "Reisen & Verkehr",
+        "id": "noun_reisen_B1_20"
+    }
+]

@@ -1,0 +1,212 @@
+[
+    {
+        "almanca": "schnell",
+        "ingilizce": "quickly",
+        "seviye": "A1",
+        "ornek": "Ich kaufe schnell ein.",
+        "kelime": "schnell",
+        "kural": "Some adjectives can function directly as adverbs without changes.",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_01"
+    },
+    {
+        "almanca": "langsam",
+        "ingilizce": "slowly",
+        "seviye": "A1",
+        "ornek": "Fahr bitte langsam!",
+        "kelime": "langsam",
+        "kural": "Describes pace or manner, commonly used with verbs of movement.",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_02"
+    },
+    {
+        "almanca": "jetzt",
+        "ingilizce": "now",
+        "seviye": "A1",
+        "ornek": "Ich esse jetzt.",
+        "kelime": "jetzt",
+        "kural": "Time adverbs can be placed at the beginning or after the verb.",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_03"
+    },
+    {
+        "almanca": "bald",
+        "ingilizce": "soon",
+        "seviye": "A1",
+        "ornek": "Wir sehen uns bald.",
+        "kelime": "bald",
+        "kural": "Time adverb indicating something will happen shortly.",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_04"
+    },
+    {
+        "almanca": "immer",
+        "ingilizce": "always",
+        "seviye": "A1",
+        "ornek": "Er ist immer freundlich.",
+        "kelime": "immer",
+        "kural": "Frequency adverbs typically follow the verb.",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_05"
+    },
+    {
+        "almanca": "nie",
+        "ingilizce": "never",
+        "seviye": "A1",
+        "ornek": "Ich rauche nie.",
+        "kelime": "nie",
+        "kural": "Negating frequency, often used with present tense verbs.",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_06"
+    },
+    {
+        "almanca": "oft",
+        "ingilizce": "often",
+        "seviye": "A1",
+        "ornek": "Ich gehe oft spazieren.",
+        "kelime": "oft",
+        "kural": "Adverb of frequency, appears after the verb.",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_07"
+    },
+    {
+        "almanca": "manchmal",
+        "ingilizce": "sometimes",
+        "seviye": "A1",
+        "ornek": "Manchmal esse ich Pizza.",
+        "kelime": "manchmal",
+        "kural": "Frequency adverb often placed at the beginning of a sentence.",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_08"
+    },
+    {
+        "almanca": "gestern",
+        "ingilizce": "yesterday",
+        "seviye": "A1",
+        "ornek": "Gestern war ich krank.",
+        "kelime": "gestern",
+        "kural": "Time adverb indicating past; commonly starts the sentence.",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_09"
+    },
+    {
+        "almanca": "heute",
+        "ingilizce": "today",
+        "seviye": "A1",
+        "ornek": "Heute ist das Wetter schön.",
+        "kelime": "heute",
+        "kural": "Time adverb used to describe current day events.",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_10"
+    },
+    {
+        "almanca": "morgen",
+        "ingilizce": "tomorrow",
+        "seviye": "A1",
+        "ornek": "Ich reise morgen ab.",
+        "kelime": "morgen",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_11"
+    },
+    {
+        "almanca": "draußen",
+        "ingilizce": "outside",
+        "seviye": "A1",
+        "ornek": "Die Kinder spielen draußen.",
+        "kelime": "draußen",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_12"
+    },
+    {
+        "almanca": "drinnen",
+        "ingilizce": "inside",
+        "seviye": "A1",
+        "ornek": "Wir bleiben heute drinnen.",
+        "kelime": "drinnen",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_13"
+    },
+    {
+        "almanca": "oben",
+        "ingilizce": "upstairs",
+        "seviye": "A1",
+        "ornek": "Meine Sachen sind oben.",
+        "kelime": "oben",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_14"
+    },
+    {
+        "almanca": "unten",
+        "ingilizce": "downstairs",
+        "seviye": "A1",
+        "ornek": "Die Küche ist unten.",
+        "kelime": "unten",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_15"
+    },
+    {
+        "almanca": "zusammen",
+        "ingilizce": "together",
+        "seviye": "A1",
+        "ornek": "Wir lernen zusammen Deutsch.",
+        "kelime": "zusammen",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_16"
+    },
+    {
+        "almanca": "allein",
+        "ingilizce": "alone",
+        "seviye": "A1",
+        "ornek": "Ich esse allein.",
+        "kelime": "allein",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_17"
+    },
+    {
+        "almanca": "schon",
+        "ingilizce": "already",
+        "seviye": "A1",
+        "ornek": "Ich habe das schon gemacht.",
+        "kelime": "schon",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_18"
+    },
+    {
+        "almanca": "noch",
+        "ingilizce": "still",
+        "seviye": "A1",
+        "ornek": "Er schläft noch.",
+        "kelime": "noch",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_19"
+    },
+    {
+        "almanca": "nicht",
+        "ingilizce": "not",
+        "seviye": "A1",
+        "ornek": "Ich verstehe das nicht.",
+        "kelime": "nicht",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_20"
+    }
+]

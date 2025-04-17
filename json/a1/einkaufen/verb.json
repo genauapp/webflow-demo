@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "einkaufen",
+        "ingilizce": "to shop",
+        "seviye": "A1",
+        "ornek": "Ich kaufe im Supermarkt ein.",
+        "kelime": "einkaufen",
+        "kural": "Separable verb: ich kaufe ... ein.",
+        "type": "verb",
+        "category": "Einkaufen",
+        "id": "verb_einkaufen_01"
+    },
+    {
+        "almanca": "bezahlen",
+        "ingilizce": "to pay",
+        "seviye": "A1",
+        "ornek": "Ich bezahle an der Kasse.",
+        "kelime": "bezahlen",
+        "kural": "Regular verb, often used with 'an der Kasse'.",
+        "type": "verb",
+        "category": "Einkaufen",
+        "id": "verb_einkaufen_02"
+    },
+    {
+        "almanca": "nehmen",
+        "ingilizce": "to take",
+        "seviye": "A1",
+        "ornek": "Ich nehme eine Tüte.",
+        "kelime": "nehmen",
+        "kural": "Irregular: du nimmst, er nimmt.",
+        "type": "verb",
+        "category": "Einkaufen",
+        "id": "verb_einkaufen_03"
+    },
+    {
+        "almanca": "bestellen",
+        "ingilizce": "to order",
+        "seviye": "A1",
+        "ornek": "Ich bestelle eine Pizza.",
+        "kelime": "bestellen",
+        "kural": "Regular verb, commonly used in restaurants.",
+        "type": "verb",
+        "category": "Einkaufen",
+        "id": "verb_einkaufen_04"
+    },
+    {
+        "almanca": "verkaufen",
+        "ingilizce": "to sell",
+        "seviye": "A1",
+        "ornek": "Der Bäcker verkauft Brot.",
+        "kelime": "verkaufen",
+        "kural": "Regular, separable prefix verb.",
+        "type": "verb",
+        "category": "Einkaufen",
+        "id": "verb_einkaufen_05"
+    },
+    {
+        "almanca": "brauchen",
+        "ingilizce": "to need",
+        "seviye": "A1",
+        "ornek": "Ich brauche Milch.",
+        "kelime": "brauchen",
+        "kural": "Regular verb, always with accusative.",
+        "type": "verb",
+        "category": "Einkaufen",
+        "id": "verb_einkaufen_06"
+    },
+    {
+        "almanca": "zahlen",
+        "ingilizce": "to pay",
+        "seviye": "A1",
+        "ornek": "Ich zahle bar.",
+        "kelime": "zahlen",
+        "kural": "Often used with 'bar' (cash) or 'mit Karte'.",
+        "type": "verb",
+        "category": "Einkaufen",
+        "id": "verb_einkaufen_07"
+    },
+    {
+        "almanca": "probieren",
+        "ingilizce": "to try (taste)",
+        "seviye": "A1",
+        "ornek": "Ich probiere den Käse.",
+        "kelime": "probieren",
+        "kural": "Regular verb used in food context.",
+        "type": "verb",
+        "category": "Einkaufen",
+        "id": "verb_einkaufen_08"
+    },
+    {
+        "almanca": "trinken",
+        "ingilizce": "to drink",
+        "seviye": "A1",
+        "ornek": "Ich trinke ein Glas Wasser.",
+        "kelime": "trinken",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Einkaufen",
+        "id": "verb_einkaufen_09"
+    },
+    {
+        "almanca": "essen",
+        "ingilizce": "to eat",
+        "seviye": "A1",
+        "ornek": "Ich esse eine Suppe.",
+        "kelime": "essen",
+        "kural": "Irregular: du isst, er isst.",
+        "type": "verb",
+        "category": "Einkaufen",
+        "id": "verb_einkaufen_10"
+    },
+    {
+        "almanca": "wiegen",
+        "ingilizce": "to weigh",
+        "seviye": "A1",
+        "ornek": "Ich wiege das Gemüse.",
+        "kelime": "wiegen",
+        "kural": "Used in markets for measuring items.",
+        "type": "verb",
+        "category": "Einkaufen",
+        "id": "verb_einkaufen_11"
+    },
+    {
+        "almanca": "auswählen",
+        "ingilizce": "to choose",
+        "seviye": "A1",
+        "ornek": "Ich wähle den Käse aus.",
+        "kelime": "auswählen",
+        "kural": "Separable verb: ich wähle ... aus.",
+        "type": "verb",
+        "category": "Einkaufen",
+        "id": "verb_einkaufen_12"
+    },
+    {
+        "almanca": "mitbringen",
+        "ingilizce": "to bring along",
+        "seviye": "A1",
+        "ornek": "Ich bringe Brot mit.",
+        "kelime": "mitbringen",
+        "kural": "Separable verb: ich bringe ... mit.",
+        "type": "verb",
+        "category": "Einkaufen",
+        "id": "verb_einkaufen_13"
+    },
+    {
+        "almanca": "kochen",
+        "ingilizce": "to cook",
+        "seviye": "A1",
+        "ornek": "Ich koche Suppe.",
+        "kelime": "kochen",
+        "kural": "Common verb in food preparation.",
+        "type": "verb",
+        "category": "Einkaufen",
+        "id": "verb_einkaufen_14"
+    },
+    {
+        "almanca": "backen",
+        "ingilizce": "to bake",
+        "seviye": "A1",
+        "ornek": "Ich backe einen Kuchen.",
+        "kelime": "backen",
+        "kural": "Irregular: ich backe, er bäckt.",
+        "type": "verb",
+        "category": "Einkaufen",
+        "id": "verb_einkaufen_15"
+    },
+    {
+        "almanca": "servieren",
+        "ingilizce": "to serve",
+        "seviye": "A1",
+        "ornek": "Der Kellner serviert das Essen.",
+        "kelime": "servieren",
+        "kural": "Regular verb used in hospitality.",
+        "type": "verb",
+        "category": "Einkaufen",
+        "id": "verb_einkaufen_16"
+    },
+    {
+        "almanca": "öffnen",
+        "ingilizce": "to open",
+        "seviye": "A1",
+        "ornek": "Ich öffne die Flasche.",
+        "kelime": "öffnen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Einkaufen",
+        "id": "verb_einkaufen_17"
+    },
+    {
+        "almanca": "schließen",
+        "ingilizce": "to close",
+        "seviye": "A1",
+        "ornek": "Ich schließe den Kühlschrank.",
+        "kelime": "schließen",
+        "kural": "Irregular verb: schloss, geschlossen.",
+        "type": "verb",
+        "category": "Einkaufen",
+        "id": "verb_einkaufen_18"
+    },
+    {
+        "almanca": "zeigen",
+        "ingilizce": "to show",
+        "seviye": "A1",
+        "ornek": "Ich zeige den Kassenzettel.",
+        "kelime": "zeigen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Einkaufen",
+        "id": "verb_einkaufen_19"
+    },
+    {
+        "almanca": "packen",
+        "ingilizce": "to pack",
+        "seviye": "A1",
+        "ornek": "Ich packe die Einkäufe ein.",
+        "kelime": "packen",
+        "kural": "Often used with 'einpacken'.",
+        "type": "verb",
+        "category": "Einkaufen",
+        "id": "verb_einkaufen_20"
+    }
+]

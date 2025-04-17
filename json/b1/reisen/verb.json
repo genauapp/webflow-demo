@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "reisen",
+        "ingilizce": "to travel",
+        "seviye": "B1",
+        "ornek": "Ich reise gern in andere Länder.",
+        "kelime": "reisen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Reisen & Verkehr",
+        "id": "verb_reisen_B1_01"
+    },
+    {
+        "almanca": "buchen",
+        "ingilizce": "to book",
+        "seviye": "B1",
+        "ornek": "Ich buche ein Hotelzimmer.",
+        "kelime": "buchen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Reisen & Verkehr",
+        "id": "verb_reisen_B1_02"
+    },
+    {
+        "almanca": "fliegen",
+        "ingilizce": "to fly",
+        "seviye": "B1",
+        "ornek": "Wir fliegen morgen nach Spanien.",
+        "kelime": "fliegen",
+        "kural": "Irregular verb: flog, geflogen.",
+        "type": "verb",
+        "category": "Reisen & Verkehr",
+        "id": "verb_reisen_B1_03"
+    },
+    {
+        "almanca": "ankommen",
+        "ingilizce": "to arrive",
+        "seviye": "B1",
+        "ornek": "Der Zug kommt um 10 Uhr an.",
+        "kelime": "ankommen",
+        "kural": "Separable verb.",
+        "type": "verb",
+        "category": "Reisen & Verkehr",
+        "id": "verb_reisen_B1_04"
+    },
+    {
+        "almanca": "abfahren",
+        "ingilizce": "to depart",
+        "seviye": "B1",
+        "ornek": "Der Bus fährt bald ab.",
+        "kelime": "abfahren",
+        "kural": "Separable and irregular verb.",
+        "type": "verb",
+        "category": "Reisen & Verkehr",
+        "id": "verb_reisen_B1_05"
+    },
+    {
+        "almanca": "verpassen",
+        "ingilizce": "to miss (transport)",
+        "seviye": "B1",
+        "ornek": "Ich habe den Zug verpasst.",
+        "kelime": "verpassen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Reisen & Verkehr",
+        "id": "verb_reisen_B1_06"
+    },
+    {
+        "almanca": "einsteigen",
+        "ingilizce": "to get on",
+        "seviye": "B1",
+        "ornek": "Bitte steigen Sie ein.",
+        "kelime": "einsteigen",
+        "kural": "Separable and irregular verb.",
+        "type": "verb",
+        "category": "Reisen & Verkehr",
+        "id": "verb_reisen_B1_07"
+    },
+    {
+        "almanca": "aussteigen",
+        "ingilizce": "to get off",
+        "seviye": "B1",
+        "ornek": "Wir steigen an der nächsten Station aus.",
+        "kelime": "aussteigen",
+        "kural": "Separable and irregular verb.",
+        "type": "verb",
+        "category": "Reisen & Verkehr",
+        "id": "verb_reisen_B1_08"
+    },
+    {
+        "almanca": "umsteigen",
+        "ingilizce": "to transfer (trains/buses)",
+        "seviye": "B1",
+        "ornek": "Man muss in Frankfurt umsteigen.",
+        "kelime": "umsteigen",
+        "kural": "Separable and irregular verb.",
+        "type": "verb",
+        "category": "Reisen & Verkehr",
+        "id": "verb_reisen_B1_09"
+    },
+    {
+        "almanca": "packen",
+        "ingilizce": "to pack",
+        "seviye": "B1",
+        "ornek": "Ich packe meinen Koffer.",
+        "kelime": "packen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Reisen & Verkehr",
+        "id": "verb_reisen_B1_10"
+    },
+    {
+        "almanca": "einpacken",
+        "ingilizce": "to wrap up / pack in",
+        "seviye": "B1",
+        "ornek": "Sie packt das Geschenk ein.",
+        "kelime": "einpacken",
+        "kural": "Separable verb.",
+        "type": "verb",
+        "category": "Reisen & Verkehr",
+        "id": "verb_reisen_B1_11"
+    },
+    {
+        "almanca": "einchecken",
+        "ingilizce": "to check in",
+        "seviye": "B1",
+        "ornek": "Wir checken um 14 Uhr ein.",
+        "kelime": "einchecken",
+        "kural": "Separable verb. Loanword.",
+        "type": "verb",
+        "category": "Reisen & Verkehr",
+        "id": "verb_reisen_B1_12"
+    },
+    {
+        "almanca": "auschecken",
+        "ingilizce": "to check out",
+        "seviye": "B1",
+        "ornek": "Man muss bis 11 Uhr auschecken.",
+        "kelime": "auschecken",
+        "kural": "Separable verb. Loanword.",
+        "type": "verb",
+        "category": "Reisen & Verkehr",
+        "id": "verb_reisen_B1_13"
+    },
+    {
+        "almanca": "reservieren",
+        "ingilizce": "to reserve",
+        "seviye": "B1",
+        "ornek": "Ich reserviere ein Zimmer für zwei Nächte.",
+        "kelime": "reservieren",
+        "kural": "Regular verb ending in -ieren.",
+        "type": "verb",
+        "category": "Reisen & Verkehr",
+        "id": "verb_reisen_B1_14"
+    },
+    {
+        "almanca": "bezahlen",
+        "ingilizce": "to pay",
+        "seviye": "B1",
+        "ornek": "Ich bezahle das Ticket online.",
+        "kelime": "bezahlen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Reisen & Verkehr",
+        "id": "verb_reisen_B1_15"
+    },
+    {
+        "almanca": "zeigen",
+        "ingilizce": "to show",
+        "seviye": "B1",
+        "ornek": "Zeigen Sie mir bitte Ihren Ausweis.",
+        "kelime": "zeigen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Reisen & Verkehr",
+        "id": "verb_reisen_B1_16"
+    },
+    {
+        "almanca": "verlieren",
+        "ingilizce": "to lose",
+        "seviye": "B1",
+        "ornek": "Ich habe mein Gepäck verloren.",
+        "kelime": "verlieren",
+        "kural": "Irregular verb: verlor, verloren.",
+        "type": "verb",
+        "category": "Reisen & Verkehr",
+        "id": "verb_reisen_B1_17"
+    },
+    {
+        "almanca": "finden",
+        "ingilizce": "to find",
+        "seviye": "B1",
+        "ornek": "Ich finde das Hotel nicht.",
+        "kelime": "finden",
+        "kural": "Irregular verb: fand, gefunden.",
+        "type": "verb",
+        "category": "Reisen & Verkehr",
+        "id": "verb_reisen_B1_18"
+    },
+    {
+        "almanca": "vorzeigen",
+        "ingilizce": "to present / show",
+        "seviye": "B1",
+        "ornek": "Bitte zeigen Sie Ihr Ticket vor.",
+        "kelime": "vorzeigen",
+        "kural": "Separable verb.",
+        "type": "verb",
+        "category": "Reisen & Verkehr",
+        "id": "verb_reisen_B1_19"
+    },
+    {
+        "almanca": "informieren",
+        "ingilizce": "to inform",
+        "seviye": "B1",
+        "ornek": "Ich informiere mich über die Route.",
+        "kelime": "informieren",
+        "kural": "Regular verb ending in -ieren.",
+        "type": "verb",
+        "category": "Reisen & Verkehr",
+        "id": "verb_reisen_B1_20"
+    }
+]

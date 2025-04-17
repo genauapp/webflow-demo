@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "wohnen",
+        "ingilizce": "to live (reside)",
+        "seviye": "B1",
+        "ornek": "Ich wohne in einer großen Stadt.",
+        "kelime": "wohnen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Wohnen & Umwelt",
+        "id": "verb_wohnen_B1_01"
+    },
+    {
+        "almanca": "umziehen",
+        "ingilizce": "to move (house)",
+        "seviye": "B1",
+        "ornek": "Wir ziehen nächste Woche um.",
+        "kelime": "umziehen",
+        "kural": "Separable verb.",
+        "type": "verb",
+        "category": "Wohnen & Umwelt",
+        "id": "verb_wohnen_B1_02"
+    },
+    {
+        "almanca": "mieten",
+        "ingilizce": "to rent",
+        "seviye": "B1",
+        "ornek": "Wir mieten eine Wohnung in Berlin.",
+        "kelime": "mieten",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Wohnen & Umwelt",
+        "id": "verb_wohnen_B1_03"
+    },
+    {
+        "almanca": "vermieten",
+        "ingilizce": "to rent out",
+        "seviye": "B1",
+        "ornek": "Sie vermietet ihr altes Haus.",
+        "kelime": "vermieten",
+        "kural": "Regular verb with prefix.",
+        "type": "verb",
+        "category": "Wohnen & Umwelt",
+        "id": "verb_wohnen_B1_04"
+    },
+    {
+        "almanca": "heizen",
+        "ingilizce": "to heat",
+        "seviye": "B1",
+        "ornek": "Im Winter muss man viel heizen.",
+        "kelime": "heizen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Wohnen & Umwelt",
+        "id": "verb_wohnen_B1_05"
+    },
+    {
+        "almanca": "lüften",
+        "ingilizce": "to air out",
+        "seviye": "B1",
+        "ornek": "Ich lüfte jeden Morgen die Wohnung.",
+        "kelime": "lüften",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Wohnen & Umwelt",
+        "id": "verb_wohnen_B1_06"
+    },
+    {
+        "almanca": "einrichten",
+        "ingilizce": "to furnish",
+        "seviye": "B1",
+        "ornek": "Wir richten unser neues Haus ein.",
+        "kelime": "einrichten",
+        "kural": "Separable verb.",
+        "type": "verb",
+        "category": "Wohnen & Umwelt",
+        "id": "verb_wohnen_B1_07"
+    },
+    {
+        "almanca": "reparieren",
+        "ingilizce": "to repair",
+        "seviye": "B1",
+        "ornek": "Der Handwerker repariert die Heizung.",
+        "kelime": "reparieren",
+        "kural": "Regular verb ending in -ieren.",
+        "type": "verb",
+        "category": "Wohnen & Umwelt",
+        "id": "verb_wohnen_B1_08"
+    },
+    {
+        "almanca": "putzen",
+        "ingilizce": "to clean",
+        "seviye": "B1",
+        "ornek": "Ich putze das Badezimmer am Samstag.",
+        "kelime": "putzen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Wohnen & Umwelt",
+        "id": "verb_wohnen_B1_09"
+    },
+    {
+        "almanca": "renovieren",
+        "ingilizce": "to renovate",
+        "seviye": "B1",
+        "ornek": "Wir renovieren die alte Küche.",
+        "kelime": "renovieren",
+        "kural": "Regular verb ending in -ieren.",
+        "type": "verb",
+        "category": "Wohnen & Umwelt",
+        "id": "verb_wohnen_B1_10"
+    },
+    {
+        "almanca": "einziehen",
+        "ingilizce": "to move in",
+        "seviye": "B1",
+        "ornek": "Wann zieht ihr in das neue Haus ein?",
+        "kelime": "einziehen",
+        "kural": "Separable verb.",
+        "type": "verb",
+        "category": "Wohnen & Umwelt",
+        "id": "verb_wohnen_B1_11"
+    },
+    {
+        "almanca": "ausziehen",
+        "ingilizce": "to move out",
+        "seviye": "B1",
+        "ornek": "Ich ziehe nächste Woche aus.",
+        "kelime": "ausziehen",
+        "kural": "Separable verb.",
+        "type": "verb",
+        "category": "Wohnen & Umwelt",
+        "id": "verb_wohnen_B1_12"
+    },
+    {
+        "almanca": "streichen",
+        "ingilizce": "to paint (walls)",
+        "seviye": "B1",
+        "ornek": "Wir streichen das Schlafzimmer blau.",
+        "kelime": "streichen",
+        "kural": "Irregular verb: strich, gestrichen.",
+        "type": "verb",
+        "category": "Wohnen & Umwelt",
+        "id": "verb_wohnen_B1_13"
+    },
+    {
+        "almanca": "bauen",
+        "ingilizce": "to build",
+        "seviye": "B1",
+        "ornek": "Sie bauen ein neues Haus.",
+        "kelime": "bauen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Wohnen & Umwelt",
+        "id": "verb_wohnen_B1_14"
+    },
+    {
+        "almanca": "recyceln",
+        "ingilizce": "to recycle",
+        "seviye": "B1",
+        "ornek": "Wir recyceln Papier und Glas.",
+        "kelime": "recyceln",
+        "kural": "Loanword from English, regular.",
+        "type": "verb",
+        "category": "Wohnen & Umwelt",
+        "id": "verb_wohnen_B1_15"
+    },
+    {
+        "almanca": "trennen",
+        "ingilizce": "to separate",
+        "seviye": "B1",
+        "ornek": "Wir trennen unseren Müll sorgfältig.",
+        "kelime": "trennen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Wohnen & Umwelt",
+        "id": "verb_wohnen_B1_16"
+    },
+    {
+        "almanca": "sparen",
+        "ingilizce": "to save (resources)",
+        "seviye": "B1",
+        "ornek": "Wir sparen Strom durch LED-Lampen.",
+        "kelime": "sparen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Wohnen & Umwelt",
+        "id": "verb_wohnen_B1_17"
+    },
+    {
+        "almanca": "verschmutzen",
+        "ingilizce": "to pollute",
+        "seviye": "B1",
+        "ornek": "Die Fabrik verschmutzt die Luft.",
+        "kelime": "verschmutzen",
+        "kural": "Regular verb with prefix.",
+        "type": "verb",
+        "category": "Wohnen & Umwelt",
+        "id": "verb_wohnen_B1_18"
+    },
+    {
+        "almanca": "verbrauchen",
+        "ingilizce": "to consume",
+        "seviye": "B1",
+        "ornek": "Wir verbrauchen zu viel Wasser.",
+        "kelime": "verbrauchen",
+        "kural": "Regular verb with prefix.",
+        "type": "verb",
+        "category": "Wohnen & Umwelt",
+        "id": "verb_wohnen_B1_19"
+    },
+    {
+        "almanca": "installieren",
+        "ingilizce": "to install",
+        "seviye": "B1",
+        "ornek": "Wir installieren eine neue Heizung.",
+        "kelime": "installieren",
+        "kural": "Regular verb ending in -ieren.",
+        "type": "verb",
+        "category": "Wohnen & Umwelt",
+        "id": "verb_wohnen_B1_20"
+    }
+]

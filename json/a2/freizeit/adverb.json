@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "gern",
+        "ingilizce": "gladly",
+        "seviye": "A2",
+        "ornek": "Ich spiele gern Gitarre.",
+        "kelime": "gern",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_01"
+    },
+    {
+        "almanca": "gemeinsam",
+        "ingilizce": "together",
+        "seviye": "A2",
+        "ornek": "Wir machen das gemeinsam.",
+        "kelime": "gemeinsam",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_02"
+    },
+    {
+        "almanca": "manchmal",
+        "ingilizce": "sometimes",
+        "seviye": "A2",
+        "ornek": "Manchmal gehe ich ins Theater.",
+        "kelime": "manchmal",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_03"
+    },
+    {
+        "almanca": "nie",
+        "ingilizce": "never",
+        "seviye": "A2",
+        "ornek": "Ich gehe nie allein ins Kino.",
+        "kelime": "nie",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_04"
+    },
+    {
+        "almanca": "immer",
+        "ingilizce": "always",
+        "seviye": "A2",
+        "ornek": "Ich bin immer pünktlich beim Konzert.",
+        "kelime": "immer",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_05"
+    },
+    {
+        "almanca": "heute",
+        "ingilizce": "today",
+        "seviye": "A2",
+        "ornek": "Heute spiele ich Tennis.",
+        "kelime": "heute",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_06"
+    },
+    {
+        "almanca": "morgen",
+        "ingilizce": "tomorrow",
+        "seviye": "A2",
+        "ornek": "Morgen gehen wir ins Konzert.",
+        "kelime": "morgen",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_07"
+    },
+    {
+        "almanca": "gestern",
+        "ingilizce": "yesterday",
+        "seviye": "A2",
+        "ornek": "Gestern war ich im Kino.",
+        "kelime": "gestern",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_08"
+    },
+    {
+        "almanca": "schon",
+        "ingilizce": "already",
+        "seviye": "A2",
+        "ornek": "Ich habe das Buch schon gelesen.",
+        "kelime": "schon",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_09"
+    },
+    {
+        "almanca": "noch nicht",
+        "ingilizce": "not yet",
+        "seviye": "A2",
+        "ornek": "Ich habe das Lied noch nicht gehört.",
+        "kelime": "noch nicht",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_10"
+    },
+    {
+        "almanca": "bald",
+        "ingilizce": "soon",
+        "seviye": "A2",
+        "ornek": "Ich fahre bald in den Urlaub.",
+        "kelime": "bald",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_11"
+    },
+    {
+        "almanca": "später",
+        "ingilizce": "later",
+        "seviye": "A2",
+        "ornek": "Ich rufe dich später an.",
+        "kelime": "später",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_12"
+    },
+    {
+        "almanca": "lange",
+        "ingilizce": "for a long time",
+        "seviye": "A2",
+        "ornek": "Ich warte schon lange.",
+        "kelime": "lange",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_13"
+    },
+    {
+        "almanca": "kurz",
+        "ingilizce": "briefly",
+        "seviye": "A2",
+        "ornek": "Ich bleibe nur kurz.",
+        "kelime": "kurz",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_14"
+    },
+    {
+        "almanca": "oft",
+        "ingilizce": "often",
+        "seviye": "A2",
+        "ornek": "Ich gehe oft ins Einkaufszentrum.",
+        "kelime": "oft",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_15"
+    },
+    {
+        "almanca": "selten",
+        "ingilizce": "rarely",
+        "seviye": "A2",
+        "ornek": "Ich gehe selten essen.",
+        "kelime": "selten",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_16"
+    },
+    {
+        "almanca": "überall",
+        "ingilizce": "everywhere",
+        "seviye": "A2",
+        "ornek": "Ich suche überall nach dem Buch.",
+        "kelime": "überall",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_17"
+    },
+    {
+        "almanca": "nirgendwo",
+        "ingilizce": "nowhere",
+        "seviye": "A2",
+        "ornek": "Das Konzert findet nirgendwo statt.",
+        "kelime": "nirgendwo",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_18"
+    },
+    {
+        "almanca": "drinnen",
+        "ingilizce": "inside",
+        "seviye": "A2",
+        "ornek": "Heute bleiben wir drinnen.",
+        "kelime": "drinnen",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_19"
+    },
+    {
+        "almanca": "draußen",
+        "ingilizce": "outside",
+        "seviye": "A2",
+        "ornek": "Die Kinder spielen draußen.",
+        "kelime": "draußen",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_20"
+    }
+]

@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "beschäftigt",
+        "ingilizce": "busy",
+        "seviye": "A2",
+        "ornek": "Der Chef ist heute sehr beschäftigt.",
+        "kelime": "beschäftigt",
+        "kural": "Often used for people at work.",
+        "category": "Arbeit & Behörden",
+        "id": "adjective_arbeit_A2_01"
+    },
+    {
+        "almanca": "frei",
+        "ingilizce": "free / off-duty",
+        "seviye": "A2",
+        "ornek": "Ich habe morgen frei.",
+        "kelime": "frei",
+        "type": "adjective",
+        "category": "Arbeit & Behörden",
+        "id": "adjective_arbeit_A2_02"
+    },
+    {
+        "almanca": "zuständig",
+        "ingilizce": "responsible",
+        "seviye": "A2",
+        "ornek": "Frau Müller ist für die Anmeldung zuständig.",
+        "kelime": "zuständig",
+        "type": "adjective",
+        "category": "Arbeit & Behörden",
+        "id": "adjective_arbeit_A2_03"
+    },
+    {
+        "almanca": "verfügbar",
+        "ingilizce": "available",
+        "seviye": "A2",
+        "ornek": "Der Mitarbeiter ist nicht verfügbar.",
+        "kelime": "verfügbar",
+        "type": "adjective",
+        "category": "Arbeit & Behörden",
+        "id": "adjective_arbeit_A2_04"
+    },
+    {
+        "almanca": "verantwortlich",
+        "ingilizce": "responsible",
+        "seviye": "A2",
+        "ornek": "Ich bin verantwortlich für dieses Projekt.",
+        "kelime": "verantwortlich",
+        "type": "adjective",
+        "category": "Arbeit & Behörden",
+        "id": "adjective_arbeit_A2_05"
+    },
+    {
+        "almanca": "schriftlich",
+        "ingilizce": "written",
+        "seviye": "A2",
+        "ornek": "Sie brauchen eine schriftliche Bestätigung.",
+        "kelime": "schriftlich",
+        "type": "adjective",
+        "category": "Arbeit & Behörden",
+        "id": "adjective_arbeit_A2_06"
+    },
+    {
+        "almanca": "mündlich",
+        "ingilizce": "oral",
+        "seviye": "A2",
+        "ornek": "Die Prüfung ist mündlich.",
+        "kelime": "mündlich",
+        "type": "adjective",
+        "category": "Arbeit & Behörden",
+        "id": "adjective_arbeit_A2_07"
+    },
+    {
+        "almanca": "gültig",
+        "ingilizce": "valid",
+        "seviye": "A2",
+        "ornek": "Der Ausweis ist noch gültig.",
+        "kelime": "gültig",
+        "type": "adjective",
+        "category": "Arbeit & Behörden",
+        "id": "adjective_arbeit_A2_08"
+    },
+    {
+        "almanca": "ungültig",
+        "ingilizce": "invalid",
+        "seviye": "A2",
+        "ornek": "Die Bescheinigung ist ungültig.",
+        "kelime": "ungültig",
+        "type": "adjective",
+        "category": "Arbeit & Behörden",
+        "id": "adjective_arbeit_A2_09"
+    },
+    {
+        "almanca": "nötig",
+        "ingilizce": "necessary",
+        "seviye": "A2",
+        "ornek": "Ein Termin ist nicht nötig.",
+        "kelime": "nötig",
+        "type": "adjective",
+        "category": "Arbeit & Behörden",
+        "id": "adjective_arbeit_A2_10"
+    },
+    {
+        "almanca": "offiziell",
+        "ingilizce": "official",
+        "seviye": "A2",
+        "ornek": "Das ist ein offizielles Dokument.",
+        "kelime": "offiziell",
+        "type": "adjective",
+        "category": "Arbeit & Behörden",
+        "id": "adjective_arbeit_A2_11"
+    },
+    {
+        "almanca": "formell",
+        "ingilizce": "formal",
+        "seviye": "A2",
+        "ornek": "Die Sprache im Antrag ist sehr formell.",
+        "kelime": "formell",
+        "type": "adjective",
+        "category": "Arbeit & Behörden",
+        "id": "adjective_arbeit_A2_12"
+    },
+    {
+        "almanca": "unzufrieden",
+        "ingilizce": "dissatisfied",
+        "seviye": "A2",
+        "ornek": "Ich bin mit dem Service unzufrieden.",
+        "kelime": "unzufrieden",
+        "type": "adjective",
+        "category": "Arbeit & Behörden",
+        "id": "adjective_arbeit_A2_13"
+    },
+    {
+        "almanca": "zufrieden",
+        "ingilizce": "satisfied",
+        "seviye": "A2",
+        "ornek": "Ich bin mit dem Ergebnis zufrieden.",
+        "kelime": "zufrieden",
+        "type": "adjective",
+        "category": "Arbeit & Behörden",
+        "id": "adjective_arbeit_A2_14"
+    },
+    {
+        "almanca": "erfolgreich",
+        "ingilizce": "successful",
+        "seviye": "A2",
+        "ornek": "Das war ein erfolgreicher Antrag.",
+        "kelime": "erfolgreich",
+        "type": "adjective",
+        "category": "Arbeit & Behörden",
+        "id": "adjective_arbeit_A2_15"
+    },
+    {
+        "almanca": "arbeitslos",
+        "ingilizce": "unemployed",
+        "seviye": "A2",
+        "ornek": "Er ist seit zwei Monaten arbeitslos.",
+        "kelime": "arbeitslos",
+        "type": "adjective",
+        "category": "Arbeit & Behörden",
+        "id": "adjective_arbeit_A2_16"
+    },
+    {
+        "almanca": "selbstständig",
+        "ingilizce": "self-employed",
+        "seviye": "A2",
+        "ornek": "Ich bin seit 2020 selbstständig.",
+        "kelime": "selbstständig",
+        "type": "adjective",
+        "category": "Arbeit & Behörden",
+        "id": "adjective_arbeit_A2_17"
+    },
+    {
+        "almanca": "angestellt",
+        "ingilizce": "employed",
+        "seviye": "A2",
+        "ornek": "Sie ist bei einer Firma angestellt.",
+        "kelime": "angestellt",
+        "type": "adjective",
+        "category": "Arbeit & Behörden",
+        "id": "adjective_arbeit_A2_18"
+    },
+    {
+        "almanca": "offen",
+        "ingilizce": "open",
+        "seviye": "A2",
+        "ornek": "Das Amt ist noch offen.",
+        "kelime": "offen",
+        "type": "adjective",
+        "category": "Arbeit & Behörden",
+        "id": "adjective_arbeit_A2_19"
+    },
+    {
+        "almanca": "geschlossen",
+        "ingilizce": "closed",
+        "seviye": "A2",
+        "ornek": "Die Behörde ist heute geschlossen.",
+        "kelime": "geschlossen",
+        "type": "adjective",
+        "category": "Arbeit & Behörden",
+        "id": "adjective_arbeit_A2_20"
+    }
+]

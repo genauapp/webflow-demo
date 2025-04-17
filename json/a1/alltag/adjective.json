@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "müde",
+        "ingilizce": "tired",
+        "seviye": "A1",
+        "ornek": "Ich bin müde.",
+        "kelime": "müde",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_01"
+    },
+    {
+        "almanca": "fleißig",
+        "ingilizce": "hard-working",
+        "seviye": "A1",
+        "ornek": "Er ist sehr fleißig.",
+        "kelime": "fleißig",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_02"
+    },
+    {
+        "almanca": "pünktlich",
+        "ingilizce": "punctual",
+        "seviye": "A1",
+        "ornek": "Sie ist immer pünktlich.",
+        "kelime": "pünktlich",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_03"
+    },
+    {
+        "almanca": "glücklich",
+        "ingilizce": "happy",
+        "seviye": "A1",
+        "ornek": "Ich bin heute sehr glücklich.",
+        "kelime": "glücklich",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_04"
+    },
+    {
+        "almanca": "hungrig",
+        "ingilizce": "hungry",
+        "seviye": "A1",
+        "ornek": "Ich bin hungrig.",
+        "kelime": "hungrig",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_05"
+    },
+    {
+        "almanca": "durstig",
+        "ingilizce": "thirsty",
+        "seviye": "A1",
+        "ornek": "Ich bin durstig.",
+        "kelime": "durstig",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_06"
+    },
+    {
+        "almanca": "krank",
+        "ingilizce": "sick",
+        "seviye": "A1",
+        "ornek": "Ich bin krank.",
+        "kelime": "krank",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_07"
+    },
+    {
+        "almanca": "gesund",
+        "ingilizce": "healthy",
+        "seviye": "A1",
+        "ornek": "Ich fühle mich gesund.",
+        "kelime": "gesund",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_08"
+    },
+    {
+        "almanca": "freundlich",
+        "ingilizce": "friendly",
+        "seviye": "A1",
+        "ornek": "Die Nachbarn sind freundlich.",
+        "kelime": "freundlich",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_09"
+    },
+    {
+        "almanca": "nett",
+        "ingilizce": "nice",
+        "seviye": "A1",
+        "ornek": "Der Lehrer ist nett.",
+        "kelime": "nett",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_10"
+    },
+    {
+        "almanca": "laut",
+        "ingilizce": "loud",
+        "seviye": "A1",
+        "ornek": "Die Musik ist laut.",
+        "kelime": "laut",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_11"
+    },
+    {
+        "almanca": "leise",
+        "ingilizce": "quiet",
+        "seviye": "A1",
+        "ornek": "Sei bitte leise.",
+        "kelime": "leise",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_12"
+    },
+    {
+        "almanca": "langsam",
+        "ingilizce": "slow",
+        "seviye": "A1",
+        "ornek": "Das Auto ist langsam.",
+        "kelime": "langsam",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_13"
+    },
+    {
+        "almanca": "schnell",
+        "ingilizce": "fast",
+        "seviye": "A1",
+        "ornek": "Der Zug ist schnell.",
+        "kelime": "schnell",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_14"
+    },
+    {
+        "almanca": "neu",
+        "ingilizce": "new",
+        "seviye": "A1",
+        "ornek": "Ich habe ein neues Handy.",
+        "kelime": "neu",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_15"
+    },
+    {
+        "almanca": "alt",
+        "ingilizce": "old",
+        "seviye": "A1",
+        "ornek": "Das Haus ist alt.",
+        "kelime": "alt",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_16"
+    },
+    {
+        "almanca": "heiß",
+        "ingilizce": "hot",
+        "seviye": "A1",
+        "ornek": "Der Kaffee ist heiß.",
+        "kelime": "heiß",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_17"
+    },
+    {
+        "almanca": "kalt",
+        "ingilizce": "cold",
+        "seviye": "A1",
+        "ornek": "Es ist heute kalt.",
+        "kelime": "kalt",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_18"
+    },
+    {
+        "almanca": "voll",
+        "ingilizce": "full",
+        "seviye": "A1",
+        "ornek": "Das Glas ist voll.",
+        "kelime": "voll",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_19"
+    },
+    {
+        "almanca": "leer",
+        "ingilizce": "empty",
+        "seviye": "A1",
+        "ornek": "Die Flasche ist leer.",
+        "kelime": "leer",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_20"
+    }
+]

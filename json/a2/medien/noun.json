@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "das Handy",
+        "ingilizce": "mobile phone",
+        "seviye": "A2",
+        "ornek": "Ich habe mein Handy zu Hause vergessen.",
+        "artikel": "das",
+        "kelime": "Handy",
+        "kural": "Loanwords with '-y' endings are often neuter.",
+        "category": "Medien & Kommunikation",
+        "id": "noun_medien_A2_01"
+    },
+    {
+        "almanca": "der Laptop",
+        "ingilizce": "laptop",
+        "seviye": "A2",
+        "ornek": "Mein Laptop ist sehr schnell.",
+        "artikel": "der",
+        "kelime": "Laptop",
+        "kural": "Loanwords for devices are usually masculine.",
+        "category": "Medien & Kommunikation",
+        "id": "noun_medien_A2_02"
+    },
+    {
+        "almanca": "die Tastatur",
+        "ingilizce": "keyboard",
+        "seviye": "A2",
+        "ornek": "Die Tastatur ist kabellos.",
+        "artikel": "die",
+        "kelime": "Tastatur",
+        "kural": "Words ending in '-ur' are typically feminine.",
+        "category": "Medien & Kommunikation",
+        "id": "noun_medien_A2_03"
+    },
+    {
+        "almanca": "die Maus",
+        "ingilizce": "mouse",
+        "seviye": "A2",
+        "ornek": "Ich brauche eine neue Maus für den Computer.",
+        "artikel": "die",
+        "kelime": "Maus",
+        "kural": "Animal names often retain feminine gender.",
+        "category": "Medien & Kommunikation",
+        "id": "noun_medien_A2_04"
+    },
+    {
+        "almanca": "der Bildschirm",
+        "ingilizce": "screen",
+        "seviye": "A2",
+        "ornek": "Der Bildschirm ist groß und klar.",
+        "artikel": "der",
+        "kelime": "Bildschirm",
+        "kural": "Compound nouns with 'Schirm' are masculine.",
+        "category": "Medien & Kommunikation",
+        "id": "noun_medien_A2_05"
+    },
+    {
+        "almanca": "das Internet",
+        "ingilizce": "internet",
+        "seviye": "A2",
+        "ornek": "Ich bin oft im Internet.",
+        "artikel": "das",
+        "kelime": "Internet",
+        "kural": "Global digital terms are neuter.",
+        "category": "Medien & Kommunikation",
+        "id": "noun_medien_A2_06"
+    },
+    {
+        "almanca": "die Nachricht",
+        "ingilizce": "message / news",
+        "seviye": "A2",
+        "ornek": "Ich habe eine Nachricht bekommen.",
+        "artikel": "die",
+        "kelime": "Nachricht",
+        "kural": "Words ending in '-icht' are usually feminine.",
+        "category": "Medien & Kommunikation",
+        "id": "noun_medien_A2_07"
+    },
+    {
+        "almanca": "die E-Mail",
+        "ingilizce": "email",
+        "seviye": "A2",
+        "ornek": "Ich schreibe eine E-Mail an meinen Freund.",
+        "artikel": "die",
+        "kelime": "E-Mail",
+        "kural": "Loanwords ending in '-Mail' are feminine.",
+        "category": "Medien & Kommunikation",
+        "id": "noun_medien_A2_08"
+    },
+    {
+        "almanca": "der Anruf",
+        "ingilizce": "call",
+        "seviye": "A2",
+        "ornek": "Ich habe einen Anruf verpasst.",
+        "artikel": "der",
+        "kelime": "Anruf",
+        "kural": "Verb-derived nouns with 'anrufen' take 'der'.",
+        "category": "Medien & Kommunikation",
+        "id": "noun_medien_A2_09"
+    },
+    {
+        "almanca": "die Telefonnummer",
+        "ingilizce": "phone number",
+        "seviye": "A2",
+        "ornek": "Wie ist deine Telefonnummer?",
+        "artikel": "die",
+        "kelime": "Telefonnummer",
+        "kural": "Compound noun ending in '-nummer' is feminine.",
+        "category": "Medien & Kommunikation",
+        "id": "noun_medien_A2_10"
+    },
+    {
+        "almanca": "der Kontakt",
+        "ingilizce": "contact",
+        "seviye": "A2",
+        "ornek": "Ich habe keinen Kontakt mehr zu ihm.",
+        "artikel": "der",
+        "kelime": "Kontakt",
+        "kural": "Loanwords like 'Kontakt' are often masculine.",
+        "category": "Medien & Kommunikation",
+        "id": "noun_medien_A2_11"
+    },
+    {
+        "almanca": "das Gespräch",
+        "ingilizce": "conversation",
+        "seviye": "A2",
+        "ornek": "Das Gespräch war sehr interessant.",
+        "artikel": "das",
+        "kelime": "Gespräch",
+        "kural": "Nouns with the prefix 'Ge-' are often neuter.",
+        "category": "Medien & Kommunikation",
+        "id": "noun_medien_A2_12"
+    },
+    {
+        "almanca": "die Kommunikation",
+        "ingilizce": "communication",
+        "seviye": "A2",
+        "ornek": "Gute Kommunikation ist wichtig.",
+        "artikel": "die",
+        "kelime": "Kommunikation",
+        "kural": "Nouns ending in '-ion' are always feminine.",
+        "category": "Medien & Kommunikation",
+        "id": "noun_medien_A2_13"
+    },
+    {
+        "almanca": "die Zeitung",
+        "ingilizce": "newspaper",
+        "seviye": "A2",
+        "ornek": "Ich lese jeden Morgen die Zeitung.",
+        "artikel": "die",
+        "kelime": "Zeitung",
+        "kural": "Words ending in '-ung' are always feminine.",
+        "category": "Medien & Kommunikation",
+        "id": "noun_medien_A2_14"
+    },
+    {
+        "almanca": "das Magazin",
+        "ingilizce": "magazine",
+        "seviye": "A2",
+        "ornek": "Sie liest ein interessantes Magazin.",
+        "artikel": "das",
+        "kelime": "Magazin",
+        "kural": "Loanwords ending in '-in' are neuter.",
+        "category": "Medien & Kommunikation",
+        "id": "noun_medien_A2_15"
+    },
+    {
+        "almanca": "der Artikel",
+        "ingilizce": "article",
+        "seviye": "A2",
+        "ornek": "Der Artikel handelt von Politik.",
+        "artikel": "der",
+        "kelime": "Artikel",
+        "kural": "Loanwords ending in '-el' are usually masculine.",
+        "category": "Medien & Kommunikation",
+        "id": "noun_medien_A2_16"
+    },
+    {
+        "almanca": "der Sender",
+        "ingilizce": "broadcaster",
+        "seviye": "A2",
+        "ornek": "Der Sender zeigt viele Filme.",
+        "artikel": "der",
+        "kelime": "Sender",
+        "kural": "Nouns ending in '-er' are often masculine.",
+        "category": "Medien & Kommunikation",
+        "id": "noun_medien_A2_17"
+    },
+    {
+        "almanca": "die Sendung",
+        "ingilizce": "TV show",
+        "seviye": "A2",
+        "ornek": "Die Sendung beginnt um 20 Uhr.",
+        "artikel": "die",
+        "kelime": "Sendung",
+        "kural": "Nouns ending in '-ung' are feminine.",
+        "category": "Medien & Kommunikation",
+        "id": "noun_medien_A2_18"
+    },
+    {
+        "almanca": "die App",
+        "ingilizce": "app",
+        "seviye": "A2",
+        "ornek": "Ich nutze eine App zum Lernen.",
+        "artikel": "die",
+        "kelime": "App",
+        "kural": "Shortened loanwords are often feminine.",
+        "category": "Medien & Kommunikation",
+        "id": "noun_medien_A2_19"
+    },
+    {
+        "almanca": "das Passwort",
+        "ingilizce": "password",
+        "seviye": "A2",
+        "ornek": "Ich habe mein Passwort vergessen.",
+        "artikel": "das",
+        "kelime": "Passwort",
+        "kural": "Compound nouns with 'Wort' are neuter.",
+        "category": "Medien & Kommunikation",
+        "id": "noun_medien_A2_20"
+    }
+]

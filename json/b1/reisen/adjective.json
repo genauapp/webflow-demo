@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "abenteuerlich",
+        "ingilizce": "adventurous",
+        "seviye": "B1",
+        "ornek": "Die Reise war sehr abenteuerlich.",
+        "kelime": "abenteuerlich",
+        "type": "adjective",
+        "category": "Reisen & Verkehr",
+        "id": "adjective_reisen_B1_01"
+    },
+    {
+        "almanca": "anstrengend",
+        "ingilizce": "exhausting",
+        "seviye": "B1",
+        "ornek": "Die lange Fahrt war anstrengend.",
+        "kelime": "anstrengend",
+        "type": "adjective",
+        "category": "Reisen & Verkehr",
+        "id": "adjective_reisen_B1_02"
+    },
+    {
+        "almanca": "bequem",
+        "ingilizce": "comfortable",
+        "seviye": "B1",
+        "ornek": "Der Sitz im Zug war sehr bequem.",
+        "kelime": "bequem",
+        "type": "adjective",
+        "category": "Reisen & Verkehr",
+        "id": "adjective_reisen_B1_03"
+    },
+    {
+        "almanca": "stressig",
+        "ingilizce": "stressful",
+        "seviye": "B1",
+        "ornek": "Der Flug war ziemlich stressig.",
+        "kelime": "stressig",
+        "type": "adjective",
+        "category": "Reisen & Verkehr",
+        "id": "adjective_reisen_B1_04"
+    },
+    {
+        "almanca": "sicher",
+        "ingilizce": "safe",
+        "seviye": "B1",
+        "ornek": "Das Flugzeug ist ein sicheres Verkehrsmittel.",
+        "kelime": "sicher",
+        "type": "adjective",
+        "category": "Reisen & Verkehr",
+        "id": "adjective_reisen_B1_05"
+    },
+    {
+        "almanca": "unsicher",
+        "ingilizce": "unsafe",
+        "seviye": "B1",
+        "ornek": "Die Straße war unsicher bei Nacht.",
+        "kelime": "unsicher",
+        "type": "adjective",
+        "category": "Reisen & Verkehr",
+        "id": "adjective_reisen_B1_06"
+    },
+    {
+        "almanca": "voll",
+        "ingilizce": "full",
+        "seviye": "B1",
+        "ornek": "Der Bus war sehr voll.",
+        "kelime": "voll",
+        "type": "adjective",
+        "category": "Reisen & Verkehr",
+        "id": "adjective_reisen_B1_07"
+    },
+    {
+        "almanca": "leer",
+        "ingilizce": "empty",
+        "seviye": "B1",
+        "ornek": "Der Zug war fast leer.",
+        "kelime": "leer",
+        "type": "adjective",
+        "category": "Reisen & Verkehr",
+        "id": "adjective_reisen_B1_08"
+    },
+    {
+        "almanca": "pünktlich",
+        "ingilizce": "punctual",
+        "seviye": "B1",
+        "ornek": "Der Fahrer war sehr pünktlich.",
+        "kelime": "pünktlich",
+        "type": "adjective",
+        "category": "Reisen & Verkehr",
+        "id": "adjective_reisen_B1_09"
+    },
+    {
+        "almanca": "verspätet",
+        "ingilizce": "delayed",
+        "seviye": "B1",
+        "ornek": "Der Flug war verspätet.",
+        "kelime": "verspätet",
+        "type": "adjective",
+        "category": "Reisen & Verkehr",
+        "id": "adjective_reisen_B1_10"
+    },
+    {
+        "almanca": "günstig",
+        "ingilizce": "affordable",
+        "seviye": "B1",
+        "ornek": "Die Tickets waren sehr günstig.",
+        "kelime": "günstig",
+        "type": "adjective",
+        "category": "Reisen & Verkehr",
+        "id": "adjective_reisen_B1_11"
+    },
+    {
+        "almanca": "teuer",
+        "ingilizce": "expensive",
+        "seviye": "B1",
+        "ornek": "Das Hotel war ziemlich teuer.",
+        "kelime": "teuer",
+        "type": "adjective",
+        "category": "Reisen & Verkehr",
+        "id": "adjective_reisen_B1_12"
+    },
+    {
+        "almanca": "praktisch",
+        "ingilizce": "practical",
+        "seviye": "B1",
+        "ornek": "Ein Rucksack ist beim Reisen sehr praktisch.",
+        "kelime": "praktisch",
+        "type": "adjective",
+        "category": "Reisen & Verkehr",
+        "id": "adjective_reisen_B1_13"
+    },
+    {
+        "almanca": "unpraktisch",
+        "ingilizce": "impractical",
+        "seviye": "B1",
+        "ornek": "Ein Koffer ohne Rollen ist unpraktisch.",
+        "kelime": "unpraktisch",
+        "type": "adjective",
+        "category": "Reisen & Verkehr",
+        "id": "adjective_reisen_B1_14"
+    },
+    {
+        "almanca": "spannend",
+        "ingilizce": "exciting",
+        "seviye": "B1",
+        "ornek": "Der Ausflug war sehr spannend.",
+        "kelime": "spannend",
+        "type": "adjective",
+        "category": "Reisen & Verkehr",
+        "id": "adjective_reisen_B1_15"
+    },
+    {
+        "almanca": "langweilig",
+        "ingilizce": "boring",
+        "seviye": "B1",
+        "ornek": "Die Busfahrt war langweilig.",
+        "kelime": "langweilig",
+        "type": "adjective",
+        "category": "Reisen & Verkehr",
+        "id": "adjective_reisen_B1_16"
+    },
+    {
+        "almanca": "komfortabel",
+        "ingilizce": "comfortable",
+        "seviye": "B1",
+        "ornek": "Das Hotelzimmer war komfortabel eingerichtet.",
+        "kelime": "komfortabel",
+        "type": "adjective",
+        "category": "Reisen & Verkehr",
+        "id": "adjective_reisen_B1_17"
+    },
+    {
+        "almanca": "nass",
+        "ingilizce": "wet",
+        "seviye": "B1",
+        "ornek": "Die Straße war nass vom Regen.",
+        "kelime": "nass",
+        "type": "adjective",
+        "category": "Reisen & Verkehr",
+        "id": "adjective_reisen_B1_18"
+    },
+    {
+        "almanca": "trocken",
+        "ingilizce": "dry",
+        "seviye": "B1",
+        "ornek": "Heute ist das Wetter trocken und sonnig.",
+        "kelime": "trocken",
+        "type": "adjective",
+        "category": "Reisen & Verkehr",
+        "id": "adjective_reisen_B1_19"
+    },
+    {
+        "almanca": "international",
+        "ingilizce": "international",
+        "seviye": "B1",
+        "ornek": "Der Flughafen ist sehr international.",
+        "kelime": "international",
+        "type": "adjective",
+        "category": "Reisen & Verkehr",
+        "id": "adjective_reisen_B1_20"
+    }
+]

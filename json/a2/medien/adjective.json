@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "digital",
+        "ingilizce": "digital",
+        "seviye": "A2",
+        "ornek": "Ich nutze ein digitales Wörterbuch.",
+        "kelime": "digital",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_01"
+    },
+    {
+        "almanca": "schnell",
+        "ingilizce": "fast",
+        "seviye": "A2",
+        "ornek": "Die Internetverbindung ist schnell.",
+        "kelime": "schnell",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_02"
+    },
+    {
+        "almanca": "langsam",
+        "ingilizce": "slow",
+        "seviye": "A2",
+        "ornek": "Mein Computer ist sehr langsam.",
+        "kelime": "langsam",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_03"
+    },
+    {
+        "almanca": "modern",
+        "ingilizce": "modern",
+        "seviye": "A2",
+        "ornek": "Ich habe ein modernes Smartphone.",
+        "kelime": "modern",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_04"
+    },
+    {
+        "almanca": "altmodisch",
+        "ingilizce": "old-fashioned",
+        "seviye": "A2",
+        "ornek": "Sein Handy ist altmodisch.",
+        "kelime": "altmodisch",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_05"
+    },
+    {
+        "almanca": "nützlich",
+        "ingilizce": "useful",
+        "seviye": "A2",
+        "ornek": "Diese App ist sehr nützlich.",
+        "kelime": "nützlich",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_06"
+    },
+    {
+        "almanca": "unnötig",
+        "ingilizce": "unnecessary",
+        "seviye": "A2",
+        "ornek": "Die Werbung ist unnötig.",
+        "kelime": "unnötig",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_07"
+    },
+    {
+        "almanca": "interaktiv",
+        "ingilizce": "interactive",
+        "seviye": "A2",
+        "ornek": "Das Programm ist interaktiv gestaltet.",
+        "kelime": "interaktiv",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_08"
+    },
+    {
+        "almanca": "verständlich",
+        "ingilizce": "understandable",
+        "seviye": "A2",
+        "ornek": "Der Artikel ist sehr verständlich geschrieben.",
+        "kelime": "verständlich",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_09"
+    },
+    {
+        "almanca": "unverständlich",
+        "ingilizce": "incomprehensible",
+        "seviye": "A2",
+        "ornek": "Die Nachricht war unverständlich.",
+        "kelime": "unverständlich",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_10"
+    },
+    {
+        "almanca": "klar",
+        "ingilizce": "clear",
+        "seviye": "A2",
+        "ornek": "Der Ton ist sehr klar.",
+        "kelime": "klar",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_11"
+    },
+    {
+        "almanca": "verschwommen",
+        "ingilizce": "blurry",
+        "seviye": "A2",
+        "ornek": "Das Bild ist verschwommen.",
+        "kelime": "verschwommen",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_12"
+    },
+    {
+        "almanca": "aktuell",
+        "ingilizce": "current",
+        "seviye": "A2",
+        "ornek": "Ich lese die aktuellen Nachrichten.",
+        "kelime": "aktuell",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_13"
+    },
+    {
+        "almanca": "veraltet",
+        "ingilizce": "outdated",
+        "seviye": "A2",
+        "ornek": "Diese App ist veraltet.",
+        "kelime": "veraltet",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_14"
+    },
+    {
+        "almanca": "laut",
+        "ingilizce": "loud",
+        "seviye": "A2",
+        "ornek": "Das Telefon klingelt sehr laut.",
+        "kelime": "laut",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_15"
+    },
+    {
+        "almanca": "leise",
+        "ingilizce": "quiet",
+        "seviye": "A2",
+        "ornek": "Der Fernseher ist zu leise.",
+        "kelime": "leise",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_16"
+    },
+    {
+        "almanca": "komisch",
+        "ingilizce": "strange / funny",
+        "seviye": "A2",
+        "ornek": "Der Kommentar war etwas komisch.",
+        "kelime": "komisch",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_17"
+    },
+    {
+        "almanca": "nervig",
+        "ingilizce": "annoying",
+        "seviye": "A2",
+        "ornek": "Diese Werbung ist wirklich nervig.",
+        "kelime": "nervig",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_18"
+    },
+    {
+        "almanca": "hilfreich",
+        "ingilizce": "helpful",
+        "seviye": "A2",
+        "ornek": "Das Video war sehr hilfreich.",
+        "kelime": "hilfreich",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_19"
+    },
+    {
+        "almanca": "kompliziert",
+        "ingilizce": "complicated",
+        "seviye": "A2",
+        "ornek": "Die Einstellungen sind kompliziert.",
+        "kelime": "kompliziert",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_20"
+    }
+]

@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "die Wohnung",
+        "ingilizce": "apartment",
+        "seviye": "B1",
+        "ornek": "Meine Wohnung liegt im dritten Stock.",
+        "artikel": "die",
+        "kelime": "Wohnung",
+        "kural": "Words ending in '-ung' are always feminine.",
+        "category": "Wohnen & Umwelt",
+        "id": "noun_wohnen_B1_01"
+    },
+    {
+        "almanca": "das Haus",
+        "ingilizce": "house",
+        "seviye": "B1",
+        "ornek": "Wir wohnen in einem großen Haus.",
+        "artikel": "das",
+        "kelime": "Haus",
+        "kural": "",
+        "category": "Wohnen & Umwelt",
+        "id": "noun_wohnen_B1_02"
+    },
+    {
+        "almanca": "der Balkon",
+        "ingilizce": "balcony",
+        "seviye": "B1",
+        "ornek": "Der Balkon hat eine schöne Aussicht.",
+        "artikel": "der",
+        "kelime": "Balkon",
+        "kural": "",
+        "category": "Wohnen & Umwelt",
+        "id": "noun_wohnen_B1_03"
+    },
+    {
+        "almanca": "die Küche",
+        "ingilizce": "kitchen",
+        "seviye": "B1",
+        "ornek": "Die Küche ist modern eingerichtet.",
+        "artikel": "die",
+        "kelime": "Küche",
+        "kural": "",
+        "category": "Wohnen & Umwelt",
+        "id": "noun_wohnen_B1_04"
+    },
+    {
+        "almanca": "das Badezimmer",
+        "ingilizce": "bathroom",
+        "seviye": "B1",
+        "ornek": "Das Badezimmer ist sehr klein.",
+        "artikel": "das",
+        "kelime": "Badezimmer",
+        "kural": "Compound word ending in '-zimmer' is neuter.",
+        "category": "Wohnen & Umwelt",
+        "id": "noun_wohnen_B1_05"
+    },
+    {
+        "almanca": "das Schlafzimmer",
+        "ingilizce": "bedroom",
+        "seviye": "B1",
+        "ornek": "Mein Schlafzimmer ist gemütlich.",
+        "artikel": "das",
+        "kelime": "Schlafzimmer",
+        "kural": "Compound word ending in '-zimmer' is neuter.",
+        "category": "Wohnen & Umwelt",
+        "id": "noun_wohnen_B1_06"
+    },
+    {
+        "almanca": "die Miete",
+        "ingilizce": "rent",
+        "seviye": "B1",
+        "ornek": "Die Miete ist ziemlich hoch.",
+        "artikel": "die",
+        "kelime": "Miete",
+        "kural": "Words ending in '-e' are often feminine.",
+        "category": "Wohnen & Umwelt",
+        "id": "noun_wohnen_B1_07"
+    },
+    {
+        "almanca": "der Vermieter",
+        "ingilizce": "landlord",
+        "seviye": "B1",
+        "ornek": "Der Vermieter ist sehr freundlich.",
+        "artikel": "der",
+        "kelime": "Vermieter",
+        "kural": "Agent nouns ending in '-er' are usually masculine.",
+        "category": "Wohnen & Umwelt",
+        "id": "noun_wohnen_B1_08"
+    },
+    {
+        "almanca": "die Nachbarschaft",
+        "ingilizce": "neighborhood",
+        "seviye": "B1",
+        "ornek": "Die Nachbarschaft ist ruhig.",
+        "artikel": "die",
+        "kelime": "Nachbarschaft",
+        "kural": "Words ending in '-schaft' are always feminine.",
+        "category": "Wohnen & Umwelt",
+        "id": "noun_wohnen_B1_09"
+    },
+    {
+        "almanca": "das Möbel",
+        "ingilizce": "furniture",
+        "seviye": "B1",
+        "ornek": "Die Möbel sind neu.",
+        "artikel": "das",
+        "kelime": "Möbel",
+        "kural": "Usually used in plural, but singular is neuter.",
+        "category": "Wohnen & Umwelt",
+        "id": "noun_wohnen_B1_10"
+    },
+    {
+        "almanca": "der Umzug",
+        "ingilizce": "move (relocation)",
+        "seviye": "B1",
+        "ornek": "Der Umzug war stressig.",
+        "artikel": "der",
+        "kelime": "Umzug",
+        "kural": "",
+        "category": "Wohnen & Umwelt",
+        "id": "noun_wohnen_B1_11"
+    },
+    {
+        "almanca": "die Umgebung",
+        "ingilizce": "surroundings",
+        "seviye": "B1",
+        "ornek": "Die Umgebung ist grün und ruhig.",
+        "artikel": "die",
+        "kelime": "Umgebung",
+        "kural": "Words ending in '-ung' are always feminine.",
+        "category": "Wohnen & Umwelt",
+        "id": "noun_wohnen_B1_12"
+    },
+    {
+        "almanca": "das Erdgeschoss",
+        "ingilizce": "ground floor",
+        "seviye": "B1",
+        "ornek": "Wir wohnen im Erdgeschoss.",
+        "artikel": "das",
+        "kelime": "Erdgeschoss",
+        "kural": "",
+        "category": "Wohnen & Umwelt",
+        "id": "noun_wohnen_B1_13"
+    },
+    {
+        "almanca": "die Heizung",
+        "ingilizce": "heating",
+        "seviye": "B1",
+        "ornek": "Die Heizung funktioniert nicht.",
+        "artikel": "die",
+        "kelime": "Heizung",
+        "kural": "Words ending in '-ung' are always feminine.",
+        "category": "Wohnen & Umwelt",
+        "id": "noun_wohnen_B1_14"
+    },
+    {
+        "almanca": "der Müll",
+        "ingilizce": "trash",
+        "seviye": "B1",
+        "ornek": "Der Müll wird morgen abgeholt.",
+        "artikel": "der",
+        "kelime": "Müll",
+        "kural": "",
+        "category": "Wohnen & Umwelt",
+        "id": "noun_wohnen_B1_15"
+    },
+    {
+        "almanca": "die Umwelt",
+        "ingilizce": "environment",
+        "seviye": "B1",
+        "ornek": "Wir müssen die Umwelt schützen.",
+        "artikel": "die",
+        "kelime": "Umwelt",
+        "kural": "",
+        "category": "Wohnen & Umwelt",
+        "id": "noun_wohnen_B1_16"
+    },
+    {
+        "almanca": "die Mülltrennung",
+        "ingilizce": "waste separation",
+        "seviye": "B1",
+        "ornek": "Mülltrennung ist in Deutschland sehr wichtig.",
+        "artikel": "die",
+        "kelime": "Mülltrennung",
+        "kural": "Words ending in '-ung' are always feminine.",
+        "category": "Wohnen & Umwelt",
+        "id": "noun_wohnen_B1_17"
+    },
+    {
+        "almanca": "die Energiesparlampe",
+        "ingilizce": "energy-saving lamp",
+        "seviye": "B1",
+        "ornek": "Wir nutzen nur Energiesparlampen.",
+        "artikel": "die",
+        "kelime": "Energiesparlampe",
+        "kural": "Compound noun ending in '-lampe' is feminine.",
+        "category": "Wohnen & Umwelt",
+        "id": "noun_wohnen_B1_18"
+    },
+    {
+        "almanca": "der Strom",
+        "ingilizce": "electricity",
+        "seviye": "B1",
+        "ornek": "Der Strom ist heute ausgefallen.",
+        "artikel": "der",
+        "kelime": "Strom",
+        "kural": "",
+        "category": "Wohnen & Umwelt",
+        "id": "noun_wohnen_B1_19"
+    },
+    {
+        "almanca": "die Luft",
+        "ingilizce": "air",
+        "seviye": "B1",
+        "ornek": "Die Luft in den Bergen ist frisch.",
+        "artikel": "die",
+        "kelime": "Luft",
+        "kural": "",
+        "category": "Wohnen & Umwelt",
+        "id": "noun_wohnen_B1_20"
+    }
+]

@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "ausfüllen",
+        "ingilizce": "to fill out",
+        "seviye": "A1",
+        "ornek": "Ich fülle das Formular aus.",
+        "kelime": "ausfüllen",
+        "kural": "Separable verb: ich fülle ... aus.",
+        "type": "verb",
+        "category": "Behoerden",
+        "id": "verb_behoerden_01"
+    },
+    {
+        "almanca": "beantragen",
+        "ingilizce": "to apply for",
+        "seviye": "A1",
+        "ornek": "Ich beantrage ein Visum.",
+        "kelime": "beantragen",
+        "kural": "Regular verb used in official contexts.",
+        "type": "verb",
+        "category": "Behoerden",
+        "id": "verb_behoerden_02"
+    },
+    {
+        "almanca": "unterschreiben",
+        "ingilizce": "to sign",
+        "seviye": "A1",
+        "ornek": "Ich unterschreibe das Dokument.",
+        "kelime": "unterschreiben",
+        "kural": "Irregular verb; commonly used with documents.",
+        "type": "verb",
+        "category": "Behoerden",
+        "id": "verb_behoerden_03"
+    },
+    {
+        "almanca": "zeigen",
+        "ingilizce": "to show",
+        "seviye": "A1",
+        "ornek": "Ich zeige den Ausweis.",
+        "kelime": "zeigen",
+        "kural": "Regular verb; often used with identification.",
+        "type": "verb",
+        "category": "Behoerden",
+        "id": "verb_behoerden_04"
+    },
+    {
+        "almanca": "abholen",
+        "ingilizce": "to pick up",
+        "seviye": "A1",
+        "ornek": "Ich hole den Pass ab.",
+        "kelime": "abholen",
+        "kural": "Separable verb: ich hole ... ab.",
+        "type": "verb",
+        "category": "Behoerden",
+        "id": "verb_behoerden_05"
+    },
+    {
+        "almanca": "einreichen",
+        "ingilizce": "to submit",
+        "seviye": "A1",
+        "ornek": "Ich reiche die Unterlagen ein.",
+        "kelime": "einreichen",
+        "kural": "Separable verb: ich reiche ... ein.",
+        "type": "verb",
+        "category": "Behoerden",
+        "id": "verb_behoerden_06"
+    },
+    {
+        "almanca": "bezahlen",
+        "ingilizce": "to pay",
+        "seviye": "A1",
+        "ornek": "Ich bezahle die Gebühr.",
+        "kelime": "bezahlen",
+        "kural": "Regular verb; used with 'die Gebühr'.",
+        "type": "verb",
+        "category": "Behoerden",
+        "id": "verb_behoerden_07"
+    },
+    {
+        "almanca": "mitbringen",
+        "ingilizce": "to bring along",
+        "seviye": "A1",
+        "ornek": "Ich bringe die Dokumente mit.",
+        "kelime": "mitbringen",
+        "kural": "Separable verb: ich bringe ... mit.",
+        "type": "verb",
+        "category": "Behoerden",
+        "id": "verb_behoerden_08"
+    },
+    {
+        "almanca": "kommen",
+        "ingilizce": "to come",
+        "seviye": "A1",
+        "ornek": "Ich komme zum Termin.",
+        "kelime": "kommen",
+        "kural": "Irregular verb; used for appointments.",
+        "type": "verb",
+        "category": "Behoerden",
+        "id": "verb_behoerden_09"
+    },
+    {
+        "almanca": "gehen",
+        "ingilizce": "to go",
+        "seviye": "A1",
+        "ornek": "Ich gehe zum Bürgeramt.",
+        "kelime": "gehen",
+        "kural": "Irregular verb; common for destinations.",
+        "type": "verb",
+        "category": "Behoerden",
+        "id": "verb_behoerden_10"
+    },
+    {
+        "almanca": "anmelden",
+        "ingilizce": "to register",
+        "seviye": "A1",
+        "ornek": "Ich melde mich beim Amt an.",
+        "kelime": "anmelden",
+        "kural": "Separable verb: ich melde ... an.",
+        "type": "verb",
+        "category": "Behoerden",
+        "id": "verb_behoerden_11"
+    },
+    {
+        "almanca": "vereinbaren",
+        "ingilizce": "to arrange",
+        "seviye": "A1",
+        "ornek": "Ich vereinbare einen Termin.",
+        "kelime": "vereinbaren",
+        "kural": "Regular verb used for appointments.",
+        "type": "verb",
+        "category": "Behoerden",
+        "id": "verb_behoerden_12"
+    },
+    {
+        "almanca": "vorlegen",
+        "ingilizce": "to present",
+        "seviye": "A1",
+        "ornek": "Ich lege meinen Pass vor.",
+        "kelime": "vorlegen",
+        "kural": "Separable verb: ich lege ... vor.",
+        "type": "verb",
+        "category": "Behoerden",
+        "id": "verb_behoerden_13"
+    },
+    {
+        "almanca": "erklären",
+        "ingilizce": "to explain",
+        "seviye": "A1",
+        "ornek": "Ich erkläre mein Problem.",
+        "kelime": "erklären",
+        "kural": "Regular verb; common in communication.",
+        "type": "verb",
+        "category": "Behoerden",
+        "id": "verb_behoerden_14"
+    },
+    {
+        "almanca": "vergessen",
+        "ingilizce": "to forget",
+        "seviye": "A1",
+        "ornek": "Ich vergesse oft die Dokumente.",
+        "kelime": "vergessen",
+        "kural": "Irregular verb: du vergisst.",
+        "type": "verb",
+        "category": "Behoerden",
+        "id": "verb_behoerden_15"
+    },
+    {
+        "almanca": "warten",
+        "ingilizce": "to wait",
+        "seviye": "A1",
+        "ornek": "Ich warte im Wartebereich.",
+        "kelime": "warten",
+        "kural": "Often followed by 'auf + Akkusativ'.",
+        "type": "verb",
+        "category": "Behoerden",
+        "id": "verb_behoerden_16"
+    },
+    {
+        "almanca": "rufen",
+        "ingilizce": "to call",
+        "seviye": "A1",
+        "ornek": "Ich rufe die Behörde an.",
+        "kelime": "rufen",
+        "kural": "Irregular verb; also used as 'anrufen'.",
+        "type": "verb",
+        "category": "Behoerden",
+        "id": "verb_behoerden_17"
+    },
+    {
+        "almanca": "verlängern",
+        "ingilizce": "to extend",
+        "seviye": "A1",
+        "ornek": "Ich verlängere mein Visum.",
+        "kelime": "verlängern",
+        "kural": "Regular verb for official documents.",
+        "type": "verb",
+        "category": "Behoerden",
+        "id": "verb_behoerden_18"
+    },
+    {
+        "almanca": "prüfen",
+        "ingilizce": "to check",
+        "seviye": "A1",
+        "ornek": "Ich prüfe die Unterlagen.",
+        "kelime": "prüfen",
+        "kural": "Regular verb often used in processing.",
+        "type": "verb",
+        "category": "Behoerden",
+        "id": "verb_behoerden_19"
+    },
+    {
+        "almanca": "bestätigen",
+        "ingilizce": "to confirm",
+        "seviye": "A1",
+        "ornek": "Ich bestätige den Termin.",
+        "kelime": "bestätigen",
+        "kural": "Regular verb for agreement or acknowledgment.",
+        "type": "verb",
+        "category": "Behoerden",
+        "id": "verb_behoerden_20"
+    }
+]

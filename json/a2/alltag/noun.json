@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "die Wohnung",
+        "ingilizce": "apartment",
+        "seviye": "A2",
+        "ornek": "Meine Wohnung hat drei Zimmer.",
+        "artikel": "die",
+        "kelime": "Wohnung",
+        "kural": "Nouns ending in '-ung' are always feminine.",
+        "category": "Alltag",
+        "id": "noun_alltag_A2_01"
+    },
+    {
+        "almanca": "der Nachbar",
+        "ingilizce": "neighbor (male)",
+        "seviye": "A2",
+        "ornek": "Mein Nachbar ist sehr freundlich.",
+        "artikel": "der",
+        "kelime": "Nachbar",
+        "kural": "Masculine noun often used with professions or roles.",
+        "category": "Alltag",
+        "id": "noun_alltag_A2_02"
+    },
+    {
+        "almanca": "die Nachbarin",
+        "ingilizce": "neighbor (female)",
+        "seviye": "A2",
+        "ornek": "Die Nachbarin hilft mir oft.",
+        "artikel": "die",
+        "kelime": "Nachbarin",
+        "kural": "Feminine version of a person noun ends with '-in'.",
+        "category": "Alltag",
+        "id": "noun_alltag_A2_03"
+    },
+    {
+        "almanca": "der Haushalt",
+        "ingilizce": "household",
+        "seviye": "A2",
+        "ornek": "Im Haushalt gibt es viel zu tun.",
+        "artikel": "der",
+        "kelime": "Haushalt",
+        "kural": "Compound nouns with '-halt' are often masculine.",
+        "category": "Alltag",
+        "id": "noun_alltag_A2_04"
+    },
+    {
+        "almanca": "die Heizung",
+        "ingilizce": "heating",
+        "seviye": "A2",
+        "ornek": "Die Heizung funktioniert nicht.",
+        "artikel": "die",
+        "kelime": "Heizung",
+        "kural": "Nouns ending in '-ung' are feminine.",
+        "category": "Alltag",
+        "id": "noun_alltag_A2_05"
+    },
+    {
+        "almanca": "das Mietvertrag",
+        "ingilizce": "rental contract",
+        "seviye": "A2",
+        "ornek": "Ich unterschreibe den Mietvertrag.",
+        "artikel": "das",
+        "kelime": "Mietvertrag",
+        "kural": "Compound nouns ending in 'Vertrag' are neuter.",
+        "category": "Alltag",
+        "id": "noun_alltag_A2_06"
+    },
+    {
+        "almanca": "die Hausordnung",
+        "ingilizce": "house rules",
+        "seviye": "A2",
+        "ornek": "Die Hausordnung muss beachtet werden.",
+        "artikel": "die",
+        "kelime": "Hausordnung",
+        "kural": "Words ending in '-ung' are feminine.",
+        "category": "Alltag",
+        "id": "noun_alltag_A2_07"
+    },
+    {
+        "almanca": "der Mieter",
+        "ingilizce": "tenant (male)",
+        "seviye": "A2",
+        "ornek": "Der Mieter zahlt die Miete pünktlich.",
+        "artikel": "der",
+        "kelime": "Mieter",
+        "kural": "Profession-like roles ending in '-er' are masculine.",
+        "category": "Alltag",
+        "id": "noun_alltag_A2_08"
+    },
+    {
+        "almanca": "die Mieterin",
+        "ingilizce": "tenant (female)",
+        "seviye": "A2",
+        "ornek": "Die Mieterin wohnt im Erdgeschoss.",
+        "artikel": "die",
+        "kelime": "Mieterin",
+        "kural": "Feminine roles end with '-in'.",
+        "category": "Alltag",
+        "id": "noun_alltag_A2_09"
+    },
+    {
+        "almanca": "die Mülltonne",
+        "ingilizce": "trash bin",
+        "seviye": "A2",
+        "ornek": "Die Mülltonne steht vor dem Haus.",
+        "artikel": "die",
+        "kelime": "Mülltonne",
+        "kural": "Objects ending in '-e' are usually feminine.",
+        "category": "Alltag",
+        "id": "noun_alltag_A2_10"
+    },
+    {
+        "almanca": "die Garderobe",
+        "ingilizce": "wardrobe",
+        "seviye": "A2",
+        "ornek": "Die Garderobe steht im Flur.",
+        "artikel": "die",
+        "kelime": "Garderobe",
+        "kural": "Nouns ending in '-e' are often feminine.",
+        "category": "Alltag",
+        "id": "noun_alltag_A2_11"
+    },
+    {
+        "almanca": "der Teppich",
+        "ingilizce": "carpet",
+        "seviye": "A2",
+        "ornek": "Der Teppich ist bunt.",
+        "artikel": "der",
+        "kelime": "Teppich",
+        "kural": "Home-related objects are often masculine.",
+        "category": "Alltag",
+        "id": "noun_alltag_A2_12"
+    },
+    {
+        "almanca": "die Decke",
+        "ingilizce": "blanket / ceiling",
+        "seviye": "A2",
+        "ornek": "Die Decke im Schlafzimmer ist neu.",
+        "artikel": "die",
+        "kelime": "Decke",
+        "kural": "Words ending in '-e' are commonly feminine.",
+        "category": "Alltag",
+        "id": "noun_alltag_A2_13"
+    },
+    {
+        "almanca": "das Bett",
+        "ingilizce": "bed",
+        "seviye": "A2",
+        "ornek": "Das Bett ist sehr bequem.",
+        "artikel": "das",
+        "kelime": "Bett",
+        "kural": "Furniture pieces are often neuter.",
+        "category": "Alltag",
+        "id": "noun_alltag_A2_14"
+    },
+    {
+        "almanca": "die Lampe",
+        "ingilizce": "lamp",
+        "seviye": "A2",
+        "ornek": "Die Lampe steht auf dem Tisch.",
+        "artikel": "die",
+        "kelime": "Lampe",
+        "kural": "Objects ending in '-e' are generally feminine.",
+        "category": "Alltag",
+        "id": "noun_alltag_A2_15"
+    },
+    {
+        "almanca": "der Wasserhahn",
+        "ingilizce": "faucet",
+        "seviye": "A2",
+        "ornek": "Der Wasserhahn tropft.",
+        "artikel": "der",
+        "kelime": "Wasserhahn",
+        "kural": "Compound nouns with parts like 'Hahn' are masculine.",
+        "category": "Alltag",
+        "id": "noun_alltag_A2_16"
+    },
+    {
+        "almanca": "die Dusche",
+        "ingilizce": "shower",
+        "seviye": "A2",
+        "ornek": "Die Dusche ist kaputt.",
+        "artikel": "die",
+        "kelime": "Dusche",
+        "kural": "Bathroom nouns ending in '-e' are usually feminine.",
+        "category": "Alltag",
+        "id": "noun_alltag_A2_17"
+    },
+    {
+        "almanca": "das Waschbecken",
+        "ingilizce": "sink",
+        "seviye": "A2",
+        "ornek": "Das Waschbecken ist sauber.",
+        "artikel": "das",
+        "kelime": "Waschbecken",
+        "kural": "Compound nouns with 'Becken' are neuter.",
+        "category": "Alltag",
+        "id": "noun_alltag_A2_18"
+    },
+    {
+        "almanca": "die Fernbedienung",
+        "ingilizce": "remote control",
+        "seviye": "A2",
+        "ornek": "Ich finde die Fernbedienung nicht.",
+        "artikel": "die",
+        "kelime": "Fernbedienung",
+        "kural": "Nouns ending in '-ung' are always feminine.",
+        "category": "Alltag",
+        "id": "noun_alltag_A2_19"
+    },
+    {
+        "almanca": "der Fernseher",
+        "ingilizce": "television",
+        "seviye": "A2",
+        "ornek": "Der Fernseher ist sehr alt.",
+        "artikel": "der",
+        "kelime": "Fernseher",
+        "kural": "Devices ending in '-er' are often masculine.",
+        "category": "Alltag",
+        "id": "noun_alltag_A2_20"
+    }
+]

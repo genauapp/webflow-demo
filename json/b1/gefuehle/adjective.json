@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "verliebt",
+        "ingilizce": "in love",
+        "seviye": "B1",
+        "ornek": "Sie ist frisch verliebt.",
+        "kelime": "verliebt",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_01"
+    },
+    {
+        "almanca": "eifersüchtig",
+        "ingilizce": "jealous",
+        "seviye": "B1",
+        "ornek": "Er ist sehr eifersüchtig.",
+        "kelime": "eifersüchtig",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_02"
+    },
+    {
+        "almanca": "traurig",
+        "ingilizce": "sad",
+        "seviye": "B1",
+        "ornek": "Ich bin heute traurig.",
+        "kelime": "traurig",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_03"
+    },
+    {
+        "almanca": "glücklich",
+        "ingilizce": "happy",
+        "seviye": "B1",
+        "ornek": "Sie sind glücklich verheiratet.",
+        "kelime": "glücklich",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_04"
+    },
+    {
+        "almanca": "zufrieden",
+        "ingilizce": "content",
+        "seviye": "B1",
+        "ornek": "Ich bin mit meinem Leben zufrieden.",
+        "kelime": "zufrieden",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_05"
+    },
+    {
+        "almanca": "unzufrieden",
+        "ingilizce": "dissatisfied",
+        "seviye": "B1",
+        "ornek": "Sie ist unzufrieden mit der Beziehung.",
+        "kelime": "unzufrieden",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_06"
+    },
+    {
+        "almanca": "verletzt",
+        "ingilizce": "hurt",
+        "seviye": "B1",
+        "ornek": "Er fühlt sich verletzt.",
+        "kelime": "verletzt",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_07"
+    },
+    {
+        "almanca": "einsam",
+        "ingilizce": "lonely",
+        "seviye": "B1",
+        "ornek": "Sie fühlt sich oft einsam.",
+        "kelime": "einsam",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_08"
+    },
+    {
+        "almanca": "nah",
+        "ingilizce": "close",
+        "seviye": "B1",
+        "ornek": "Wir sind uns sehr nah.",
+        "kelime": "nah",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_09"
+    },
+    {
+        "almanca": "fern",
+        "ingilizce": "distant",
+        "seviye": "B1",
+        "ornek": "In letzter Zeit ist er mir fern.",
+        "kelime": "fern",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_10"
+    },
+    {
+        "almanca": "wütend",
+        "ingilizce": "angry",
+        "seviye": "B1",
+        "ornek": "Sie war sehr wütend auf ihn.",
+        "kelime": "wütend",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_11"
+    },
+    {
+        "almanca": "freundlich",
+        "ingilizce": "friendly",
+        "seviye": "B1",
+        "ornek": "Er ist immer freundlich zu allen.",
+        "kelime": "freundlich",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_12"
+    },
+    {
+        "almanca": "gemein",
+        "ingilizce": "mean",
+        "seviye": "B1",
+        "ornek": "Das war eine gemeine Bemerkung.",
+        "kelime": "gemein",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_13"
+    },
+    {
+        "almanca": "zärtlich",
+        "ingilizce": "tender",
+        "seviye": "B1",
+        "ornek": "Er ist sehr zärtlich zu ihr.",
+        "kelime": "zärtlich",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_14"
+    },
+    {
+        "almanca": "rücksichtsvoll",
+        "ingilizce": "considerate",
+        "seviye": "B1",
+        "ornek": "Sie ist immer rücksichtsvoll.",
+        "kelime": "rücksichtsvoll",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_15"
+    },
+    {
+        "almanca": "ehrlich",
+        "ingilizce": "honest",
+        "seviye": "B1",
+        "ornek": "Er war immer ehrlich zu mir.",
+        "kelime": "ehrlich",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_16"
+    },
+    {
+        "almanca": "treu",
+        "ingilizce": "loyal",
+        "seviye": "B1",
+        "ornek": "Ein guter Freund ist immer treu.",
+        "kelime": "treu",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_17"
+    },
+    {
+        "almanca": "neidisch",
+        "ingilizce": "envious",
+        "seviye": "B1",
+        "ornek": "Er ist neidisch auf ihren Erfolg.",
+        "kelime": "neidisch",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_18"
+    },
+    {
+        "almanca": "hilfsbereit",
+        "ingilizce": "helpful",
+        "seviye": "B1",
+        "ornek": "Sie ist sehr hilfsbereit.",
+        "kelime": "hilfsbereit",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_19"
+    },
+    {
+        "almanca": "verschlossen",
+        "ingilizce": "reserved",
+        "seviye": "B1",
+        "ornek": "Er ist sehr verschlossen und redet wenig.",
+        "kelime": "verschlossen",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_20"
+    }
+]

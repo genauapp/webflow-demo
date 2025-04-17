@@ -1,0 +1,208 @@
+[
+    {
+        "almanca": "krank",
+        "ingilizce": "sick",
+        "seviye": "A1",
+        "ornek": "Ich bin krank.",
+        "kelime": "krank",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_01"
+    },
+    {
+        "almanca": "gesund",
+        "ingilizce": "healthy",
+        "seviye": "A1",
+        "ornek": "Ich bin wieder gesund.",
+        "kelime": "gesund",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_02"
+    },
+    {
+        "almanca": "müde",
+        "ingilizce": "tired",
+        "seviye": "A1",
+        "ornek": "Ich bin sehr müde.",
+        "kelime": "müde",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_03"
+    },
+    {
+        "almanca": "schwach",
+        "ingilizce": "weak",
+        "seviye": "A1",
+        "ornek": "Ich fühle mich schwach.",
+        "kelime": "schwach",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_04"
+    },
+    {
+        "almanca": "stark",
+        "ingilizce": "strong",
+        "seviye": "A1",
+        "ornek": "Er ist wieder stark.",
+        "kelime": "stark",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_05"
+    },
+    {
+        "almanca": "fiebrig",
+        "ingilizce": "feverish",
+        "seviye": "A1",
+        "ornek": "Ich bin fiebrig.",
+        "kelime": "fiebrig",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_06"
+    },
+    {
+        "almanca": "nass",
+        "ingilizce": "wet",
+        "seviye": "A1",
+        "ornek": "Meine Haare sind nass.",
+        "kelime": "nass",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_07"
+    },
+    {
+        "almanca": "trocken",
+        "ingilizce": "dry",
+        "seviye": "A1",
+        "ornek": "Mein Hals ist trocken.",
+        "kelime": "trocken",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_08"
+    },
+    {
+        "almanca": "warm",
+        "ingilizce": "warm",
+        "seviye": "A1",
+        "ornek": "Die Suppe ist warm.",
+        "kelime": "warm",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_09"
+    },
+    {
+        "almanca": "kalt",
+        "ingilizce": "cold",
+        "seviye": "A1",
+        "ornek": "Meine Hände sind kalt.",
+        "kelime": "kalt",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_10"
+    },
+    {
+        "almanca": "schnell",
+        "ingilizce": "quick",
+        "seviye": "A1",
+        "ornek": "Die Behandlung ist schnell.",
+        "kelime": "schnell",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_11"
+    },
+    {
+        "almanca": "langsam",
+        "ingilizce": "slow",
+        "seviye": "A1",
+        "ornek": "Die Heilung ist langsam.",
+        "kelime": "langsam",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_12"
+    },
+    {
+        "almanca": "wichtig",
+        "ingilizce": "important",
+        "seviye": "A1",
+        "ornek": "Die Impfung ist wichtig.",
+        "kelime": "wichtig",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_13"
+    },
+    {
+        "almanca": "bereit",
+        "ingilizce": "ready",
+        "seviye": "A1",
+        "ornek": "Der Patient ist bereit.",
+        "kelime": "bereit",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_14"
+    },
+    {
+        "almanca": "ruhig",
+        "ingilizce": "calm",
+        "seviye": "A1",
+        "ornek": "Der Patient bleibt ruhig.",
+        "kelime": "ruhig",
+        "kural": "Describes behavior or atmosphere.",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_15"
+    },
+    {
+        "almanca": "nötig",
+        "ingilizce": "necessary",
+        "seviye": "A1",
+        "ornek": "Das Medikament ist nötig.",
+        "kelime": "nötig",
+        "kural": "Used to describe medical requirement.",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_16"
+    },
+    {
+        "almanca": "klar",
+        "ingilizce": "clear",
+        "seviye": "A1",
+        "ornek": "Die Anweisung ist klar.",
+        "kelime": "klar",
+        "kural": "Describes communication or instruction.",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_17"
+    },
+    {
+        "almanca": "leicht",
+        "ingilizce": "light / easy",
+        "seviye": "A1",
+        "ornek": "Die Übung ist leicht.",
+        "kelime": "leicht",
+        "kural": "Can describe both difficulty and weight.",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_18"
+    },
+    {
+        "almanca": "schwer",
+        "ingilizce": "difficult / heavy",
+        "seviye": "A1",
+        "ornek": "Die Krankheit ist schwer.",
+        "kelime": "schwer",
+        "kural": "Often used with diseases or tasks.",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_19"
+    },
+    {
+        "almanca": "froh",
+        "ingilizce": "glad",
+        "seviye": "A1",
+        "ornek": "Ich bin froh über die Diagnose.",
+        "kelime": "froh",
+        "kural": "Describes emotional state.",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_20"
+    }
+]

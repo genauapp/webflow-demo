@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "voll",
+        "ingilizce": "totally",
+        "seviye": "B1",
+        "ornek": "Das war voll peinlich!",
+        "kelime": "voll",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_01"
+    },
+    {
+        "almanca": "krass",
+        "ingilizce": "crazy / extreme",
+        "seviye": "B1",
+        "ornek": "Krass, was du gemacht hast!",
+        "kelime": "krass",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_02"
+    },
+    {
+        "almanca": "mega",
+        "ingilizce": "super / mega",
+        "seviye": "B1",
+        "ornek": "Das Konzert war mega gut!",
+        "kelime": "mega",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_03"
+    },
+    {
+        "almanca": "übel",
+        "ingilizce": "really / badly (slang)",
+        "seviye": "B1",
+        "ornek": "Das war übelst laut.",
+        "kelime": "übel",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_04"
+    },
+    {
+        "almanca": "extrem",
+        "ingilizce": "extremely",
+        "seviye": "B1",
+        "ornek": "Die Party war extrem cool.",
+        "kelime": "extrem",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_05"
+    },
+    {
+        "almanca": "hammer",
+        "ingilizce": "awesome (slang)",
+        "seviye": "B1",
+        "ornek": "Das Wetter ist heute hammer!",
+        "kelime": "hammer",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_06"
+    },
+    {
+        "almanca": "echt",
+        "ingilizce": "really",
+        "seviye": "B1",
+        "ornek": "Echt jetzt?",
+        "kelime": "echt",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_07"
+    },
+    {
+        "almanca": "heftig",
+        "ingilizce": "intensely / heavily",
+        "seviye": "B1",
+        "ornek": "Das war heftig!",
+        "kelime": "heftig",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_08"
+    },
+    {
+        "almanca": "total",
+        "ingilizce": "totally",
+        "seviye": "B1",
+        "ornek": "Ich bin total fertig.",
+        "kelime": "total",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_09"
+    },
+    {
+        "almanca": "super",
+        "ingilizce": "super",
+        "seviye": "B1",
+        "ornek": "Das war super lecker.",
+        "kelime": "super",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_10"
+    },
+    {
+        "almanca": "eiskalt",
+        "ingilizce": "cold-bloodedly",
+        "seviye": "B1",
+        "ornek": "Er hat eiskalt gelogen.",
+        "kelime": "eiskalt",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_11"
+    },
+    {
+        "almanca": "sau",
+        "ingilizce": "very / damn (prefix)",
+        "seviye": "B1",
+        "ornek": "Das war saugut!",
+        "kelime": "sau",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_12"
+    },
+    {
+        "almanca": "witzig",
+        "ingilizce": "funny (slang use)",
+        "seviye": "B1",
+        "ornek": "Du bist witzig, echt.",
+        "kelime": "witzig",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_13"
+    },
+    {
+        "almanca": "nervig",
+        "ingilizce": "annoyingly",
+        "seviye": "B1",
+        "ornek": "Die Musik ist voll nervig.",
+        "kelime": "nervig",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_14"
+    },
+    {
+        "almanca": "null",
+        "ingilizce": "not at all",
+        "seviye": "B1",
+        "ornek": "Ich hab null Ahnung.",
+        "kelime": "null",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_15"
+    },
+    {
+        "almanca": "voll krass",
+        "ingilizce": "totally insane",
+        "seviye": "B1",
+        "ornek": "Das war voll krass gestern!",
+        "kelime": "voll krass",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_16"
+    },
+    {
+        "almanca": "so was von",
+        "ingilizce": "totally / so much",
+        "seviye": "B1",
+        "ornek": "Ich bin so was von müde.",
+        "kelime": "so was von",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_17"
+    },
+    {
+        "almanca": "echt jetzt",
+        "ingilizce": "seriously?",
+        "seviye": "B1",
+        "ornek": "Echt jetzt? Du hast das getan?",
+        "kelime": "echt jetzt",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_18"
+    },
+    {
+        "almanca": "nicht mal",
+        "ingilizce": "not even",
+        "seviye": "B1",
+        "ornek": "Ich habe nicht mal gefrühstückt.",
+        "kelime": "nicht mal",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_19"
+    },
+    {
+        "almanca": "schon wieder",
+        "ingilizce": "again (with frustration)",
+        "seviye": "B1",
+        "ornek": "Schon wieder zu spät!",
+        "kelime": "schon wieder",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_20"
+    }
+]

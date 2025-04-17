@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "das Kino",
+        "ingilizce": "cinema",
+        "seviye": "A2",
+        "ornek": "Wir gehen heute Abend ins Kino.",
+        "artikel": "das",
+        "kelime": "Kino",
+        "kural": "Loanwords ending in '-o' are usually neuter.",
+        "category": "Freizeit & Konsum",
+        "id": "noun_freizeit_A2_01"
+    },
+    {
+        "almanca": "die Eintrittskarte",
+        "ingilizce": "admission ticket",
+        "seviye": "A2",
+        "ornek": "Ich habe zwei Eintrittskarten gekauft.",
+        "artikel": "die",
+        "kelime": "Eintrittskarte",
+        "kural": "Nouns ending in '-e' are often feminine.",
+        "category": "Freizeit & Konsum",
+        "id": "noun_freizeit_A2_02"
+    },
+    {
+        "almanca": "der Film",
+        "ingilizce": "movie",
+        "seviye": "A2",
+        "ornek": "Der Film beginnt um 20 Uhr.",
+        "artikel": "der",
+        "kelime": "Film",
+        "kural": "Media-related nouns are often masculine.",
+        "category": "Freizeit & Konsum",
+        "id": "noun_freizeit_A2_03"
+    },
+    {
+        "almanca": "das Konzert",
+        "ingilizce": "concert",
+        "seviye": "A2",
+        "ornek": "Wir besuchen ein Konzert am Wochenende.",
+        "artikel": "das",
+        "kelime": "Konzert",
+        "kural": "Nouns ending in '-ert' are often neuter.",
+        "category": "Freizeit & Konsum",
+        "id": "noun_freizeit_A2_04"
+    },
+    {
+        "almanca": "der Musiker",
+        "ingilizce": "musician (male)",
+        "seviye": "A2",
+        "ornek": "Der Musiker spielt Gitarre.",
+        "artikel": "der",
+        "kelime": "Musiker",
+        "kural": "Professions ending in '-er' are masculine.",
+        "category": "Freizeit & Konsum",
+        "id": "noun_freizeit_A2_05"
+    },
+    {
+        "almanca": "die Musik",
+        "ingilizce": "music",
+        "seviye": "A2",
+        "ornek": "Ich höre gern klassische Musik.",
+        "artikel": "die",
+        "kelime": "Musik",
+        "kural": "Abstract nouns ending in '-ik' are feminine.",
+        "category": "Freizeit & Konsum",
+        "id": "noun_freizeit_A2_06"
+    },
+    {
+        "almanca": "das Lied",
+        "ingilizce": "song",
+        "seviye": "A2",
+        "ornek": "Dieses Lied ist sehr bekannt.",
+        "artikel": "das",
+        "kelime": "Lied",
+        "kural": "Nouns ending in '-d' are often neuter.",
+        "category": "Freizeit & Konsum",
+        "id": "noun_freizeit_A2_07"
+    },
+    {
+        "almanca": "der Sänger",
+        "ingilizce": "singer (male)",
+        "seviye": "A2",
+        "ornek": "Der Sänger hat eine schöne Stimme.",
+        "artikel": "der",
+        "kelime": "Sänger",
+        "kural": "Profession ending in '-er' is masculine.",
+        "category": "Freizeit & Konsum",
+        "id": "noun_freizeit_A2_08"
+    },
+    {
+        "almanca": "die Sängerin",
+        "ingilizce": "singer (female)",
+        "seviye": "A2",
+        "ornek": "Die Sängerin ist sehr berühmt.",
+        "artikel": "die",
+        "kelime": "Sängerin",
+        "kural": "Feminine form of a profession ends in '-in'.",
+        "category": "Freizeit & Konsum",
+        "id": "noun_freizeit_A2_09"
+    },
+    {
+        "almanca": "der Einkauf",
+        "ingilizce": "shopping",
+        "seviye": "A2",
+        "ornek": "Der Einkauf hat lange gedauert.",
+        "artikel": "der",
+        "kelime": "Einkauf",
+        "kural": "Activity nouns with verbs are masculine.",
+        "category": "Freizeit & Konsum",
+        "id": "noun_freizeit_A2_10"
+    },
+    {
+        "almanca": "das Einkaufszentrum",
+        "ingilizce": "shopping center",
+        "seviye": "A2",
+        "ornek": "Im Einkaufszentrum gibt es viele Läden.",
+        "artikel": "das",
+        "kelime": "Einkaufszentrum",
+        "kural": "Compound with 'Zentrum' is neuter.",
+        "category": "Freizeit & Konsum",
+        "id": "noun_freizeit_A2_11"
+    },
+    {
+        "almanca": "die Boutique",
+        "ingilizce": "boutique",
+        "seviye": "A2",
+        "ornek": "In dieser Boutique gibt es schöne Kleider.",
+        "artikel": "die",
+        "kelime": "Boutique",
+        "kural": "French loanwords ending in '-ique' are feminine.",
+        "category": "Freizeit & Konsum",
+        "id": "noun_freizeit_A2_12"
+    },
+    {
+        "almanca": "der Laden",
+        "ingilizce": "store",
+        "seviye": "A2",
+        "ornek": "Der Laden öffnet um 9 Uhr.",
+        "artikel": "der",
+        "kelime": "Laden",
+        "kural": "Places of commerce are often masculine.",
+        "category": "Freizeit & Konsum",
+        "id": "noun_freizeit_A2_13"
+    },
+    {
+        "almanca": "die Kasse",
+        "ingilizce": "checkout",
+        "seviye": "A2",
+        "ornek": "An der Kasse wartet eine lange Schlange.",
+        "artikel": "die",
+        "kelime": "Kasse",
+        "kural": "Feminine noun; often related to service.",
+        "category": "Freizeit & Konsum",
+        "id": "noun_freizeit_A2_14"
+    },
+    {
+        "almanca": "der Kassenzettel",
+        "ingilizce": "receipt",
+        "seviye": "A2",
+        "ornek": "Haben Sie den Kassenzettel noch?",
+        "artikel": "der",
+        "kelime": "Kassenzettel",
+        "kural": "Compound nouns with '-zettel' are masculine.",
+        "category": "Freizeit & Konsum",
+        "id": "noun_freizeit_A2_15"
+    },
+    {
+        "almanca": "die Umkleidekabine",
+        "ingilizce": "changing room",
+        "seviye": "A2",
+        "ornek": "Die Umkleidekabine ist hinten rechts.",
+        "artikel": "die",
+        "kelime": "Umkleidekabine",
+        "kural": "Rooms ending in '-e' are often feminine.",
+        "category": "Freizeit & Konsum",
+        "id": "noun_freizeit_A2_16"
+    },
+    {
+        "almanca": "das Angebot",
+        "ingilizce": "offer",
+        "seviye": "A2",
+        "ornek": "Das Angebot gilt nur bis morgen.",
+        "artikel": "das",
+        "kelime": "Angebot",
+        "kural": "Neuter noun often used in sales.",
+        "category": "Freizeit & Konsum",
+        "id": "noun_freizeit_A2_17"
+    },
+    {
+        "almanca": "der Preis",
+        "ingilizce": "price",
+        "seviye": "A2",
+        "ornek": "Der Preis ist sehr günstig.",
+        "artikel": "der",
+        "kelime": "Preis",
+        "kural": "Economic terms like 'Preis' are masculine.",
+        "category": "Freizeit & Konsum",
+        "id": "noun_freizeit_A2_18"
+    },
+    {
+        "almanca": "die Quittung",
+        "ingilizce": "receipt (formal)",
+        "seviye": "A2",
+        "ornek": "Ich brauche eine Quittung für die Steuer.",
+        "artikel": "die",
+        "kelime": "Quittung",
+        "kural": "Nouns ending in '-ung' are always feminine.",
+        "category": "Freizeit & Konsum",
+        "id": "noun_freizeit_A2_19"
+    },
+    {
+        "almanca": "die Tüte",
+        "ingilizce": "bag",
+        "seviye": "A2",
+        "ornek": "Möchten Sie eine Tüte?",
+        "artikel": "die",
+        "kelime": "Tüte",
+        "kural": "Everyday objects ending in '-e' are feminine.",
+        "category": "Freizeit & Konsum",
+        "id": "noun_freizeit_A2_20"
+    }
+]

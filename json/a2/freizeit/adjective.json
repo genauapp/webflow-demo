@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "interessant",
+        "ingilizce": "interesting",
+        "seviye": "A2",
+        "ornek": "Das Konzert war sehr interessant.",
+        "kelime": "interessant",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_01"
+    },
+    {
+        "almanca": "langweilig",
+        "ingilizce": "boring",
+        "seviye": "A2",
+        "ornek": "Der Film war langweilig.",
+        "kelime": "langweilig",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_02"
+    },
+    {
+        "almanca": "entspannend",
+        "ingilizce": "relaxing",
+        "seviye": "A2",
+        "ornek": "Das Wochenende war entspannend.",
+        "kelime": "entspannend",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_03"
+    },
+    {
+        "almanca": "anstrengend",
+        "ingilizce": "exhausting",
+        "seviye": "A2",
+        "ornek": "Der Einkauf war anstrengend.",
+        "kelime": "anstrengend",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_04"
+    },
+    {
+        "almanca": "billig",
+        "ingilizce": "cheap",
+        "seviye": "A2",
+        "ornek": "Die Jacke war sehr billig.",
+        "kelime": "billig",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_05"
+    },
+    {
+        "almanca": "teuer",
+        "ingilizce": "expensive",
+        "seviye": "A2",
+        "ornek": "Die Konzertkarte war teuer.",
+        "kelime": "teuer",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_06"
+    },
+    {
+        "almanca": "neu",
+        "ingilizce": "new",
+        "seviye": "A2",
+        "ornek": "Ich habe ein neues Buch gekauft.",
+        "kelime": "neu",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_07"
+    },
+    {
+        "almanca": "alt",
+        "ingilizce": "old",
+        "seviye": "A2",
+        "ornek": "Das Lied ist sehr alt.",
+        "kelime": "alt",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_08"
+    },
+    {
+        "almanca": "modisch",
+        "ingilizce": "fashionable",
+        "seviye": "A2",
+        "ornek": "Diese Kleidung ist sehr modisch.",
+        "kelime": "modisch",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_09"
+    },
+    {
+        "almanca": "unmodisch",
+        "ingilizce": "unfashionable",
+        "seviye": "A2",
+        "ornek": "Diese Schuhe sind unmodisch.",
+        "kelime": "unmodisch",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_10"
+    },
+    {
+        "almanca": "bequem",
+        "ingilizce": "comfortable",
+        "seviye": "A2",
+        "ornek": "Die Couch ist bequem.",
+        "kelime": "bequem",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_11"
+    },
+    {
+        "almanca": "unbequem",
+        "ingilizce": "uncomfortable",
+        "seviye": "A2",
+        "ornek": "Der Stuhl ist unbequem.",
+        "kelime": "unbequem",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_12"
+    },
+    {
+        "almanca": "spannend",
+        "ingilizce": "exciting",
+        "seviye": "A2",
+        "ornek": "Das Buch war spannend.",
+        "kelime": "spannend",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_13"
+    },
+    {
+        "almanca": "ruhig",
+        "ingilizce": "quiet",
+        "seviye": "A2",
+        "ornek": "Der Abend war ruhig und angenehm.",
+        "kelime": "ruhig",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_14"
+    },
+    {
+        "almanca": "laut",
+        "ingilizce": "loud",
+        "seviye": "A2",
+        "ornek": "Die Musik ist zu laut.",
+        "kelime": "laut",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_15"
+    },
+    {
+        "almanca": "gemütlich",
+        "ingilizce": "cozy",
+        "seviye": "A2",
+        "ornek": "Das Café ist sehr gemütlich.",
+        "kelime": "gemütlich",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_16"
+    },
+    {
+        "almanca": "offen",
+        "ingilizce": "open",
+        "seviye": "A2",
+        "ornek": "Der Laden ist noch offen.",
+        "kelime": "offen",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_17"
+    },
+    {
+        "almanca": "geschlossen",
+        "ingilizce": "closed",
+        "seviye": "A2",
+        "ornek": "Das Geschäft ist geschlossen.",
+        "kelime": "geschlossen",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_18"
+    },
+    {
+        "almanca": "hilfreich",
+        "ingilizce": "helpful",
+        "seviye": "A2",
+        "ornek": "Die Verkäuferin war sehr hilfreich.",
+        "kelime": "hilfreich",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_19"
+    },
+    {
+        "almanca": "freundlich",
+        "ingilizce": "friendly",
+        "seviye": "A2",
+        "ornek": "Das Personal war freundlich.",
+        "kelime": "freundlich",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_20"
+    }
+]

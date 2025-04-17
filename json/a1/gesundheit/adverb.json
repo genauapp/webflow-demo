@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "jetzt",
+        "ingilizce": "now",
+        "seviye": "A1",
+        "ornek": "Ich brauche jetzt Hilfe.",
+        "kelime": "jetzt",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_01"
+    },
+    {
+        "almanca": "bald",
+        "ingilizce": "soon",
+        "seviye": "A1",
+        "ornek": "Ich bekomme bald einen Termin.",
+        "kelime": "bald",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_02"
+    },
+    {
+        "almanca": "heute",
+        "ingilizce": "today",
+        "seviye": "A1",
+        "ornek": "Heute gehe ich zum Arzt.",
+        "kelime": "heute",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_03"
+    },
+    {
+        "almanca": "gestern",
+        "ingilizce": "yesterday",
+        "seviye": "A1",
+        "ornek": "Ich war gestern krank.",
+        "kelime": "gestern",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_04"
+    },
+    {
+        "almanca": "morgen",
+        "ingilizce": "tomorrow",
+        "seviye": "A1",
+        "ornek": "Morgen habe ich eine Untersuchung.",
+        "kelime": "morgen",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_05"
+    },
+    {
+        "almanca": "immer",
+        "ingilizce": "always",
+        "seviye": "A1",
+        "ornek": "Ich nehme immer meine Tabletten.",
+        "kelime": "immer",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_06"
+    },
+    {
+        "almanca": "manchmal",
+        "ingilizce": "sometimes",
+        "seviye": "A1",
+        "ornek": "Ich habe manchmal Kopfschmerzen.",
+        "kelime": "manchmal",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_07"
+    },
+    {
+        "almanca": "nie",
+        "ingilizce": "never",
+        "seviye": "A1",
+        "ornek": "Ich rauche nie.",
+        "kelime": "nie",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_08"
+    },
+    {
+        "almanca": "oft",
+        "ingilizce": "often",
+        "seviye": "A1",
+        "ornek": "Ich bin oft müde.",
+        "kelime": "oft",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_09"
+    },
+    {
+        "almanca": "nicht",
+        "ingilizce": "not",
+        "seviye": "A1",
+        "ornek": "Ich fühle mich nicht gut.",
+        "kelime": "nicht",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_10"
+    },
+    {
+        "almanca": "schon",
+        "ingilizce": "already",
+        "seviye": "A1",
+        "ornek": "Ich habe schon einen Termin.",
+        "kelime": "schon",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_11"
+    },
+    {
+        "almanca": "noch",
+        "ingilizce": "still",
+        "seviye": "A1",
+        "ornek": "Ich bin noch krank.",
+        "kelime": "noch",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_12"
+    },
+    {
+        "almanca": "vielleicht",
+        "ingilizce": "maybe",
+        "seviye": "A1",
+        "ornek": "Vielleicht brauche ich ein Medikament.",
+        "kelime": "vielleicht",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_13"
+    },
+    {
+        "almanca": "zu",
+        "ingilizce": "too (much)",
+        "seviye": "A1",
+        "ornek": "Das ist zu heiß.",
+        "kelime": "zu",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_14"
+    },
+    {
+        "almanca": "sehr",
+        "ingilizce": "very",
+        "seviye": "A1",
+        "ornek": "Ich bin sehr müde.",
+        "kelime": "sehr",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_15"
+    },
+    {
+        "almanca": "da",
+        "ingilizce": "there",
+        "seviye": "A1",
+        "ornek": "Der Arzt ist da.",
+        "kelime": "da",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_16"
+    },
+    {
+        "almanca": "draußen",
+        "ingilizce": "outside",
+        "seviye": "A1",
+        "ornek": "Die Patienten warten draußen.",
+        "kelime": "draußen",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_17"
+    },
+    {
+        "almanca": "drinnen",
+        "ingilizce": "inside",
+        "seviye": "A1",
+        "ornek": "Der Arzt ist drinnen.",
+        "kelime": "drinnen",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_18"
+    },
+    {
+        "almanca": "fast",
+        "ingilizce": "almost",
+        "seviye": "A1",
+        "ornek": "Ich bin fast gesund.",
+        "kelime": "fast",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_19"
+    },
+    {
+        "almanca": "ganz",
+        "ingilizce": "completely",
+        "seviye": "A1",
+        "ornek": "Ich bin ganz gesund.",
+        "kelime": "ganz",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_20"
+    }
+]

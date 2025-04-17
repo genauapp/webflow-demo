@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "abhauen",
+        "ingilizce": "to take off / run away",
+        "seviye": "B1",
+        "ornek": "Hau endlich ab!",
+        "kelime": "abhauen",
+        "kural": "Separable verb, informal usage.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_01"
+    },
+    {
+        "almanca": "abkratzen",
+        "ingilizce": "to kick the bucket",
+        "seviye": "B1",
+        "ornek": "Der Typ ist fast abgekratzt.",
+        "kelime": "abkratzen",
+        "kural": "Vulgar slang for dying.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_02"
+    },
+    {
+        "almanca": "abziehen",
+        "ingilizce": "to rip off",
+        "seviye": "B1",
+        "ornek": "Er hat mich beim Kauf total abgezogen.",
+        "kelime": "abziehen",
+        "kural": "Slang for cheating someone.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_03"
+    },
+    {
+        "almanca": "chillen",
+        "ingilizce": "to chill",
+        "seviye": "B1",
+        "ornek": "Wir chillen heute im Park.",
+        "kelime": "chillen",
+        "kural": "Loanword from English.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_04"
+    },
+    {
+        "almanca": "verarschen",
+        "ingilizce": "to mess with / make fun of",
+        "seviye": "B1",
+        "ornek": "Willst du mich verarschen?",
+        "kelime": "verarschen",
+        "kural": "Crude, commonly used in speech.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_05"
+    },
+    {
+        "almanca": "labern",
+        "ingilizce": "to babble / blabber",
+        "seviye": "B1",
+        "ornek": "Er labert den ganzen Tag nur Mist.",
+        "kelime": "labern",
+        "kural": "Used to describe meaningless talking.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_06"
+    },
+    {
+        "almanca": "nerven",
+        "ingilizce": "to annoy",
+        "seviye": "B1",
+        "ornek": "Du nervst total!",
+        "kelime": "nerven",
+        "kural": "Common youth slang.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_07"
+    },
+    {
+        "almanca": "saufen",
+        "ingilizce": "to booze",
+        "seviye": "B1",
+        "ornek": "Am Wochenende saufen wir.",
+        "kelime": "saufen",
+        "kural": "Slang for drinking alcohol heavily.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_08"
+    },
+    {
+        "almanca": "glotzen",
+        "ingilizce": "to stare / to watch",
+        "seviye": "B1",
+        "ornek": "Ich glotz nur Fernsehen.",
+        "kelime": "glotzen",
+        "kural": "Used for watching TV or staring.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_09"
+    },
+    {
+        "almanca": "pennen",
+        "ingilizce": "to sleep / crash",
+        "seviye": "B1",
+        "ornek": "Ich penn heute bei Max.",
+        "kelime": "pennen",
+        "kural": "Casual verb for sleeping.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_10"
+    },
+    {
+        "almanca": "klauen",
+        "ingilizce": "to steal",
+        "seviye": "B1",
+        "ornek": "Jemand hat mein Fahrrad geklaut.",
+        "kelime": "klauen",
+        "kural": "Slang for 'stehlen'.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_11"
+    },
+    {
+        "almanca": "abgehen",
+        "ingilizce": "to go crazy / party hard",
+        "seviye": "B1",
+        "ornek": "Auf der Party ging’s richtig ab.",
+        "kelime": "abgehen",
+        "kural": "Separable, used for intense activity.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_12"
+    },
+    {
+        "almanca": "verzocken",
+        "ingilizce": "to blow (money)",
+        "seviye": "B1",
+        "ornek": "Er hat alles beim Poker verzockt.",
+        "kelime": "verzocken",
+        "kural": "Slang for losing money gambling.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_13"
+    },
+    {
+        "almanca": "rumhängen",
+        "ingilizce": "to hang around",
+        "seviye": "B1",
+        "ornek": "Wir hängen nur rum.",
+        "kelime": "rumhängen",
+        "kural": "Separable, lazy behavior.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_14"
+    },
+    {
+        "almanca": "ankommen",
+        "ingilizce": "to be received (by others)",
+        "seviye": "B1",
+        "ornek": "Das kommt gar nicht gut an.",
+        "kelime": "ankommen",
+        "kural": "Separable. Slang context dependent.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_15"
+    },
+    {
+        "almanca": "schnorren",
+        "ingilizce": "to beg / mooch",
+        "seviye": "B1",
+        "ornek": "Kann ich eine Kippe schnorren?",
+        "kelime": "schnorren",
+        "kural": "Casual form for asking favors.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_16"
+    },
+    {
+        "almanca": "rumschreien",
+        "ingilizce": "to yell around",
+        "seviye": "B1",
+        "ornek": "Schrei nicht so rum!",
+        "kelime": "rumschreien",
+        "kural": "Separable, emotional outburst.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_17"
+    },
+    {
+        "almanca": "hauen",
+        "ingilizce": "to hit",
+        "seviye": "B1",
+        "ornek": "Wenn du mich haust, hau ich zurück!",
+        "kelime": "hauen",
+        "kural": "Simple and colloquial.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_18"
+    },
+    {
+        "almanca": "abkacken",
+        "ingilizce": "to fail / crash",
+        "seviye": "B1",
+        "ornek": "Mein PC ist komplett abgekackt.",
+        "kelime": "abkacken",
+        "kural": "Crude slang, often used with tech.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_19"
+    },
+    {
+        "almanca": "abdrehen",
+        "ingilizce": "to freak out",
+        "seviye": "B1",
+        "ornek": "Ich dreh gleich ab!",
+        "kelime": "abdrehen",
+        "kural": "Separable, expresses mental state.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_20"
+    }
+]

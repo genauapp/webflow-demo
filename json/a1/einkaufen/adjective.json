@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "frisch",
+        "ingilizce": "fresh",
+        "seviye": "A1",
+        "ornek": "Das Brot ist frisch.",
+        "kelime": "frisch",
+        "type": "adjective",
+        "category": "Einkaufen",
+        "id": "adjective_einkaufen_01"
+    },
+    {
+        "almanca": "teuer",
+        "ingilizce": "expensive",
+        "seviye": "A1",
+        "ornek": "Die Tomaten sind teuer.",
+        "kelime": "teuer",
+        "type": "adjective",
+        "category": "Einkaufen",
+        "id": "adjective_einkaufen_02"
+    },
+    {
+        "almanca": "billig",
+        "ingilizce": "cheap",
+        "seviye": "A1",
+        "ornek": "Die Milch ist billig.",
+        "kelime": "billig",
+        "type": "adjective",
+        "category": "Einkaufen",
+        "id": "adjective_einkaufen_03"
+    },
+    {
+        "almanca": "süß",
+        "ingilizce": "sweet",
+        "seviye": "A1",
+        "ornek": "Die Schokolade ist süß.",
+        "kelime": "süß",
+        "type": "adjective",
+        "category": "Einkaufen",
+        "id": "adjective_einkaufen_04"
+    },
+    {
+        "almanca": "salzig",
+        "ingilizce": "salty",
+        "seviye": "A1",
+        "ornek": "Die Suppe ist zu salzig.",
+        "kelime": "salzig",
+        "type": "adjective",
+        "category": "Einkaufen",
+        "id": "adjective_einkaufen_05"
+    },
+    {
+        "almanca": "lecker",
+        "ingilizce": "delicious",
+        "seviye": "A1",
+        "ornek": "Das Essen ist lecker.",
+        "kelime": "lecker",
+        "type": "adjective",
+        "category": "Einkaufen",
+        "id": "adjective_einkaufen_06"
+    },
+    {
+        "almanca": "groß",
+        "ingilizce": "big",
+        "seviye": "A1",
+        "ornek": "Die Portion ist groß.",
+        "kelime": "groß",
+        "type": "adjective",
+        "category": "Einkaufen",
+        "id": "adjective_einkaufen_07"
+    },
+    {
+        "almanca": "klein",
+        "ingilizce": "small",
+        "seviye": "A1",
+        "ornek": "Ich nehme eine kleine Cola.",
+        "kelime": "klein",
+        "type": "adjective",
+        "category": "Einkaufen",
+        "id": "adjective_einkaufen_08"
+    },
+    {
+        "almanca": "neu",
+        "ingilizce": "new",
+        "seviye": "A1",
+        "ornek": "Ich kaufe ein neues Produkt.",
+        "kelime": "neu",
+        "type": "adjective",
+        "category": "Einkaufen",
+        "id": "adjective_einkaufen_09"
+    },
+    {
+        "almanca": "alt",
+        "ingilizce": "old",
+        "seviye": "A1",
+        "ornek": "Das Brot ist alt.",
+        "kelime": "alt",
+        "type": "adjective",
+        "category": "Einkaufen",
+        "id": "adjective_einkaufen_10"
+    },
+    {
+        "almanca": "leer",
+        "ingilizce": "empty",
+        "seviye": "A1",
+        "ornek": "Die Flasche ist leer.",
+        "kelime": "leer",
+        "type": "adjective",
+        "category": "Einkaufen",
+        "id": "adjective_einkaufen_11"
+    },
+    {
+        "almanca": "voll",
+        "ingilizce": "full",
+        "seviye": "A1",
+        "ornek": "Das Regal ist voll.",
+        "kelime": "voll",
+        "type": "adjective",
+        "category": "Einkaufen",
+        "id": "adjective_einkaufen_12"
+    },
+    {
+        "almanca": "warm",
+        "ingilizce": "warm",
+        "seviye": "A1",
+        "ornek": "Die Suppe ist warm.",
+        "kelime": "warm",
+        "type": "adjective",
+        "category": "Einkaufen",
+        "id": "adjective_einkaufen_13"
+    },
+    {
+        "almanca": "kalt",
+        "ingilizce": "cold",
+        "seviye": "A1",
+        "ornek": "Das Getränk ist kalt.",
+        "kelime": "kalt",
+        "type": "adjective",
+        "category": "Einkaufen",
+        "id": "adjective_einkaufen_14"
+    },
+    {
+        "almanca": "nass",
+        "ingilizce": "wet",
+        "seviye": "A1",
+        "ornek": "Der Fisch ist nass.",
+        "kelime": "nass",
+        "type": "adjective",
+        "category": "Einkaufen",
+        "id": "adjective_einkaufen_15"
+    },
+    {
+        "almanca": "trocken",
+        "ingilizce": "dry",
+        "seviye": "A1",
+        "ornek": "Das Brot ist trocken.",
+        "kelime": "trocken",
+        "type": "adjective",
+        "category": "Einkaufen",
+        "id": "adjective_einkaufen_16"
+    },
+    {
+        "almanca": "schmutzig",
+        "ingilizce": "dirty",
+        "seviye": "A1",
+        "ornek": "Die Flasche ist schmutzig.",
+        "kelime": "schmutzig",
+        "type": "adjective",
+        "category": "Einkaufen",
+        "id": "adjective_einkaufen_17"
+    },
+    {
+        "almanca": "sauber",
+        "ingilizce": "clean",
+        "seviye": "A1",
+        "ornek": "Die Küche ist sauber.",
+        "kelime": "sauber",
+        "type": "adjective",
+        "category": "Einkaufen",
+        "id": "adjective_einkaufen_18"
+    },
+    {
+        "almanca": "genug",
+        "ingilizce": "enough",
+        "seviye": "A1",
+        "ornek": "Das ist genug Zucker.",
+        "kelime": "genug",
+        "type": "adjective",
+        "category": "Einkaufen",
+        "id": "adjective_einkaufen_19"
+    },
+    {
+        "almanca": "bereit",
+        "ingilizce": "ready",
+        "seviye": "A1",
+        "ornek": "Das Essen ist bereit.",
+        "kelime": "bereit",
+        "type": "adjective",
+        "category": "Einkaufen",
+        "id": "adjective_einkaufen_20"
+    }
+]

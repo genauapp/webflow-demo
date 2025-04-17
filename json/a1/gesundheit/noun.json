@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "der Arzt",
+        "ingilizce": "doctor",
+        "seviye": "A1",
+        "ornek": "Ich gehe zum Arzt.",
+        "artikel": "der",
+        "kelime": "Arzt",
+        "kural": "Professions ending in -arzt are masculine.",
+        "category": "Gesundheit",
+        "id": "noun_gesundheit_01"
+    },
+    {
+        "almanca": "die Ärztin",
+        "ingilizce": "female doctor",
+        "seviye": "A1",
+        "ornek": "Die Ärztin hilft mir.",
+        "artikel": "die",
+        "kelime": "Ärztin",
+        "kural": "Feminine professions usually end in '-in'.",
+        "category": "Gesundheit",
+        "id": "noun_gesundheit_02"
+    },
+    {
+        "almanca": "das Krankenhaus",
+        "ingilizce": "hospital",
+        "seviye": "A1",
+        "ornek": "Er liegt im Krankenhaus.",
+        "artikel": "das",
+        "kelime": "Krankenhaus",
+        "kural": "Compound nouns ending in -haus are neuter.",
+        "category": "Gesundheit",
+        "id": "noun_gesundheit_03"
+    },
+    {
+        "almanca": "die Apotheke",
+        "ingilizce": "pharmacy",
+        "seviye": "A1",
+        "ornek": "Ich gehe in die Apotheke.",
+        "artikel": "die",
+        "kelime": "Apotheke",
+        "kural": "Nouns ending in '-e' are often feminine.",
+        "category": "Gesundheit",
+        "id": "noun_gesundheit_04"
+    },
+    {
+        "almanca": "das Medikament",
+        "ingilizce": "medicine",
+        "seviye": "A1",
+        "ornek": "Ich nehme ein Medikament.",
+        "artikel": "das",
+        "kelime": "Medikament",
+        "kural": "Most foreign-derived nouns ending in -ment are neuter.",
+        "category": "Gesundheit",
+        "id": "noun_gesundheit_05"
+    },
+    {
+        "almanca": "die Tablette",
+        "ingilizce": "pill",
+        "seviye": "A1",
+        "ornek": "Ich nehme eine Tablette.",
+        "artikel": "die",
+        "kelime": "Tablette",
+        "kural": "Feminine nouns for small objects often end in '-e'.",
+        "category": "Gesundheit",
+        "id": "noun_gesundheit_06"
+    },
+    {
+        "almanca": "der Schmerz",
+        "ingilizce": "pain",
+        "seviye": "A1",
+        "ornek": "Ich habe Kopfschmerzen.",
+        "artikel": "der",
+        "kelime": "Schmerz",
+        "kural": "Abstract feelings and conditions are often masculine.",
+        "category": "Gesundheit",
+        "id": "noun_gesundheit_07"
+    },
+    {
+        "almanca": "die Praxis",
+        "ingilizce": "practice (doctor's office)",
+        "seviye": "A1",
+        "ornek": "Die Praxis ist in der Nähe.",
+        "artikel": "die",
+        "kelime": "Praxis",
+        "kural": "Nouns ending in '-is' are usually feminine.",
+        "category": "Gesundheit",
+        "id": "noun_gesundheit_08"
+    },
+    {
+        "almanca": "das Rezept",
+        "ingilizce": "prescription",
+        "seviye": "A1",
+        "ornek": "Ich bekomme ein Rezept vom Arzt.",
+        "artikel": "das",
+        "kelime": "Rezept",
+        "kural": "Neuter noun, also means 'recipe'.",
+        "category": "Gesundheit",
+        "id": "noun_gesundheit_09"
+    },
+    {
+        "almanca": "die Krankheit",
+        "ingilizce": "illness",
+        "seviye": "A1",
+        "ornek": "Er hat eine Krankheit.",
+        "artikel": "die",
+        "kelime": "Krankheit",
+        "kural": "Nouns ending in '-heit' are always feminine.",
+        "category": "Gesundheit",
+        "id": "noun_gesundheit_10"
+    },
+    {
+        "almanca": "der Termin",
+        "ingilizce": "appointment",
+        "seviye": "A1",
+        "ornek": "Ich habe einen Termin beim Arzt.",
+        "artikel": "der",
+        "kelime": "Termin",
+        "kural": "Many scheduled events are masculine.",
+        "category": "Gesundheit",
+        "id": "noun_gesundheit_11"
+    },
+    {
+        "almanca": "die Untersuchung",
+        "ingilizce": "examination",
+        "seviye": "A1",
+        "ornek": "Ich habe morgen eine Untersuchung.",
+        "artikel": "die",
+        "kelime": "Untersuchung",
+        "kural": "Nouns ending in '-ung' are feminine.",
+        "category": "Gesundheit",
+        "id": "noun_gesundheit_12"
+    },
+    {
+        "almanca": "das Fieber",
+        "ingilizce": "fever",
+        "seviye": "A1",
+        "ornek": "Ich habe Fieber.",
+        "artikel": "das",
+        "kelime": "Fieber",
+        "kural": "Nouns for illnesses ending in '-er' are often neuter.",
+        "category": "Gesundheit",
+        "id": "noun_gesundheit_13"
+    },
+    {
+        "almanca": "die Impfung",
+        "ingilizce": "vaccination",
+        "seviye": "A1",
+        "ornek": "Ich brauche eine Impfung.",
+        "artikel": "die",
+        "kelime": "Impfung",
+        "kural": "Nouns ending in '-ung' are feminine.",
+        "category": "Gesundheit",
+        "id": "noun_gesundheit_14"
+    },
+    {
+        "almanca": "der Patient",
+        "ingilizce": "patient",
+        "seviye": "A1",
+        "ornek": "Der Patient wartet.",
+        "artikel": "der",
+        "kelime": "Patient",
+        "kural": "Professions or roles referring to people are often masculine.",
+        "category": "Gesundheit",
+        "id": "noun_gesundheit_15"
+    },
+    {
+        "almanca": "die Patientin",
+        "ingilizce": "female patient",
+        "seviye": "A1",
+        "ornek": "Die Patientin ist da.",
+        "artikel": "die",
+        "kelime": "Patientin",
+        "kural": "Feminine counterpart of masculine nouns ends in '-in'.",
+        "category": "Gesundheit",
+        "id": "noun_gesundheit_16"
+    },
+    {
+        "almanca": "das Wartezimmer",
+        "ingilizce": "waiting room",
+        "seviye": "A1",
+        "ornek": "Ich warte im Wartezimmer.",
+        "artikel": "das",
+        "kelime": "Wartezimmer",
+        "kural": "Compound nouns ending in '-zimmer' are neuter.",
+        "category": "Gesundheit",
+        "id": "noun_gesundheit_17"
+    },
+    {
+        "almanca": "die Spritze",
+        "ingilizce": "injection",
+        "seviye": "A1",
+        "ornek": "Ich bekomme eine Spritze.",
+        "artikel": "die",
+        "kelime": "Spritze",
+        "kural": "Medical tools ending in '-e' are usually feminine.",
+        "category": "Gesundheit",
+        "id": "noun_gesundheit_18"
+    },
+    {
+        "almanca": "der Notfall",
+        "ingilizce": "emergency",
+        "seviye": "A1",
+        "ornek": "Es ist ein Notfall.",
+        "artikel": "der",
+        "kelime": "Notfall",
+        "kural": "Many compound words with 'Fall' are masculine.",
+        "category": "Gesundheit",
+        "id": "noun_gesundheit_19"
+    },
+    {
+        "almanca": "die Hilfe",
+        "ingilizce": "help",
+        "seviye": "A1",
+        "ornek": "Ich brauche Hilfe.",
+        "artikel": "die",
+        "kelime": "Hilfe",
+        "kural": "Abstract nouns ending in '-e' are often feminine.",
+        "category": "Gesundheit",
+        "id": "noun_gesundheit_20"
+    }
+]

@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "bequem",
+        "ingilizce": "comfortable",
+        "seviye": "A2",
+        "ornek": "Das Sofa ist sehr bequem.",
+        "kelime": "bequem",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_A2_01"
+    },
+    {
+        "almanca": "praktisch",
+        "ingilizce": "practical",
+        "seviye": "A2",
+        "ornek": "Eine kleine Küche ist oft praktisch.",
+        "kelime": "praktisch",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_A2_02"
+    },
+    {
+        "almanca": "hell",
+        "ingilizce": "bright",
+        "seviye": "A2",
+        "ornek": "Das Wohnzimmer ist hell und freundlich.",
+        "kelime": "hell",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_A2_03"
+    },
+    {
+        "almanca": "dunkel",
+        "ingilizce": "dark",
+        "seviye": "A2",
+        "ornek": "Die Küche ist ziemlich dunkel.",
+        "kelime": "dunkel",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_A2_04"
+    },
+    {
+        "almanca": "ruhig",
+        "ingilizce": "quiet",
+        "seviye": "A2",
+        "ornek": "Die Nachbarschaft ist ruhig.",
+        "kelime": "ruhig",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_A2_05"
+    },
+    {
+        "almanca": "laut",
+        "ingilizce": "loud",
+        "seviye": "A2",
+        "ornek": "Die Straße ist sehr laut.",
+        "kelime": "laut",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_A2_06"
+    },
+    {
+        "almanca": "nass",
+        "ingilizce": "wet",
+        "seviye": "A2",
+        "ornek": "Das Bad ist nass.",
+        "kelime": "nass",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_A2_07"
+    },
+    {
+        "almanca": "trocken",
+        "ingilizce": "dry",
+        "seviye": "A2",
+        "ornek": "Der Boden ist trocken.",
+        "kelime": "trocken",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_A2_08"
+    },
+    {
+        "almanca": "teuer",
+        "ingilizce": "expensive",
+        "seviye": "A2",
+        "ornek": "Die Wohnung ist sehr teuer.",
+        "kelime": "teuer",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_A2_09"
+    },
+    {
+        "almanca": "billig",
+        "ingilizce": "cheap",
+        "seviye": "A2",
+        "ornek": "Der Teppich war ziemlich billig.",
+        "kelime": "billig",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_A2_10"
+    },
+    {
+        "almanca": "sauber",
+        "ingilizce": "clean",
+        "seviye": "A2",
+        "ornek": "Die Küche ist sauber.",
+        "kelime": "sauber",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_A2_11"
+    },
+    {
+        "almanca": "schmutzig",
+        "ingilizce": "dirty",
+        "seviye": "A2",
+        "ornek": "Der Boden ist schmutzig.",
+        "kelime": "schmutzig",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_A2_12"
+    },
+    {
+        "almanca": "kaputt",
+        "ingilizce": "broken",
+        "seviye": "A2",
+        "ornek": "Der Wasserhahn ist kaputt.",
+        "kelime": "kaputt",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_A2_13"
+    },
+    {
+        "almanca": "ganz",
+        "ingilizce": "whole",
+        "seviye": "A2",
+        "ornek": "Das Glas ist noch ganz.",
+        "kelime": "ganz",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_A2_14"
+    },
+    {
+        "almanca": "gemütlich",
+        "ingilizce": "cozy",
+        "seviye": "A2",
+        "ornek": "Die Wohnung ist sehr gemütlich.",
+        "kelime": "gemütlich",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_A2_15"
+    },
+    {
+        "almanca": "leer",
+        "ingilizce": "empty",
+        "seviye": "A2",
+        "ornek": "Der Kühlschrank ist leer.",
+        "kelime": "leer",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_A2_16"
+    },
+    {
+        "almanca": "voll",
+        "ingilizce": "full",
+        "seviye": "A2",
+        "ornek": "Die Mülltonne ist voll.",
+        "kelime": "voll",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_A2_17"
+    },
+    {
+        "almanca": "offen",
+        "ingilizce": "open",
+        "seviye": "A2",
+        "ornek": "Das Fenster ist offen.",
+        "kelime": "offen",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_A2_18"
+    },
+    {
+        "almanca": "geschlossen",
+        "ingilizce": "closed",
+        "seviye": "A2",
+        "ornek": "Die Tür ist geschlossen.",
+        "kelime": "geschlossen",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_A2_19"
+    },
+    {
+        "almanca": "hoch",
+        "ingilizce": "high",
+        "seviye": "A2",
+        "ornek": "Die Decke ist sehr hoch.",
+        "kelime": "hoch",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_A2_20"
+    }
+]

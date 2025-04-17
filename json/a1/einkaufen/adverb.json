@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "heute",
+        "ingilizce": "today",
+        "seviye": "A1",
+        "ornek": "Heute kaufe ich ein.",
+        "kelime": "heute",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_01"
+    },
+    {
+        "almanca": "gestern",
+        "ingilizce": "yesterday",
+        "seviye": "A1",
+        "ornek": "Gestern war ich im Supermarkt.",
+        "kelime": "gestern",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_02"
+    },
+    {
+        "almanca": "morgen",
+        "ingilizce": "tomorrow",
+        "seviye": "A1",
+        "ornek": "Morgen gehe ich einkaufen.",
+        "kelime": "morgen",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_03"
+    },
+    {
+        "almanca": "jetzt",
+        "ingilizce": "now",
+        "seviye": "A1",
+        "ornek": "Ich bestelle jetzt das Essen.",
+        "kelime": "jetzt",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_04"
+    },
+    {
+        "almanca": "bald",
+        "ingilizce": "soon",
+        "seviye": "A1",
+        "ornek": "Wir essen bald.",
+        "kelime": "bald",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_05"
+    },
+    {
+        "almanca": "sofort",
+        "ingilizce": "immediately",
+        "seviye": "A1",
+        "ornek": "Ich zahle sofort.",
+        "kelime": "sofort",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_06"
+    },
+    {
+        "almanca": "später",
+        "ingilizce": "later",
+        "seviye": "A1",
+        "ornek": "Ich esse später.",
+        "kelime": "später",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_07"
+    },
+    {
+        "almanca": "immer",
+        "ingilizce": "always",
+        "seviye": "A1",
+        "ornek": "Ich kaufe immer Bio-Produkte.",
+        "kelime": "immer",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_08"
+    },
+    {
+        "almanca": "oft",
+        "ingilizce": "often",
+        "seviye": "A1",
+        "ornek": "Wir essen oft zusammen.",
+        "kelime": "oft",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_09"
+    },
+    {
+        "almanca": "manchmal",
+        "ingilizce": "sometimes",
+        "seviye": "A1",
+        "ornek": "Manchmal kaufe ich online ein.",
+        "kelime": "manchmal",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_10"
+    },
+    {
+        "almanca": "nie",
+        "ingilizce": "never",
+        "seviye": "A1",
+        "ornek": "Ich esse nie Fleisch.",
+        "kelime": "nie",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_11"
+    },
+    {
+        "almanca": "gern",
+        "ingilizce": "gladly / with pleasure",
+        "seviye": "A1",
+        "ornek": "Ich esse gern Pizza.",
+        "kelime": "gern",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_12"
+    },
+    {
+        "almanca": "nicht",
+        "ingilizce": "not",
+        "seviye": "A1",
+        "ornek": "Ich kaufe das nicht.",
+        "kelime": "nicht",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_13"
+    },
+    {
+        "almanca": "auch",
+        "ingilizce": "also",
+        "seviye": "A1",
+        "ornek": "Ich nehme auch Brot.",
+        "kelime": "auch",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_14"
+    },
+    {
+        "almanca": "nur",
+        "ingilizce": "only",
+        "seviye": "A1",
+        "ornek": "Ich kaufe nur Gemüse.",
+        "kelime": "nur",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_15"
+    },
+    {
+        "almanca": "schon",
+        "ingilizce": "already",
+        "seviye": "A1",
+        "ornek": "Ich habe schon bezahlt.",
+        "kelime": "schon",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_16"
+    },
+    {
+        "almanca": "noch",
+        "ingilizce": "still / yet",
+        "seviye": "A1",
+        "ornek": "Ich brauche noch Eier.",
+        "kelime": "noch",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_17"
+    },
+    {
+        "almanca": "zusammen",
+        "ingilizce": "together",
+        "seviye": "A1",
+        "ornek": "Wir kaufen zusammen ein.",
+        "kelime": "zusammen",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_18"
+    },
+    {
+        "almanca": "allein",
+        "ingilizce": "alone",
+        "seviye": "A1",
+        "ornek": "Ich esse allein.",
+        "kelime": "allein",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_19"
+    },
+    {
+        "almanca": "da",
+        "ingilizce": "there",
+        "seviye": "A1",
+        "ornek": "Die Kasse ist da.",
+        "kelime": "da",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_20"
+    }
+]

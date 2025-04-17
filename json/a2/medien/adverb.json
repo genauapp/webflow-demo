@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "online",
+        "ingilizce": "online",
+        "seviye": "A2",
+        "ornek": "Ich bin fast immer online.",
+        "kelime": "online",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_01"
+    },
+    {
+        "almanca": "offline",
+        "ingilizce": "offline",
+        "seviye": "A2",
+        "ornek": "Ich bin gerade offline.",
+        "kelime": "offline",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_02"
+    },
+    {
+        "almanca": "sofort",
+        "ingilizce": "immediately",
+        "seviye": "A2",
+        "ornek": "Ich antworte dir sofort.",
+        "kelime": "sofort",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_03"
+    },
+    {
+        "almanca": "gleich",
+        "ingilizce": "soon",
+        "seviye": "A2",
+        "ornek": "Ich rufe dich gleich zurück.",
+        "kelime": "gleich",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_04"
+    },
+    {
+        "almanca": "heute",
+        "ingilizce": "today",
+        "seviye": "A2",
+        "ornek": "Ich schreibe heute viele E-Mails.",
+        "kelime": "heute",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_05"
+    },
+    {
+        "almanca": "gestern",
+        "ingilizce": "yesterday",
+        "seviye": "A2",
+        "ornek": "Ich habe gestern mit ihr telefoniert.",
+        "kelime": "gestern",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_06"
+    },
+    {
+        "almanca": "morgen",
+        "ingilizce": "tomorrow",
+        "seviye": "A2",
+        "ornek": "Ich schreibe dir morgen zurück.",
+        "kelime": "morgen",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_07"
+    },
+    {
+        "almanca": "manchmal",
+        "ingilizce": "sometimes",
+        "seviye": "A2",
+        "ornek": "Manchmal chatte ich mit Freunden.",
+        "kelime": "manchmal",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_08"
+    },
+    {
+        "almanca": "oft",
+        "ingilizce": "often",
+        "seviye": "A2",
+        "ornek": "Ich bin oft im Internet.",
+        "kelime": "oft",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_09"
+    },
+    {
+        "almanca": "nie",
+        "ingilizce": "never",
+        "seviye": "A2",
+        "ornek": "Ich telefoniere nie ohne Kopfhörer.",
+        "kelime": "nie",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_10"
+    },
+    {
+        "almanca": "immer",
+        "ingilizce": "always",
+        "seviye": "A2",
+        "ornek": "Ich checke immer meine Mails morgens.",
+        "kelime": "immer",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_11"
+    },
+    {
+        "almanca": "schon",
+        "ingilizce": "already",
+        "seviye": "A2",
+        "ornek": "Ich habe die Nachricht schon gelesen.",
+        "kelime": "schon",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_12"
+    },
+    {
+        "almanca": "noch nicht",
+        "ingilizce": "not yet",
+        "seviye": "A2",
+        "ornek": "Ich habe die E-Mail noch nicht bekommen.",
+        "kelime": "noch nicht",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_13"
+    },
+    {
+        "almanca": "lange",
+        "ingilizce": "for a long time",
+        "seviye": "A2",
+        "ornek": "Ich habe lange auf die Antwort gewartet.",
+        "kelime": "lange",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_14"
+    },
+    {
+        "almanca": "kurz",
+        "ingilizce": "briefly",
+        "seviye": "A2",
+        "ornek": "Ich rufe dich kurz an.",
+        "kelime": "kurz",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_15"
+    },
+    {
+        "almanca": "wieder",
+        "ingilizce": "again",
+        "seviye": "A2",
+        "ornek": "Ich versuche es wieder.",
+        "kelime": "wieder",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_16"
+    },
+    {
+        "almanca": "einfach",
+        "ingilizce": "simply",
+        "seviye": "A2",
+        "ornek": "Du kannst es einfach posten.",
+        "kelime": "einfach",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_17"
+    },
+    {
+        "almanca": "überall",
+        "ingilizce": "everywhere",
+        "seviye": "A2",
+        "ornek": "Mit dem Handy bin ich überall erreichbar.",
+        "kelime": "überall",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_18"
+    },
+    {
+        "almanca": "nirgendwo",
+        "ingilizce": "nowhere",
+        "seviye": "A2",
+        "ornek": "Die Datei ist nirgendwo zu finden.",
+        "kelime": "nirgendwo",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_19"
+    },
+    {
+        "almanca": "dort",
+        "ingilizce": "there",
+        "seviye": "A2",
+        "ornek": "Du kannst dort deine Nachrichten sehen.",
+        "kelime": "dort",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_20"
+    }
+]

@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "arbeiten",
+        "ingilizce": "to work",
+        "seviye": "A2",
+        "ornek": "Ich arbeite in einem Büro.",
+        "kelime": "arbeiten",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Arbeit & Behörden",
+        "id": "verb_arbeit_A2_01"
+    },
+    {
+        "almanca": "verdienen",
+        "ingilizce": "to earn",
+        "seviye": "A2",
+        "ornek": "Ich verdiene genug Geld.",
+        "kelime": "verdienen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Arbeit & Behörden",
+        "id": "verb_arbeit_A2_02"
+    },
+    {
+        "almanca": "kündigen",
+        "ingilizce": "to quit/resign",
+        "seviye": "A2",
+        "ornek": "Ich habe meinen Job gekündigt.",
+        "kelime": "kündigen",
+        "kural": "Regular verb, often reflexive.",
+        "type": "verb",
+        "category": "Arbeit & Behörden",
+        "id": "verb_arbeit_A2_03"
+    },
+    {
+        "almanca": "einstellen",
+        "ingilizce": "to hire",
+        "seviye": "A2",
+        "ornek": "Die Firma stellt neue Mitarbeiter ein.",
+        "kelime": "einstellen",
+        "kural": "Separable verb.",
+        "type": "verb",
+        "category": "Arbeit & Behörden",
+        "id": "verb_arbeit_A2_04"
+    },
+    {
+        "almanca": "unterschreiben",
+        "ingilizce": "to sign",
+        "seviye": "A2",
+        "ornek": "Ich unterschreibe den Vertrag.",
+        "kelime": "unterschreiben",
+        "kural": "Inseparable verb.",
+        "type": "verb",
+        "category": "Arbeit & Behörden",
+        "id": "verb_arbeit_A2_05"
+    },
+    {
+        "almanca": "beantragen",
+        "ingilizce": "to apply for",
+        "seviye": "A2",
+        "ornek": "Ich beantrage das Visum online.",
+        "kelime": "beantragen",
+        "kural": "Inseparable verb.",
+        "type": "verb",
+        "category": "Arbeit & Behörden",
+        "id": "verb_arbeit_A2_06"
+    },
+    {
+        "almanca": "ausfüllen",
+        "ingilizce": "to fill out",
+        "seviye": "A2",
+        "ornek": "Bitte füllen Sie das Formular aus.",
+        "kelime": "ausfüllen",
+        "kural": "Separable verb.",
+        "type": "verb",
+        "category": "Arbeit & Behörden",
+        "id": "verb_arbeit_A2_07"
+    },
+    {
+        "almanca": "vorlegen",
+        "ingilizce": "to present/submit",
+        "seviye": "A2",
+        "ornek": "Sie müssen den Ausweis vorlegen.",
+        "kelime": "vorlegen",
+        "kural": "Separable verb.",
+        "type": "verb",
+        "category": "Arbeit & Behörden",
+        "id": "verb_arbeit_A2_08"
+    },
+    {
+        "almanca": "ausdrucken",
+        "ingilizce": "to print out",
+        "seviye": "A2",
+        "ornek": "Ich drucke das Dokument aus.",
+        "kelime": "ausdrucken",
+        "kural": "Separable verb.",
+        "type": "verb",
+        "category": "Arbeit & Behörden",
+        "id": "verb_arbeit_A2_09"
+    },
+    {
+        "almanca": "einreichen",
+        "ingilizce": "to submit",
+        "seviye": "A2",
+        "ornek": "Ich reiche den Antrag ein.",
+        "kelime": "einreichen",
+        "kural": "Separable verb.",
+        "type": "verb",
+        "category": "Arbeit & Behörden",
+        "id": "verb_arbeit_A2_10"
+    },
+    {
+        "almanca": "zahlen",
+        "ingilizce": "to pay",
+        "seviye": "A2",
+        "ornek": "Ich muss meine Steuer zahlen.",
+        "kelime": "zahlen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Arbeit & Behörden",
+        "id": "verb_arbeit_A2_11"
+    },
+    {
+        "almanca": "bekommen",
+        "ingilizce": "to receive",
+        "seviye": "A2",
+        "ornek": "Ich habe eine Genehmigung bekommen.",
+        "kelime": "bekommen",
+        "kural": "Irregular verb: bekam, bekommen.",
+        "type": "verb",
+        "category": "Arbeit & Behörden",
+        "id": "verb_arbeit_A2_12"
+    },
+    {
+        "almanca": "prüfen",
+        "ingilizce": "to check/verify",
+        "seviye": "A2",
+        "ornek": "Ich prüfe die Unterlagen.",
+        "kelime": "prüfen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Arbeit & Behörden",
+        "id": "verb_arbeit_A2_13"
+    },
+    {
+        "almanca": "bestätigen",
+        "ingilizce": "to confirm",
+        "seviye": "A2",
+        "ornek": "Bitte bestätigen Sie den Termin.",
+        "kelime": "bestätigen",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Arbeit & Behörden",
+        "id": "verb_arbeit_A2_14"
+    },
+    {
+        "almanca": "erklären",
+        "ingilizce": "to explain",
+        "seviye": "A2",
+        "ornek": "Der Beamte erklärt das Formular.",
+        "kelime": "erklären",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Arbeit & Behörden",
+        "id": "verb_arbeit_A2_15"
+    },
+    {
+        "almanca": "vereinbaren",
+        "ingilizce": "to agree on / arrange",
+        "seviye": "A2",
+        "ornek": "Wir vereinbaren einen neuen Termin.",
+        "kelime": "vereinbaren",
+        "kural": "Regular verb.",
+        "type": "verb",
+        "category": "Arbeit & Behörden",
+        "id": "verb_arbeit_A2_16"
+    },
+    {
+        "almanca": "erscheinen",
+        "ingilizce": "to appear/show up",
+        "seviye": "A2",
+        "ornek": "Sie müssen persönlich erscheinen.",
+        "kelime": "erscheinen",
+        "kural": "Irregular: erschien, erschienen.",
+        "type": "verb",
+        "category": "Arbeit & Behörden",
+        "id": "verb_arbeit_A2_17"
+    },
+    {
+        "almanca": "anmelden",
+        "ingilizce": "to register",
+        "seviye": "A2",
+        "ornek": "Ich möchte mich anmelden.",
+        "kelime": "anmelden",
+        "kural": "Separable and reflexive verb.",
+        "type": "verb",
+        "category": "Arbeit & Behörden",
+        "id": "verb_arbeit_A2_18"
+    },
+    {
+        "almanca": "abgeben",
+        "ingilizce": "to hand in",
+        "seviye": "A2",
+        "ornek": "Ich muss das Formular abgeben.",
+        "kelime": "abgeben",
+        "kural": "Separable verb.",
+        "type": "verb",
+        "category": "Arbeit & Behörden",
+        "id": "verb_arbeit_A2_19"
+    },
+    {
+        "almanca": "melden",
+        "ingilizce": "to report",
+        "seviye": "A2",
+        "ornek": "Ich melde den Verlust beim Amt.",
+        "kelime": "melden",
+        "kural": "Regular verb, often reflexive.",
+        "type": "verb",
+        "category": "Arbeit & Behörden",
+        "id": "verb_arbeit_A2_20"
+    }
+]

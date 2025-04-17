@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "die Freundschaft",
+        "ingilizce": "friendship",
+        "seviye": "B1",
+        "ornek": "Unsere Freundschaft ist sehr stark.",
+        "artikel": "die",
+        "kelime": "Freundschaft",
+        "kural": "Words ending in '-schaft' are always feminine.",
+        "category": "Gefühle & Beziehungen",
+        "id": "noun_gefuehle_B1_01"
+    },
+    {
+        "almanca": "die Beziehung",
+        "ingilizce": "relationship",
+        "seviye": "B1",
+        "ornek": "Sie haben eine gute Beziehung.",
+        "artikel": "die",
+        "kelime": "Beziehung",
+        "kural": "Words ending in '-ung' are always feminine.",
+        "category": "Gefühle & Beziehungen",
+        "id": "noun_gefuehle_B1_02"
+    },
+    {
+        "almanca": "das Gefühl",
+        "ingilizce": "feeling",
+        "seviye": "B1",
+        "ornek": "Ich habe ein gutes Gefühl.",
+        "artikel": "das",
+        "kelime": "Gefühl",
+        "kural": "",
+        "category": "Gefühle & Beziehungen",
+        "id": "noun_gefuehle_B1_03"
+    },
+    {
+        "almanca": "die Liebe",
+        "ingilizce": "love",
+        "seviye": "B1",
+        "ornek": "Liebe ist wichtig im Leben.",
+        "artikel": "die",
+        "kelime": "Liebe",
+        "kural": "Words ending in '-e' are often feminine.",
+        "category": "Gefühle & Beziehungen",
+        "id": "noun_gefuehle_B1_04"
+    },
+    {
+        "almanca": "der Hass",
+        "ingilizce": "hate",
+        "seviye": "B1",
+        "ornek": "Hass ist ein starkes Gefühl.",
+        "artikel": "der",
+        "kelime": "Hass",
+        "kural": "",
+        "category": "Gefühle & Beziehungen",
+        "id": "noun_gefuehle_B1_05"
+    },
+    {
+        "almanca": "die Angst",
+        "ingilizce": "fear",
+        "seviye": "B1",
+        "ornek": "Ich habe Angst vor Spinnen.",
+        "artikel": "die",
+        "kelime": "Angst",
+        "kural": "",
+        "category": "Gefühle & Beziehungen",
+        "id": "noun_gefuehle_B1_06"
+    },
+    {
+        "almanca": "die Eifersucht",
+        "ingilizce": "jealousy",
+        "seviye": "B1",
+        "ornek": "Eifersucht kann Beziehungen zerstören.",
+        "artikel": "die",
+        "kelime": "Eifersucht",
+        "kural": "",
+        "category": "Gefühle & Beziehungen",
+        "id": "noun_gefuehle_B1_07"
+    },
+    {
+        "almanca": "der Streit",
+        "ingilizce": "argument",
+        "seviye": "B1",
+        "ornek": "Es gab einen Streit zwischen den Geschwistern.",
+        "artikel": "der",
+        "kelime": "Streit",
+        "kural": "",
+        "category": "Gefühle & Beziehungen",
+        "id": "noun_gefuehle_B1_08"
+    },
+    {
+        "almanca": "die Trennung",
+        "ingilizce": "separation",
+        "seviye": "B1",
+        "ornek": "Nach der Trennung fühlte sie sich traurig.",
+        "artikel": "die",
+        "kelime": "Trennung",
+        "kural": "Words ending in '-ung' are always feminine.",
+        "category": "Gefühle & Beziehungen",
+        "id": "noun_gefuehle_B1_09"
+    },
+    {
+        "almanca": "die Versöhnung",
+        "ingilizce": "reconciliation",
+        "seviye": "B1",
+        "ornek": "Die Versöhnung war für beide wichtig.",
+        "artikel": "die",
+        "kelime": "Versöhnung",
+        "kural": "Words ending in '-ung' are always feminine.",
+        "category": "Gefühle & Beziehungen",
+        "id": "noun_gefuehle_B1_10"
+    },
+    {
+        "almanca": "die Zuneigung",
+        "ingilizce": "affection",
+        "seviye": "B1",
+        "ornek": "Zuneigung ist eine Form der Liebe.",
+        "artikel": "die",
+        "kelime": "Zuneigung",
+        "kural": "Words ending in '-ung' are always feminine.",
+        "category": "Gefühle & Beziehungen",
+        "id": "noun_gefuehle_B1_11"
+    },
+    {
+        "almanca": "das Vertrauen",
+        "ingilizce": "trust",
+        "seviye": "B1",
+        "ornek": "Vertrauen ist die Basis jeder Beziehung.",
+        "artikel": "das",
+        "kelime": "Vertrauen",
+        "kural": "",
+        "category": "Gefühle & Beziehungen",
+        "id": "noun_gefuehle_B1_12"
+    },
+    {
+        "almanca": "die Enttäuschung",
+        "ingilizce": "disappointment",
+        "seviye": "B1",
+        "ornek": "Nach dem Streit kam die Enttäuschung.",
+        "artikel": "die",
+        "kelime": "Enttäuschung",
+        "kural": "Words ending in '-ung' are always feminine.",
+        "category": "Gefühle & Beziehungen",
+        "id": "noun_gefuehle_B1_13"
+    },
+    {
+        "almanca": "das Geheimnis",
+        "ingilizce": "secret",
+        "seviye": "B1",
+        "ornek": "Sie hat ihm ein Geheimnis erzählt.",
+        "artikel": "das",
+        "kelime": "Geheimnis",
+        "kural": "Words ending in '-nis' are usually neuter.",
+        "category": "Gefühle & Beziehungen",
+        "id": "noun_gefuehle_B1_14"
+    },
+    {
+        "almanca": "die Nähe",
+        "ingilizce": "closeness",
+        "seviye": "B1",
+        "ornek": "Nähe schafft Vertrauen.",
+        "artikel": "die",
+        "kelime": "Nähe",
+        "kural": "",
+        "category": "Gefühle & Beziehungen",
+        "id": "noun_gefuehle_B1_15"
+    },
+    {
+        "almanca": "die Distanz",
+        "ingilizce": "distance",
+        "seviye": "B1",
+        "ornek": "Zu viel Distanz kann Probleme machen.",
+        "artikel": "die",
+        "kelime": "Distanz",
+        "kural": "Words ending in '-anz' are usually feminine.",
+        "category": "Gefühle & Beziehungen",
+        "id": "noun_gefuehle_B1_16"
+    },
+    {
+        "almanca": "die Sehnsucht",
+        "ingilizce": "longing",
+        "seviye": "B1",
+        "ornek": "Er fühlte eine große Sehnsucht nach ihr.",
+        "artikel": "die",
+        "kelime": "Sehnsucht",
+        "kural": "",
+        "category": "Gefühle & Beziehungen",
+        "id": "noun_gefuehle_B1_17"
+    },
+    {
+        "almanca": "der Respekt",
+        "ingilizce": "respect",
+        "seviye": "B1",
+        "ornek": "Respekt ist wichtig in jeder Beziehung.",
+        "artikel": "der",
+        "kelime": "Respekt",
+        "kural": "",
+        "category": "Gefühle & Beziehungen",
+        "id": "noun_gefuehle_B1_18"
+    },
+    {
+        "almanca": "die Sympathie",
+        "ingilizce": "sympathy",
+        "seviye": "B1",
+        "ornek": "Ich habe viel Sympathie für ihn.",
+        "artikel": "die",
+        "kelime": "Sympathie",
+        "kural": "Words ending in '-ie' are usually feminine.",
+        "category": "Gefühle & Beziehungen",
+        "id": "noun_gefuehle_B1_19"
+    },
+    {
+        "almanca": "die Empathie",
+        "ingilizce": "empathy",
+        "seviye": "B1",
+        "ornek": "Empathie hilft beim Verstehen anderer Menschen.",
+        "artikel": "die",
+        "kelime": "Empathie",
+        "kural": "Words ending in '-ie' are usually feminine.",
+        "category": "Gefühle & Beziehungen",
+        "id": "noun_gefuehle_B1_20"
+    }
+]

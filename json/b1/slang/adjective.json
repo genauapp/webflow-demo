@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "bescheuert",
+        "ingilizce": "stupid / nuts",
+        "seviye": "B1",
+        "ornek": "Was für eine bescheuerte Idee!",
+        "kelime": "bescheuert",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_01"
+    },
+    {
+        "almanca": "fett",
+        "ingilizce": "awesome / cool (slang)",
+        "seviye": "B1",
+        "ornek": "Das Konzert war richtig fett!",
+        "kelime": "fett",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_02"
+    },
+    {
+        "almanca": "geil",
+        "ingilizce": "cool / awesome / sexy",
+        "seviye": "B1",
+        "ornek": "Das war ein geiler Film!",
+        "kelime": "geil",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_03"
+    },
+    {
+        "almanca": "assi",
+        "ingilizce": "trashy / low-class",
+        "seviye": "B1",
+        "ornek": "Das ist total assi.",
+        "kelime": "assi",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_04"
+    },
+    {
+        "almanca": "ätzend",
+        "ingilizce": "annoying / lame",
+        "seviye": "B1",
+        "ornek": "Die Party war echt ätzend.",
+        "kelime": "ätzend",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_05"
+    },
+    {
+        "almanca": "locker",
+        "ingilizce": "chill / relaxed",
+        "seviye": "B1",
+        "ornek": "Er ist ein ganz lockerer Typ.",
+        "kelime": "locker",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_06"
+    },
+    {
+        "almanca": "spießig",
+        "ingilizce": "narrow-minded / square",
+        "seviye": "B1",
+        "ornek": "Du bist so spießig!",
+        "kelime": "spießig",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_07"
+    },
+    {
+        "almanca": "pleite",
+        "ingilizce": "broke",
+        "seviye": "B1",
+        "ornek": "Ich bin total pleite.",
+        "kelime": "pleite",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_08"
+    },
+    {
+        "almanca": "banane",
+        "ingilizce": "irrelevant / not important",
+        "seviye": "B1",
+        "ornek": "Das ist doch total banane.",
+        "kelime": "banane",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_09"
+    },
+    {
+        "almanca": "knorke",
+        "ingilizce": "cool (old-fashioned slang)",
+        "seviye": "B1",
+        "ornek": "Das war echt knorke!",
+        "kelime": "knorke",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_10"
+    },
+    {
+        "almanca": "verpeilt",
+        "ingilizce": "scatterbrained / forgetful",
+        "seviye": "B1",
+        "ornek": "Ich bin heute total verpeilt.",
+        "kelime": "verpeilt",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_11"
+    },
+    {
+        "almanca": "cringe",
+        "ingilizce": "cringe",
+        "seviye": "B1",
+        "ornek": "Das war echt cringe.",
+        "kelime": "cringe",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_12"
+    },
+    {
+        "almanca": "lost",
+        "ingilizce": "clueless / out of it",
+        "seviye": "B1",
+        "ornek": "Du bist so lost.",
+        "kelime": "lost",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_13"
+    },
+    {
+        "almanca": "nice",
+        "ingilizce": "nice",
+        "seviye": "B1",
+        "ornek": "Nice gemacht!",
+        "kelime": "nice",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_14"
+    },
+    {
+        "almanca": "doof",
+        "ingilizce": "silly / dumb",
+        "seviye": "B1",
+        "ornek": "Das war eine doofe Idee.",
+        "kelime": "doof",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_15"
+    },
+    {
+        "almanca": "blöd",
+        "ingilizce": "stupid",
+        "seviye": "B1",
+        "ornek": "Du bist doch blöd!",
+        "kelime": "blöd",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_16"
+    },
+    {
+        "almanca": "top",
+        "ingilizce": "great / top",
+        "seviye": "B1",
+        "ornek": "Das war echt top gemacht.",
+        "kelime": "top",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_17"
+    },
+    {
+        "almanca": "flott",
+        "ingilizce": "quick / stylish",
+        "seviye": "B1",
+        "ornek": "Das Auto sieht flott aus.",
+        "kelime": "flott",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_18"
+    },
+    {
+        "almanca": "kacke",
+        "ingilizce": "shitty / bad",
+        "seviye": "B1",
+        "ornek": "Das war echt kacke.",
+        "kelime": "kacke",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_19"
+    },
+    {
+        "almanca": "schräg",
+        "ingilizce": "weird / quirky",
+        "seviye": "B1",
+        "ornek": "Der Typ ist ein bisschen schräg.",
+        "kelime": "schräg",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_20"
+    }
+]
