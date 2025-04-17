@@ -1,5 +1,5 @@
 import { CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY, LEARNED_WITH_LEARN_WORDS_KEY, CURRENT_CATEGORY_KEY, WORD_LIST_EXERCISE_KEY, IN_PROGRESS_WORDS_KEY, WORD_LIST_KEY, TOTAL_WORD_EXERCISE_KEY, TOTAL_WORD_LEARN_KEY, CURRENT_LEARN_INDEX_KEY } from '../constants/storageKeys.js'
-import { JSON_URLS } from '../constants/urls.js'
+import { JSON_URLS, ASSETS_BASE_URL } from '../constants/urls.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
 import ListUtils from '../utils/ListUtils.js'
 import { types } from '../constants/props.js'
@@ -142,7 +142,7 @@ async function loadWords() {
       feedbackMessage.innerText = ''
     }
 
-    const response = await fetch(JSON_URLS[wordType][level][category])
+    const response = await fetch(`${ASSETS_BASE_URL}/json/${level}/${category}/${wordType}.json`)
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
