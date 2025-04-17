@@ -61,6 +61,7 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
       await executeInitialLoadAndShow()
       return
     }
+    showOrHideDecks(updatedLevel)
     await executeInitialLoadAndShow()
   })
 })
