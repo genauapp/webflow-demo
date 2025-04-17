@@ -36,14 +36,14 @@ export class DEFAULT_VALUE {
   /**
    * App
    */
-  static APP_VERSION = "1.2.51";
+  static APP_VERSION = "1.2.6";
 
   /** 
   Homepage
   */
   static WORD_LIST_EXERCISE = [];
   static WORD_LIST = [];
-  static CURRENT_LEVEL = "b1telcpt1";
+  static CURRENT_LEVEL = "a1";
   static CURRENT_WORD_TYPE = "noun";
   static CURRENT_CATEGORY = "default";
   static CURRENT_LEARN_INDEX = 0
@@ -51,7 +51,59 @@ export class DEFAULT_VALUE {
   static TOTAL_WORD_EXERCISE = 0
 
   static LEARNED_WITH_LEARN_WORDS = {
-    b1telcpt1: {
+    a1: {
+      alltag: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      einkaufen: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      gesundheit: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      behoerden: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    a2: {
+      alltag: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      freizeit: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      medien: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      arbeit: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    b1: {
       default: {
         noun: [],
         verb: [],
@@ -77,7 +129,7 @@ export class DEFAULT_VALUE {
         adverb: [],
       },
     },
-    b1telcpt2: {
+    b2: {
       default: {
         noun: [],
         verb: [],
@@ -103,7 +155,7 @@ export class DEFAULT_VALUE {
         adverb: [],
       },
     },
-    b1telcpt3: {
+    c1: {
       default: {
         noun: [],
         verb: [],
@@ -129,7 +181,7 @@ export class DEFAULT_VALUE {
         adverb: [],
       },
     },
-    b1telcpt4: {
+    c2: {
       default: {
         noun: [],
         verb: [],
@@ -161,7 +213,59 @@ export class DEFAULT_VALUE {
   };
 
   static LEARNED_WITH_EXERCISE_WORDS = {
-    b1telcpt1: {
+    a1: {
+      alltag: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      einkaufen: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      gesundheit: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      behoerden: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    a2: {
+      alltag: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      freizeit: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      medien: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      arbeit: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    b1: {
       default: {
         noun: [],
         verb: [],
@@ -187,7 +291,7 @@ export class DEFAULT_VALUE {
         adverb: [],
       },
     },
-    b1telcpt2: {
+    b2: {
       default: {
         noun: [],
         verb: [],
@@ -213,7 +317,7 @@ export class DEFAULT_VALUE {
         adverb: [],
       },
     },
-    b1telcpt3: {
+    c1: {
       default: {
         noun: [],
         verb: [],
@@ -239,7 +343,7 @@ export class DEFAULT_VALUE {
         adverb: [],
       },
     },
-    b1telcpt4: {
+    c2: {
       default: {
         noun: [],
         verb: [],
@@ -297,7 +401,59 @@ export class DEFAULT_VALUE {
         adverb: [],
       },
     },
-    b1telcpt2: {
+    a1: {
+      alltag: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      einkaufen: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      gesundheit: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      behoerden: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    a2: {
+      alltag: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      freizeit: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      medien: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      arbeit: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    b1: {
       default: {
         noun: [],
         verb: [],
@@ -323,7 +479,7 @@ export class DEFAULT_VALUE {
         adverb: [],
       },
     },
-    b1telcpt3: {
+    b2: {
       default: {
         noun: [],
         verb: [],
@@ -349,7 +505,33 @@ export class DEFAULT_VALUE {
         adverb: [],
       },
     },
-    b1telcpt4: {
+    c1: {
+      default: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      dirty: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      doctor: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      music: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    c2: {
       default: {
         noun: [],
         verb: [],
@@ -377,7 +559,7 @@ export class DEFAULT_VALUE {
     },
     einburgerungstest: {
       einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] }
-    },
+    }
   }
 
   /** 
