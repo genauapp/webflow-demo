@@ -76,7 +76,7 @@ document.querySelectorAll('.deck-container').forEach((elem) => {
       elem.children[0].style.borderRadius = '16px'
       //remove selected class from all deck images
       document.querySelectorAll('.deck-img').forEach((deckimg) => {
-        if (deck.classList.contains('selected-deck-img')) {
+        if (deckimg.classList.contains('selected-deck-img')) {
           deckimg.classList.remove('selected-deck-img')
           deckimg.style.border = ''
           deckimg.style.borderRadius = ''
