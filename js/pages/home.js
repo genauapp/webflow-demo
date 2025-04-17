@@ -28,10 +28,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 document.querySelectorAll('.level-dropdown-link').forEach((link) => {
   link.addEventListener('click', async function (event) {
     event.preventDefault()
+    
+    // Avoid errors for C1 and C2 levels which are not fully implemented
+    if (link.classList.contains('passive-level')) {
+      return
+    }
+    
     const updatedLevel = link.getAttribute('data-option')
     const selectedText = link.innerText
     const currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
-    // Seçilen option'ı localStorage'a kaydet
+    
+    // Save selected option to localStorage
     LocalStorageManager.save(CURRENT_LEVEL_KEY, updatedLevel)
 
     // Dropdown başlığını güncelle
@@ -54,7 +61,7 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
   })
 })
 
-document.querySelectorAll('.deck').forEach((elem) => {
+document.querySelectorAll('.deck-container').forEach((elem) => {
   elem.addEventListener('click', async function (event) {
     event.preventDefault()
     const selectedCategory = elem.getAttribute('data-option')
