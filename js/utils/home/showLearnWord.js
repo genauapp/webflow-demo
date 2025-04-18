@@ -1,6 +1,6 @@
 import { DEFAULT_VALUE, WORD_LIST_KEY, CURRENT_CATEGORY_KEY, CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, LEARNED_WITH_LEARN_WORDS_KEY, CURRENT_LEARN_INDEX_KEY, TOTAL_WORD_LEARN_KEY } from "../../constants/storageKeys.js"
 import LocalStorageManager from "../LocalStorageManager.js"
-import { updateFavoriteIcons } from "./UIUtils.js"
+import { showFinishScreen, updateFavoriteIcons } from "./UIUtils.js"
 
 
 export function artikelRenk(artikel) {
@@ -32,13 +32,18 @@ export default function showLearnWord() {
         `repeatButtonLearn-${wordType}`
     )
 
-    if (learnedWithLearnWords[level][category][wordType].length ===totalWordsLearn) {
+    if (learnedWithLearnWords[level][category][wordType].length === totalWordsLearn) {
         document.getElementById(`wordLearn-${wordType}`).innerText =
-            'No words to display.'
-        document.getElementById(`translationLearn-${wordType}`).innerText = ''
+            'Well done!'
+        document.getElementById(`translationLearn-${wordType}`).innerText =
+            `You've finished all the words here!
+            Let's exercise them from the Exercise Tab.`
         document.getElementById(`exampleLearn-${wordType}`).innerText = ''
+        document.getElementById(`exampleLearn-${wordType}`).display = 'none'
         document.getElementById(`levelTagLearn-${wordType}`).innerText = ''
+        document.getElementById(`levelTagLearn-${wordType}`).display = 'none'
         document.getElementById(`ruleLearn-${wordType}`).innerText = '' // Kural boş
+        document.getElementById(`ruleLearn-${wordType}`).display = 'none'
 
         if (iKnowButton) {
             iKnowButton.style.visibility = 'hidden'
@@ -46,6 +51,14 @@ export default function showLearnWord() {
         if (repeatButton) {
             repeatButton.style.visibility = 'hidden'
         }
+
+        const inFavImage = document.getElementById(`infav-${wordType}`)
+        const outFavImage = document.getElementById(`outfav-${wordType}`)
+
+        inFavImage.display = 'none'
+        outFavImage.display = 'none'
+
+        showFinishScreen("learn")
         return
     }
     // else

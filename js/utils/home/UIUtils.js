@@ -1,6 +1,6 @@
 import { LEARN_ELEMENT_IDS } from '../../constants/elements.js'
 import LocalStorageManager from '../LocalStorageManager.js'
-import { DEFAULT_VALUE, CURRENT_WORD_TYPE_KEY, CURRENT_LEARN_INDEX_KEY, WORD_LIST_KEY, CURRENT_LEVEL_KEY } from '../../constants/storageKeys.js'
+import { DEFAULT_VALUE, CURRENT_WORD_TYPE_KEY, CURRENT_LEARN_INDEX_KEY, WORD_LIST_KEY, CURRENT_LEVEL_KEY, LEARNED_WITH_EXERCISE_WORDS_KEY, CURRENT_CATEGORY_KEY } from '../../constants/storageKeys.js'
 import { categories } from '../../constants/props.js'
 
 // UI visibility functions
@@ -110,4 +110,31 @@ export function loadDeckProps() {
         deckContainers[i].children[1].innerText = deckTitle;
         deckContainers[i].dataset.option = deckShortName;
     });
+}
+
+export function showFinishScreen (learnOrExercise) {
+    const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
+    let contentContainer = document.getElementById(`content-container-${learnOrExercise}-${wordType}`)
+    contentContainer.display = 'none'
+    let successScreen = document.getElementById('success-screen')
+    successScreen.display = 'flex'
+    let tabPane = document.getElementById(`tab-pane-${learnOrExercise}-${wordType}`)
+    tabPane.appendChild(successScreen)
+
+    let refreshButton = document.getElementById('refresh-button')
+    refreshButton.addEventListener('click', async function (event) {
+    event.preventDefault()
+    refreshProgress(learnOrExercise)
+    })
+}
+
+export function refreshProgress(learnOrExercise) {
+    let learnedWordsList = LocalStorageManager.load(`LEARNED_WITH_${(learnOrExercise.toUpperCase())}_WORDS_KEY`)
+    const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
+    const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
+    const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+
+    learnedWordsList[level][category][wordType] = {}
+    LocalStorageManager.save(`LEARNED_WITH_${(learnOrExercise.toUpperCase())}_WORDS_KEY`, learnedWordsList)
+    
 }
