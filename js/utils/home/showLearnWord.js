@@ -33,11 +33,10 @@ export default function showLearnWord() {
     )
 
     if (learnedWithLearnWords[level][category][wordType].length === totalWordsLearn) {
-        document.getElementById(`wordLearn-${wordType}`).innerText =
-            'Well done!'
-        document.getElementById(`translationLearn-${wordType}`).innerText =
-            `You've finished all the words here!
-            Let's exercise them from the Exercise Tab.`
+        document.getElementById(`wordLearn-${wordType}`).innerText = ''
+        document.getElementById(`wordLearn-${wordType}`).display = 'none'
+        document.getElementById(`translationLearn-${wordType}`).innerText = ''
+        document.getElementById(`translationLearn-${wordType}`).display = 'none'
         document.getElementById(`exampleLearn-${wordType}`).innerText = ''
         document.getElementById(`exampleLearn-${wordType}`).display = 'none'
         document.getElementById(`levelTagLearn-${wordType}`).innerText = ''
@@ -131,5 +130,5 @@ export default function showLearnWord() {
     }
 
     // Favori ikonlarını güncelle
-    updateFavoriteIcons(wordType)
+    updateFavoriteIcons()
 }

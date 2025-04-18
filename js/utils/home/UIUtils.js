@@ -137,4 +137,22 @@ export function refreshProgress(learnOrExercise) {
     learnedWordsList[level][category][wordType] = {}
     LocalStorageManager.save(`LEARNED_WITH_${(learnOrExercise.toUpperCase())}_WORDS_KEY`, learnedWordsList)
     
+    document.getElementById(`wordLearn-${wordType}`).display = 'block'
+    document.getElementById(`translationLearn-${wordType}`).display = 'block'
+    document.getElementById(`exampleLearn-${wordType}`).display = 'block'
+    document.getElementById(`levelTagLearn-${wordType}`).display = 'block'
+    document.getElementById(`ruleLearn-${wordType}`).display = 'block'
+
+    const iKnowButton = document.getElementById(
+        `iKnowButtonLearn-${wordType}`
+    )
+    const repeatButton = document.getElementById(
+        `repeatButtonLearn-${wordType}`
+    )
+
+    iKnowButton.style.visibility = 'visible'
+    repeatButton.style.visibility = 'visible'
+
+    let successScreen = document.getElementById('success-screen')
+    successScreen.display = 'none'
 }
