@@ -1,6 +1,6 @@
 import { DEFAULT_VALUE, WORD_LIST_KEY, CURRENT_CATEGORY_KEY, CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, LEARNED_WITH_LEARN_WORDS_KEY, TOTAL_WORD_LEARN_KEY } from "../../constants/storageKeys.js"
 import LocalStorageManager from "../LocalStorageManager.js"
-import { showFinishScreen, updateFavoriteIcons } from "./UIUtils.js"
+import { hideFinishScreen, showFinishScreen, updateFavoriteIcons } from "./UIUtils.js"
 
 
 export function artikelRenk(artikel) {
@@ -35,6 +35,7 @@ export default function showLearnWord() {
         showFinishScreen("learn")
         return
     }
+    hideFinishScreen("learn")
     // else
     // // reactivate buttons
     iKnowButton.style.visibility = 'visible'

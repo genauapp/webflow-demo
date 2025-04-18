@@ -4,6 +4,7 @@ import { DEFAULT_VALUE, CURRENT_WORD_TYPE_KEY, WORD_LIST_KEY, CURRENT_LEVEL_KEY,
 import { categories } from '../../constants/props.js'
 import showLearnWord from './showLearnWord.js'
 import { loadWords } from '../../pages/home.js'
+import showExerciseWord from './ShowExerciseWord.js'
 
 // UI visibility functions
 export function showSkeleton(wordType) {
@@ -135,15 +136,33 @@ export function refreshProgress(learnOrExercise) {
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
     const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
     const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+    let contentContainer = document.getElementById(`content-container-${learnOrExercise}-${wordType}`)
+    let successScreen = document.getElementById('success-screen')
 
     learnedWordsList[level][category][wordType] = []
     LocalStorageManager.save(`LEARNED_WITH_${(learnOrExercise.toUpperCase())}_WORDS`, learnedWordsList)
-    let contentContainer = document.getElementById(`content-container-${learnOrExercise}-${wordType}`)
-    let successScreen = document.getElementById('success-screen')
+
     successScreen.style.display = 'none'
     contentContainer.style.display = 'flex'
 
-    showLearnElements()
     loadWords()
-    showLearnWord()
+
+    if (learnOrExercise === 'learn') {
+        showLearnWord()
+        return
+    }
+    
+    if (learnOrExercise === 'exercise') {
+        showExerciseWord()
+        return
+    }
+
+}
+
+export function hideFinishScreen(learnOrExercise) {
+    const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
+    let contentContainer = document.getElementById(`content-container-${learnOrExercise}-${wordType}`)
+    let successScreen = document.getElementById('success-screen')
+    successScreen.style.display = 'flex'
+    contentContainer.style.display = 'none'
 }
