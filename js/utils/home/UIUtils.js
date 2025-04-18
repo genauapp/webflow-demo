@@ -136,28 +136,13 @@ export function refreshProgress(learnOrExercise) {
     const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
     const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
 
-    learnedWordsList[level][category][wordType] = {}
-    LocalStorageManager.save(`LEARNED_WITH_${(learnOrExercise.toUpperCase())}_WORDS_KEY`, learnedWordsList)
-
-    /*document.getElementById(`wordLearn-${wordType}`).style.display = 'block'
-    document.getElementById(`translationLearn-${wordType}`).style.display = 'block'
-    document.getElementById(`exampleLearn-${wordType}`).style.display = 'block'
-    document.getElementById(`levelTagLearn-${wordType}`).style.display = 'block'
-    document.getElementById(`ruleLearn-${wordType}`).style.display = 'block'
-
-    const iKnowButton = document.getElementById(
-        `iKnowButtonLearn-${wordType}`
-    )
-    const repeatButton = document.getElementById(
-        `repeatButtonLearn-${wordType}`
-    )
-
-    iKnowButton.style.visibility = 'visible'
-    repeatButton.style.visibility = 'visible'*/
+    learnedWordsList[level][category][wordType] = []
+    LocalStorageManager.save(`LEARNED_WITH_${(learnOrExercise.toUpperCase())}_WORDS`, learnedWordsList)
     let contentContainer = document.getElementById(`content-container-${learnOrExercise}-${wordType}`)
-    contentContainer.style.display = 'flex'
     let successScreen = document.getElementById('success-screen')
     successScreen.style.display = 'none'
+    contentContainer.style.display = 'flex'
+
     showLearnElements()
     showLearnWord()
 }
