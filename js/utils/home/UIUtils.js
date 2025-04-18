@@ -163,6 +163,6 @@ export function hideFinishScreen(learnOrExercise) {
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
     let contentContainer = document.getElementById(`content-container-${learnOrExercise}-${wordType}`)
     let successScreen = document.getElementById('success-screen')
-    successScreen.style.display = 'flex'
-    contentContainer.style.display = 'none'
+    successScreen.style.display = 'none'
+    contentContainer.style.display = 'flex'
 }
