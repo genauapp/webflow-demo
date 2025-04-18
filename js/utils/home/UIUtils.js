@@ -2,6 +2,7 @@ import { LEARN_ELEMENT_IDS } from '../../constants/elements.js'
 import LocalStorageManager from '../LocalStorageManager.js'
 import { DEFAULT_VALUE, CURRENT_WORD_TYPE_KEY, CURRENT_LEARN_INDEX_KEY, WORD_LIST_KEY, CURRENT_LEVEL_KEY, LEARNED_WITH_EXERCISE_WORDS_KEY, CURRENT_CATEGORY_KEY } from '../../constants/storageKeys.js'
 import { categories } from '../../constants/props.js'
+import showLearnWord from './showLearnWord.js'
 
 // UI visibility functions
 export function showSkeleton(wordType) {
@@ -137,7 +138,7 @@ export function refreshProgress(learnOrExercise) {
     learnedWordsList[level][category][wordType] = {}
     LocalStorageManager.save(`LEARNED_WITH_${(learnOrExercise.toUpperCase())}_WORDS_KEY`, learnedWordsList)
     
-    document.getElementById(`wordLearn-${wordType}`).display = 'block'
+    /*document.getElementById(`wordLearn-${wordType}`).display = 'block'
     document.getElementById(`translationLearn-${wordType}`).display = 'block'
     document.getElementById(`exampleLearn-${wordType}`).display = 'block'
     document.getElementById(`levelTagLearn-${wordType}`).display = 'block'
@@ -151,8 +152,10 @@ export function refreshProgress(learnOrExercise) {
     )
 
     iKnowButton.style.visibility = 'visible'
-    repeatButton.style.visibility = 'visible'
+    repeatButton.style.visibility = 'visible'*/
 
     let successScreen = document.getElementById('success-screen')
     successScreen.display = 'none'
+    showLearnElements()
+    showLearnWord()
 }
