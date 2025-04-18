@@ -117,11 +117,11 @@ export function loadDeckProps() {
 export function showFinishScreen(learnOrExercise) {
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
     let contentContainer = document.getElementById(`content-container-${learnOrExercise}-${wordType}`)
-    contentContainer.display = 'none'
+    contentContainer.style.display = 'none'
     let successScreen = document.getElementById('success-screen')
     let tabPane = document.getElementById(`tab-pane-${learnOrExercise}-${wordType}`)
     tabPane.appendChild(successScreen)
-    successScreen.display = 'flex'
+    successScreen.style.display = 'flex'
 
     let refreshButton = document.getElementById('refresh-button')
     refreshButton.addEventListener('click', async function (event) {
@@ -139,11 +139,11 @@ export function refreshProgress(learnOrExercise) {
     learnedWordsList[level][category][wordType] = {}
     LocalStorageManager.save(`LEARNED_WITH_${(learnOrExercise.toUpperCase())}_WORDS_KEY`, learnedWordsList)
 
-    /*document.getElementById(`wordLearn-${wordType}`).display = 'block'
-    document.getElementById(`translationLearn-${wordType}`).display = 'block'
-    document.getElementById(`exampleLearn-${wordType}`).display = 'block'
-    document.getElementById(`levelTagLearn-${wordType}`).display = 'block'
-    document.getElementById(`ruleLearn-${wordType}`).display = 'block'
+    /*document.getElementById(`wordLearn-${wordType}`).style.display = 'block'
+    document.getElementById(`translationLearn-${wordType}`).style.display = 'block'
+    document.getElementById(`exampleLearn-${wordType}`).style.display = 'block'
+    document.getElementById(`levelTagLearn-${wordType}`).style.display = 'block'
+    document.getElementById(`ruleLearn-${wordType}`).style.display = 'block'
 
     const iKnowButton = document.getElementById(
         `iKnowButtonLearn-${wordType}`
@@ -155,9 +155,9 @@ export function refreshProgress(learnOrExercise) {
     iKnowButton.style.visibility = 'visible'
     repeatButton.style.visibility = 'visible'*/
     let contentContainer = document.getElementById(`content-container-${learnOrExercise}-${wordType}`)
-    contentContainer.display = 'flex'
+    contentContainer.style.display = 'flex'
     let successScreen = document.getElementById('success-screen')
-    successScreen.display = 'none'
+    successScreen.style.display = 'none'
     showLearnElements()
     showLearnWord()
 }
