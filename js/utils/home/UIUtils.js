@@ -1,6 +1,6 @@
 import { LEARN_ELEMENT_IDS } from '../../constants/elements.js'
 import LocalStorageManager from '../LocalStorageManager.js'
-import { DEFAULT_VALUE, CURRENT_WORD_TYPE_KEY, CURRENT_LEARN_INDEX_KEY, WORD_LIST_KEY, CURRENT_LEVEL_KEY, LEARNED_WITH_EXERCISE_WORDS_KEY, CURRENT_CATEGORY_KEY } from '../../constants/storageKeys.js'
+import { DEFAULT_VALUE, CURRENT_WORD_TYPE_KEY, WORD_LIST_KEY, CURRENT_LEVEL_KEY, LEARNED_WITH_EXERCISE_WORDS_KEY, CURRENT_CATEGORY_KEY } from '../../constants/storageKeys.js'
 import { categories } from '../../constants/props.js'
 import showLearnWord from './showLearnWord.js'
 import { loadWords } from '../../pages/home.js'
@@ -71,12 +71,11 @@ function isItInFavorites(currentWord) {
 export function updateFavoriteIcons() {
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
     const wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
-    const currentLearnIndex = LocalStorageManager.load(CURRENT_LEARN_INDEX_KEY, DEFAULT_VALUE.CURRENT_LEARN_INDEX)
 
     const inFavImage = document.getElementById(`infav-${wordType}`)
     const outFavImage = document.getElementById(`outfav-${wordType}`)
 
-    const currentWord = wordList[currentLearnIndex]
+    const currentWord = wordList[0]
     const isFavorite = isItInFavorites(currentWord)
 
     if (isFavorite) {

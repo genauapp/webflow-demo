@@ -1,4 +1,4 @@
-import { DEFAULT_VALUE, WORD_LIST_KEY, CURRENT_CATEGORY_KEY, CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, LEARNED_WITH_LEARN_WORDS_KEY, CURRENT_LEARN_INDEX_KEY, TOTAL_WORD_LEARN_KEY } from "../../constants/storageKeys.js"
+import { DEFAULT_VALUE, WORD_LIST_KEY, CURRENT_CATEGORY_KEY, CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, LEARNED_WITH_LEARN_WORDS_KEY, TOTAL_WORD_LEARN_KEY } from "../../constants/storageKeys.js"
 import LocalStorageManager from "../LocalStorageManager.js"
 import { showFinishScreen, updateFavoriteIcons } from "./UIUtils.js"
 
@@ -22,7 +22,6 @@ export default function showLearnWord() {
     const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY, DEFAULT_VALUE.CURRENT_CATEGORY)
     const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
     let wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
-    let currentLearnIndex = LocalStorageManager.load(CURRENT_LEARN_INDEX_KEY, DEFAULT_VALUE.CURRENT_LEARN_INDEX)
     const totalWordsLearn = LocalStorageManager.load(TOTAL_WORD_LEARN_KEY)
 
     const iKnowButton = document.getElementById(
@@ -42,7 +41,7 @@ export default function showLearnWord() {
     repeatButton.style.visibility = 'visible'
 
     const { almanca, ingilizce, ornek, highlight, seviye, kural } =
-        wordList[currentLearnIndex]
+        wordList[0]
 
     if (learnedWithLearnWords[level][category][wordType].length > 0) {
         wordList = wordList.filter(
@@ -65,7 +64,7 @@ export default function showLearnWord() {
                     `<span class="highlight">$1</span>`
                 )
             }
-            const renk = artikelRenk(wordList[currentLearnIndex].artikel)
+            const renk = artikelRenk(wordList[0].artikel)
             document.getElementById(
                 'wordLearn-' + wordType
             ).innerHTML = `<span style="color: ${renk};">${highlightedWord}</span>`
