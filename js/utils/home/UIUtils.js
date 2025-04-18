@@ -131,7 +131,7 @@ export function showFinishScreen(learnOrExercise) {
 }
 
 export function refreshProgress(learnOrExercise) {
-    let learnedWordsList = LocalStorageManager.load(`LEARNED_WITH_${(learnOrExercise.toUpperCase())}_WORDS_KEY`)
+    let learnedWordsList = LocalStorageManager.load(`LEARNED_WITH_${(learnOrExercise.toUpperCase())}_WORDS`)
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
     const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
     const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
