@@ -2,6 +2,7 @@ import { DEFAULT_VALUE, IN_PROGRESS_WORDS_KEY, WORD_LIST_EXERCISE_KEY, CURRENT_C
 import LocalStorageManager from "../LocalStorageManager.js"
 import ExerciseUtils from "./ExerciseUtils.js"
 import { showModalExercise } from "./ModalManager.js"
+import { hideFinishScreen, showFinishScreen } from "./UIUtils.js"
 
 export default function showExerciseWord() {
     let wordListExercise= LocalStorageManager.load(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
@@ -26,26 +27,11 @@ export default function showExerciseWord() {
   
     // max index -> hiding buttons, early return
     if (learnedWithExerciseWords[level][category][wordType].length === totalWordsExercise) {
-      showModalExercise('You completed all exercise words! 🎉', wordType)
-      document.getElementById(`levelTagExercise-${wordType}`).innerText = ''
-      document.getElementById(`exerciseWord-${wordType}`).innerText = ''
-      document.getElementById(`exerciseTranslation-${wordType}`).innerText = ''
-      document.getElementById(
-        `feedbackMessage-${wordType}`
-      ).innerText = `You completed all exercise words! 🎉`
-  
-      if (wordType === 'noun') {
-        buttonDer.style.visibility = 'hidden'
-        buttonDie.style.visibility = 'hidden'
-        buttonDas.style.visibility = 'hidden'
-      } else if (['verb', 'adjective', 'adverb'].includes(wordType)) {
-        buttonWrong.style.visibility =
-          'hidden'
-        buttonCorrect.style.visibility =
-          'hidden'
-      }
+      showFinishScreen("exercise")
       return
     }
+
+    hideFinishScreen("exercise")
   
     // // reactivate buttons
     if (wordType === 'noun') {
