@@ -45,7 +45,8 @@ function hideLearnElements(wordType) {
     })
 }
 
-function showLearnElements(wordType) {
+function showLearnElements() {
+    const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
     const elementIds = [...LEARN_ELEMENT_IDS(wordType)]
 
     elementIds.forEach((id) => {
