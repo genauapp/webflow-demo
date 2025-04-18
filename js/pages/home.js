@@ -137,7 +137,7 @@ async function executeInitialLoadAndShow() {
 }
 
 // Kelime yükleme fonksiyonu
-async function loadWords() {
+export async function loadWords() {
   const level = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
   const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY, DEFAULT_VALUE.CURRENT_CATEGORY)
   const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
