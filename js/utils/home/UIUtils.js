@@ -113,7 +113,7 @@ export function loadDeckProps() {
     });
 }
 
-export function showFinishScreen (learnOrExercise) {
+export function showFinishScreen(learnOrExercise) {
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
     let contentContainer = document.getElementById(`content-container-${learnOrExercise}-${wordType}`)
     contentContainer.display = 'none'
@@ -124,8 +124,8 @@ export function showFinishScreen (learnOrExercise) {
 
     let refreshButton = document.getElementById('refresh-button')
     refreshButton.addEventListener('click', async function (event) {
-    event.preventDefault()
-    refreshProgress(learnOrExercise)
+        event.preventDefault()
+        refreshProgress(learnOrExercise)
     })
 }
 
@@ -137,7 +137,7 @@ export function refreshProgress(learnOrExercise) {
 
     learnedWordsList[level][category][wordType] = {}
     LocalStorageManager.save(`LEARNED_WITH_${(learnOrExercise.toUpperCase())}_WORDS_KEY`, learnedWordsList)
-    
+
     /*document.getElementById(`wordLearn-${wordType}`).display = 'block'
     document.getElementById(`translationLearn-${wordType}`).display = 'block'
     document.getElementById(`exampleLearn-${wordType}`).display = 'block'
@@ -153,7 +153,8 @@ export function refreshProgress(learnOrExercise) {
 
     iKnowButton.style.visibility = 'visible'
     repeatButton.style.visibility = 'visible'*/
-
+    let contentContainer = document.getElementById(`content-container-${learnOrExercise}-${wordType}`)
+    contentContainer.display = 'flex'
     let successScreen = document.getElementById('success-screen')
     successScreen.display = 'none'
     showLearnElements()
