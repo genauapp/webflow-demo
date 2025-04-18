@@ -118,9 +118,9 @@ export function showFinishScreen (learnOrExercise) {
     let contentContainer = document.getElementById(`content-container-${learnOrExercise}-${wordType}`)
     contentContainer.display = 'none'
     let successScreen = document.getElementById('success-screen')
-    successScreen.display = 'flex'
     let tabPane = document.getElementById(`tab-pane-${learnOrExercise}-${wordType}`)
     tabPane.appendChild(successScreen)
+    successScreen.display = 'flex'
 
     let refreshButton = document.getElementById('refresh-button')
     refreshButton.addEventListener('click', async function (event) {

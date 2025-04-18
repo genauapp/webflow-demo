@@ -33,30 +33,6 @@ export default function showLearnWord() {
     )
 
     if (learnedWithLearnWords[level][category][wordType].length === totalWordsLearn) {
-        document.getElementById(`wordLearn-${wordType}`).innerText = ''
-        document.getElementById(`wordLearn-${wordType}`).display = 'none'
-        document.getElementById(`translationLearn-${wordType}`).innerText = ''
-        document.getElementById(`translationLearn-${wordType}`).display = 'none'
-        document.getElementById(`exampleLearn-${wordType}`).innerText = ''
-        document.getElementById(`exampleLearn-${wordType}`).display = 'none'
-        document.getElementById(`levelTagLearn-${wordType}`).innerText = ''
-        document.getElementById(`levelTagLearn-${wordType}`).display = 'none'
-        document.getElementById(`ruleLearn-${wordType}`).innerText = '' // Kural boş
-        document.getElementById(`ruleLearn-${wordType}`).display = 'none'
-
-        if (iKnowButton) {
-            iKnowButton.style.visibility = 'hidden'
-        }
-        if (repeatButton) {
-            repeatButton.style.visibility = 'hidden'
-        }
-
-        const inFavImage = document.getElementById(`infav-${wordType}`)
-        const outFavImage = document.getElementById(`outfav-${wordType}`)
-
-        inFavImage.display = 'none'
-        outFavImage.display = 'none'
-
         showFinishScreen("learn")
         return
     }
