@@ -32,36 +32,36 @@ document.addEventListener('DOMContentLoaded', async () => {
 document.querySelectorAll('.level-dropdown-link').forEach((link) => {
   link.addEventListener('click', async function (event) {
     event.preventDefault()
-    
+
     // Avoid errors for C1 and C2 levels which are not fully implemented
     if (link.classList.contains('passive-level')) {
       showOrHideDecks('passive-level')
       return
     }
-    
+
     const updatedLevel = link.getAttribute('data-option')
-    const selectedText = link.innerText    
+    const selectedText = link.innerText
     // Save selected option to localStorage
     LocalStorageManager.save(CURRENT_LEVEL_KEY, updatedLevel)
 
     // Load Deck Props for specific Level and manage category prop on localStorage
-    if(isRegularLevel(updatedLevel)){
+    if (isRegularLevel(updatedLevel)) {
       let currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
       if (!categories[updatedLevel].some(cat => cat.nameShort === currentCategory)) {
-          currentCategory = categories[updatedLevel][0].nameShort
-          LocalStorageManager.save(CURRENT_CATEGORY_KEY, currentCategory)
-          let deckimgs = document.querySelectorAll('.deck-img')
-          let selectedDeckImg = deckimgs[0]
-          deckimgs.forEach((deckimg) => {
-            if (deckimg.classList.contains('selected-deck-img')) {
-              deckimg.classList.remove('selected-deck-img')
-              deckimg.style.border = ''
-              deckimg.style.borderRadius = ''
-            }
-          })
-          selectedDeckImg.style.border = '2px solid black'
-          selectedDeckImg.style.borderRadius = '16px'
-          selectedDeckImg.classList.add('selected-deck-img')
+        currentCategory = categories[updatedLevel][0].nameShort
+        LocalStorageManager.save(CURRENT_CATEGORY_KEY, currentCategory)
+        let deckimgs = document.querySelectorAll('.deck-img')
+        let selectedDeckImg = deckimgs[0]
+        deckimgs.forEach((deckimg) => {
+          if (deckimg.classList.contains('selected-deck-img')) {
+            deckimg.classList.remove('selected-deck-img')
+            deckimg.style.border = ''
+            deckimg.style.borderRadius = ''
+          }
+        })
+        selectedDeckImg.style.border = '2px solid black'
+        selectedDeckImg.style.borderRadius = '16px'
+        selectedDeckImg.classList.add('selected-deck-img')
       }
       loadDeckProps()
     }
@@ -76,7 +76,7 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
       await loadAndShowWords()
       return
     }
-    
+
     showOrHideDecks(updatedLevel)
     checkIsOnLearnOrExercise()
     await loadAndShowWords()
@@ -130,11 +130,11 @@ async function loadAndShowWords() {
   const isOnLearn = LocalStorageManager.load(IS_ON_LEARN_KEY)
   try {
     await loadWords()
-    if(isOnLearn === "learn") {
+    if (isOnLearn === "learn") {
       showLearnWord()
       return
     }
-    if(isOnLearn === "exercise") {
+    if (isOnLearn === "exercise") {
       showExerciseWord()
       return
     }
@@ -269,7 +269,7 @@ filteredTypes.forEach(type => {
   document
     .getElementById(`wrongButton-${type}`)
     .addEventListener('click', nonNounWrongAnswerClickHandler)
-  
+
   document
     .getElementById(`correctButton-${type}`)
     .addEventListener('click', nonNounCorrectAnswerClickHandler)
