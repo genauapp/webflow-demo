@@ -35,7 +35,6 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
 
     // Avoid errors for C1 and C2 levels which are not fully implemented
     if (link.classList.contains('passive-level')) {
-      showOrHideDecks('passive-level')
       return
     }
 
