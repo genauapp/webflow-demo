@@ -102,12 +102,15 @@ document.querySelectorAll('.deck-container').forEach((elem) => {
 types.forEach((type) => {
   document.getElementById(`${type}Tab`).addEventListener('click', async () => {
     LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, type)
+    await loadAndShowWords()
   })
   document.getElementById(`${type}Tab-learn`).addEventListener('click', async () => {
     LocalStorageManager.save(IS_ON_LEARN_KEY, "learn")
+    await loadAndShowWords()
   })
   document.getElementById(`${type}Tab-exercise`).addEventListener('click', async () => {
     LocalStorageManager.save(IS_ON_LEARN_KEY, "exercise")
+    await loadAndShowWords()
   })
 })
 
