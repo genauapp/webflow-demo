@@ -9,7 +9,7 @@ import checkNonNounAnswer from '../utils/home/checkNonNounAnswer.js'
 import showExerciseWord from '../utils/home/ShowExerciseWord.js'
 import checkNounAnswer from '../utils/home/checkNounAnswer.js'
 import showLearnWord from '../utils/home/showLearnWord.js'
-import { isRegularLevel, showSkeleton,hideSkeleton, showOrHideDecks, loadDeckProps } from '../utils/home/UIUtils.js'
+import { isRegularLevel, showOrHideDecks, loadDeckProps } from '../utils/home/UIUtils.js'
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', async () => {
@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
   LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
 
-  showSkeleton(DEFAULT_VALUE.CURRENT_WORD_TYPE)
   await loadAndShowWords()
 })
 
