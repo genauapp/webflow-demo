@@ -2,7 +2,7 @@ import { CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE, LEARNED_WITH_E
 import { ASSETS_BASE_URL } from '../constants/urls.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
 import ListUtils from '../utils/ListUtils.js'
-import { types } from '../constants/props.js'
+import { categories, types } from '../constants/props.js'
 import { removeFavorite, addToFavorites } from '../utils/home/AddOrRemoveFavs.js'
 import { iKnowLearn, repeatLearn } from '../utils/home/LearnUtils.js'
 import checkNonNounAnswer from '../utils/home/checkNonNounAnswer.js'
@@ -39,11 +39,27 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
     }
     
     const updatedLevel = link.getAttribute('data-option')
-    const selectedText = link.innerText
-    const currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
-    
+    const selectedText = link.innerText    
     // Save selected option to localStorage
     LocalStorageManager.save(CURRENT_LEVEL_KEY, updatedLevel)
+
+    const currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
+    if (!categories[updatedLevel].some(cat => cat.nameShort === currentCategory)) {
+        currentCategory = categories[updatedLevel][0].nameShort
+        LocalStorageManager.save(CURRENT_CATEGORY_KEY, currentCategory)
+        let deckimgs = document.querySelectorAll('.deck-img')
+        let selectedDeckImg = deckimgs[0]
+        deckimgs.forEach((deckimg) => {
+          if (deckimg.classList.contains('selected-deck-img')) {
+            deckimg.classList.remove('selected-deck-img')
+            deckimg.style.border = ''
+            deckimg.style.borderRadius = ''
+          }
+        })
+        selectedDeckImg.style.border = '2px solid black'
+        selectedDeckImg.style.borderRadius = '16px'
+        selectedDeckImg.classList.add('selected-deck-img')
+    }
 
     // Load Deck Props for specific Level
     if(isRegularLevel(updatedLevel)){
