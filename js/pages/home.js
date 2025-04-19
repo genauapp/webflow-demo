@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   LocalStorageManager.save(IS_ON_LEARN_KEY, "learn")
   LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
   LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
+  LocalStorageManager.load('BOOKMARKS', DEFAULT_VALUE.BOOKMARKS)
 
   await loadAndShowWords()
 })

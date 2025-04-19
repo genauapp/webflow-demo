@@ -36,7 +36,7 @@ export class DEFAULT_VALUE {
   /**
    * App
    */
-  static APP_VERSION = "1.2.73";
+  static APP_VERSION = "1.2.75";
 
   /** 
   Homepage
@@ -535,6 +535,11 @@ export class DEFAULT_VALUE {
       einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] }
     }
   };
+
+  static BOOKMARKS = {
+    favorites: [],
+    learned: [],
+  }
 
   /** 
   Einbürgerungstest

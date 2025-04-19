@@ -68,7 +68,8 @@ function showLearnElements() {
 }
 
 function isItInFavorites(currentWord) {
-    const favoriteWords = LocalStorageManager.load('favoriteWords', [])
+    const bookmarkedWords = LocalStorageManager.load('BOOKMARKS')
+    let favoriteWords = bookmarkedWords.favorites
     return favoriteWords.some((word) => word.almanca === currentWord.almanca)
 }
 

@@ -13,7 +13,8 @@ export const addToFavorites = () => {
     )
 
     const currentWord = wordList[0]
-    let favoriteWords = LocalStorageManager.load('favoriteWords', [])
+    let bookmarkedWords = LocalStorageManager.load('BOOKMARKS')
+    let favoriteWords = bookmarkedWords.favorites
 
     // Favorilere ekle
     favoriteWords.push({
@@ -22,7 +23,8 @@ export const addToFavorites = () => {
         ingilizce: currentWord.ingilizce,
         seviye: currentWord.seviye || 'N/A',
     })
-    LocalStorageManager.save('favoriteWords', favoriteWords)
+    bookmarkedWords.favorites = favoriteWords
+    LocalStorageManager.save('BOOKMARKS', bookmarkedWords)
 
     feedbackElement.innerText = `"${currentWord.almanca}" has been added to favorites!`
     feedbackElement.style.color = 'green'
@@ -47,11 +49,14 @@ export function removeFavorite() {
         `favoritesFeedback-${wordType}`
     )
     const currentWord = wordList[0]
-    let favoriteWords = LocalStorageManager.load('favoriteWords', [])
+    let bookmarkedWords = LocalStorageManager.load('BOOKMARKS')
+    let favoriteWords = bookmarkedWords.favorites
+
     favoriteWords = favoriteWords.filter(
         (word) => word.almanca !== currentWord.almanca
     )
-    LocalStorageManager.save('favoriteWords', favoriteWords)
+    bookmarkedWords.favorites = favoriteWords
+    LocalStorageManager.save('BOOKMARKS', bookmarkedWords)
 
     feedbackElement.innerText = `"${currentWord.almanca}" has been removed from favorites.`
     feedbackElement.style.color = 'orange'
