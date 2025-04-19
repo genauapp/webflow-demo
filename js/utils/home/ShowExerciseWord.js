@@ -31,6 +31,9 @@ export default function showExerciseWord() {
     }
 
     hideFinishScreen()
+
+    document.getElementById(`remainingWordsCountExercise-${wordType}`).innerText = learnedWithExerciseWords[level][category][wordType].length
+    document.getElementById(`totalWordsCountExercise-${wordType}`).innerText = totalWordsExercise
   
     // // reactivate buttons
     if (wordType === 'noun') {

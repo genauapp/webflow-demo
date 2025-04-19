@@ -19,10 +19,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   LocalStorageManager.save(CURRENT_CATEGORY_KEY, DEFAULT_VALUE.CURRENT_CATEGORY)
   LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
   LocalStorageManager.save(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
+  LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, DEFAULT_VALUE.IN_PROGRESS_WORDS)
   LocalStorageManager.save(IS_ON_LEARN_KEY, "learn")
+  LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
+  LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
 
   showSkeleton(DEFAULT_VALUE.CURRENT_WORD_TYPE)
-  await executeInitialLoadAndShow()
+  await loadAndShowWords()
 })
 
 // On Level Change
@@ -55,18 +58,18 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
     if (updatedLevel === 'einburgerungstest') {
       LocalStorageManager.save(CURRENT_CATEGORY_KEY, 'einburgerungstest')
       showOrHideDecks('einburgerungstest')
-      await executeInitialLoadAndShow()
+      await loadAndShowWords()
       return
     }
     if (currentCategory === 'einburgerungstest' && isRegularLevel(updatedLevel)) {
       showOrHideDecks(updatedLevel)
       const lastSelectedDeck = document.querySelector('.selected-deck-img').getAttribute('data-option')
       LocalStorageManager.save(CURRENT_CATEGORY_KEY, lastSelectedDeck)
-      await executeInitialLoadAndShow()
+      await loadAndShowWords()
       return
     }
     showOrHideDecks(updatedLevel)
-    await executeInitialLoadAndShow()
+    await loadAndShowWords()
   })
 })
 
@@ -91,7 +94,7 @@ document.querySelectorAll('.deck-container').forEach((elem) => {
       elem.children[0].classList.add('selected-deck-img')
     }
 
-    await executeInitialLoadAndShow()
+    await loadAndShowWords()
   })
 })
 
@@ -109,11 +112,18 @@ types.forEach((type) => {
   })
 })
 
-async function executeInitialLoadAndShow() {
+async function loadAndShowWords() {
+  const isOnLearn = LocalStorageManager.load(IS_ON_LEARN_KEY)
   try {
     await loadWords()
-    showLearnWord()
-    showExerciseWord()
+    if(isOnLearn === "learn") {
+      showLearnWord()
+      return
+    }
+    if(isOnLearn === "exercise") {
+      showExerciseWord()
+      return
+    }
   } catch (error) {
     console.error('Kelime yükleme hatası:', error)
   }
@@ -121,26 +131,13 @@ async function executeInitialLoadAndShow() {
 
 // Kelime yükleme fonksiyonu
 export async function loadWords() {
-  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
-  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY, DEFAULT_VALUE.CURRENT_CATEGORY)
-  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
-  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
-  const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
-  let totalWordsLearn = 0
-  let totalWordsExercise = 0
-  let wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
-  let wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
+  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
+  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
+  let wordList = LocalStorageManager.load(WORD_LIST_KEY)
+  let wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY)
 
   try {
-    showSkeleton(wordType)
-
-    // Feedback mesajını temizle
-    const feedbackMessage = document.getElementById(
-      `feedbackMessage-${wordType}`
-    )
-    if (feedbackMessage) {
-      feedbackMessage.innerText = ''
-    }
 
     const response = await fetch(`${ASSETS_BASE_URL}/json/${level}/${category}/${wordType}.json`)
 
@@ -151,24 +148,16 @@ export async function loadWords() {
     const data = await response.json()
     wordList = [...data]
     wordListExercise = [...data]
-    totalWordsExercise = wordList.length
-    totalWordsLearn = wordList.length
+    const totalWordsExercise = wordList.length
+    const totalWordsLearn = wordList.length
 
     LocalStorageManager.save(TOTAL_WORD_EXERCISE_KEY, totalWordsExercise)
     LocalStorageManager.save(TOTAL_WORD_LEARN_KEY, totalWordsLearn)
     LocalStorageManager.save(WORD_LIST_KEY, ListUtils.shuffleArray(wordList))
     LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, ListUtils.shuffleArray(wordListExercise))
-    LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, DEFAULT_VALUE.IN_PROGRESS_WORDS)
 
-    document.getElementById(`remainingWordsCountLearn-${wordType}`).innerText = learnedWithLearnWords[level][category][wordType].length
-    document.getElementById(`remainingWordsCountExercise-${wordType}`).innerText = learnedWithExerciseWords[level][category][wordType].length
-    document.getElementById(`totalWordsCountLearn-${wordType}`).innerText = totalWordsLearn
-    document.getElementById(`totalWordsCountExercise-${wordType}`).innerText = totalWordsExercise
-
-    hideSkeleton(wordType)
   } catch (error) {
     console.error('Error fetching JSON:', error)
-    hideSkeleton(wordType)
     throw error
   }
 }
@@ -246,30 +235,17 @@ const nonNounCorrectAnswerClickHandler = (event) => {
   checkNonNounAnswer(true)
 }
 
-document
-  .getElementById('wrongButton-verb')
-  .addEventListener('click', nonNounWrongAnswerClickHandler)
+const filteredTypes = types.filter(type => type !== 'noun')
 
-document
-  .getElementById('correctButton-verb')
-  .addEventListener('click', nonNounCorrectAnswerClickHandler)
-
-document
-  .getElementById('wrongButton-adjective')
-  .addEventListener('click', nonNounWrongAnswerClickHandler)
-
-document
-  .getElementById('correctButton-adjective')
-  .addEventListener('click', nonNounCorrectAnswerClickHandler)
-
-document
-  .getElementById('wrongButton-adverb')
-  .addEventListener('click', nonNounWrongAnswerClickHandler)
-
-document
-  .getElementById('correctButton-adverb')
-  .addEventListener('click', nonNounCorrectAnswerClickHandler)
-
+filteredTypes.forEach(type => {
+  document
+    .getElementById(`wrongButton-${type}`)
+    .addEventListener('click', nonNounWrongAnswerClickHandler)
+  
+  document
+    .getElementById(`correctButton-${type}`)
+    .addEventListener('click', nonNounCorrectAnswerClickHandler)
+})
 // ... existing code ...
 
 function setupEventListeners() {

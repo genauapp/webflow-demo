@@ -81,6 +81,9 @@ export default function showLearnWord() {
             break
     }
 
+    document.getElementById(`remainingWordsCountLearn-${wordType}`).innerText = learnedWithLearnWords[level][category][wordType].length
+    document.getElementById(`totalWordsCountLearn-${wordType}`).innerText = totalWordsLearn
+
     document.getElementById(`levelTagLearn-${wordType}`).innerText =
         seviye || 'N/A'
     document.getElementById('translationLearn-' + wordType).innerText =
