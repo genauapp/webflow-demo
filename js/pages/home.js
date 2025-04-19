@@ -95,6 +95,13 @@ document.querySelectorAll('.deck-container').forEach((elem) => {
 })
 
 // On Word Type Change
+
+types.forEach((type) => {
+  document.getElementById(`${type}Tab`).addEventListener('click', async () => {
+    LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, type)
+  })
+})
+/*
 document.getElementById('nounTab').addEventListener('click', async () => {
   console.log('Noun seçildi.')
   const nounType = types[0]
@@ -125,7 +132,7 @@ document.getElementById('adverbTab').addEventListener('click', async () => {
 
   await executeInitialLoadAndShow()
 })
-
+*/
 async function executeInitialLoadAndShow() {
   try {
     await loadWords()
