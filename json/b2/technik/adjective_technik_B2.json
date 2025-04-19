@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "digital",
+        "ingilizce": "digital",
+        "seviye": "B2",
+        "ornek": "Digitale Medien sind heutzutage weit verbreitet.",
+        "kelime": "digital",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_01"
+    },
+    {
+        "almanca": "automatisch",
+        "ingilizce": "automatic",
+        "seviye": "B2",
+        "ornek": "Das automatische Update spart Zeit.",
+        "kelime": "automatisch",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_02"
+    },
+    {
+        "almanca": "benutzerfreundlich",
+        "ingilizce": "user-friendly",
+        "seviye": "B2",
+        "ornek": "Die App ist sehr benutzerfreundlich.",
+        "kelime": "benutzerfreundlich",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_03"
+    },
+    {
+        "almanca": "technisch",
+        "ingilizce": "technical",
+        "seviye": "B2",
+        "ornek": "Es gibt ein technisches Problem.",
+        "kelime": "technisch",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_04"
+    },
+    {
+        "almanca": "effizient",
+        "ingilizce": "efficient",
+        "seviye": "B2",
+        "ornek": "Das neue System ist sehr effizient.",
+        "kelime": "effizient",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_05"
+    },
+    {
+        "almanca": "kompatibel",
+        "ingilizce": "compatible",
+        "seviye": "B2",
+        "ornek": "Die Geräte sind nicht kompatibel.",
+        "kelime": "kompatibel",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_06"
+    },
+    {
+        "almanca": "mobil",
+        "ingilizce": "mobile",
+        "seviye": "B2",
+        "ornek": "Die mobile Version ist gut gestaltet.",
+        "kelime": "mobil",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_07"
+    },
+    {
+        "almanca": "interaktiv",
+        "ingilizce": "interactive",
+        "seviye": "B2",
+        "ornek": "Das interaktive Whiteboard erleichtert den Unterricht.",
+        "kelime": "interaktiv",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_08"
+    },
+    {
+        "almanca": "virtuell",
+        "ingilizce": "virtual",
+        "seviye": "B2",
+        "ornek": "Die Teilnehmer trafen sich in einem virtuellen Raum.",
+        "kelime": "virtuell",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_09"
+    },
+    {
+        "almanca": "zentral",
+        "ingilizce": "central",
+        "seviye": "B2",
+        "ornek": "Die Daten werden in einer zentralen Datenbank gespeichert.",
+        "kelime": "zentral",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_10"
+    },
+    {
+        "almanca": "stabil",
+        "ingilizce": "stable",
+        "seviye": "B2",
+        "ornek": "Die Internetverbindung ist sehr stabil.",
+        "kelime": "stabil",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_11"
+    },
+    {
+        "almanca": "manuell",
+        "ingilizce": "manual",
+        "seviye": "B2",
+        "ornek": "Die manuelle Eingabe ist erforderlich.",
+        "kelime": "manuell",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_12"
+    },
+    {
+        "almanca": "intelligent",
+        "ingilizce": "intelligent",
+        "seviye": "B2",
+        "ornek": "Das System reagiert intelligent auf Veränderungen.",
+        "kelime": "intelligent",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_13"
+    },
+    {
+        "almanca": "verschlüsselt",
+        "ingilizce": "encrypted",
+        "seviye": "B2",
+        "ornek": "Die Nachricht wurde verschlüsselt übertragen.",
+        "kelime": "verschlüsselt",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_14"
+    },
+    {
+        "almanca": "passwortgeschützt",
+        "ingilizce": "password-protected",
+        "seviye": "B2",
+        "ornek": "Die Datei ist passwortgeschützt.",
+        "kelime": "passwortgeschützt",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_15"
+    },
+    {
+        "almanca": "vernetzt",
+        "ingilizce": "networked",
+        "seviye": "B2",
+        "ornek": "Alle Geräte sind miteinander vernetzt.",
+        "kelime": "vernetzt",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_16"
+    },
+    {
+        "almanca": "leistungsfähig",
+        "ingilizce": "powerful / efficient",
+        "seviye": "B2",
+        "ornek": "Der neue Prozessor ist sehr leistungsfähig.",
+        "kelime": "leistungsfähig",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_17"
+    },
+    {
+        "almanca": "sicher",
+        "ingilizce": "secure / safe",
+        "seviye": "B2",
+        "ornek": "Das System ist sicher gegen Angriffe.",
+        "kelime": "sicher",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_18"
+    },
+    {
+        "almanca": "zugänglich",
+        "ingilizce": "accessible",
+        "seviye": "B2",
+        "ornek": "Die Informationen sind für alle zugänglich.",
+        "kelime": "zugänglich",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_19"
+    },
+    {
+        "almanca": "rechenintensiv",
+        "ingilizce": "computationally intensive",
+        "seviye": "B2",
+        "ornek": "KI-Modelle sind oft rechenintensiv.",
+        "kelime": "rechenintensiv",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_20"
+    }
+]

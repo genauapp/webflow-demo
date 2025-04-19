@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "politisch",
+        "ingilizce": "political",
+        "seviye": "B2",
+        "ornek": "Die politische Lage ist angespannt.",
+        "kelime": "politisch",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_01"
+    },
+    {
+        "almanca": "umweltfreundlich",
+        "ingilizce": "environmentally friendly",
+        "seviye": "B2",
+        "ornek": "Wir benutzen umweltfreundliche Produkte.",
+        "kelime": "umweltfreundlich",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_02"
+    },
+    {
+        "almanca": "demokratisch",
+        "ingilizce": "democratic",
+        "seviye": "B2",
+        "ornek": "Deutschland ist ein demokratischer Staat.",
+        "kelime": "demokratisch",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_03"
+    },
+    {
+        "almanca": "gesetzlich",
+        "ingilizce": "legal / statutory",
+        "seviye": "B2",
+        "ornek": "Das ist gesetzlich verboten.",
+        "kelime": "gesetzlich",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_04"
+    },
+    {
+        "almanca": "global",
+        "ingilizce": "global",
+        "seviye": "B2",
+        "ornek": "Der Klimawandel ist ein globales Problem.",
+        "kelime": "global",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_05"
+    },
+    {
+        "almanca": "öffentlich",
+        "ingilizce": "public",
+        "seviye": "B2",
+        "ornek": "Es handelt sich um eine öffentliche Veranstaltung.",
+        "kelime": "öffentlich",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_06"
+    },
+    {
+        "almanca": "nachhaltig",
+        "ingilizce": "sustainable",
+        "seviye": "B2",
+        "ornek": "Nachhaltige Entwicklung ist wichtig.",
+        "kelime": "nachhaltig",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_07"
+    },
+    {
+        "almanca": "friedlich",
+        "ingilizce": "peaceful",
+        "seviye": "B2",
+        "ornek": "Die Demonstration war friedlich.",
+        "kelime": "friedlich",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_08"
+    },
+    {
+        "almanca": "gerecht",
+        "ingilizce": "fair / just",
+        "seviye": "B2",
+        "ornek": "Ein gerechtes System behandelt alle gleich.",
+        "kelime": "gerecht",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_09"
+    },
+    {
+        "almanca": "verantwortungsvoll",
+        "ingilizce": "responsible",
+        "seviye": "B2",
+        "ornek": "Verantwortungsvolles Handeln ist gefragt.",
+        "kelime": "verantwortungsvoll",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_10"
+    },
+    {
+        "almanca": "effektiv",
+        "ingilizce": "effective",
+        "seviye": "B2",
+        "ornek": "Die Maßnahmen sind sehr effektiv.",
+        "kelime": "effektiv",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_11"
+    },
+    {
+        "almanca": "aktiv",
+        "ingilizce": "active",
+        "seviye": "B2",
+        "ornek": "Er ist ein aktives Mitglied der Partei.",
+        "kelime": "aktiv",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_12"
+    },
+    {
+        "almanca": "kritisch",
+        "ingilizce": "critical",
+        "seviye": "B2",
+        "ornek": "Die Lage wird als kritisch eingeschätzt.",
+        "kelime": "kritisch",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_13"
+    },
+    {
+        "almanca": "sozial",
+        "ingilizce": "social",
+        "seviye": "B2",
+        "ornek": "Soziale Gerechtigkeit ist ein wichtiges Thema.",
+        "kelime": "sozial",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_14"
+    },
+    {
+        "almanca": "friedensfördernd",
+        "ingilizce": "peace-promoting",
+        "seviye": "B2",
+        "ornek": "Friedensfördernde Maßnahmen sind notwendig.",
+        "kelime": "friedensfördernd",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_15"
+    },
+    {
+        "almanca": "international",
+        "ingilizce": "international",
+        "seviye": "B2",
+        "ornek": "Internationale Zusammenarbeit ist entscheidend.",
+        "kelime": "international",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_16"
+    },
+    {
+        "almanca": "zukunftsorientiert",
+        "ingilizce": "future-oriented",
+        "seviye": "B2",
+        "ornek": "Die Politik sollte zukunftsorientiert sein.",
+        "kelime": "zukunftsorientiert",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_17"
+    },
+    {
+        "almanca": "verfassungsmäßig",
+        "ingilizce": "constitutional",
+        "seviye": "B2",
+        "ornek": "Das Vorgehen war verfassungsmäßig korrekt.",
+        "kelime": "verfassungsmäßig",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_18"
+    },
+    {
+        "almanca": "engagiert",
+        "ingilizce": "committed / dedicated",
+        "seviye": "B2",
+        "ornek": "Viele engagierte Bürger setzen sich für Umwelt ein.",
+        "kelime": "engagiert",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_19"
+    },
+    {
+        "almanca": "reformbereit",
+        "ingilizce": "ready for reform",
+        "seviye": "B2",
+        "ornek": "Die Partei ist reformbereit.",
+        "kelime": "reformbereit",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_20"
+    }
+]

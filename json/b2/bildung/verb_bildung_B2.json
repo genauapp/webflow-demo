@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "forschen",
+        "ingilizce": "to research",
+        "seviye": "B2",
+        "ornek": "Wissenschaftler forschen an neuen Behandlungsmethoden.",
+        "kelime": "forschen",
+        "kural": "Often used with 'an + Dativ'.",
+        "type": "verb",
+        "category": "Wissenschaft & Bildung",
+        "id": "verb_bildung_B2_01"
+    },
+    {
+        "almanca": "untersuchen",
+        "ingilizce": "to examine / to investigate",
+        "seviye": "B2",
+        "ornek": "Die Studie untersucht das Verhalten von Jugendlichen.",
+        "kelime": "untersuchen",
+        "kural": "Regular verb used in academic and medical contexts.",
+        "type": "verb",
+        "category": "Wissenschaft & Bildung",
+        "id": "verb_bildung_B2_02"
+    },
+    {
+        "almanca": "analysieren",
+        "ingilizce": "to analyze",
+        "seviye": "B2",
+        "ornek": "Die Daten werden genau analysiert.",
+        "kelime": "analysieren",
+        "kural": "Loanword, used in formal contexts.",
+        "type": "verb",
+        "category": "Wissenschaft & Bildung",
+        "id": "verb_bildung_B2_03"
+    },
+    {
+        "almanca": "belegen",
+        "ingilizce": "to prove / to enroll (in a course)",
+        "seviye": "B2",
+        "ornek": "Die Ergebnisse belegen die These.",
+        "kelime": "belegen",
+        "kural": "Context-dependent meaning.",
+        "type": "verb",
+        "category": "Wissenschaft & Bildung",
+        "id": "verb_bildung_B2_04"
+    },
+    {
+        "almanca": "nachweisen",
+        "ingilizce": "to verify / to prove",
+        "seviye": "B2",
+        "ornek": "Die Wirksamkeit wurde wissenschaftlich nachgewiesen.",
+        "kelime": "nachweisen",
+        "kural": "Irregular separable verb: wies nach, nachgewiesen.",
+        "type": "verb",
+        "category": "Wissenschaft & Bildung",
+        "id": "verb_bildung_B2_05"
+    },
+    {
+        "almanca": "publizieren",
+        "ingilizce": "to publish",
+        "seviye": "B2",
+        "ornek": "Die Ergebnisse wurden in einer Fachzeitschrift publiziert.",
+        "kelime": "publizieren",
+        "kural": "Used mostly in written academic context.",
+        "type": "verb",
+        "category": "Wissenschaft & Bildung",
+        "id": "verb_bildung_B2_06"
+    },
+    {
+        "almanca": "lehren",
+        "ingilizce": "to teach",
+        "seviye": "B2",
+        "ornek": "Die Professorin lehrt an einer Universität.",
+        "kelime": "lehren",
+        "kural": "Formal verb for teaching, more common in written German.",
+        "type": "verb",
+        "category": "Wissenschaft & Bildung",
+        "id": "verb_bildung_B2_07"
+    },
+    {
+        "almanca": "studieren",
+        "ingilizce": "to study",
+        "seviye": "B2",
+        "ornek": "Sie studiert Biologie in Berlin.",
+        "kelime": "studieren",
+        "kural": "Used specifically for higher education.",
+        "type": "verb",
+        "category": "Wissenschaft & Bildung",
+        "id": "verb_bildung_B2_08"
+    },
+    {
+        "almanca": "wiederholen",
+        "ingilizce": "to repeat / to review",
+        "seviye": "B2",
+        "ornek": "Er wiederholt den Lernstoff vor der Prüfung.",
+        "kelime": "wiederholen",
+        "kural": "Regular verb, can also be reflexive.",
+        "type": "verb",
+        "category": "Wissenschaft & Bildung",
+        "id": "verb_bildung_B2_09"
+    },
+    {
+        "almanca": "verstehen",
+        "ingilizce": "to understand",
+        "seviye": "B2",
+        "ornek": "Ich verstehe die Theorie nicht ganz.",
+        "kelime": "verstehen",
+        "kural": "Irregular: verstand, verstanden.",
+        "type": "verb",
+        "category": "Wissenschaft & Bildung",
+        "id": "verb_bildung_B2_10"
+    },
+    {
+        "almanca": "lernen",
+        "ingilizce": "to learn",
+        "seviye": "B2",
+        "ornek": "Kinder lernen durch Spielen.",
+        "kelime": "lernen",
+        "kural": "Most basic verb for gaining knowledge.",
+        "type": "verb",
+        "category": "Wissenschaft & Bildung",
+        "id": "verb_bildung_B2_11"
+    },
+    {
+        "almanca": "bewerten",
+        "ingilizce": "to evaluate",
+        "seviye": "B2",
+        "ornek": "Die Leistung wurde objektiv bewertet.",
+        "kelime": "bewerten",
+        "kural": "Often used in exams and research.",
+        "type": "verb",
+        "category": "Wissenschaft & Bildung",
+        "id": "verb_bildung_B2_12"
+    },
+    {
+        "almanca": "nachdenken",
+        "ingilizce": "to reflect / to think about",
+        "seviye": "B2",
+        "ornek": "Man sollte über das Ergebnis nachdenken.",
+        "kelime": "nachdenken",
+        "kural": "Separable verb: dachte nach, nachgedacht.",
+        "type": "verb",
+        "category": "Wissenschaft & Bildung",
+        "id": "verb_bildung_B2_13"
+    },
+    {
+        "almanca": "sich konzentrieren",
+        "ingilizce": "to concentrate",
+        "seviye": "B2",
+        "ornek": "Die Schüler müssen sich besser konzentrieren.",
+        "kelime": "sich konzentrieren",
+        "kural": "Reflexive verb with 'auf + Akk'.",
+        "type": "verb",
+        "category": "Wissenschaft & Bildung",
+        "id": "verb_bildung_B2_14"
+    },
+    {
+        "almanca": "entwickeln",
+        "ingilizce": "to develop",
+        "seviye": "B2",
+        "ornek": "Die Forscher haben ein neues Modell entwickelt.",
+        "kelime": "entwickeln",
+        "kural": "Regular verb, common in innovation contexts.",
+        "type": "verb",
+        "category": "Wissenschaft & Bildung",
+        "id": "verb_bildung_B2_15"
+    },
+    {
+        "almanca": "interpretieren",
+        "ingilizce": "to interpret",
+        "seviye": "B2",
+        "ornek": "Der Text wird unterschiedlich interpretiert.",
+        "kelime": "interpretieren",
+        "kural": "Used in art and literature analysis.",
+        "type": "verb",
+        "category": "Wissenschaft & Bildung",
+        "id": "verb_bildung_B2_16"
+    },
+    {
+        "almanca": "vergleichen",
+        "ingilizce": "to compare",
+        "seviye": "B2",
+        "ornek": "Die Schüler vergleichen verschiedene Theorien.",
+        "kelime": "vergleichen",
+        "kural": "Irregular: verglich, verglichen.",
+        "type": "verb",
+        "category": "Wissenschaft & Bildung",
+        "id": "verb_bildung_B2_17"
+    },
+    {
+        "almanca": "beobachten",
+        "ingilizce": "to observe",
+        "seviye": "B2",
+        "ornek": "Im Experiment beobachten wir die Reaktion.",
+        "kelime": "beobachten",
+        "kural": "Regular verb, used in science & social studies.",
+        "type": "verb",
+        "category": "Wissenschaft & Bildung",
+        "id": "verb_bildung_B2_18"
+    },
+    {
+        "almanca": "vermitteln",
+        "ingilizce": "to convey / to mediate",
+        "seviye": "B2",
+        "ornek": "Der Lehrer vermittelt den Lernstoff verständlich.",
+        "kelime": "vermitteln",
+        "kural": "Used for teaching and communication.",
+        "type": "verb",
+        "category": "Wissenschaft & Bildung",
+        "id": "verb_bildung_B2_19"
+    },
+    {
+        "almanca": "anwenden",
+        "ingilizce": "to apply (knowledge)",
+        "seviye": "B2",
+        "ornek": "Das Gelernte wird in der Praxis angewendet.",
+        "kelime": "anwenden",
+        "kural": "Separable: wandte an, angewandt.",
+        "type": "verb",
+        "category": "Wissenschaft & Bildung",
+        "id": "verb_bildung_B2_20"
+    }
+]

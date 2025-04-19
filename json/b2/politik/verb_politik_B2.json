@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "abstimmen",
+        "ingilizce": "to vote",
+        "seviye": "B2",
+        "ornek": "Die Bürger stimmen über das neue Gesetz ab.",
+        "kelime": "abstimmen",
+        "kural": "Separable verb, often used with 'über + Akk'.",
+        "type": "verb",
+        "category": "Politik & Umwelt",
+        "id": "verb_politik_B2_01"
+    },
+    {
+        "almanca": "wählen",
+        "ingilizce": "to elect / to choose",
+        "seviye": "B2",
+        "ornek": "In Deutschland wird alle vier Jahre gewählt.",
+        "kelime": "wählen",
+        "kural": "Regular verb, often used in political contexts.",
+        "type": "verb",
+        "category": "Politik & Umwelt",
+        "id": "verb_politik_B2_02"
+    },
+    {
+        "almanca": "regieren",
+        "ingilizce": "to govern",
+        "seviye": "B2",
+        "ornek": "Die Koalition regiert seit zwei Jahren.",
+        "kelime": "regieren",
+        "kural": "Regular verb from Latin root.",
+        "type": "verb",
+        "category": "Politik & Umwelt",
+        "id": "verb_politik_B2_03"
+    },
+    {
+        "almanca": "diskutieren",
+        "ingilizce": "to discuss",
+        "seviye": "B2",
+        "ornek": "Im Parlament wird heftig diskutiert.",
+        "kelime": "diskutieren",
+        "kural": "Verb often used with 'über + Akk'.",
+        "type": "verb",
+        "category": "Politik & Umwelt",
+        "id": "verb_politik_B2_04"
+    },
+    {
+        "almanca": "verhandeln",
+        "ingilizce": "to negotiate",
+        "seviye": "B2",
+        "ornek": "Die Länder verhandeln über ein neues Abkommen.",
+        "kelime": "verhandeln",
+        "kural": "Regular verb often used in diplomacy.",
+        "type": "verb",
+        "category": "Politik & Umwelt",
+        "id": "verb_politik_B2_05"
+    },
+    {
+        "almanca": "demonstrieren",
+        "ingilizce": "to protest / to demonstrate",
+        "seviye": "B2",
+        "ornek": "Viele Menschen demonstrieren gegen den Klimawandel.",
+        "kelime": "demonstrieren",
+        "kural": "Often followed by 'gegen + Akk'.",
+        "type": "verb",
+        "category": "Politik & Umwelt",
+        "id": "verb_politik_B2_06"
+    },
+    {
+        "almanca": "beschließen",
+        "ingilizce": "to decide / to resolve",
+        "seviye": "B2",
+        "ornek": "Der Bundestag beschließt ein neues Gesetz.",
+        "kelime": "beschließen",
+        "kural": "Irregular: beschloss, beschlossen.",
+        "type": "verb",
+        "category": "Politik & Umwelt",
+        "id": "verb_politik_B2_07"
+    },
+    {
+        "almanca": "umsetzen",
+        "ingilizce": "to implement",
+        "seviye": "B2",
+        "ornek": "Die Maßnahmen werden schnell umgesetzt.",
+        "kelime": "umsetzen",
+        "kural": "Separable verb, used in policy contexts.",
+        "type": "verb",
+        "category": "Politik & Umwelt",
+        "id": "verb_politik_B2_08"
+    },
+    {
+        "almanca": "einführen",
+        "ingilizce": "to introduce (a law, policy)",
+        "seviye": "B2",
+        "ornek": "Die Regierung führt eine neue Steuer ein.",
+        "kelime": "einführen",
+        "kural": "Separable verb, often used in legislative language.",
+        "type": "verb",
+        "category": "Politik & Umwelt",
+        "id": "verb_politik_B2_09"
+    },
+    {
+        "almanca": "schützen",
+        "ingilizce": "to protect",
+        "seviye": "B2",
+        "ornek": "Wir müssen die Umwelt besser schützen.",
+        "kelime": "schützen",
+        "kural": "Regular verb, often with 'vor + Dat' or 'gegen + Akk'.",
+        "type": "verb",
+        "category": "Politik & Umwelt",
+        "id": "verb_politik_B2_10"
+    },
+    {
+        "almanca": "unterzeichnen",
+        "ingilizce": "to sign",
+        "seviye": "B2",
+        "ornek": "Die Staatschefs unterzeichnen das Abkommen.",
+        "kelime": "unterzeichnen",
+        "kural": "Used in legal/political contexts.",
+        "type": "verb",
+        "category": "Politik & Umwelt",
+        "id": "verb_politik_B2_11"
+    },
+    {
+        "almanca": "reduzieren",
+        "ingilizce": "to reduce",
+        "seviye": "B2",
+        "ornek": "Man will den CO2-Ausstoß deutlich reduzieren.",
+        "kelime": "reduzieren",
+        "kural": "Regular verb often with passive voice.",
+        "type": "verb",
+        "category": "Politik & Umwelt",
+        "id": "verb_politik_B2_12"
+    },
+    {
+        "almanca": "genehmigen",
+        "ingilizce": "to approve / to authorize",
+        "seviye": "B2",
+        "ornek": "Der Antrag wurde genehmigt.",
+        "kelime": "genehmigen",
+        "kural": "Formal verb used in administration.",
+        "type": "verb",
+        "category": "Politik & Umwelt",
+        "id": "verb_politik_B2_13"
+    },
+    {
+        "almanca": "verbieten",
+        "ingilizce": "to forbid / to ban",
+        "seviye": "B2",
+        "ornek": "Das Rauchen in öffentlichen Räumen ist verboten.",
+        "kelime": "verbieten",
+        "kural": "Irregular: verbot, verboten.",
+        "type": "verb",
+        "category": "Politik & Umwelt",
+        "id": "verb_politik_B2_14"
+    },
+    {
+        "almanca": "reagieren",
+        "ingilizce": "to react",
+        "seviye": "B2",
+        "ornek": "Die Politiker reagieren auf die Kritik.",
+        "kelime": "reagieren",
+        "kural": "Often used with 'auf + Akk'.",
+        "type": "verb",
+        "category": "Politik & Umwelt",
+        "id": "verb_politik_B2_15"
+    },
+    {
+        "almanca": "anregen",
+        "ingilizce": "to stimulate / to suggest",
+        "seviye": "B2",
+        "ornek": "Die Debatte regt zum Nachdenken an.",
+        "kelime": "anregen",
+        "kural": "Separable verb, reflexive use common.",
+        "type": "verb",
+        "category": "Politik & Umwelt",
+        "id": "verb_politik_B2_16"
+    },
+    {
+        "almanca": "informieren",
+        "ingilizce": "to inform",
+        "seviye": "B2",
+        "ornek": "Die Bürger werden über die Änderungen informiert.",
+        "kelime": "informieren",
+        "kural": "Can be reflexive or passive.",
+        "type": "verb",
+        "category": "Politik & Umwelt",
+        "id": "verb_politik_B2_17"
+    },
+    {
+        "almanca": "beteiligen",
+        "ingilizce": "to participate",
+        "seviye": "B2",
+        "ornek": "Viele Menschen beteiligen sich an der Abstimmung.",
+        "kelime": "beteiligen",
+        "kural": "Reflexive: sich beteiligen an + Dativ.",
+        "type": "verb",
+        "category": "Politik & Umwelt",
+        "id": "verb_politik_B2_18"
+    },
+    {
+        "almanca": "einhalten",
+        "ingilizce": "to comply with / to follow",
+        "seviye": "B2",
+        "ornek": "Die Vorschriften müssen eingehalten werden.",
+        "kelime": "einhalten",
+        "kural": "Separable verb, irregular: hielt ein, eingehalten.",
+        "type": "verb",
+        "category": "Politik & Umwelt",
+        "id": "verb_politik_B2_19"
+    },
+    {
+        "almanca": "auswirken (sich)",
+        "ingilizce": "to have an effect",
+        "seviye": "B2",
+        "ornek": "Die Politik wirkt sich auf das tägliche Leben aus.",
+        "kelime": "sich auswirken",
+        "kural": "Reflexive and separable verb.",
+        "type": "verb",
+        "category": "Politik & Umwelt",
+        "id": "verb_politik_B2_20"
+    }
+]

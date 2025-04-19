@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "tolerant",
+        "ingilizce": "tolerant",
+        "seviye": "B2",
+        "ornek": "Eine tolerante Gesellschaft akzeptiert Unterschiede.",
+        "kelime": "tolerant",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_01"
+    },
+    {
+        "almanca": "offen",
+        "ingilizce": "open / open-minded",
+        "seviye": "B2",
+        "ornek": "Man sollte offen für neue Kulturen sein.",
+        "kelime": "offen",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_02"
+    },
+    {
+        "almanca": "gleichberechtigt",
+        "ingilizce": "equal / having equal rights",
+        "seviye": "B2",
+        "ornek": "Männer und Frauen sind heute gleichberechtigt.",
+        "kelime": "gleichberechtigt",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_03"
+    },
+    {
+        "almanca": "diskriminierend",
+        "ingilizce": "discriminatory",
+        "seviye": "B2",
+        "ornek": "Diskriminierende Aussagen sind nicht akzeptabel.",
+        "kelime": "diskriminierend",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_04"
+    },
+    {
+        "almanca": "fremd",
+        "ingilizce": "foreign / strange",
+        "seviye": "B2",
+        "ornek": "Viele empfinden neue Kulturen zunächst als fremd.",
+        "kelime": "fremd",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_05"
+    },
+    {
+        "almanca": "kulturell",
+        "ingilizce": "cultural",
+        "seviye": "B2",
+        "ornek": "Kulturelle Unterschiede sollten akzeptiert werden.",
+        "kelime": "kulturell",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_06"
+    },
+    {
+        "almanca": "sozial",
+        "ingilizce": "social",
+        "seviye": "B2",
+        "ornek": "Soziale Gerechtigkeit ist ein Ziel vieler Organisationen.",
+        "kelime": "sozial",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_07"
+    },
+    {
+        "almanca": "gerecht",
+        "ingilizce": "fair / just",
+        "seviye": "B2",
+        "ornek": "Ein gerechtes System behandelt alle gleich.",
+        "kelime": "gerecht",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_08"
+    },
+    {
+        "almanca": "vielfältig",
+        "ingilizce": "diverse",
+        "seviye": "B2",
+        "ornek": "Eine vielfältige Gesellschaft ist eine starke Gesellschaft.",
+        "kelime": "vielfältig",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_09"
+    },
+    {
+        "almanca": "ethnisch",
+        "ingilizce": "ethnic",
+        "seviye": "B2",
+        "ornek": "Deutschland ist ethnisch vielfältiger geworden.",
+        "kelime": "ethnisch",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_10"
+    },
+    {
+        "almanca": "global",
+        "ingilizce": "global",
+        "seviye": "B2",
+        "ornek": "Wir leben in einer global vernetzten Welt.",
+        "kelime": "global",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_11"
+    },
+    {
+        "almanca": "religiös",
+        "ingilizce": "religious",
+        "seviye": "B2",
+        "ornek": "Religiöse Freiheit ist ein Menschenrecht.",
+        "kelime": "religiös",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_12"
+    },
+    {
+        "almanca": "verantwortlich",
+        "ingilizce": "responsible",
+        "seviye": "B2",
+        "ornek": "Jeder ist verantwortlich für sein Verhalten.",
+        "kelime": "verantwortlich",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_13"
+    },
+    {
+        "almanca": "respektvoll",
+        "ingilizce": "respectful",
+        "seviye": "B2",
+        "ornek": "Ein respektvoller Umgang ist sehr wichtig.",
+        "kelime": "respektvoll",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_14"
+    },
+    {
+        "almanca": "ausgrenzend",
+        "ingilizce": "exclusive / segregating",
+        "seviye": "B2",
+        "ornek": "Ausgrenzende Sprache verletzt viele Menschen.",
+        "kelime": "ausgrenzend",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_15"
+    },
+    {
+        "almanca": "aufgeschlossen",
+        "ingilizce": "open-minded",
+        "seviye": "B2",
+        "ornek": "Sie ist sehr aufgeschlossen gegenüber neuen Ideen.",
+        "kelime": "aufgeschlossen",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_16"
+    },
+    {
+        "almanca": "intolerant",
+        "ingilizce": "intolerant",
+        "seviye": "B2",
+        "ornek": "Eine intolerante Haltung führt zu Konflikten.",
+        "kelime": "intolerant",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_17"
+    },
+    {
+        "almanca": "veraltet",
+        "ingilizce": "outdated",
+        "seviye": "B2",
+        "ornek": "Veraltete Rollenbilder sollten überdacht werden.",
+        "kelime": "veraltet",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_18"
+    },
+    {
+        "almanca": "sensibel",
+        "ingilizce": "sensitive",
+        "seviye": "B2",
+        "ornek": "Das ist ein sensibles Thema.",
+        "kelime": "sensibel",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_19"
+    },
+    {
+        "almanca": "verbindlich",
+        "ingilizce": "binding / obliging",
+        "seviye": "B2",
+        "ornek": "Verbindliche Regeln gelten für alle.",
+        "kelime": "verbindlich",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_20"
+    }
+]

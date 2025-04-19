@@ -36,7 +36,7 @@ export class DEFAULT_VALUE {
   /**
    * App
    */
-  static APP_VERSION = "1.2.71";
+  static APP_VERSION = "1.2.73";
 
   /** 
   Homepage
@@ -104,25 +104,25 @@ export class DEFAULT_VALUE {
       },
     },
     b1: {
-      default: {
+      gefuehle: {
         noun: [],
         verb: [],
         adjective: [],
         adverb: [],
       },
-      dirty: {
+      reisen: {
         noun: [],
         verb: [],
         adjective: [],
         adverb: [],
       },
-      doctor: {
+      slang: {
         noun: [],
         verb: [],
         adjective: [],
         adverb: [],
       },
-      music: {
+      wohnen: {
         noun: [],
         verb: [],
         adjective: [],
@@ -130,25 +130,25 @@ export class DEFAULT_VALUE {
       },
     },
     b2: {
-      default: {
+      bildung: {
         noun: [],
         verb: [],
         adjective: [],
         adverb: [],
       },
-      dirty: {
+      kultur: {
         noun: [],
         verb: [],
         adjective: [],
         adverb: [],
       },
-      doctor: {
+      politik: {
         noun: [],
         verb: [],
         adjective: [],
         adverb: [],
       },
-      music: {
+      technik: {
         noun: [],
         verb: [],
         adjective: [],
@@ -266,25 +266,25 @@ export class DEFAULT_VALUE {
       },
     },
     b1: {
-      default: {
+      gefuehle: {
         noun: [],
         verb: [],
         adjective: [],
         adverb: [],
       },
-      dirty: {
+      reisen: {
         noun: [],
         verb: [],
         adjective: [],
         adverb: [],
       },
-      doctor: {
+      slang: {
         noun: [],
         verb: [],
         adjective: [],
         adverb: [],
       },
-      music: {
+      wohnen: {
         noun: [],
         verb: [],
         adjective: [],
@@ -292,25 +292,25 @@ export class DEFAULT_VALUE {
       },
     },
     b2: {
-      default: {
+      bildung: {
         noun: [],
         verb: [],
         adjective: [],
         adverb: [],
       },
-      dirty: {
+      kultur: {
         noun: [],
         verb: [],
         adjective: [],
         adverb: [],
       },
-      doctor: {
+      politik: {
         noun: [],
         verb: [],
         adjective: [],
         adverb: [],
       },
-      music: {
+      technik: {
         noun: [],
         verb: [],
         adjective: [],
@@ -428,25 +428,25 @@ export class DEFAULT_VALUE {
       },
     },
     b1: {
-      default: {
+      gefuehle: {
         noun: [],
         verb: [],
         adjective: [],
         adverb: [],
       },
-      dirty: {
+      reisen: {
         noun: [],
         verb: [],
         adjective: [],
         adverb: [],
       },
-      doctor: {
+      slang: {
         noun: [],
         verb: [],
         adjective: [],
         adverb: [],
       },
-      music: {
+      wohnen: {
         noun: [],
         verb: [],
         adjective: [],
@@ -454,25 +454,25 @@ export class DEFAULT_VALUE {
       },
     },
     b2: {
-      default: {
+      bildung: {
         noun: [],
         verb: [],
         adjective: [],
         adverb: [],
       },
-      dirty: {
+      kultur: {
         noun: [],
         verb: [],
         adjective: [],
         adverb: [],
       },
-      doctor: {
+      politik: {
         noun: [],
         verb: [],
         adjective: [],
         adverb: [],
       },
-      music: {
+      technik: {
         noun: [],
         verb: [],
         adjective: [],
@@ -534,7 +534,7 @@ export class DEFAULT_VALUE {
     einburgerungstest: {
       einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] }
     }
-  }
+  };
 
   /** 
   Einbürgerungstest

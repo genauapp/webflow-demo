@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "politisch",
+        "ingilizce": "politically",
+        "seviye": "B2",
+        "ornek": "Das Thema wurde politisch diskutiert.",
+        "kelime": "politisch",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_01"
+    },
+    {
+        "almanca": "umweltfreundlich",
+        "ingilizce": "environmentally friendly",
+        "seviye": "B2",
+        "ornek": "Man sollte umweltfreundlich handeln.",
+        "kelime": "umweltfreundlich",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_02"
+    },
+    {
+        "almanca": "demokratisch",
+        "ingilizce": "democratically",
+        "seviye": "B2",
+        "ornek": "Die Entscheidung wurde demokratisch getroffen.",
+        "kelime": "demokratisch",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_03"
+    },
+    {
+        "almanca": "gesetzlich",
+        "ingilizce": "legally / by law",
+        "seviye": "B2",
+        "ornek": "Die Rechte sind gesetzlich geregelt.",
+        "kelime": "gesetzlich",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_04"
+    },
+    {
+        "almanca": "global",
+        "ingilizce": "globally",
+        "seviye": "B2",
+        "ornek": "Klimawandel ist ein globales Problem.",
+        "kelime": "global",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_05"
+    },
+    {
+        "almanca": "öffentlich",
+        "ingilizce": "publicly",
+        "seviye": "B2",
+        "ornek": "Die Debatte fand öffentlich statt.",
+        "kelime": "öffentlich",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_06"
+    },
+    {
+        "almanca": "nachhaltig",
+        "ingilizce": "sustainably",
+        "seviye": "B2",
+        "ornek": "Wir müssen nachhaltiger leben.",
+        "kelime": "nachhaltig",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_07"
+    },
+    {
+        "almanca": "friedlich",
+        "ingilizce": "peacefully",
+        "seviye": "B2",
+        "ornek": "Die Demonstration verlief friedlich.",
+        "kelime": "friedlich",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_08"
+    },
+    {
+        "almanca": "gerecht",
+        "ingilizce": "justly / fairly",
+        "seviye": "B2",
+        "ornek": "Die Ressourcen müssen gerecht verteilt werden.",
+        "kelime": "gerecht",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_09"
+    },
+    {
+        "almanca": "verantwortungsvoll",
+        "ingilizce": "responsibly",
+        "seviye": "B2",
+        "ornek": "Politiker sollten verantwortungsvoll handeln.",
+        "kelime": "verantwortungsvoll",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_10"
+    },
+    {
+        "almanca": "effektiv",
+        "ingilizce": "effectively",
+        "seviye": "B2",
+        "ornek": "Die Maßnahmen wurden effektiv umgesetzt.",
+        "kelime": "effektiv",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_11"
+    },
+    {
+        "almanca": "aktiv",
+        "ingilizce": "actively",
+        "seviye": "B2",
+        "ornek": "Viele Bürger beteiligen sich aktiv an der Politik.",
+        "kelime": "aktiv",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_12"
+    },
+    {
+        "almanca": "regelmäßig",
+        "ingilizce": "regularly",
+        "seviye": "B2",
+        "ornek": "Regelmäßig finden Sitzungen im Parlament statt.",
+        "kelime": "regelmäßig",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_13"
+    },
+    {
+        "almanca": "deutlich",
+        "ingilizce": "clearly",
+        "seviye": "B2",
+        "ornek": "Die Kritik wurde deutlich formuliert.",
+        "kelime": "deutlich",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_14"
+    },
+    {
+        "almanca": "kritisch",
+        "ingilizce": "critically",
+        "seviye": "B2",
+        "ornek": "Viele Experten betrachten die Lage kritisch.",
+        "kelime": "kritisch",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_15"
+    },
+    {
+        "almanca": "sozial",
+        "ingilizce": "socially",
+        "seviye": "B2",
+        "ornek": "Sozial benachteiligte Gruppen brauchen Unterstützung.",
+        "kelime": "sozial",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_16"
+    },
+    {
+        "almanca": "sinnvoll",
+        "ingilizce": "meaningfully",
+        "seviye": "B2",
+        "ornek": "Die Spenden sollten sinnvoll eingesetzt werden.",
+        "kelime": "sinnvoll",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_17"
+    },
+    {
+        "almanca": "engagiert",
+        "ingilizce": "committedly",
+        "seviye": "B2",
+        "ornek": "Viele junge Menschen engagieren sich politisch.",
+        "kelime": "engagiert",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_18"
+    },
+    {
+        "almanca": "international",
+        "ingilizce": "internationally",
+        "seviye": "B2",
+        "ornek": "Die Konferenz wurde international organisiert.",
+        "kelime": "international",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_19"
+    },
+    {
+        "almanca": "intensiv",
+        "ingilizce": "intensively",
+        "seviye": "B2",
+        "ornek": "Das Thema wurde intensiv diskutiert.",
+        "kelime": "intensiv",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_20"
+    }
+]

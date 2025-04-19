@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "akademisch",
+        "ingilizce": "academic",
+        "seviye": "B2",
+        "ornek": "Das akademische Jahr beginnt im Oktober.",
+        "kelime": "akademisch",
+        "type": "adjective",
+        "category": "Wissenschaft & Bildung",
+        "id": "adjective_bildung_B2_01"
+    },
+    {
+        "almanca": "wissenschaftlich",
+        "ingilizce": "scientific",
+        "seviye": "B2",
+        "ornek": "Die Ergebnisse wurden wissenschaftlich geprüft.",
+        "kelime": "wissenschaftlich",
+        "type": "adjective",
+        "category": "Wissenschaft & Bildung",
+        "id": "adjective_bildung_B2_02"
+    },
+    {
+        "almanca": "theoretisch",
+        "ingilizce": "theoretical",
+        "seviye": "B2",
+        "ornek": "Das ist nur eine theoretische Annahme.",
+        "kelime": "theoretisch",
+        "type": "adjective",
+        "category": "Wissenschaft & Bildung",
+        "id": "adjective_bildung_B2_03"
+    },
+    {
+        "almanca": "praktisch",
+        "ingilizce": "practical",
+        "seviye": "B2",
+        "ornek": "Die Schüler bekommen praktische Übungen.",
+        "kelime": "praktisch",
+        "type": "adjective",
+        "category": "Wissenschaft & Bildung",
+        "id": "adjective_bildung_B2_04"
+    },
+    {
+        "almanca": "intellektuell",
+        "ingilizce": "intellectual",
+        "seviye": "B2",
+        "ornek": "Ein intellektuelles Umfeld fördert das Lernen.",
+        "kelime": "intellektuell",
+        "type": "adjective",
+        "category": "Wissenschaft & Bildung",
+        "id": "adjective_bildung_B2_05"
+    },
+    {
+        "almanca": "kreativ",
+        "ingilizce": "creative",
+        "seviye": "B2",
+        "ornek": "Kreative Aufgaben fördern das Denken.",
+        "kelime": "kreativ",
+        "type": "adjective",
+        "category": "Wissenschaft & Bildung",
+        "id": "adjective_bildung_B2_06"
+    },
+    {
+        "almanca": "effizient",
+        "ingilizce": "efficient",
+        "seviye": "B2",
+        "ornek": "Eine effiziente Methode spart Zeit.",
+        "kelime": "effizient",
+        "type": "adjective",
+        "category": "Wissenschaft & Bildung",
+        "id": "adjective_bildung_B2_07"
+    },
+    {
+        "almanca": "zielgerichtet",
+        "ingilizce": "goal-oriented",
+        "seviye": "B2",
+        "ornek": "Das Training ist sehr zielgerichtet.",
+        "kelime": "zielgerichtet",
+        "type": "adjective",
+        "category": "Wissenschaft & Bildung",
+        "id": "adjective_bildung_B2_08"
+    },
+    {
+        "almanca": "übersichtlich",
+        "ingilizce": "clear / well-structured",
+        "seviye": "B2",
+        "ornek": "Das Arbeitsblatt ist sehr übersichtlich.",
+        "kelime": "übersichtlich",
+        "type": "adjective",
+        "category": "Wissenschaft & Bildung",
+        "id": "adjective_bildung_B2_09"
+    },
+    {
+        "almanca": "verständlich",
+        "ingilizce": "understandable",
+        "seviye": "B2",
+        "ornek": "Der Lehrer erklärt die Regeln verständlich.",
+        "kelime": "verständlich",
+        "type": "adjective",
+        "category": "Wissenschaft & Bildung",
+        "id": "adjective_bildung_B2_10"
+    },
+    {
+        "almanca": "interaktiv",
+        "ingilizce": "interactive",
+        "seviye": "B2",
+        "ornek": "Der Kurs ist sehr interaktiv gestaltet.",
+        "kelime": "interaktiv",
+        "type": "adjective",
+        "category": "Wissenschaft & Bildung",
+        "id": "adjective_bildung_B2_11"
+    },
+    {
+        "almanca": "objektiv",
+        "ingilizce": "objective",
+        "seviye": "B2",
+        "ornek": "Eine objektive Bewertung ist wichtig.",
+        "kelime": "objektiv",
+        "type": "adjective",
+        "category": "Wissenschaft & Bildung",
+        "id": "adjective_bildung_B2_12"
+    },
+    {
+        "almanca": "subjektiv",
+        "ingilizce": "subjective",
+        "seviye": "B2",
+        "ornek": "Die subjektive Meinung spielt hier keine Rolle.",
+        "kelime": "subjektiv",
+        "type": "adjective",
+        "category": "Wissenschaft & Bildung",
+        "id": "adjective_bildung_B2_13"
+    },
+    {
+        "almanca": "analytisch",
+        "ingilizce": "analytical",
+        "seviye": "B2",
+        "ornek": "Analytisches Denken wird gefördert.",
+        "kelime": "analytisch",
+        "type": "adjective",
+        "category": "Wissenschaft & Bildung",
+        "id": "adjective_bildung_B2_14"
+    },
+    {
+        "almanca": "intensiv",
+        "ingilizce": "intensive",
+        "seviye": "B2",
+        "ornek": "Sie besucht einen intensiven Sprachkurs.",
+        "kelime": "intensiv",
+        "type": "adjective",
+        "category": "Wissenschaft & Bildung",
+        "id": "adjective_bildung_B2_15"
+    },
+    {
+        "almanca": "praktikabel",
+        "ingilizce": "feasible / workable",
+        "seviye": "B2",
+        "ornek": "Die Lösung ist praktikabel und effektiv.",
+        "kelime": "praktikabel",
+        "type": "adjective",
+        "category": "Wissenschaft & Bildung",
+        "id": "adjective_bildung_B2_16"
+    },
+    {
+        "almanca": "methodisch",
+        "ingilizce": "methodical",
+        "seviye": "B2",
+        "ornek": "Der Lehrer geht sehr methodisch vor.",
+        "kelime": "methodisch",
+        "type": "adjective",
+        "category": "Wissenschaft & Bildung",
+        "id": "adjective_bildung_B2_17"
+    },
+    {
+        "almanca": "aktuell",
+        "ingilizce": "current / up-to-date",
+        "seviye": "B2",
+        "ornek": "Die Studie ist sehr aktuell.",
+        "kelime": "aktuell",
+        "type": "adjective",
+        "category": "Wissenschaft & Bildung",
+        "id": "adjective_bildung_B2_18"
+    },
+    {
+        "almanca": "anspruchsvoll",
+        "ingilizce": "demanding / challenging",
+        "seviye": "B2",
+        "ornek": "Das Studium ist sehr anspruchsvoll.",
+        "kelime": "anspruchsvoll",
+        "type": "adjective",
+        "category": "Wissenschaft & Bildung",
+        "id": "adjective_bildung_B2_19"
+    },
+    {
+        "almanca": "förderlich",
+        "ingilizce": "beneficial / conducive",
+        "seviye": "B2",
+        "ornek": "Ein gutes Umfeld ist förderlich fürs Lernen.",
+        "kelime": "förderlich",
+        "type": "adjective",
+        "category": "Wissenschaft & Bildung",
+        "id": "adjective_bildung_B2_20"
+    }
+]

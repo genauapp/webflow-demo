@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "wissenschaftlich",
+        "ingilizce": "scientifically",
+        "seviye": "B2",
+        "ornek": "Die Theorie wurde wissenschaftlich überprüft.",
+        "kelime": "wissenschaftlich",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_01"
+    },
+    {
+        "almanca": "logisch",
+        "ingilizce": "logically",
+        "seviye": "B2",
+        "ornek": "Die Argumentation ist logisch aufgebaut.",
+        "kelime": "logisch",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_02"
+    },
+    {
+        "almanca": "gründlich",
+        "ingilizce": "thoroughly",
+        "seviye": "B2",
+        "ornek": "Die Daten wurden gründlich analysiert.",
+        "kelime": "gründlich",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_03"
+    },
+    {
+        "almanca": "objektiv",
+        "ingilizce": "objectively",
+        "seviye": "B2",
+        "ornek": "Die Ergebnisse wurden objektiv bewertet.",
+        "kelime": "objektiv",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_04"
+    },
+    {
+        "almanca": "systematisch",
+        "ingilizce": "systematically",
+        "seviye": "B2",
+        "ornek": "Das Problem wurde systematisch untersucht.",
+        "kelime": "systematisch",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_05"
+    },
+    {
+        "almanca": "kritisch",
+        "ingilizce": "critically",
+        "seviye": "B2",
+        "ornek": "Die Theorie muss kritisch hinterfragt werden.",
+        "kelime": "kritisch",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_06"
+    },
+    {
+        "almanca": "klar",
+        "ingilizce": "clearly",
+        "seviye": "B2",
+        "ornek": "Die Ergebnisse zeigen klar, dass ein Fehler vorliegt.",
+        "kelime": "klar",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_07"
+    },
+    {
+        "almanca": "verständlich",
+        "ingilizce": "comprehensibly",
+        "seviye": "B2",
+        "ornek": "Die Lehrerin erklärt den Stoff verständlich.",
+        "kelime": "verständlich",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_08"
+    },
+    {
+        "almanca": "praktisch",
+        "ingilizce": "practically",
+        "seviye": "B2",
+        "ornek": "Die Theorie lässt sich praktisch anwenden.",
+        "kelime": "praktisch",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_09"
+    },
+    {
+        "almanca": "effektiv",
+        "ingilizce": "effectively",
+        "seviye": "B2",
+        "ornek": "Die Methode funktioniert sehr effektiv.",
+        "kelime": "effektiv",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_10"
+    },
+    {
+        "almanca": "intensiv",
+        "ingilizce": "intensively",
+        "seviye": "B2",
+        "ornek": "Die Schüler haben intensiv gelernt.",
+        "kelime": "intensiv",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_11"
+    },
+    {
+        "almanca": "regelmäßig",
+        "ingilizce": "regularly",
+        "seviye": "B2",
+        "ornek": "Man sollte regelmäßig lernen.",
+        "kelime": "regelmäßig",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_12"
+    },
+    {
+        "almanca": "konsequent",
+        "ingilizce": "consistently",
+        "seviye": "B2",
+        "ornek": "Er arbeitet konsequent an seinem Ziel.",
+        "kelime": "konsequent",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_13"
+    },
+    {
+        "almanca": "sorgfältig",
+        "ingilizce": "carefully",
+        "seviye": "B2",
+        "ornek": "Die Studie wurde sorgfältig durchgeführt.",
+        "kelime": "sorgfältig",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_14"
+    },
+    {
+        "almanca": "schriftlich",
+        "ingilizce": "in writing",
+        "seviye": "B2",
+        "ornek": "Die Antworten müssen schriftlich gegeben werden.",
+        "kelime": "schriftlich",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_15"
+    },
+    {
+        "almanca": "mündlich",
+        "ingilizce": "orally",
+        "seviye": "B2",
+        "ornek": "Die Prüfung findet mündlich statt.",
+        "kelime": "mündlich",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_16"
+    },
+    {
+        "almanca": "bewusst",
+        "ingilizce": "consciously",
+        "seviye": "B2",
+        "ornek": "Er entscheidet sich bewusst für das Studium.",
+        "kelime": "bewusst",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_17"
+    },
+    {
+        "almanca": "sinnvoll",
+        "ingilizce": "meaningfully / sensibly",
+        "seviye": "B2",
+        "ornek": "Man sollte seine Zeit sinnvoll nutzen.",
+        "kelime": "sinnvoll",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_18"
+    },
+    {
+        "almanca": "zufällig",
+        "ingilizce": "by chance",
+        "seviye": "B2",
+        "ornek": "Die Entdeckung wurde zufällig gemacht.",
+        "kelime": "zufällig",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_19"
+    },
+    {
+        "almanca": "deutlich",
+        "ingilizce": "clearly",
+        "seviye": "B2",
+        "ornek": "Die Unterschiede sind deutlich erkennbar.",
+        "kelime": "deutlich",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_20"
+    }
+]

@@ -46,7 +46,7 @@ export const categories = {
         imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/67efe96a66530b174434cf6c_Dirty German.svg`,
     }],
     b1: [{
-        nameShort: "gwfuehle",
+        nameShort: "gefuehle",
         name: "Gefühle & Beziehungen",
         nameEng: "Emotions & Relationships",
         imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/67efe96a66530b174434cf6c_Dirty German.svg`,
@@ -66,7 +66,27 @@ export const categories = {
         nameEng: "German Slang",
         imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/67efe96a66530b174434cf6c_Dirty German.svg`,
     }],
-    b2: [],
+    b2: [{
+        nameShort: "bildung",
+        name: "Wissenschaft & Bildung",
+        nameEng: "Science & Education",
+        imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/67efe96a66530b174434cf6c_Dirty German.svg`,
+    }, {
+        nameShort: "kultur",
+        name: "Gesellschaft & Kultur",
+        nameEng: "Society & Culture",
+        imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/67efe96a66530b174434cf6c_Dirty German.svg`,
+    }, {
+        nameShort: "politik",
+        name: "Politik & Umwelt",
+        nameEng: "Politics & Environment",
+        imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/67efe96a66530b174434cf6c_Dirty German.svg`,
+    }, {
+        nameShort: "technik",
+        name: "Digitalisierung & Technik",
+        nameEng: "Digitalization & Technology",
+        imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/67efe96a66530b174434cf6c_Dirty German.svg`,
+    }],
     c1: [],
     c2: []
 }

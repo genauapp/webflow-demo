@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "programmieren",
+        "ingilizce": "to program",
+        "seviye": "B2",
+        "ornek": "Er hat eine App programmiert.",
+        "kelime": "programmieren",
+        "kural": "Regular verb, common in tech field.",
+        "type": "verb",
+        "category": "Digitalisierung & Technik",
+        "id": "verb_technik_B2_01"
+    },
+    {
+        "almanca": "installieren",
+        "ingilizce": "to install",
+        "seviye": "B2",
+        "ornek": "Ich muss die Software installieren.",
+        "kelime": "installieren",
+        "kural": "Regular verb, often used with 'eine Software'.",
+        "type": "verb",
+        "category": "Digitalisierung & Technik",
+        "id": "verb_technik_B2_02"
+    },
+    {
+        "almanca": "herunterladen",
+        "ingilizce": "to download",
+        "seviye": "B2",
+        "ornek": "Er hat die Datei heruntergeladen.",
+        "kelime": "herunterladen",
+        "kural": "Separable verb, irregular: lud herunter, heruntergeladen.",
+        "type": "verb",
+        "category": "Digitalisierung & Technik",
+        "id": "verb_technik_B2_03"
+    },
+    {
+        "almanca": "hochladen",
+        "ingilizce": "to upload",
+        "seviye": "B2",
+        "ornek": "Bitte lade das Dokument hoch.",
+        "kelime": "hochladen",
+        "kural": "Separable verb: lud hoch, hochgeladen.",
+        "type": "verb",
+        "category": "Digitalisierung & Technik",
+        "id": "verb_technik_B2_04"
+    },
+    {
+        "almanca": "entwickeln",
+        "ingilizce": "to develop",
+        "seviye": "B2",
+        "ornek": "Die Firma entwickelt neue Softwarelösungen.",
+        "kelime": "entwickeln",
+        "kural": "Regular verb, used in product and software contexts.",
+        "type": "verb",
+        "category": "Digitalisierung & Technik",
+        "id": "verb_technik_B2_05"
+    },
+    {
+        "almanca": "verschlüsseln",
+        "ingilizce": "to encrypt",
+        "seviye": "B2",
+        "ornek": "Die Nachrichten wurden verschlüsselt.",
+        "kelime": "verschlüsseln",
+        "kural": "Used in data security context.",
+        "type": "verb",
+        "category": "Digitalisierung & Technik",
+        "id": "verb_technik_B2_06"
+    },
+    {
+        "almanca": "entschlüsseln",
+        "ingilizce": "to decrypt",
+        "seviye": "B2",
+        "ornek": "Man konnte die Datei nicht entschlüsseln.",
+        "kelime": "entschlüsseln",
+        "kural": "Opposite of verschlüsseln.",
+        "type": "verb",
+        "category": "Digitalisierung & Technik",
+        "id": "verb_technik_B2_07"
+    },
+    {
+        "almanca": "speichern",
+        "ingilizce": "to save / to store",
+        "seviye": "B2",
+        "ornek": "Vergiss nicht, die Datei zu speichern.",
+        "kelime": "speichern",
+        "kural": "Regular verb used with files and data.",
+        "type": "verb",
+        "category": "Digitalisierung & Technik",
+        "id": "verb_technik_B2_08"
+    },
+    {
+        "almanca": "löschen",
+        "ingilizce": "to delete",
+        "seviye": "B2",
+        "ornek": "Die Daten wurden versehentlich gelöscht.",
+        "kelime": "löschen",
+        "kural": "Regular verb, common in IT.",
+        "type": "verb",
+        "category": "Digitalisierung & Technik",
+        "id": "verb_technik_B2_09"
+    },
+    {
+        "almanca": "aktualisieren",
+        "ingilizce": "to update",
+        "seviye": "B2",
+        "ornek": "Du solltest die Software regelmäßig aktualisieren.",
+        "kelime": "aktualisieren",
+        "kural": "Regular verb, common with software.",
+        "type": "verb",
+        "category": "Digitalisierung & Technik",
+        "id": "verb_technik_B2_10"
+    },
+    {
+        "almanca": "verbinden",
+        "ingilizce": "to connect",
+        "seviye": "B2",
+        "ornek": "Das Gerät ist mit dem WLAN verbunden.",
+        "kelime": "verbinden",
+        "kural": "Irregular: verband, verbunden.",
+        "type": "verb",
+        "category": "Digitalisierung & Technik",
+        "id": "verb_technik_B2_11"
+    },
+    {
+        "almanca": "reagieren",
+        "ingilizce": "to react",
+        "seviye": "B2",
+        "ornek": "Das System reagiert auf Sprachbefehle.",
+        "kelime": "reagieren",
+        "kural": "Often used with digital input.",
+        "type": "verb",
+        "category": "Digitalisierung & Technik",
+        "id": "verb_technik_B2_12"
+    },
+    {
+        "almanca": "anmelden",
+        "ingilizce": "to log in / to register",
+        "seviye": "B2",
+        "ornek": "Du musst dich zuerst anmelden.",
+        "kelime": "anmelden",
+        "kural": "Reflexive/separable verb.",
+        "type": "verb",
+        "category": "Digitalisierung & Technik",
+        "id": "verb_technik_B2_13"
+    },
+    {
+        "almanca": "abmelden",
+        "ingilizce": "to log out",
+        "seviye": "B2",
+        "ornek": "Vergiss nicht, dich abzumelden.",
+        "kelime": "abmelden",
+        "kural": "Separable verb, reflexive possible.",
+        "type": "verb",
+        "category": "Digitalisierung & Technik",
+        "id": "verb_technik_B2_14"
+    },
+    {
+        "almanca": "verarbeiten",
+        "ingilizce": "to process",
+        "seviye": "B2",
+        "ornek": "Das System verarbeitet große Datenmengen.",
+        "kelime": "verarbeiten",
+        "kural": "Regular verb in computing context.",
+        "type": "verb",
+        "category": "Digitalisierung & Technik",
+        "id": "verb_technik_B2_15"
+    },
+    {
+        "almanca": "nutzen",
+        "ingilizce": "to use",
+        "seviye": "B2",
+        "ornek": "Immer mehr Menschen nutzen soziale Medien.",
+        "kelime": "nutzen",
+        "kural": "Regular verb, frequently used in tech.",
+        "type": "verb",
+        "category": "Digitalisierung & Technik",
+        "id": "verb_technik_B2_16"
+    },
+    {
+        "almanca": "einrichten",
+        "ingilizce": "to set up",
+        "seviye": "B2",
+        "ornek": "Er hat sein neues Smartphone eingerichtet.",
+        "kelime": "einrichten",
+        "kural": "Separable verb, regular.",
+        "type": "verb",
+        "category": "Digitalisierung & Technik",
+        "id": "verb_technik_B2_17"
+    },
+    {
+        "almanca": "scannen",
+        "ingilizce": "to scan",
+        "seviye": "B2",
+        "ornek": "Bitte scannen Sie das Dokument ein.",
+        "kelime": "scannen",
+        "kural": "Loanword from English.",
+        "type": "verb",
+        "category": "Digitalisierung & Technik",
+        "id": "verb_technik_B2_18"
+    },
+    {
+        "almanca": "drucken",
+        "ingilizce": "to print",
+        "seviye": "B2",
+        "ornek": "Ich habe das Dokument gedruckt.",
+        "kelime": "drucken",
+        "kural": "Common technical verb.",
+        "type": "verb",
+        "category": "Digitalisierung & Technik",
+        "id": "verb_technik_B2_19"
+    },
+    {
+        "almanca": "übertragen",
+        "ingilizce": "to transfer / to stream",
+        "seviye": "B2",
+        "ornek": "Das Video wird live übertragen.",
+        "kelime": "übertragen",
+        "kural": "Irregular: übertrug, übertragen.",
+        "type": "verb",
+        "category": "Digitalisierung & Technik",
+        "id": "verb_technik_B2_20"
+    }
+]

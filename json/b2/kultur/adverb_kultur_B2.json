@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "gegenseitig",
+        "ingilizce": "mutually",
+        "seviye": "B2",
+        "ornek": "Respekt sollte immer gegenseitig sein.",
+        "kelime": "gegenseitig",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_01"
+    },
+    {
+        "almanca": "beispielsweise",
+        "ingilizce": "for example",
+        "seviye": "B2",
+        "ornek": "Viele Menschen, beispielsweise Migranten, erleben Diskriminierung.",
+        "kelime": "beispielsweise",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_02"
+    },
+    {
+        "almanca": "grundsätzlich",
+        "ingilizce": "fundamentally",
+        "seviye": "B2",
+        "ornek": "Grundsätzlich gilt das Recht auf Gleichbehandlung.",
+        "kelime": "grundsätzlich",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_03"
+    },
+    {
+        "almanca": "respektvoll",
+        "ingilizce": "respectfully",
+        "seviye": "B2",
+        "ornek": "Man sollte respektvoll miteinander umgehen.",
+        "kelime": "respektvoll",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_04"
+    },
+    {
+        "almanca": "unabhängig",
+        "ingilizce": "independently",
+        "seviye": "B2",
+        "ornek": "Jeder Mensch sollte unabhängig leben können.",
+        "kelime": "unabhängig",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_05"
+    },
+    {
+        "almanca": "bewusst",
+        "ingilizce": "consciously",
+        "seviye": "B2",
+        "ornek": "Wir sollten uns unserer Vorurteile bewusst sein.",
+        "kelime": "bewusst",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_06"
+    },
+    {
+        "almanca": "kulturell",
+        "ingilizce": "culturally",
+        "seviye": "B2",
+        "ornek": "Menschen sind kulturell unterschiedlich geprägt.",
+        "kelime": "kulturell",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_07"
+    },
+    {
+        "almanca": "tolerant",
+        "ingilizce": "tolerantly",
+        "seviye": "B2",
+        "ornek": "Wir sollten tolerant gegenüber anderen Meinungen sein.",
+        "kelime": "tolerant",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_08"
+    },
+    {
+        "almanca": "sozial",
+        "ingilizce": "socially",
+        "seviye": "B2",
+        "ornek": "Sozial engagierte Menschen verändern die Welt.",
+        "kelime": "sozial",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_09"
+    },
+    {
+        "almanca": "politisch",
+        "ingilizce": "politically",
+        "seviye": "B2",
+        "ornek": "Viele Jugendliche sind politisch aktiv.",
+        "kelime": "politisch",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_10"
+    },
+    {
+        "almanca": "öffentlich",
+        "ingilizce": "publicly",
+        "seviye": "B2",
+        "ornek": "Die Diskussion wurde öffentlich geführt.",
+        "kelime": "öffentlich",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_11"
+    },
+    {
+        "almanca": "indirekt",
+        "ingilizce": "indirectly",
+        "seviye": "B2",
+        "ornek": "Viele Aussagen wurden nur indirekt gemacht.",
+        "kelime": "indirekt",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_12"
+    },
+    {
+        "almanca": "deutlich",
+        "ingilizce": "clearly",
+        "seviye": "B2",
+        "ornek": "Er hat sich sehr deutlich geäußert.",
+        "kelime": "deutlich",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_13"
+    },
+    {
+        "almanca": "intensiv",
+        "ingilizce": "intensively",
+        "seviye": "B2",
+        "ornek": "Wir haben intensiv über das Thema diskutiert.",
+        "kelime": "intensiv",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_14"
+    },
+    {
+        "almanca": "zunehmend",
+        "ingilizce": "increasingly",
+        "seviye": "B2",
+        "ornek": "Die Gesellschaft wird zunehmend digital.",
+        "kelime": "zunehmend",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_15"
+    },
+    {
+        "almanca": "angeblich",
+        "ingilizce": "allegedly",
+        "seviye": "B2",
+        "ornek": "Angeblich soll es Diskriminierung geben.",
+        "kelime": "angeblich",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_16"
+    },
+    {
+        "almanca": "ausdrücklich",
+        "ingilizce": "explicitly",
+        "seviye": "B2",
+        "ornek": "Er hat ausdrücklich seine Meinung gesagt.",
+        "kelime": "ausdrücklich",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_17"
+    },
+    {
+        "almanca": "teilweise",
+        "ingilizce": "partially",
+        "seviye": "B2",
+        "ornek": "Die Gesellschaft ist teilweise intolerant.",
+        "kelime": "teilweise",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_18"
+    },
+    {
+        "almanca": "unterschiedlich",
+        "ingilizce": "differently / variously",
+        "seviye": "B2",
+        "ornek": "Menschen reagieren unterschiedlich auf Veränderungen.",
+        "kelime": "unterschiedlich",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_19"
+    },
+    {
+        "almanca": "ausnahmsweise",
+        "ingilizce": "exceptionally",
+        "seviye": "B2",
+        "ornek": "Heute dürfen wir ausnahmsweise früher gehen.",
+        "kelime": "ausnahmsweise",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_20"
+    }
+]

@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "integrieren",
+        "ingilizce": "to integrate",
+        "seviye": "B2",
+        "ornek": "Die Regierung versucht, Migranten besser zu integrieren.",
+        "kelime": "integrieren",
+        "kural": "Regular verb with separable prefix possible in reflexive form.",
+        "type": "verb",
+        "category": "Gesellschaft & Kultur",
+        "id": "verb_kultur_B2_01"
+    },
+    {
+        "almanca": "diskriminieren",
+        "ingilizce": "to discriminate",
+        "seviye": "B2",
+        "ornek": "Niemand darf wegen seiner Herkunft diskriminiert werden.",
+        "kelime": "diskriminieren",
+        "kural": "Often used in passive constructions.",
+        "type": "verb",
+        "category": "Gesellschaft & Kultur",
+        "id": "verb_kultur_B2_02"
+    },
+    {
+        "almanca": "respektieren",
+        "ingilizce": "to respect",
+        "seviye": "B2",
+        "ornek": "Man sollte die Meinung anderer respektieren.",
+        "kelime": "respektieren",
+        "kural": "Regular verb from Latin root.",
+        "type": "verb",
+        "category": "Gesellschaft & Kultur",
+        "id": "verb_kultur_B2_03"
+    },
+    {
+        "almanca": "sich engagieren",
+        "ingilizce": "to get involved / to engage",
+        "seviye": "B2",
+        "ornek": "Viele Jugendliche engagieren sich freiwillig.",
+        "kelime": "sich engagieren",
+        "kural": "Reflexive verb often used with 'für' or 'in'.",
+        "type": "verb",
+        "category": "Gesellschaft & Kultur",
+        "id": "verb_kultur_B2_04"
+    },
+    {
+        "almanca": "beeinflussen",
+        "ingilizce": "to influence",
+        "seviye": "B2",
+        "ornek": "Medien können die öffentliche Meinung stark beeinflussen.",
+        "kelime": "beeinflussen",
+        "kural": "Regular verb with separable-like prefix.",
+        "type": "verb",
+        "category": "Gesellschaft & Kultur",
+        "id": "verb_kultur_B2_05"
+    },
+    {
+        "almanca": "fördern",
+        "ingilizce": "to promote / support",
+        "seviye": "B2",
+        "ornek": "Die Organisation fördert interkulturellen Austausch.",
+        "kelime": "fördern",
+        "kural": "Common verb in education and policy.",
+        "type": "verb",
+        "category": "Gesellschaft & Kultur",
+        "id": "verb_kultur_B2_06"
+    },
+    {
+        "almanca": "sich auseinandersetzen",
+        "ingilizce": "to deal with / to confront",
+        "seviye": "B2",
+        "ornek": "Man muss sich mit sozialen Fragen auseinandersetzen.",
+        "kelime": "sich auseinandersetzen",
+        "kural": "Reflexive, separable verb used in formal contexts.",
+        "type": "verb",
+        "category": "Gesellschaft & Kultur",
+        "id": "verb_kultur_B2_07"
+    },
+    {
+        "almanca": "vermeiden",
+        "ingilizce": "to avoid",
+        "seviye": "B2",
+        "ornek": "Diskriminierung sollte in der Gesellschaft vermieden werden.",
+        "kelime": "vermeiden",
+        "kural": "Irregular verb: vermied, vermieden.",
+        "type": "verb",
+        "category": "Gesellschaft & Kultur",
+        "id": "verb_kultur_B2_08"
+    },
+    {
+        "almanca": "wertschätzen",
+        "ingilizce": "to appreciate / to value",
+        "seviye": "B2",
+        "ornek": "Es ist wichtig, kulturelle Unterschiede wertzuschätzen.",
+        "kelime": "wertschätzen",
+        "kural": "Separable verb in both literal and abstract use.",
+        "type": "verb",
+        "category": "Gesellschaft & Kultur",
+        "id": "verb_kultur_B2_09"
+    },
+    {
+        "almanca": "sich identifizieren",
+        "ingilizce": "to identify (with)",
+        "seviye": "B2",
+        "ornek": "Viele Menschen identifizieren sich mit ihrer Kultur.",
+        "kelime": "sich identifizieren",
+        "kural": "Reflexive verb with 'mit'.",
+        "type": "verb",
+        "category": "Gesellschaft & Kultur",
+        "id": "verb_kultur_B2_10"
+    },
+    {
+        "almanca": "abweichen",
+        "ingilizce": "to differ / to deviate",
+        "seviye": "B2",
+        "ornek": "Sein Verhalten weicht von der Norm ab.",
+        "kelime": "abweichen",
+        "kural": "Separable verb, irregular.",
+        "type": "verb",
+        "category": "Gesellschaft & Kultur",
+        "id": "verb_kultur_B2_11"
+    },
+    {
+        "almanca": "unterstützen",
+        "ingilizce": "to support",
+        "seviye": "B2",
+        "ornek": "Die Organisation unterstützt benachteiligte Gruppen.",
+        "kelime": "unterstützen",
+        "kural": "Regular verb, common in NGOs.",
+        "type": "verb",
+        "category": "Gesellschaft & Kultur",
+        "id": "verb_kultur_B2_12"
+    },
+    {
+        "almanca": "sich äußern",
+        "ingilizce": "to express oneself",
+        "seviye": "B2",
+        "ornek": "Er hat sich kritisch zum Thema geäußert.",
+        "kelime": "sich äußern",
+        "kural": "Reflexive verb often used with 'zu'.",
+        "type": "verb",
+        "category": "Gesellschaft & Kultur",
+        "id": "verb_kultur_B2_13"
+    },
+    {
+        "almanca": "widersprechen",
+        "ingilizce": "to contradict",
+        "seviye": "B2",
+        "ornek": "Man darf der Regierung auch widersprechen.",
+        "kelime": "widersprechen",
+        "kural": "Dative verb, irregular.",
+        "type": "verb",
+        "category": "Gesellschaft & Kultur",
+        "id": "verb_kultur_B2_14"
+    },
+    {
+        "almanca": "sich einmischen",
+        "ingilizce": "to interfere / to get involved",
+        "seviye": "B2",
+        "ornek": "Er mischt sich ständig in Diskussionen ein.",
+        "kelime": "sich einmischen",
+        "kural": "Reflexive and separable verb.",
+        "type": "verb",
+        "category": "Gesellschaft & Kultur",
+        "id": "verb_kultur_B2_15"
+    },
+    {
+        "almanca": "benachteiligen",
+        "ingilizce": "to disadvantage / to discriminate",
+        "seviye": "B2",
+        "ornek": "Man darf niemanden aufgrund der Herkunft benachteiligen.",
+        "kelime": "benachteiligen",
+        "kural": "Regular verb often in passive voice.",
+        "type": "verb",
+        "category": "Gesellschaft & Kultur",
+        "id": "verb_kultur_B2_16"
+    },
+    {
+        "almanca": "ausgrenzen",
+        "ingilizce": "to exclude",
+        "seviye": "B2",
+        "ornek": "Menschen dürfen nicht wegen ihrer Religion ausgegrenzt werden.",
+        "kelime": "ausgrenzen",
+        "kural": "Separable verb, often used with passive.",
+        "type": "verb",
+        "category": "Gesellschaft & Kultur",
+        "id": "verb_kultur_B2_17"
+    },
+    {
+        "almanca": "überwinden",
+        "ingilizce": "to overcome",
+        "seviye": "B2",
+        "ornek": "Wir müssen Vorurteile überwinden.",
+        "kelime": "überwinden",
+        "kural": "Irregular verb: überwand, überwunden.",
+        "type": "verb",
+        "category": "Gesellschaft & Kultur",
+        "id": "verb_kultur_B2_18"
+    },
+    {
+        "almanca": "aufklären",
+        "ingilizce": "to inform / to educate",
+        "seviye": "B2",
+        "ornek": "Die Kampagne klärt über Rassismus auf.",
+        "kelime": "aufklären",
+        "kural": "Separable verb, common in social work.",
+        "type": "verb",
+        "category": "Gesellschaft & Kultur",
+        "id": "verb_kultur_B2_19"
+    },
+    {
+        "almanca": "erziehen",
+        "ingilizce": "to educate / to raise",
+        "seviye": "B2",
+        "ornek": "Eltern erziehen ihre Kinder zu Toleranz.",
+        "kelime": "erziehen",
+        "kural": "Irregular: erzog, erzogen.",
+        "type": "verb",
+        "category": "Gesellschaft & Kultur",
+        "id": "verb_kultur_B2_20"
+    }
+]

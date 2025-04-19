@@ -1,0 +1,202 @@
+[
+    {
+        "almanca": "digital",
+        "ingilizce": "digitally",
+        "seviye": "B2",
+        "ornek": "Die Dokumente werden digital übermittelt.",
+        "kelime": "digital",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_01"
+    },
+    {
+        "almanca": "automatisch",
+        "ingilizce": "automatically",
+        "seviye": "B2",
+        "ornek": "Das Update wird automatisch installiert.",
+        "kelime": "automatisch",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_02"
+    },
+    {
+        "almanca": "online",
+        "ingilizce": "online",
+        "seviye": "B2",
+        "ornek": "Viele Kurse sind mittlerweile online verfügbar.",
+        "kelime": "online",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_03"
+    },
+    {
+        "almanca": "offline",
+        "ingilizce": "offline",
+        "seviye": "B2",
+        "ornek": "Die App funktioniert auch offline.",
+        "kelime": "offline",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_04"
+    },
+    {
+        "almanca": "zeitnah",
+        "ingilizce": "promptly / without delay",
+        "seviye": "B2",
+        "ornek": "Die Daten sollen zeitnah aktualisiert werden.",
+        "kelime": "zeitnah",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_05"
+    },
+    {
+        "almanca": "sicher",
+        "ingilizce": "safely / securely",
+        "seviye": "B2",
+        "ornek": "Die Daten wurden sicher gespeichert.",
+        "kelime": "sicher",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_06"
+    },
+    {
+        "almanca": "effizient",
+        "ingilizce": "efficiently",
+        "seviye": "B2",
+        "ornek": "Die Aufgaben wurden effizient erledigt.",
+        "kelime": "effizient",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_07"
+    },
+    {
+        "almanca": "regelmäßig",
+        "ingilizce": "regularly",
+        "seviye": "B2",
+        "ornek": "Die Software sollte regelmäßig überprüft werden.",
+        "kelime": "regelmäßig",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_08"
+    },
+    {
+        "almanca": "schnell",
+        "ingilizce": "quickly",
+        "seviye": "B2",
+        "ornek": "Die Verbindung wurde schnell hergestellt.",
+        "kelime": "schnell",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_09"
+    },
+    {
+        "almanca": "zuverlässig",
+        "ingilizce": "reliably",
+        "seviye": "B2",
+        "ornek": "Das System funktioniert sehr zuverlässig.",
+        "kelime": "zuverlässig",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_10"
+    },
+    {
+        "almanca": "gleichzeitig",
+        "ingilizce": "simultaneously",
+        "seviye": "B2",
+        "ornek": "Mehrere Prozesse laufen gleichzeitig.",
+        "kelime": "gleichzeitig",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_11"
+    },
+    {
+        "almanca": "manuell",
+        "ingilizce": "manually",
+        "seviye": "B2",
+        "ornek": "Die Einstellungen müssen manuell geändert werden.",
+        "kelime": "manuell",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_12"
+    },
+    {
+        "almanca": "zentral",
+        "ingilizce": "centrally",
+        "seviye": "B2",
+        "ornek": "Die Daten werden zentral gespeichert.",
+        "kelime": "zentral",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_13"
+    },
+    {
+        "almanca": "fern",
+        "ingilizce": "remotely",
+        "seviye": "B2",
+        "ornek": "Das Gerät lässt sich fern bedienen.",
+        "kelime": "fern",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_14"
+    },
+    {
+        "almanca": "technisch",
+        "ingilizce": "technically",
+        "seviye": "B2",
+        "ornek": "Das ist technisch nicht möglich.",
+        "kelime": "technisch",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_15"
+    },
+    {
+        "almanca": "interaktiv",
+        "ingilizce": "interactively",
+        "seviye": "B2",
+        "ornek": "Die Anwendung ist interaktiv gestaltet.",
+        "kelime": "interaktiv",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_16"
+    },
+    {
+        "almanca": "benutzerfreundlich",
+        "ingilizce": "user-friendly",
+        "seviye": "B2",
+        "ornek": "Die Website ist sehr benutzerfreundlich.",
+        "kelime": "benutzerfreundlich",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_17"
+    },
+    {
+        "almanca": "stabil",
+        "ingilizce": "stably",
+        "seviye": "B2",
+        "ornek": "Die Verbindung ist stabil.",
+        "kelime": "stabil",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_18"
+    },
+    {
+        "almanca": "sorgfältig",
+        "ingilizce": "carefully",
+        "seviye": "B2",
+        "ornek": "Die Daten wurden sorgfältig überprüft.",
+        "kelime": "sorgfältig",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_19"
+    },
+    {
+        "almanca": "kompatibel",
+        "ingilizce": "compatibly",
+        "seviye": "B2",
+        "ornek": "Die Geräte sind miteinander kompatibel.",
+        "kelime": "kompatibel",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_20"
+    }
+]
