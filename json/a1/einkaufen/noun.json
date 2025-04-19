@@ -127,7 +127,7 @@
         "ornek": "Kartoffeln sind gesund.",
         "artikel": "die",
         "kelime": "Kartoffel",
-        "kural": "Vegetables ending in '-el' are often feminine.",
+        "kural": "Vegetables ending in '-el' (die Nudel, die Gabel, die Zwiebel) are often feminine.",
         "category": "Einkaufen",
         "id": "noun_einkaufen_12"
     },
@@ -160,7 +160,7 @@
         "ornek": "Zucker ist süß.",
         "artikel": "der",
         "kelime": "Zucker",
-        "kural": "Granular or crystalline substances are often masculine.",
+        "kural": "Most nouns ending in '-er' take 'der'.",
         "category": "Einkaufen",
         "id": "noun_einkaufen_15"
     },
@@ -171,7 +171,7 @@
         "ornek": "Ich brauche mehr Salz.",
         "artikel": "das",
         "kelime": "Salz",
-        "kural": "Basic elements often take 'das'.",
+        "kural": "Mass nouns (uncountable substances like 'Salz', 'Wasser', 'Mehl') are often used with the article 'das' in German.",
         "category": "Einkaufen",
         "id": "noun_einkaufen_16"
     },

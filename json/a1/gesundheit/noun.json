@@ -6,7 +6,7 @@
         "ornek": "Ich gehe zum Arzt.",
         "artikel": "der",
         "kelime": "Arzt",
-        "kural": "Professions ending in -arzt are masculine.",
+        "kural":"Professions or roles referring to people are often masculine.",
         "category": "Gesundheit",
         "id": "noun_gesundheit_01"
     },
@@ -50,7 +50,7 @@
         "ornek": "Ich nehme ein Medikament.",
         "artikel": "das",
         "kelime": "Medikament",
-        "kural": "Most foreign-derived nouns ending in -ment are neuter.",
+        "kural": "Most foreign-derived nouns ending in -ment (das Dokument, das Instrument...) are neuter.",
         "category": "Gesundheit",
         "id": "noun_gesundheit_05"
     },
@@ -83,7 +83,7 @@
         "ornek": "Die Praxis ist in der Nähe.",
         "artikel": "die",
         "kelime": "Praxis",
-        "kural": "Nouns ending in '-is' are usually feminine.",
+        "kural": "Nouns ending in '-is' (die Krise, die Basis) are usually feminine.",
         "category": "Gesundheit",
         "id": "noun_gesundheit_08"
     },
@@ -116,7 +116,7 @@
         "ornek": "Ich habe einen Termin beim Arzt.",
         "artikel": "der",
         "kelime": "Termin",
-        "kural": "Many scheduled events are masculine.",
+        "kural": "Many scheduled events (der Start, der Feiertag) are masculine.",
         "category": "Gesundheit",
         "id": "noun_gesundheit_11"
     },
@@ -138,7 +138,7 @@
         "ornek": "Ich habe Fieber.",
         "artikel": "das",
         "kelime": "Fieber",
-        "kural": "Nouns for illnesses ending in '-er' are often neuter.",
+        "kural": "Nouns for illnesses are often neuter.",
         "category": "Gesundheit",
         "id": "noun_gesundheit_13"
     },
@@ -193,7 +193,7 @@
         "ornek": "Ich bekomme eine Spritze.",
         "artikel": "die",
         "kelime": "Spritze",
-        "kural": "Medical tools ending in '-e' are usually feminine.",
+        "kural": "Nouns ending in '-e' are often feminine.",
         "category": "Gesundheit",
         "id": "noun_gesundheit_18"
     },
@@ -215,7 +215,7 @@
         "ornek": "Ich brauche Hilfe.",
         "artikel": "die",
         "kelime": "Hilfe",
-        "kural": "Abstract nouns ending in '-e' are often feminine.",
+        "kural": "Nouns ending in '-e' are often feminine.",
         "category": "Gesundheit",
         "id": "noun_gesundheit_20"
     }

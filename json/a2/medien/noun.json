@@ -6,7 +6,7 @@
         "ornek": "Ich habe mein Handy zu Hause vergessen.",
         "artikel": "das",
         "kelime": "Handy",
-        "kural": "Loanwords with '-y' endings are often neuter.",
+        "kural": "Most borrowed English nouns take: 'das'.",
         "category": "Medien & Kommunikation",
         "id": "noun_medien_A2_01"
     },
@@ -17,7 +17,7 @@
         "ornek": "Mein Laptop ist sehr schnell.",
         "artikel": "der",
         "kelime": "Laptop",
-        "kural": "Loanwords for devices are usually masculine.",
+        "kural": "Most borrowed English nouns take: 'das'.",
         "category": "Medien & Kommunikation",
         "id": "noun_medien_A2_02"
     },
@@ -28,7 +28,7 @@
         "ornek": "Die Tastatur ist kabellos.",
         "artikel": "die",
         "kelime": "Tastatur",
-        "kural": "Words ending in '-ur' are typically feminine.",
+        "kural": "",
         "category": "Medien & Kommunikation",
         "id": "noun_medien_A2_03"
     },
@@ -39,7 +39,7 @@
         "ornek": "Ich brauche eine neue Maus für den Computer.",
         "artikel": "die",
         "kelime": "Maus",
-        "kural": "Animal names often retain feminine gender.",
+        "kural": "",
         "category": "Medien & Kommunikation",
         "id": "noun_medien_A2_04"
     },
@@ -61,7 +61,7 @@
         "ornek": "Ich bin oft im Internet.",
         "artikel": "das",
         "kelime": "Internet",
-        "kural": "Global digital terms are neuter.",
+        "kural": "Most borrowed English nouns take: 'das'.",
         "category": "Medien & Kommunikation",
         "id": "noun_medien_A2_06"
     },
@@ -72,7 +72,7 @@
         "ornek": "Ich habe eine Nachricht bekommen.",
         "artikel": "die",
         "kelime": "Nachricht",
-        "kural": "Words ending in '-icht' are usually feminine.",
+        "kural": "",
         "category": "Medien & Kommunikation",
         "id": "noun_medien_A2_07"
     },
@@ -83,7 +83,7 @@
         "ornek": "Ich schreibe eine E-Mail an meinen Freund.",
         "artikel": "die",
         "kelime": "E-Mail",
-        "kural": "Loanwords ending in '-Mail' are feminine.",
+        "kural": "Most borrowed English nouns take: 'das'.",
         "category": "Medien & Kommunikation",
         "id": "noun_medien_A2_08"
     },
@@ -94,7 +94,7 @@
         "ornek": "Ich habe einen Anruf verpasst.",
         "artikel": "der",
         "kelime": "Anruf",
-        "kural": "Verb-derived nouns with 'anrufen' take 'der'.",
+        "kural": "",
         "category": "Medien & Kommunikation",
         "id": "noun_medien_A2_09"
     },
@@ -160,7 +160,7 @@
         "ornek": "Sie liest ein interessantes Magazin.",
         "artikel": "das",
         "kelime": "Magazin",
-        "kural": "Loanwords ending in '-in' are neuter.",
+        "kural": "",
         "category": "Medien & Kommunikation",
         "id": "noun_medien_A2_15"
     },
@@ -171,7 +171,7 @@
         "ornek": "Der Artikel handelt von Politik.",
         "artikel": "der",
         "kelime": "Artikel",
-        "kural": "Loanwords ending in '-el' are usually masculine.",
+        "kural": "",
         "category": "Medien & Kommunikation",
         "id": "noun_medien_A2_16"
     },
@@ -204,7 +204,7 @@
         "ornek": "Ich nutze eine App zum Lernen.",
         "artikel": "die",
         "kelime": "App",
-        "kural": "Shortened loanwords are often feminine.",
+        "kural": "Most borrowed English nouns take: 'das'.",
         "category": "Medien & Kommunikation",
         "id": "noun_medien_A2_19"
     },
@@ -215,7 +215,7 @@
         "ornek": "Ich habe mein Passwort vergessen.",
         "artikel": "das",
         "kelime": "Passwort",
-        "kural": "Compound nouns with 'Wort' are neuter.",
+        "kural": "",
         "category": "Medien & Kommunikation",
         "id": "noun_medien_A2_20"
     }

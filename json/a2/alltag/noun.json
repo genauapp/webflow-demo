@@ -17,7 +17,7 @@
         "ornek": "Mein Nachbar ist sehr freundlich.",
         "artikel": "der",
         "kelime": "Nachbar",
-        "kural": "Masculine noun often used with professions or roles.",
+        "kural": "Masculine noun often takes '-der'.",
         "category": "Alltag",
         "id": "noun_alltag_A2_02"
     },
@@ -39,7 +39,7 @@
         "ornek": "Im Haushalt gibt es viel zu tun.",
         "artikel": "der",
         "kelime": "Haushalt",
-        "kural": "Compound nouns with '-halt' are often masculine.",
+        "kural": "Compound nouns with '-halt' (der Gehalt, der Fettgehalt) are often masculine.",
         "category": "Alltag",
         "id": "noun_alltag_A2_04"
     },
@@ -61,7 +61,7 @@
         "ornek": "Ich unterschreibe den Mietvertrag.",
         "artikel": "das",
         "kelime": "Mietvertrag",
-        "kural": "Compound nouns ending in 'Vertrag' are neuter.",
+        "kural": "",
         "category": "Alltag",
         "id": "noun_alltag_A2_06"
     },
@@ -127,7 +127,7 @@
         "ornek": "Der Teppich ist bunt.",
         "artikel": "der",
         "kelime": "Teppich",
-        "kural": "Home-related objects are often masculine.",
+        "kural": "Home-related objects are (der Schrank, der Tisch) often masculine.",
         "category": "Alltag",
         "id": "noun_alltag_A2_12"
     },
@@ -171,7 +171,7 @@
         "ornek": "Der Wasserhahn tropft.",
         "artikel": "der",
         "kelime": "Wasserhahn",
-        "kural": "Compound nouns with parts like 'Hahn' are masculine.",
+        "kural": "",
         "category": "Alltag",
         "id": "noun_alltag_A2_16"
     },
@@ -193,7 +193,7 @@
         "ornek": "Das Waschbecken ist sauber.",
         "artikel": "das",
         "kelime": "Waschbecken",
-        "kural": "Compound nouns with 'Becken' are neuter.",
+        "kural": "",
         "category": "Alltag",
         "id": "noun_alltag_A2_18"
     },

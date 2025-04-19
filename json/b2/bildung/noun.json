@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "die Forschung",
+        "ingilizce": "research",
+        "seviye": "B2",
+        "ornek": "Die medizinische Forschung hat große Fortschritte gemacht.",
+        "artikel": "die",
+        "kelime": "Forschung",
+        "kural": "Words ending in '-ung' are always feminine.",
+        "category": "Wissenschaft & Bildung",
+        "id": "noun_bildung_B2_01"
+    },
+    {
+        "almanca": "das Experiment",
+        "ingilizce": "experiment",
+        "seviye": "B2",
+        "ornek": "Das Experiment wurde im Labor durchgeführt.",
+        "artikel": "das",
+        "kelime": "Experiment",
+        "kural": "Loanwords ending in '-ment' are usually neuter.",
+        "category": "Wissenschaft & Bildung",
+        "id": "noun_bildung_B2_02"
+    },
+    {
+        "almanca": "die Bildung",
+        "ingilizce": "education",
+        "seviye": "B2",
+        "ornek": "Gute Bildung ist der Schlüssel zum Erfolg.",
+        "artikel": "die",
+        "kelime": "Bildung",
+        "kural": "Words ending in '-ung' are always feminine.",
+        "category": "Wissenschaft & Bildung",
+        "id": "noun_bildung_B2_03"
+    },
+    {
+        "almanca": "der Wissenschaftler",
+        "ingilizce": "scientist",
+        "seviye": "B2",
+        "ornek": "Der Wissenschaftler arbeitet an einem neuen Projekt.",
+        "artikel": "der",
+        "kelime": "Wissenschaftler",
+        "kural": "Occupations ending in '-er' are typically masculine.",
+        "category": "Wissenschaft & Bildung",
+        "id": "noun_bildung_B2_04"
+    },
+    {
+        "almanca": "das Ergebnis",
+        "ingilizce": "result",
+        "seviye": "B2",
+        "ornek": "Die Ergebnisse der Studie wurden veröffentlicht.",
+        "artikel": "das",
+        "kelime": "Ergebnis",
+        "kural": "Nouns ending in '-nis' are usually neuter.",
+        "category": "Wissenschaft & Bildung",
+        "id": "noun_bildung_B2_05"
+    },
+    {
+        "almanca": "die Methode",
+        "ingilizce": "method",
+        "seviye": "B2",
+        "ornek": "Die Methode wurde in der Forschung eingesetzt.",
+        "artikel": "die",
+        "kelime": "Methode",
+        "kural": "Words ending in '-e' can often be feminine.",
+        "category": "Wissenschaft & Bildung",
+        "id": "noun_bildung_B2_06"
+    },
+    {
+        "almanca": "der Versuch",
+        "ingilizce": "attempt / experiment",
+        "seviye": "B2",
+        "ornek": "Der Versuch ist fehlgeschlagen.",
+        "artikel": "der",
+        "kelime": "Versuch",
+        "kural": "Often masculine when referring to tests or trials.",
+        "category": "Wissenschaft & Bildung",
+        "id": "noun_bildung_B2_07"
+    },
+    {
+        "almanca": "die Erkenntnis",
+        "ingilizce": "insight / realization",
+        "seviye": "B2",
+        "ornek": "Die neue Erkenntnis war für die Wissenschaft bedeutend.",
+        "artikel": "die",
+        "kelime": "Erkenntnis",
+        "kural": "Abstract nouns ending in '-nis' are often feminine.",
+        "category": "Wissenschaft & Bildung",
+        "id": "noun_bildung_B2_08"
+    },
+    {
+        "almanca": "das Labor",
+        "ingilizce": "laboratory",
+        "seviye": "B2",
+        "ornek": "Im Labor wurden verschiedene Proben untersucht.",
+        "artikel": "das",
+        "kelime": "Labor",
+        "kural": "Loanwords ending in '-or' are often neuter.",
+        "category": "Wissenschaft & Bildung",
+        "id": "noun_bildung_B2_09"
+    },
+    {
+        "almanca": "die Theorie",
+        "ingilizce": "theory",
+        "seviye": "B2",
+        "ornek": "Die Theorie wurde in der Praxis überprüft.",
+        "artikel": "die",
+        "kelime": "Theorie",
+        "kural": "Loanwords ending in '-ie' are typically feminine.",
+        "category": "Wissenschaft & Bildung",
+        "id": "noun_bildung_B2_10"
+    },
+    {
+        "almanca": "das Fach",
+        "ingilizce": "subject (school)",
+        "seviye": "B2",
+        "ornek": "Biologie ist mein Lieblingsfach.",
+        "artikel": "das",
+        "kelime": "Fach",
+        "kural": "Subjects are usually neuter.",
+        "category": "Wissenschaft & Bildung",
+        "id": "noun_bildung_B2_11"
+    },
+    {
+        "almanca": "die Prüfung",
+        "ingilizce": "exam",
+        "seviye": "B2",
+        "ornek": "Die Prüfung war ziemlich schwierig.",
+        "artikel": "die",
+        "kelime": "Prüfung",
+        "kural": "Words ending in '-ung' are always feminine.",
+        "category": "Wissenschaft & Bildung",
+        "id": "noun_bildung_B2_12"
+    },
+    {
+        "almanca": "der Schüler",
+        "ingilizce": "student (school)",
+        "seviye": "B2",
+        "ornek": "Die Schüler bereiten sich auf die Abschlussprüfung vor.",
+        "artikel": "der",
+        "kelime": "Schüler",
+        "kural": "Occupations or roles ending in '-er' are masculine.",
+        "category": "Wissenschaft & Bildung",
+        "id": "noun_bildung_B2_13"
+    },
+    {
+        "almanca": "die Schülerin",
+        "ingilizce": "female student (school)",
+        "seviye": "B2",
+        "ornek": "Die Schülerin stellt eine Frage.",
+        "artikel": "die",
+        "kelime": "Schülerin",
+        "kural": "Feminine form of professions ends in '-in'.",
+        "category": "Wissenschaft & Bildung",
+        "id": "noun_bildung_B2_14"
+    },
+    {
+        "almanca": "die Universität",
+        "ingilizce": "university",
+        "seviye": "B2",
+        "ornek": "Sie studiert an einer renommierten Universität.",
+        "artikel": "die",
+        "kelime": "Universität",
+        "kural": "Words ending in '-tät' are always feminine.",
+        "category": "Wissenschaft & Bildung",
+        "id": "noun_bildung_B2_15"
+    },
+    {
+        "almanca": "der Dozent",
+        "ingilizce": "lecturer",
+        "seviye": "B2",
+        "ornek": "Der Dozent erklärt die Theorie sehr verständlich.",
+        "artikel": "der",
+        "kelime": "Dozent",
+        "kural": "Academic professions are usually masculine.",
+        "category": "Wissenschaft & Bildung",
+        "id": "noun_bildung_B2_16"
+    },
+    {
+        "almanca": "die Weiterbildung",
+        "ingilizce": "further education",
+        "seviye": "B2",
+        "ornek": "Viele Berufstätige machen eine Weiterbildung.",
+        "artikel": "die",
+        "kelime": "Weiterbildung",
+        "kural": "Compound noun with '-bildung' is feminine.",
+        "category": "Wissenschaft & Bildung",
+        "id": "noun_bildung_B2_17"
+    },
+    {
+        "almanca": "der Abschluss",
+        "ingilizce": "graduation / degree",
+        "seviye": "B2",
+        "ornek": "Sie hat ihren Abschluss mit Auszeichnung gemacht.",
+        "artikel": "der",
+        "kelime": "Abschluss",
+        "kural": "Common masculine noun for qualification.",
+        "category": "Wissenschaft & Bildung",
+        "id": "noun_bildung_B2_18"
+    },
+    {
+        "almanca": "die Fähigkeit",
+        "ingilizce": "ability / skill",
+        "seviye": "B2",
+        "ornek": "Kritisches Denken ist eine wichtige Fähigkeit.",
+        "artikel": "die",
+        "kelime": "Fähigkeit",
+        "kural": "Words ending in '-keit' are always feminine.",
+        "category": "Wissenschaft & Bildung",
+        "id": "noun_bildung_B2_19"
+    },
+    {
+        "almanca": "das Wissen",
+        "ingilizce": "knowledge",
+        "seviye": "B2",
+        "ornek": "Sein Wissen über Physik ist beeindruckend.",
+        "artikel": "das",
+        "kelime": "Wissen",
+        "kural": "Nominalized verb, neuter.",
+        "category": "Wissenschaft & Bildung",
+        "id": "noun_bildung_B2_20"
+    }
+]

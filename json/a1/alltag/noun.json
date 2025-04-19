@@ -6,7 +6,7 @@
         "ornek": "Der Wecker klingelt um 7 Uhr.",
         "artikel": "der",
         "kelime": "Wecker",
-        "kural": "Most nouns referring to tools/devices take 'der'.",
+        "kural": "Most nouns ending in '-er' take 'der'.",
         "category": "Alltag",
         "id": "noun_alltag_01"
     },
@@ -28,7 +28,7 @@
         "ornek": "Mein Handy liegt auf dem Tisch.",
         "artikel": "das",
         "kelime": "Handy",
-        "kural": "Most borrowed English nouns ending in '-y' are neuter: 'das'.",
+        "kural": "Most borrowed English nouns take: 'das'.",
         "category": "Alltag",
         "id": "noun_alltag_03"
     },
@@ -61,7 +61,7 @@
         "ornek": "Das Fenster ist offen.",
         "artikel": "das",
         "kelime": "Fenster",
-        "kural": "Nouns ending in '-er' and referring to objects are often neuter.",
+        "kural": "Inanimate, concrete, or technical objects (like 'das Fenster', 'das Auto', 'das Messer') are often used with the article 'das' in German.",
         "category": "Alltag",
         "id": "noun_alltag_06"
     },
@@ -116,7 +116,7 @@
         "ornek": "Der Fernseher ist kaputt.",
         "artikel": "der",
         "kelime": "Fernseher",
-        "kural": "Devices that perform actions often take 'der'.",
+        "kural": "Most nouns ending in '-er' take 'der'.",
         "category": "Alltag",
         "id": "noun_alltag_11"
     },

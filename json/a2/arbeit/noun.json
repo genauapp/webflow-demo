@@ -50,7 +50,7 @@
         "ornek": "Mein Arbeitsplatz ist im Zentrum.",
         "artikel": "der",
         "kelime": "Arbeitsplatz",
-        "kural": "Compound with 'Platz' is masculine.",
+        "kural": "",
         "category": "Arbeit & Behörden",
         "id": "noun_arbeit_A2_05"
     },
@@ -72,7 +72,7 @@
         "ornek": "Ich arbeite in einem Büro.",
         "artikel": "das",
         "kelime": "Büro",
-        "kural": "Loanwords ending in '-o' are neuter.",
+        "kural": "",
         "category": "Arbeit & Behörden",
         "id": "noun_arbeit_A2_07"
     },
@@ -83,7 +83,7 @@
         "ornek": "Ich habe einen Termin beim Amt.",
         "artikel": "der",
         "kelime": "Termin",
-        "kural": "Loanwords ending in '-in' are masculine.",
+        "kural": "",
         "category": "Arbeit & Behörden",
         "id": "noun_arbeit_A2_08"
     },
@@ -105,7 +105,7 @@
         "ornek": "Bitte füllen Sie das Formular aus.",
         "artikel": "das",
         "kelime": "Formular",
-        "kural": "Loanwords with '-ar' are often neuter.",
+        "kural": "",
         "category": "Arbeit & Behörden",
         "id": "noun_arbeit_A2_10"
     },
@@ -127,7 +127,7 @@
         "ornek": "Hier fehlt noch die Unterschrift.",
         "artikel": "die",
         "kelime": "Unterschrift",
-        "kural": "Words ending in '-t' or '-schrift' are feminine.",
+        "kural": "",
         "category": "Arbeit & Behörden",
         "id": "noun_arbeit_A2_12"
     },
@@ -182,7 +182,7 @@
         "ornek": "Ich muss meine Steuer zahlen.",
         "artikel": "die",
         "kelime": "Steuer",
-        "kural": "Government-related nouns often feminine.",
+        "kural": "",
         "category": "Arbeit & Behörden",
         "id": "noun_arbeit_A2_17"
     },
@@ -193,7 +193,7 @@
         "ornek": "Das Amt ist heute geschlossen.",
         "artikel": "das",
         "kelime": "Amt",
-        "kural": "Institutional nouns ending in '-t' are often neuter.",
+        "kural": "",
         "category": "Arbeit & Behörden",
         "id": "noun_arbeit_A2_18"
     },

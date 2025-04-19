@@ -61,7 +61,7 @@
         "ornek": "Ich zeige den Personalausweis.",
         "artikel": "der",
         "kelime": "Personalausweis",
-        "kural": "Compound word, usually masculine.",
+        "kural": "Official documents often take 'der'.",
         "category": "Behoerden",
         "id": "noun_behoerden_06"
     },
@@ -83,7 +83,7 @@
         "ornek": "Ich fülle das Formular aus.",
         "artikel": "das",
         "kelime": "Formular",
-        "kural": "Loanwords ending in '-ar' are neuter.",
+        "kural": "Official documents often take 'der'.",
         "category": "Behoerden",
         "id": "noun_behoerden_08"
     },
@@ -94,7 +94,7 @@
         "ornek": "Ich stelle einen Antrag.",
         "artikel": "der",
         "kelime": "Antrag",
-        "kural": "Masculine noun for official requests.",
+        "kural": "",
         "category": "Behoerden",
         "id": "noun_behoerden_09"
     },
@@ -105,7 +105,7 @@
         "ornek": "Die Frist endet morgen.",
         "artikel": "die",
         "kelime": "Frist",
-        "kural": "Time-related nouns often take 'die'.",
+        "kural": "Time-related nouns (die Zeit, die Stunde, die Minute...) often take 'die'.",
         "category": "Behoerden",
         "id": "noun_behoerden_10"
     },
@@ -160,7 +160,7 @@
         "ornek": "Der Antragsteller wartet.",
         "artikel": "der",
         "kelime": "Antragsteller",
-        "kural": "Compound profession words often masculine.",
+        "kural": "Nouns ending in '-er' are often masculine.",
         "category": "Behoerden",
         "id": "noun_behoerden_15"
     },
@@ -193,7 +193,7 @@
         "ornek": "Ich gebe meine Unterschrift.",
         "artikel": "die",
         "kelime": "Unterschrift",
-        "kural": "Abstract nouns ending in '-t' are feminine.",
+        "kural": "",
         "category": "Behoerden",
         "id": "noun_behoerden_18"
     },
@@ -204,7 +204,7 @@
         "ornek": "Ich beantrage ein Visum.",
         "artikel": "das",
         "kelime": "Visum",
-        "kural": "Latin-based words ending in '-um' are neuter.",
+        "kural": "Nouns ending in '-um' are neuter.",
         "category": "Behoerden",
         "id": "noun_behoerden_19"
     },

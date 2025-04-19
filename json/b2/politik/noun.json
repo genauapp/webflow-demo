@@ -1,0 +1,222 @@
+[
+    {
+        "almanca": "die Regierung",
+        "ingilizce": "government",
+        "seviye": "B2",
+        "ornek": "Die Regierung plant neue Maßnahmen zum Klimaschutz.",
+        "artikel": "die",
+        "kelime": "Regierung",
+        "kural": "Words ending in '-ung' are always feminine.",
+        "category": "Politik & Umwelt",
+        "id": "noun_politik_B2_01"
+    },
+    {
+        "almanca": "das Gesetz",
+        "ingilizce": "law",
+        "seviye": "B2",
+        "ornek": "Ein neues Gesetz wurde verabschiedet.",
+        "artikel": "das",
+        "kelime": "Gesetz",
+        "kural": "Abstract legal terms often take 'das'.",
+        "category": "Politik & Umwelt",
+        "id": "noun_politik_B2_02"
+    },
+    {
+        "almanca": "die Wahl",
+        "ingilizce": "election / choice",
+        "seviye": "B2",
+        "ornek": "Die nächste Wahl findet im Herbst statt.",
+        "artikel": "die",
+        "kelime": "Wahl",
+        "kural": "Words ending in '-ahl' are usually feminine.",
+        "category": "Politik & Umwelt",
+        "id": "noun_politik_B2_03"
+    },
+    {
+        "almanca": "der Politiker",
+        "ingilizce": "politician",
+        "seviye": "B2",
+        "ornek": "Der Politiker hält eine Rede im Bundestag.",
+        "artikel": "der",
+        "kelime": "Politiker",
+        "kural": "Professions ending in '-er' are typically masculine.",
+        "category": "Politik & Umwelt",
+        "id": "noun_politik_B2_04"
+    },
+    {
+        "almanca": "die Umwelt",
+        "ingilizce": "environment",
+        "seviye": "B2",
+        "ornek": "Wir müssen unsere Umwelt besser schützen.",
+        "artikel": "die",
+        "kelime": "Umwelt",
+        "kural": "Compound noun with 'Welt' is feminine.",
+        "category": "Politik & Umwelt",
+        "id": "noun_politik_B2_05"
+    },
+    {
+        "almanca": "der Klimawandel",
+        "ingilizce": "climate change",
+        "seviye": "B2",
+        "ornek": "Der Klimawandel ist eine globale Herausforderung.",
+        "artikel": "der",
+        "kelime": "Klimawandel",
+        "kural": "Compound nouns with '-wandel' are masculine.",
+        "category": "Politik & Umwelt",
+        "id": "noun_politik_B2_06"
+    },
+    {
+        "almanca": "das Parlament",
+        "ingilizce": "parliament",
+        "seviye": "B2",
+        "ornek": "Das Parlament diskutiert über neue Gesetze.",
+        "artikel": "das",
+        "kelime": "Parlament",
+        "kural": "Loanwords ending in '-ment' are neuter.",
+        "category": "Politik & Umwelt",
+        "id": "noun_politik_B2_07"
+    },
+    {
+        "almanca": "die Partei",
+        "ingilizce": "party (political)",
+        "seviye": "B2",
+        "ornek": "Jede Partei hat ein eigenes Wahlprogramm.",
+        "artikel": "die",
+        "kelime": "Partei",
+        "kural": "Loanwords ending in '-ei' are feminine.",
+        "category": "Politik & Umwelt",
+        "id": "noun_politik_B2_08"
+    },
+    {
+        "almanca": "der Umweltschutz",
+        "ingilizce": "environmental protection",
+        "seviye": "B2",
+        "ornek": "Der Umweltschutz ist ein wichtiges politisches Thema.",
+        "artikel": "der",
+        "kelime": "Umweltschutz",
+        "kural": "Compound with '-schutz' is masculine.",
+        "category": "Politik & Umwelt",
+        "id": "noun_politik_B2_09"
+    },
+    {
+        "almanca": "die Abstimmung",
+        "ingilizce": "vote / ballot",
+        "seviye": "B2",
+        "ornek": "Die Abstimmung über das Gesetz war knapp.",
+        "artikel": "die",
+        "kelime": "Abstimmung",
+        "kural": "Words ending in '-ung' are always feminine.",
+        "category": "Politik & Umwelt",
+        "id": "noun_politik_B2_10"
+    },
+    {
+        "almanca": "der Aktivist",
+        "ingilizce": "activist",
+        "seviye": "B2",
+        "ornek": "Der Aktivist demonstriert für mehr Klimaschutz.",
+        "artikel": "der",
+        "kelime": "Aktivist",
+        "kural": "Professions ending in '-ist' are masculine.",
+        "category": "Politik & Umwelt",
+        "id": "noun_politik_B2_11"
+    },
+    {
+        "almanca": "die Initiative",
+        "ingilizce": "initiative",
+        "seviye": "B2",
+        "ornek": "Die neue Initiative setzt sich für Nachhaltigkeit ein.",
+        "artikel": "die",
+        "kelime": "Initiative",
+        "kural": "Loanwords ending in '-ive' are feminine.",
+        "category": "Politik & Umwelt",
+        "id": "noun_politik_B2_12"
+    },
+    {
+        "almanca": "das Abkommen",
+        "ingilizce": "agreement / treaty",
+        "seviye": "B2",
+        "ornek": "Das Abkommen wurde zwischen mehreren Ländern geschlossen.",
+        "artikel": "das",
+        "kelime": "Abkommen",
+        "kural": "Nouns with prefix 'Ab-' often neuter when nominalized.",
+        "category": "Politik & Umwelt",
+        "id": "noun_politik_B2_13"
+    },
+    {
+        "almanca": "der CO2-Ausstoß",
+        "ingilizce": "CO2 emission",
+        "seviye": "B2",
+        "ornek": "Der CO2-Ausstoß soll reduziert werden.",
+        "artikel": "der",
+        "kelime": "CO2-Ausstoß",
+        "kural": "Compound with 'Ausstoß' is masculine.",
+        "category": "Politik & Umwelt",
+        "id": "noun_politik_B2_14"
+    },
+    {
+        "almanca": "die Demonstration",
+        "ingilizce": "demonstration / protest",
+        "seviye": "B2",
+        "ornek": "Die Demonstration verlief friedlich.",
+        "artikel": "die",
+        "kelime": "Demonstration",
+        "kural": "Loanwords ending in '-ion' are feminine.",
+        "category": "Politik & Umwelt",
+        "id": "noun_politik_B2_15"
+    },
+    {
+        "almanca": "das Tempolimit",
+        "ingilizce": "speed limit",
+        "seviye": "B2",
+        "ornek": "Ein Tempolimit hilft, die Umwelt zu schützen.",
+        "artikel": "das",
+        "kelime": "Tempolimit",
+        "kural": "Loan compound from English, neuter.",
+        "category": "Politik & Umwelt",
+        "id": "noun_politik_B2_16"
+    },
+    {
+        "almanca": "die Meinungsfreiheit",
+        "ingilizce": "freedom of opinion",
+        "seviye": "B2",
+        "ornek": "In einer Demokratie ist die Meinungsfreiheit zentral.",
+        "artikel": "die",
+        "kelime": "Meinungsfreiheit",
+        "kural": "Words ending in '-heit' are feminine.",
+        "category": "Politik & Umwelt",
+        "id": "noun_politik_B2_17"
+    },
+    {
+        "almanca": "die Nachhaltigkeit",
+        "ingilizce": "sustainability",
+        "seviye": "B2",
+        "ornek": "Nachhaltigkeit ist ein zentrales Thema in der Politik.",
+        "artikel": "die",
+        "kelime": "Nachhaltigkeit",
+        "kural": "Words ending in '-keit' are feminine.",
+        "category": "Politik & Umwelt",
+        "id": "noun_politik_B2_18"
+    },
+    {
+        "almanca": "der Umweltausschuss",
+        "ingilizce": "environmental committee",
+        "seviye": "B2",
+        "ornek": "Der Umweltausschuss berät über neue Maßnahmen.",
+        "artikel": "der",
+        "kelime": "Umweltausschuss",
+        "kural": "Compound nouns ending in '-ausschuss' are masculine.",
+        "category": "Politik & Umwelt",
+        "id": "noun_politik_B2_19"
+    },
+    {
+        "almanca": "das Referendum",
+        "ingilizce": "referendum",
+        "seviye": "B2",
+        "ornek": "Das Referendum entschied über die neue Verfassung.",
+        "artikel": "das",
+        "kelime": "Referendum",
+        "kural": "Latin-derived nouns ending in '-um' are neuter.",
+        "category": "Politik & Umwelt",
+        "id": "noun_politik_B2_20"
+    }
+]

@@ -1,0 +1,222 @@
+[
+  {
+    "almanca": "die Vielfalt",
+    "ingilizce": "diversity",
+    "seviye": "B2",
+    "ornek": "Die kulturelle Vielfalt bereichert die Gesellschaft.",
+    "artikel": "die",
+    "kelime": "Vielfalt",
+    "kural": "Abstract nouns ending in '-falt' are feminine.",
+    "category": "Gesellschaft & Kultur",
+    "id": "noun_kultur_B2_01"
+  },
+  {
+    "almanca": "die Gleichberechtigung",
+    "ingilizce": "equality",
+    "seviye": "B2",
+    "ornek": "Die Gleichberechtigung der Geschlechter ist ein wichtiges Ziel.",
+    "artikel": "die",
+    "kelime": "Gleichberechtigung",
+    "kural": "Words ending in '-ung' are always feminine.",
+    "category": "Gesellschaft & Kultur",
+    "id": "noun_kultur_B2_02"
+  },
+  {
+    "almanca": "der Wert",
+    "ingilizce": "value",
+    "seviye": "B2",
+    "ornek": "Traditionelle Werte spielen in vielen Kulturen eine große Rolle.",
+    "artikel": "der",
+    "kelime": "Wert",
+    "kural": "Common masculine noun, often abstract.",
+    "category": "Gesellschaft & Kultur",
+    "id": "noun_kultur_B2_03"
+  },
+  {
+    "almanca": "das Verhalten",
+    "ingilizce": "behavior",
+    "seviye": "B2",
+    "ornek": "Sein Verhalten wurde als unhöflich empfunden.",
+    "artikel": "das",
+    "kelime": "Verhalten",
+    "kural": "Nominalization of verbs with 'ver-' prefix are usually neuter.",
+    "category": "Gesellschaft & Kultur",
+    "id": "noun_kultur_B2_04"
+  },
+  {
+    "almanca": "die Integration",
+    "ingilizce": "integration",
+    "seviye": "B2",
+    "ornek": "Die Integration von Migranten ist ein wichtiges gesellschaftliches Thema.",
+    "artikel": "die",
+    "kelime": "Integration",
+    "kural": "Loanwords ending in '-tion' are always feminine.",
+    "category": "Gesellschaft & Kultur",
+    "id": "noun_kultur_B2_05"
+  },
+  {
+    "almanca": "der Respekt",
+    "ingilizce": "respect",
+    "seviye": "B2",
+    "ornek": "Respekt gegenüber anderen Kulturen ist essenziell.",
+    "artikel": "der",
+    "kelime": "Respekt",
+    "kural": "Loanwords from Latin often take 'der'.",
+    "category": "Gesellschaft & Kultur",
+    "id": "noun_kultur_B2_06"
+  },
+  {
+    "almanca": "das Vorurteil",
+    "ingilizce": "prejudice",
+    "seviye": "B2",
+    "ornek": "Vorurteile erschweren die Integration.",
+    "artikel": "das",
+    "kelime": "Vorurteil",
+    "kural": "Compound noun with 'Vor-' prefix is often neuter.",
+    "category": "Gesellschaft & Kultur",
+    "id": "noun_kultur_B2_07"
+  },
+  {
+    "almanca": "die Herkunft",
+    "ingilizce": "origin",
+    "seviye": "B2",
+    "ornek": "Menschen unterschiedlicher Herkunft leben in der Stadt.",
+    "artikel": "die",
+    "kelime": "Herkunft",
+    "kural": "Often feminine when describing roots or origin.",
+    "category": "Gesellschaft & Kultur",
+    "id": "noun_kultur_B2_08"
+  },
+  {
+    "almanca": "das Klischee",
+    "ingilizce": "stereotype",
+    "seviye": "B2",
+    "ornek": "Viele Klischees basieren auf Unwissenheit.",
+    "artikel": "das",
+    "kelime": "Klischee",
+    "kural": "Loanwords ending in '-ee' are usually neuter.",
+    "category": "Gesellschaft & Kultur",
+    "id": "noun_kultur_B2_09"
+  },
+  {
+    "almanca": "die Diskriminierung",
+    "ingilizce": "discrimination",
+    "seviye": "B2",
+    "ornek": "Diskriminierung am Arbeitsplatz ist verboten.",
+    "artikel": "die",
+    "kelime": "Diskriminierung",
+    "kural": "Words ending in '-ung' are always feminine.",
+    "category": "Gesellschaft & Kultur",
+    "id": "noun_kultur_B2_10"
+  },
+  {
+    "almanca": "die Gesellschaft",
+    "ingilizce": "society",
+    "seviye": "B2",
+    "ornek": "Die Gesellschaft verändert sich ständig.",
+    "artikel": "die",
+    "kelime": "Gesellschaft",
+    "kural": "Words ending in '-schaft' are always feminine.",
+    "category": "Gesellschaft & Kultur",
+    "id": "noun_kultur_B2_11"
+  },
+  {
+    "almanca": "der Brauch",
+    "ingilizce": "custom / tradition",
+    "seviye": "B2",
+    "ornek": "Ein alter Brauch wird jedes Jahr gefeiert.",
+    "artikel": "der",
+    "kelime": "Brauch",
+    "kural": "Cultural terms are often masculine.",
+    "category": "Gesellschaft & Kultur",
+    "id": "noun_kultur_B2_12"
+  },
+  {
+    "almanca": "die Religion",
+    "ingilizce": "religion",
+    "seviye": "B2",
+    "ornek": "Religion spielt für viele Menschen eine wichtige Rolle.",
+    "artikel": "die",
+    "kelime": "Religion",
+    "kural": "Loanwords ending in '-ion' are always feminine.",
+    "category": "Gesellschaft & Kultur",
+    "id": "noun_kultur_B2_13"
+  },
+  {
+    "almanca": "der Glaube",
+    "ingilizce": "belief / faith",
+    "seviye": "B2",
+    "ornek": "Der Glaube kann Menschen Hoffnung geben.",
+    "artikel": "der",
+    "kelime": "Glaube",
+    "kural": "Abstract concepts of faith are masculine.",
+    "category": "Gesellschaft & Kultur",
+    "id": "noun_kultur_B2_14"
+  },
+  {
+    "almanca": "das Recht",
+    "ingilizce": "law / right",
+    "seviye": "B2",
+    "ornek": "Jeder hat das Recht auf freie Meinungsäußerung.",
+    "artikel": "das",
+    "kelime": "Recht",
+    "kural": "Legal and institutional terms often neuter.",
+    "category": "Gesellschaft & Kultur",
+    "id": "noun_kultur_B2_15"
+  },
+  {
+    "almanca": "die Freiheit",
+    "ingilizce": "freedom",
+    "seviye": "B2",
+    "ornek": "Freiheit ist ein Grundrecht.",
+    "artikel": "die",
+    "kelime": "Freiheit",
+    "kural": "Words ending in '-heit' are always feminine.",
+    "category": "Gesellschaft & Kultur",
+    "id": "noun_kultur_B2_16"
+  },
+  {
+    "almanca": "die Verantwortung",
+    "ingilizce": "responsibility",
+    "seviye": "B2",
+    "ornek": "Eltern tragen Verantwortung für ihre Kinder.",
+    "artikel": "die",
+    "kelime": "Verantwortung",
+    "kural": "Words ending in '-ung' are always feminine.",
+    "category": "Gesellschaft & Kultur",
+    "id": "noun_kultur_B2_17"
+  },
+  {
+    "almanca": "das Verständnis",
+    "ingilizce": "understanding",
+    "seviye": "B2",
+    "ornek": "Verständnis für andere Kulturen ist wichtig.",
+    "artikel": "das",
+    "kelime": "Verständnis",
+    "kural": "Abstract noun ending in '-nis' is usually neuter.",
+    "category": "Gesellschaft & Kultur",
+    "id": "noun_kultur_B2_18"
+  },
+  {
+    "almanca": "der Einfluss",
+    "ingilizce": "influence",
+    "seviye": "B2",
+    "ornek": "Medien haben einen großen Einfluss auf die Gesellschaft.",
+    "artikel": "der",
+    "kelime": "Einfluss",
+    "kural": "Masculine compound noun.",
+    "category": "Gesellschaft & Kultur",
+    "id": "noun_kultur_B2_19"
+  },
+  {
+    "almanca": "die Debatte",
+    "ingilizce": "debate",
+    "seviye": "B2",
+    "ornek": "Es gibt eine breite Debatte über Migration.",
+    "artikel": "die",
+    "kelime": "Debatte",
+    "kural": "Loanwords ending in '-e' can be feminine.",
+    "category": "Gesellschaft & Kultur",
+    "id": "noun_kultur_B2_20"
+  }
+]

@@ -6,7 +6,7 @@
         "ornek": "Wir gehen heute Abend ins Kino.",
         "artikel": "das",
         "kelime": "Kino",
-        "kural": "Loanwords ending in '-o' are usually neuter.",
+        "kural": "",
         "category": "Freizeit & Konsum",
         "id": "noun_freizeit_A2_01"
     },
@@ -28,7 +28,7 @@
         "ornek": "Der Film beginnt um 20 Uhr.",
         "artikel": "der",
         "kelime": "Film",
-        "kural": "Media-related nouns are often masculine.",
+        "kural": "Media-related nouns (der Computer, der Podcast) are often masculine.",
         "category": "Freizeit & Konsum",
         "id": "noun_freizeit_A2_03"
     },
@@ -39,7 +39,7 @@
         "ornek": "Wir besuchen ein Konzert am Wochenende.",
         "artikel": "das",
         "kelime": "Konzert",
-        "kural": "Nouns ending in '-ert' are often neuter.",
+        "kural": "",
         "category": "Freizeit & Konsum",
         "id": "noun_freizeit_A2_04"
     },
@@ -61,7 +61,7 @@
         "ornek": "Ich höre gern klassische Musik.",
         "artikel": "die",
         "kelime": "Musik",
-        "kural": "Abstract nouns ending in '-ik' are feminine.",
+        "kural": "",
         "category": "Freizeit & Konsum",
         "id": "noun_freizeit_A2_06"
     },
@@ -72,7 +72,7 @@
         "ornek": "Dieses Lied ist sehr bekannt.",
         "artikel": "das",
         "kelime": "Lied",
-        "kural": "Nouns ending in '-d' are often neuter.",
+        "kural": "",
         "category": "Freizeit & Konsum",
         "id": "noun_freizeit_A2_07"
     },
@@ -105,7 +105,7 @@
         "ornek": "Der Einkauf hat lange gedauert.",
         "artikel": "der",
         "kelime": "Einkauf",
-        "kural": "Activity nouns with verbs are masculine.",
+        "kural": "",
         "category": "Freizeit & Konsum",
         "id": "noun_freizeit_A2_10"
     },
@@ -127,7 +127,7 @@
         "ornek": "In dieser Boutique gibt es schöne Kleider.",
         "artikel": "die",
         "kelime": "Boutique",
-        "kural": "French loanwords ending in '-ique' are feminine.",
+        "kural": "Nouns ending in '-e' are often feminine.",
         "category": "Freizeit & Konsum",
         "id": "noun_freizeit_A2_12"
     },
@@ -149,7 +149,7 @@
         "ornek": "An der Kasse wartet eine lange Schlange.",
         "artikel": "die",
         "kelime": "Kasse",
-        "kural": "Feminine noun; often related to service.",
+        "kural": "Nouns ending in '-e' are often feminine.",
         "category": "Freizeit & Konsum",
         "id": "noun_freizeit_A2_14"
     },
@@ -160,7 +160,7 @@
         "ornek": "Haben Sie den Kassenzettel noch?",
         "artikel": "der",
         "kelime": "Kassenzettel",
-        "kural": "Compound nouns with '-zettel' are masculine.",
+        "kural": "",
         "category": "Freizeit & Konsum",
         "id": "noun_freizeit_A2_15"
     },
@@ -171,7 +171,7 @@
         "ornek": "Die Umkleidekabine ist hinten rechts.",
         "artikel": "die",
         "kelime": "Umkleidekabine",
-        "kural": "Rooms ending in '-e' are often feminine.",
+        "kural": "Nouns ending in '-e' are often feminine.",
         "category": "Freizeit & Konsum",
         "id": "noun_freizeit_A2_16"
     },
@@ -182,7 +182,7 @@
         "ornek": "Das Angebot gilt nur bis morgen.",
         "artikel": "das",
         "kelime": "Angebot",
-        "kural": "Neuter noun often used in sales.",
+        "kural": "",
         "category": "Freizeit & Konsum",
         "id": "noun_freizeit_A2_17"
     },
@@ -193,7 +193,7 @@
         "ornek": "Der Preis ist sehr günstig.",
         "artikel": "der",
         "kelime": "Preis",
-        "kural": "Economic terms like 'Preis' are masculine.",
+        "kural": "",
         "category": "Freizeit & Konsum",
         "id": "noun_freizeit_A2_18"
     },
@@ -215,7 +215,7 @@
         "ornek": "Möchten Sie eine Tüte?",
         "artikel": "die",
         "kelime": "Tüte",
-        "kural": "Everyday objects ending in '-e' are feminine.",
+        "kural": "Nouns ending in '-e' are often feminine.",
         "category": "Freizeit & Konsum",
         "id": "noun_freizeit_A2_20"
     }
