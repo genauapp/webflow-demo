@@ -44,29 +44,27 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
     // Save selected option to localStorage
     LocalStorageManager.save(CURRENT_LEVEL_KEY, updatedLevel)
 
-    let currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
-    if (!categories[updatedLevel].some(cat => cat.nameShort === currentCategory)) {
-        currentCategory = categories[updatedLevel][0].nameShort
-        LocalStorageManager.save(CURRENT_CATEGORY_KEY, currentCategory)
-        let deckimgs = document.querySelectorAll('.deck-img')
-        let selectedDeckImg = deckimgs[0]
-        deckimgs.forEach((deckimg) => {
-          if (deckimg.classList.contains('selected-deck-img')) {
-            deckimg.classList.remove('selected-deck-img')
-            deckimg.style.border = ''
-            deckimg.style.borderRadius = ''
-          }
-        })
-        selectedDeckImg.style.border = '2px solid black'
-        selectedDeckImg.style.borderRadius = '16px'
-        selectedDeckImg.classList.add('selected-deck-img')
-    }
-
-    // Load Deck Props for specific Level
+    // Load Deck Props for specific Level and manage category prop on localStorage
     if(isRegularLevel(updatedLevel)){
+      let currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
+      if (!categories[updatedLevel].some(cat => cat.nameShort === currentCategory)) {
+          currentCategory = categories[updatedLevel][0].nameShort
+          LocalStorageManager.save(CURRENT_CATEGORY_KEY, currentCategory)
+          let deckimgs = document.querySelectorAll('.deck-img')
+          let selectedDeckImg = deckimgs[0]
+          deckimgs.forEach((deckimg) => {
+            if (deckimg.classList.contains('selected-deck-img')) {
+              deckimg.classList.remove('selected-deck-img')
+              deckimg.style.border = ''
+              deckimg.style.borderRadius = ''
+            }
+          })
+          selectedDeckImg.style.border = '2px solid black'
+          selectedDeckImg.style.borderRadius = '16px'
+          selectedDeckImg.classList.add('selected-deck-img')
+      }
       loadDeckProps()
     }
-
 
     // Dropdown başlığını güncelle
     document.getElementById('dropdownHeader').innerText = selectedText
@@ -74,16 +72,11 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
     if (updatedLevel === 'einburgerungstest') {
       LocalStorageManager.save(CURRENT_CATEGORY_KEY, 'einburgerungstest')
       showOrHideDecks('einburgerungstest')
+      checkIsOnLearnOrExercise()
       await loadAndShowWords()
       return
     }
-    if (currentCategory === 'einburgerungstest' && isRegularLevel(updatedLevel)) {
-      showOrHideDecks(updatedLevel)
-      const lastSelectedDeck = document.querySelector('.selected-deck-img').getAttribute('data-option')
-      LocalStorageManager.save(CURRENT_CATEGORY_KEY, lastSelectedDeck)
-      await loadAndShowWords()
-      return
-    }
+    
     showOrHideDecks(updatedLevel)
     checkIsOnLearnOrExercise()
     await loadAndShowWords()
