@@ -43,7 +43,7 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
     // Save selected option to localStorage
     LocalStorageManager.save(CURRENT_LEVEL_KEY, updatedLevel)
 
-    const currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
+    let currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
     if (!categories[updatedLevel].some(cat => cat.nameShort === currentCategory)) {
         currentCategory = categories[updatedLevel][0].nameShort
         LocalStorageManager.save(CURRENT_CATEGORY_KEY, currentCategory)
