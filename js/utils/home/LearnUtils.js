@@ -48,7 +48,7 @@ export function iKnowLearn() {
         learnedWithLearnWords[level][category][wordType].length
 
     if (learnedWithLearnWords[level][category][wordType].length === totalWordsLearn) {
-        showFinishScreen("learn")
+        showFinishScreen()
         return
     }
     showLearnWord()

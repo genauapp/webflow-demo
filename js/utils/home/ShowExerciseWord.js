@@ -26,11 +26,11 @@ export default function showExerciseWord() {
   
     // max index -> hiding buttons, early return
     if (learnedWithExerciseWords[level][category][wordType].length === totalWordsExercise) {
-      showFinishScreen("exercise")
+      showFinishScreen()
       return
     }
 
-    hideFinishScreen("exercise")
+    hideFinishScreen()
   
     // // reactivate buttons
     if (wordType === 'noun') {

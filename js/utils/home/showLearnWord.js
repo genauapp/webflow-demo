@@ -32,10 +32,10 @@ export default function showLearnWord() {
     )
 
     if (learnedWithLearnWords[level][category][wordType].length === totalWordsLearn) {
-        showFinishScreen("learn")
+        showFinishScreen()
         return
     }
-    hideFinishScreen("learn")
+    hideFinishScreen()
     // else
     // // reactivate buttons
     iKnowButton.style.visibility = 'visible'

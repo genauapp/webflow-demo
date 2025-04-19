@@ -1,13 +1,14 @@
 import { LEARN_ELEMENT_IDS } from '../../constants/elements.js'
 import LocalStorageManager from '../LocalStorageManager.js'
-import { DEFAULT_VALUE, CURRENT_WORD_TYPE_KEY, WORD_LIST_KEY, CURRENT_LEVEL_KEY, LEARNED_WITH_EXERCISE_WORDS_KEY, CURRENT_CATEGORY_KEY } from '../../constants/storageKeys.js'
+import { DEFAULT_VALUE, CURRENT_WORD_TYPE_KEY, WORD_LIST_KEY, CURRENT_LEVEL_KEY, LEARNED_WITH_EXERCISE_WORDS_KEY, CURRENT_CATEGORY_KEY, IS_ON_LEARN_KEY } from '../../constants/storageKeys.js'
 import { categories } from '../../constants/props.js'
 import showLearnWord from './showLearnWord.js'
 import { loadWords } from '../../pages/home.js'
 import showExerciseWord from './ShowExerciseWord.js'
 
 // UI visibility functions
-export function showSkeleton(wordType) {
+export function showSkeleton() {
+    const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
     const skeletonState = document.getElementById('skeletonState')
     const favoritesContainer = document.getElementById('favoritesContainer')
 
@@ -21,7 +22,8 @@ export function showSkeleton(wordType) {
     hideLearnElements(wordType)
 }
 
-export function hideSkeleton(wordType) {
+export function hideSkeleton() {
+    const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
     const skeletonState = document.getElementById('skeletonState')
     const favoritesContainer = document.getElementById('favoritesContainer')
 
@@ -36,7 +38,8 @@ export function hideSkeleton(wordType) {
 }
 
 // Learn elements visibility
-function hideLearnElements(wordType) {
+function hideLearnElements() {
+    const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
     const elementIds = [...LEARN_ELEMENT_IDS(wordType)]
 
     elementIds.forEach((id) => {
@@ -115,7 +118,8 @@ export function loadDeckProps() {
     });
 }
 
-export function showFinishScreen(learnOrExercise) {
+export function showFinishScreen() {
+    const learnOrExercise = LocalStorageManager.load(IS_ON_LEARN_KEY)
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
     let contentContainer = document.getElementById(`content-container-${learnOrExercise}-${wordType}`)
     contentContainer.style.display = 'none'
@@ -127,11 +131,12 @@ export function showFinishScreen(learnOrExercise) {
     let refreshButton = document.getElementById('refresh-button')
     refreshButton.addEventListener('click', async function (event) {
         event.preventDefault()
-        refreshProgress(learnOrExercise)
+        refreshProgress()
     })
 }
 
-export function refreshProgress(learnOrExercise) {
+export function refreshProgress() {
+    const learnOrExercise = LocalStorageManager.load(IS_ON_LEARN_KEY)
     let learnedWordsList = LocalStorageManager.load(`LEARNED_WITH_${(learnOrExercise.toUpperCase())}_WORDS`)
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
     const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
@@ -159,7 +164,8 @@ export function refreshProgress(learnOrExercise) {
 
 }
 
-export function hideFinishScreen(learnOrExercise) {
+export function hideFinishScreen() {
+    const learnOrExercise = LocalStorageManager.load(IS_ON_LEARN_KEY)
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
     let contentContainer = document.getElementById(`content-container-${learnOrExercise}-${wordType}`)
     let successScreen = document.getElementById('success-screen')

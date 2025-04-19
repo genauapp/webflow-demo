@@ -1,4 +1,4 @@
-import { CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY, LEARNED_WITH_LEARN_WORDS_KEY, CURRENT_CATEGORY_KEY, WORD_LIST_EXERCISE_KEY, IN_PROGRESS_WORDS_KEY, WORD_LIST_KEY, TOTAL_WORD_EXERCISE_KEY, TOTAL_WORD_LEARN_KEY } from '../constants/storageKeys.js'
+import { CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY, LEARNED_WITH_LEARN_WORDS_KEY, CURRENT_CATEGORY_KEY, WORD_LIST_EXERCISE_KEY, IN_PROGRESS_WORDS_KEY, WORD_LIST_KEY, TOTAL_WORD_EXERCISE_KEY, TOTAL_WORD_LEARN_KEY, IS_ON_LEARN_KEY } from '../constants/storageKeys.js'
 import { ASSETS_BASE_URL } from '../constants/urls.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
 import ListUtils from '../utils/ListUtils.js'
@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   LocalStorageManager.save(CURRENT_CATEGORY_KEY, DEFAULT_VALUE.CURRENT_CATEGORY)
   LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
   LocalStorageManager.save(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
+  LocalStorageManager.save(IS_ON_LEARN_KEY, "learn")
 
   showSkeleton(DEFAULT_VALUE.CURRENT_WORD_TYPE)
   await executeInitialLoadAndShow()
@@ -100,39 +101,14 @@ types.forEach((type) => {
   document.getElementById(`${type}Tab`).addEventListener('click', async () => {
     LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, type)
   })
-})
-/*
-document.getElementById('nounTab').addEventListener('click', async () => {
-  console.log('Noun seçildi.')
-  const nounType = types[0]
-  LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, nounType)
-  await executeInitialLoadAndShow()
-})
-
-document.getElementById('verbTab').addEventListener('click', async () => {
-  console.log('Verb seçildi.')
-  const verbType = types[1]
-  LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, verbType)
-
-  await executeInitialLoadAndShow()
+  document.getElementById(`${type}Tab-learn`).addEventListener('click', async () => {
+    LocalStorageManager.save(IS_ON_LEARN_KEY, "learn")
+  })
+  document.getElementById(`${type}Tab-exercise`).addEventListener('click', async () => {
+    LocalStorageManager.save(IS_ON_LEARN_KEY, "exercise")
+  })
 })
 
-document.getElementById('adjectiveTab').addEventListener('click', async () => {
-  console.log('Adjective seçildi.')
-  const adjectiveType = types[2]
-  LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, adjectiveType)
-
-  await executeInitialLoadAndShow()
-})
-
-document.getElementById('adverbTab').addEventListener('click', async () => {
-  console.log('Adverb seçildi.')
-  const adverbType = types[3]
-  LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, adverbType)
-
-  await executeInitialLoadAndShow()
-})
-*/
 async function executeInitialLoadAndShow() {
   try {
     await loadWords()

@@ -17,6 +17,7 @@ export const WORD_LIST_KEY = "WORD_LIST";
 export const IN_PROGRESS_WORDS_KEY = "IN_PROGRESS_WORDS";
 export const TOTAL_WORD_EXERCISE_KEY = "TOTAL_WORD_EXERCISE"
 export const TOTAL_WORD_LEARN_KEY = "TOTAL_WORD_LEARN"
+export const IS_ON_LEARN_KEY = "IS_ON_LEARN_OR_EXERCISE"
 /*
   Einbürgerungstest
 */
@@ -35,7 +36,7 @@ export class DEFAULT_VALUE {
   /**
    * App
    */
-  static APP_VERSION = "1.2.7";
+  static APP_VERSION = "1.2.71";
 
   /** 
   Homepage
@@ -47,6 +48,7 @@ export class DEFAULT_VALUE {
   static CURRENT_CATEGORY = "alltag";
   static TOTAL_WORD_LEARN = 0
   static TOTAL_WORD_EXERCISE = 0
+  static IS_ON_LEARN_OR_EXERCISE = "learn";
 
   static LEARNED_WITH_LEARN_WORDS = {
     a1: {
