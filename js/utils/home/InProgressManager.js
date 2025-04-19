@@ -86,6 +86,16 @@ export default function InProgressManager(isAnswerCorrect) {
           LEARNED_WITH_EXERCISE_WORDS_KEY,
           learnedWithExerciseWords
         )
+        let bookmarkedWords = LocalStorageManager.load('BOOKMARKS')
+        let learnedWords = bookmarkedWords.learned
+        learnedWords.push({
+          type: currentWord.type,
+          almanca: currentWord.almanca,
+          ingilizce: currentWord.ingilizce,
+          seviye: currentWord.seviye || 'N/A',
+        })
+        bookmarkedWords.learned = learnedWords
+        LocalStorageManager.save('BOOKMARKS', bookmarkedWords)
         // Remove the current word from the wordListExercise array
         wordListExercise.splice(0, 1)
         LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, wordListExercise)
