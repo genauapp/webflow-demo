@@ -85,6 +85,7 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
       return
     }
     showOrHideDecks(updatedLevel)
+    checkIsOnLearnOrExercise()
     await loadAndShowWords()
   })
 })
@@ -109,7 +110,7 @@ document.querySelectorAll('.deck-container').forEach((elem) => {
       // add selected class into selected image
       elem.children[0].classList.add('selected-deck-img')
     }
-
+    checkIsOnLearnOrExercise()
     await loadAndShowWords()
   })
 })
@@ -119,6 +120,7 @@ document.querySelectorAll('.deck-container').forEach((elem) => {
 types.forEach((type) => {
   document.getElementById(`${type}Tab`).addEventListener('click', async () => {
     LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, type)
+    checkIsOnLearnOrExercise()
     await loadAndShowWords()
   })
   document.getElementById(`${type}Tab-learn`).addEventListener('click', async () => {
@@ -132,7 +134,6 @@ types.forEach((type) => {
 })
 
 async function loadAndShowWords() {
-  checkIsOnLearnOrExercise()
   const isOnLearn = LocalStorageManager.load(IS_ON_LEARN_KEY)
   try {
     await loadWords()
