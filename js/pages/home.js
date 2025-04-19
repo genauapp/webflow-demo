@@ -132,6 +132,7 @@ types.forEach((type) => {
 })
 
 async function loadAndShowWords() {
+  checkIsOnLearnOrExercise()
   const isOnLearn = LocalStorageManager.load(IS_ON_LEARN_KEY)
   try {
     await loadWords()
@@ -178,6 +179,20 @@ export async function loadWords() {
   } catch (error) {
     console.error('Error fetching JSON:', error)
     throw error
+  }
+}
+
+function checkIsOnLearnOrExercise() {
+  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
+  const exerciseTab = document.getElementById(`${wordType}Tab-exercise`)
+  const learnTab = document.getElementById(`${wordType}Tab-learn`)
+  if (learnTab.classList.contains('w--current')) {
+    LocalStorageManager.save(IS_ON_LEARN_KEY, 'learn')
+    return
+  }
+  if (exerciseTab.classList.contains('w--current')) {
+    LocalStorageManager.save(IS_ON_LEARN_KEY, 'exercise')
+    return
   }
 }
 
