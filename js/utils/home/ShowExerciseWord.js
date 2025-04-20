@@ -63,14 +63,14 @@ export default function showExerciseWord() {
       (item) => item.german === currentWord.german
     )
   
-    const { word, english, level } =
+    const { word, english, wordLevel } =
       currentWord
     // const renk = artikelRenk(artikel)
   
     // wordnin german kısmını göster
     document.getElementById(`exerciseWord-${wordType}`).innerText = word
     document.getElementById(`levelTagExercise-${wordType}`).innerText =
-      level || 'N/A'
+      wordLevel || 'N/A'
   
     // İngilizce çeviriyi göster (ID üzerinden erişim)
     const exerciseTranslationElement = document.getElementById(`exerciseTranslation-${wordType}`)
