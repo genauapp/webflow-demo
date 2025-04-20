@@ -2,6 +2,6 @@
 //export const ASSETS_BASE_URL = `https://genauapp.github.io/webflow-demo/`
 // STAGING
 export const ASSETS_BASE_URL =
-   'https://cdn.jsdelivr.net/gh/genauapp/webflow-demo@767c28f'
+   'https://cdn.jsdelivr.net/gh/genauapp/webflow-demo@fd7955c'
 
 /* WORD LEARN/EXERCISE **/
