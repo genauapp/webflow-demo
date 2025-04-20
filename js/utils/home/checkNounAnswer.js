@@ -15,7 +15,7 @@ export default function checkNounAnswer(userArtikel) {
   }
 
   const currentWord = wordListExercise[0]
-  const { artikel, kural } = currentWord
+  const { artikel, rule } = currentWord
   const buttonDer = document.getElementById('buttonDer')
   const buttonDie = document.getElementById('buttonDie')
   const buttonDas = document.getElementById('buttonDas')
@@ -40,7 +40,7 @@ export default function checkNounAnswer(userArtikel) {
       'correctAnswerField'
     ).innerHTML = `<span style="color: ${renk};">${artikel}</span>`
 
-    //InProgress listesine kelimeyi ekle - Eger hic dogru bilinmemisse yeni ekle daha önce bilinmisse progress i arttir
+    //InProgress listesine wordyi ekle - Eger hic dogru bilinmemisse yeni ekle daha önce bilinmisse progress i arttir
     InProgressManager(true)
 
     const shuffledList = ListUtils.shuffleArray(wordListExercise)
@@ -56,7 +56,7 @@ export default function checkNounAnswer(userArtikel) {
 
     document.getElementById(
       `feedbackMessage-${wordType}`
-    ).innerText = `Upps! ⚠️ ${kural}`
+    ).innerText = `Upps! ⚠️ ${rule}`
     document.getElementById(`feedbackMessage-${wordType}`).style.color =
       'red'
 

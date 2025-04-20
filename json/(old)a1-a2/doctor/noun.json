@@ -1,32 +1,32 @@
 [
   {
-    "almanca": "der Supermarkt",
-    "ingilizce": "supermarket",
-    "seviye": "A1",
-    "ornek": "Ich kaufe im Supermarkt ein.",
+    "german": "der Supermarkt",
+    "english": "supermarket",
+    "level": "A1",
+    "example": "Ich kaufe im Supermarkt ein.",
     "artikel": "der",
-    "kelime": "Supermarkt",
-    "kural": "Most places or institutions ending in '-markt' take 'der'.",
+    "word": "Supermarkt",
+    "rule": "Most places or institutions ending in '-markt' take 'der'.",
     "category": "Einkaufen"
   },
   {
-    "almanca": "das Brot",
-    "ingilizce": "bread",
-    "seviye": "A1",
-    "ornek": "Ich nehme ein Brot, bitte.",
+    "german": "das Brot",
+    "english": "bread",
+    "level": "A1",
+    "example": "Ich nehme ein Brot, bitte.",
     "artikel": "das",
-    "kelime": "Brot",
-    "kural": "Most uncountable food nouns take 'das'.",
+    "word": "Brot",
+    "rule": "Most uncountable food nouns take 'das'.",
     "category": "Einkaufen"
   },
   {
-    "almanca": "die Tüte",
-    "ingilizce": "bag",
-    "seviye": "A1",
-    "ornek": "Möchten Sie eine Tüte?",
+    "german": "die Tüte",
+    "english": "bag",
+    "level": "A1",
+    "example": "Möchten Sie eine Tüte?",
     "artikel": "die",
-    "kelime": "Tüte",
-    "kural": "Nouns ending in '-e' are usually feminine and take 'die'.",
+    "word": "Tüte",
+    "rule": "Nouns ending in '-e' are usually feminine and take 'die'.",
     "category": "Einkaufen"
   }
 ]

@@ -1,32 +1,32 @@
 [
   {
-    "almanca": "das Amt",
-    "ingilizce": "government office",
-    "seviye": "A1",
-    "ornek": "Ich muss zum Amt gehen.",
+    "german": "das Amt",
+    "english": "government office",
+    "level": "A1",
+    "example": "Ich muss zum Amt gehen.",
     "artikel": "das",
-    "kelime": "Amt",
-    "kural": "Many nouns ending in '-amt' are neuter and take 'das'.",
+    "word": "Amt",
+    "rule": "Many nouns ending in '-amt' are neuter and take 'das'.",
     "category": "Behörden"
   },
   {
-    "almanca": "der Ausweis",
-    "ingilizce": "ID card",
-    "seviye": "A1",
-    "ornek": "Bitte zeigen Sie Ihren Ausweis.",
+    "german": "der Ausweis",
+    "english": "ID card",
+    "level": "A1",
+    "example": "Bitte zeigen Sie Ihren Ausweis.",
     "artikel": "der",
-    "kelime": "Ausweis",
-    "kural": "Compound nouns ending in '-weis' often take 'der'.",
+    "word": "Ausweis",
+    "rule": "Compound nouns ending in '-weis' often take 'der'.",
     "category": "Behörden"
   },
   {
-    "almanca": "das Formular",
-    "ingilizce": "form",
-    "seviye": "A1",
-    "ornek": "Sie müssen dieses Formular ausfüllen.",
+    "german": "das Formular",
+    "english": "form",
+    "level": "A1",
+    "example": "Sie müssen dieses Formular ausfüllen.",
     "artikel": "das",
-    "kelime": "Formular",
-    "kural": "Nouns ending in '-ar' are usually neuter and take 'das'.",
+    "word": "Formular",
+    "rule": "Nouns ending in '-ar' are usually neuter and take 'das'.",
     "category": "Behörden"
   }
 ]

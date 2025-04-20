@@ -24,12 +24,12 @@ function listFavorites() {
   let favoriteWords = bookmarkedWords.favorites
 
   if (favoriteWords.length === 0) {
-    // Favori kelime yokken gösterilecek mesaj
+    // Favori word yokken gösterilecek mesaj
     showNoWordsMessage(favoritesContainer)
     return
   }
 
-  // Favori kelimeler mevcutsa düzeni geri yükle
+  // Favori wordler mevcutsa düzeni geri yükle
   favoritesContainer.style.display = 'block' // Flex değil, varsayılan düzen
 
   favoriteWords.forEach((word, index) => {
@@ -42,7 +42,7 @@ function listFavorites() {
     favAllBlock.style.padding = '12px 0' // Bloklar arası boşluk
     favAllBlock.style.borderBottom = '1px solid #ccc' // Alt çizgi ile ayırma
 
-    // Almanca ve İngilizce kelimeler
+    // german ve İngilizce wordler
     const favWordsBlock = document.createElement('div')
     favWordsBlock.classList.add('favWordsBlock')
     favWordsBlock.style.display = 'flex'
@@ -54,17 +54,17 @@ function listFavorites() {
     germanWord.classList.add('favoriteWordGerman')
     germanWord.style.margin = '0' // Varsayılan margin sıfırlama
     germanWord.style.fontWeight = 'bold' // Kalın yazı
-    germanWord.textContent = word.almanca
+    germanWord.textContent = word.german
 
     const englishWord = document.createElement('p')
     englishWord.classList.add('favoriteWordEnglish')
     englishWord.style.margin = '4px 0 0 0' // Üstte boşluk
-    englishWord.textContent = word.ingilizce
+    englishWord.textContent = word.english
 
     favWordsBlock.appendChild(germanWord)
     favWordsBlock.appendChild(englishWord)
 
-    // Seviye ve silme butonu
+    // level ve silme butonu
     const favLevelBlock = document.createElement('div')
     favLevelBlock.classList.add('favLevelBlock')
     favLevelBlock.style.display = 'flex'
@@ -75,7 +75,7 @@ function listFavorites() {
     levelTag.classList.add('favoriteWordLevel')
     levelTag.style.margin = '0' // Varsayılan margin sıfırlama
     levelTag.style.color = '#999' // Gri renk
-    levelTag.textContent = word.seviye
+    levelTag.textContent = word.level
 
     const typeTag = document.createElement('p')
     typeTag.classList.add('favoriteWordType')
@@ -106,7 +106,7 @@ function listFavorites() {
   })
 }
 
-// Favori kelimeyi silme
+// Favori wordyi silme
 function removeFavorite(index) {
   let bookmarkedWords = LocalStorageManager.load('BOOKMARKS')
   let favoriteWords = bookmarkedWords.favorites
@@ -137,7 +137,7 @@ function listLearnedWords() {
   }
 
   learnedWords.forEach(word => {
-    // Öğrenilmiş kelimeler bloğunu kapsayan div
+    // Öğrenilmiş wordler bloğunu kapsayan div
     const learnedWordsAllBlock = document.createElement('div');
     learnedWordsAllBlock.classList.add('learnedWordsAllBlock');
     learnedWordsAllBlock.style.display = 'flex';
@@ -146,7 +146,7 @@ function listLearnedWords() {
     learnedWordsAllBlock.style.padding = '12px 0';
     learnedWordsAllBlock.style.borderBottom = '1px solid #ccc';
 
-    // Kelime bilgilerini içeren div
+    // word bilgilerini içeren div
     const learnedWordsBlock = document.createElement('div');
     learnedWordsBlock.classList.add('learnedWordsBlock');
     learnedWordsBlock.style.display = 'flex';
@@ -158,17 +158,17 @@ function listLearnedWords() {
     germanWord.classList.add('learnedWordGerman');
     germanWord.style.margin = '0';
     germanWord.style.fontWeight = 'bold';
-    germanWord.textContent = word.almanca;
+    germanWord.textContent = word.german;
 
     const englishWord = document.createElement('p');
     englishWord.classList.add('learnedWordEnglish');
     englishWord.style.margin = '4px 0 0 0';
-    englishWord.textContent = word.ingilizce;
+    englishWord.textContent = word.english;
 
     learnedWordsBlock.appendChild(germanWord);
     learnedWordsBlock.appendChild(englishWord);
 
-    // Seviye ve tip bilgisini gösteren blok
+    // level ve tip bilgisini gösteren blok
     const learnedWordsLevelBlock = document.createElement('div');
     learnedWordsLevelBlock.classList.add('favLevelBlock');
     learnedWordsLevelBlock.style.display = 'flex';
@@ -179,7 +179,7 @@ function listLearnedWords() {
     levelTag.classList.add('learnedWordLevel');
     levelTag.style.margin = '0';
     levelTag.style.color = '#999';
-    levelTag.textContent = word.seviye;
+    levelTag.textContent = word.level;
 
     const typeTag = document.createElement('p');
     typeTag.classList.add('favoriteWordType');

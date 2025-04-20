@@ -52,7 +52,7 @@ export default function showExerciseWord() {
       wordListExercise = wordListExercise.filter(
         (word) =>
           !learnedWithExerciseWords[level][category][wordType].some(
-            (learned) => learned.almanca === word.almanca
+            (learned) => learned.german === word.german
           )
       )
       LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, wordListExercise)
@@ -60,17 +60,17 @@ export default function showExerciseWord() {
 
     const currentWord = wordListExercise[0]
     const progressWord = inProgressWords[level][category][wordType].find(
-      (item) => item.almanca === currentWord.almanca
+      (item) => item.german === currentWord.german
     )
   
-    const { kelime, ingilizce, seviye } =
+    const { word, english, level } =
       currentWord
     // const renk = artikelRenk(artikel)
   
-    // Kelimenin Almanca kısmını göster
-    document.getElementById(`exerciseWord-${wordType}`).innerText = kelime
+    // wordnin german kısmını göster
+    document.getElementById(`exerciseWord-${wordType}`).innerText = word
     document.getElementById(`levelTagExercise-${wordType}`).innerText =
-      seviye || 'N/A'
+      level || 'N/A'
   
     // İngilizce çeviriyi göster (ID üzerinden erişim)
     const exerciseTranslationElement = document.getElementById(`exerciseTranslation-${wordType}`)
@@ -78,14 +78,14 @@ export default function showExerciseWord() {
       let exerciseTranslationText = ''
   
       if (wordType === 'noun') {
-        exerciseTranslationText = ingilizce
+        exerciseTranslationText = english
       } else if (
         wordType === 'verb' ||
         wordType === 'adjective' ||
         wordType === 'adverb'
       ) {
         if (ExerciseUtils.shouldUseOwnMeaning()) {
-          exerciseTranslationText = ingilizce
+          exerciseTranslationText = english
         } else {
           exerciseTranslationText = ExerciseUtils.getRandomTranslationResult()
           // todo: transfer data for checking the answer later

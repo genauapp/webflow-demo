@@ -138,11 +138,11 @@ export async function loadAndShowWords() {
       return
     }
   } catch (error) {
-    console.error('Kelime yükleme hatası:', error)
+    console.error('word yükleme hatası:', error)
   }
 }
 
-// Kelime yükleme fonksiyonu
+// word yükleme fonksiyonu
 export async function loadWords() {
   const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
   const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)

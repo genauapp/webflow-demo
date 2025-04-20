@@ -1,58 +1,58 @@
 [
   {
-    "almanca": "rot",
-    "ingilizce": "red",
-    "seviye": "A1",
-    "ornek": "Das T-Shirt ist rot.",
-    "kelime": "rot",
+    "german": "rot",
+    "english": "red",
+    "level": "A1",
+    "example": "Das T-Shirt ist rot.",
+    "word": "rot",
     "type": "adjective"
   },
   {
-    "almanca": "gelb",
-    "ingilizce": "yellow",
-    "seviye": "A1",
-    "ornek": "Der Textmarker ist gelb.",
-    "kelime": "gelb",
+    "german": "gelb",
+    "english": "yellow",
+    "level": "A1",
+    "example": "Der Textmarker ist gelb.",
+    "word": "gelb",
     "type": "adjective"
   },
   {
-    "almanca": "grün",
-    "ingilizce": "green",
-    "seviye": "A1",
-    "ornek": "Der Apfel ist grün.",
-    "kelime": "grün",
+    "german": "grün",
+    "english": "green",
+    "level": "A1",
+    "example": "Der Apfel ist grün.",
+    "word": "grün",
     "type": "adjective"
   },
   {
-    "almanca": "blau",
-    "ingilizce": "blue",
-    "seviye": "A1",
-    "ornek": "Das Handy ist blau.",
-    "kelime": "blau",
+    "german": "blau",
+    "english": "blue",
+    "level": "A1",
+    "example": "Das Handy ist blau.",
+    "word": "blau",
     "type": "adjective"
   },
   {
-    "almanca": "braun",
-    "ingilizce": "brown",
-    "seviye": "A1",
-    "ornek": "Die Katze ist braun.",
-    "kelime": "braun",
+    "german": "braun",
+    "english": "brown",
+    "level": "A1",
+    "example": "Die Katze ist braun.",
+    "word": "braun",
     "type": "adjective"
   },
   {
-    "almanca": "sauer",
-    "ingilizce": "sour, angry",
-    "seviye": "A2",
-    "ornek": "Warum ist sie sauer?",
-    "kelime": "sauer",
+    "german": "sauer",
+    "english": "sour, angry",
+    "level": "A2",
+    "example": "Warum ist sie sauer?",
+    "word": "sauer",
     "type": "adjective"
   },
   {
-    "almanca": "glücklich",
-    "ingilizce": "happy",
-    "seviye": "A2",
-    "ornek": "Du siehst glücklich aus!",
-    "kelime": "glücklich",
+    "german": "glücklich",
+    "english": "happy",
+    "level": "A2",
+    "example": "Du siehst glücklich aus!",
+    "word": "glücklich",
     "type": "adjective"
   }
 ]

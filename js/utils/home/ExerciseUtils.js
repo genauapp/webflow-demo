@@ -19,14 +19,14 @@ export default class ExerciseUtils {
     const wordListExerciseInstance = wordListExercise
     
     const filteredWordList = wordListExerciseInstance.filter(
-      (kelimeExercise) => kelimeExercise.almanca !== selectedWord.almanca
+      (wordExercise) => wordExercise.german !== selectedWord.german
     )
 
     const randomIndex = NumberUtils.getRandomNumber(
       filteredWordList.length - 1
     )
 
-    const randomResult = filteredWordList[randomIndex].ingilizce
+    const randomResult = filteredWordList[randomIndex].english
 
     return randomResult
   }

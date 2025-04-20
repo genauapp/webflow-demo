@@ -41,7 +41,7 @@ export default function checkNonNounAnswer(isUserInputCorrect) {
       'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/correct.mp3'
     )
 
-    //InProgress listesine kelimeyi ekle - Eger hic dogru bilinmemisse yeni ekle daha önce bilinmisse progress i arttir
+    //InProgress listesine wordyi ekle - Eger hic dogru bilinmemisse yeni ekle daha önce bilinmisse progress i arttir
     InProgressManager(true)
 
     const shuffledList = ListUtils.shuffleArray(wordListExercise)

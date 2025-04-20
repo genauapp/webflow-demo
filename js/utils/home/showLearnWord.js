@@ -41,14 +41,14 @@ export default function showLearnWord() {
     iKnowButton.style.visibility = 'visible'
     repeatButton.style.visibility = 'visible'
 
-    const { almanca, ingilizce, ornek, highlight, seviye, kural } =
+    const { german, english, example, highlight, level, rule } =
         wordList[0]
 
     if (learnedWithLearnWords[level][category][wordType].length > 0) {
         wordList = wordList.filter(
             (word) =>
                 !learnedWithLearnWords[level][category][wordType].some(
-                    (learned) => learned.almanca === word.almanca
+                    (learned) => learned.german === word.german
                 )
         )
         LocalStorageManager.save(WORD_LIST_KEY, wordList)
@@ -57,10 +57,10 @@ export default function showLearnWord() {
     switch (wordType) {
         case 'noun':
             // Highlight kısmını vurgula
-            let highlightedWord = almanca
+            let highlightedWord = german
             if (highlight) {
                 const regex = new RegExp(`(${highlight})`, 'i')
-                highlightedWord = almanca.replace(
+                highlightedWord = german.replace(
                     regex,
                     `<span class="highlight">$1</span>`
                 )
@@ -71,13 +71,13 @@ export default function showLearnWord() {
             ).innerHTML = `<span style="color: ${renk};">${highlightedWord}</span>`
             break
         case 'verb':
-            document.getElementById('wordLearn-' + wordType).innerHTML = almanca
+            document.getElementById('wordLearn-' + wordType).innerHTML = german
             break
         case 'adjective':
-            document.getElementById('wordLearn-' + wordType).innerHTML = almanca
+            document.getElementById('wordLearn-' + wordType).innerHTML = german
             break
         case 'adverb':
-            document.getElementById('wordLearn-' + wordType).innerHTML = almanca
+            document.getElementById('wordLearn-' + wordType).innerHTML = german
             break
     }
 
@@ -85,21 +85,21 @@ export default function showLearnWord() {
     document.getElementById(`totalWordsCountLearn-${wordType}`).innerText = totalWordsLearn
 
     document.getElementById(`levelTagLearn-${wordType}`).innerText =
-        seviye || 'N/A'
+        level || 'N/A'
     document.getElementById('translationLearn-' + wordType).innerText =
-        ingilizce || 'N/A'
+        english || 'N/A'
     document.getElementById('exampleLearn-' + wordType).innerText =
-        ornek || 'N/A'
+        example || 'N/A'
 
     const ruleLearnElement = document.getElementById('ruleLearn-' + wordType)
     const isAdjectiveOrAdverb = wordType === 'adjective' || wordType === 'adverb'
 
-    // Kural setini göster
-    if (!kural || isAdjectiveOrAdverb) {
+    // rule setini göster
+    if (!rule || isAdjectiveOrAdverb) {
         ruleLearnElement.innerText = ''
         ruleLearnElement.style.display = 'none'
     } else {
-        ruleLearnElement.innerText = `${kural}`
+        ruleLearnElement.innerText = `${rule}`
         ruleLearnElement.style.display = 'block'
 
         // Animasyonu tekrar ettir

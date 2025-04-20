@@ -19,14 +19,14 @@ export const addToFavorites = () => {
     // Favorilere ekle
     favoriteWords.push({
         type: currentWord.type,
-        almanca: currentWord.almanca,
-        ingilizce: currentWord.ingilizce,
-        seviye: currentWord.seviye || 'N/A',
+        german: currentWord.german,
+        english: currentWord.english,
+        level: currentWord.level || 'N/A',
     })
     bookmarkedWords.favorites = favoriteWords
     LocalStorageManager.save('BOOKMARKS', bookmarkedWords)
 
-    feedbackElement.innerText = `"${currentWord.almanca}" has been added to favorites!`
+    feedbackElement.innerText = `"${currentWord.german}" has been added to favorites!`
     feedbackElement.style.color = 'green'
 
     // Görselleri güncelle
@@ -53,12 +53,12 @@ export function removeFavorite() {
     let favoriteWords = bookmarkedWords.favorites
 
     favoriteWords = favoriteWords.filter(
-        (word) => word.almanca !== currentWord.almanca
+        (word) => word.german !== currentWord.german
     )
     bookmarkedWords.favorites = favoriteWords
     LocalStorageManager.save('BOOKMARKS', bookmarkedWords)
 
-    feedbackElement.innerText = `"${currentWord.almanca}" has been removed from favorites.`
+    feedbackElement.innerText = `"${currentWord.german}" has been removed from favorites.`
     feedbackElement.style.color = 'orange'
 
     feedbackElement.style.display = 'block'

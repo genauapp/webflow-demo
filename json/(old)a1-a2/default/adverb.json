@@ -1,35 +1,35 @@
 [
   {
-    "almanca": "miteinander",
-    "ingilizce": "with each other",
-    "seviye": "A1",
-    "ornek": "Im Kurs sprechen wir Deutsch miteinander.",
-    "kelime": "miteinander",
+    "german": "miteinander",
+    "english": "with each other",
+    "level": "A1",
+    "example": "Im Kurs sprechen wir Deutsch miteinander.",
+    "word": "miteinander",
     "type": "adverb"
   },
   {
-    "almanca": "bisschen",
-    "ingilizce": "little",
-    "seviye": "A1",
-    "ornek": "Er kommt heute ein bisschen später.",
-    "kelime": "bisschen",
-    "kural": "99% of the time combined with ‚ein‘: ‚ein bisschen‘. Careful: ONLY for quantity, not for size.",
+    "german": "bisschen",
+    "english": "little",
+    "level": "A1",
+    "example": "Er kommt heute ein bisschen später.",
+    "word": "bisschen",
+    "rule": "99% of the time combined with ‚ein‘: ‚ein bisschen‘. Careful: ONLY for quantity, not for size.",
     "type": "adverb"
   },
   {
-    "almanca": "besonders",
-    "ingilizce": "especially",
-    "seviye": "A2",
-    "ornek": "Deutsch lernen macht Spaß. Besonders das Sprechen!",
-    "kelime": "besonders",
+    "german": "besonders",
+    "english": "especially",
+    "level": "A2",
+    "example": "Deutsch lernen macht Spaß. Besonders das Sprechen!",
+    "word": "besonders",
     "type": "adverb"
   },
   {
-    "almanca": "nachts",
-    "ingilizce": "at night",
-    "seviye": "A2",
-    "ornek": "Nachts sollte man die Heizung herunterstellen.",
-    "kelime": "nachts",
+    "german": "nachts",
+    "english": "at night",
+    "level": "A2",
+    "example": "Nachts sollte man die Heizung herunterstellen.",
+    "word": "nachts",
     "type": "adverb"
   }
 ]

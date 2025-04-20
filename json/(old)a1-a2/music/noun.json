@@ -1,32 +1,32 @@
 [
   {
-    "almanca": "der Arzt",
-    "ingilizce": "doctor",
-    "seviye": "A1",
-    "ornek": "Ich gehe zum Arzt.",
+    "german": "der Arzt",
+    "english": "doctor",
+    "level": "A1",
+    "example": "Ich gehe zum Arzt.",
     "artikel": "der",
-    "kelime": "Arzt",
-    "kural": "Occupational titles referring to males usually take 'der'.",
+    "word": "Arzt",
+    "rule": "Occupational titles referring to males usually take 'der'.",
     "category": "Gesundheit"
   },
   {
-    "almanca": "die Apotheke",
-    "ingilizce": "pharmacy",
-    "seviye": "A1",
-    "ornek": "Die Apotheke ist neben dem Krankenhaus.",
+    "german": "die Apotheke",
+    "english": "pharmacy",
+    "level": "A1",
+    "example": "Die Apotheke ist neben dem Krankenhaus.",
     "artikel": "die",
-    "kelime": "Apotheke",
-    "kural": "Nouns ending in '-e' are usually feminine and take 'die'.",
+    "word": "Apotheke",
+    "rule": "Nouns ending in '-e' are usually feminine and take 'die'.",
     "category": "Gesundheit"
   },
   {
-    "almanca": "das Medikament",
-    "ingilizce": "medicine",
-    "seviye": "A1",
-    "ornek": "Ich brauche ein Medikament gegen Husten.",
+    "german": "das Medikament",
+    "english": "medicine",
+    "level": "A1",
+    "example": "Ich brauche ein Medikament gegen Husten.",
     "artikel": "das",
-    "kelime": "Medikament",
-    "kural": "Nouns ending in '-ment' are usually neuter and take 'das'.",
+    "word": "Medikament",
+    "rule": "Nouns ending in '-ment' are usually neuter and take 'das'.",
     "category": "Gesundheit"
   }
 ]
