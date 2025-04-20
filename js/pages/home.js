@@ -125,7 +125,7 @@ types.forEach((type) => {
   })
 })
 
-async function loadAndShowWords() {
+export async function loadAndShowWords() {
   const isOnLearn = LocalStorageManager.load(IS_ON_LEARN_KEY)
   try {
     await loadWords()

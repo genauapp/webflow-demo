@@ -2,9 +2,7 @@ import { LEARN_ELEMENT_IDS } from '../../constants/elements.js'
 import LocalStorageManager from '../LocalStorageManager.js'
 import { DEFAULT_VALUE, CURRENT_WORD_TYPE_KEY, WORD_LIST_KEY, CURRENT_LEVEL_KEY, LEARNED_WITH_EXERCISE_WORDS_KEY, CURRENT_CATEGORY_KEY, IS_ON_LEARN_KEY } from '../../constants/storageKeys.js'
 import { categories } from '../../constants/props.js'
-import showLearnWord from './showLearnWord.js'
-import { loadWords } from '../../pages/home.js'
-import showExerciseWord from './ShowExerciseWord.js'
+import { loadAndShowWords } from '../../pages/home.js'
 
 // UI visibility functions
 export function showSkeleton() {
@@ -136,7 +134,7 @@ export function showFinishScreen() {
     })
 }
 
-export function refreshProgress() {
+export async function refreshProgress() {
     const learnOrExercise = LocalStorageManager.load(IS_ON_LEARN_KEY)
     let learnedWordsList = LocalStorageManager.load(`LEARNED_WITH_${(learnOrExercise.toUpperCase())}_WORDS`)
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
@@ -151,17 +149,7 @@ export function refreshProgress() {
     successScreen.style.display = 'none'
     contentContainer.style.display = 'flex'
 
-    loadWords()
-
-    if (learnOrExercise === 'learn') {
-        showLearnWord()
-        return
-    }
-    
-    if (learnOrExercise === 'exercise') {
-        showExerciseWord()
-        return
-    }
+    await loadAndShowWords()
 
 }
 
