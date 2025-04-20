@@ -7,6 +7,7 @@
         "artikel": "die",
         "kelime": "Wohnung",
         "kural": "Words ending in '-ung' are always feminine.",
+        "type": "noun",
         "category": "Wohnen & Umwelt",
         "id": "noun_wohnen_B1_01"
     },
@@ -18,6 +19,7 @@
         "artikel": "das",
         "kelime": "Haus",
         "kural": "",
+        "type": "noun",
         "category": "Wohnen & Umwelt",
         "id": "noun_wohnen_B1_02"
     },
@@ -29,6 +31,7 @@
         "artikel": "der",
         "kelime": "Balkon",
         "kural": "",
+        "type": "noun",
         "category": "Wohnen & Umwelt",
         "id": "noun_wohnen_B1_03"
     },
@@ -40,6 +43,7 @@
         "artikel": "die",
         "kelime": "Küche",
         "kural": "",
+        "type": "noun",
         "category": "Wohnen & Umwelt",
         "id": "noun_wohnen_B1_04"
     },
@@ -51,6 +55,7 @@
         "artikel": "das",
         "kelime": "Badezimmer",
         "kural": "Compound word ending in '-zimmer' is neuter.",
+        "type": "noun",
         "category": "Wohnen & Umwelt",
         "id": "noun_wohnen_B1_05"
     },
@@ -62,6 +67,7 @@
         "artikel": "das",
         "kelime": "Schlafzimmer",
         "kural": "Compound word ending in '-zimmer' is neuter.",
+        "type": "noun",
         "category": "Wohnen & Umwelt",
         "id": "noun_wohnen_B1_06"
     },
@@ -73,6 +79,7 @@
         "artikel": "die",
         "kelime": "Miete",
         "kural": "Words ending in '-e' are often feminine.",
+        "type": "noun",
         "category": "Wohnen & Umwelt",
         "id": "noun_wohnen_B1_07"
     },
@@ -84,6 +91,7 @@
         "artikel": "der",
         "kelime": "Vermieter",
         "kural": "Agent nouns ending in '-er' are usually masculine.",
+        "type": "noun",
         "category": "Wohnen & Umwelt",
         "id": "noun_wohnen_B1_08"
     },
@@ -95,6 +103,7 @@
         "artikel": "die",
         "kelime": "Nachbarschaft",
         "kural": "Words ending in '-schaft' are always feminine.",
+        "type": "noun",
         "category": "Wohnen & Umwelt",
         "id": "noun_wohnen_B1_09"
     },
@@ -106,6 +115,7 @@
         "artikel": "das",
         "kelime": "Möbel",
         "kural": "Usually used in plural, but singular is neuter.",
+        "type": "noun",
         "category": "Wohnen & Umwelt",
         "id": "noun_wohnen_B1_10"
     },
@@ -117,6 +127,7 @@
         "artikel": "der",
         "kelime": "Umzug",
         "kural": "",
+        "type": "noun",
         "category": "Wohnen & Umwelt",
         "id": "noun_wohnen_B1_11"
     },
@@ -128,6 +139,7 @@
         "artikel": "die",
         "kelime": "Umgebung",
         "kural": "Words ending in '-ung' are always feminine.",
+        "type": "noun",
         "category": "Wohnen & Umwelt",
         "id": "noun_wohnen_B1_12"
     },
@@ -139,6 +151,7 @@
         "artikel": "das",
         "kelime": "Erdgeschoss",
         "kural": "",
+        "type": "noun",
         "category": "Wohnen & Umwelt",
         "id": "noun_wohnen_B1_13"
     },
@@ -150,6 +163,7 @@
         "artikel": "die",
         "kelime": "Heizung",
         "kural": "Words ending in '-ung' are always feminine.",
+        "type": "noun",
         "category": "Wohnen & Umwelt",
         "id": "noun_wohnen_B1_14"
     },
@@ -161,6 +175,7 @@
         "artikel": "der",
         "kelime": "Müll",
         "kural": "",
+        "type": "noun",
         "category": "Wohnen & Umwelt",
         "id": "noun_wohnen_B1_15"
     },
@@ -172,6 +187,7 @@
         "artikel": "die",
         "kelime": "Umwelt",
         "kural": "",
+        "type": "noun",
         "category": "Wohnen & Umwelt",
         "id": "noun_wohnen_B1_16"
     },
@@ -183,6 +199,7 @@
         "artikel": "die",
         "kelime": "Mülltrennung",
         "kural": "Words ending in '-ung' are always feminine.",
+        "type": "noun",
         "category": "Wohnen & Umwelt",
         "id": "noun_wohnen_B1_17"
     },
@@ -194,6 +211,7 @@
         "artikel": "die",
         "kelime": "Energiesparlampe",
         "kural": "Compound noun ending in '-lampe' is feminine.",
+        "type": "noun",
         "category": "Wohnen & Umwelt",
         "id": "noun_wohnen_B1_18"
     },
@@ -205,6 +223,7 @@
         "artikel": "der",
         "kelime": "Strom",
         "kural": "",
+        "type": "noun",
         "category": "Wohnen & Umwelt",
         "id": "noun_wohnen_B1_19"
     },
@@ -216,6 +235,7 @@
         "artikel": "die",
         "kelime": "Luft",
         "kural": "",
+        "type": "noun",
         "category": "Wohnen & Umwelt",
         "id": "noun_wohnen_B1_20"
     }

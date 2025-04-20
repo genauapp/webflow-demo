@@ -7,6 +7,7 @@
         "artikel": "die",
         "kelime": "Kohle",
         "kural": "Literal meaning: coal. Used colloquially for money.",
+        "type": "noun",
         "category": "German Slang",
         "id": "noun_slang_B1_01"
     },
@@ -18,6 +19,7 @@
         "artikel": "der",
         "kelime": "Bock",
         "kural": "Used in expressions like 'keinen Bock haben'.",
+        "type": "noun",
         "category": "German Slang",
         "id": "noun_slang_B1_02"
     },
@@ -29,6 +31,7 @@
         "artikel": "der",
         "kelime": "Kumpel",
         "kural": "Casual term for a friend.",
+        "type": "noun",
         "category": "German Slang",
         "id": "noun_slang_B1_03"
     },
@@ -40,6 +43,7 @@
         "artikel": "die",
         "kelime": "Alte",
         "kural": "Informal and can be disrespectful depending on tone.",
+        "type": "noun",
         "category": "German Slang",
         "id": "noun_slang_B1_04"
     },
@@ -51,6 +55,7 @@
         "artikel": "der",
         "kelime": "Alte",
         "kural": "Also used for parents: 'mein Alter'.",
+        "type": "noun",
         "category": "German Slang",
         "id": "noun_slang_B1_05"
     },
@@ -62,6 +67,7 @@
         "artikel": "die",
         "kelime": "Tussi",
         "kural": "Can be offensive or mocking.",
+        "type": "noun",
         "category": "German Slang",
         "id": "noun_slang_B1_06"
     },
@@ -73,6 +79,7 @@
         "artikel": "der",
         "kelime": "Typ",
         "kural": "Neutral colloquial term.",
+        "type": "noun",
         "category": "German Slang",
         "id": "noun_slang_B1_07"
     },
@@ -84,6 +91,7 @@
         "artikel": "die",
         "kelime": "Clique",
         "kural": "Youth slang for friend group.",
+        "type": "noun",
         "category": "German Slang",
         "id": "noun_slang_B1_08"
     },
@@ -95,6 +103,7 @@
         "artikel": "das",
         "kelime": "Teil",
         "kural": "Used for various objects.",
+        "type": "noun",
         "category": "German Slang",
         "id": "noun_slang_B1_09"
     },
@@ -106,6 +115,7 @@
         "artikel": "die",
         "kelime": "Mucke",
         "kural": "Short for Musik.",
+        "type": "noun",
         "category": "German Slang",
         "id": "noun_slang_B1_10"
     },
@@ -117,6 +127,7 @@
         "artikel": "die",
         "kelime": "Klamotten",
         "kural": "Always plural.",
+        "type": "noun",
         "category": "German Slang",
         "id": "noun_slang_B1_11"
     },
@@ -128,6 +139,7 @@
         "artikel": "die",
         "kelime": "Glotze",
         "kural": "Casual word for Fernseher.",
+        "type": "noun",
         "category": "German Slang",
         "id": "noun_slang_B1_12"
     },
@@ -139,6 +151,7 @@
         "artikel": "die",
         "kelime": "Karre",
         "kural": "Informal term for car.",
+        "type": "noun",
         "category": "German Slang",
         "id": "noun_slang_B1_13"
     },
@@ -150,6 +163,7 @@
         "artikel": "das",
         "kelime": "Handy",
         "kural": "Denglisch slang.",
+        "type": "noun",
         "category": "German Slang",
         "id": "noun_slang_B1_14"
     },
@@ -161,6 +175,7 @@
         "artikel": "die",
         "kelime": "Fresse",
         "kural": "Very informal, often offensive.",
+        "type": "noun",
         "category": "German Slang",
         "id": "noun_slang_B1_15"
     },
@@ -172,6 +187,7 @@
         "artikel": "der",
         "kelime": "Bulle",
         "kural": "Can be derogatory for police.",
+        "type": "noun",
         "category": "German Slang",
         "id": "noun_slang_B1_16"
     },
@@ -183,6 +199,7 @@
         "artikel": "der",
         "kelime": "Lappen",
         "kural": "Literal: rag. Slang for Führerschein.",
+        "type": "noun",
         "category": "German Slang",
         "id": "noun_slang_B1_17"
     },
@@ -194,6 +211,7 @@
         "artikel": "der",
         "kelime": "Penner",
         "kural": "Can be highly derogatory.",
+        "type": "noun",
         "category": "German Slang",
         "id": "noun_slang_B1_18"
     },
@@ -205,6 +223,7 @@
         "artikel": "der",
         "kelime": "Schiss",
         "kural": "Very informal. From 'Scheiße'.",
+        "type": "noun",
         "category": "German Slang",
         "id": "noun_slang_B1_19"
     },
@@ -216,6 +235,7 @@
         "artikel": "die",
         "kelime": "Klappe",
         "kural": "Used in expressions to tell someone to be quiet.",
+        "type": "noun",
         "category": "German Slang",
         "id": "noun_slang_B1_20"
     }
