@@ -37,7 +37,7 @@ export const categories = {
     }, {
         nameShort: "medien",
         name: "Medien & Kommunikation",
-        nameEng: "Media & Communication",
+        nameEng: "Media & Comm.",
         imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/A2-Media&Consumption.jpg`,
     }, {
         nameShort: "arbeit",
