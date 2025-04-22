@@ -236,16 +236,6 @@ export const nounDerAnswerClickHandler = function (event) {
   checkNounAnswer('der')
 
 }
-  
-function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords) {
-    // Eğer liste boşsa veya index liste dışındaysa, işlemi durdur
-    if (
-      !kelimeListesiExercise.length ||
-      currentExerciseIndex >= kelimeListesiExercise.length
-    ) {
-      currentExerciseIndex = 0
-      return
-    }
 
 export const nounDieAnswerClickHandler = function (event) {
   event.preventDefault() // Sayfanın yukarı kaymasını engeller
