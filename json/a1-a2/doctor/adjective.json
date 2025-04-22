@@ -1,0 +1,32 @@
+[
+  {
+    "almanca": "billig",
+    "ingilizce": "cheap",
+    "seviye": "A1",
+    "ornek": "Die Tomaten sind heute sehr billig.",
+    "kelime": "billig",
+    "kural": "Describes price or value, ends in '-ig'.",
+    "type": "adjective",
+    "category": "Einkaufen"
+  },
+  {
+    "almanca": "teuer",
+    "ingilizce": "expensive",
+    "seviye": "A1",
+    "ornek": "Das Kleid ist zu teuer für mich.",
+    "kelime": "teuer",
+    "kural": "Common adjective used with shopping or money.",
+    "type": "adjective",
+    "category": "Einkaufen"
+  },
+  {
+    "almanca": "frisch",
+    "ingilizce": "fresh",
+    "seviye": "A1",
+    "ornek": "Das Brot ist noch frisch.",
+    "kelime": "frisch",
+    "kural": "Often used with food.",
+    "type": "adjective",
+    "category": "Einkaufen"
+  }
+]

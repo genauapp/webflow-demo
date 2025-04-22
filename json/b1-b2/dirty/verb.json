@@ -1,0 +1,182 @@
+[
+  {
+    "almanca": "sich bemühen",
+    "ingilizce": "to make an effort",
+    "seviye": "B1",
+    "ornek": "Er bemüht sich um bessere Noten.",
+    "kelime": "sich bemühen",
+    "kural": "Regular reflexive verb, often used with 'um + Akkusativ'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "überzeugen",
+    "ingilizce": "to convince",
+    "seviye": "B1",
+    "ornek": "Er konnte mich nicht überzeugen.",
+    "kelime": "überzeugen",
+    "kural": "Regular verb, usually with accusative object.",
+    "type": "verb"
+  },
+  {
+    "almanca": "erlauben",
+    "ingilizce": "to allow, permit",
+    "seviye": "B1",
+    "ornek": "Meine Eltern erlauben mir das nicht.",
+    "kelime": "erlauben",
+    "kural": "Regular verb, often with dative + accusative.",
+    "type": "verb"
+  },
+  {
+    "almanca": "gelingen",
+    "ingilizce": "to succeed",
+    "seviye": "B2",
+    "ornek": "Es ist mir gelungen, das Problem zu lösen.",
+    "kelime": "gelingen",
+    "kural": "Irregular verb, used impersonally with dative.",
+    "type": "verb"
+  },
+  {
+    "almanca": "vermeiden",
+    "ingilizce": "to avoid",
+    "seviye": "B2",
+    "ornek": "Er versucht, Fehler zu vermeiden.",
+    "kelime": "vermeiden",
+    "kural": "Irregular verb, past: 'vermied', 'vermieden'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "übernehmen",
+    "ingilizce": "to take over",
+    "seviye": "B2",
+    "ornek": "Sie übernimmt die Verantwortung.",
+    "kelime": "übernehmen",
+    "kural": "Inseparable irregular verb, vowel change: e → i, past: 'übernahm', 'übernommen'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "beurteilen",
+    "ingilizce": "to judge, assess",
+    "seviye": "B1",
+    "ornek": "Man sollte Menschen nicht vorschnell beurteilen.",
+    "kelime": "beurteilen",
+    "kural": "Regular verb, inseparable prefix 'be-'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "feststellen",
+    "ingilizce": "to determine, establish",
+    "seviye": "B2",
+    "ornek": "Der Arzt stellt die Diagnose fest.",
+    "kelime": "feststellen",
+    "kural": "Separable regular verb, past: 'stellte fest', 'festgestellt'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "ausschließen",
+    "ingilizce": "to exclude",
+    "seviye": "B2",
+    "ornek": "Er wurde von der Gruppe ausgeschlossen.",
+    "kelime": "ausschließen",
+    "kural": "Separable irregular verb, past: 'schloss aus', 'ausgeschlossen'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "betonen",
+    "ingilizce": "to emphasize",
+    "seviye": "B1",
+    "ornek": "Er betont die Wichtigkeit der Zusammenarbeit.",
+    "kelime": "betonen",
+    "kural": "Regular verb, inseparable prefix 'be-'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "widersprechen",
+    "ingilizce": "to contradict",
+    "seviye": "B2",
+    "ornek": "Er widerspricht oft seinen Kollegen.",
+    "kelime": "widersprechen",
+    "kural": "Irregular verb, always with dative case.",
+    "type": "verb"
+  },
+  {
+    "almanca": "verzichten",
+    "ingilizce": "to renounce, do without",
+    "seviye": "B2",
+    "ornek": "Ich verzichte auf Zucker.",
+    "kelime": "verzichten",
+    "kural": "Regular verb, used with 'auf + Akkusativ'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "beeinflussen",
+    "ingilizce": "to influence",
+    "seviye": "B1",
+    "ornek": "Die Werbung beeinflusst unser Kaufverhalten.",
+    "kelime": "beeinflussen",
+    "kural": "Regular verb, inseparable prefix 'be-'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "abschließen",
+    "ingilizce": "to conclude, lock",
+    "seviye": "B1",
+    "ornek": "Er hat das Studium abgeschlossen.",
+    "kelime": "abschließen",
+    "kural": "Separable irregular verb, past: 'schloss ab', 'abgeschlossen'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "nachweisen",
+    "ingilizce": "to prove",
+    "seviye": "B2",
+    "ornek": "Kannst du deine Qualifikationen nachweisen?",
+    "kelime": "nachweisen",
+    "kural": "Separable irregular verb, past: 'wies nach', 'nachgewiesen'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "zunehmen",
+    "ingilizce": "to increase, gain weight",
+    "seviye": "B2",
+    "ornek": "Die Temperatur nimmt zu.",
+    "kelime": "zunehmen",
+    "kural": "Separable irregular verb, vowel change e → i, past: 'nahm zu', 'zugenommen'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "nachdenken",
+    "ingilizce": "to reflect, think about",
+    "seviye": "B1",
+    "ornek": "Ich muss über das Angebot nachdenken.",
+    "kelime": "nachdenken",
+    "kural": "Separable irregular verb, past: 'dachte nach', 'nachgedacht'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "entstehen",
+    "ingilizce": "to arise, emerge",
+    "seviye": "B2",
+    "ornek": "Hier entsteht ein neues Gebäude.",
+    "kelime": "entstehen",
+    "kural": "Irregular verb, past: 'entstand', 'entstanden'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "beitragen",
+    "ingilizce": "to contribute",
+    "seviye": "B2",
+    "ornek": "Jeder kann etwas zur Diskussion beitragen.",
+    "kelime": "beitragen",
+    "kural": "Separable irregular verb, past: 'trug bei', 'beigetragen'.",
+    "type": "verb"
+  },
+  {
+    "almanca": "sich auseinandersetzen",
+    "ingilizce": "to deal with, engage with",
+    "seviye": "B2",
+    "ornek": "Er setzt sich intensiv mit dem Thema auseinander.",
+    "kelime": "sich auseinandersetzen",
+    "kural": "Separable reflexive regular verb, past: 'setzte auseinander', 'auseinandergesetzt'.",
+    "type": "verb"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "almanca": "bezahlen",
+    "ingilizce": "to pay",
+    "seviye": "A1",
+    "ornek": "Ich möchte mit Karte bezahlen.",
+    "kelime": "bezahlen",
+    "kural": "Regular verb.",
+    "type": "verb",
+    "category": "Einkaufen"
+  },
+  {
+    "almanca": "einkaufen",
+    "ingilizce": "to shop",
+    "seviye": "A1",
+    "ornek": "Ich kaufe jeden Samstag ein.",
+    "kelime": "einkaufen",
+    "kural": "Separable verb: 'ich kaufe ... ein'.",
+    "type": "verb",
+    "category": "Einkaufen"
+  },
+  {
+    "almanca": "nehmen",
+    "ingilizce": "to take",
+    "seviye": "A1",
+    "ornek": "Ich nehme ein Brot, bitte.",
+    "kelime": "nehmen",
+    "kural": "Irregular verb: du nimmst, er nimmt.",
+    "type": "verb",
+    "category": "Einkaufen"
+  }
+]

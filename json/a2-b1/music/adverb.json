@@ -1,0 +1,69 @@
+[
+  {
+    "almanca": "abends",
+    "ingilizce": "in the evening",
+    "seviye": "A2",
+    "ornek": "Abends esse ich meist nur eine Kleinigkeit.",
+    "kelime": "abends",
+    "type": "adverb"
+  },
+  {
+    "almanca": "mittags",
+    "ingilizce": "at noon",
+    "seviye": "A2",
+    "ornek": "Mittags findet man im Zentrum nie einen Parkplatz.",
+    "kelime": "mittags",
+    "type": "adverb"
+  },
+  {
+    "almanca": "morgens",
+    "ingilizce": "in the morning",
+    "seviye": "A2",
+    "ornek": "Morgens telefoniere ich immer mit meiner Familie in Indien.",
+    "kelime": "morgens",
+    "type": "adverb"
+  },
+  {
+    "almanca": "überhaupt",
+    "ingilizce": "at all",
+    "seviye": "B1",
+    "ornek": "Volleyball mag ich überhaupt nicht.",
+    "kelime": "überhaupt",
+    "type": "adverb"
+  },
+  {
+    "almanca": "übrigens",
+    "ingilizce": "by the way",
+    "seviye": "B1",
+    "ornek": "Übrigens: Hast du gestern die Nachrichten geschaut?",
+    "kelime": "übrigens",
+    "type": "adverb"
+  },
+  {
+    "almanca": "zuletzt",
+    "ingilizce": "most recently",
+    "seviye": "B1",
+    "ornek": "Der Einbrecher wurde zuletzt in der Heinstr. gesehen.",
+    "kelime": "zuletzt",
+    "kural": "Denk an ‚das letzte Mal‘",
+    "type": "adverb"
+  },
+  {
+    "almanca": "mehrmals",
+    "ingilizce": "several times",
+    "seviye": "B1",
+    "ornek": " Mein Sohn geht mehrmals pro Woche ins Fitnessstudio",
+    "kelime": "mehrmals",
+    "kural": "‚einmal‘, ‚zweimal‘, ‚dreimal‘…‘mehrmals‘!",
+    "type": "adverb"
+  },
+  {
+    "almanca": "quer",
+    "ingilizce": "crosswise",
+    "seviye": "B1",
+    "ornek": "Lauf einfach quer über die Wiese, das ist der kürzeste Weg.",
+    "kelime": "quer",
+    "kural": "Auf Deutsch: ‚quer‘; auf Englisch: ‚cross‘, ‚across‘, ‚transversely‘…",
+    "type": "adverb"
+  }
+]
