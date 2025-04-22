@@ -20,7 +20,7 @@ export default class ExerciseUtils {
     const selectedWord = wordListExercise[0]
     const currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY, DEFAULT_VALUE.CURRENT_CATEGORY)
     const kelimeListesiInstance = staticWordLists[currentLevel][currentCategory][selectedWord.type]
-    
+   
     const filteredKelimeListesiExercise = kelimeListesiInstance.filter(
       (kelimeExercise) => kelimeExercise.almanca !== selectedWord.almanca
     )
@@ -28,7 +28,6 @@ export default class ExerciseUtils {
     const randomIndex = NumberUtils.getRandomNumber(
       filteredKelimeListesiExercise.length - 1
     )
-
     const randomResult = filteredKelimeListesiExercise[randomIndex].ingilizce
 
     return randomResult

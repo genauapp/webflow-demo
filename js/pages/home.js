@@ -1,5 +1,6 @@
 import { CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY, LEARNED_WITH_LEARN_WORDS_KEY, CURRENT_CATEGORY_KEY, WORD_LIST_EXERCISE_KEY, IN_PROGRESS_WORDS_KEY, WORD_LIST_KEY, TOTAL_WORD_EXERCISE_KEY, TOTAL_WORD_LEARN_KEY, CURRENT_LEARN_INDEX_KEY } from '../constants/storageKeys.js'
 import { JSON_URLS } from '../constants/urls.js'
+import { LEARN_ELEMENT_IDS } from '../constants/elements.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
 import ListUtils from '../utils/ListUtils.js'
 import { types } from '../constants/props.js'
@@ -10,6 +11,7 @@ import showExerciseWord from '../utils/home/ShowExerciseWord.js'
 import checkNounAnswer from '../utils/home/checkNounAnswer.js'
 import showLearnWord from '../utils/home/showLearnWord.js'
 import { isRegularLevel, showSkeleton,hideSkeleton, showOrHideDecks } from '../utils/home/UIUtils.js'
+
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', async () => {
@@ -131,6 +133,7 @@ async function loadWords() {
   let wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
   let wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
 
+
   try {
     showSkeleton(wordType)
 
@@ -142,13 +145,16 @@ async function loadWords() {
       feedbackMessage.innerText = ''
     }
 
+
     const response = await fetch(JSON_URLS[wordType][level][category])
+
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
     }
 
     const data = await response.json()
+
     wordList = [...data]
     wordListExercise = [...data]
     totalWordsExercise = wordList.length
@@ -176,6 +182,7 @@ async function loadWords() {
 // On Page Changes
 document.addEventListener('DOMContentLoaded', async () => {
   try {
+
     //const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
     setupEventListeners()
@@ -212,7 +219,18 @@ document.addEventListener('DOMContentLoaded', async () => {
 export const nounDerAnswerClickHandler = function (event) {
   event.preventDefault() // Sayfanın yukarı kaymasını engeller
   checkNounAnswer('der')
+
 }
+  
+function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords) {
+    // Eğer liste boşsa veya index liste dışındaysa, işlemi durdur
+    if (
+      !kelimeListesiExercise.length ||
+      currentExerciseIndex >= kelimeListesiExercise.length
+    ) {
+      currentExerciseIndex = 0
+      return
+    }
 
 export const nounDieAnswerClickHandler = function (event) {
   event.preventDefault() // Sayfanın yukarı kaymasını engeller
@@ -245,6 +263,7 @@ const nonNounCorrectAnswerClickHandler = (event) => {
   event.preventDefault() // Sayfanın yukarı kaymasını engeller
   checkNonNounAnswer(true)
 }
+
 
 document
   .getElementById('wrongButton-verb')
@@ -369,6 +388,7 @@ function setupListenerForIknowAndLearn(iKnowButton, repeatButton) {
   if (repeatButton && !repeatButton.hasAttribute('listener-attached')) {
     repeatButton.addEventListener('click', repeatButtonClickHandler)
     repeatButton.setAttribute('listener-attached', 'true')
+
   }
 }
 

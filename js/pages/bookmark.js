@@ -2,6 +2,7 @@ import { DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY } from "../constants/sto
 import LocalStorageManager from "../utils/LocalStorageManager.js"
 import { levels, categories, types } from "../constants/props.js"
 
+
 // On Initial Load
 document.addEventListener('DOMContentLoaded', () => {
   LocalStorageManager.clearDeprecatedLocalStorageItems()
@@ -114,6 +115,7 @@ function removeFavorite(index) {
 }
 
 function listLearnedWords() {
+
   const learnedWordsContainer = document.getElementById('learnedWordsContainer');
 
   // Container ayarları

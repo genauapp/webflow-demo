@@ -1,8 +1,9 @@
 // PROD
-//export const ASSETS_BASE_URL = `https://genauapp.github.io/webflow-demo/`
+
+export const ASSETS_BASE_URL = `https://genauapp.github.io/webflow-demo/`
 // STAGING
-export const ASSETS_BASE_URL =
-   'https://cdn.jsdelivr.net/gh/genauapp/webflow-demo@77d97f8'
+// export const ASSETS_BASE_URL =
+//   'https://cdn.jsdelivr.net/gh/chatonode/genau-webflow-demo@4ccb5c4'
 
 /* WORD LEARN/EXERCISE **/
 

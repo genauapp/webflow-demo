@@ -18,12 +18,15 @@ export const IN_PROGRESS_WORDS_KEY = "IN_PROGRESS_WORDS";
 export const CURRENT_LEARN_INDEX_KEY = "CURRENT_LEARN_INDEX"
 export const TOTAL_WORD_EXERCISE_KEY = "TOTAL_WORD_EXERCISE"
 export const TOTAL_WORD_LEARN_KEY = "TOTAL_WORD_LEARN"
+
 /*
   Einbürgerungstest
 */
 
+
 export const CURRENT_STATE_KEY = "CURRENT_STATE";
 export const SHOULD_SHOW_ANSWER_KEY = "SHOULD_SHOW_ANSWER";
+
 export const LEARN__STATE__QUESTION_INDEX_KEY = (state) => {
   // Factory Function
   return `LEARN_${state}_QUESTION_INDEX`;
@@ -36,7 +39,9 @@ export class DEFAULT_VALUE {
   /**
    * App
    */
+
   static APP_VERSION = "1.2.51";
+
 
   /** 
   Homepage
@@ -269,6 +274,7 @@ export class DEFAULT_VALUE {
       einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] }
     }
   };
+
 
   static IN_PROGRESS_WORDS = {
     b1telcpt1: {
