@@ -114,7 +114,7 @@
         "example": "Die Frist endet morgen.",
         "artikel": "die",
         "word": "Frist",
-        "rule": "Time-related nouns (die Zeit, die Stunde, die Minute...) often take 'die'.",
+        "rule": "Time-related nouns (die Zeit, die Stunde, die Minute) often take 'die'.",
         "type": "noun",
         "category": "Behoerden",
         "id": "noun_behoerden_10"
@@ -211,8 +211,8 @@
         "artikel": "die",
         "word": "Unterschrift",
         "rule": "",
-        "category": "Behoerden",
         "type": "noun",
+        "category": "Behoerden",
         "id": "noun_behoerden_18"
     },
     {

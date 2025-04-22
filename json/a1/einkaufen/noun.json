@@ -199,6 +199,7 @@
         "artikel": "die",
         "word": "Tüte",
         "rule": "Nouns ending in '-e' often take 'die'.",
+        "type": "noun",
         "category": "Einkaufen",
         "id": "noun_einkaufen_17"
     },
