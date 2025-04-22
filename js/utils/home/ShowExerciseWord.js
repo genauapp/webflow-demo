@@ -5,7 +5,7 @@ import { hideFinishScreen, showFinishScreen } from "./UIUtils.js"
 
 export default function showExerciseWord() {
     let wordListExercise= LocalStorageManager.load(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
-    const level = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
+    const currentLevel = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
     const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
     const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY, DEFAULT_VALUE.CURRENT_CATEGORY)
@@ -14,7 +14,7 @@ export default function showExerciseWord() {
     // updated indexes
     document.getElementById(
       `remainingWordsCountExercise-${wordType}`
-    ).innerText = learnedWithExerciseWords[level][category][wordType].length
+    ).innerText = learnedWithExerciseWords[currentLevel][category][wordType].length
     document.getElementById('totalWordsCountExercise-' + wordType).innerText =
       totalWordsExercise
   
@@ -25,14 +25,14 @@ export default function showExerciseWord() {
     const buttonCorrect = document.getElementById(`correctButton-${wordType}`)
   
     // max index -> hiding buttons, early return
-    if (learnedWithExerciseWords[level][category][wordType].length === totalWordsExercise) {
+    if (learnedWithExerciseWords[currentLevel][category][wordType].length === totalWordsExercise) {
       showFinishScreen()
       return
     }
 
     hideFinishScreen()
 
-    document.getElementById(`remainingWordsCountExercise-${wordType}`).innerText = learnedWithExerciseWords[level][category][wordType].length
+    document.getElementById(`remainingWordsCountExercise-${wordType}`).innerText = learnedWithExerciseWords[currentLevel][category][wordType].length
     document.getElementById(`totalWordsCountExercise-${wordType}`).innerText = totalWordsExercise
   
     // // reactivate buttons
@@ -48,10 +48,10 @@ export default function showExerciseWord() {
     }
 
     // 🟢 `wordList` içinden `learnedWords`'de olanları çıkar
-    if (learnedWithExerciseWords[level][category][wordType].length > 0) {
+    if (learnedWithExerciseWords[currentLevel][category][wordType].length > 0) {
       wordListExercise = wordListExercise.filter(
         (word) =>
-          !learnedWithExerciseWords[level][category][wordType].some(
+          !learnedWithExerciseWords[currentLevel][category][wordType].some(
             (learned) => learned.german === word.german
           )
       )
@@ -59,18 +59,18 @@ export default function showExerciseWord() {
     }
 
     const currentWord = wordListExercise[0]
-    const progressWord = inProgressWords[level][category][wordType].find(
+    const progressWord = inProgressWords[currentLevel][category][wordType].find(
       (item) => item.german === currentWord.german
     )
   
-    const { word, english, wordLevel } =
+    const { word, english, level } =
       currentWord
     // const renk = artikelRenk(artikel)
   
     // wordnin german kısmını göster
     document.getElementById(`exerciseWord-${wordType}`).innerText = word
     document.getElementById(`levelTagExercise-${wordType}`).innerText =
-      wordLevel || 'N/A'
+      level || 'N/A'
   
     // İngilizce çeviriyi göster (ID üzerinden erişim)
     const exerciseTranslationElement = document.getElementById(`exerciseTranslation-${wordType}`)

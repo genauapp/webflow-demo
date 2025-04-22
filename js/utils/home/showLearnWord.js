@@ -17,7 +17,7 @@ export function artikelRenk(artikel) {
 }
 
 export default function showLearnWord() {
-    const level = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
+    const currentLevel = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
     const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY, DEFAULT_VALUE.CURRENT_CATEGORY)
     const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
@@ -31,7 +31,7 @@ export default function showLearnWord() {
         `repeatButtonLearn-${wordType}`
     )
 
-    if (learnedWithLearnWords[level][category][wordType].length === totalWordsLearn) {
+    if (learnedWithLearnWords[currentLevel][category][wordType].length === totalWordsLearn) {
         showFinishScreen()
         return
     }
@@ -41,13 +41,13 @@ export default function showLearnWord() {
     iKnowButton.style.visibility = 'visible'
     repeatButton.style.visibility = 'visible'
 
-    const { german, english, example, highlight, wordLevel, rule } =
+    const { german, english, example, highlight, level, rule } =
         wordList[0]
 
-    if (learnedWithLearnWords[level][category][wordType].length > 0) {
+    if (learnedWithLearnWords[currentLevel][category][wordType].length > 0) {
         wordList = wordList.filter(
             (word) =>
-                !learnedWithLearnWords[level][category][wordType].some(
+                !learnedWithLearnWords[currentLevel][category][wordType].some(
                     (learned) => learned.german === word.german
                 )
         )
@@ -81,11 +81,11 @@ export default function showLearnWord() {
             break
     }
 
-    document.getElementById(`remainingWordsCountLearn-${wordType}`).innerText = learnedWithLearnWords[level][category][wordType].length
+    document.getElementById(`remainingWordsCountLearn-${wordType}`).innerText = learnedWithLearnWords[currentLevel][category][wordType].length
     document.getElementById(`totalWordsCountLearn-${wordType}`).innerText = totalWordsLearn
 
     document.getElementById(`levelTagLearn-${wordType}`).innerText =
-        wordLevel || 'N/A'
+        level || 'N/A'
     document.getElementById('translationLearn-' + wordType).innerText =
         english || 'N/A'
     document.getElementById('exampleLearn-' + wordType).innerText =
