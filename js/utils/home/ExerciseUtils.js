@@ -25,7 +25,6 @@ export default class ExerciseUtils {
     const randomIndex = NumberUtils.getRandomNumber(
       filteredWordList.length - 1
     )
-
     const randomResult = filteredWordList[randomIndex].english
 
     return randomResult

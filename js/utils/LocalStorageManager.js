@@ -79,7 +79,6 @@ export default class LocalStorageManager {
     const APP_VERSION = LocalStorageManager.load(APP_VERSION_KEY, null)
 
     if (APP_VERSION === null || APP_VERSION !== currentAppVersion) {
-
       LocalStorageManager.clear()
       LocalStorageManager.save(APP_VERSION_KEY, currentAppVersion)
     }

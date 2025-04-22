@@ -11,6 +11,7 @@ import checkNounAnswer from '../utils/home/checkNounAnswer.js'
 import showLearnWord from '../utils/home/showLearnWord.js'
 import { isRegularLevel, showOrHideDecks, loadDeckProps } from '../utils/home/UIUtils.js'
 
+
 // On Initial Load
 document.addEventListener('DOMContentLoaded', async () => {
   LocalStorageManager.clearDeprecatedLocalStorageItems()
@@ -150,15 +151,19 @@ export async function loadWords() {
   let wordList = LocalStorageManager.load(WORD_LIST_KEY)
   let wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY)
 
+
   try {
 
     const response = await fetch(`${ASSETS_BASE_URL}/json/${level}/${category}/${wordType}.json`)
+
+
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
     }
 
     const data = await response.json()
+
     wordList = [...data]
     wordListExercise = [...data]
     const totalWordsExercise = wordList.length
@@ -192,6 +197,7 @@ function checkIsOnLearnOrExercise() {
 // On Page Changes
 document.addEventListener('DOMContentLoaded', async () => {
   try {
+
     //const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
     setupEventListeners()
@@ -228,7 +234,18 @@ document.addEventListener('DOMContentLoaded', async () => {
 export const nounDerAnswerClickHandler = function (event) {
   event.preventDefault() // Sayfanın yukarı kaymasını engeller
   checkNounAnswer('der')
+
 }
+  
+function checkNounAnswer(userArtikel, level, wordType, learnedWithExerciseWords) {
+    // Eğer liste boşsa veya index liste dışındaysa, işlemi durdur
+    if (
+      !kelimeListesiExercise.length ||
+      currentExerciseIndex >= kelimeListesiExercise.length
+    ) {
+      currentExerciseIndex = 0
+      return
+    }
 
 export const nounDieAnswerClickHandler = function (event) {
   event.preventDefault() // Sayfanın yukarı kaymasını engeller
@@ -372,6 +389,7 @@ function setupListenerForIknowAndLearn(iKnowButton, repeatButton) {
   if (repeatButton && !repeatButton.hasAttribute('listener-attached')) {
     repeatButton.addEventListener('click', repeatButtonClickHandler)
     repeatButton.setAttribute('listener-attached', 'true')
+
   }
 }
 
