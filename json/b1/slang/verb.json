@@ -1,0 +1,222 @@
+[
+    {
+        "german": "abhauen",
+        "english": "to take off / run away",
+        "level": "B1",
+        "example": "Hau endlich ab!",
+        "word": "abhauen",
+        "rule": "Separable verb, informal usage.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_01"
+    },
+    {
+        "german": "abkratzen",
+        "english": "to kick the bucket",
+        "level": "B1",
+        "example": "Der Typ ist fast abgekratzt.",
+        "word": "abkratzen",
+        "rule": "Vulgar slang for dying.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_02"
+    },
+    {
+        "german": "abziehen",
+        "english": "to rip off",
+        "level": "B1",
+        "example": "Er hat mich beim Kauf total abgezogen.",
+        "word": "abziehen",
+        "rule": "Slang for cheating someone.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_03"
+    },
+    {
+        "german": "chillen",
+        "english": "to chill",
+        "level": "B1",
+        "example": "Wir chillen heute im Park.",
+        "word": "chillen",
+        "rule": "Loanword from English.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_04"
+    },
+    {
+        "german": "verarschen",
+        "english": "to mess with / make fun of",
+        "level": "B1",
+        "example": "Willst du mich verarschen?",
+        "word": "verarschen",
+        "rule": "Crude, commonly used in speech.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_05"
+    },
+    {
+        "german": "labern",
+        "english": "to babble / blabber",
+        "level": "B1",
+        "example": "Er labert den ganzen Tag nur Mist.",
+        "word": "labern",
+        "rule": "Used to describe meaningless talking.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_06"
+    },
+    {
+        "german": "nerven",
+        "english": "to annoy",
+        "level": "B1",
+        "example": "Du nervst total!",
+        "word": "nerven",
+        "rule": "Common youth slang.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_07"
+    },
+    {
+        "german": "saufen",
+        "english": "to booze",
+        "level": "B1",
+        "example": "Am Wochenende saufen wir.",
+        "word": "saufen",
+        "rule": "Slang for drinking alcohol heavily.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_08"
+    },
+    {
+        "german": "glotzen",
+        "english": "to stare / to watch",
+        "level": "B1",
+        "example": "Ich glotz nur Fernsehen.",
+        "word": "glotzen",
+        "rule": "Used for watching TV or staring.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_09"
+    },
+    {
+        "german": "pennen",
+        "english": "to sleep / crash",
+        "level": "B1",
+        "example": "Ich penn heute bei Max.",
+        "word": "pennen",
+        "rule": "Casual verb for sleeping.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_10"
+    },
+    {
+        "german": "klauen",
+        "english": "to steal",
+        "level": "B1",
+        "example": "Jemand hat mein Fahrrad geklaut.",
+        "word": "klauen",
+        "rule": "Slang for 'stehlen'.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_11"
+    },
+    {
+        "german": "abgehen",
+        "english": "to go crazy / party hard",
+        "level": "B1",
+        "example": "Auf der Party ging’s richtig ab.",
+        "word": "abgehen",
+        "rule": "Separable, used for intense activity.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_12"
+    },
+    {
+        "german": "verzocken",
+        "english": "to blow (money)",
+        "level": "B1",
+        "example": "Er hat alles beim Poker verzockt.",
+        "word": "verzocken",
+        "rule": "Slang for losing money gambling.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_13"
+    },
+    {
+        "german": "rumhängen",
+        "english": "to hang around",
+        "level": "B1",
+        "example": "Wir hängen nur rum.",
+        "word": "rumhängen",
+        "rule": "Separable, lazy behavior.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_14"
+    },
+    {
+        "german": "ankommen",
+        "english": "to be received (by others)",
+        "level": "B1",
+        "example": "Das kommt gar nicht gut an.",
+        "word": "ankommen",
+        "rule": "Separable. Slang context dependent.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_15"
+    },
+    {
+        "german": "schnorren",
+        "english": "to beg / mooch",
+        "level": "B1",
+        "example": "Kann ich eine Kippe schnorren?",
+        "word": "schnorren",
+        "rule": "Casual form for asking favors.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_16"
+    },
+    {
+        "german": "rumschreien",
+        "english": "to yell around",
+        "level": "B1",
+        "example": "Schrei nicht so rum!",
+        "word": "rumschreien",
+        "rule": "Separable, emotional outburst.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_17"
+    },
+    {
+        "german": "hauen",
+        "english": "to hit",
+        "level": "B1",
+        "example": "Wenn du mich haust, hau ich zurück!",
+        "word": "hauen",
+        "rule": "Simple and colloquial.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_18"
+    },
+    {
+        "german": "abkacken",
+        "english": "to fail / crash",
+        "level": "B1",
+        "example": "Mein PC ist komplett abgekackt.",
+        "word": "abkacken",
+        "rule": "Crude slang, often used with tech.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_19"
+    },
+    {
+        "german": "abdrehen",
+        "english": "to freak out",
+        "level": "B1",
+        "example": "Ich dreh gleich ab!",
+        "word": "abdrehen",
+        "rule": "Separable, expresses mental state.",
+        "type": "verb",
+        "category": "German Slang",
+        "id": "verb_slang_B1_20"
+    }
+]

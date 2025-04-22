@@ -1,0 +1,32 @@
+[
+  {
+    "german": "bezahlen",
+    "english": "to pay",
+    "level": "A1",
+    "example": "Ich möchte mit Karte bezahlen.",
+    "word": "bezahlen",
+    "rule": "Regular verb.",
+    "type": "verb",
+    "category": "Einkaufen"
+  },
+  {
+    "german": "einkaufen",
+    "english": "to shop",
+    "level": "A1",
+    "example": "Ich kaufe jeden Samstag ein.",
+    "word": "einkaufen",
+    "rule": "Separable verb: 'ich kaufe ... ein'.",
+    "type": "verb",
+    "category": "Einkaufen"
+  },
+  {
+    "german": "nehmen",
+    "english": "to take",
+    "level": "A1",
+    "example": "Ich nehme ein Brot, bitte.",
+    "word": "nehmen",
+    "rule": "Irregular verb: du nimmst, er nimmt.",
+    "type": "verb",
+    "category": "Einkaufen"
+  }
+]

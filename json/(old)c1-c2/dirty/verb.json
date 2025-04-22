@@ -1,0 +1,182 @@
+[
+  {
+    "german": "widerspiegeln",
+    "english": "to reflect, mirror",
+    "level": "C1",
+    "example": "Das Verhalten spiegelt seine Einstellung wider.",
+    "word": "widerspiegeln",
+    "rule": "Separable verb, past: 'spiegelte wider', 'widergespiegelt'.",
+    "type": "verb"
+  },
+  {
+    "german": "voraussetzen",
+    "english": "to assume, presuppose",
+    "level": "C1",
+    "example": "Diese Aufgabe setzt viel Wissen voraus.",
+    "word": "voraussetzen",
+    "rule": "Separable regular verb, past: 'setzte voraus', 'vorausgesetzt'.",
+    "type": "verb"
+  },
+  {
+    "german": "wahrnehmen",
+    "english": "to perceive",
+    "level": "C1",
+    "example": "Ich nehme einen Unterschied wahr.",
+    "word": "wahrnehmen",
+    "rule": "Separable irregular verb, vowel change: e → i, past: 'nahm wahr', 'wahrgenommen'.",
+    "type": "verb"
+  },
+  {
+    "german": "hervorgehen",
+    "english": "to emerge, result",
+    "level": "C2",
+    "example": "Aus dem Bericht geht hervor, dass die Zahlen steigen.",
+    "word": "hervorgehen",
+    "rule": "Separable irregular verb, past: 'ging hervor', 'hervorgegangen'.",
+    "type": "verb"
+  },
+  {
+    "german": "sich auseinandersetzen",
+    "english": "to deal with, engage critically",
+    "level": "C1",
+    "example": "Sie setzt sich intensiv mit dem Thema auseinander.",
+    "word": "sich auseinandersetzen",
+    "rule": "Separable reflexive regular verb, past: 'setzte auseinander', 'auseinandergesetzt'.",
+    "type": "verb"
+  },
+  {
+    "german": "zurückgreifen",
+    "english": "to fall back on, resort to",
+    "level": "C2",
+    "example": "Im Notfall kann man auf alte Methoden zurückgreifen.",
+    "word": "zurückgreifen",
+    "rule": "Separable irregular verb, past: 'griff zurück', 'zurückgegriffen'.",
+    "type": "verb"
+  },
+  {
+    "german": "beeinträchtigen",
+    "english": "to impair, negatively affect",
+    "level": "C1",
+    "example": "Lärm kann die Konzentration beeinträchtigen.",
+    "word": "beeinträchtigen",
+    "rule": "Regular verb, inseparable prefix 'be-'.",
+    "type": "verb"
+  },
+  {
+    "german": "entfallen",
+    "english": "to be omitted, to lapse",
+    "level": "C2",
+    "example": "Die Prüfung entfällt dieses Jahr.",
+    "word": "entfallen",
+    "rule": "Irregular verb, vowel change: a → ä, past: 'entfiel', 'entfallen'.",
+    "type": "verb"
+  },
+  {
+    "german": "unterbinden",
+    "english": "to suppress, prevent",
+    "level": "C2",
+    "example": "Die Polizei unterbindet illegale Aktivitäten.",
+    "word": "unterbinden",
+    "rule": "Irregular verb, past: 'unterband', 'unterbunden'.",
+    "type": "verb"
+  },
+  {
+    "german": "vorherrschen",
+    "english": "to prevail, dominate",
+    "level": "C1",
+    "example": "In dieser Region herrscht ein mildes Klima vor.",
+    "word": "vorherrschen",
+    "rule": "Separable regular verb, past: 'herrschte vor', 'vorherrscht'.",
+    "type": "verb"
+  },
+  {
+    "german": "vorliegen",
+    "english": "to be present, to exist",
+    "level": "C1",
+    "example": "Es liegt noch kein Ergebnis vor.",
+    "word": "vorliegen",
+    "rule": "Separable irregular verb, past: 'lag vor', 'vorgelegen'.",
+    "type": "verb"
+  },
+  {
+    "german": "erörtern",
+    "english": "to discuss in detail",
+    "level": "C1",
+    "example": "Das Thema wurde ausführlich erörtert.",
+    "word": "erörtern",
+    "rule": "Regular verb.",
+    "type": "verb"
+  },
+  {
+    "german": "veranschaulichen",
+    "english": "to illustrate, exemplify",
+    "level": "C1",
+    "example": "Er veranschaulicht seine Argumente mit Beispielen.",
+    "word": "veranschaulichen",
+    "rule": "Regular verb, inseparable prefix 'ver-'.",
+    "type": "verb"
+  },
+  {
+    "german": "entbehren",
+    "english": "to do without, lack",
+    "level": "C2",
+    "example": "Er kann seine Hilfe nicht entbehren.",
+    "word": "entbehren",
+    "rule": "Regular verb, inseparable prefix 'ent-'.",
+    "type": "verb"
+  },
+  {
+    "german": "unterliegen",
+    "english": "to be subject to, succumb",
+    "level": "C2",
+    "example": "Das Produkt unterliegt strengen Kontrollen.",
+    "word": "unterliegen",
+    "rule": "Irregular verb, past: 'unterlag', 'unterlegen'.",
+    "type": "verb"
+  },
+  {
+    "german": "anstreben",
+    "english": "to strive for",
+    "level": "C1",
+    "example": "Er strebt eine Beförderung an.",
+    "word": "anstreben",
+    "rule": "Separable regular verb, past: 'strebte an', 'angestrebt'.",
+    "type": "verb"
+  },
+  {
+    "german": "vorsehen",
+    "english": "to plan, provide for",
+    "level": "C2",
+    "example": "Das Gesetz sieht vor, dass ...",
+    "word": "vorsehen",
+    "rule": "Separable irregular verb, vowel change: e → ie, past: 'sah vor', 'vorgesehen'.",
+    "type": "verb"
+  },
+  {
+    "german": "eintreten für",
+    "english": "to advocate for",
+    "level": "C1",
+    "example": "Er tritt für den Umweltschutz ein.",
+    "word": "eintreten für",
+    "rule": "Separable irregular verb, past: 'trat ein', 'eingetreten'.",
+    "type": "verb"
+  },
+  {
+    "german": "zurückführen auf",
+    "english": "to attribute to",
+    "level": "C1",
+    "example": "Die Probleme lassen sich auf falsche Entscheidungen zurückführen.",
+    "word": "zurückführen auf",
+    "rule": "Separable regular verb, past: 'führte zurück', 'zurückgeführt'.",
+    "type": "verb"
+  },
+  {
+    "german": "auslösen",
+    "english": "to trigger, cause",
+    "level": "C1",
+    "example": "Das Ereignis hat große Diskussionen ausgelöst.",
+    "word": "auslösen",
+    "rule": "Separable regular verb, past: 'löste aus', 'ausgelöst'.",
+    "type": "verb"
+  }
+]

@@ -1,0 +1,222 @@
+[
+    {
+        "german": "ausgehen",
+        "english": "to go out",
+        "level": "A2",
+        "example": "Am Wochenende gehen wir oft aus.",
+        "word": "ausgehen",
+        "rule": "Separable verb; ich gehe ... aus.",
+        "type": "verb",
+        "category": "Freizeit & Konsum",
+        "id": "verb_freizeit_A2_01"
+    },
+    {
+        "german": "sich entspannen",
+        "english": "to relax",
+        "level": "A2",
+        "example": "Ich entspanne mich mit Musik.",
+        "word": "sich entspannen",
+        "rule": "Reflexive regular verb.",
+        "type": "verb",
+        "category": "Freizeit & Konsum",
+        "id": "verb_freizeit_A2_02"
+    },
+    {
+        "german": "spazieren gehen",
+        "english": "to go for a walk",
+        "level": "A2",
+        "example": "Wir gehen jeden Abend spazieren.",
+        "word": "spazieren gehen",
+        "rule": "Verb combination; separable structure.",
+        "type": "verb",
+        "category": "Freizeit & Konsum",
+        "id": "verb_freizeit_A2_03"
+    },
+    {
+        "german": "einkaufen",
+        "english": "to shop",
+        "level": "A2",
+        "example": "Ich kaufe am Samstag ein.",
+        "word": "einkaufen",
+        "rule": "Separable verb; ich kaufe ... ein.",
+        "type": "verb",
+        "category": "Freizeit & Konsum",
+        "id": "verb_freizeit_A2_04"
+    },
+    {
+        "german": "ansehen",
+        "english": "to watch",
+        "level": "A2",
+        "example": "Wir sehen einen Film an.",
+        "word": "ansehen",
+        "rule": "Separable verb; ich sehe ... an.",
+        "type": "verb",
+        "category": "Freizeit & Konsum",
+        "id": "verb_freizeit_A2_05"
+    },
+    {
+        "german": "lesen",
+        "english": "to read",
+        "level": "A2",
+        "example": "Ich lese gern Romane.",
+        "word": "lesen",
+        "rule": "Irregular verb: du liest.",
+        "type": "verb",
+        "category": "Freizeit & Konsum",
+        "id": "verb_freizeit_A2_06"
+    },
+    {
+        "german": "zeichnen",
+        "english": "to draw",
+        "level": "A2",
+        "example": "Ich zeichne gerne in meiner Freizeit.",
+        "word": "zeichnen",
+        "rule": "Regular verb.",
+        "type": "verb",
+        "category": "Freizeit & Konsum",
+        "id": "verb_freizeit_A2_07"
+    },
+    {
+        "german": "spielen",
+        "english": "to play",
+        "level": "A2",
+        "example": "Die Kinder spielen draußen.",
+        "word": "spielen",
+        "rule": "Regular verb; used with games, music.",
+        "type": "verb",
+        "category": "Freizeit & Konsum",
+        "id": "verb_freizeit_A2_08"
+    },
+    {
+        "german": "sammeln",
+        "english": "to collect",
+        "level": "A2",
+        "example": "Ich sammle Briefmarken.",
+        "word": "sammeln",
+        "rule": "Stem ends in -el; add 'e' in du-form.",
+        "type": "verb",
+        "category": "Freizeit & Konsum",
+        "id": "verb_freizeit_A2_09"
+    },
+    {
+        "german": "hören",
+        "english": "to listen",
+        "level": "A2",
+        "example": "Ich höre gern Musik.",
+        "word": "hören",
+        "rule": "Regular verb.",
+        "type": "verb",
+        "category": "Freizeit & Konsum",
+        "id": "verb_freizeit_A2_10"
+    },
+    {
+        "german": "tanzen",
+        "english": "to dance",
+        "level": "A2",
+        "example": "Wir tanzen auf der Party.",
+        "word": "tanzen",
+        "rule": "Regular verb.",
+        "type": "verb",
+        "category": "Freizeit & Konsum",
+        "id": "verb_freizeit_A2_11"
+    },
+    {
+        "german": "besuchen",
+        "english": "to visit",
+        "level": "A2",
+        "example": "Wir besuchen ein Museum.",
+        "word": "besuchen",
+        "rule": "Regular verb with inseparable prefix.",
+        "type": "verb",
+        "category": "Freizeit & Konsum",
+        "id": "verb_freizeit_A2_12"
+    },
+    {
+        "german": "basteln",
+        "english": "to do crafts",
+        "level": "A2",
+        "example": "Ich bastle gern mit Papier.",
+        "word": "basteln",
+        "rule": "Verbs ending in -eln have 'e' added in du-form.",
+        "type": "verb",
+        "category": "Freizeit & Konsum",
+        "id": "verb_freizeit_A2_13"
+    },
+    {
+        "german": "ausprobieren",
+        "english": "to try out",
+        "level": "A2",
+        "example": "Ich probiere ein neues Spiel aus.",
+        "word": "ausprobieren",
+        "rule": "Separable verb.",
+        "type": "verb",
+        "category": "Freizeit & Konsum",
+        "id": "verb_freizeit_A2_14"
+    },
+    {
+        "german": "kochen",
+        "english": "to cook",
+        "level": "A2",
+        "example": "Ich koche gern italienisches Essen.",
+        "word": "kochen",
+        "rule": "Regular verb.",
+        "type": "verb",
+        "category": "Freizeit & Konsum",
+        "id": "verb_freizeit_A2_15"
+    },
+    {
+        "german": "fotografieren",
+        "english": "to take photos",
+        "level": "A2",
+        "example": "Ich fotografiere oft auf Reisen.",
+        "word": "fotografieren",
+        "rule": "Regular verb with '-ieren' suffix.",
+        "type": "verb",
+        "category": "Freizeit & Konsum",
+        "id": "verb_freizeit_A2_16"
+    },
+    {
+        "german": "schwimmen",
+        "english": "to swim",
+        "level": "A2",
+        "example": "Ich gehe am Wochenende schwimmen.",
+        "word": "schwimmen",
+        "rule": "Irregular verb: schwamm, geschwommen.",
+        "type": "verb",
+        "category": "Freizeit & Konsum",
+        "id": "verb_freizeit_A2_17"
+    },
+    {
+        "german": "trainieren",
+        "english": "to train, practice",
+        "level": "A2",
+        "example": "Ich trainiere dreimal pro Woche.",
+        "word": "trainieren",
+        "rule": "Regular verb ending in '-ieren'.",
+        "type": "verb",
+        "category": "Freizeit & Konsum",
+        "id": "verb_freizeit_A2_18"
+    },
+    {
+        "german": "reservieren",
+        "english": "to reserve",
+        "level": "A2",
+        "example": "Ich reserviere einen Tisch im Restaurant.",
+        "word": "reservieren",
+        "rule": "Regular verb with '-ieren'.",
+        "type": "verb",
+        "category": "Freizeit & Konsum",
+        "id": "verb_freizeit_A2_19"
+    },
+    {
+        "german": "bezahlen",
+        "english": "to pay",
+        "level": "A2",
+        "example": "Ich bezahle die Rechnung.",
+        "word": "bezahlen",
+        "rule": "Regular verb.",
+        "type": "verb",
+        "category": "Freizeit & Konsum",
+        "id": "verb_freizeit_A2_20"
+    }
+]

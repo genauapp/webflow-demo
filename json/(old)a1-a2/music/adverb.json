@@ -1,0 +1,32 @@
+[
+  {
+    "german": "oft",
+    "english": "often",
+    "level": "A1",
+    "example": "Ich bin oft krank.",
+    "word": "oft",
+    "rule": "Frequency adverbs can be used before or after the verb.",
+    "type": "adverb",
+    "category": "Gesundheit"
+  },
+  {
+    "german": "kaum",
+    "english": "hardly",
+    "level": "A1",
+    "example": "Ich kann kaum sprechen.",
+    "word": "kaum",
+    "rule": "Negation-related adverb, often used with modal verbs.",
+    "type": "adverb",
+    "category": "Gesundheit"
+  },
+  {
+    "german": "besser",
+    "english": "better",
+    "level": "A1",
+    "example": "Ich fühle mich besser.",
+    "word": "besser",
+    "rule": "Comparative form of 'gut', often used with 'fühlen'.",
+    "type": "adverb",
+    "category": "Gesundheit"
+  }
+]

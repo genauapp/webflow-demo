@@ -1,0 +1,82 @@
+[
+  {
+    "german": "anspruchsvoll",
+    "english": "demanding, sophisticated",
+    "level": "C1",
+    "example": "Das Publikum war sehr anspruchsvoll.",
+    "word": "anspruchsvoll",
+    "type": "adjective"
+  },
+  {
+    "german": "überwältigend",
+    "english": "overwhelming",
+    "level": "C1",
+    "example": "Der Ausblick war einfach überwältigend.",
+    "word": "überwältigend",
+    "type": "adjective"
+  },
+  {
+    "german": "unüberschaubar",
+    "english": "unmanageable, vast",
+    "level": "C2",
+    "example": "Die Menge war unüberschaubar.",
+    "word": "unüberschaubar",
+    "type": "adjective"
+  },
+  {
+    "german": "vielschichtig",
+    "english": "multi-layered, complex",
+    "level": "C1",
+    "example": "Sein Charakter ist sehr vielschichtig.",
+    "word": "vielschichtig",
+    "type": "adjective"
+  },
+  {
+    "german": "prägnant",
+    "english": "concise, succinct",
+    "level": "C1",
+    "example": "Ihre Argumente sind immer sehr prägnant.",
+    "word": "prägnant",
+    "type": "adjective"
+  },
+  {
+    "german": "widersprüchlich",
+    "english": "contradictory",
+    "level": "C1",
+    "example": "Die Aussagen sind widersprüchlich.",
+    "word": "widersprüchlich",
+    "type": "adjective"
+  },
+  {
+    "german": "gründlich",
+    "english": "thorough",
+    "level": "C1",
+    "example": "Er hat eine gründliche Analyse gemacht.",
+    "word": "gründlich",
+    "type": "adjective"
+  },
+  {
+    "german": "vielversprechend",
+    "english": "promising",
+    "level": "C2",
+    "example": "Das ist ein vielversprechendes Projekt.",
+    "word": "vielversprechend",
+    "type": "adjective"
+  },
+  {
+    "german": "unverzichtbar",
+    "english": "indispensable",
+    "level": "C2",
+    "example": "Teamarbeit ist in diesem Beruf unverzichtbar.",
+    "word": "unverzichtbar",
+    "type": "adjective"
+  },
+  {
+    "german": "verheerend",
+    "english": "devastating",
+    "level": "C2",
+    "example": "Der Sturm hatte verheerende Folgen.",
+    "word": "verheerend",
+    "type": "adjective"
+  }
+]

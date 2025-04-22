@@ -1,0 +1,222 @@
+[
+  {
+    "type": "noun",
+    "german": "der Kompromiss",
+    "english": "compromise",
+    "level": "B1",
+    "example": "Wir müssen einen Kompromiss finden.",
+    "artikel": "der",
+    "word": "Kompromiss",
+    "rule": "Most nouns ending in '-iss' take 'der'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "der Einfluss",
+    "english": "influence",
+    "level": "B1",
+    "example": "Sein Einfluss auf die Entscheidung war groß.",
+    "artikel": "der",
+    "word": "Einfluss",
+    "rule": "Nouns ending in '-fluss' (related to flow/movement) take 'der'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "der Fortschritt",
+    "english": "progress",
+    "level": "B1",
+    "example": "Der Fortschritt in der Medizin ist beeindruckend.",
+    "artikel": "der",
+    "word": "Fortschritt",
+    "rule": "Most nouns ending in '-schritt' (step/advancement) take 'der'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "der Widerstand",
+    "english": "resistance",
+    "level": "B1",
+    "example": "Der Widerstand gegen die neuen Regeln wächst.",
+    "artikel": "der",
+    "word": "Widerstand",
+    "rule": "Most nouns with 'Wider-' (against) take 'der'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "der Zugang",
+    "english": "access",
+    "level": "B1",
+    "example": "Ich habe keinen Zugang zum System.",
+    "artikel": "der",
+    "word": "Zugang",
+    "rule": "Nouns ending in '-gang' (related to movement) take 'der'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "die Bestätigung",
+    "english": "confirmation",
+    "level": "B1",
+    "example": "Ich brauche eine Bestätigung für meine Anmeldung.",
+    "artikel": "die",
+    "word": "Bestätigung",
+    "rule": "Nouns ending in '-ung' always take 'die'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "die Herausforderung",
+    "english": "challenge",
+    "level": "B1",
+    "example": "Das ist eine große Herausforderung für mich.",
+    "artikel": "die",
+    "word": "Herausforderung",
+    "rule": "Nouns ending in '-ung' always take 'die'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "die Vorschrift",
+    "english": "regulation",
+    "level": "B1",
+    "example": "Die neuen Vorschriften müssen beachtet werden.",
+    "artikel": "die",
+    "word": "Vorschrift",
+    "rule": "Nouns ending in '-schrift' take 'die'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "die Fähigkeit",
+    "english": "ability",
+    "level": "B1",
+    "example": "Seine Fähigkeit, schnell zu lernen, ist beeindruckend.",
+    "artikel": "die",
+    "word": "Fähigkeit",
+    "rule": "Nouns ending in '-keit' always take 'die'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "die Überzeugung",
+    "english": "conviction, belief",
+    "level": "B1",
+    "example": "Seine Überzeugung ist sehr stark.",
+    "artikel": "die",
+    "word": "Überzeugung",
+    "rule": "Nouns ending in '-ung' always take 'die'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "das Verhältnis",
+    "english": "relationship, ratio",
+    "level": "B1",
+    "example": "Das Verhältnis zwischen den beiden ist kompliziert.",
+    "artikel": "das",
+    "word": "Verhältnis",
+    "rule": "Nouns ending in '-nis' usually take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "das Eigentum",
+    "english": "property, ownership",
+    "level": "B1",
+    "example": "Dieses Haus ist mein Eigentum.",
+    "artikel": "das",
+    "word": "Eigentum",
+    "rule": "Nouns ending in '-tum' usually take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "das Bewusstsein",
+    "english": "awareness, consciousness",
+    "level": "B1",
+    "example": "Das Bewusstsein für Umweltprobleme wächst.",
+    "artikel": "das",
+    "word": "Bewusstsein",
+    "rule": "Most nouns ending in '-sein' take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "das Wachstum",
+    "english": "growth",
+    "level": "B1",
+    "example": "Das wirtschaftliche Wachstum ist stabil.",
+    "artikel": "das",
+    "word": "Wachstum",
+    "rule": "Most nouns ending in '-tum' take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "das Verfahren",
+    "english": "procedure",
+    "level": "B1",
+    "example": "Das Verfahren ist sehr kompliziert.",
+    "artikel": "das",
+    "word": "Verfahren",
+    "rule": "Most nouns ending in '-en' that describe actions take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "das Hindernis",
+    "english": "obstacle",
+    "level": "B1",
+    "example": "Wir müssen dieses Hindernis überwinden.",
+    "artikel": "das",
+    "word": "Hindernis",
+    "rule": "Nouns ending in '-nis' usually take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "das Vermögen",
+    "english": "wealth, fortune",
+    "level": "B1",
+    "example": "Er hat ein großes Vermögen geerbt.",
+    "artikel": "das",
+    "word": "Vermögen",
+    "rule": "Most nouns beginning with 'Ver-' that indicate possession take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "das Gewissen",
+    "english": "conscience",
+    "level": "B1",
+    "example": "Er hat ein schlechtes Gewissen wegen der Lüge.",
+    "artikel": "das",
+    "word": "Gewissen",
+    "rule": "Most nouns starting with 'Ge-' take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "das Missverständnis",
+    "english": "misunderstanding",
+    "level": "B1",
+    "example": "Es gab ein Missverständnis zwischen uns.",
+    "artikel": "das",
+    "word": "Missverständnis",
+    "rule": "Nouns beginning with 'Miss-' and ending in '-nis' take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "die Entwicklung",
+    "english": "development",
+    "level": "B1",
+    "example": "Die Entwicklung neuer Technologien ist wichtig.",
+    "artikel": "die",
+    "word": "Entwicklung",
+    "rule": "Nouns ending in '-ung' always take 'die'.",
+    "highlight": ""
+  }
+]

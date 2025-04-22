@@ -1,0 +1,32 @@
+[
+  {
+    "german": "husten",
+    "english": "to cough",
+    "level": "A1",
+    "example": "Er hustet seit gestern.",
+    "word": "husten",
+    "rule": "Regular verb.",
+    "type": "verb",
+    "category": "Gesundheit"
+  },
+  {
+    "german": "schlafen",
+    "english": "to sleep",
+    "level": "A1",
+    "example": "Ich schlafe acht Stunden pro Nacht.",
+    "word": "schlafen",
+    "rule": "Irregular verb: du schläfst, er schläft.",
+    "type": "verb",
+    "category": "Gesundheit"
+  },
+  {
+    "german": "nehmen",
+    "english": "to take (medicine)",
+    "level": "A1",
+    "example": "Ich nehme eine Tablette gegen Kopfschmerzen.",
+    "word": "nehmen",
+    "rule": "Irregular verb: du nimmst, er nimmt.",
+    "type": "verb",
+    "category": "Gesundheit"
+  }
+]

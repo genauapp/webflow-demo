@@ -1,0 +1,69 @@
+[
+  {
+    "german": "abends",
+    "english": "in the evening",
+    "level": "A2",
+    "example": "Abends esse ich meist nur eine Kleinigkeit.",
+    "word": "abends",
+    "type": "adverb"
+  },
+  {
+    "german": "mittags",
+    "english": "at noon",
+    "level": "A2",
+    "example": "Mittags findet man im Zentrum nie einen Parkplatz.",
+    "word": "mittags",
+    "type": "adverb"
+  },
+  {
+    "german": "morgens",
+    "english": "in the morning",
+    "level": "A2",
+    "example": "Morgens telefoniere ich immer mit meiner Familie in Indien.",
+    "word": "morgens",
+    "type": "adverb"
+  },
+  {
+    "german": "überhaupt",
+    "english": "at all",
+    "level": "B1",
+    "example": "Volleyball mag ich überhaupt nicht.",
+    "word": "überhaupt",
+    "type": "adverb"
+  },
+  {
+    "german": "übrigens",
+    "english": "by the way",
+    "level": "B1",
+    "example": "Übrigens: Hast du gestern die Nachrichten geschaut?",
+    "word": "übrigens",
+    "type": "adverb"
+  },
+  {
+    "german": "zuletzt",
+    "english": "most recently",
+    "level": "B1",
+    "example": "Der Einbrecher wurde zuletzt in der Heinstr. gesehen.",
+    "word": "zuletzt",
+    "rule": "Denk an ‚das letzte Mal‘",
+    "type": "adverb"
+  },
+  {
+    "german": "mehrmals",
+    "english": "several times",
+    "level": "B1",
+    "example": " Mein Sohn geht mehrmals pro Woche ins Fitnessstudio",
+    "word": "mehrmals",
+    "rule": "‚einmal‘, ‚zweimal‘, ‚dreimal‘…‘mehrmals‘!",
+    "type": "adverb"
+  },
+  {
+    "german": "quer",
+    "english": "crosswise",
+    "level": "B1",
+    "example": "Lauf einfach quer über die Wiese, das ist der kürzeste Weg.",
+    "word": "quer",
+    "rule": "Auf Deutsch: ‚quer‘; auf Englisch: ‚cross‘, ‚across‘, ‚transversely‘…",
+    "type": "adverb"
+  }
+]

@@ -1,0 +1,202 @@
+[
+    {
+        "german": "bescheuert",
+        "english": "stupid / nuts",
+        "level": "B1",
+        "example": "Was für eine bescheuerte Idee!",
+        "word": "bescheuert",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_01"
+    },
+    {
+        "german": "fett",
+        "english": "awesome / cool (slang)",
+        "level": "B1",
+        "example": "Das Konzert war richtig fett!",
+        "word": "fett",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_02"
+    },
+    {
+        "german": "geil",
+        "english": "cool / awesome / sexy",
+        "level": "B1",
+        "example": "Das war ein geiler Film!",
+        "word": "geil",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_03"
+    },
+    {
+        "german": "assi",
+        "english": "trashy / low-class",
+        "level": "B1",
+        "example": "Das ist total assi.",
+        "word": "assi",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_04"
+    },
+    {
+        "german": "ätzend",
+        "english": "annoying / lame",
+        "level": "B1",
+        "example": "Die Party war echt ätzend.",
+        "word": "ätzend",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_05"
+    },
+    {
+        "german": "locker",
+        "english": "chill / relaxed",
+        "level": "B1",
+        "example": "Er ist ein ganz lockerer Typ.",
+        "word": "locker",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_06"
+    },
+    {
+        "german": "spießig",
+        "english": "narrow-minded / square",
+        "level": "B1",
+        "example": "Du bist so spießig!",
+        "word": "spießig",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_07"
+    },
+    {
+        "german": "pleite",
+        "english": "broke",
+        "level": "B1",
+        "example": "Ich bin total pleite.",
+        "word": "pleite",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_08"
+    },
+    {
+        "german": "banane",
+        "english": "irrelevant / not important",
+        "level": "B1",
+        "example": "Das ist doch total banane.",
+        "word": "banane",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_09"
+    },
+    {
+        "german": "knorke",
+        "english": "cool (old-fashioned slang)",
+        "level": "B1",
+        "example": "Das war echt knorke!",
+        "word": "knorke",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_10"
+    },
+    {
+        "german": "verpeilt",
+        "english": "scatterbrained / forgetful",
+        "level": "B1",
+        "example": "Ich bin heute total verpeilt.",
+        "word": "verpeilt",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_11"
+    },
+    {
+        "german": "cringe",
+        "english": "cringe",
+        "level": "B1",
+        "example": "Das war echt cringe.",
+        "word": "cringe",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_12"
+    },
+    {
+        "german": "lost",
+        "english": "clueless / out of it",
+        "level": "B1",
+        "example": "Du bist so lost.",
+        "word": "lost",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_13"
+    },
+    {
+        "german": "nice",
+        "english": "nice",
+        "level": "B1",
+        "example": "Nice gemacht!",
+        "word": "nice",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_14"
+    },
+    {
+        "german": "doof",
+        "english": "silly / dumb",
+        "level": "B1",
+        "example": "Das war eine doofe Idee.",
+        "word": "doof",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_15"
+    },
+    {
+        "german": "blöd",
+        "english": "stupid",
+        "level": "B1",
+        "example": "Du bist doch blöd!",
+        "word": "blöd",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_16"
+    },
+    {
+        "german": "top",
+        "english": "great / top",
+        "level": "B1",
+        "example": "Das war echt top gemacht.",
+        "word": "top",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_17"
+    },
+    {
+        "german": "flott",
+        "english": "quick / stylish",
+        "level": "B1",
+        "example": "Das Auto sieht flott aus.",
+        "word": "flott",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_18"
+    },
+    {
+        "german": "kacke",
+        "english": "shitty / bad",
+        "level": "B1",
+        "example": "Das war echt kacke.",
+        "word": "kacke",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_19"
+    },
+    {
+        "german": "schräg",
+        "english": "weird / quirky",
+        "level": "B1",
+        "example": "Der Typ ist ein bisschen schräg.",
+        "word": "schräg",
+        "type": "adjective",
+        "category": "German Slang",
+        "id": "adjective_slang_B1_20"
+    }
+]

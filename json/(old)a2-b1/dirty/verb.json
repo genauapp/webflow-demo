@@ -1,0 +1,137 @@
+[
+  {
+    "german": "mieten",
+    "english": "to rent",
+    "level": "A2",
+    "example": "Wir mieten ein Auto.",
+    "word": "mieten",
+    "rule": "",
+    "type": "verb"
+  },
+  {
+    "german": "kennenlernen",
+    "english": "to get to know",
+    "level": "A2",
+    "example": "Schön, dich kennenzulernen!",
+    "word": "kennenlernen",
+    "rule": "Just like ALL prefixes that are words on their own, ‚kennen‘ is seperable.",
+    "type": "verb"
+  },
+  {
+    "german": "verbieten",
+    "english": "to prohibit",
+    "level": "A2",
+    "example": "Das Rauchen ist am Bahnhof verboten.",
+    "word": "verbieten",
+    "rule": "",
+    "type": "verb"
+  },
+  {
+    "german": "bekommen",
+    "english": "to get",
+    "level": "A2",
+    "example": "Ich habe deine E-Mail bekommen.",
+    "word": "bekommen",
+    "rule": "Beware of this false friend: ‚bekommen‘ means ‚to get‘, NOT ‚to become‘!",
+    "type": "verb"
+  },
+  {
+    "german": "kaufen",
+    "english": "to buy",
+    "level": "A2",
+    "example": "Wir haben eine Wohnung gekauft.",
+    "word": "kaufen",
+    "rule": "",
+    "type": "verb"
+  },
+  {
+    "german": "gratulieren",
+    "english": "to congratulate",
+    "level": "B1",
+    "example": "Gratuliere!",
+    "word": "gratulieren",
+    "rule": "You discovered a rare gem! A verb that needs an object in Dativ.",
+    "type": "verb"
+  },
+  {
+    "german": "erkennen",
+    "english": "to recognize",
+    "level": "B1",
+    "example": "Ohne Brille erkenne ich fast nichts.",
+    "word": "erkennen",
+    "rule": "",
+    "type": "verb"
+  },
+  {
+    "german": "analysieren",
+    "english": "to analyse",
+    "level": "B1",
+    "example": "Wir versuchen gerade, diese grammatikalische Struktur zu analysieren.",
+    "word": "analysieren",
+    "rule": "",
+    "type": "verb"
+  },
+  {
+    "german": "auswählen",
+    "english": "to choose, to select",
+    "level": "B1",
+    "example": "Es ist nicht leicht, eine Ausbildung auszuwählen.",
+    "word": "auswählen",
+    "rule": "Just like ALL prefixes that are words on their own, ‚aus‘ is seperable.",
+    "type": "verb"
+  },
+  {
+    "german": "warnen",
+    "english": "to warn",
+    "level": "B1",
+    "example": "Ich habe dich gewarnt...",
+    "word": "warnen",
+    "rule": "",
+    "type": "verb"
+  },
+  {
+    "german": "sich anstrengen",
+    "english": "to make an effort",
+    "level": "B1",
+    "example": "Wenn man Deutsch lernen möchte, muss man sich ein bisschen anstrengen.",
+    "word": "sich anstrengen",
+    "rule": "",
+    "type": "verb"
+  },
+  {
+    "german": "sammeln",
+    "english": "to collect",
+    "level": "B1",
+    "example": "Ich möchte neue berufliche Erfahrungen sammeln.",
+    "word": "sammeln",
+    "rule": "",
+    "type": "verb"
+  },
+  {
+    "german": "prüfen",
+    "english": "to examine, to check",
+    "level": "B1",
+    "example": "Mit dieser App prüfst du, welche deutschen Wörter du wirklich gelernt hast.",
+    "word": "prüfen",
+    "rule": "",
+    "type": "verb"
+  },
+  {
+    "german": "behandeln",
+    "english": "to treat",
+    "level": "B1",
+    "example": "Der Arzt behandelt Kranke.",
+    "word": "behandeln ",
+    "rule": "Just like in English, you can use ‚behandeln‘ when talking about medical care, but also about how someone generally treats other people.",
+    "type": "verb"
+  },
+  {
+    "german": "reagieren",
+    "english": "to react",
+    "level": "B1",
+    "example": "Ich bin gespannt, wie er auf sein Prüfungsergebnis reagiert!",
+    "word": "reagieren",
+    "rule": "",
+    "type": "verb"
+  }
+]

@@ -1,0 +1,202 @@
+[
+    {
+        "german": "digital",
+        "english": "digital",
+        "level": "A2",
+        "example": "Ich nutze ein digitales Wörterbuch.",
+        "word": "digital",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_01"
+    },
+    {
+        "german": "schnell",
+        "english": "fast",
+        "level": "A2",
+        "example": "Die Internetverbindung ist schnell.",
+        "word": "schnell",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_02"
+    },
+    {
+        "german": "langsam",
+        "english": "slow",
+        "level": "A2",
+        "example": "Mein Computer ist sehr langsam.",
+        "word": "langsam",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_03"
+    },
+    {
+        "german": "modern",
+        "english": "modern",
+        "level": "A2",
+        "example": "Ich habe ein modernes Smartphone.",
+        "word": "modern",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_04"
+    },
+    {
+        "german": "altmodisch",
+        "english": "old-fashioned",
+        "level": "A2",
+        "example": "Sein Handy ist altmodisch.",
+        "word": "altmodisch",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_05"
+    },
+    {
+        "german": "nützlich",
+        "english": "useful",
+        "level": "A2",
+        "example": "Diese App ist sehr nützlich.",
+        "word": "nützlich",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_06"
+    },
+    {
+        "german": "unnötig",
+        "english": "unnecessary",
+        "level": "A2",
+        "example": "Die Werbung ist unnötig.",
+        "word": "unnötig",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_07"
+    },
+    {
+        "german": "interaktiv",
+        "english": "interactive",
+        "level": "A2",
+        "example": "Das Programm ist interaktiv gestaltet.",
+        "word": "interaktiv",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_08"
+    },
+    {
+        "german": "verständlich",
+        "english": "understandable",
+        "level": "A2",
+        "example": "Der Artikel ist sehr verständlich geschrieben.",
+        "word": "verständlich",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_09"
+    },
+    {
+        "german": "unverständlich",
+        "english": "incomprehensible",
+        "level": "A2",
+        "example": "Die Nachricht war unverständlich.",
+        "word": "unverständlich",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_10"
+    },
+    {
+        "german": "klar",
+        "english": "clear",
+        "level": "A2",
+        "example": "Der Ton ist sehr klar.",
+        "word": "klar",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_11"
+    },
+    {
+        "german": "verschwommen",
+        "english": "blurry",
+        "level": "A2",
+        "example": "Das Bild ist verschwommen.",
+        "word": "verschwommen",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_12"
+    },
+    {
+        "german": "aktuell",
+        "english": "current",
+        "level": "A2",
+        "example": "Ich lese die aktuellen Nachrichten.",
+        "word": "aktuell",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_13"
+    },
+    {
+        "german": "veraltet",
+        "english": "outdated",
+        "level": "A2",
+        "example": "Diese App ist veraltet.",
+        "word": "veraltet",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_14"
+    },
+    {
+        "german": "laut",
+        "english": "loud",
+        "level": "A2",
+        "example": "Das Telefon klingelt sehr laut.",
+        "word": "laut",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_15"
+    },
+    {
+        "german": "leise",
+        "english": "quiet",
+        "level": "A2",
+        "example": "Der Fernseher ist zu leise.",
+        "word": "leise",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_16"
+    },
+    {
+        "german": "komisch",
+        "english": "strange / funny",
+        "level": "A2",
+        "example": "Der Kommentar war etwas komisch.",
+        "word": "komisch",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_17"
+    },
+    {
+        "german": "nervig",
+        "english": "annoying",
+        "level": "A2",
+        "example": "Diese Werbung ist wirklich nervig.",
+        "word": "nervig",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_18"
+    },
+    {
+        "german": "hilfreich",
+        "english": "helpful",
+        "level": "A2",
+        "example": "Das Video war sehr hilfreich.",
+        "word": "hilfreich",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_19"
+    },
+    {
+        "german": "kompliziert",
+        "english": "complicated",
+        "level": "A2",
+        "example": "Die Einstellungen sind kompliziert.",
+        "word": "kompliziert",
+        "type": "adjective",
+        "category": "Medien & Kommunikation",
+        "id": "adjective_medien_A2_20"
+    }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "german": "allerdings",
+    "english": "however, indeed",
+    "level": "B2",
+    "example": "Das ist möglich, allerdings sehr teuer.",
+    "word": "allerdings",
+    "type": "adverb"
+  },
+  {
+    "german": "außerdem",
+    "english": "besides, furthermore",
+    "level": "B1",
+    "example": "Ich habe keine Zeit und außerdem kein Geld.",
+    "word": "außerdem",
+    "type": "adverb"
+  },
+  {
+    "german": "deshalb",
+    "english": "therefore",
+    "level": "B1",
+    "example": "Es regnet, deshalb bleibe ich zu Hause.",
+    "word": "deshalb",
+    "type": "adverb"
+  },
+  {
+    "german": "dennoch",
+    "english": "nevertheless",
+    "level": "B2",
+    "example": "Es war kalt, dennoch ging er schwimmen.",
+    "word": "dennoch",
+    "type": "adverb"
+  },
+  {
+    "german": "folglich",
+    "english": "consequently",
+    "level": "B2",
+    "example": "Er hat viel gelernt, folglich hat er die Prüfung bestanden.",
+    "word": "folglich",
+    "type": "adverb"
+  },
+  {
+    "german": "inzwischen",
+    "english": "meanwhile",
+    "level": "B1",
+    "example": "Ich koche, du kannst inzwischen den Tisch decken.",
+    "word": "inzwischen",
+    "type": "adverb"
+  },
+  {
+    "german": "meistens",
+    "english": "mostly, usually",
+    "level": "B1",
+    "example": "Meistens gehe ich am Wochenende joggen.",
+    "word": "meistens",
+    "type": "adverb"
+  },
+  {
+    "german": "daher",
+    "english": "hence, therefore",
+    "level": "B2",
+    "example": "Er ist krank, daher bleibt er im Bett.",
+    "word": "daher",
+    "type": "adverb"
+  },
+  {
+    "german": "stets",
+    "english": "always, constantly",
+    "level": "B2",
+    "example": "Er ist stets freundlich zu seinen Kollegen.",
+    "word": "stets",
+    "type": "adverb"
+  },
+  {
+    "german": "übrigens",
+    "english": "by the way",
+    "level": "B1",
+    "example": "Übrigens, hast du meine E-Mail bekommen?",
+    "word": "übrigens",
+    "type": "adverb"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "german": "anstrengend",
+    "english": "exhausting",
+    "level": "B1",
+    "example": "Das Training war ziemlich anstrengend.",
+    "word": "anstrengend",
+    "type": "adjective"
+  },
+  {
+    "german": "verlässlich",
+    "english": "reliable",
+    "level": "B1",
+    "example": "Er ist ein sehr verlässlicher Kollege.",
+    "word": "verlässlich",
+    "type": "adjective"
+  },
+  {
+    "german": "kritisch",
+    "english": "critical",
+    "level": "B1",
+    "example": "Seine Meinung war sehr kritisch.",
+    "word": "kritisch",
+    "type": "adjective"
+  },
+  {
+    "german": "zufällig",
+    "english": "accidental, random",
+    "level": "B1",
+    "example": "Wir haben uns zufällig im Supermarkt getroffen.",
+    "word": "zufällig",
+    "type": "adjective"
+  },
+  {
+    "german": "selbstständig",
+    "english": "independent, self-employed",
+    "level": "B2",
+    "example": "Sie arbeitet als selbstständige Designerin.",
+    "word": "selbstständig",
+    "type": "adjective"
+  },
+  {
+    "german": "herausfordernd",
+    "english": "challenging",
+    "level": "B2",
+    "example": "Das Projekt war sehr herausfordernd.",
+    "word": "herausfordernd",
+    "type": "adjective"
+  },
+  {
+    "german": "widersprüchlich",
+    "english": "contradictory",
+    "level": "B2",
+    "example": "Seine Aussagen sind widersprüchlich.",
+    "word": "widersprüchlich",
+    "type": "adjective"
+  },
+  {
+    "german": "bedeutend",
+    "english": "significant",
+    "level": "B2",
+    "example": "Er hat einen bedeutenden Beitrag geleistet.",
+    "word": "bedeutend",
+    "type": "adjective"
+  },
+  {
+    "german": "komplex",
+    "english": "complex",
+    "level": "B2",
+    "example": "Das Thema ist ziemlich komplex.",
+    "word": "komplex",
+    "type": "adjective"
+  },
+  {
+    "german": "anspruchsvoll",
+    "english": "demanding",
+    "level": "B2",
+    "example": "Die Aufgabe ist sehr anspruchsvoll.",
+    "word": "anspruchsvoll",
+    "type": "adjective"
+  }
+]

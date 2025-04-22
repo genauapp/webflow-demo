@@ -1,0 +1,32 @@
+[
+  {
+    "german": "der Arzt",
+    "english": "doctor",
+    "level": "A1",
+    "example": "Ich gehe zum Arzt.",
+    "artikel": "der",
+    "word": "Arzt",
+    "rule": "Occupational titles referring to males usually take 'der'.",
+    "category": "Gesundheit"
+  },
+  {
+    "german": "die Apotheke",
+    "english": "pharmacy",
+    "level": "A1",
+    "example": "Die Apotheke ist neben dem Krankenhaus.",
+    "artikel": "die",
+    "word": "Apotheke",
+    "rule": "Nouns ending in '-e' are usually feminine and take 'die'.",
+    "category": "Gesundheit"
+  },
+  {
+    "german": "das Medikament",
+    "english": "medicine",
+    "level": "A1",
+    "example": "Ich brauche ein Medikament gegen Husten.",
+    "artikel": "das",
+    "word": "Medikament",
+    "rule": "Nouns ending in '-ment' are usually neuter and take 'das'.",
+    "category": "Gesundheit"
+  }
+]

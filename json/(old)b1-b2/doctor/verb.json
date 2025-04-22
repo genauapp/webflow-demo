@@ -1,0 +1,182 @@
+[
+  {
+    "german": "sich bemühen",
+    "english": "to make an effort",
+    "level": "B1",
+    "example": "Er bemüht sich um bessere Noten.",
+    "word": "sich bemühen",
+    "rule": "Regular reflexive verb, often used with 'um + Akkusativ'.",
+    "type": "verb"
+  },
+  {
+    "german": "überzeugen",
+    "english": "to convince",
+    "level": "B1",
+    "example": "Er konnte mich nicht überzeugen.",
+    "word": "überzeugen",
+    "rule": "Regular verb, usually with accusative object.",
+    "type": "verb"
+  },
+  {
+    "german": "erlauben",
+    "english": "to allow, permit",
+    "level": "B1",
+    "example": "Meine Eltern erlauben mir das nicht.",
+    "word": "erlauben",
+    "rule": "Regular verb, often with dative + accusative.",
+    "type": "verb"
+  },
+  {
+    "german": "gelingen",
+    "english": "to succeed",
+    "level": "B2",
+    "example": "Es ist mir gelungen, das Problem zu lösen.",
+    "word": "gelingen",
+    "rule": "Irregular verb, used impersonally with dative.",
+    "type": "verb"
+  },
+  {
+    "german": "vermeiden",
+    "english": "to avoid",
+    "level": "B2",
+    "example": "Er versucht, Fehler zu vermeiden.",
+    "word": "vermeiden",
+    "rule": "Irregular verb, past: 'vermied', 'vermieden'.",
+    "type": "verb"
+  },
+  {
+    "german": "übernehmen",
+    "english": "to take over",
+    "level": "B2",
+    "example": "Sie übernimmt die Verantwortung.",
+    "word": "übernehmen",
+    "rule": "Inseparable irregular verb, vowel change: e → i, past: 'übernahm', 'übernommen'.",
+    "type": "verb"
+  },
+  {
+    "german": "beurteilen",
+    "english": "to judge, assess",
+    "level": "B1",
+    "example": "Man sollte Menschen nicht vorschnell beurteilen.",
+    "word": "beurteilen",
+    "rule": "Regular verb, inseparable prefix 'be-'.",
+    "type": "verb"
+  },
+  {
+    "german": "feststellen",
+    "english": "to determine, establish",
+    "level": "B2",
+    "example": "Der Arzt stellt die Diagnose fest.",
+    "word": "feststellen",
+    "rule": "Separable regular verb, past: 'stellte fest', 'festgestellt'.",
+    "type": "verb"
+  },
+  {
+    "german": "ausschließen",
+    "english": "to exclude",
+    "level": "B2",
+    "example": "Er wurde von der Gruppe ausgeschlossen.",
+    "word": "ausschließen",
+    "rule": "Separable irregular verb, past: 'schloss aus', 'ausgeschlossen'.",
+    "type": "verb"
+  },
+  {
+    "german": "betonen",
+    "english": "to emphasize",
+    "level": "B1",
+    "example": "Er betont die Wichtigkeit der Zusammenarbeit.",
+    "word": "betonen",
+    "rule": "Regular verb, inseparable prefix 'be-'.",
+    "type": "verb"
+  },
+  {
+    "german": "widersprechen",
+    "english": "to contradict",
+    "level": "B2",
+    "example": "Er widerspricht oft seinen Kollegen.",
+    "word": "widersprechen",
+    "rule": "Irregular verb, always with dative case.",
+    "type": "verb"
+  },
+  {
+    "german": "verzichten",
+    "english": "to renounce, do without",
+    "level": "B2",
+    "example": "Ich verzichte auf Zucker.",
+    "word": "verzichten",
+    "rule": "Regular verb, used with 'auf + Akkusativ'.",
+    "type": "verb"
+  },
+  {
+    "german": "beeinflussen",
+    "english": "to influence",
+    "level": "B1",
+    "example": "Die Werbung beeinflusst unser Kaufverhalten.",
+    "word": "beeinflussen",
+    "rule": "Regular verb, inseparable prefix 'be-'.",
+    "type": "verb"
+  },
+  {
+    "german": "abschließen",
+    "english": "to conclude, lock",
+    "level": "B1",
+    "example": "Er hat das Studium abgeschlossen.",
+    "word": "abschließen",
+    "rule": "Separable irregular verb, past: 'schloss ab', 'abgeschlossen'.",
+    "type": "verb"
+  },
+  {
+    "german": "nachweisen",
+    "english": "to prove",
+    "level": "B2",
+    "example": "Kannst du deine Qualifikationen nachweisen?",
+    "word": "nachweisen",
+    "rule": "Separable irregular verb, past: 'wies nach', 'nachgewiesen'.",
+    "type": "verb"
+  },
+  {
+    "german": "zunehmen",
+    "english": "to increase, gain weight",
+    "level": "B2",
+    "example": "Die Temperatur nimmt zu.",
+    "word": "zunehmen",
+    "rule": "Separable irregular verb, vowel change e → i, past: 'nahm zu', 'zugenommen'.",
+    "type": "verb"
+  },
+  {
+    "german": "nachdenken",
+    "english": "to reflect, think about",
+    "level": "B1",
+    "example": "Ich muss über das Angebot nachdenken.",
+    "word": "nachdenken",
+    "rule": "Separable irregular verb, past: 'dachte nach', 'nachgedacht'.",
+    "type": "verb"
+  },
+  {
+    "german": "entstehen",
+    "english": "to arise, emerge",
+    "level": "B2",
+    "example": "Hier entsteht ein neues Gebäude.",
+    "word": "entstehen",
+    "rule": "Irregular verb, past: 'entstand', 'entstanden'.",
+    "type": "verb"
+  },
+  {
+    "german": "beitragen",
+    "english": "to contribute",
+    "level": "B2",
+    "example": "Jeder kann etwas zur Diskussion beitragen.",
+    "word": "beitragen",
+    "rule": "Separable irregular verb, past: 'trug bei', 'beigetragen'.",
+    "type": "verb"
+  },
+  {
+    "german": "sich auseinandersetzen",
+    "english": "to deal with, engage with",
+    "level": "B2",
+    "example": "Er setzt sich intensiv mit dem Thema auseinander.",
+    "word": "sich auseinandersetzen",
+    "rule": "Separable reflexive regular verb, past: 'setzte auseinander', 'auseinandergesetzt'.",
+    "type": "verb"
+  }
+]

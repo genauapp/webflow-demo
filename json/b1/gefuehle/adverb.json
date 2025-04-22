@@ -1,0 +1,202 @@
+[
+    {
+        "german": "ehrlich",
+        "english": "honestly",
+        "level": "B1",
+        "example": "Ich sage dir das ehrlich.",
+        "word": "ehrlich",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_01"
+    },
+    {
+        "german": "plötzlich",
+        "english": "suddenly",
+        "level": "B1",
+        "example": "Plötzlich wurde er wütend.",
+        "word": "plötzlich",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_02"
+    },
+    {
+        "german": "ständig",
+        "english": "constantly",
+        "level": "B1",
+        "example": "Sie streiten sich ständig.",
+        "word": "ständig",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_03"
+    },
+    {
+        "german": "gemeinsam",
+        "english": "together",
+        "level": "B1",
+        "example": "Wir verbringen viel Zeit gemeinsam.",
+        "word": "gemeinsam",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_04"
+    },
+    {
+        "german": "zufällig",
+        "english": "by chance",
+        "level": "B1",
+        "example": "Wir haben uns zufällig getroffen.",
+        "word": "zufällig",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_05"
+    },
+    {
+        "german": "bewusst",
+        "english": "consciously",
+        "level": "B1",
+        "example": "Ich habe das bewusst gemacht.",
+        "word": "bewusst",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_06"
+    },
+    {
+        "german": "vorsichtig",
+        "english": "carefully",
+        "level": "B1",
+        "example": "Er hat vorsichtig gesprochen.",
+        "word": "vorsichtig",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_07"
+    },
+    {
+        "german": "fröhlich",
+        "english": "cheerfully",
+        "level": "B1",
+        "example": "Sie lachte fröhlich.",
+        "word": "fröhlich",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_08"
+    },
+    {
+        "german": "traurig",
+        "english": "sadly",
+        "level": "B1",
+        "example": "Er ging traurig nach Hause.",
+        "word": "traurig",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_09"
+    },
+    {
+        "german": "wütend",
+        "english": "angrily",
+        "level": "B1",
+        "example": "Sie hat wütend reagiert.",
+        "word": "wütend",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_10"
+    },
+    {
+        "german": "ruhig",
+        "english": "calmly",
+        "level": "B1",
+        "example": "Bitte sprich ruhig mit mir.",
+        "word": "ruhig",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_11"
+    },
+    {
+        "german": "ehrgeizig",
+        "english": "ambitiously",
+        "level": "B1",
+        "example": "Er verfolgt sein Ziel ehrgeizig.",
+        "word": "ehrgeizig",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_12"
+    },
+    {
+        "german": "intensiv",
+        "english": "intensely",
+        "level": "B1",
+        "example": "Sie diskutierten intensiv.",
+        "word": "intensiv",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_13"
+    },
+    {
+        "german": "leidenschaftlich",
+        "english": "passionately",
+        "level": "B1",
+        "example": "Er küsste sie leidenschaftlich.",
+        "word": "leidenschaftlich",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_14"
+    },
+    {
+        "german": "genervt",
+        "english": "annoyedly",
+        "level": "B1",
+        "example": "Sie antwortete genervt.",
+        "word": "genervt",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_15"
+    },
+    {
+        "german": "freundlich",
+        "english": "kindly",
+        "level": "B1",
+        "example": "Er begrüßte mich freundlich.",
+        "word": "freundlich",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_16"
+    },
+    {
+        "german": "ehrgeizig",
+        "english": "ambitiously",
+        "level": "B1",
+        "example": "Sie arbeitet ehrgeizig an ihrem Ziel.",
+        "word": "ehrgeizig",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_17"
+    },
+    {
+        "german": "zufrieden",
+        "english": "contentedly",
+        "level": "B1",
+        "example": "Er lächelte zufrieden.",
+        "word": "zufrieden",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_18"
+    },
+    {
+        "german": "unzufrieden",
+        "english": "discontentedly",
+        "level": "B1",
+        "example": "Sie schaute unzufrieden.",
+        "word": "unzufrieden",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_19"
+    },
+    {
+        "german": "zärtlich",
+        "english": "tenderly",
+        "level": "B1",
+        "example": "Er küsste sie zärtlich.",
+        "word": "zärtlich",
+        "type": "adverb",
+        "category": "Gefühle & Beziehungen",
+        "id": "adverb_gefuehle_B1_20"
+    }
+]

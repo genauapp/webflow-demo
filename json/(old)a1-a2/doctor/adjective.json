@@ -1,0 +1,32 @@
+[
+  {
+    "german": "billig",
+    "english": "cheap",
+    "level": "A1",
+    "example": "Die Tomaten sind heute sehr billig.",
+    "word": "billig",
+    "rule": "Describes price or value, ends in '-ig'.",
+    "type": "adjective",
+    "category": "Einkaufen"
+  },
+  {
+    "german": "teuer",
+    "english": "expensive",
+    "level": "A1",
+    "example": "Das Kleid ist zu teuer für mich.",
+    "word": "teuer",
+    "rule": "Common adjective used with shopping or money.",
+    "type": "adjective",
+    "category": "Einkaufen"
+  },
+  {
+    "german": "frisch",
+    "english": "fresh",
+    "level": "A1",
+    "example": "Das Brot ist noch frisch.",
+    "word": "frisch",
+    "rule": "Often used with food.",
+    "type": "adjective",
+    "category": "Einkaufen"
+  }
+]

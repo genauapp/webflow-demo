@@ -1,0 +1,32 @@
+[
+  {
+    "german": "persönlich",
+    "english": "personally",
+    "level": "A1",
+    "example": "Sie müssen persönlich erscheinen.",
+    "word": "persönlich",
+    "rule": "Many adjectives can function as adverbs in German.",
+    "type": "adverb",
+    "category": "Behörden"
+  },
+  {
+    "german": "später",
+    "english": "later",
+    "level": "A1",
+    "example": "Kommen Sie bitte später wieder.",
+    "word": "später",
+    "rule": "Comparative form of 'spät', used for time.",
+    "type": "adverb",
+    "category": "Behörden"
+  },
+  {
+    "german": "vorher",
+    "english": "beforehand",
+    "level": "A1",
+    "example": "Bitte melden Sie sich vorher an.",
+    "word": "vorher",
+    "rule": "Time adverb indicating prior action.",
+    "type": "adverb",
+    "category": "Behörden"
+  }
+]

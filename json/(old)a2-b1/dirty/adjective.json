@@ -1,0 +1,66 @@
+[
+  {
+    "german": "mutig",
+    "english": "courageous",
+    "level": "A2",
+    "example": "Mein Cousin ist echt sehr mutig. Dieses Jahr geht er allein in Australien wandern!",
+    "word": "mutig",
+    "type": "adjective"
+  },
+  {
+    "german": "ängstlich",
+    "english": "fearful",
+    "level": "A2",
+    "example": "Leider ist meine Tochter ein sehr ängstliches Kind.",
+    "word": "ängstlich",
+    "type": "adjective"
+  },
+  {
+    "german": "optimistisch",
+    "english": "optimistic",
+    "level": "A2",
+    "example": "Ich bin optimistisch, dass ich die Prüfung bestehe.",
+    "word": "optimistisch",
+    "type": "adjective"
+  },
+  {
+    "german": "klasse",
+    "english": "super",
+    "level": "B1",
+    "example": "Klasse gemacht!",
+    "word": "klasse",
+    "type": "adjective"
+  },
+  {
+    "german": "nützlich",
+    "english": "useful",
+    "level": " B1",
+    "example": "Ein Wörterbuch ist ein nützliches Hilfsmittel.",
+    "word": "nützlich",
+    "type": "adjective"
+  },
+  {
+    "german": "finanziell",
+    "english": "monetär, Geld-",
+    "level": "B1",
+    "example": "Ich bin aktuell arbeitslos, deshalb ist meine finanzielle Situation nicht besonders gut.",
+    "word": "finanziell",
+    "type": "adjective"
+  },
+  {
+    "german": "schlank",
+    "english": "Das Gegenteil ist ‚dick‘ (nur für Personen)",
+    "level": "B1",
+    "example": "Wow, du bist so schlank! Hast du abgenommen?",
+    "word": "schlank",
+    "type": "adjective"
+  },
+  {
+    "german": "arm",
+    "english": "Das Gegenteil ist ‚reich‘",
+    "level": "B1",
+    "example": "Als ich Kind war, waren wir sehr arm. Wir hatten nicht genug Geld und mussten immer sparen.",
+    "word": "arm",
+    "type": "adjective"
+  }
+]

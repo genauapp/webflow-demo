@@ -1,0 +1,202 @@
+[
+    {
+        "german": "digital",
+        "english": "digital",
+        "level": "B2",
+        "example": "Digitale Medien sind heutzutage weit verbreitet.",
+        "word": "digital",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_01"
+    },
+    {
+        "german": "automatisch",
+        "english": "automatic",
+        "level": "B2",
+        "example": "Das automatische Update spart Zeit.",
+        "word": "automatisch",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_02"
+    },
+    {
+        "german": "benutzerfreundlich",
+        "english": "user-friendly",
+        "level": "B2",
+        "example": "Die App ist sehr benutzerfreundlich.",
+        "word": "benutzerfreundlich",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_03"
+    },
+    {
+        "german": "technisch",
+        "english": "technical",
+        "level": "B2",
+        "example": "Es gibt ein technisches Problem.",
+        "word": "technisch",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_04"
+    },
+    {
+        "german": "effizient",
+        "english": "efficient",
+        "level": "B2",
+        "example": "Das neue System ist sehr effizient.",
+        "word": "effizient",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_05"
+    },
+    {
+        "german": "kompatibel",
+        "english": "compatible",
+        "level": "B2",
+        "example": "Die Geräte sind nicht kompatibel.",
+        "word": "kompatibel",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_06"
+    },
+    {
+        "german": "mobil",
+        "english": "mobile",
+        "level": "B2",
+        "example": "Die mobile Version ist gut gestaltet.",
+        "word": "mobil",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_07"
+    },
+    {
+        "german": "interaktiv",
+        "english": "interactive",
+        "level": "B2",
+        "example": "Das interaktive Whiteboard erleichtert den Unterricht.",
+        "word": "interaktiv",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_08"
+    },
+    {
+        "german": "virtuell",
+        "english": "virtual",
+        "level": "B2",
+        "example": "Die Teilnehmer trafen sich in einem virtuellen Raum.",
+        "word": "virtuell",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_09"
+    },
+    {
+        "german": "zentral",
+        "english": "central",
+        "level": "B2",
+        "example": "Die Daten werden in einer zentralen Datenbank gespeichert.",
+        "word": "zentral",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_10"
+    },
+    {
+        "german": "stabil",
+        "english": "stable",
+        "level": "B2",
+        "example": "Die Internetverbindung ist sehr stabil.",
+        "word": "stabil",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_11"
+    },
+    {
+        "german": "manuell",
+        "english": "manual",
+        "level": "B2",
+        "example": "Die manuelle Eingabe ist erforderlich.",
+        "word": "manuell",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_12"
+    },
+    {
+        "german": "intelligent",
+        "english": "intelligent",
+        "level": "B2",
+        "example": "Das System reagiert intelligent auf Veränderungen.",
+        "word": "intelligent",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_13"
+    },
+    {
+        "german": "verschlüsselt",
+        "english": "encrypted",
+        "level": "B2",
+        "example": "Die Nachricht wurde verschlüsselt übertragen.",
+        "word": "verschlüsselt",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_14"
+    },
+    {
+        "german": "passwortgeschützt",
+        "english": "password-protected",
+        "level": "B2",
+        "example": "Die Datei ist passwortgeschützt.",
+        "word": "passwortgeschützt",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_15"
+    },
+    {
+        "german": "vernetzt",
+        "english": "networked",
+        "level": "B2",
+        "example": "Alle Geräte sind miteinander vernetzt.",
+        "word": "vernetzt",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_16"
+    },
+    {
+        "german": "leistungsfähig",
+        "english": "powerful / efficient",
+        "level": "B2",
+        "example": "Der neue Prozessor ist sehr leistungsfähig.",
+        "word": "leistungsfähig",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_17"
+    },
+    {
+        "german": "sicher",
+        "english": "secure / safe",
+        "level": "B2",
+        "example": "Das System ist sicher gegen Angriffe.",
+        "word": "sicher",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_18"
+    },
+    {
+        "german": "zugänglich",
+        "english": "accessible",
+        "level": "B2",
+        "example": "Die Informationen sind für alle zugänglich.",
+        "word": "zugänglich",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_19"
+    },
+    {
+        "german": "rechenintensiv",
+        "english": "computationally intensive",
+        "level": "B2",
+        "example": "KI-Modelle sind oft rechenintensiv.",
+        "word": "rechenintensiv",
+        "type": "adjective",
+        "category": "Digitalisierung & Technik",
+        "id": "adjective_technik_B2_20"
+    }
+]

@@ -1,0 +1,222 @@
+[
+  {
+    "type": "noun",
+    "german": "der Standpunkt",
+    "english": "point of view",
+    "level": "B2",
+    "example": "Sein Standpunkt zu diesem Thema ist klar.",
+    "artikel": "der",
+    "word": "Standpunkt",
+    "rule": "Nouns ending in '-punkt' (point) usually take 'der'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "der Widerspruch",
+    "english": "contradiction",
+    "level": "B2",
+    "example": "Seine Argumente sind voller Widersprüche.",
+    "artikel": "der",
+    "word": "Widerspruch",
+    "rule": "Most nouns with 'Wider-' (against) take 'der'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "der Umstand",
+    "english": "circumstance",
+    "level": "B2",
+    "example": "Unter diesen Umständen kann ich nicht arbeiten.",
+    "artikel": "der",
+    "word": "Umstand",
+    "rule": "Most nouns ending in '-stand' take 'der'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "der Verlauf",
+    "english": "course, progress",
+    "level": "B2",
+    "example": "Der Verlauf des Projekts war erfolgreich.",
+    "artikel": "der",
+    "word": "Verlauf",
+    "rule": "Nouns ending in '-lauf' (running/process) take 'der'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "der Zugriff",
+    "english": "access",
+    "level": "B2",
+    "example": "Ich habe keinen Zugriff auf diese Datei.",
+    "artikel": "der",
+    "word": "Zugriff",
+    "rule": "Nouns ending in '-griff' (grip) take 'der'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "die Voraussetzung",
+    "english": "requirement, prerequisite",
+    "level": "B2",
+    "example": "Gute Sprachkenntnisse sind eine Voraussetzung für den Job.",
+    "artikel": "die",
+    "word": "Voraussetzung",
+    "rule": "Nouns ending in '-ung' always take 'die'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "die Begründung",
+    "english": "justification",
+    "level": "B2",
+    "example": "Er hat eine gute Begründung für seine Entscheidung.",
+    "artikel": "die",
+    "word": "Begründung",
+    "rule": "Nouns ending in '-ung' always take 'die'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "die Einschätzung",
+    "english": "assessment",
+    "level": "B2",
+    "example": "Seine Einschätzung der Lage ist korrekt.",
+    "artikel": "die",
+    "word": "Einschätzung",
+    "rule": "Nouns ending in '-ung' always take 'die'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "die Erkenntnis",
+    "english": "insight, realization",
+    "level": "B2",
+    "example": "Diese Erkenntnis hat mein Leben verändert.",
+    "artikel": "die",
+    "word": "Erkenntnis",
+    "rule": "Nouns ending in '-nis' usually take 'die'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "die Bewältigung",
+    "english": "coping, management",
+    "level": "B2",
+    "example": "Die Bewältigung von Stress ist wichtig für die Gesundheit.",
+    "artikel": "die",
+    "word": "Bewältigung",
+    "rule": "Nouns ending in '-ung' always take 'die'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "das Konzept",
+    "english": "concept",
+    "level": "B2",
+    "example": "Sein Konzept für das neue Projekt ist innovativ.",
+    "artikel": "das",
+    "word": "Konzept",
+    "rule": "Most foreign words ending in '-pt' take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "das Szenario",
+    "english": "scenario",
+    "level": "B2",
+    "example": "Das schlimmste Szenario ist eingetreten.",
+    "artikel": "das",
+    "word": "Szenario",
+    "rule": "Most words borrowed from Latin/Greek ending in '-o' take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "das Verfahren",
+    "english": "procedure",
+    "level": "B2",
+    "example": "Das Verfahren zur Genehmigung dauert lange.",
+    "artikel": "das",
+    "word": "Verfahren",
+    "rule": "Most nouns ending in '-en' that describe actions take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "das Vorhaben",
+    "english": "plan, project",
+    "level": "B2",
+    "example": "Sein Vorhaben wurde erfolgreich umgesetzt.",
+    "artikel": "das",
+    "word": "Vorhaben",
+    "rule": "Most nouns beginning with 'Vor-' and ending in '-en' take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "das Potenzial",
+    "english": "potential",
+    "level": "B2",
+    "example": "Dieses Unternehmen hat großes Potenzial.",
+    "artikel": "das",
+    "word": "Potenzial",
+    "rule": "Most abstract nouns ending in '-al' take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "das Bündnis",
+    "english": "alliance",
+    "level": "B2",
+    "example": "Die Länder haben ein Bündnis geschlossen.",
+    "artikel": "das",
+    "word": "Bündnis",
+    "rule": "Nouns ending in '-nis' usually take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "das Hindernis",
+    "english": "obstacle",
+    "level": "B2",
+    "example": "Dieses Hindernis müssen wir überwinden.",
+    "artikel": "das",
+    "word": "Hindernis",
+    "rule": "Nouns ending in '-nis' usually take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "das Urteil",
+    "english": "judgment, verdict",
+    "level": "B2",
+    "example": "Das Urteil des Gerichts war überraschend.",
+    "artikel": "das",
+    "word": "Urteil",
+    "rule": "Nouns ending in '-teil' take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "das Vermögen",
+    "english": "wealth, fortune",
+    "level": "B2",
+    "example": "Er hat ein großes Vermögen geerbt.",
+    "artikel": "das",
+    "word": "Vermögen",
+    "rule": "Most nouns beginning with 'Ver-' that indicate possession take 'das'.",
+    "highlight": ""
+  },
+  {
+    "type": "noun",
+    "german": "das Gleichgewicht",
+    "english": "balance, equilibrium",
+    "level": "B2",
+    "example": "Ein gutes Gleichgewicht zwischen Arbeit und Freizeit ist wichtig.",
+    "artikel": "das",
+    "word": "Gleichgewicht",
+    "rule": "Nouns ending in '-gewicht' take 'das'.",
+    "highlight": ""
+  }
+]

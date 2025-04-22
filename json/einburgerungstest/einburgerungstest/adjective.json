@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "type": "adjective",
+    "german": "demokratisch",
+    "english": "democratic",
+    "level": "B1",
+    "example": "Deutschland ist ein demokratisches Land.",
+    "word": "demokratisch",
+    "rule": "Adjective ending in -isch is often used for describing systems or ideologies."
+  },
+  {
+    "id": 2,
+    "type": "adjective",
+    "german": "frei",
+    "english": "free",
+    "level": "A2",
+    "example": "Jeder Mensch ist frei.",
+    "word": "frei",
+    "rule": "Basic adjective often used with rights and personal status."
+  },
+  {
+    "id": 3,
+    "type": "adjective",
+    "german": "gleich",
+    "english": "equal",
+    "level": "A2",
+    "example": "Alle Menschen sind vor dem Gesetz gleich.",
+    "word": "gleich",
+    "rule": "Used in comparisons and equality contexts."
+  },
+  {
+    "id": 4,
+    "type": "adjective",
+    "german": "staatlich",
+    "english": "state (related to government)",
+    "level": "B1",
+    "example": "Die staatliche Ordnung ist wichtig.",
+    "word": "staatlich",
+    "rule": "Adjectives ending in -lich express relation or belonging."
+  },
+  {
+    "id": 5,
+    "type": "adjective",
+    "german": "verantwortlich",
+    "english": "responsible",
+    "level": "B2",
+    "example": "Die Regierung ist verantwortlich für ihre Entscheidungen.",
+    "word": "verantwortlich",
+    "rule": "Often used with 'für'; -lich ending."
+  },
+  {
+    "id": 6,
+    "type": "adjective",
+    "german": "öffentlich",
+    "english": "public",
+    "level": "B1",
+    "example": "Die öffentliche Meinung ist wichtig.",
+    "word": "öffentlich",
+    "rule": "Describes anything accessible to the general public."
+  },
+  {
+    "id": 7,
+    "type": "adjective",
+    "german": "sozial",
+    "english": "social",
+    "level": "B1",
+    "example": "Soziale Gerechtigkeit ist ein Ziel.",
+    "word": "sozial",
+    "rule": "Ends in -al, often used for systems or ideas."
+  },
+  {
+    "id": 8,
+    "type": "adjective",
+    "german": "politisch",
+    "english": "political",
+    "level": "B1",
+    "example": "Politische Bildung ist wichtig.",
+    "word": "politisch",
+    "rule": "Ends in -isch; describes anything related to politics."
+  },
+  {
+    "id": 9,
+    "type": "adjective",
+    "german": "deutsch",
+    "english": "German",
+    "level": "A1",
+    "example": "Die deutsche Verfassung heißt Grundgesetz.",
+    "word": "deutsch",
+    "rule": "Nationality adjective; used attributively."
+  },
+  {
+    "id": 10,
+    "type": "adjective",
+    "german": "gesetzlich",
+    "english": "legal, by law",
+    "level": "B2",
+    "example": "Die Gleichstellung ist gesetzlich geregelt.",
+    "word": "gesetzlich",
+    "rule": "Derived from nouns; often ends in -lich."
+  },
+  {
+    "id": 11,
+    "type": "adjective",
+    "german": "richtig",
+    "english": "correct",
+    "level": "A1",
+    "example": "Die richtige Antwort ist B.",
+    "word": "richtig",
+    "rule": "Basic adjective used in tests and decisions."
+  },
+  {
+    "id": 12,
+    "type": "adjective",
+    "german": "wichtig",
+    "english": "important",
+    "level": "A2",
+    "example": "Die Verfassung ist sehr wichtig.",
+    "word": "wichtig",
+    "rule": "Very common descriptive adjective."
+  },
+  {
+    "id": 13,
+    "type": "adjective",
+    "german": "neutral",
+    "english": "neutral",
+    "level": "B1",
+    "example": "Das Gericht ist neutral.",
+    "word": "neutral",
+    "rule": "Same in many languages; used for unbiased situations."
+  },
+  {
+    "id": 14,
+    "type": "adjective",
+    "german": "unabhängig",
+    "english": "independent",
+    "level": "B2",
+    "example": "Die Justiz ist unabhängig.",
+    "word": "unabhängig",
+    "rule": "Prefix ‘un-’ makes it negative; -ig is common adjective ending."
+  },
+  {
+    "id": 15,
+    "type": "adjective",
+    "german": "national",
+    "english": "national",
+    "level": "B1",
+    "example": "Die nationale Identität ist Thema der Debatte.",
+    "word": "national",
+    "rule": "Ends in -al; describes scope related to the nation."
+  },
+  {
+    "id": 16,
+    "type": "adjective",
+    "german": "verfassungswidrig",
+    "english": "unconstitutional",
+    "level": "C1",
+    "example": "Das ist verfassungswidrig und nicht erlaubt.",
+    "word": "verfassungswidrig",
+    "rule": "Long compound adjective; ends in -widrig (against/law-breaking)."
+  },
+  {
+    "id": 17,
+    "type": "adjective",
+    "german": "europäisch",
+    "english": "European",
+    "level": "B1",
+    "example": "Die europäische Union wurde erweitert.",
+    "word": "europäisch",
+    "rule": "Nationality adjectives ending in -isch."
+  },
+  {
+    "id": 18,
+    "type": "adjective",
+    "german": "religiös",
+    "english": "religious",
+    "level": "B2",
+    "example": "Es gibt religiöse Freiheit in Deutschland.",
+    "word": "religiös",
+    "rule": "Describes beliefs or practices; ends in -ös."
+  },
+  {
+    "id": 19,
+    "type": "adjective",
+    "german": "kulturell",
+    "english": "cultural",
+    "level": "B2",
+    "example": "Deutschland ist kulturell vielfältig.",
+    "word": "kulturell",
+    "rule": "Ends in -ell; describes themes of society or identity."
+  },
+  {
+    "id": 20,
+    "type": "adjective",
+    "german": "verboten",
+    "english": "forbidden",
+    "level": "A2",
+    "example": "Diskriminierung ist verboten.",
+    "word": "verboten",
+    "rule": "Past participle used as adjective (from 'verbieten')."
+  }
+]

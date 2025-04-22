@@ -1,0 +1,32 @@
+[
+  {
+    "german": "offiziell",
+    "english": "official",
+    "level": "A1",
+    "example": "Das ist ein offizielles Dokument.",
+    "word": "offiziell",
+    "rule": "Adjectives ending in '-ell' are usually descriptive of status.",
+    "type": "adjective",
+    "category": "Behörden"
+  },
+  {
+    "german": "gültig",
+    "english": "valid",
+    "level": "A1",
+    "example": "Der Ausweis ist noch gültig.",
+    "word": "gültig",
+    "rule": "Often used with documents or ID cards.",
+    "type": "adjective",
+    "category": "Behörden"
+  },
+  {
+    "german": "notwendig",
+    "english": "necessary",
+    "level": "A1",
+    "example": "Ein Visum ist für die Reise notwendig.",
+    "word": "notwendig",
+    "rule": "Compound adjective: 'not' (need) + 'wendig' (turn).",
+    "type": "adjective",
+    "category": "Behörden"
+  }
+]

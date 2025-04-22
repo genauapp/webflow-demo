@@ -1,0 +1,202 @@
+[
+    {
+        "german": "online",
+        "english": "online",
+        "level": "A2",
+        "example": "Ich bin fast immer online.",
+        "word": "online",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_01"
+    },
+    {
+        "german": "offline",
+        "english": "offline",
+        "level": "A2",
+        "example": "Ich bin gerade offline.",
+        "word": "offline",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_02"
+    },
+    {
+        "german": "sofort",
+        "english": "immediately",
+        "level": "A2",
+        "example": "Ich antworte dir sofort.",
+        "word": "sofort",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_03"
+    },
+    {
+        "german": "gleich",
+        "english": "soon",
+        "level": "A2",
+        "example": "Ich rufe dich gleich zurück.",
+        "word": "gleich",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_04"
+    },
+    {
+        "german": "heute",
+        "english": "today",
+        "level": "A2",
+        "example": "Ich schreibe heute viele E-Mails.",
+        "word": "heute",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_05"
+    },
+    {
+        "german": "gestern",
+        "english": "yesterday",
+        "level": "A2",
+        "example": "Ich habe gestern mit ihr telefoniert.",
+        "word": "gestern",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_06"
+    },
+    {
+        "german": "morgen",
+        "english": "tomorrow",
+        "level": "A2",
+        "example": "Ich schreibe dir morgen zurück.",
+        "word": "morgen",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_07"
+    },
+    {
+        "german": "manchmal",
+        "english": "sometimes",
+        "level": "A2",
+        "example": "Manchmal chatte ich mit Freunden.",
+        "word": "manchmal",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_08"
+    },
+    {
+        "german": "oft",
+        "english": "often",
+        "level": "A2",
+        "example": "Ich bin oft im Internet.",
+        "word": "oft",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_09"
+    },
+    {
+        "german": "nie",
+        "english": "never",
+        "level": "A2",
+        "example": "Ich telefoniere nie ohne Kopfhörer.",
+        "word": "nie",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_10"
+    },
+    {
+        "german": "immer",
+        "english": "always",
+        "level": "A2",
+        "example": "Ich checke immer meine Mails morgens.",
+        "word": "immer",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_11"
+    },
+    {
+        "german": "schon",
+        "english": "already",
+        "level": "A2",
+        "example": "Ich habe die Nachricht schon gelesen.",
+        "word": "schon",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_12"
+    },
+    {
+        "german": "noch nicht",
+        "english": "not yet",
+        "level": "A2",
+        "example": "Ich habe die E-Mail noch nicht bekommen.",
+        "word": "noch nicht",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_13"
+    },
+    {
+        "german": "lange",
+        "english": "for a long time",
+        "level": "A2",
+        "example": "Ich habe lange auf die Antwort gewartet.",
+        "word": "lange",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_14"
+    },
+    {
+        "german": "kurz",
+        "english": "briefly",
+        "level": "A2",
+        "example": "Ich rufe dich kurz an.",
+        "word": "kurz",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_15"
+    },
+    {
+        "german": "wieder",
+        "english": "again",
+        "level": "A2",
+        "example": "Ich versuche es wieder.",
+        "word": "wieder",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_16"
+    },
+    {
+        "german": "einfach",
+        "english": "simply",
+        "level": "A2",
+        "example": "Du kannst es einfach posten.",
+        "word": "einfach",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_17"
+    },
+    {
+        "german": "überall",
+        "english": "everywhere",
+        "level": "A2",
+        "example": "Mit dem Handy bin ich überall erreichbar.",
+        "word": "überall",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_18"
+    },
+    {
+        "german": "nirgendwo",
+        "english": "nowhere",
+        "level": "A2",
+        "example": "Die Datei ist nirgendwo zu finden.",
+        "word": "nirgendwo",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_19"
+    },
+    {
+        "german": "dort",
+        "english": "there",
+        "level": "A2",
+        "example": "Du kannst dort deine Nachrichten sehen.",
+        "word": "dort",
+        "type": "adverb",
+        "category": "Medien & Kommunikation",
+        "id": "adverb_medien_A2_20"
+    }
+]

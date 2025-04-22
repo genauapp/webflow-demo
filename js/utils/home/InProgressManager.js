@@ -38,7 +38,7 @@ export default function InProgressManager(isAnswerCorrect) {
   )
 
   const inProgressIndex = inProgressWords[level][category][wordType].findIndex(
-    (item) => item.almanca === currentWord.almanca
+    (item) => item.german === currentWord.german
   )
   if (isAnswerCorrect) {
     // if currentWord is not in the INPROGRESSWORDS list
@@ -46,7 +46,7 @@ export default function InProgressManager(isAnswerCorrect) {
       //Add it into inProgressWordsList and save it into LocalStorage
       inProgressWords[level][category][wordType].push({
         type: currentWord.type,
-        almanca: currentWord.almanca,
+        german: currentWord.german,
         counter: 1,
       })
       LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
@@ -78,21 +78,31 @@ export default function InProgressManager(isAnswerCorrect) {
 
         learnedWithExerciseWords[level][category][wordType].push({
           type: currentWord.type,
-          almanca: currentWord.almanca,
-          ingilizce: currentWord.ingilizce,
-          seviye: currentWord.seviye || 'N/A',
+          german: currentWord.german,
+          english: currentWord.english,
+          level: currentWord.level || 'N/A',
         })
         LocalStorageManager.save(
           LEARNED_WITH_EXERCISE_WORDS_KEY,
           learnedWithExerciseWords
         )
+        let bookmarkedWords = LocalStorageManager.load('BOOKMARKS')
+        let learnedWords = bookmarkedWords.learned
+        learnedWords.push({
+          type: currentWord.type,
+          german: currentWord.german,
+          english: currentWord.english,
+          level: currentWord.level || 'N/A',
+        })
+        bookmarkedWords.learned = learnedWords
+        LocalStorageManager.save('BOOKMARKS', bookmarkedWords)
         // Remove the current word from the wordListExercise array
         wordListExercise.splice(0, 1)
         LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, wordListExercise)
 
         document.getElementById(
           `feedbackMessage-${wordType}`
-        ).innerText = `This word: ${currentWord.almanca} added to learned list!🏆`
+        ).innerText = `This word: ${currentWord.german} added to learned list!🏆`
         document.getElementById(`feedbackMessage-${wordType}`).style.color =
           'green'
         document.getElementById(`progressRight-${wordType}`).style.opacity = '1'

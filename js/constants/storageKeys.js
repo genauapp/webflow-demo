@@ -15,9 +15,9 @@ export const LEARNED_WITH_EXERCISE_WORDS_KEY = "LEARNED_WITH_EXERCISE_WORDS";
 export const WORD_LIST_EXERCISE_KEY = "WORD_LIST_EXERCISE";
 export const WORD_LIST_KEY = "WORD_LIST";
 export const IN_PROGRESS_WORDS_KEY = "IN_PROGRESS_WORDS";
-export const CURRENT_LEARN_INDEX_KEY = "CURRENT_LEARN_INDEX"
 export const TOTAL_WORD_EXERCISE_KEY = "TOTAL_WORD_EXERCISE"
 export const TOTAL_WORD_LEARN_KEY = "TOTAL_WORD_LEARN"
+export const IS_ON_LEARN_KEY = "IS_ON_LEARN_OR_EXERCISE"
 
 /*
   Einbürgerungstest
@@ -40,23 +40,126 @@ export class DEFAULT_VALUE {
    * App
    */
 
-  static APP_VERSION = "1.2.51";
-
+  static APP_VERSION = "1.2.75";
 
   /** 
   Homepage
   */
   static WORD_LIST_EXERCISE = [];
   static WORD_LIST = [];
-  static CURRENT_LEVEL = "b1telcpt1";
+  static CURRENT_LEVEL = "a1";
   static CURRENT_WORD_TYPE = "noun";
-  static CURRENT_CATEGORY = "default";
-  static CURRENT_LEARN_INDEX = 0
+  static CURRENT_CATEGORY = "alltag";
   static TOTAL_WORD_LEARN = 0
   static TOTAL_WORD_EXERCISE = 0
+  static IS_ON_LEARN_OR_EXERCISE = "learn";
 
   static LEARNED_WITH_LEARN_WORDS = {
-    b1telcpt1: {
+    a1: {
+      alltag: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      einkaufen: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      gesundheit: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      behoerden: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    a2: {
+      alltag: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      freizeit: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      medien: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      arbeit: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    b1: {
+      gefuehle: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      reisen: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      slang: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      wohnen: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    b2: {
+      bildung: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      kultur: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      politik: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      technik: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    c1: {
       default: {
         noun: [],
         verb: [],
@@ -82,59 +185,7 @@ export class DEFAULT_VALUE {
         adverb: [],
       },
     },
-    b1telcpt2: {
-      default: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-      dirty: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-      doctor: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-      music: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-    },
-    b1telcpt3: {
-      default: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-      dirty: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-      doctor: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-      music: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-    },
-    b1telcpt4: {
+    c2: {
       default: {
         noun: [],
         verb: [],
@@ -166,7 +217,111 @@ export class DEFAULT_VALUE {
   };
 
   static LEARNED_WITH_EXERCISE_WORDS = {
-    b1telcpt1: {
+    a1: {
+      alltag: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      einkaufen: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      gesundheit: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      behoerden: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    a2: {
+      alltag: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      freizeit: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      medien: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      arbeit: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    b1: {
+      gefuehle: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      reisen: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      slang: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      wohnen: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    b2: {
+      bildung: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      kultur: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      politik: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      technik: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    c1: {
       default: {
         noun: [],
         verb: [],
@@ -192,59 +347,7 @@ export class DEFAULT_VALUE {
         adverb: [],
       },
     },
-    b1telcpt2: {
-      default: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-      dirty: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-      doctor: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-      music: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-    },
-    b1telcpt3: {
-      default: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-      dirty: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-      doctor: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-      music: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-    },
-    b1telcpt4: {
+    c2: {
       default: {
         noun: [],
         verb: [],
@@ -277,7 +380,111 @@ export class DEFAULT_VALUE {
 
 
   static IN_PROGRESS_WORDS = {
-    b1telcpt1: {
+    a1: {
+      alltag: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      einkaufen: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      gesundheit: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      behoerden: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    a2: {
+      alltag: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      freizeit: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      medien: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      arbeit: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    b1: {
+      gefuehle: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      reisen: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      slang: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      wohnen: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    b2: {
+      bildung: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      kultur: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      politik: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+      technik: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      },
+    },
+    c1: {
       default: {
         noun: [],
         verb: [],
@@ -303,59 +510,7 @@ export class DEFAULT_VALUE {
         adverb: [],
       },
     },
-    b1telcpt2: {
-      default: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-      dirty: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-      doctor: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-      music: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-    },
-    b1telcpt3: {
-      default: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-      dirty: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-      doctor: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-      music: {
-        noun: [],
-        verb: [],
-        adjective: [],
-        adverb: [],
-      },
-    },
-    b1telcpt4: {
+    c2: {
       default: {
         noun: [],
         verb: [],
@@ -383,7 +538,12 @@ export class DEFAULT_VALUE {
     },
     einburgerungstest: {
       einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] }
-    },
+    }
+  };
+
+  static BOOKMARKS = {
+    favorites: [],
+    learned: [],
   }
 
   /** 

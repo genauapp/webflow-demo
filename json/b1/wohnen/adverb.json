@@ -1,0 +1,202 @@
+[
+    {
+        "german": "regelmäßig",
+        "english": "regularly",
+        "level": "B1",
+        "example": "Ich lüfte regelmäßig die Wohnung.",
+        "word": "regelmäßig",
+        "type": "adverb",
+        "category": "Wohnen & Umwelt",
+        "id": "adverb_wohnen_B1_01"
+    },
+    {
+        "german": "täglich",
+        "english": "daily",
+        "level": "B1",
+        "example": "Wir trennen täglich den Müll.",
+        "word": "täglich",
+        "type": "adverb",
+        "category": "Wohnen & Umwelt",
+        "id": "adverb_wohnen_B1_02"
+    },
+    {
+        "german": "gründlich",
+        "english": "thoroughly",
+        "level": "B1",
+        "example": "Das Bad wird gründlich gereinigt.",
+        "word": "gründlich",
+        "type": "adverb",
+        "category": "Wohnen & Umwelt",
+        "id": "adverb_wohnen_B1_03"
+    },
+    {
+        "german": "sauber",
+        "english": "cleanly",
+        "level": "B1",
+        "example": "Die Wohnung ist immer sauber geputzt.",
+        "word": "sauber",
+        "type": "adverb",
+        "category": "Wohnen & Umwelt",
+        "id": "adverb_wohnen_B1_04"
+    },
+    {
+        "german": "umweltfreundlich",
+        "english": "environmentally friendly",
+        "level": "B1",
+        "example": "Wir leben umweltfreundlich.",
+        "word": "umweltfreundlich",
+        "type": "adverb",
+        "category": "Wohnen & Umwelt",
+        "id": "adverb_wohnen_B1_05"
+    },
+    {
+        "german": "energiesparend",
+        "english": "energy-saving",
+        "level": "B1",
+        "example": "Wir leben energiesparend.",
+        "word": "energiesparend",
+        "type": "adverb",
+        "category": "Wohnen & Umwelt",
+        "id": "adverb_wohnen_B1_06"
+    },
+    {
+        "german": "vorsichtig",
+        "english": "carefully",
+        "level": "B1",
+        "example": "Man muss vorsichtig mit dem Wasser umgehen.",
+        "word": "vorsichtig",
+        "type": "adverb",
+        "category": "Wohnen & Umwelt",
+        "id": "adverb_wohnen_B1_07"
+    },
+    {
+        "german": "bewusst",
+        "english": "consciously",
+        "level": "B1",
+        "example": "Wir konsumieren bewusst.",
+        "word": "bewusst",
+        "type": "adverb",
+        "category": "Wohnen & Umwelt",
+        "id": "adverb_wohnen_B1_08"
+    },
+    {
+        "german": "drinnen",
+        "english": "indoors",
+        "level": "B1",
+        "example": "Im Winter bleiben wir meistens drinnen.",
+        "word": "drinnen",
+        "type": "adverb",
+        "category": "Wohnen & Umwelt",
+        "id": "adverb_wohnen_B1_09"
+    },
+    {
+        "german": "draußen",
+        "english": "outside",
+        "level": "B1",
+        "example": "Die Pflanzen stehen draußen.",
+        "word": "draußen",
+        "type": "adverb",
+        "category": "Wohnen & Umwelt",
+        "id": "adverb_wohnen_B1_10"
+    },
+    {
+        "german": "überall",
+        "english": "everywhere",
+        "level": "B1",
+        "example": "Es liegt überall Staub.",
+        "word": "überall",
+        "type": "adverb",
+        "category": "Wohnen & Umwelt",
+        "id": "adverb_wohnen_B1_11"
+    },
+    {
+        "german": "nirgendwo",
+        "english": "nowhere",
+        "level": "B1",
+        "example": "Der Schlüssel ist nirgendwo zu finden.",
+        "word": "nirgendwo",
+        "type": "adverb",
+        "category": "Wohnen & Umwelt",
+        "id": "adverb_wohnen_B1_12"
+    },
+    {
+        "german": "häufig",
+        "english": "frequently",
+        "level": "B1",
+        "example": "Die Fenster werden häufig geöffnet.",
+        "word": "häufig",
+        "type": "adverb",
+        "category": "Wohnen & Umwelt",
+        "id": "adverb_wohnen_B1_13"
+    },
+    {
+        "german": "selten",
+        "english": "rarely",
+        "level": "B1",
+        "example": "Wir benutzen selten die Heizung im Sommer.",
+        "word": "selten",
+        "type": "adverb",
+        "category": "Wohnen & Umwelt",
+        "id": "adverb_wohnen_B1_14"
+    },
+    {
+        "german": "komplett",
+        "english": "completely",
+        "level": "B1",
+        "example": "Das Bad wurde komplett renoviert.",
+        "word": "komplett",
+        "type": "adverb",
+        "category": "Wohnen & Umwelt",
+        "id": "adverb_wohnen_B1_15"
+    },
+    {
+        "german": "teilweise",
+        "english": "partially",
+        "level": "B1",
+        "example": "Die Wohnung ist nur teilweise möbliert.",
+        "word": "teilweise",
+        "type": "adverb",
+        "category": "Wohnen & Umwelt",
+        "id": "adverb_wohnen_B1_16"
+    },
+    {
+        "german": "vorher",
+        "english": "beforehand",
+        "level": "B1",
+        "example": "Vorher sollten wir lüften.",
+        "word": "vorher",
+        "type": "adverb",
+        "category": "Wohnen & Umwelt",
+        "id": "adverb_wohnen_B1_17"
+    },
+    {
+        "german": "nachher",
+        "english": "afterwards",
+        "level": "B1",
+        "example": "Nachher putzen wir das Badezimmer.",
+        "word": "nachher",
+        "type": "adverb",
+        "category": "Wohnen & Umwelt",
+        "id": "adverb_wohnen_B1_18"
+    },
+    {
+        "german": "schnell",
+        "english": "quickly",
+        "level": "B1",
+        "example": "Wir müssen schnell den Müll rausbringen.",
+        "word": "schnell",
+        "type": "adverb",
+        "category": "Wohnen & Umwelt",
+        "id": "adverb_wohnen_B1_19"
+    },
+    {
+        "german": "langsam",
+        "english": "slowly",
+        "level": "B1",
+        "example": "Die Heizung wird langsam warm.",
+        "word": "langsam",
+        "type": "adverb",
+        "category": "Wohnen & Umwelt",
+        "id": "adverb_wohnen_B1_20"
+    }
+]

@@ -21,15 +21,16 @@ function listFavorites() {
 
   favoritesContainer.innerHTML = '' // Mevcut listeyi temizle
 
-  const favoriteWords = JSON.parse(localStorage.getItem('favoriteWords')) || []
+  const bookmarkedWords = LocalStorageManager.load('BOOKMARKS')
+  let favoriteWords = bookmarkedWords.favorites
 
   if (favoriteWords.length === 0) {
-    // Favori kelime yokken gösterilecek mesaj
+    // Favori word yokken gösterilecek mesaj
     showNoWordsMessage(favoritesContainer)
     return
   }
 
-  // Favori kelimeler mevcutsa düzeni geri yükle
+  // Favori wordler mevcutsa düzeni geri yükle
   favoritesContainer.style.display = 'block' // Flex değil, varsayılan düzen
 
   favoriteWords.forEach((word, index) => {
@@ -42,7 +43,7 @@ function listFavorites() {
     favAllBlock.style.padding = '12px 0' // Bloklar arası boşluk
     favAllBlock.style.borderBottom = '1px solid #ccc' // Alt çizgi ile ayırma
 
-    // Almanca ve İngilizce kelimeler
+    // german ve İngilizce wordler
     const favWordsBlock = document.createElement('div')
     favWordsBlock.classList.add('favWordsBlock')
     favWordsBlock.style.display = 'flex'
@@ -54,17 +55,17 @@ function listFavorites() {
     germanWord.classList.add('favoriteWordGerman')
     germanWord.style.margin = '0' // Varsayılan margin sıfırlama
     germanWord.style.fontWeight = 'bold' // Kalın yazı
-    germanWord.textContent = word.almanca
+    germanWord.textContent = word.german
 
     const englishWord = document.createElement('p')
     englishWord.classList.add('favoriteWordEnglish')
     englishWord.style.margin = '4px 0 0 0' // Üstte boşluk
-    englishWord.textContent = word.ingilizce
+    englishWord.textContent = word.english
 
     favWordsBlock.appendChild(germanWord)
     favWordsBlock.appendChild(englishWord)
 
-    // Seviye ve silme butonu
+    // level ve silme butonu
     const favLevelBlock = document.createElement('div')
     favLevelBlock.classList.add('favLevelBlock')
     favLevelBlock.style.display = 'flex'
@@ -75,7 +76,7 @@ function listFavorites() {
     levelTag.classList.add('favoriteWordLevel')
     levelTag.style.margin = '0' // Varsayılan margin sıfırlama
     levelTag.style.color = '#999' // Gri renk
-    levelTag.textContent = word.seviye
+    levelTag.textContent = word.level
 
     const typeTag = document.createElement('p')
     typeTag.classList.add('favoriteWordType')
@@ -106,17 +107,21 @@ function listFavorites() {
   })
 }
 
-// Favori kelimeyi silme
+// Favori wordyi silme
 function removeFavorite(index) {
-  let favoriteWords = JSON.parse(localStorage.getItem('favoriteWords')) || []
+  let bookmarkedWords = LocalStorageManager.load('BOOKMARKS')
+  let favoriteWords = bookmarkedWords.favorites
   favoriteWords.splice(index, 1) // İlgili indeksi kaldır
-  localStorage.setItem('favoriteWords', JSON.stringify(favoriteWords))
+  bookmarkedWords.favorites = favoriteWords
+  LocalStorageManager.save('BOOKMARKS', bookmarkedWords)
   listFavorites() // Listeyi yeniden yükle
 }
 
 function listLearnedWords() {
 
   const learnedWordsContainer = document.getElementById('learnedWordsContainer');
+  const bookmarkedWords = LocalStorageManager.load('BOOKMARKS')
+  let learnedWords = bookmarkedWords.learned
 
   // Container ayarları
   learnedWordsContainer.style.maxHeight = '420px';
@@ -127,89 +132,70 @@ function listLearnedWords() {
   learnedWordsContainer.style.display = 'block';
   learnedWordsContainer.innerHTML = '';
 
-  // Yerel depodan veriyi yükle
-  const learnedWithExerciseWords = LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS);
-
   // Eğer tüm word listeleri boşsa, mesaj göster
-  if (areAllWordListsEmpty(learnedWithExerciseWords)) {
+  if (learnedWords.length === 0 || !learnedWords) {
     showNoWordsMessage(learnedWordsContainer);
     return;
   }
 
-  // levels, categories ve types üzerinden doğru derinlikte iterate et
-  levels.forEach(level => {
-    const levelObj = learnedWithExerciseWords[level];
-    if (!levelObj) return; // Seviye yoksa atla
+  learnedWords.forEach(word => {
+    // Öğrenilmiş wordler bloğunu kapsayan div
+    const learnedWordsAllBlock = document.createElement('div');
+    learnedWordsAllBlock.classList.add('learnedWordsAllBlock');
+    learnedWordsAllBlock.style.display = 'flex';
+    learnedWordsAllBlock.style.justifyContent = 'space-between';
+    learnedWordsAllBlock.style.alignItems = 'center';
+    learnedWordsAllBlock.style.padding = '12px 0';
+    learnedWordsAllBlock.style.borderBottom = '1px solid #ccc';
 
-    categories.forEach(category => {
-      const categoryObj = levelObj[category];
-      if (!categoryObj) return; // Kategori yoksa atla
+    // word bilgilerini içeren div
+    const learnedWordsBlock = document.createElement('div');
+    learnedWordsBlock.classList.add('learnedWordsBlock');
+    learnedWordsBlock.style.display = 'flex';
+    learnedWordsBlock.style.flexDirection = 'column';
+    learnedWordsBlock.style.textAlign = 'left';
+    learnedWordsBlock.style.flex = '1';
 
-      types.forEach(type => {
-        const wordsArray = categoryObj[type];
-        if (Array.isArray(wordsArray) && wordsArray.length > 0) {
-          wordsArray.forEach(word => {
-            // Öğrenilmiş kelimeler bloğunu kapsayan div
-            const learnedWordsAllBlock = document.createElement('div');
-            learnedWordsAllBlock.classList.add('learnedWordsAllBlock');
-            learnedWordsAllBlock.style.display = 'flex';
-            learnedWordsAllBlock.style.justifyContent = 'space-between';
-            learnedWordsAllBlock.style.alignItems = 'center';
-            learnedWordsAllBlock.style.padding = '12px 0';
-            learnedWordsAllBlock.style.borderBottom = '1px solid #ccc';
+    const germanWord = document.createElement('p');
+    germanWord.classList.add('learnedWordGerman');
+    germanWord.style.margin = '0';
+    germanWord.style.fontWeight = 'bold';
+    germanWord.textContent = word.german;
 
-            // Kelime bilgilerini içeren div
-            const learnedWordsBlock = document.createElement('div');
-            learnedWordsBlock.classList.add('learnedWordsBlock');
-            learnedWordsBlock.style.display = 'flex';
-            learnedWordsBlock.style.flexDirection = 'column';
-            learnedWordsBlock.style.textAlign = 'left';
-            learnedWordsBlock.style.flex = '1';
+    const englishWord = document.createElement('p');
+    englishWord.classList.add('learnedWordEnglish');
+    englishWord.style.margin = '4px 0 0 0';
+    englishWord.textContent = word.english;
 
-            const germanWord = document.createElement('p');
-            germanWord.classList.add('learnedWordGerman');
-            germanWord.style.margin = '0';
-            germanWord.style.fontWeight = 'bold';
-            germanWord.textContent = word.almanca;
+    learnedWordsBlock.appendChild(germanWord);
+    learnedWordsBlock.appendChild(englishWord);
 
-            const englishWord = document.createElement('p');
-            englishWord.classList.add('learnedWordEnglish');
-            englishWord.style.margin = '4px 0 0 0';
-            englishWord.textContent = word.ingilizce;
+    // level ve tip bilgisini gösteren blok
+    const learnedWordsLevelBlock = document.createElement('div');
+    learnedWordsLevelBlock.classList.add('favLevelBlock');
+    learnedWordsLevelBlock.style.display = 'flex';
+    learnedWordsLevelBlock.style.alignItems = 'center';
+    learnedWordsLevelBlock.style.gap = '8px';
 
-            learnedWordsBlock.appendChild(germanWord);
-            learnedWordsBlock.appendChild(englishWord);
+    const levelTag = document.createElement('p');
+    levelTag.classList.add('learnedWordLevel');
+    levelTag.style.margin = '0';
+    levelTag.style.color = '#999';
+    levelTag.textContent = word.level;
 
-            // Seviye ve tip bilgisini gösteren blok
-            const learnedWordsLevelBlock = document.createElement('div');
-            learnedWordsLevelBlock.classList.add('favLevelBlock');
-            learnedWordsLevelBlock.style.display = 'flex';
-            learnedWordsLevelBlock.style.alignItems = 'center';
-            learnedWordsLevelBlock.style.gap = '8px';
+    const typeTag = document.createElement('p');
+    typeTag.classList.add('favoriteWordType');
+    typeTag.style.margin = '0';
+    typeTag.style.color = '#999';
+    typeTag.textContent = word.type;
 
-            const levelTag = document.createElement('p');
-            levelTag.classList.add('learnedWordLevel');
-            levelTag.style.margin = '0';
-            levelTag.style.color = '#999';
-            levelTag.textContent = word.seviye;
+    learnedWordsLevelBlock.appendChild(typeTag);
+    learnedWordsLevelBlock.appendChild(levelTag);
 
-            const typeTag = document.createElement('p');
-            typeTag.classList.add('favoriteWordType');
-            typeTag.style.margin = '0';
-            typeTag.style.color = '#999';
-            typeTag.textContent = word.type;
-
-            learnedWordsLevelBlock.appendChild(typeTag);
-            learnedWordsLevelBlock.appendChild(levelTag);
-
-            // Ana bloğa ekle
-            learnedWordsAllBlock.appendChild(learnedWordsBlock);
-            learnedWordsAllBlock.appendChild(learnedWordsLevelBlock);
-            learnedWordsContainer.appendChild(learnedWordsAllBlock);
-          });
-        }
-      });
-    });
+    // Ana bloğa ekle
+    learnedWordsAllBlock.appendChild(learnedWordsBlock);
+    learnedWordsAllBlock.appendChild(learnedWordsLevelBlock);
+    learnedWordsContainer.appendChild(learnedWordsAllBlock);
   });
 }
 
@@ -246,26 +232,6 @@ function showNoWordsMessage(elem) {
     elem.appendChild(noWordsMessageElement)
     return
   }
-}
-
-function areAllWordListsEmpty(data) {
-  for (const level of levels) {
-    const levelObj = data[level];
-    if (!levelObj) continue;
-
-    for (const category of categories) {
-      const categoryObj = levelObj[category];
-      if (!categoryObj) continue;
-
-      for (const type of types) {
-        const wordList = categoryObj[type];
-        if (Array.isArray(wordList) && wordList.length > 0) {
-          return false; // Eğer herhangi bir liste doluysa false döner
-        }
-      }
-    }
-  }
-  return true; // Hepsi boşsa true döner
 }
 
 // Sayfa yüklendiğinde favorileri listele

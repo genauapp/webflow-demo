@@ -1,0 +1,202 @@
+[
+    {
+        "german": "rechtzeitig",
+        "english": "on time",
+        "level": "B1",
+        "example": "Ich bin rechtzeitig am Bahnhof angekommen.",
+        "word": "rechtzeitig",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_01"
+    },
+    {
+        "german": "pünktlich",
+        "english": "punctually",
+        "level": "B1",
+        "example": "Der Zug fährt pünktlich ab.",
+        "word": "pünktlich",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_02"
+    },
+    {
+        "german": "spät",
+        "english": "late",
+        "level": "B1",
+        "example": "Wir kamen spät an.",
+        "word": "spät",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_03"
+    },
+    {
+        "german": "früh",
+        "english": "early",
+        "level": "B1",
+        "example": "Ich bin früh losgefahren.",
+        "word": "früh",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_04"
+    },
+    {
+        "german": "direkt",
+        "english": "directly",
+        "level": "B1",
+        "example": "Wir fahren direkt nach München.",
+        "word": "direkt",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_05"
+    },
+    {
+        "german": "unterwegs",
+        "english": "on the way",
+        "level": "B1",
+        "example": "Ich bin noch unterwegs.",
+        "word": "unterwegs",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_06"
+    },
+    {
+        "german": "draußen",
+        "english": "outside",
+        "level": "B1",
+        "example": "Wir warten draußen vor dem Hotel.",
+        "word": "draußen",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_07"
+    },
+    {
+        "german": "drinnen",
+        "english": "inside",
+        "level": "B1",
+        "example": "Wir warten drinnen in der Halle.",
+        "word": "drinnen",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_08"
+    },
+    {
+        "german": "hier",
+        "english": "here",
+        "level": "B1",
+        "example": "Wir bleiben hier über Nacht.",
+        "word": "hier",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_09"
+    },
+    {
+        "german": "dort",
+        "english": "there",
+        "level": "B1",
+        "example": "Unser Hotel ist dort drüben.",
+        "word": "dort",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_10"
+    },
+    {
+        "german": "überall",
+        "english": "everywhere",
+        "level": "B1",
+        "example": "Touristen sind überall in der Stadt.",
+        "word": "überall",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_11"
+    },
+    {
+        "german": "nirgendwo",
+        "english": "nowhere",
+        "level": "B1",
+        "example": "Ich finde meinen Koffer nirgendwo.",
+        "word": "nirgendwo",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_12"
+    },
+    {
+        "german": "vorher",
+        "english": "beforehand",
+        "level": "B1",
+        "example": "Man muss das Ticket vorher kaufen.",
+        "word": "vorher",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_13"
+    },
+    {
+        "german": "nachher",
+        "english": "afterwards",
+        "level": "B1",
+        "example": "Nachher gehen wir essen.",
+        "word": "nachher",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_14"
+    },
+    {
+        "german": "geradeaus",
+        "english": "straight ahead",
+        "level": "B1",
+        "example": "Gehen Sie geradeaus und dann links.",
+        "word": "geradeaus",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_15"
+    },
+    {
+        "german": "links",
+        "english": "left",
+        "level": "B1",
+        "example": "Biegen Sie links ab.",
+        "word": "links",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_16"
+    },
+    {
+        "german": "rechts",
+        "english": "right",
+        "level": "B1",
+        "example": "Die Haltestelle ist rechts.",
+        "word": "rechts",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_17"
+    },
+    {
+        "german": "schnell",
+        "english": "quickly",
+        "level": "B1",
+        "example": "Wir müssen schnell zum Bahnhof.",
+        "word": "schnell",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_18"
+    },
+    {
+        "german": "langsam",
+        "english": "slowly",
+        "level": "B1",
+        "example": "Der Zug fährt langsam.",
+        "word": "langsam",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_19"
+    },
+    {
+        "german": "endlich",
+        "english": "finally",
+        "level": "B1",
+        "example": "Endlich sind wir angekommen!",
+        "word": "endlich",
+        "type": "adverb",
+        "category": "Reisen & Verkehr",
+        "id": "adverb_reisen_B1_20"
+    }
+]

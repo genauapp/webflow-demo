@@ -1,0 +1,32 @@
+[
+  {
+    "german": "krank",
+    "english": "sick",
+    "level": "A1",
+    "example": "Er ist heute krank und bleibt zu Hause.",
+    "word": "krank",
+    "rule": "Describes health conditions.",
+    "type": "adjective",
+    "category": "Gesundheit"
+  },
+  {
+    "german": "gesund",
+    "english": "healthy",
+    "level": "A1",
+    "example": "Ich esse viel Obst, das ist gesund.",
+    "word": "gesund",
+    "rule": "Opposite of 'krank', used with 'sein' or 'bleiben'.",
+    "type": "adjective",
+    "category": "Gesundheit"
+  },
+  {
+    "german": "fiebrig",
+    "english": "feverish",
+    "level": "A1",
+    "example": "Das Kind sieht fiebrig aus.",
+    "word": "fiebrig",
+    "rule": "Adjective describing symptoms, ends in '-ig'.",
+    "type": "adjective",
+    "category": "Gesundheit"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "german": "der Supermarkt",
+    "english": "supermarket",
+    "level": "A1",
+    "example": "Ich kaufe im Supermarkt ein.",
+    "artikel": "der",
+    "word": "Supermarkt",
+    "rule": "Most places or institutions ending in '-markt' take 'der'.",
+    "category": "Einkaufen"
+  },
+  {
+    "german": "das Brot",
+    "english": "bread",
+    "level": "A1",
+    "example": "Ich nehme ein Brot, bitte.",
+    "artikel": "das",
+    "word": "Brot",
+    "rule": "Most uncountable food nouns take 'das'.",
+    "category": "Einkaufen"
+  },
+  {
+    "german": "die Tüte",
+    "english": "bag",
+    "level": "A1",
+    "example": "Möchten Sie eine Tüte?",
+    "artikel": "die",
+    "word": "Tüte",
+    "rule": "Nouns ending in '-e' are usually feminine and take 'die'.",
+    "category": "Einkaufen"
+  }
+]

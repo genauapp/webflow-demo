@@ -1,0 +1,32 @@
+[
+  {
+    "german": "unterschreiben",
+    "english": "to sign",
+    "level": "A1",
+    "example": "Bitte unterschreiben Sie hier.",
+    "word": "unterschreiben",
+    "rule": "Irregular verb: 'unterschrieb' in Präteritum.",
+    "type": "verb",
+    "category": "Behörden"
+  },
+  {
+    "german": "ausfüllen",
+    "english": "to fill out",
+    "level": "A1",
+    "example": "Sie müssen das Formular ausfüllen.",
+    "word": "ausfüllen",
+    "rule": "Separable verb: 'ich fülle ... aus'.",
+    "type": "verb",
+    "category": "Behörden"
+  },
+  {
+    "german": "beantragen",
+    "english": "to apply for",
+    "level": "A1",
+    "example": "Ich möchte ein Visum beantragen.",
+    "word": "beantragen",
+    "rule": "Regular verb with prefix 'be-', not separable.",
+    "type": "verb",
+    "category": "Behörden"
+  }
+]

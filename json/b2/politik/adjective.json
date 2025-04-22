@@ -1,0 +1,202 @@
+[
+    {
+        "german": "politisch",
+        "english": "political",
+        "level": "B2",
+        "example": "Die politische Lage ist angespannt.",
+        "word": "politisch",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_01"
+    },
+    {
+        "german": "umweltfreundlich",
+        "english": "environmentally friendly",
+        "level": "B2",
+        "example": "Wir benutzen umweltfreundliche Produkte.",
+        "word": "umweltfreundlich",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_02"
+    },
+    {
+        "german": "demokratisch",
+        "english": "democratic",
+        "level": "B2",
+        "example": "Deutschland ist ein demokratischer Staat.",
+        "word": "demokratisch",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_03"
+    },
+    {
+        "german": "gesetzlich",
+        "english": "legal / statutory",
+        "level": "B2",
+        "example": "Das ist gesetzlich verboten.",
+        "word": "gesetzlich",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_04"
+    },
+    {
+        "german": "global",
+        "english": "global",
+        "level": "B2",
+        "example": "Der Klimawandel ist ein globales Problem.",
+        "word": "global",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_05"
+    },
+    {
+        "german": "öffentlich",
+        "english": "public",
+        "level": "B2",
+        "example": "Es handelt sich um eine öffentliche Veranstaltung.",
+        "word": "öffentlich",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_06"
+    },
+    {
+        "german": "nachhaltig",
+        "english": "sustainable",
+        "level": "B2",
+        "example": "Nachhaltige Entwicklung ist wichtig.",
+        "word": "nachhaltig",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_07"
+    },
+    {
+        "german": "friedlich",
+        "english": "peaceful",
+        "level": "B2",
+        "example": "Die Demonstration war friedlich.",
+        "word": "friedlich",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_08"
+    },
+    {
+        "german": "gerecht",
+        "english": "fair / just",
+        "level": "B2",
+        "example": "Ein gerechtes System behandelt alle gleich.",
+        "word": "gerecht",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_09"
+    },
+    {
+        "german": "verantwortungsvoll",
+        "english": "responsible",
+        "level": "B2",
+        "example": "Verantwortungsvolles Handeln ist gefragt.",
+        "word": "verantwortungsvoll",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_10"
+    },
+    {
+        "german": "effektiv",
+        "english": "effective",
+        "level": "B2",
+        "example": "Die Maßnahmen sind sehr effektiv.",
+        "word": "effektiv",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_11"
+    },
+    {
+        "german": "aktiv",
+        "english": "active",
+        "level": "B2",
+        "example": "Er ist ein aktives Mitglied der Partei.",
+        "word": "aktiv",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_12"
+    },
+    {
+        "german": "kritisch",
+        "english": "critical",
+        "level": "B2",
+        "example": "Die Lage wird als kritisch eingeschätzt.",
+        "word": "kritisch",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_13"
+    },
+    {
+        "german": "sozial",
+        "english": "social",
+        "level": "B2",
+        "example": "Soziale Gerechtigkeit ist ein wichtiges Thema.",
+        "word": "sozial",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_14"
+    },
+    {
+        "german": "friedensfördernd",
+        "english": "peace-promoting",
+        "level": "B2",
+        "example": "Friedensfördernde Maßnahmen sind notwendig.",
+        "word": "friedensfördernd",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_15"
+    },
+    {
+        "german": "international",
+        "english": "international",
+        "level": "B2",
+        "example": "Internationale Zusammenarbeit ist entscheidend.",
+        "word": "international",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_16"
+    },
+    {
+        "german": "zukunftsorientiert",
+        "english": "future-oriented",
+        "level": "B2",
+        "example": "Die Politik sollte zukunftsorientiert sein.",
+        "word": "zukunftsorientiert",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_17"
+    },
+    {
+        "german": "verfassungsmäßig",
+        "english": "constitutional",
+        "level": "B2",
+        "example": "Das Vorgehen war verfassungsmäßig korrekt.",
+        "word": "verfassungsmäßig",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_18"
+    },
+    {
+        "german": "engagiert",
+        "english": "committed / dedicated",
+        "level": "B2",
+        "example": "Viele engagierte Bürger setzen sich für Umwelt ein.",
+        "word": "engagiert",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_19"
+    },
+    {
+        "german": "reformbereit",
+        "english": "ready for reform",
+        "level": "B2",
+        "example": "Die Partei ist reformbereit.",
+        "word": "reformbereit",
+        "type": "adjective",
+        "category": "Politik & Umwelt",
+        "id": "adjective_politik_B2_20"
+    }
+]

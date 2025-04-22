@@ -1,0 +1,82 @@
+[
+  {
+    "german": "folglich",
+    "english": "consequently",
+    "level": "C1",
+    "example": "Er hat viel gelernt, folglich hat er die Prüfung bestanden.",
+    "word": "folglich",
+    "type": "adverb"
+  },
+  {
+    "german": "beziehungsweise",
+    "english": "respectively, or rather",
+    "level": "C1",
+    "example": "Die Konferenz findet am Montag beziehungsweise Dienstag statt.",
+    "word": "beziehungsweise",
+    "type": "adverb"
+  },
+  {
+    "german": "dennoch",
+    "english": "nevertheless",
+    "level": "C1",
+    "example": "Es regnet, dennoch gehen wir spazieren.",
+    "word": "dennoch",
+    "type": "adverb"
+  },
+  {
+    "german": "somit",
+    "english": "thus, therefore",
+    "level": "C1",
+    "example": "Er hat das Ziel erreicht und ist somit zufrieden.",
+    "word": "somit",
+    "type": "adverb"
+  },
+  {
+    "german": "zudem",
+    "english": "in addition",
+    "level": "C1",
+    "example": "Das Angebot ist günstig und zudem qualitativ hochwertig.",
+    "word": "zudem",
+    "type": "adverb"
+  },
+  {
+    "german": "indes",
+    "english": "however, meanwhile",
+    "level": "C2",
+    "example": "Er versuchte es, indes ohne Erfolg.",
+    "word": "indes",
+    "type": "adverb"
+  },
+  {
+    "german": "kaum",
+    "english": "hardly, barely",
+    "level": "C1",
+    "example": "Ich habe kaum geschlafen.",
+    "word": "kaum",
+    "type": "adverb"
+  },
+  {
+    "german": "voraussichtlich",
+    "english": "presumably, likely",
+    "level": "C1",
+    "example": "Der Flug wird voraussichtlich pünktlich landen.",
+    "word": "voraussichtlich",
+    "type": "adverb"
+  },
+  {
+    "german": "vermutlich",
+    "english": "presumably, probably",
+    "level": "C1",
+    "example": "Er kommt vermutlich später.",
+    "word": "vermutlich",
+    "type": "adverb"
+  },
+  {
+    "german": "zweifelsohne",
+    "english": "undoubtedly",
+    "level": "C2",
+    "example": "Das ist zweifelsohne eine gute Idee.",
+    "word": "zweifelsohne",
+    "type": "adverb"
+  }
+]

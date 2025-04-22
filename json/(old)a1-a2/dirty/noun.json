@@ -1,0 +1,32 @@
+[
+  {
+    "german": "das Amt",
+    "english": "government office",
+    "level": "A1",
+    "example": "Ich muss zum Amt gehen.",
+    "artikel": "das",
+    "word": "Amt",
+    "rule": "Many nouns ending in '-amt' are neuter and take 'das'.",
+    "category": "Behörden"
+  },
+  {
+    "german": "der Ausweis",
+    "english": "ID card",
+    "level": "A1",
+    "example": "Bitte zeigen Sie Ihren Ausweis.",
+    "artikel": "der",
+    "word": "Ausweis",
+    "rule": "Compound nouns ending in '-weis' often take 'der'.",
+    "category": "Behörden"
+  },
+  {
+    "german": "das Formular",
+    "english": "form",
+    "level": "A1",
+    "example": "Sie müssen dieses Formular ausfüllen.",
+    "artikel": "das",
+    "word": "Formular",
+    "rule": "Nouns ending in '-ar' are usually neuter and take 'das'.",
+    "category": "Behörden"
+  }
+]

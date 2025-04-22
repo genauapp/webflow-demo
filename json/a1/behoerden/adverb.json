@@ -1,0 +1,202 @@
+[
+    {
+        "german": "heute",
+        "english": "today",
+        "level": "A1",
+        "example": "Ich habe heute einen Termin.",
+        "word": "heute",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_01"
+    },
+    {
+        "german": "morgen",
+        "english": "tomorrow",
+        "level": "A1",
+        "example": "Ich gehe morgen zum Bürgeramt.",
+        "word": "morgen",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_02"
+    },
+    {
+        "german": "gestern",
+        "english": "yesterday",
+        "level": "A1",
+        "example": "Gestern war ich bei der Behörde.",
+        "word": "gestern",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_03"
+    },
+    {
+        "german": "bald",
+        "english": "soon",
+        "level": "A1",
+        "example": "Ich bekomme bald eine Antwort.",
+        "word": "bald",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_04"
+    },
+    {
+        "german": "jetzt",
+        "english": "now",
+        "level": "A1",
+        "example": "Ich bin jetzt dran.",
+        "word": "jetzt",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_05"
+    },
+    {
+        "german": "noch",
+        "english": "still / yet",
+        "level": "A1",
+        "example": "Ich warte noch.",
+        "word": "noch",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_06"
+    },
+    {
+        "german": "schon",
+        "english": "already",
+        "level": "A1",
+        "example": "Ich habe das Formular schon ausgefüllt.",
+        "word": "schon",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_07"
+    },
+    {
+        "german": "sofort",
+        "english": "immediately",
+        "level": "A1",
+        "example": "Ich komme sofort.",
+        "word": "sofort",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_08"
+    },
+    {
+        "german": "schnell",
+        "english": "quickly",
+        "level": "A1",
+        "example": "Ich erledige das schnell.",
+        "word": "schnell",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_09"
+    },
+    {
+        "german": "langsam",
+        "english": "slowly",
+        "level": "A1",
+        "example": "Der Prozess ist langsam.",
+        "word": "langsam",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_10"
+    },
+    {
+        "german": "pünktlich",
+        "english": "on time",
+        "level": "A1",
+        "example": "Ich bin pünktlich zum Termin.",
+        "word": "pünktlich",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_11"
+    },
+    {
+        "german": "oft",
+        "english": "often",
+        "level": "A1",
+        "example": "Ich muss oft Formulare ausfüllen.",
+        "word": "oft",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_12"
+    },
+    {
+        "german": "nie",
+        "english": "never",
+        "level": "A1",
+        "example": "Ich war noch nie beim Finanzamt.",
+        "word": "nie",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_13"
+    },
+    {
+        "german": "manchmal",
+        "english": "sometimes",
+        "level": "A1",
+        "example": "Manchmal ist die Behörde voll.",
+        "word": "manchmal",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_14"
+    },
+    {
+        "german": "immer",
+        "english": "always",
+        "level": "A1",
+        "example": "Ich nehme immer meinen Ausweis mit.",
+        "word": "immer",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_15"
+    },
+    {
+        "german": "nicht",
+        "english": "not",
+        "level": "A1",
+        "example": "Ich bin nicht vorbereitet.",
+        "word": "nicht",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_16"
+    },
+    {
+        "german": "vielleicht",
+        "english": "maybe",
+        "level": "A1",
+        "example": "Vielleicht bekomme ich den Termin.",
+        "word": "vielleicht",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_17"
+    },
+    {
+        "german": "dort",
+        "english": "there",
+        "level": "A1",
+        "example": "Die Behörde ist dort.",
+        "word": "dort",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_18"
+    },
+    {
+        "german": "hier",
+        "english": "here",
+        "level": "A1",
+        "example": "Ich bin hier für meinen Termin.",
+        "word": "hier",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_19"
+    },
+    {
+        "german": "genau",
+        "english": "exactly",
+        "level": "A1",
+        "example": "Genau um 9 Uhr ist mein Termin.",
+        "word": "genau",
+        "type": "adverb",
+        "category": "Behoerden",
+        "id": "adverb_behoerden_20"
+    }
+]

@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "type": "verb",
+    "german": "wählen",
+    "english": "to vote",
+    "level": "A2",
+    "example": "Die Bürger wählen den Bundestag.",
+    "word": "wählen",
+    "rule": "Regular verb commonly used in political contexts."
+  },
+  {
+    "id": 2,
+    "type": "verb",
+    "german": "regieren",
+    "english": "to govern",
+    "level": "B1",
+    "example": "Die Bundesregierung regiert das Land.",
+    "word": "regieren",
+    "rule": "Regular verb with political usage."
+  },
+  {
+    "id": 3,
+    "type": "verb",
+    "german": "abstimmen",
+    "english": "to vote (on something)",
+    "level": "B2",
+    "example": "Die Abgeordneten stimmen über das Gesetz ab.",
+    "word": "abstimmen",
+    "rule": "Regular separable verb."
+  },
+  {
+    "id": 4,
+    "type": "verb",
+    "german": "entscheiden",
+    "english": "to decide",
+    "level": "B1",
+    "example": "Das Volk entscheidet durch eine Wahl.",
+    "word": "entscheiden",
+    "rule": "Irregular verb with vowel change in past participle (entschieden)."
+  },
+  {
+    "id": 5,
+    "type": "verb",
+    "german": "unterschreiben",
+    "english": "to sign",
+    "level": "B1",
+    "example": "Der Präsident unterschreibt das Gesetz.",
+    "word": "unterschreiben",
+    "rule": "Irregular verb used in official contexts."
+  },
+  {
+    "id": 6,
+    "type": "verb",
+    "german": "respektieren",
+    "english": "to respect",
+    "level": "B1",
+    "example": "Wir respektieren die Meinung anderer.",
+    "word": "respektieren",
+    "rule": "Regular verb from Latin origin."
+  },
+  {
+    "id": 7,
+    "type": "verb",
+    "german": "achten",
+    "english": "to respect, to pay attention",
+    "level": "A2",
+    "example": "Man soll die Gesetze achten.",
+    "word": "achten",
+    "rule": "Regular verb."
+  },
+  {
+    "id": 8,
+    "type": "verb",
+    "german": "beantragen",
+    "english": "to apply for",
+    "level": "B1",
+    "example": "Er beantragt die deutsche Staatsangehörigkeit.",
+    "word": "beantragen",
+    "rule": "Regular verb, often used in bureaucracy."
+  },
+  {
+    "id": 9,
+    "type": "verb",
+    "german": "einreichen",
+    "english": "to submit",
+    "level": "B2",
+    "example": "Sie reicht den Antrag beim Amt ein.",
+    "word": "einreichen",
+    "rule": "Separable verb, regular."
+  },
+  {
+    "id": 10,
+    "type": "verb",
+    "german": "gelten",
+    "english": "to apply, to be valid",
+    "level": "B1",
+    "example": "Das Gesetz gilt für alle.",
+    "word": "gelten",
+    "rule": "Irregular verb with vowel change (er gilt)."
+  },
+  {
+    "id": 11,
+    "type": "verb",
+    "german": "schützen",
+    "english": "to protect",
+    "level": "A2",
+    "example": "Das Grundgesetz schützt die Freiheit.",
+    "word": "schützen",
+    "rule": "Regular verb."
+  },
+  {
+    "id": 12,
+    "type": "verb",
+    "german": "fordern",
+    "english": "to demand",
+    "level": "B2",
+    "example": "Die Opposition fordert Reformen.",
+    "word": "fordern",
+    "rule": "Regular verb."
+  },
+  {
+    "id": 13,
+    "type": "verb",
+    "german": "unterstützen",
+    "english": "to support",
+    "level": "B1",
+    "example": "Viele Bürger unterstützen die Maßnahme.",
+    "word": "unterstützen",
+    "rule": "Regular verb."
+  },
+  {
+    "id": 14,
+    "type": "verb",
+    "german": "akzeptieren",
+    "english": "to accept",
+    "level": "B1",
+    "example": "Wir akzeptieren unterschiedliche Meinungen.",
+    "word": "akzeptieren",
+    "rule": "Regular verb, foreign origin."
+  },
+  {
+    "id": 15,
+    "type": "verb",
+    "german": "bekämpfen",
+    "english": "to combat",
+    "level": "B2",
+    "example": "Die Regierung bekämpft die Arbeitslosigkeit.",
+    "word": "bekämpfen",
+    "rule": "Regular verb with prefix."
+  },
+  {
+    "id": 16,
+    "type": "verb",
+    "german": "dienen",
+    "english": "to serve",
+    "level": "B1",
+    "example": "Er dient dem Staat.",
+    "word": "dienen",
+    "rule": "Regular verb."
+  },
+  {
+    "id": 17,
+    "type": "verb",
+    "german": "fördern",
+    "english": "to promote, encourage",
+    "level": "B2",
+    "example": "Die EU fördert den Kulturaustausch.",
+    "word": "fördern",
+    "rule": "Regular verb."
+  },
+  {
+    "id": 18,
+    "type": "verb",
+    "german": "gehören",
+    "english": "to belong",
+    "level": "A2",
+    "example": "Das gehört zu den Grundrechten.",
+    "word": "gehören",
+    "rule": "Regular dative verb."
+  },
+  {
+    "id": 19,
+    "type": "verb",
+    "german": "beteiligen",
+    "english": "to participate",
+    "level": "B2",
+    "example": "Viele Bürger beteiligen sich an der Diskussion.",
+    "word": "beteiligen",
+    "rule": "Reflexive verb, regular."
+  },
+  {
+    "id": 20,
+    "type": "verb",
+    "german": "engagieren",
+    "english": "to engage (oneself)",
+    "level": "B2",
+    "example": "Sie engagiert sich für soziale Projekte.",
+    "word": "engagieren",
+    "rule": "Reflexive verb, regular."
+  },
+  {
+    "id": 21,
+    "type": "verb",
+    "german": "diskutieren",
+    "english": "to discuss",
+    "level": "B1",
+    "example": "Wir diskutieren über die neue Verfassung.",
+    "word": "diskutieren",
+    "rule": "Regular verb of Latin origin."
+  },
+  {
+    "id": 22,
+    "type": "verb",
+    "german": "bewerten",
+    "english": "to evaluate",
+    "level": "B2",
+    "example": "Die Bürger bewerten die Arbeit der Regierung.",
+    "word": "bewerten",
+    "rule": "Regular verb with prefix."
+  },
+  {
+    "id": 23,
+    "type": "verb",
+    "german": "verändern",
+    "english": "to change",
+    "level": "B1",
+    "example": "Die Verfassung wurde verändert.",
+    "word": "verändern",
+    "rule": "Regular verb with prefix."
+  },
+  {
+    "id": 24,
+    "type": "verb",
+    "german": "respektieren",
+    "english": "to respect",
+    "level": "B1",
+    "example": "Wir respektieren andere Kulturen.",
+    "word": "respektieren",
+    "rule": "Regular verb from Latin origin."
+  },
+  {
+    "id": 25,
+    "type": "verb",
+    "german": "kontrollieren",
+    "english": "to control, check",
+    "level": "B1",
+    "example": "Die Polizei kontrolliert die Ausweise.",
+    "word": "kontrollieren",
+    "rule": "Regular verb."
+  },
+  {
+    "id": 26,
+    "type": "verb",
+    "german": "überprüfen",
+    "english": "to verify",
+    "level": "B2",
+    "example": "Die Angaben werden überprüft.",
+    "word": "überprüfen",
+    "rule": "Regular verb with prefix."
+  },
+  {
+    "id": 27,
+    "type": "verb",
+    "german": "verlangen",
+    "english": "to demand",
+    "level": "B2",
+    "example": "Der Antrag verlangt viele Dokumente.",
+    "word": "verlangen",
+    "rule": "Regular verb."
+  },
+  {
+    "id": 28,
+    "type": "verb",
+    "german": "informieren",
+    "english": "to inform",
+    "level": "A2",
+    "example": "Die Behörde informiert die Bürger.",
+    "word": "informieren",
+    "rule": "Regular verb, often reflexive in use."
+  },
+  {
+    "id": 29,
+    "type": "verb",
+    "german": "erklären",
+    "english": "to explain",
+    "level": "A2",
+    "example": "Der Lehrer erklärt die Aufgabe.",
+    "word": "erklären",
+    "rule": "Regular verb with prefix."
+  },
+  {
+    "id": 30,
+    "type": "verb",
+    "german": "unterzeichnen",
+    "english": "to sign (formal)",
+    "level": "C1",
+    "example": "Der Vertrag wurde gestern unterzeichnet.",
+    "word": "unterzeichnen",
+    "rule": "Regular verb, formal synonym of 'unterschreiben'."
+  }
+]

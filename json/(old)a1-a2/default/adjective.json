@@ -1,0 +1,58 @@
+[
+  {
+    "german": "rot",
+    "english": "red",
+    "level": "A1",
+    "example": "Das T-Shirt ist rot.",
+    "word": "rot",
+    "type": "adjective"
+  },
+  {
+    "german": "gelb",
+    "english": "yellow",
+    "level": "A1",
+    "example": "Der Textmarker ist gelb.",
+    "word": "gelb",
+    "type": "adjective"
+  },
+  {
+    "german": "grün",
+    "english": "green",
+    "level": "A1",
+    "example": "Der Apfel ist grün.",
+    "word": "grün",
+    "type": "adjective"
+  },
+  {
+    "german": "blau",
+    "english": "blue",
+    "level": "A1",
+    "example": "Das Handy ist blau.",
+    "word": "blau",
+    "type": "adjective"
+  },
+  {
+    "german": "braun",
+    "english": "brown",
+    "level": "A1",
+    "example": "Die Katze ist braun.",
+    "word": "braun",
+    "type": "adjective"
+  },
+  {
+    "german": "sauer",
+    "english": "sour, angry",
+    "level": "A2",
+    "example": "Warum ist sie sauer?",
+    "word": "sauer",
+    "type": "adjective"
+  },
+  {
+    "german": "glücklich",
+    "english": "happy",
+    "level": "A2",
+    "example": "Du siehst glücklich aus!",
+    "word": "glücklich",
+    "type": "adjective"
+  }
+]
