@@ -222,11 +222,12 @@ export function showWrongMessage() {
     feedbackMessageContainer.appendChild(wrongDiv);
 }
 
+const count = 200,
+defaults = {
+    origin: { y: 0.7 },
+};
+
 function fireConfetti(particleRatio, opts) {
-    const count = 200,
-        defaults = {
-            origin: { y: 0.7 },
-        };
     confetti(
         Object.assign({}, defaults, opts, {
             particleCount: Math.floor(count * particleRatio),

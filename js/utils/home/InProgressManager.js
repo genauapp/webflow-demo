@@ -70,7 +70,7 @@ export default function InProgressManager(isAnswerCorrect) {
       if (
         inProgressWords[level][category][wordType][inProgressIndex].counter >= 3
       ) {
-        playSound('https://github.com/zvakanaka/confetti-sound/raw/main/confetti-pop.mp3')
+        playSound('../../../assets/sound/blob.wav')
         confettiAnimation()
 
         learnedWithExerciseWords[level][category][wordType].push({
