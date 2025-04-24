@@ -1,6 +1,6 @@
 import { LEARN_ELEMENT_IDS } from '../../constants/elements.js'
 import LocalStorageManager from '../LocalStorageManager.js'
-import { DEFAULT_VALUE, CURRENT_WORD_TYPE_KEY, WORD_LIST_KEY, CURRENT_LEVEL_KEY, LEARNED_WITH_EXERCISE_WORDS_KEY, CURRENT_CATEGORY_KEY, IS_ON_LEARN_KEY } from '../../constants/storageKeys.js'
+import { DEFAULT_VALUE, CURRENT_WORD_TYPE_KEY, WORD_LIST_KEY, CURRENT_LEVEL_KEY, LEARNED_WITH_EXERCISE_WORDS_KEY, CURRENT_CATEGORY_KEY, IS_ON_LEARN_KEY, WORD_LIST_EXERCISE_KEY } from '../../constants/storageKeys.js'
 import { categories } from '../../constants/props.js'
 import { loadAndShowWords } from '../../pages/home.js'
 
@@ -181,4 +181,44 @@ export function showCorrectMessage() {
 
     correctMessageDiv.innerText = 'Correct! 🎉';
     feedbackMessageContainer.appendChild(correctMessageDiv)
+}
+
+export function showWrongMessage() {
+    const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
+    const feedbackMessageContainer = document.getElementById(`feedbackMessage-${wordType}`)
+    const wrongDiv = document.createElement('div');
+    const wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY)
+    const currentWord = wordListExercise[0]
+    let message = ""
+
+    if (wordType === "noun") {
+        if(currentWord.rule || currentWord.rule !== ""){
+            message = '😕 Upps! <br>' + currentWord.rule;
+        } else if (!currentWord.rule || currentWord.rule === "") {
+            message = '😕 Upps! <br> Correct artikel was' + currentWord.artikel;
+        }
+    } else if (wordType || wordType !== "noun") {
+        message = '😕 Upps! <br> Correct translation was' + currentWord.english;
+    }
+
+    // İçeriğe emoji ve vurgulu kısım ekleniyor (HTML desteğiyle)
+    wrongDiv.innerText = message;
+
+    Object.assign(wrongDiv.style, {
+        display: 'inline-block',
+        backgroundColor: 'rgba(255, 0, 0, 0.1)', // yumuşak kırmızı
+        border: '2px solid rgba(255, 0, 0, 0.4)', // daha koyu kırmızı
+        color: '#b00000', // yazı rengi: koyu kırmızı ton
+        fontWeight: '500',
+        fontSize: '16px',
+        padding: '12px 20px',
+        borderRadius: '999px',
+        textAlign: 'center',
+        lineHeight: '1.4',
+        maxWidth: '90%',
+        marginTop: '20px'
+    });
+
+    feedbackMessageContainer.appendChild(wrongDiv);
+
 }

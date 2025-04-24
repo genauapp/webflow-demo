@@ -8,7 +8,7 @@ import playSound from './PlaySound.js'
 import showExerciseWord from './ShowExerciseWord.js'
 import ListUtils from '../ListUtils.js'
 import InProgressManager from './InProgressManager.js'
-import { showCorrectMessage } from './UIUtils.js'
+import { showCorrectMessage, showWrongMessage } from './UIUtils.js'
 
 export default function checkNonNounAnswer(isUserInputCorrect) {
   let wordListExercise = LocalStorageManager.load(
@@ -53,10 +53,7 @@ export default function checkNonNounAnswer(isUserInputCorrect) {
     return
   } else {
     InProgressManager(false)
-    document.getElementById(
-      `feedbackMessage-${wordType}`
-    ).innerText = `Upps! Try again. 💪`
-    document.getElementById(`feedbackMessage-${wordType}`).style.color = 'red'
+    showWrongMessage()
 
     const shuffledList = ListUtils.shuffleArray(wordListExercise)
     LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, shuffledList)

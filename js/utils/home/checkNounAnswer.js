@@ -5,7 +5,7 @@ import showExerciseWord from "./ShowExerciseWord.js"
 import { artikelRenk } from "./showLearnWord.js"
 import InProgressManager from "./InProgressManager.js"
 import ListUtils from "../ListUtils.js"
-import { showCorrectMessage } from "./UIUtils.js"
+import { showCorrectMessage, showWrongMessage } from "./UIUtils.js"
 
 export default function checkNounAnswer(userArtikel) {
   let wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
@@ -16,7 +16,7 @@ export default function checkNounAnswer(userArtikel) {
   }
 
   const currentWord = wordListExercise[0]
-  const { artikel, rule } = currentWord
+  const artikel = currentWord.artikel
   const buttonDer = document.getElementById('buttonDer')
   const buttonDie = document.getElementById('buttonDie')
   const buttonDas = document.getElementById('buttonDas')
@@ -51,15 +51,11 @@ export default function checkNounAnswer(userArtikel) {
 
     InProgressManager(false)
 
-    document.getElementById(
-      `feedbackMessage-${wordType}`
-    ).innerText = `Upps! ⚠️ ${rule}`
-    document.getElementById(`feedbackMessage-${wordType}`).style.color =
-      'red'
+    showWrongMessage()
 
     const shuffledList = ListUtils.shuffleArray(wordListExercise)
     LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, shuffledList)
-    
+
     setTimeout(() => {
       document.getElementById('correctAnswerField').innerHTML = '___' // Tekrar boş bırak
       showExerciseWord()
