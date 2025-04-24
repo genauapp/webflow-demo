@@ -161,3 +161,22 @@ export function hideFinishScreen() {
     successScreen.style.display = 'none'
     contentContainer.style.display = 'flex'
 }
+
+export function showCorrectMessage() {
+    const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
+    const feedbackMessageContainer = document.getElementById(`feedbackMessage-${wordType}`)
+    const correctMessageDiv = document.createElement('div');
+    Object.assign(correctMessageDiv.style, {
+        display: 'inline-block',
+        backgroundColor: '#00b386',
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: '18px',
+        padding: '12px 24px',
+        borderRadius: '999px',
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+      });
+
+    correctMessageDiv.innerText = 'Correct! 🎉';
+    feedbackMessageContainer.appendChild(correctMessageDiv)
+}
