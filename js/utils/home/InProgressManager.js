@@ -9,12 +9,10 @@ import {
 } from '../../constants/storageKeys.js'
 import LocalStorageManager from '../LocalStorageManager.js'
 import playSound from './PlaySound.js'
+import { confettiAnimation } from './UIUtils.js'
 
 export default function InProgressManager(isAnswerCorrect) {
-  const wordListExercise = LocalStorageManager.load(
-    WORD_LIST_EXERCISE_KEY,
-    DEFAULT_VALUE.WORD_LIST_EXERCISE
-  )
+  const wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
   const currentWord = wordListExercise[0]
   let inProgressWords = LocalStorageManager.load(
     IN_PROGRESS_WORDS_KEY,
@@ -54,7 +52,7 @@ export default function InProgressManager(isAnswerCorrect) {
       return
     } else {
       inProgressWords[level][category][wordType][inProgressIndex].counter += 1
-      if (inProgressWords[level][category][wordType][inProgressIndex].counter ===1) {
+      if (inProgressWords[level][category][wordType][inProgressIndex].counter === 1) {
         document.getElementById(`progressLeft-${wordType}`).style.opacity =
           '1'
         LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, inProgressWords)
@@ -72,9 +70,8 @@ export default function InProgressManager(isAnswerCorrect) {
       if (
         inProgressWords[level][category][wordType][inProgressIndex].counter >= 3
       ) {
-        playSound(
-          'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/streak.mp3'
-        )
+        playSound('https://github.com/zvakanaka/confetti-sound/raw/main/confetti-pop.mp3')
+        confettiAnimation()
 
         learnedWithExerciseWords[level][category][wordType].push({
           type: currentWord.type,
@@ -100,11 +97,8 @@ export default function InProgressManager(isAnswerCorrect) {
         wordListExercise.splice(0, 1)
         LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, wordListExercise)
 
-        document.getElementById(
-          `feedbackMessage-${wordType}`
-        ).innerText = `This word: ${currentWord.german} added to learned list!🏆`
-        document.getElementById(`feedbackMessage-${wordType}`).style.color =
-          'green'
+        document.getElementById(`feedbackMessage-${wordType}`).innerText = `This word: ${currentWord.german} added to learned list!🏆`
+        document.getElementById(`feedbackMessage-${wordType}`).style.color = 'green'
         document.getElementById(`progressRight-${wordType}`).style.opacity = '1'
 
         // remove item from inProgressWords

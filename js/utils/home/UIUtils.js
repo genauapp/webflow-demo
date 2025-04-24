@@ -192,7 +192,7 @@ export function showWrongMessage() {
     let message = ""
 
     if (wordType === "noun") {
-        if(currentWord.rule || currentWord.rule !== ""){
+        if (currentWord.rule || currentWord.rule !== "") {
             message = '✨ No worries! <br>' + currentWord.rule;
         } else if (!currentWord.rule || currentWord.rule === "") {
             message = '✨ No worries! <br> Correct artikel was ' + '"' + currentWord.artikel + '"';
@@ -202,7 +202,7 @@ export function showWrongMessage() {
     }
 
     // İçeriğe emoji ve vurgulu kısım ekleniyor (HTML desteğiyle)
-    wrongDiv.innerHTML= message;
+    wrongDiv.innerHTML = message;
 
     Object.assign(wrongDiv.style, {
         display: 'inline-block',
@@ -220,5 +220,45 @@ export function showWrongMessage() {
     });
 
     feedbackMessageContainer.appendChild(wrongDiv);
+}
 
+function fireConfetti(particleRatio, opts) {
+    const count = 200,
+        defaults = {
+            origin: { y: 0.7 },
+        };
+    confetti(
+        Object.assign({}, defaults, opts, {
+            particleCount: Math.floor(count * particleRatio),
+        })
+    );
+}
+
+export function confettiAnimation() {
+    fireConfetti(0.25, {
+        spread: 26,
+        startVelocity: 55,
+    });
+
+    fireConfetti(0.2, {
+        spread: 60,
+    });
+
+    fireConfetti(0.35, {
+        spread: 100,
+        decay: 0.91,
+        scalar: 0.8,
+    });
+
+    fireConfetti(0.1, {
+        spread: 120,
+        startVelocity: 25,
+        decay: 0.92,
+        scalar: 1.2,
+    });
+
+    fireConfetti(0.1, {
+        spread: 120,
+        startVelocity: 45,
+    });
 }
