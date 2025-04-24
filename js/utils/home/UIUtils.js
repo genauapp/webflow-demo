@@ -210,12 +210,12 @@ export function showWrongMessage() {
         border: '2px solid rgba(255, 0, 0, 0.4)', // daha koyu kırmızı
         color: '#b00000', // yazı rengi: koyu kırmızı ton
         fontWeight: '500',
-        fontSize: '16px',
+        fontSize: '14px',
         padding: '12px 20px',
         borderRadius: '999px',
         textAlign: 'center',
         lineHeight: '1.4',
-        maxWidth: '90%',
+        minWidth: '90%',
         marginTop: '20px'
     });
 
