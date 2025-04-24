@@ -8,6 +8,7 @@ import playSound from './PlaySound.js'
 import showExerciseWord from './ShowExerciseWord.js'
 import ListUtils from '../ListUtils.js'
 import InProgressManager from './InProgressManager.js'
+import { showCorrectMessage } from './UIUtils.js'
 
 export default function checkNonNounAnswer(isUserInputCorrect) {
   let wordListExercise = LocalStorageManager.load(
@@ -34,9 +35,7 @@ export default function checkNonNounAnswer(isUserInputCorrect) {
 
   // CORRECT ANSWER
   if (isUserInputCorrect === isAnswerCorrect) {
-    document.getElementById(`feedbackMessage-${wordType}`).innerText =
-      'Correct! 🎉'
-    document.getElementById(`feedbackMessage-${wordType}`).style.color = 'green'
+    showCorrectMessage()
     playSound(
       'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/correct.mp3'
     )
