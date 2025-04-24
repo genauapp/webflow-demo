@@ -193,12 +193,12 @@ export function showWrongMessage() {
 
     if (wordType === "noun") {
         if(currentWord.rule || currentWord.rule !== ""){
-            message = '😕 Upps! <br>' + currentWord.rule;
+            message = '✨ No worries! <br>' + currentWord.rule;
         } else if (!currentWord.rule || currentWord.rule === "") {
-            message = '😕 Upps! <br> Correct artikel was ' + '"' + currentWord.artikel + '"';
+            message = '✨ No worries! <br> Correct artikel was ' + '"' + currentWord.artikel + '"';
         }
     } else if (wordType || wordType !== "noun") {
-        message = '😕 Upps! <br> Correct translation was' + ' "' + currentWord.english + '"';
+        message = '✨ No worries! <br> Correct translation was' + ' "' + currentWord.english + '"';
     }
 
     // İçeriğe emoji ve vurgulu kısım ekleniyor (HTML desteğiyle)
