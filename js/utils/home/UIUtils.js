@@ -168,14 +168,16 @@ export function showCorrectMessage() {
     const correctMessageDiv = document.createElement('div');
     Object.assign(correctMessageDiv.style, {
         display: 'inline-block',
-        backgroundColor: '#00b386',
-        color: 'white',
+        backgroundColor: 'rgba(0, 179, 134, 0.15)', // soft yeşil (opacity düşük)
+        border: '2px solid rgba(0, 179, 134, 0.5)', // biraz daha koyu
+        color: '#00b386', // yazı rengi: saf yeşil tonu
         fontWeight: 'bold',
         fontSize: '18px',
         padding: '12px 24px',
         borderRadius: '999px',
-        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-      });
+        textAlign: 'center',
+        marginTop: '20px'
+    });
 
     correctMessageDiv.innerText = 'Correct! 🎉';
     feedbackMessageContainer.appendChild(correctMessageDiv)
