@@ -5,6 +5,7 @@ import showExerciseWord from "./ShowExerciseWord.js"
 import { artikelRenk } from "./showLearnWord.js"
 import InProgressManager from "./InProgressManager.js"
 import ListUtils from "../ListUtils.js"
+import { showCorrectMessage } from "./UIUtils.js"
 
 export default function checkNounAnswer(userArtikel) {
   let wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
@@ -25,11 +26,7 @@ export default function checkNounAnswer(userArtikel) {
   buttonDas.style.visibility = 'hidden'
 
   if (userArtikel.toLowerCase() === artikel.toLowerCase()) {
-    document.getElementById(`feedbackMessage-${wordType}`).innerText =
-      'Correct! 🎉'
-    document.getElementById(`feedbackMessage-${wordType}`).style.color =
-      'green'
-
+    showCorrectMessage()
     playSound(
       'https://github.com/heroofdarkroom/proje/raw/refs/heads/master/correct.mp3'
     )
