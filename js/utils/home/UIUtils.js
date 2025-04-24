@@ -195,14 +195,14 @@ export function showWrongMessage() {
         if(currentWord.rule || currentWord.rule !== ""){
             message = '😕 Upps! <br>' + currentWord.rule;
         } else if (!currentWord.rule || currentWord.rule === "") {
-            message = '😕 Upps! <br> Correct artikel was' + currentWord.artikel;
+            message = '😕 Upps! <br> Correct artikel was ' + '"' + currentWord.artikel + '"';
         }
     } else if (wordType || wordType !== "noun") {
-        message = '😕 Upps! <br> Correct translation was' + currentWord.english;
+        message = '😕 Upps! <br> Correct translation was' + ' "' + currentWord.english + '"';
     }
 
     // İçeriğe emoji ve vurgulu kısım ekleniyor (HTML desteğiyle)
-    wrongDiv.innerText = message;
+    wrongDiv.innerHTML= message;
 
     Object.assign(wrongDiv.style, {
         display: 'inline-block',
