@@ -8,7 +8,10 @@
         "rule": "Separable verb: ich stehe ... auf.",
         "type": "verb",
         "category": "Alltag",
-        "id": "verb_alltag_01"
+        "id": "verb_alltag_01",
+        "cases": [
+            "separable"
+        ]
     },
     {
         "german": "essen",
@@ -19,7 +22,10 @@
         "rule": "Irregular verb: du isst, er isst.",
         "type": "verb",
         "category": "Alltag",
-        "id": "verb_alltag_02"
+        "id": "verb_alltag_02",
+        "cases": [
+            "akkusativ"
+        ]
     },
     {
         "german": "trinken",
@@ -30,7 +36,10 @@
         "rule": "Regular verb.",
         "type": "verb",
         "category": "Alltag",
-        "id": "verb_alltag_03"
+        "id": "verb_alltag_03",
+        "cases": [
+            "akkusativ"
+        ]
     },
     {
         "german": "lesen",
@@ -41,7 +50,10 @@
         "rule": "Irregular verb: du liest, er liest.",
         "type": "verb",
         "category": "Alltag",
-        "id": "verb_alltag_04"
+        "id": "verb_alltag_04",
+        "cases": [
+            "akkusativ"
+        ]
     },
     {
         "german": "schlafen",
@@ -52,7 +64,8 @@
         "rule": "Irregular verb: du schläfst, er schläft.",
         "type": "verb",
         "category": "Alltag",
-        "id": "verb_alltag_05"
+        "id": "verb_alltag_05",
+        "cases": []
     },
     {
         "german": "arbeiten",
@@ -63,7 +76,8 @@
         "rule": "Regular verb with extra 'e' in 'du arbeitest'.",
         "type": "verb",
         "category": "Alltag",
-        "id": "verb_alltag_06"
+        "id": "verb_alltag_06",
+        "cases": []
     },
     {
         "german": "lernen",
@@ -74,7 +88,10 @@
         "rule": "Regular verb.",
         "type": "verb",
         "category": "Alltag",
-        "id": "verb_alltag_07"
+        "id": "verb_alltag_07",
+        "cases": [
+            "akkusativ"
+        ]
     },
     {
         "german": "fahren",
@@ -85,7 +102,8 @@
         "rule": "Irregular verb: du fährst, er fährt.",
         "type": "verb",
         "category": "Alltag",
-        "id": "verb_alltag_08"
+        "id": "verb_alltag_08",
+        "cases": []
     },
     {
         "german": "gehen",
@@ -96,7 +114,8 @@
         "rule": "Irregular verb: ging (Präteritum), gegangen (Perfekt).",
         "type": "verb",
         "category": "Alltag",
-        "id": "verb_alltag_09"
+        "id": "verb_alltag_09",
+        "cases": []
     },
     {
         "german": "sehen",
@@ -107,7 +126,10 @@
         "rule": "Irregular verb: du siehst, er sieht.",
         "type": "verb",
         "category": "Alltag",
-        "id": "verb_alltag_10"
+        "id": "verb_alltag_10",
+        "cases": [
+            "akkusativ"
+        ]
     },
     {
         "german": "hören",
@@ -118,7 +140,10 @@
         "rule": "Regular verb.",
         "type": "verb",
         "category": "Alltag",
-        "id": "verb_alltag_11"
+        "id": "verb_alltag_11",
+        "cases": [
+            "akkusativ"
+        ]
     },
     {
         "german": "telefonieren",
@@ -129,7 +154,10 @@
         "rule": "Regular verb, often with 'mit + Dativ'.",
         "type": "verb",
         "category": "Alltag",
-        "id": "verb_alltag_12"
+        "id": "verb_alltag_12",
+        "cases": [
+            "dativ"
+        ]
     },
     {
         "german": "putzen",
@@ -140,7 +168,10 @@
         "rule": "Regular verb.",
         "type": "verb",
         "category": "Alltag",
-        "id": "verb_alltag_13"
+        "id": "verb_alltag_13",
+        "cases": [
+            "akkusativ"
+        ]
     },
     {
         "german": "kochen",
@@ -151,7 +182,10 @@
         "rule": "Regular verb.",
         "type": "verb",
         "category": "Alltag",
-        "id": "verb_alltag_14"
+        "id": "verb_alltag_14",
+        "cases": [
+            "akkusativ"
+        ]
     },
     {
         "german": "machen",
@@ -162,7 +196,10 @@
         "rule": "Very common regular verb.",
         "type": "verb",
         "category": "Alltag",
-        "id": "verb_alltag_15"
+        "id": "verb_alltag_15",
+        "cases": [
+            "akkusativ"
+        ]
     },
     {
         "german": "anrufen",
@@ -173,7 +210,11 @@
         "rule": "Separable verb: ich rufe ... an.",
         "type": "verb",
         "category": "Alltag",
-        "id": "verb_alltag_16"
+        "id": "verb_alltag_16",
+        "cases": [
+            "separable",
+            "akkusativ"
+        ]
     },
     {
         "german": "fernsehen",
@@ -184,7 +225,10 @@
         "rule": "Separable verb: ich sehe ... fern.",
         "type": "verb",
         "category": "Alltag",
-        "id": "verb_alltag_17"
+        "id": "verb_alltag_17",
+        "cases": [
+            "separable"
+        ]
     },
     {
         "german": "aufmachen",
@@ -195,7 +239,11 @@
         "rule": "Separable verb: ich mache ... auf.",
         "type": "verb",
         "category": "Alltag",
-        "id": "verb_alltag_18"
+        "id": "verb_alltag_18",
+        "cases": [
+            "separable",
+            "akkusativ"
+        ]
     },
     {
         "german": "zumachen",
@@ -206,7 +254,11 @@
         "rule": "Separable verb: ich mache ... zu.",
         "type": "verb",
         "category": "Alltag",
-        "id": "verb_alltag_19"
+        "id": "verb_alltag_19",
+        "cases": [
+            "separable",
+            "akkusativ"
+        ]
     },
     {
         "german": "spielen",
@@ -217,6 +269,9 @@
         "rule": "Regular verb.",
         "type": "verb",
         "category": "Alltag",
-        "id": "verb_alltag_20"
+        "id": "verb_alltag_20",
+        "cases": [
+            "akkusativ"
+        ]
     }
 ]
