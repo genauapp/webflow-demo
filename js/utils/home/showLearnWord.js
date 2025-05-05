@@ -73,8 +73,8 @@ export default function showLearnWord() {
         case 'verb':
             document.getElementById('wordLearn-' + wordType).innerHTML = german
             let cases = wordList[0].cases
+            let tagContainer = document.getElementById('verbTags-container')
             if(cases.length > 0) {
-                let tagContainer = document.getElementById('verbTag-container')
                 tagContainer.style.display = "flex"
                 cases.array.forEach(elem => {
                     document.getElementById(`${elem}-label`).style.display = "flex"
