@@ -16,6 +16,13 @@ export function artikelRenk(artikel) {
     return 'black'
 }
 
+function refreshCasesUI() {
+    let globalCases = ["reflexive, akkusativ, dativ, separable"]
+    globalCases.forEach(caseName => {
+        document.getElementById(`${caseName}-label`).style.display = "none"
+    });
+}
+
 export default function showLearnWord() {
     const currentLevel = LocalStorageManager.load(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
@@ -23,7 +30,6 @@ export default function showLearnWord() {
     const learnedWithLearnWords = LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
     let wordList = LocalStorageManager.load(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
     const totalWordsLearn = LocalStorageManager.load(TOTAL_WORD_LEARN_KEY)
-
     const iKnowButton = document.getElementById(
         `iKnowButtonLearn-${wordType}`
     )
@@ -35,6 +41,7 @@ export default function showLearnWord() {
         showFinishScreen()
         return
     }
+    refreshCasesUI()
     hideFinishScreen()
     // else
     // // reactivate buttons
@@ -72,11 +79,11 @@ export default function showLearnWord() {
             break
         case 'verb':
             document.getElementById('wordLearn-' + wordType).innerHTML = german
-            let cases = wordList[0].cases
+            let wordCases = wordList[0].cases
             let tagContainer = document.getElementById('verbTags-container')
-            if(cases.length > 0) {
+            if(wordCases.length > 0) {
                 tagContainer.style.display = "flex"
-                cases.forEach(elem => {
+                wordCases.forEach(elem => {
                     document.getElementById(`${elem}-label`).style.display = "flex"
                 });
             } else if (cases.length == 0) {
