@@ -86,6 +86,9 @@ export default function showLearnWord() {
                 wordCases.forEach(elem => {
                     document.getElementById(`${elem}-label`).style.display = "flex"
                 });
+                if(wordCases.includes('separable')) {
+                    console.log('kelime ayrılabilir özelliği taşıyor.')
+                }
             } else if (wordCases.length == 0) {
                 tagContainer.style.display = "none"
             }
