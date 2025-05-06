@@ -3,17 +3,21 @@ import LocalStorageManager from "../LocalStorageManager.js"
 import { hideFinishScreen, showFinishScreen, updateFavoriteIcons } from "./UIUtils.js"
 // cases for verbs
 const globalCases = ["reflexive", "akkusativ", "dativ", "separable"]
-
+// add events for labels
 globalCases.forEach(caseName => {
     document.getElementById(`${caseName}-label`).addEventListener('click', () => {
         closeTagRules()
         document.getElementById(`rule-${caseName}`).style.display = 'flex'
+        document.getElementById('sentence-container-verb').style.display = 'none'
     })
 })
-
+// add events for close icons
 document.querySelectorAll('.close-tag').forEach(
     elem => {
-        elem.addEventListener('click', closeTagRules)
+        elem.addEventListener('click', () => {
+            document.getElementById('sentence-container-verb').style.display = 'flex'
+            closeTagRules()
+        })
     }
 )
 
@@ -39,6 +43,8 @@ function refreshCasesUI() {
     // remove separable underline
     const element = document.getElementById('separable-underline'); // sınıf ya da id'ye göre değiştir
     element.style.borderBottom = 'none';
+    // show sentence
+    document.getElementById('sentence-container-verb').style.display = 'flex'
 }
 
 // hide Tag Rules
