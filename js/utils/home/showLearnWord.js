@@ -11,7 +11,7 @@ globalCases.forEach(caseName => {
     })
 })
 
-document.getElementsByClassName('close-tag').forEach(
+document.querySelectorAll('.close-tag').forEach(
     elem => {
         elem.addEventListener('click', closeTagRules)
     }
