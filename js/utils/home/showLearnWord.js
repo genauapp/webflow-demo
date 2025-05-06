@@ -17,10 +17,14 @@ export function artikelRenk(artikel) {
 }
 
 function refreshCasesUI() {
+    // hide tag labels
     let globalCases = ["reflexive", "akkusativ", "dativ", "separable"]
     globalCases.forEach(caseName => {
         document.getElementById(`${caseName}-label`).style.display = "none"
     });
+    // remove separable underline
+    const element = document.getElementById('separable-underline'); // sınıf ya da id'ye göre değiştir
+    element.style.borderBottom = 'none';
 }
 
 export default function showLearnWord() {
@@ -81,13 +85,15 @@ export default function showLearnWord() {
             document.getElementById('wordLearn-' + wordType).innerHTML = german
             let wordCases = wordList[0].cases
             let tagContainer = document.getElementById('verbTags-container')
-            if(wordCases.length > 0) {
+            if (wordCases.length > 0) {
                 tagContainer.style.display = "flex"
                 wordCases.forEach(elem => {
                     document.getElementById(`${elem}-label`).style.display = "flex"
                 });
-                if(wordCases.includes('separable')) {
-                    console.log('kelime ayrılabilir özelliği taşıyor.')
+                if (wordCases.includes('separable')) {
+                    const element = document.getElementById('separable-underline'); // sınıf ya da id'ye göre değiştir
+                    element.style.borderBottom = '4px solid rgba(245, 166, 35, 0.32)';
+                    element.style.borderRadius = '3px';
                 }
             } else if (wordCases.length == 0) {
                 tagContainer.style.display = "none"
