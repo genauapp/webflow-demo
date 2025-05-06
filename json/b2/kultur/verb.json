@@ -1,0 +1,222 @@
+[
+  {
+    "id": "verb_kultur_B2_01",
+    "german": "integrieren",
+    "english": "to integrate",
+    "level": "B2",
+    "example": "Die Regierung versucht, Migranten besser zu integrieren.",
+    "word": "integrieren",
+    "type": "verb",
+    "category": "Gesellschaft & Kultur",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_kultur_B2_02",
+    "german": "diskriminieren",
+    "english": "to discriminate",
+    "level": "B2",
+    "example": "Niemand darf wegen seiner Herkunft diskriminiert werden.",
+    "word": "diskriminieren",
+    "type": "verb",
+    "category": "Gesellschaft & Kultur",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_kultur_B2_03",
+    "german": "respektieren",
+    "english": "to respect",
+    "level": "B2",
+    "example": "Man sollte die Meinung anderer respektieren.",
+    "word": "respektieren",
+    "type": "verb",
+    "category": "Gesellschaft & Kultur",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_kultur_B2_04",
+    "german": "sich engagieren",
+    "english": "to get involved / to engage",
+    "level": "B2",
+    "example": "Viele Jugendliche engagieren sich freiwillig.",
+    "word": "sich engagieren",
+    "type": "verb",
+    "category": "Gesellschaft & Kultur",
+    "cases": ["reflexive"]
+  },
+  {
+    "id": "verb_kultur_B2_05",
+    "german": "beeinflussen",
+    "english": "to influence",
+    "level": "B2",
+    "example": "Medien können die öffentliche Meinung stark beeinflussen.",
+    "word": "beeinflussen",
+    "type": "verb",
+    "category": "Gesellschaft & Kultur",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_kultur_B2_06",
+    "german": "fördern",
+    "english": "to promote / support",
+    "level": "B2",
+    "example": "Die Organisation fördert interkulturellen Austausch.",
+    "word": "fördern",
+    "type": "verb",
+    "category": "Gesellschaft & Kultur",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_kultur_B2_07",
+    "german": "sich auseinandersetzen",
+    "english": "to deal with / to confront",
+    "level": "B2",
+    "example": "Man muss sich mit sozialen Fragen auseinandersetzen.",
+    "word": "sich auseinandersetzen",
+    "type": "verb",
+    "category": "Gesellschaft & Kultur",
+    "cases": ["reflexive", "separable"]
+  },
+  {
+    "id": "verb_kultur_B2_08",
+    "german": "vermeiden",
+    "english": "to avoid",
+    "level": "B2",
+    "example": "Diskriminierung sollte in der Gesellschaft vermieden werden.",
+    "word": "vermeiden",
+    "type": "verb",
+    "category": "Gesellschaft & Kultur",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_kultur_B2_09",
+    "german": "wertschätzen",
+    "english": "to appreciate / to value",
+    "level": "B2",
+    "example": "Es ist wichtig, kulturelle Unterschiede wertzuschätzen.",
+    "word": "wertschätzen",
+    "type": "verb",
+    "category": "Gesellschaft & Kultur",
+    "cases": ["akkusativ", "separable"]
+  },
+  {
+    "id": "verb_kultur_B2_10",
+    "german": "sich identifizieren",
+    "english": "to identify (with)",
+    "level": "B2",
+    "example": "Viele Menschen identifizieren sich mit ihrer Kultur.",
+    "word": "sich identifizieren",
+    "type": "verb",
+    "category": "Gesellschaft & Kultur",
+    "cases": ["reflexive"]
+  },
+  {
+    "id": "verb_kultur_B2_11",
+    "german": "abweichen",
+    "english": "to differ / to deviate",
+    "level": "B2",
+    "example": "Sein Verhalten weicht von der Norm ab.",
+    "word": "abweichen",
+    "type": "verb",
+    "category": "Gesellschaft & Kultur",
+    "cases": []
+  },
+  {
+    "id": "verb_kultur_B2_12",
+    "german": "unterstützen",
+    "english": "to support",
+    "level": "B2",
+    "example": "Die Organisation unterstützt benachteiligte Gruppen.",
+    "word": "unterstützen",
+    "type": "verb",
+    "category": "Gesellschaft & Kultur",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_kultur_B2_13",
+    "german": "sich äußern",
+    "english": "to express oneself",
+    "level": "B2",
+    "example": "Er hat sich kritisch zum Thema geäußert.",
+    "word": "sich äußern",
+    "type": "verb",
+    "category": "Gesellschaft & Kultur",
+    "cases": ["reflexive"]
+  },
+  {
+    "id": "verb_kultur_B2_14",
+    "german": "widersprechen",
+    "english": "to contradict",
+    "level": "B2",
+    "example": "Man darf der Regierung auch widersprechen.",
+    "word": "widersprechen",
+    "type": "verb",
+    "category": "Gesellschaft & Kultur",
+    "cases": ["dativ"]
+  },
+  {
+    "id": "verb_kultur_B2_15",
+    "german": "sich einmischen",
+    "english": "to interfere / to get involved",
+    "level": "B2",
+    "example": "Er mischt sich ständig in Diskussionen ein.",
+    "word": "sich einmischen",
+    "type": "verb",
+    "category": "Gesellschaft & Kultur",
+    "cases": ["reflexive", "separable"]
+  },
+  {
+    "id": "verb_kultur_B2_16",
+    "german": "benachteiligen",
+    "english": "to disadvantage / to discriminate",
+    "level": "B2",
+    "example": "Man darf niemanden aufgrund der Herkunft benachteiligen.",
+    "word": "benachteiligen",
+    "type": "verb",
+    "category": "Gesellschaft & Kultur",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_kultur_B2_17",
+    "german": "ausgrenzen",
+    "english": "to exclude",
+    "level": "B2",
+    "example": "Menschen dürfen nicht wegen ihrer Religion ausgegrenzt werden.",
+    "word": "ausgrenzen",
+    "type": "verb",
+    "category": "Gesellschaft & Kultur",
+    "cases": ["akkusativ", "separable"]
+  },
+  {
+    "id": "verb_kultur_B2_18",
+    "german": "überwinden",
+    "english": "to overcome",
+    "level": "B2",
+    "example": "Wir müssen Vorurteile überwinden.",
+    "word": "überwinden",
+    "type": "verb",
+    "category": "Gesellschaft & Kultur",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_kultur_B2_19",
+    "german": "aufklären",
+    "english": "to inform / to educate",
+    "level": "B2",
+    "example": "Die Kampagne klärt über Rassismus auf.",
+    "word": "aufklären",
+    "type": "verb",
+    "category": "Gesellschaft & Kultur",
+    "cases": ["akkusativ", "separable"]
+  },
+  {
+    "id": "verb_kultur_B2_20",
+    "german": "erziehen",
+    "english": "to educate / to raise",
+    "level": "B2",
+    "example": "Eltern erziehen ihre Kinder zu Toleranz.",
+    "word": "erziehen",
+    "type": "verb",
+    "category": "Gesellschaft & Kultur",
+    "cases": ["akkusativ"]
+  }
+]
