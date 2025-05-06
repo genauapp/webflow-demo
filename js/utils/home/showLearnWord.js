@@ -86,7 +86,7 @@ export default function showLearnWord() {
                 wordCases.forEach(elem => {
                     document.getElementById(`${elem}-label`).style.display = "flex"
                 });
-            } else if (cases.length == 0) {
+            } else if (wordCases.length == 0) {
                 tagContainer.style.display = "none"
             }
             break
