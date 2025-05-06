@@ -1,7 +1,15 @@
 import { DEFAULT_VALUE, WORD_LIST_KEY, CURRENT_CATEGORY_KEY, CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, LEARNED_WITH_LEARN_WORDS_KEY, TOTAL_WORD_LEARN_KEY } from "../../constants/storageKeys.js"
 import LocalStorageManager from "../LocalStorageManager.js"
 import { hideFinishScreen, showFinishScreen, updateFavoriteIcons } from "./UIUtils.js"
+// cases for verbs
+const globalCases = ["reflexive", "akkusativ", "dativ", "separable"]
 
+globalCases.forEach(caseName => {
+    document.getElementById(`${caseName}-label`).addEventListener('click', () => {
+        closeTagRules()
+        document.getElementById(`rule-${caseName}`).style.display = 'flex'
+    })
+})
 
 export function artikelRenk(artikel) {
     if (artikel.toLowerCase() === 'der') {
@@ -17,14 +25,21 @@ export function artikelRenk(artikel) {
 }
 
 function refreshCasesUI() {
-    // hide tag labels
-    let globalCases = ["reflexive", "akkusativ", "dativ", "separable"]
+    // hide Tag Labels and Tag Rules
     globalCases.forEach(caseName => {
         document.getElementById(`${caseName}-label`).style.display = "none"
     });
+    closeTagRules()
     // remove separable underline
     const element = document.getElementById('separable-underline'); // sınıf ya da id'ye göre değiştir
     element.style.borderBottom = 'none';
+}
+
+// hide Tag Rules
+function closeTagRules() {
+    globalCases.forEach(caseName => {
+        document.getElementById(`rule-${caseName}`).style.display = "none"
+    });
 }
 
 export default function showLearnWord() {
