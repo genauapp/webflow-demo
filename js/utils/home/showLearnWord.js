@@ -11,6 +11,8 @@ globalCases.forEach(caseName => {
     })
 })
 
+document.querySelectorAll('.close-tag').addEventListener('click', closeTagRules)
+
 export function artikelRenk(artikel) {
     if (artikel.toLowerCase() === 'der') {
         return 'blue'
