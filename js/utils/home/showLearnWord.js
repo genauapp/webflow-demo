@@ -17,7 +17,7 @@ export function artikelRenk(artikel) {
 }
 
 function refreshCasesUI() {
-    let globalCases = ["reflexive, akkusativ, dativ, separable"]
+    let globalCases = ["reflexive", "akkusativ", "dativ", "separable"]
     globalCases.forEach(caseName => {
         document.getElementById(`${caseName}-label`).style.display = "none"
     });
