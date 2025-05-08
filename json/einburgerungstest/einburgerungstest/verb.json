@@ -1,332 +1,332 @@
 [
   {
-    "id": 1,
-    "type": "verb",
+    "id": "verb_einbuergerung_01",
     "german": "wählen",
     "english": "to vote",
     "level": "A2",
     "example": "Die Bürger wählen den Bundestag.",
     "word": "wählen",
-    "rule": "Regular verb commonly used in political contexts.",
-    "cases": []
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["akkusativ"]
   },
   {
-    "id": 2,
-    "type": "verb",
+    "id": "verb_einbuergerung_02",
     "german": "regieren",
     "english": "to govern",
     "level": "B1",
     "example": "Die Bundesregierung regiert das Land.",
     "word": "regieren",
-    "rule": "Regular verb with political usage.",
-    "cases": []
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["akkusativ"]
   },
   {
-    "id": 3,
-    "type": "verb",
+    "id": "verb_einbuergerung_03",
     "german": "abstimmen",
     "english": "to vote (on something)",
     "level": "B2",
     "example": "Die Abgeordneten stimmen über das Gesetz ab.",
     "word": "abstimmen",
-    "rule": "Regular separable verb.",
-    "cases": []
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["separable"]
   },
   {
-    "id": 4,
-    "type": "verb",
+    "id": "verb_einbuergerung_04",
     "german": "entscheiden",
     "english": "to decide",
     "level": "B1",
     "example": "Das Volk entscheidet durch eine Wahl.",
     "word": "entscheiden",
-    "rule": "Irregular verb with vowel change in past participle (entschieden).",
+    "type": "verb",
+    "category": "Einbürgerung",
     "cases": []
   },
   {
-    "id": 5,
-    "type": "verb",
+    "id": "verb_einbuergerung_05",
     "german": "unterschreiben",
     "english": "to sign",
     "level": "B1",
     "example": "Der Präsident unterschreibt das Gesetz.",
     "word": "unterschreiben",
-    "rule": "Irregular verb used in official contexts.",
-    "cases": []
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["akkusativ"]
   },
   {
-    "id": 6,
-    "type": "verb",
+    "id": "verb_einbuergerung_06",
     "german": "respektieren",
     "english": "to respect",
     "level": "B1",
     "example": "Wir respektieren die Meinung anderer.",
     "word": "respektieren",
-    "rule": "Regular verb from Latin origin.",
-    "cases": []
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["akkusativ"]
   },
   {
-    "id": 7,
-    "type": "verb",
+    "id": "verb_einbuergerung_07",
     "german": "achten",
     "english": "to respect, to pay attention",
     "level": "A2",
     "example": "Man soll die Gesetze achten.",
     "word": "achten",
-    "rule": "Regular verb.",
-    "cases": []
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["akkusativ"]
   },
   {
-    "id": 8,
-    "type": "verb",
+    "id": "verb_einbuergerung_08",
     "german": "beantragen",
     "english": "to apply for",
     "level": "B1",
     "example": "Er beantragt die deutsche Staatsangehörigkeit.",
     "word": "beantragen",
-    "rule": "Regular verb, often used in bureaucracy.",
-    "cases": []
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["akkusativ"]
   },
   {
-    "id": 9,
-    "type": "verb",
+    "id": "verb_einbuergerung_09",
     "german": "einreichen",
     "english": "to submit",
     "level": "B2",
     "example": "Sie reicht den Antrag beim Amt ein.",
     "word": "einreichen",
-    "rule": "Separable verb, regular.",
-    "cases": []
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["akkusativ", "separable"]
   },
   {
-    "id": 10,
-    "type": "verb",
+    "id": "verb_einbuergerung_10",
     "german": "gelten",
     "english": "to apply, to be valid",
     "level": "B1",
     "example": "Das Gesetz gilt für alle.",
     "word": "gelten",
-    "rule": "Irregular verb with vowel change (er gilt).",
+    "type": "verb",
+    "category": "Einbürgerung",
     "cases": []
   },
   {
-    "id": 11,
-    "type": "verb",
+    "id": "verb_einbuergerung_11",
     "german": "schützen",
     "english": "to protect",
     "level": "A2",
     "example": "Das Grundgesetz schützt die Freiheit.",
     "word": "schützen",
-    "rule": "Regular verb.",
-    "cases": []
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["akkusativ"]
   },
   {
-    "id": 12,
-    "type": "verb",
+    "id": "verb_einbuergerung_12",
     "german": "fordern",
     "english": "to demand",
     "level": "B2",
     "example": "Die Opposition fordert Reformen.",
     "word": "fordern",
-    "rule": "Regular verb.",
-    "cases": []
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["akkusativ"]
   },
   {
-    "id": 13,
-    "type": "verb",
+    "id": "verb_einbuergerung_13",
     "german": "unterstützen",
     "english": "to support",
     "level": "B1",
     "example": "Viele Bürger unterstützen die Maßnahme.",
     "word": "unterstützen",
-    "rule": "Regular verb.",
-    "cases": []
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["akkusativ"]
   },
   {
-    "id": 14,
-    "type": "verb",
+    "id": "verb_einbuergerung_14",
     "german": "akzeptieren",
     "english": "to accept",
     "level": "B1",
     "example": "Wir akzeptieren unterschiedliche Meinungen.",
     "word": "akzeptieren",
-    "rule": "Regular verb, foreign origin.",
-    "cases": []
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["akkusativ"]
   },
   {
-    "id": 15,
-    "type": "verb",
+    "id": "verb_einbuergerung_15",
     "german": "bekämpfen",
     "english": "to combat",
     "level": "B2",
     "example": "Die Regierung bekämpft die Arbeitslosigkeit.",
     "word": "bekämpfen",
-    "rule": "Regular verb with prefix.",
-    "cases": []
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["akkusativ"]
   },
   {
-    "id": 16,
-    "type": "verb",
+    "id": "verb_einbuergerung_16",
     "german": "dienen",
     "english": "to serve",
     "level": "B1",
     "example": "Er dient dem Staat.",
     "word": "dienen",
-    "rule": "Regular verb.",
-    "cases": []
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["dativ"]
   },
   {
-    "id": 17,
-    "type": "verb",
+    "id": "verb_einbuergerung_17",
     "german": "fördern",
     "english": "to promote, encourage",
     "level": "B2",
     "example": "Die EU fördert den Kulturaustausch.",
     "word": "fördern",
-    "rule": "Regular verb.",
-    "cases": []
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["akkusativ"]
   },
   {
-    "id": 18,
-    "type": "verb",
+    "id": "verb_einbuergerung_18",
     "german": "gehören",
     "english": "to belong",
     "level": "A2",
     "example": "Das gehört zu den Grundrechten.",
     "word": "gehören",
-    "rule": "Regular dative verb.",
-    "cases": []
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["dativ"]
   },
   {
-    "id": 19,
-    "type": "verb",
+    "id": "verb_einbuergerung_19",
     "german": "beteiligen",
     "english": "to participate",
     "level": "B2",
     "example": "Viele Bürger beteiligen sich an der Diskussion.",
-    "word": "beteiligen",
-    "rule": "Reflexive verb, regular.",
-    "cases": []
+    "word": "sich beteiligen",
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["reflexive"]
   },
   {
-    "id": 20,
-    "type": "verb",
-    "german": "engagieren",
+    "id": "verb_einbuergerung_20",
+    "german": "sich engagieren",
     "english": "to engage (oneself)",
     "level": "B2",
     "example": "Sie engagiert sich für soziale Projekte.",
-    "word": "engagieren",
-    "rule": "Reflexive verb, regular.",
-    "cases": []
+    "word": "sich engagieren",
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["reflexive"]
   },
   {
-    "id": 21,
-    "type": "verb",
+    "id": "verb_einbuergerung_21",
     "german": "diskutieren",
     "english": "to discuss",
     "level": "B1",
     "example": "Wir diskutieren über die neue Verfassung.",
     "word": "diskutieren",
-    "rule": "Regular verb of Latin origin.",
+    "type": "verb",
+    "category": "Einbürgerung",
     "cases": []
   },
   {
-    "id": 22,
-    "type": "verb",
+    "id": "verb_einbuergerung_22",
     "german": "bewerten",
     "english": "to evaluate",
     "level": "B2",
     "example": "Die Bürger bewerten die Arbeit der Regierung.",
     "word": "bewerten",
-    "rule": "Regular verb with prefix.",
-    "cases": []
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["akkusativ"]
   },
   {
-    "id": 23,
-    "type": "verb",
+    "id": "verb_einbuergerung_23",
     "german": "verändern",
     "english": "to change",
     "level": "B1",
     "example": "Die Verfassung wurde verändert.",
     "word": "verändern",
-    "rule": "Regular verb with prefix.",
-    "cases": []
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["akkusativ"]
   },
   {
-    "id": 24,
-    "type": "verb",
+    "id": "verb_einbuergerung_24",
     "german": "respektieren",
     "english": "to respect",
     "level": "B1",
     "example": "Wir respektieren andere Kulturen.",
     "word": "respektieren",
-    "rule": "Regular verb from Latin origin.",
-    "cases": []
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["akkusativ"]
   },
   {
-    "id": 25,
-    "type": "verb",
+    "id": "verb_einbuergerung_25",
     "german": "kontrollieren",
     "english": "to control, check",
     "level": "B1",
     "example": "Die Polizei kontrolliert die Ausweise.",
     "word": "kontrollieren",
-    "rule": "Regular verb.",
-    "cases": []
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["akkusativ"]
   },
   {
-    "id": 26,
-    "type": "verb",
+    "id": "verb_einbuergerung_26",
     "german": "überprüfen",
     "english": "to verify",
     "level": "B2",
     "example": "Die Angaben werden überprüft.",
     "word": "überprüfen",
-    "rule": "Regular verb with prefix.",
-    "cases": []
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["akkusativ"]
   },
   {
-    "id": 27,
-    "type": "verb",
+    "id": "verb_einbuergerung_27",
     "german": "verlangen",
     "english": "to demand",
     "level": "B2",
     "example": "Der Antrag verlangt viele Dokumente.",
     "word": "verlangen",
-    "rule": "Regular verb.",
-    "cases": []
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["akkusativ"]
   },
   {
-    "id": 28,
-    "type": "verb",
+    "id": "verb_einbuergerung_28",
     "german": "informieren",
     "english": "to inform",
     "level": "A2",
     "example": "Die Behörde informiert die Bürger.",
-    "word": "informieren",
-    "rule": "Regular verb, often reflexive in use.",
-    "cases": []
+    "word": "sich informieren",
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["akkusativ", "reflexive"]
   },
   {
-    "id": 29,
-    "type": "verb",
+    "id": "verb_einbuergerung_29",
     "german": "erklären",
     "english": "to explain",
     "level": "A2",
     "example": "Der Lehrer erklärt die Aufgabe.",
     "word": "erklären",
-    "rule": "Regular verb with prefix.",
-    "cases": []
+    "type": "verb",
+    "category": "Einbürgerung",
+    "cases": ["akkusativ"]
   },
   {
-    "id": 30,
-    "type": "verb",
+    "id": "verb_einbuergerung_30",
     "german": "unterzeichnen",
     "english": "to sign (formal)",
     "level": "C1",
     "example": "Der Vertrag wurde gestern unterzeichnet.",
     "word": "unterzeichnen",
-    "rule": "Regular verb, formal synonym of 'unterschreiben'.",
+    "type": "verb",
+    "category": "Einbürgerung",
     "cases": []
   }
 ]
