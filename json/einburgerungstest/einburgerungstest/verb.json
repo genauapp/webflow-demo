@@ -7,7 +7,8 @@
     "level": "A2",
     "example": "Die Bürger wählen den Bundestag.",
     "word": "wählen",
-    "rule": "Regular verb commonly used in political contexts."
+    "rule": "Regular verb commonly used in political contexts.",
+    "cases": []
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@
     "level": "B1",
     "example": "Die Bundesregierung regiert das Land.",
     "word": "regieren",
-    "rule": "Regular verb with political usage."
+    "rule": "Regular verb with political usage.",
+    "cases": []
   },
   {
     "id": 3,
@@ -27,7 +29,8 @@
     "level": "B2",
     "example": "Die Abgeordneten stimmen über das Gesetz ab.",
     "word": "abstimmen",
-    "rule": "Regular separable verb."
+    "rule": "Regular separable verb.",
+    "cases": []
   },
   {
     "id": 4,
@@ -37,7 +40,8 @@
     "level": "B1",
     "example": "Das Volk entscheidet durch eine Wahl.",
     "word": "entscheiden",
-    "rule": "Irregular verb with vowel change in past participle (entschieden)."
+    "rule": "Irregular verb with vowel change in past participle (entschieden).",
+    "cases": []
   },
   {
     "id": 5,
@@ -47,7 +51,8 @@
     "level": "B1",
     "example": "Der Präsident unterschreibt das Gesetz.",
     "word": "unterschreiben",
-    "rule": "Irregular verb used in official contexts."
+    "rule": "Irregular verb used in official contexts.",
+    "cases": []
   },
   {
     "id": 6,
@@ -57,7 +62,8 @@
     "level": "B1",
     "example": "Wir respektieren die Meinung anderer.",
     "word": "respektieren",
-    "rule": "Regular verb from Latin origin."
+    "rule": "Regular verb from Latin origin.",
+    "cases": []
   },
   {
     "id": 7,
@@ -67,7 +73,8 @@
     "level": "A2",
     "example": "Man soll die Gesetze achten.",
     "word": "achten",
-    "rule": "Regular verb."
+    "rule": "Regular verb.",
+    "cases": []
   },
   {
     "id": 8,
@@ -77,7 +84,8 @@
     "level": "B1",
     "example": "Er beantragt die deutsche Staatsangehörigkeit.",
     "word": "beantragen",
-    "rule": "Regular verb, often used in bureaucracy."
+    "rule": "Regular verb, often used in bureaucracy.",
+    "cases": []
   },
   {
     "id": 9,
@@ -87,7 +95,8 @@
     "level": "B2",
     "example": "Sie reicht den Antrag beim Amt ein.",
     "word": "einreichen",
-    "rule": "Separable verb, regular."
+    "rule": "Separable verb, regular.",
+    "cases": []
   },
   {
     "id": 10,
@@ -97,7 +106,8 @@
     "level": "B1",
     "example": "Das Gesetz gilt für alle.",
     "word": "gelten",
-    "rule": "Irregular verb with vowel change (er gilt)."
+    "rule": "Irregular verb with vowel change (er gilt).",
+    "cases": []
   },
   {
     "id": 11,
@@ -107,7 +117,8 @@
     "level": "A2",
     "example": "Das Grundgesetz schützt die Freiheit.",
     "word": "schützen",
-    "rule": "Regular verb."
+    "rule": "Regular verb.",
+    "cases": []
   },
   {
     "id": 12,
@@ -117,7 +128,8 @@
     "level": "B2",
     "example": "Die Opposition fordert Reformen.",
     "word": "fordern",
-    "rule": "Regular verb."
+    "rule": "Regular verb.",
+    "cases": []
   },
   {
     "id": 13,
@@ -127,7 +139,8 @@
     "level": "B1",
     "example": "Viele Bürger unterstützen die Maßnahme.",
     "word": "unterstützen",
-    "rule": "Regular verb."
+    "rule": "Regular verb.",
+    "cases": []
   },
   {
     "id": 14,
@@ -137,7 +150,8 @@
     "level": "B1",
     "example": "Wir akzeptieren unterschiedliche Meinungen.",
     "word": "akzeptieren",
-    "rule": "Regular verb, foreign origin."
+    "rule": "Regular verb, foreign origin.",
+    "cases": []
   },
   {
     "id": 15,
@@ -147,7 +161,8 @@
     "level": "B2",
     "example": "Die Regierung bekämpft die Arbeitslosigkeit.",
     "word": "bekämpfen",
-    "rule": "Regular verb with prefix."
+    "rule": "Regular verb with prefix.",
+    "cases": []
   },
   {
     "id": 16,
@@ -157,7 +172,8 @@
     "level": "B1",
     "example": "Er dient dem Staat.",
     "word": "dienen",
-    "rule": "Regular verb."
+    "rule": "Regular verb.",
+    "cases": []
   },
   {
     "id": 17,
@@ -167,7 +183,8 @@
     "level": "B2",
     "example": "Die EU fördert den Kulturaustausch.",
     "word": "fördern",
-    "rule": "Regular verb."
+    "rule": "Regular verb.",
+    "cases": []
   },
   {
     "id": 18,
@@ -177,7 +194,8 @@
     "level": "A2",
     "example": "Das gehört zu den Grundrechten.",
     "word": "gehören",
-    "rule": "Regular dative verb."
+    "rule": "Regular dative verb.",
+    "cases": []
   },
   {
     "id": 19,
@@ -187,7 +205,8 @@
     "level": "B2",
     "example": "Viele Bürger beteiligen sich an der Diskussion.",
     "word": "beteiligen",
-    "rule": "Reflexive verb, regular."
+    "rule": "Reflexive verb, regular.",
+    "cases": []
   },
   {
     "id": 20,
@@ -197,7 +216,8 @@
     "level": "B2",
     "example": "Sie engagiert sich für soziale Projekte.",
     "word": "engagieren",
-    "rule": "Reflexive verb, regular."
+    "rule": "Reflexive verb, regular.",
+    "cases": []
   },
   {
     "id": 21,
@@ -207,7 +227,8 @@
     "level": "B1",
     "example": "Wir diskutieren über die neue Verfassung.",
     "word": "diskutieren",
-    "rule": "Regular verb of Latin origin."
+    "rule": "Regular verb of Latin origin.",
+    "cases": []
   },
   {
     "id": 22,
@@ -217,7 +238,8 @@
     "level": "B2",
     "example": "Die Bürger bewerten die Arbeit der Regierung.",
     "word": "bewerten",
-    "rule": "Regular verb with prefix."
+    "rule": "Regular verb with prefix.",
+    "cases": []
   },
   {
     "id": 23,
@@ -227,7 +249,8 @@
     "level": "B1",
     "example": "Die Verfassung wurde verändert.",
     "word": "verändern",
-    "rule": "Regular verb with prefix."
+    "rule": "Regular verb with prefix.",
+    "cases": []
   },
   {
     "id": 24,
@@ -237,7 +260,8 @@
     "level": "B1",
     "example": "Wir respektieren andere Kulturen.",
     "word": "respektieren",
-    "rule": "Regular verb from Latin origin."
+    "rule": "Regular verb from Latin origin.",
+    "cases": []
   },
   {
     "id": 25,
@@ -247,7 +271,8 @@
     "level": "B1",
     "example": "Die Polizei kontrolliert die Ausweise.",
     "word": "kontrollieren",
-    "rule": "Regular verb."
+    "rule": "Regular verb.",
+    "cases": []
   },
   {
     "id": 26,
@@ -257,7 +282,8 @@
     "level": "B2",
     "example": "Die Angaben werden überprüft.",
     "word": "überprüfen",
-    "rule": "Regular verb with prefix."
+    "rule": "Regular verb with prefix.",
+    "cases": []
   },
   {
     "id": 27,
@@ -267,7 +293,8 @@
     "level": "B2",
     "example": "Der Antrag verlangt viele Dokumente.",
     "word": "verlangen",
-    "rule": "Regular verb."
+    "rule": "Regular verb.",
+    "cases": []
   },
   {
     "id": 28,
@@ -277,7 +304,8 @@
     "level": "A2",
     "example": "Die Behörde informiert die Bürger.",
     "word": "informieren",
-    "rule": "Regular verb, often reflexive in use."
+    "rule": "Regular verb, often reflexive in use.",
+    "cases": []
   },
   {
     "id": 29,
@@ -287,7 +315,8 @@
     "level": "A2",
     "example": "Der Lehrer erklärt die Aufgabe.",
     "word": "erklären",
-    "rule": "Regular verb with prefix."
+    "rule": "Regular verb with prefix.",
+    "cases": []
   },
   {
     "id": 30,
@@ -297,6 +326,7 @@
     "level": "C1",
     "example": "Der Vertrag wurde gestern unterzeichnet.",
     "word": "unterzeichnen",
-    "rule": "Regular verb, formal synonym of 'unterschreiben'."
+    "rule": "Regular verb, formal synonym of 'unterschreiben'.",
+    "cases": []
   }
 ]
