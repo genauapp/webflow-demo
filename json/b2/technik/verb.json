@@ -133,22 +133,22 @@
   },
   {
     "id": "verb_technik_B2_13",
-    "german": "anmelden",
+    "german": "sich anmelden",
     "english": "to log in / to register",
     "level": "B2",
     "example": "Du musst dich zuerst anmelden.",
-    "word": "anmelden",
+    "word": "sich anmelden",
     "type": "verb",
     "category": "Digitalisierung & Technik",
     "cases": ["reflexive", "akkusativ", "separable"]
   },
   {
     "id": "verb_technik_B2_14",
-    "german": "abmelden",
+    "german": "sich abmelden",
     "english": "to log out",
     "level": "B2",
     "example": "Vergiss nicht, dich abzumelden.",
-    "word": "abmelden",
+    "word": "sich abmelden",
     "type": "verb",
     "category": "Digitalisierung & Technik",
     "cases": ["reflexive", "akkusativ", "separable"]

@@ -30,7 +30,7 @@
     "word": "kündigen",
     "type": "verb",
     "category": "Arbeit & Behörden",
-    "cases": ["akkusativ", "reflexive"]
+    "cases": ["akkusativ"]
   },
   {
     "id": "verb_arbeit_A2_04",
@@ -81,7 +81,7 @@
     "german": "vorlegen",
     "english": "to present/submit",
     "level": "A2",
-    "example": "Sie müssen den Ausweis vorlegen.",
+    "example": "Bitte legen Sie den Pass vor.",
     "word": "vorlegen",
     "type": "verb",
     "category": "Arbeit & Behörden",
@@ -188,7 +188,7 @@
   },
   {
     "id": "verb_arbeit_A2_18",
-    "german": "anmelden",
+    "german": "sich anmelden",
     "english": "to register",
     "level": "A2",
     "example": "Ich möchte mich anmelden.",

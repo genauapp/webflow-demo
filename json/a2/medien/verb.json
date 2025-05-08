@@ -111,7 +111,7 @@
   },
   {
     "id": "verb_medien_A2_11",
-    "german": "einloggen",
+    "german": "sich einloggen",
     "english": "to log in",
     "level": "A2",
     "example": "Ich logge mich ins System ein.",
@@ -122,7 +122,7 @@
   },
   {
     "id": "verb_medien_A2_12",
-    "german": "abmelden",
+    "german": "sich abmelden",
     "english": "to log out / sign off",
     "level": "A2",
     "example": "Vergiss nicht, dich abzumelden.",
