@@ -124,7 +124,8 @@ export default function showLearnWord() {
                     const element = document.getElementById('separable-underline'); // sınıf ya da id'ye göre değiştir
                     element.style.borderBottom = '4px solid rgba(245, 166, 35, 0.32)';
                     element.style.borderRadius = '3px';
-                } else if (wordCases.includes('reflexive')) {
+                }    
+                if (wordCases.includes('reflexive')) {
                     const reflexiveDiv = document.getElementById('reflexive-div')
                     document.getElementById('wordLearn-' + wordType).innerHTML = german.replace(/^sich\s+/, "")
                     reflexiveDiv.style.display = 'block'
