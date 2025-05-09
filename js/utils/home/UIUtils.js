@@ -368,9 +368,23 @@ export function showInitialPaymentModal() {
   )
   buttonContinueToPayment.addEventListener('click', showFinalPaymentModal)
 
+  // attach payment option handlers
   const paymentOptions = document.querySelectorAll('.paymentoption')
   paymentOptions.forEach((option) => {
-    option.addEventListener('click', paymentOptionClickHandler(option))
+    // create a named handler so it can be removed later
+    const handler = () => {
+      // unselect all
+      paymentOptions.forEach((opt) => {
+        opt.classList.remove('paymentselected')
+        console.log(`${opt.getAttribute('payment-option')} is unselected.`)
+      })
+      // select clicked
+      option.classList.add('paymentselected')
+      console.log(`${option.getAttribute('payment-option')} is selected.`)
+    }
+    option.addEventListener('click', handler)
+    // store handler ref for cleanup
+    option._paymentClickHandler = handler
   })
 }
 
@@ -396,9 +410,14 @@ export function hideInitialPaymentModal() {
   )
   buttonContinueToPayment.removeEventListener('click', showFinalPaymentModal)
 
+  // clean up payment option handlers
   const paymentOptions = document.querySelectorAll('.paymentoption')
   paymentOptions.forEach((option) => {
-    option.addEventListener('click', paymentOptionClickHandler)
+    if (option._paymentClickHandler) {
+      option.removeEventListener('click', option._paymentClickHandler)
+      delete option._paymentClickHandler
+    }
+    option.classList.remove('paymentselected')
   })
 }
 
