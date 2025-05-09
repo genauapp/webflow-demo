@@ -333,7 +333,7 @@ export function showPaymentContainerModal() {
         hideInitialPaymentModal()
         hideFinalPaymentModal()
         hidePaymentContainerModal()
-        modalContainer.removeEventListener('click', modal-payment-container)
+        modalContainer.removeEventListener('click', showInitialPaymentModal)
       })
     })
 }
