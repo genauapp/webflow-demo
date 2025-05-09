@@ -327,21 +327,22 @@ export function showPaymentContainerModal() {
   document
     .querySelectorAll('.button-modal-payment-close')
     .forEach((buttonClose) => {
-      buttonClose.addEventListener('click', hideModals)
+      buttonClose.addEventListener('click', hideAllModals)
     })
-  const hideModals = () => {
-    // LocalStorageManager.save(IS_READY_TO_PAYMENT, false)
-    hideInitialPaymentModal()
-    hideFinalPaymentModal()
-    hidePaymentContainerModal()
-    modalContainer.removeEventListener('click', showInitialPaymentModal)
+}
 
-    document
-      .querySelectorAll('.button-modal-payment-close')
-      .forEach((buttonClose) => {
-        buttonClose.removeEventListener('click', hideModals)
-      })
-  }
+const hideAllModals = () => {
+  // LocalStorageManager.save(IS_READY_TO_PAYMENT, false)
+  hideInitialPaymentModal()
+  hideFinalPaymentModal()
+  hidePaymentContainerModal()
+  modalContainer.removeEventListener('click', showInitialPaymentModal)
+
+  document
+    .querySelectorAll('.button-modal-payment-close')
+    .forEach((buttonClose) => {
+      buttonClose.removeEventListener('click', hideAllModals)
+    })
 }
 
 export function hidePaymentContainerModal() {
@@ -375,8 +376,8 @@ export function showInitialPaymentModal() {
 
 const paymentOptionClickHandler = () => {
   // Remove selection from all options
-  document.querySelectorAll('.paymentoption').forEach((opt) => {
-    opt.classList.remove('paymentselected')
+  document.querySelectorAll('.paymentoption').forEach((option) => {
+    option.classList.remove('paymentselected')
     console.log(`${option.getAttribute('payment-option')} is unselected.`)
   })
 
