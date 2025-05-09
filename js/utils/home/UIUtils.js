@@ -350,6 +350,7 @@ function hideModals() {
 export function showInitialPaymentModal() {
   console.log('showing: Initial Payment Modal')
   const modalContainer = document.getElementById('modal-payment-container')
+  modalContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.16)'
   modalContainer.removeEventListener('click', showInitialPaymentModal)
 
   const modalInitialPayment = document.getElementById('modal-payment-initial')
@@ -389,6 +390,7 @@ export function hidePaymentContainerModal() {
 
   const modalContainer = document.getElementById('modal-payment-container')
   modalContainer.style.display = 'none'
+  modalContainer.style.backgroundColor = 'rgba(0, 0, 0, 0)'
 }
 
 export function hideInitialPaymentModal() {
