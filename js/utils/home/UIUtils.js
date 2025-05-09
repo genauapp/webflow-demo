@@ -313,6 +313,8 @@ export function confettiAnimation() {
 /** Payment */
 /** // show  */
 export function showPaymentContainerModal() {
+  console.log('showing: Payment Container Modal')
+
   //   const isReadyToPayment = LocalStorageManager.load(
   //     IS_READY_TO_PAYMENT,
   //     DEFAULT_VALUE.IS_READY_TO_PAYMENT
@@ -321,24 +323,23 @@ export function showPaymentContainerModal() {
   modalContainer.style.display = 'flex'
 
   // click handlers
-  modalContainer.addEventListener('click', () => {
-    showInitialPaymentModal()
-  })
+  modalContainer.addEventListener('click', showInitialPaymentModal)
 
-//   document
-//     .querySelectorAll('.button-modal-payment-close')
-//     .forEach((buttonClose) => {
-//       buttonClose.addEventListener('click', () => {
-//         // LocalStorageManager.save(IS_READY_TO_PAYMENT, false)
-//         hideInitialPaymentModal()
-//         hideFinalPaymentModal()
-//         hidePaymentContainerModal()
-//         // modalContainer.removeEventListener('click')
-//       })
-//     })
+  //   document
+  //     .querySelectorAll('.button-modal-payment-close')
+  //     .forEach((buttonClose) => {
+  //       buttonClose.addEventListener('click', () => {
+  //         // LocalStorageManager.save(IS_READY_TO_PAYMENT, false)
+  //         hideInitialPaymentModal()
+  //         hideFinalPaymentModal()
+  //         hidePaymentContainerModal()
+  //         // modalContainer.removeEventListener('click')
+  //       })
+  //     })
 }
 
 export function showInitialPaymentModal() {
+  console.log('showing: Initial Payment Modal')
   const modalInitialPayment = document.getElementById('modal-payment-initial')
   modalInitialPayment.style.display = 'block'
 
@@ -347,14 +348,13 @@ export function showInitialPaymentModal() {
     'button-modal-payment-initial-continue'
   )
 
-  buttonContinueToPayment.addEventListener('click', () => {
-    hideInitialPaymentModal()
-    showFinalPaymentModal()
-    // buttonContinueToPayment.removeEventListener('click')
-  })
+  buttonContinueToPayment.addEventListener('click', showFinalPaymentModal)
 }
 
 export function showFinalPaymentModal() {
+  console.log('showing: Final Payment Modal')
+
+  hideInitialPaymentModal()
   const modalFinalPayment = document.getElementById('modal-payment-final')
   modalFinalPayment.style.display = 'block'
 
@@ -368,16 +368,20 @@ export function showFinalPaymentModal() {
 
 /** // hide  */
 export function hidePaymentContainerModal() {
+  console.log('hiding: Payment Container Modal')
+
   const modalContainer = document.getElementById('modal-payment-container')
   modalContainer.style.display = 'none'
 }
 
 export function hideInitialPaymentModal() {
+  console.log('hiding: Initial Payment Modal')
   const modalInitialPayment = document.getElementById('modal-payment-initial')
   modalInitialPayment.style.display = 'none'
 }
 
 export function hideFinalPaymentModal() {
+  console.log('hiding: Final Payment Modal')
   const modalFinalPayment = document.getElementById('modal-payment-final')
   modalFinalPayment.style.display = 'none'
 }
