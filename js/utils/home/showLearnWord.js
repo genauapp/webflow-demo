@@ -73,6 +73,7 @@ export default function showLearnWord() {
 
     if (learnedWithLearnWords[currentLevel][category][wordType].length === totalWordsLearn) {
         showFinishScreen()
+        showPaymentContainerModal()
         return
     }
     refreshCasesUI()

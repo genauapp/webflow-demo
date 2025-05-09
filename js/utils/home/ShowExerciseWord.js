@@ -27,6 +27,7 @@ export default function showExerciseWord() {
     // max index -> hiding buttons, early return
     if (learnedWithExerciseWords[currentLevel][category][wordType].length === totalWordsExercise) {
       showFinishScreen()
+      showPaymentContainerModal()
       return
     }
 

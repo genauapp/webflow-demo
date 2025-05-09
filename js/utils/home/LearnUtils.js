@@ -9,7 +9,7 @@ import {
     CURRENT_WORD_TYPE_KEY,
 } from '../../constants/storageKeys.js'
 import showLearnWord from './showLearnWord.js'
-import { showFinishScreen } from './UIUtils.js'
+import { showFinishScreen, showPaymentContainerModal } from './UIUtils.js'
 
 // On Learn: Repeat Click
 export function repeatLearn() {
@@ -49,6 +49,7 @@ export function iKnowLearn() {
 
     if (learnedWithLearnWords[level][category][wordType].length === totalWordsLearn) {
         showFinishScreen()
+        showPaymentContainerModal()
         return
     }
     showLearnWord()
