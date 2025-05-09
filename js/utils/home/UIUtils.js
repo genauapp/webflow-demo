@@ -433,10 +433,14 @@ export function showFinalPaymentModal() {
     'button-modal-payment-final-copy-clipboard'
   )
   buttonCopyToClipboard.addEventListener('click', copyToClipBoard)
-  const copyToClipBoard = () => {
-    navigator.clipboard.writeText('https://www.genauapp.io')
-    buttonCopyToClipboard.removeEventListener('click', copyToClipBoard)
-  }
+}
+
+const copyToClipBoard = () => {
+  const buttonCopyToClipboard = document.getElementById(
+    'button-modal-payment-final-copy-clipboard'
+  )
+  navigator.clipboard.writeText('https://www.genauapp.io')
+  buttonCopyToClipboard.removeEventListener('click', copyToClipBoard)
 }
 
 export function hideFinalPaymentModal() {
