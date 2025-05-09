@@ -327,13 +327,23 @@ export function showPaymentContainerModal() {
   document
     .querySelectorAll('.button-modal-payment-close')
     .forEach((buttonClose) => {
-      buttonClose.addEventListener('click', () => {
-        // LocalStorageManager.save(IS_READY_TO_PAYMENT, false)
-        hideInitialPaymentModal()
-        hideFinalPaymentModal()
-        hidePaymentContainerModal()
-        modalContainer.removeEventListener('click', showInitialPaymentModal)
-      })
+      buttonClose.addEventListener('click', hideModals)
+    })
+}
+
+function hideModals() {
+  // LocalStorageManager.save(IS_READY_TO_PAYMENT, false)
+  hideInitialPaymentModal()
+  hideFinalPaymentModal()
+  hidePaymentContainerModal()
+
+  const modalContainer = document.getElementById('modal-payment-container')
+  modalContainer.removeEventListener('click', showInitialPaymentModal)
+
+  document
+    .querySelectorAll('.button-modal-payment-close')
+    .forEach((buttonClose) => {
+      buttonClose.removeEventListener('click', hideModals)
     })
 }
 
