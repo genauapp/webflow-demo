@@ -322,7 +322,6 @@ export function showPaymentContainerModal() {
   const modalContainer = document.getElementById('modal-payment-container')
   modalContainer.style.display = 'flex'
 
-  // click handlers
   modalContainer.addEventListener('click', showInitialPaymentModal)
 
   document
@@ -340,10 +339,12 @@ export function showPaymentContainerModal() {
 
 export function showInitialPaymentModal() {
   console.log('showing: Initial Payment Modal')
+  const modalContainer = document.getElementById('modal-payment-container')
+  modalContainer.removeEventListener('click', showInitialPaymentModal)
+
   const modalInitialPayment = document.getElementById('modal-payment-initial')
   modalInitialPayment.style.display = 'flex'
 
-  // click handlers
   const buttonContinueToPayment = document.getElementById(
     'button-modal-payment-initial-continue'
   )
@@ -378,6 +379,11 @@ export function hideInitialPaymentModal() {
   console.log('hiding: Initial Payment Modal')
   const modalInitialPayment = document.getElementById('modal-payment-initial')
   modalInitialPayment.style.display = 'none'
+
+  const buttonContinueToPayment = document.getElementById(
+    'button-modal-payment-initial-continue'
+  )
+  buttonContinueToPayment.removeEventListener('click', showFinalPaymentModal)
 }
 
 export function hideFinalPaymentModal() {
