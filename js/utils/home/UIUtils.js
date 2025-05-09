@@ -341,7 +341,7 @@ export function showPaymentContainerModal() {
 export function showInitialPaymentModal() {
   console.log('showing: Initial Payment Modal')
   const modalInitialPayment = document.getElementById('modal-payment-initial')
-  modalInitialPayment.style.display = 'block'
+  modalInitialPayment.style.display = 'flex'
 
   // click handlers
   const buttonContinueToPayment = document.getElementById(
@@ -356,7 +356,7 @@ export function showFinalPaymentModal() {
 
   hideInitialPaymentModal()
   const modalFinalPayment = document.getElementById('modal-payment-final')
-  modalFinalPayment.style.display = 'block'
+  modalFinalPayment.style.display = 'flex'
 
   const buttonCopyToClipboard = document.getElementById(
     'button-modal-payment-final-copy-clipboard'
