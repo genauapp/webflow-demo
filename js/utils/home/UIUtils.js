@@ -332,11 +332,13 @@ export function showPaymentContainerModal() {
 }
 
 const hideAllModals = () => {
+  const modalContainer = document.getElementById('modal-payment-container')
+  modalContainer.removeEventListener('click', showInitialPaymentModal)
+
   // LocalStorageManager.save(IS_READY_TO_PAYMENT, false)
   hideInitialPaymentModal()
   hideFinalPaymentModal()
   hidePaymentContainerModal()
-  modalContainer.removeEventListener('click', showInitialPaymentModal)
 
   document
     .querySelectorAll('.button-modal-payment-close')
