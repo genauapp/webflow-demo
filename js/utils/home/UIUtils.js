@@ -373,6 +373,9 @@ export function showInitialPaymentModal() {
   paymentOptions.forEach((option) => {
     // create a named handler so it can be removed later
     const handler = () => {
+      // early return if already selected
+      if (option.classList.contains('paymentselected')) return
+
       // unselect all
       paymentOptions.forEach((opt) => {
         opt.classList.remove('paymentselected')
@@ -386,18 +389,6 @@ export function showInitialPaymentModal() {
     // store handler ref for cleanup
     option._paymentClickHandler = handler
   })
-}
-
-const paymentOptionClickHandler = (selectedOption) => {
-  // Remove selection from all options
-  document.querySelectorAll('.paymentoption').forEach((option) => {
-    option.classList.remove('paymentselected')
-    console.log(`${option.getAttribute('payment-option')} is unselected.`)
-  })
-
-  // Add selection to clicked option
-  selectedOption.classList.add('paymentselected')
-  console.log(`${selectedOption.getAttribute('payment-option')} is selected.`)
 }
 
 export function hideInitialPaymentModal() {
