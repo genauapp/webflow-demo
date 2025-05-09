@@ -325,17 +325,17 @@ export function showPaymentContainerModal() {
     showInitialPaymentModal()
   })
 
-  document
-    .querySelectorAll('.button-modal-payment-close')
-    .forEach((buttonClose) => {
-      buttonClose.addEventListener('click', () => {
-        // LocalStorageManager.save(IS_READY_TO_PAYMENT, false)
-        hideInitialPaymentModal()
-        hideFinalPaymentModal()
-        hidePaymentContainerModal()
-        modalContainer.removeEventListener('click')
-      })
-    })
+//   document
+//     .querySelectorAll('.button-modal-payment-close')
+//     .forEach((buttonClose) => {
+//       buttonClose.addEventListener('click', () => {
+//         // LocalStorageManager.save(IS_READY_TO_PAYMENT, false)
+//         hideInitialPaymentModal()
+//         hideFinalPaymentModal()
+//         hidePaymentContainerModal()
+//         // modalContainer.removeEventListener('click')
+//       })
+//     })
 }
 
 export function showInitialPaymentModal() {
@@ -350,7 +350,7 @@ export function showInitialPaymentModal() {
   buttonContinueToPayment.addEventListener('click', () => {
     hideInitialPaymentModal()
     showFinalPaymentModal()
-    buttonContinueToPayment.removeEventListener('click')
+    // buttonContinueToPayment.removeEventListener('click')
   })
 }
 
