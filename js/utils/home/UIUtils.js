@@ -311,7 +311,7 @@ export function confettiAnimation() {
 }
 
 /** Payment */
-/** // show  */
+/** // Payment Container | Show/Hide  */
 export function showPaymentContainerModal() {
   console.log('showing: Payment Container Modal')
 
@@ -329,24 +329,30 @@ export function showPaymentContainerModal() {
     .forEach((buttonClose) => {
       buttonClose.addEventListener('click', hideModals)
     })
+  const hideModals = () => {
+    // LocalStorageManager.save(IS_READY_TO_PAYMENT, false)
+    hideInitialPaymentModal()
+    hideFinalPaymentModal()
+    hidePaymentContainerModal()
+    modalContainer.removeEventListener('click', showInitialPaymentModal)
+
+    document
+      .querySelectorAll('.button-modal-payment-close')
+      .forEach((buttonClose) => {
+        buttonClose.removeEventListener('click', hideModals)
+      })
+  }
 }
 
-function hideModals() {
-  // LocalStorageManager.save(IS_READY_TO_PAYMENT, false)
-  hideInitialPaymentModal()
-  hideFinalPaymentModal()
-  hidePaymentContainerModal()
+export function hidePaymentContainerModal() {
+  console.log('hiding: Payment Container Modal')
 
   const modalContainer = document.getElementById('modal-payment-container')
-  modalContainer.removeEventListener('click', showInitialPaymentModal)
-
-  document
-    .querySelectorAll('.button-modal-payment-close')
-    .forEach((buttonClose) => {
-      buttonClose.removeEventListener('click', hideModals)
-    })
+  modalContainer.style.display = 'none'
+  modalContainer.style.backgroundColor = 'rgba(0, 0, 0, 0)'
 }
 
+/** // Initial Payment | Show/Hide  */
 export function showInitialPaymentModal() {
   console.log('showing: Initial Payment Modal')
   const modalContainer = document.getElementById('modal-payment-container')
@@ -359,38 +365,24 @@ export function showInitialPaymentModal() {
   const buttonContinueToPayment = document.getElementById(
     'button-modal-payment-initial-continue'
   )
-
   buttonContinueToPayment.addEventListener('click', showFinalPaymentModal)
+
+  const paymentOptions = document.querySelectorAll('.paymentoption')
+  paymentOptions.forEach((option) => {
+    option.addEventListener('click', paymentOptionClickHandler)
+  })
 }
 
-export function showFinalPaymentModal() {
-  console.log('showing: Final Payment Modal')
+const paymentOptionClickHandler = () => {
+  // Remove selection from all options
+  document.querySelectorAll('.paymentoption').forEach((opt) => {
+    opt.classList.remove('paymentselected')
+    console.log(`${option.getAttribute('payment-option')} is unselected.`)
+  })
 
-  hideInitialPaymentModal()
-  const modalFinalPayment = document.getElementById('modal-payment-final')
-  modalFinalPayment.style.display = 'flex'
-
-  const buttonCopyToClipboard = document.getElementById(
-    'button-modal-payment-final-copy-clipboard'
-  )
-  buttonCopyToClipboard.addEventListener('click', copyToClipBoard)
-}
-
-function copyToClipBoard() {
-  const buttonCopyToClipboard = document.getElementById(
-    'button-modal-payment-final-copy-clipboard'
-  )
-  navigator.clipboard.writeText('https://www.genauapp.io')
-  buttonCopyToClipboard.removeEventListener('click', copyToClipBoard)
-}
-
-/** // hide  */
-export function hidePaymentContainerModal() {
-  console.log('hiding: Payment Container Modal')
-
-  const modalContainer = document.getElementById('modal-payment-container')
-  modalContainer.style.display = 'none'
-  modalContainer.style.backgroundColor = 'rgba(0, 0, 0, 0)'
+  // Add selection to clicked option
+  option.classList.add('paymentselected')
+  console.log(`${option.getAttribute('payment-option')} is selected.`)
 }
 
 export function hideInitialPaymentModal() {
@@ -402,6 +394,29 @@ export function hideInitialPaymentModal() {
     'button-modal-payment-initial-continue'
   )
   buttonContinueToPayment.removeEventListener('click', showFinalPaymentModal)
+
+  const paymentOptions = document.querySelectorAll('.paymentoption')
+  paymentOptions.forEach((option) => {
+    option.addEventListener('click', paymentOptionClickHandler)
+  })
+}
+
+/** // Final Payment | Show/Hide  */
+export function showFinalPaymentModal() {
+  console.log('showing: Final Payment Modal')
+
+  hideInitialPaymentModal()
+  const modalFinalPayment = document.getElementById('modal-payment-final')
+  modalFinalPayment.style.display = 'flex'
+
+  const buttonCopyToClipboard = document.getElementById(
+    'button-modal-payment-final-copy-clipboard'
+  )
+  buttonCopyToClipboard.addEventListener('click', copyToClipBoard)
+  const copyToClipBoard = () => {
+    navigator.clipboard.writeText('https://www.genauapp.io')
+    buttonCopyToClipboard.removeEventListener('click', copyToClipBoard)
+  }
 }
 
 export function hideFinalPaymentModal() {
