@@ -370,11 +370,11 @@ export function showInitialPaymentModal() {
 
   const paymentOptions = document.querySelectorAll('.paymentoption')
   paymentOptions.forEach((option) => {
-    option.addEventListener('click', paymentOptionClickHandler)
+    option.addEventListener('click', paymentOptionClickHandler(option))
   })
 }
 
-const paymentOptionClickHandler = () => {
+const paymentOptionClickHandler = (selectedOption) => {
   // Remove selection from all options
   document.querySelectorAll('.paymentoption').forEach((option) => {
     option.classList.remove('paymentselected')
@@ -382,8 +382,8 @@ const paymentOptionClickHandler = () => {
   })
 
   // Add selection to clicked option
-  option.classList.add('paymentselected')
-  console.log(`${option.getAttribute('payment-option')} is selected.`)
+  selectedOption.classList.add('paymentselected')
+  console.log(`${selectedOption.getAttribute('payment-option')} is selected.`)
 }
 
 export function hideInitialPaymentModal() {
