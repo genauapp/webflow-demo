@@ -294,7 +294,6 @@ const answerClickHandler = (event) => {
       TestManager.isTestResultSuccessful(updatedTestProgression.score)
     )
     decideShowingPaymentWorkflowOn(PaymentTriggerEvent.EINBURGERUNGSTEST)
-    return
   }
 
   LocalStorageManager.save(TEST_PROGRESSION_KEY, updatedTestProgression)
