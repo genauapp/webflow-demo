@@ -1,8 +1,8 @@
 /** Payment */
 /** // Payment Container | Show/Hide  */
 
-import { PAYMENT_TRIGGER_COUNTER_KEY } from '../../constants/storageKeys'
-import LocalStorageManager from '../LocalStorageManager'
+import { PAYMENT_TRIGGER_COUNTER_KEY } from '../../constants/storageKeys.js'
+import LocalStorageManager from '../LocalStorageManager.js'
 
 // Helper Enum
 export class PaymentTriggerEvent {
