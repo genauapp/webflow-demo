@@ -24,7 +24,6 @@ export default function checkNonNounAnswer(isUserInputCorrect) {
     return
   }
 
-  const currentWord = wordListExercise[0]
   const buttonWrong = document.getElementById(`wrongButton-${wordType}`)
   const buttonCorrect = document.getElementById(`correctButton-${wordType}`)
 

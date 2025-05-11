@@ -10,6 +10,7 @@ import {
   SHOULD_SHOW_ANSWER_KEY,
   DEFAULT_VALUE,
   LEARN_QUESTION_USER_ANSWER_KEY,
+  PAYMENT_TRIGGER_COUNTER_KEY,
 } from '../constants/storageKeys.js'
 import { testTabClickHandler } from '../components/einburgerungstest/testTab.js'
 
@@ -29,6 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     LEARN_QUESTION_USER_ANSWER_KEY,
     DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
   )
+  // set payment trigger storage item
+  LocalStorageManager.load(PAYMENT_TRIGGER_COUNTER_KEY, DEFAULT_VALUE.PAYMENT_TRIGGER_COUNTER)
   // set current state to default one
 
   // get recent local storage items

@@ -9,6 +9,10 @@ import {
   DEFAULT_VALUE,
   TEST_PROGRESSION_KEY,
 } from '../../constants/storageKeys.js'
+import {
+  decideShowingPaymentWorkflowOn,
+  PaymentTriggerEvent,
+} from '../../utils/payment/PaymentUtils.js'
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', () => {
@@ -289,6 +293,7 @@ const answerClickHandler = (event) => {
       updatedTestProgression,
       TestManager.isTestResultSuccessful(updatedTestProgression.score)
     )
+    decideShowingPaymentWorkflowOn(PaymentTriggerEvent.EINBURGERUNGSTEST)
   }
 
   LocalStorageManager.save(TEST_PROGRESSION_KEY, updatedTestProgression)
@@ -312,7 +317,11 @@ const setTestTabElements = (
   document.getElementById('test-questions-length').innerText =
     totalNumberOfQuestions
 
-  ElementUtils.showImageIfExists('test-question-image', 'test-question-image-container', currentQuestion)
+  ElementUtils.showImageIfExists(
+    'test-question-image',
+    'test-question-image-container',
+    currentQuestion
+  )
 
   document.getElementById(
     'test-current-question-index-label'
