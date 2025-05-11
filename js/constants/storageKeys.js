@@ -1,63 +1,63 @@
-import { STATE_NATIONWIDE } from "./states.js";
+import { STATE_NATIONWIDE } from './states.js'
 
 /*
   App
 */
-export const APP_VERSION_KEY = "APP_VERSION";
+export const APP_VERSION_KEY = 'APP_VERSION'
 /*
   Homepage
 */
-export const CURRENT_LEVEL_KEY = "CURRENT_LEVEL";
-export const CURRENT_CATEGORY_KEY = "CURRENT_CATEGORY";
-export const CURRENT_WORD_TYPE_KEY = "CURRENT_WORD_TYPE";
-export const LEARNED_WITH_LEARN_WORDS_KEY = "LEARNED_WITH_LEARN_WORDS";
-export const LEARNED_WITH_EXERCISE_WORDS_KEY = "LEARNED_WITH_EXERCISE_WORDS";
-export const WORD_LIST_EXERCISE_KEY = "WORD_LIST_EXERCISE";
-export const WORD_LIST_KEY = "WORD_LIST";
-export const IN_PROGRESS_WORDS_KEY = "IN_PROGRESS_WORDS";
-export const TOTAL_WORD_EXERCISE_KEY = "TOTAL_WORD_EXERCISE"
-export const TOTAL_WORD_LEARN_KEY = "TOTAL_WORD_LEARN"
-export const IS_ON_LEARN_KEY = "IS_ON_LEARN_OR_EXERCISE"
+export const CURRENT_LEVEL_KEY = 'CURRENT_LEVEL'
+export const CURRENT_CATEGORY_KEY = 'CURRENT_CATEGORY'
+export const CURRENT_WORD_TYPE_KEY = 'CURRENT_WORD_TYPE'
+export const LEARNED_WITH_LEARN_WORDS_KEY = 'LEARNED_WITH_LEARN_WORDS'
+export const LEARNED_WITH_EXERCISE_WORDS_KEY = 'LEARNED_WITH_EXERCISE_WORDS'
+export const WORD_LIST_EXERCISE_KEY = 'WORD_LIST_EXERCISE'
+export const WORD_LIST_KEY = 'WORD_LIST'
+export const IN_PROGRESS_WORDS_KEY = 'IN_PROGRESS_WORDS'
+export const TOTAL_WORD_EXERCISE_KEY = 'TOTAL_WORD_EXERCISE'
+export const TOTAL_WORD_LEARN_KEY = 'TOTAL_WORD_LEARN'
+export const IS_ON_LEARN_KEY = 'IS_ON_LEARN_OR_EXERCISE'
+export const PAYMENT_TRIGGER_COUNTER_KEY = 'PAYMENT_TRIGGER_COUNTER'
 
 /*
   Einbürgerungstest
 */
 
-
-export const CURRENT_STATE_KEY = "CURRENT_STATE";
-export const SHOULD_SHOW_ANSWER_KEY = "SHOULD_SHOW_ANSWER";
+export const CURRENT_STATE_KEY = 'CURRENT_STATE'
+export const SHOULD_SHOW_ANSWER_KEY = 'SHOULD_SHOW_ANSWER'
 
 export const LEARN__STATE__QUESTION_INDEX_KEY = (state) => {
   // Factory Function
-  return `LEARN_${state}_QUESTION_INDEX`;
-};
-export const LEARN_QUESTION_USER_ANSWER_KEY = "LEARN_QUESTION_USER_ANSWER";
-export const TEST_QUESTION_USER_ANSWER_KEY = "TEST_QUESTION_USER_ANSWER";
-export const TEST_PROGRESSION_KEY = "TEST_PROGRESSION";
+  return `LEARN_${state}_QUESTION_INDEX`
+}
+export const LEARN_QUESTION_USER_ANSWER_KEY = 'LEARN_QUESTION_USER_ANSWER'
+export const TEST_QUESTION_USER_ANSWER_KEY = 'TEST_QUESTION_USER_ANSWER'
+export const TEST_PROGRESSION_KEY = 'TEST_PROGRESSION'
 
 export class DEFAULT_VALUE {
   /**
    * App
    */
 
-  static APP_VERSION = "1.3.0";
+  static APP_VERSION = '1.3.0'
 
   /** 
   Homepage
   */
-  static WORD_LIST_EXERCISE = [];
-  static WORD_LIST = [];
-  static CURRENT_LEVEL = "a1";
-  static CURRENT_WORD_TYPE = "noun";
-  static CURRENT_CATEGORY = "alltag";
+  static WORD_LIST_EXERCISE = []
+  static WORD_LIST = []
+  static CURRENT_LEVEL = 'a1'
+  static CURRENT_WORD_TYPE = 'noun'
+  static CURRENT_CATEGORY = 'alltag'
   static TOTAL_WORD_LEARN = 0
   static TOTAL_WORD_EXERCISE = 0
-  static IS_ON_LEARN_OR_EXERCISE = "learn";
+  static IS_ON_LEARN_OR_EXERCISE = 'learn'
 
   static PAYMENT_TRIGGER_COUNTER = {
-    "learn": 0,
-    "exercise": 0,
-    "einburgerungstest": 0
+    learn: 0,
+    exercise: 0,
+    einburgerungstest: 0,
   }
 
   static LEARNED_WITH_LEARN_WORDS = {
@@ -218,9 +218,9 @@ export class DEFAULT_VALUE {
       },
     },
     einburgerungstest: {
-      einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] }
-    }
-  };
+      einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] },
+    },
+  }
 
   static LEARNED_WITH_EXERCISE_WORDS = {
     a1: {
@@ -380,9 +380,9 @@ export class DEFAULT_VALUE {
       },
     },
     einburgerungstest: {
-      einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] }
-    }
-  };
+      einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] },
+    },
+  }
 
   static IN_PROGRESS_WORDS = {
     a1: {
@@ -542,9 +542,9 @@ export class DEFAULT_VALUE {
       },
     },
     einburgerungstest: {
-      einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] }
-    }
-  };
+      einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] },
+    },
+  }
 
   static BOOKMARKS = {
     favorites: [],
@@ -554,14 +554,14 @@ export class DEFAULT_VALUE {
   /** 
   Einbürgerungstest
   */
-  static CURRENT_STATE = STATE_NATIONWIDE;
+  static CURRENT_STATE = STATE_NATIONWIDE
 
-  static SHOULD_SHOW_ANSWER = true;
-  static LEARN_QUESTION_INDEX = 1;
+  static SHOULD_SHOW_ANSWER = true
+  static LEARN_QUESTION_INDEX = 1
   static LEARN_QUESTION_USER_ANSWER = {
     answered: false,
     wasCorrect: false,
-  };
+  }
   static TEST_PROGRESSION = (
     testId,
     currentState,
@@ -577,6 +577,6 @@ export class DEFAULT_VALUE {
       isCompleted: false,
       completedAt: null,
       score: 0,
-    };
-  };
+    }
+  }
 }

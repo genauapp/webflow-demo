@@ -3,13 +3,16 @@ import QuestionManager from '../../utils/einburgerungstest/QuestionManager.js'
 import DateUtils from '../../utils/DateUtils.js'
 import ElementUtils from '../../utils/ElementUtils.js'
 import TestManager from '../../utils/einburgerungstest/TestManager.js'
-import { showPaymentContainerModal } from '../../utils/home/UIUtils.js'
 
 import {
   CURRENT_STATE_KEY,
   DEFAULT_VALUE,
   TEST_PROGRESSION_KEY,
 } from '../../constants/storageKeys.js'
+import {
+  decideShowingPaymentWorkflowOn,
+  PaymentTriggerEvent,
+} from '../../utils/payment/PaymentUtils.js'
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', () => {
@@ -290,17 +293,8 @@ const answerClickHandler = (event) => {
       updatedTestProgression,
       TestManager.isTestResultSuccessful(updatedTestProgression.score)
     )
-    // Trigger Payment Modal
-    const paymentTriggerCount = LocalStorageManager.load("PAYMENT_TRIGGER_COUNTER")
-        if(paymentTriggerCount.einburgerungstest == 0) {
-            showPaymentContainerModal()
-            const updatedPaymentTriggerCount = {
-                ...paymentTriggerCount,
-                einburgerungstest : paymentTriggerCount.einburgerungstest + 1
-            }
-            LocalStorageManager.save("PAYMENT_TRIGGER_COUNTER", updatedPaymentTriggerCount)
-        }        
-        return
+    decideShowingPaymentWorkflowOn(PaymentTriggerEvent.EINBURGERUNGSTEST)
+    return
   }
 
   LocalStorageManager.save(TEST_PROGRESSION_KEY, updatedTestProgression)
@@ -324,7 +318,11 @@ const setTestTabElements = (
   document.getElementById('test-questions-length').innerText =
     totalNumberOfQuestions
 
-  ElementUtils.showImageIfExists('test-question-image', 'test-question-image-container', currentQuestion)
+  ElementUtils.showImageIfExists(
+    'test-question-image',
+    'test-question-image-container',
+    currentQuestion
+  )
 
   document.getElementById(
     'test-current-question-index-label'
