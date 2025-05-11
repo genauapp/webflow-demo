@@ -40,7 +40,7 @@ export class DEFAULT_VALUE {
    * App
    */
 
-  static APP_VERSION = "1.3";
+  static APP_VERSION = "1.3.0";
 
   /** 
   Homepage
