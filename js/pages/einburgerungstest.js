@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
     LEARN_QUESTION_USER_ANSWER_KEY,
     DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
   )
+  // set payment trigger storage item
+  LocalStorageManager.load("PAYMENT_TRIGGER_COUNTER", DEFAULT_VALUE.PAYMENT_TRIGGER_COUNTER)
   // set current state to default one
 
   // get recent local storage items
