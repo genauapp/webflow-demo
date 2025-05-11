@@ -3,6 +3,8 @@ import QuestionManager from '../../utils/einburgerungstest/QuestionManager.js'
 import DateUtils from '../../utils/DateUtils.js'
 import ElementUtils from '../../utils/ElementUtils.js'
 import TestManager from '../../utils/einburgerungstest/TestManager.js'
+import { showPaymentContainerModal } from '../../utils/home/UIUtils.js'
+
 
 import {
   CURRENT_STATE_KEY,
