@@ -54,6 +54,12 @@ export class DEFAULT_VALUE {
   static TOTAL_WORD_EXERCISE = 0
   static IS_ON_LEARN_OR_EXERCISE = "learn";
 
+  static PAYMENT_TRIGGER_COUNTER = {
+    "learn": 0,
+    "exercise": 0,
+    "einburgerungs": 0
+  }
+
   static LEARNED_WITH_LEARN_WORDS = {
     a1: {
       alltag: {
@@ -377,7 +383,6 @@ export class DEFAULT_VALUE {
       einburgerungstest: { noun: [], verb: [], adjective: [], adverb: [] }
     }
   };
-
 
   static IN_PROGRESS_WORDS = {
     a1: {
