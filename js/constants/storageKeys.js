@@ -57,7 +57,7 @@ export class DEFAULT_VALUE {
   static PAYMENT_TRIGGER_COUNTER = {
     "learn": 0,
     "exercise": 0,
-    "einburgerungs": 0
+    "einburgerungstest": 0
   }
 
   static LEARNED_WITH_LEARN_WORDS = {

@@ -27,7 +27,16 @@ export default function showExerciseWord() {
     // max index -> hiding buttons, early return
     if (learnedWithExerciseWords[currentLevel][category][wordType].length === totalWordsExercise) {
       showFinishScreen()
-      showPaymentContainerModal()
+      // Trigger Payment Modal
+      const paymentTriggerCount = LocalStorageManager.load("PAYMENT_TRIGGER_COUNTER")
+        if(paymentTriggerCount.exercise == 0) {
+            showPaymentContainerModal()
+            const updatedPaymentTriggerCount = {
+                ...paymentTriggerCount,
+                exercise : paymentTriggerCount.exercise + 1
+            }
+            LocalStorageManager.save("PAYMENT_TRIGGER_COUNTER", updatedPaymentTriggerCount)
+        }        
       return
     }
 

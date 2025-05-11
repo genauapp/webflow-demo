@@ -289,6 +289,17 @@ const answerClickHandler = (event) => {
       updatedTestProgression,
       TestManager.isTestResultSuccessful(updatedTestProgression.score)
     )
+    // Trigger Payment Modal
+    const paymentTriggerCount = LocalStorageManager.load("PAYMENT_TRIGGER_COUNTER")
+        if(paymentTriggerCount.einburgerungstest == 0) {
+            showPaymentContainerModal()
+            const updatedPaymentTriggerCount = {
+                ...paymentTriggerCount,
+                einburgerungstest : paymentTriggerCount.einburgerungstest + 1
+            }
+            LocalStorageManager.save("PAYMENT_TRIGGER_COUNTER", updatedPaymentTriggerCount)
+        }        
+        return
   }
 
   LocalStorageManager.save(TEST_PROGRESSION_KEY, updatedTestProgression)

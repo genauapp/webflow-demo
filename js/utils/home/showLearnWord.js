@@ -1,6 +1,6 @@
 import { DEFAULT_VALUE, WORD_LIST_KEY, CURRENT_CATEGORY_KEY, CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, LEARNED_WITH_LEARN_WORDS_KEY, TOTAL_WORD_LEARN_KEY } from "../../constants/storageKeys.js"
 import LocalStorageManager from "../LocalStorageManager.js"
-import { hideFinishScreen, showFinishScreen, updateFavoriteIcons } from "./UIUtils.js"
+import { hideFinishScreen, showFinishScreen, updateFavoriteIcons, showPaymentContainerModal } from "./UIUtils.js"
 // cases for verbs
 const globalCases = ["reflexive", "akkusativ", "dativ", "separable"]
 // add events for labels
@@ -73,7 +73,16 @@ export default function showLearnWord() {
 
     if (learnedWithLearnWords[currentLevel][category][wordType].length === totalWordsLearn) {
         showFinishScreen()
-        showPaymentContainerModal()
+        // trigger for returning user or refreshing page
+        const paymentTriggerCount = LocalStorageManager.load("PAYMENT_TRIGGER_COUNTER")
+        if(paymentTriggerCount.learn == 0) {
+            showPaymentContainerModal()
+            const updatedPaymentTriggerCount = {
+                ...paymentTriggerCount,
+                learn : paymentTriggerCount.learn + 1
+            }
+            LocalStorageManager.save("PAYMENT_TRIGGER_COUNTER", updatedPaymentTriggerCount)
+        }
         return
     }
     refreshCasesUI()

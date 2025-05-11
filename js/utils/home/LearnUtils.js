@@ -49,7 +49,15 @@ export function iKnowLearn() {
 
     if (learnedWithLearnWords[level][category][wordType].length === totalWordsLearn) {
         showFinishScreen()
-        showPaymentContainerModal()
+        const paymentTriggerCount = LocalStorageManager.load("PAYMENT_TRIGGER_COUNTER")
+        if(paymentTriggerCount.learn == 0) {
+            showPaymentContainerModal()
+            const updatedPaymentTriggerCount = {
+                ...paymentTriggerCount,
+                learn : paymentTriggerCount.learn + 1
+            }
+            LocalStorageManager.save("PAYMENT_TRIGGER_COUNTER", updatedPaymentTriggerCount)
+        }        
         return
     }
     showLearnWord()
