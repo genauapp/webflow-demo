@@ -19,7 +19,7 @@ export function decideShowingPaymentWorkflowOn(triggerEvent) {
     showPaymentContainerModal()
     const updatedPaymentTriggerCount = {
       ...paymentTriggerCount,
-      triggerEvent: paymentTriggerCount[triggerEvent] + 1,
+      [triggerEvent]: paymentTriggerCount[triggerEvent] + 1,
     }
     LocalStorageManager.save(
       PAYMENT_TRIGGER_COUNTER_KEY,
