@@ -1,7 +1,6 @@
 import { authFetch } from '../api/authApi.js'
 
-// Login example
-async function googleSignin(idToken) {
+export async function googleSignin(idToken) {
   try {
     const response = await authFetch.post('/api/v1/auth/oauth2/google', {
       idToken,
@@ -19,8 +18,7 @@ async function googleSignin(idToken) {
   }
 }
 
-// Login example
-async function logout() {
+export async function logout() {
   try {
     const response = await authFetch.post('/api/v1/auth/logout', {})
     if (response.ok) {
