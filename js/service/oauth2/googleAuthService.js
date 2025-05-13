@@ -2,7 +2,7 @@ import { authFetch } from '../../api/authApi.js'
 import { GOOGLE_CLIENT_ID_WEB } from '../../constants/auth/google.js'
 import { googleSignin } from '../authService.js'
 
-const initializeGoogleAuth = (onSuccess) => {
+const initializeGoogleAuth = async (onSuccess) => {
   // Load Google client library
   window.google.accounts.id.initialize({
     client_id: GOOGLE_CLIENT_ID_WEB,
