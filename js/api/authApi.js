@@ -1,7 +1,7 @@
 // authApi.js
 import { API_SERVER_BASE_URL } from '../constants/urls.js'
 
-export const authFetch = {
+const authFetch = {
   post: async (endpoint, data) => {
     return fetch(`${API_SERVER_BASE_URL}${endpoint}`, {
       method: 'POST',

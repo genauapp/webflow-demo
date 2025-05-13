@@ -1,4 +1,4 @@
-import { protectedFetch } from '../api/protectedApi.js'
+import protectedFetch from '../api/protectedApi.js'
 
 // Protected request example
 export async function getUserProfile() {

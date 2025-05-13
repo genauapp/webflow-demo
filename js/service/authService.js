@@ -1,4 +1,4 @@
-import { authFetch } from '../api/authApi.js'
+import authFetch from '../api/authApi.js'
 
 export async function googleSignin(idToken) {
   try {
