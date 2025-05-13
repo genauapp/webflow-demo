@@ -1,7 +1,7 @@
 import { protectedFetch } from '../api/protectedApi.js'
 
 // Protected request example
-async function getUserProfile() {
+export async function getUserProfile() {
   try {
     const response = await protectedFetch.get('/api/v1/user/me')
     if (response.ok) {
