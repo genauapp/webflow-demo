@@ -9,7 +9,7 @@ async function getUserProfile() {
     }
     return null
   } catch (error) {
-    console.error('Protected request failed:', error)
+    console.error('User profile request failed:', error)
     return null
   }
 }
