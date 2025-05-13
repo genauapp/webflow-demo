@@ -1,7 +1,7 @@
 import { googleSignin } from '../authService.js'
 import { GOOGLE_CLIENT_ID_WEB } from '../../constants/auth/google.js'
 
-export function initializeGoogleAuth(onSuccess, onError) {
+export async function initializeGoogleAuth(onSuccess, onError) {
   window.onGoogleLibraryLoad = () => {
     // 1) Configure the client
     google.accounts.id.initialize({

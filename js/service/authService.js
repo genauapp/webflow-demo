@@ -10,7 +10,7 @@ export async function googleSignin(idToken) {
       const data = await response.json()
       console.log('Login response status code:', response.status)
       console.log('Login successful:', data)
-      return data
+      return await data.json()
     }
   } catch (error) {
     console.error('Login request failed:', error)
@@ -26,7 +26,7 @@ export async function logout() {
       const data = await response.json()
       console.log('Logout response status code:', response.status)
       console.log('Logout successful:', data)
-      return data
+      return await data.json()
     }
   } catch (error) {
     console.error('Logout request failed:', error)

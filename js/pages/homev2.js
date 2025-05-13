@@ -10,6 +10,10 @@ document.getElementById('google-signin').addEventListener('click', async () => {
     (userData) => {
       // e.g. redirect or store userData
       console.log('Logged in user:', userData)
+
+      document.getElementById(
+        'user-info'
+      ).innerText = `Welcome ${userData.user.name} | ${userData.user.email}`
     },
     (error) => {
       // show notification
