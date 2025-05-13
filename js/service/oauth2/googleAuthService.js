@@ -1,6 +1,6 @@
-import { authFetch } from '../../api/authApi'
-import { GOOGLE_CLIENT_ID_WEB } from '../../constants/auth/google'
-import { googleSignin } from '../authService'
+import { authFetch } from '../../api/authApi.js'
+import { GOOGLE_CLIENT_ID_WEB } from '../../constants/auth/google.js'
+import { googleSignin } from '../authService.js'
 
 const initializeGoogleAuth = (onSuccess) => {
   // Load Google client library
@@ -32,17 +32,17 @@ const initializeGoogleAuth = (onSuccess) => {
   })
 
   // Add click handler to your custom button
-  document.getElementById('googleSignInBtn').addEventListener('click', () => {
-    window.google.accounts.id.prompt((notification) => {
-      if (notification.isNotDisplayed() || notification.isSkipped()) {
-        // Fallback if prompt doesn't show
-        window.google.accounts.id.renderButton(
-          document.getElementById('googleSignInBtn'),
-          { theme: 'filled_blue', size: 'large', type: 'standard' }
-        )
-      }
-    })
-  })
+  //   document.getElementById('google-signin').addEventListener('click', () => {
+  //     window.google.accounts.id.prompt((notification) => {
+  //       if (notification.isNotDisplayed() || notification.isSkipped()) {
+  //         // Fallback if prompt doesn't show
+  //         window.google.accounts.id.renderButton(
+  //           document.getElementById('google-signin'),
+  //           { theme: 'filled_blue', size: 'large', type: 'standard' }
+  //         )
+  //       }
+  //     })
+  //   })
 }
 
 export default initializeGoogleAuth
