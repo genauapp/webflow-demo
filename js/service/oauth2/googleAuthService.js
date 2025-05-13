@@ -1,5 +1,5 @@
-import { googleSignin } from '../authService'
-import { GOOGLE_CLIENT_ID_WEB } from '../../constants/auth/google'
+import { googleSignin } from '../authService.js'
+import { GOOGLE_CLIENT_ID_WEB } from '../../constants/auth/google.js'
 
 export function initializeGoogleAuth(onSuccess, onError) {
   window.onGoogleLibraryLoad = () => {
