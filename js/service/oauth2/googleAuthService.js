@@ -32,7 +32,7 @@ export async function initializeGoogleAuth(onSuccess, onError) {
       console.log(`google id_token: ${idToken}`)
       const result = await googleSignin(idToken)
 
-      if (result.ok) {
+      if (result) {
         onSuccess(result)
       } else {
         const errText = result // .text()
