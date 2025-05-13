@@ -32,9 +32,9 @@ export async function initializeGoogleAuth(onSuccess, onError) {
       const result = await googleSignin(idToken)
 
       if (result.ok) {
-        onSuccess(await result.json())
+        onSuccess(result)
       } else {
-        const errText = await result.text()
+        const errText = result // .text()
         console.error('Google login failed:', errText)
         onError(errText)
       }
