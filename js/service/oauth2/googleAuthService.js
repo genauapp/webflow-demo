@@ -1,48 +1,46 @@
-import { authFetch } from '../../api/authApi.js'
-import { GOOGLE_CLIENT_ID_WEB } from '../../constants/auth/google.js'
-import { googleSignin } from '../authService.js'
+import { googleSignin } from '../auth/authService.js'
+import { GOOGLE_CLIENT_ID_WEB } from '../constants/auth/google.js'
 
-const initializeGoogleAuth = async (onSuccess) => {
-  // Load Google client library
-  window.google.accounts.id.initialize({
-    client_id: GOOGLE_CLIENT_ID_WEB,
-    callback: async (response) => {
-      try {
-        // Send ID token to your backend
-        // const result = await fetch('/api/v1/auth/oauth2/google', {
-        //   method: 'POST',
-        //   credentials: 'include', // For cookies
-        //   headers: {
-        //     'Content-Type': 'application/json',
-        //   },
-        //   body: JSON.stringify({ id_token: response.credential }),
-        // })
+export function initializeGoogleAuth(onSuccess, onError) {
+  window.onGoogleLibraryLoad = () => {
+    // 1) Configure the client
+    google.accounts.id.initialize({
+      client_id: GOOGLE_CLIENT_ID_WEB,
+      callback: handleCredentialResponse,
+      context: 'use', // optional: ensures one‑tap context
+      ux_mode: 'popup', // popup vs. redirect
+    })
 
-        const result = await googleSignin(response.credential)
+    // 2) Render the real button into your container
+    google.accounts.id.renderButton(document.getElementById('google-signin'), {
+      theme: 'outline',
+      size: 'large',
+    })
+  }
 
-        if (result.ok) {
-          onSuccess()
-        } else {
-          console.error('Authentication failed:', await result.text())
-        }
-      } catch (error) {
-        console.error('Request error:', error)
+  // 3) Load the library (ensures onGoogleLibraryLoad is called)
+  const script = document.createElement('script')
+  script.src = 'https://accounts.google.com/gsi/client'
+  script.async = true
+  script.defer = true
+  script.onload = () => window.onGoogleLibraryLoad()
+  document.head.appendChild(script)
+
+  async function handleCredentialResponse(response) {
+    try {
+      const idToken = response.credential // JWT from Google
+      const result = await googleSignin(idToken)
+
+      if (result.ok) {
+        onSuccess(await result.json())
+      } else {
+        const errText = await result.text()
+        console.error('Google login failed:', errText)
+        onError(errText)
       }
-    },
-  })
-
-  // Add click handler to your custom button
-  //   document.getElementById('google-signin').addEventListener('click', () => {
-  //     window.google.accounts.id.prompt((notification) => {
-  //       if (notification.isNotDisplayed() || notification.isSkipped()) {
-  //         // Fallback if prompt doesn't show
-  //         window.google.accounts.id.renderButton(
-  //           document.getElementById('google-signin'),
-  //           { theme: 'filled_blue', size: 'large', type: 'standard' }
-  //         )
-  //       }
-  //     })
-  //   })
+    } catch (err) {
+      console.error('Error in googleSignin request:', err)
+      onError(err)
+    }
+  }
 }
-
-export default initializeGoogleAuth
