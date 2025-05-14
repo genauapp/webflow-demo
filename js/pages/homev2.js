@@ -12,8 +12,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     loginContainer.style.display = 'none'
 
     // show user info container
-    const userInfoContainer = document.getElementById('user-info-container')
-    userInfoContainer.style.display = 'flex'
+    const userProfileContainer = document.getElementById(
+      'user-profile-container'
+    )
+    userProfileContainer.style.display = 'flex'
 
     // // populate user data for inner elements
     document.getElementById(
@@ -30,12 +32,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     //   'app-user-info'
     // ).innerText = `Welcome App User!! ${appUser.name} | ${appUser.email}`
 
-    // show user progression container
-    const userProgressionContainer = document.getElementById(
-      'user-progression-container'
-    )
-    userProgressionContainer.style.display = 'flex'
-
     // // todo: populate user progression
   }
 
@@ -50,20 +46,17 @@ document
     const result = await logout()
     console.log(result)
 
-    // hide user progression container
+    // hide user profile container
+    // // todo: unpopulate user progression
     // // unpopulate user data for inner elements
     document.getElementById('label-user-info-name').innerText = ''
     document.getElementById('label-user-info-email').innerText = ''
 
-    // // hide the container
-    const userProgressionContainer = document.getElementById(
-      'user-progression-container'
+    // hide user profile container
+    const userProfileContainer = document.getElementById(
+      'user-profile-container'
     )
-    userProgressionContainer.style.display = 'none'
-
-    // hide user info container
-    const userInfoContainer = document.getElementById('user-info-container')
-    userInfoContainer.style.display = 'none'
+    userProfileContainer.style.display = 'none'
 
     // show login container
     const loginContainer = document.getElementById('login-container')
