@@ -2,63 +2,94 @@ import { logout } from '../service/authService.js'
 import { initGoogleAuth } from '../service/oauth2/googleAuthService.js'
 import { getUserProfile } from '../service/userService.js'
 
-// Page bootstrap
-document.addEventListener('DOMContentLoaded', async () => {
-  const successHandler = async (result) => {
-    console.log('Login successful:', result)
+/**
+ * Application state and central render function
+ */
+const state = {
+  user: null,
+  isLoading: true,
+  error: null,
+}
 
-    // hide login container
-    const loginContainer = document.getElementById('login-container')
-    loginContainer.style.display = 'none'
+const els = {
+  loginContainer: () => document.getElementById('login-container'),
+  profileContainer: () => document.getElementById('user-profile-container'),
+  nameLabel: () => document.getElementById('label-user-info-name'),
+  emailLabel: () => document.getElementById('label-user-info-email'),
+}
 
-    // show user info container
-    const userProfileContainer = document.getElementById(
-      'user-profile-container'
-    )
-    userProfileContainer.style.display = 'flex'
+/**
+ * Update the DOM based on current state
+ */
+function render() {
+  const { user, isLoading } = state
 
-    // // populate user data for inner elements
-    document.getElementById(
-      'label-user-info-name'
-    ).innerText = `${result.user.name}`
-    document.getElementById(
-      'label-user-info-email'
-    ).innerText = `${result.user.email}`
-
-    // todo: get user data with another request
-    // const appUser = await getUserProfile()
-
-    // document.getElementById(
-    //   'app-user-info'
-    // ).innerText = `Welcome App User!! ${appUser.name} | ${appUser.email}`
-
-    // // todo: populate user progression
+  if (isLoading) {
+    // you could show a spinner here
+    els.loginContainer().style.display = 'none'
+    els.profileContainer().style.display = 'none'
+    return
   }
 
-  await initGoogleAuth(successHandler, (err) =>
-    console.error('Login error:', err)
-  )
-})
+  if (!user) {
+    // unauthenticated
+    els.loginContainer().style.display = 'flex'
+    els.profileContainer().style.display = 'none'
+  } else {
+    // authenticated
+    els.loginContainer().style.display = 'none'
+    els.profileContainer().style.display = 'flex'
+    els.nameLabel().innerText = user.name
+    els.emailLabel().innerText = user.email
+  }
+}
 
+/**
+ * Initialize page: fetch profile and set up Google Auth
+ */
+async function bootstrap() {
+  try {
+    const resp = await getUserProfile()
+    state.user = resp.user // may be null
+  } catch (err) {
+    state.error = err
+    console.error('Profile fetch error', err)
+  } finally {
+    state.isLoading = false
+    render()
+  }
+
+  // set up Google button
+  await initGoogleAuth(onLoginSuccess, onLoginError)
+}
+
+async function onLoginSuccess(result) {
+  console.log('Login successful:', result)
+  state.user = result.user
+  render()
+}
+
+function onLoginError(err) {
+  console.error('Login error:', err)
+  // optionally set state.error
+}
+
+/**
+ * Logout handler
+ */
+async function onLogoutClick() {
+  try {
+    await logout()
+  } catch (err) {
+    console.error('Logout failed', err)
+  } finally {
+    state.user = null
+    render()
+  }
+}
+
+// Wire up DOM events
+document.addEventListener('DOMContentLoaded', bootstrap)
 document
   .getElementById('btn-home-logout')
-  .addEventListener('click', async () => {
-    const result = await logout()
-    console.log(result)
-
-    // hide user profile container
-    // // todo: unpopulate user progression
-    // // unpopulate user data for inner elements
-    document.getElementById('label-user-info-name').innerText = ''
-    document.getElementById('label-user-info-email').innerText = ''
-
-    // hide user profile container
-    const userProfileContainer = document.getElementById(
-      'user-profile-container'
-    )
-    userProfileContainer.style.display = 'none'
-
-    // show login container
-    const loginContainer = document.getElementById('login-container')
-    loginContainer.style.display = 'flex'
-  })
+  .addEventListener('click', onLogoutClick)
