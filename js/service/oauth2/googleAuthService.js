@@ -8,7 +8,7 @@ export async function initializeGoogleAuth(onSuccess, onError) {
       client_id: GOOGLE_CLIENT_ID_WEB,
       callback: handleCredentialResponse,
       context: 'use', // optional: ensures one‑tap context
-      ux_mode: 'popup', // popup vs. redirect
+      ux_mode: 'redirect', // popup vs. redirect
     })
 
     // 2) Render the real button into your container
