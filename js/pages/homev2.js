@@ -1,30 +1,53 @@
-import { initializeGoogleAuth } from '../service/oauth2/googleAuthService.js'
+import {
+  setupGoogleButton,
+  setupLoadingIndicator,
+  createCredentialHandler,
+  initializeGoogleAuth,
+} from '../service/oauth2/googleAuthService.js'
 import { getUserProfile } from '../service/userService.js'
 
-document.getElementById('google-signin').addEventListener('click', async () => {
-  console.log('YAYYYYYYYYYYYYYYYY! Clicked!')
-  // await initializeGoogleAuth(() => {
-  //   console.log('YAYYYYYYYYYYYYYYYY! Logged in!')
-  // })
+// Page bootstrap
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = setupGoogleButton('btn-home-google-signin')
+  // const loadingEl = setupLoadingIndicator('google-loading')
+  const handler = createCredentialHandler(
+    async (loginRes) => {
+      console.log('Login successful:', loginRes)
 
-  await initializeGoogleAuth(
-    async (userData) => {
-      // e.g. redirect or store userData
-      console.log('Logged in user:', userData)
+      // hide login container
+      const loginContainer = document.getElementById('login-container')
+      loginContainer.style.display = 'none'
 
+      // show user info container
+      const userInfoContainer = document.getElementById('user-info-container')
+      userInfoContainer.style.display = 'flex'
+
+      // // populate user data for inner elements
       document.getElementById(
-        'google-user-info'
-      ).innerText = `Welcome ${userData.user.name} | ${userData.user.email}`
-
-      const appUser = await getUserProfile()
-
+        'label-user-info-name'
+      ).innerText = `${loginRes.user.name}`
       document.getElementById(
-        'app-user-info'
-      ).innerText = `Welcome App User!! ${appUser.name} | ${appUser.email}`
+        'label-user-info-email'
+      ).innerText = `${loginRes.user.email}`
+
+      // todo: get user data with another request
+      // const appUser = await getUserProfile()
+
+      // document.getElementById(
+      //   'app-user-info'
+      // ).innerText = `Welcome App User!! ${appUser.name} | ${appUser.email}`
+
+      // show user progression container
+      const userProgressionContainer = document.getElementById(
+        'user-progression-container'
+      )
+      userProgressionContainer.style.display = 'flex'
+
+      // // todo: populate user progression
     },
-    (error) => {
-      // show notification
-      console.error('Login error:', error)
-    }
+    (err) => console.error('Login error:', err)
+    // loadingEl
   )
+
+  initializeGoogleAuth(handler)
 })
