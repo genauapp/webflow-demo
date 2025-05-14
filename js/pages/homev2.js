@@ -24,7 +24,10 @@ function render({ loading, error, unauthorized, user }) {
   // els.spinner().style.display = loading ? 'block' : 'none'
   if (loading) {
     els.login().style.display = 'none'
-    els.profile().style.display = 'none'
+    // showing loading in there
+    els.profile().style.display = 'flex'
+    els.name().innerText = 'user...'
+    els.email().innerText = 'checking user info...'
     return
   }
 
