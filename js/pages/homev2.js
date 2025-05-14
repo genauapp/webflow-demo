@@ -15,19 +15,19 @@ const els = {
   name: () => document.getElementById('label-user-info-name'),
   email: () => document.getElementById('label-user-info-email'),
   errorMsg: () => document.getElementById('error-message'), // add an element in your HTML
-  spinner: () => document.getElementById('loading-spinner'), // idem
+  // spinner: () => document.getElementById('loading-spinner'), // idem
 }
 
 function render() {
   if (state.loading) {
-    els.spinner().style.display = 'block'
+    // els.spinner().style.display = 'block'
     els.login().style.display = 'none'
     els.profile().style.display = 'none'
     els.errorMsg().style.display = 'none'
     return
   }
 
-  els.spinner().style.display = 'none'
+  // els.spinner().style.display = 'none'
 
   if (state.error) {
     els.errorMsg().innerText = `Error: ${state.error.message}`
