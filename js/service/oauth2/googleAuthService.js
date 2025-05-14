@@ -2,52 +2,88 @@
 import { googleSignin } from '../authService.js'
 import { GOOGLE_CLIENT_ID_WEB } from '../../constants/auth/google.js'
 
-let initialized = false
+let googleAuthInitialized = false
+let googleClientReady = false
 
-/**
- * Load GSI script once
- */
-async function loadGsi() {
-  if (initialized) return
-  await new Promise((res, rej) => {
-    const s = document.createElement('script')
-    s.src = 'https://accounts.google.com/gsi/client'
-    s.async = s.defer = true
-    s.onload = () => res()
-    s.onerror = () => rej(new Error('Failed to load GSI script'))
-    document.head.appendChild(s)
+// Load GSI client with proper error handling
+async function loadGoogleIdentityServices() {
+  if (googleClientReady) return
+
+  return new Promise((resolve, reject) => {
+    if (window.google?.accounts?.id) {
+      googleClientReady = true
+      return resolve()
+    }
+
+    const script = document.createElement('script')
+    script.src = 'https://accounts.google.com/gsi/client'
+    script.async = true
+    script.defer = true
+    script.onload = () => {
+      googleClientReady = true
+      resolve()
+    }
+    script.onerror = () =>
+      reject(new Error('Failed to load Google Identity Services'))
+    document.head.appendChild(script)
   })
-  initialized = true
 }
 
-/**
- * Initialize Google Identity Services
- * @param {(loginRes: any) => Promise<void>} onSuccess
- * @param {(err: any) => void} onError
- */
 export async function initGoogleAuth(onSuccess, onError) {
-  await loadGsi()
-  google.accounts.id.initialize({
-    client_id: GOOGLE_CLIENT_ID_WEB,
-    ux_mode: 'popup',
-    callback: async (googlePopupResponse) => {
-      try {
-        const response = await googleSignin(googlePopupResponse.credential)
-        if (!response) throw new Error('Empty login result')
-        await onSuccess(response)
-      } catch (err) {
-        onError(err)
-      }
-    },
-  })
+  try {
+    await loadGoogleIdentityServices()
+
+    google.accounts.id.initialize({
+      client_id: GOOGLE_CLIENT_ID_WEB,
+      callback: async (response) => {
+        if (response.error) {
+          onError(response.error)
+          return
+        }
+
+        try {
+          const loginResult = await googleSignin(response.credential)
+          await onSuccess(loginResult)
+        } catch (error) {
+          onError(error)
+        }
+      },
+      error_callback: (error) => {
+        onError(error)
+      },
+      ux_mode: 'popup',
+      auto_select: false,
+    })
+
+    googleAuthInitialized = true
+  } catch (error) {
+    onError(error)
+  }
 }
 
-/**
- * Attach prompt to given button
- * @param {string} buttonId
- */
 export function addSigninEventTo(buttonId) {
-  const btn = document.getElementById(buttonId)
-  if (!btn) throw new Error(`#${buttonId} not found`)
-  btn.addEventListener('click', () => google.accounts.id.prompt())
+  const button = document.getElementById(buttonId)
+  if (!button) return
+
+  button.addEventListener('click', () => {
+    if (!googleAuthInitialized) {
+      console.error('Google auth not initialized')
+      return
+    }
+
+    try {
+      // Use the proper prompt method for ID token flow
+      google.accounts.id.prompt((notification) => {
+        if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+          // Handle browser blocking or auto-sign-in failures
+          console.warn(
+            'Google sign-in prompt blocked:',
+            notification.getNotDisplayedReason()
+          )
+        }
+      })
+    } catch (error) {
+      console.error('Google sign-in error:', error)
+    }
+  })
 }
