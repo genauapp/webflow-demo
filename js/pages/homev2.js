@@ -9,6 +9,7 @@ const els = {
   email: () => document.getElementById('label-user-info-email'),
   // spinner: () => document.getElementById('loading-spinner'),
   // errorMsg: () => document.getElementById('error-message'),
+  logoutBtn: () => document.getElementById('btn-home-logout'),
 }
 
 /** Show/hide according to simple flags */
@@ -88,6 +89,4 @@ async function onLogoutClick() {
 }
 
 document.addEventListener('DOMContentLoaded', bootstrap)
-document
-  .getElementById('btn-home-logout')
-  .addEventListener('click', onLogoutClick)
+els.logoutBtn.addEventListener('click', onLogoutClick)
