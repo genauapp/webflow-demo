@@ -6,10 +6,8 @@ import { getUserProfile } from '../service/userService.js'
 
 // Page bootstrap
 document.addEventListener('DOMContentLoaded', async () => {
-  addSigninEventTo('btn-home-google-signin')
-
-  const successHandler = async (loginRes) => {
-    console.log('Login successful:', loginRes)
+  const successHandler = async (result) => {
+    console.log('Login successful:', result)
 
     // hide login container
     const loginContainer = document.getElementById('login-container')
@@ -22,10 +20,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     // // populate user data for inner elements
     document.getElementById(
       'label-user-info-name'
-    ).innerText = `${loginRes.user.name}`
+    ).innerText = `${result.user.name}`
     document.getElementById(
       'label-user-info-email'
-    ).innerText = `${loginRes.user.email}`
+    ).innerText = `${result.user.email}`
 
     // todo: get user data with another request
     // const appUser = await getUserProfile()
