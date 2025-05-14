@@ -1,3 +1,4 @@
+import { logout } from '../service/authService.js'
 import { initGoogleAuth } from '../service/oauth2/googleAuthService.js'
 import { getUserProfile } from '../service/userService.js'
 
@@ -42,3 +43,29 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.error('Login error:', err)
   )
 })
+
+document
+  .getElementById('btn-home-logout')
+  .addEventListener('click', async () => {
+    const result = await logout()
+    console.log(result)
+
+    // hide user progression container
+    // // unpopulate user data for inner elements
+    document.getElementById('label-user-info-name').innerText = ''
+    document.getElementById('label-user-info-email').innerText = ''
+
+    // // hide the container
+    const userProgressionContainer = document.getElementById(
+      'user-progression-container'
+    )
+    userProgressionContainer.style.display = 'none'
+
+    // hide user info container
+    const userInfoContainer = document.getElementById('user-info-container')
+    userInfoContainer.style.display = 'none'
+
+    // show login container
+    const loginContainer = document.getElementById('login-container')
+    loginContainer.style.display = 'flex'
+  })
