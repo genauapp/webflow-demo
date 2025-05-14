@@ -1,6 +1,6 @@
 import {
   setupGoogleButton,
-  setupLoadingIndicator,
+  // setupLoadingIndicator,
   createCredentialHandler,
   initializeGoogleAuth,
 } from '../service/oauth2/googleAuthService.js'
