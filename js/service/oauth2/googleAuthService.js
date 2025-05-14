@@ -32,7 +32,7 @@ export async function initGoogleAuth(onSuccess, onError) {
   async function handleCredentialResponse(response) {
     try {
       const idToken = response.credential // JWT from Google
-      console.log(`google id_token: ${idToken}`)
+      // console.log(`google id_token: ${idToken}`)
       const result = await googleSignin(idToken)
 
       if (result) {

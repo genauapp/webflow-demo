@@ -23,7 +23,8 @@ export async function logout() {
     const response = await authFetch.post('/api/v1/auth/logout', {})
     if (response.ok) {
       // Cookies are automatically stored by the browser
-      const data = await response.json()
+      // const data = await response.json()
+      const data = response // only string for now
       console.log('Logout response status code:', response.status)
       console.log('Logout successful:', data)
       return data
