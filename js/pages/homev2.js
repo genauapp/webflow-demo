@@ -1,7 +1,4 @@
-import {
-  initGoogleAuth,
-  addSigninEventTo,
-} from '../service/oauth2/googleAuthService.js'
+import { initGoogleAuth } from '../service/oauth2/googleAuthService.js'
 import { getUserProfile } from '../service/userService.js'
 
 // Page bootstrap
