@@ -1,6 +1,6 @@
-import { getUserProfile } from './service/userService.js'
-import { initGoogleAuth } from './service/oauth2/googleAuthService.js'
-import { logout } from './service/authService.js'
+import { getUserProfile } from '../service/userService.js'
+import { initGoogleAuth } from '../service/oauth2/googleAuthService.js'
+import { logout } from '../service/authService.js'
 
 const els = {
   login: () => document.getElementById('login-container'),
