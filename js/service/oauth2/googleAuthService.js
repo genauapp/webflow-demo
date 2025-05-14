@@ -16,12 +16,12 @@ export function initializeGoogleAuth(callback) {
     })
   }
 
-  const script = document.createElement('script')
-  script.src = 'https://accounts.google.com/gsi/client'
-  script.async = true
-  script.defer = true
-  script.onload = () => window.onGoogleLibraryLoad()
-  document.head.appendChild(script)
+  // const script = document.createElement('script')
+  // script.src = 'https://accounts.google.com/gsi/client'
+  // script.async = true
+  // script.defer = true
+  // script.onload = () => window.onGoogleLibraryLoad()
+  // document.head.appendChild(script)
 }
 
 /**
