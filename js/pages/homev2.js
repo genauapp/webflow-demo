@@ -89,4 +89,4 @@ async function onLogoutClick() {
 }
 
 document.addEventListener('DOMContentLoaded', bootstrap)
-els.logoutBtn.addEventListener('click', onLogoutClick)
+els.logoutBtn().addEventListener('click', onLogoutClick)
