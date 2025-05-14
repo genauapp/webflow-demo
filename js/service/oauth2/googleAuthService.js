@@ -1,12 +1,11 @@
-// src/googleAuthPage.js
+// googleAuthService.js
 import { googleSignin } from '../authService.js'
 import { GOOGLE_CLIENT_ID_WEB } from '../../constants/auth/google.js'
 
-let googleAuthInitialized = false
 let googleClientReady = false
+let loginPromise = null
 
-// Load GSI client with proper error handling
-async function loadGoogleIdentityServices() {
+async function loadFedCM() {
   if (googleClientReady) return
 
   return new Promise((resolve, reject) => {
@@ -31,31 +30,28 @@ async function loadGoogleIdentityServices() {
 
 export async function initGoogleAuth(onSuccess, onError) {
   try {
-    await loadGoogleIdentityServices()
+    await loadFedCM()
 
     google.accounts.id.initialize({
       client_id: GOOGLE_CLIENT_ID_WEB,
       callback: async (response) => {
-        if (response.error) {
-          onError(response.error)
-          return
-        }
-
         try {
-          const loginResult = await googleSignin(response.credential)
-          await onSuccess(loginResult)
+          const loginRes = await googleSignin(response.credential)
+          await onSuccess(loginRes)
+          loginPromise = null
         } catch (error) {
           onError(error)
+          loginPromise = null
         }
       },
       error_callback: (error) => {
         onError(error)
+        loginPromise = null
       },
-      ux_mode: 'popup',
+      ux_mode: 'redirect',
+      context: 'use',
       auto_select: false,
     })
-
-    googleAuthInitialized = true
   } catch (error) {
     onError(error)
   }
@@ -65,25 +61,37 @@ export function addSigninEventTo(buttonId) {
   const button = document.getElementById(buttonId)
   if (!button) return
 
-  button.addEventListener('click', () => {
-    if (!googleAuthInitialized) {
-      console.error('Google auth not initialized')
+  button.addEventListener('click', async () => {
+    if (!window.google?.accounts?.id) {
+      console.error('Google client not loaded')
       return
     }
 
+    if (loginPromise) return
+
     try {
-      // Use the proper prompt method for ID token flow
-      google.accounts.id.prompt((notification) => {
-        if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
-          // Handle browser blocking or auto-sign-in failures
-          console.warn(
-            'Google sign-in prompt blocked:',
-            notification.getNotDisplayedReason()
-          )
-        }
+      loginPromise = new Promise((resolve, reject) => {
+        google.accounts.id.prompt((notification) => {
+          if (notification.isNotDisplayed()) {
+            reject(
+              new Error(
+                `Prompt blocked: ${notification.getNotDisplayedReason()}`
+              )
+            )
+          } else if (notification.isSkippedMoment()) {
+            reject(
+              new Error(`Prompt skipped: ${notification.getSkippedReason()}`)
+            )
+          } else if (notification.isDismissedMoment()) {
+            reject(new Error('Prompt dismissed'))
+          }
+        })
       })
+
+      await loginPromise
     } catch (error) {
-      console.error('Google sign-in error:', error)
+      console.error('FedCM sign-in error:', error)
+      loginPromise = null
     }
   })
 }
