@@ -21,14 +21,20 @@ function render({ loading, error, unauthorized, user }) {
 
   // loading state
   // els.spinner().style.display = loading ? 'block' : 'none'
-  if (loading) return
+  if (loading) {
+    els.login().style.display = 'none'
+    els.profile().style.display = 'none'
+    return
+  }
 
   // error state
   if (error) {
     //   els.errorMsg().innerText = error.message
     //   els.errorMsg().style.display = 'block'
-    //   els.login().style.display = 'none'
-    //   els.profile().style.display = 'none'
+    // alert(`Error: ${error.message}`)
+    // fallback to login
+    els.login().style.display = 'flex'
+    els.profile().style.display = 'none'
     return
   }
 
@@ -47,7 +53,7 @@ function render({ loading, error, unauthorized, user }) {
 }
 
 async function bootstrap() {
-  render({ loading: true }) // start loader
+  render({ loading: true })
 
   const { user, status, error } = await getUserProfile()
   const unauthorized = status === 401 || status === 403
@@ -66,8 +72,19 @@ function onLoginError(err) {
 }
 
 async function onLogoutClick() {
-  await logout()
-  render({ loading: false, error: null, unauthorized: true, user: null })
+  // disable button and show spinner
+  els.logoutBtn().disabled = true
+  render({ loading: true })
+
+  try {
+    await logout()
+    // after success, clear user
+    render({ loading: false, unauthorized: true, user: null })
+  } catch (err) {
+    // on error, re-enable button and show message
+    els.logoutBtn().disabled = false
+    render({ loading: false, error: err })
+  }
 }
 
 document.addEventListener('DOMContentLoaded', bootstrap)
