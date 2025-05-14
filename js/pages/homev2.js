@@ -2,93 +2,85 @@ import { logout } from '../service/authService.js'
 import { initGoogleAuth } from '../service/oauth2/googleAuthService.js'
 import { getUserProfile } from '../service/userService.js'
 
-/**
- * Application state and central render function
- */
 const state = {
   user: null,
-  isLoading: true,
+  loading: true,
   error: null,
+  unauthorized: false,
 }
 
 const els = {
-  loginContainer: () => document.getElementById('login-container'),
-  profileContainer: () => document.getElementById('user-profile-container'),
-  nameLabel: () => document.getElementById('label-user-info-name'),
-  emailLabel: () => document.getElementById('label-user-info-email'),
+  login: () => document.getElementById('login-container'),
+  profile: () => document.getElementById('user-profile-container'),
+  name: () => document.getElementById('label-user-info-name'),
+  email: () => document.getElementById('label-user-info-email'),
+  errorMsg: () => document.getElementById('error-message'), // add an element in your HTML
+  spinner: () => document.getElementById('loading-spinner'), // idem
 }
 
-/**
- * Update the DOM based on current state
- */
 function render() {
-  const { user, isLoading } = state
-
-  if (isLoading) {
-    // you could show a spinner here
-    els.loginContainer().style.display = 'none'
-    els.profileContainer().style.display = 'none'
+  if (state.loading) {
+    els.spinner().style.display = 'block'
+    els.login().style.display = 'none'
+    els.profile().style.display = 'none'
+    els.errorMsg().style.display = 'none'
     return
   }
 
-  if (!user) {
-    // unauthenticated
-    els.loginContainer().style.display = 'flex'
-    els.profileContainer().style.display = 'none'
+  els.spinner().style.display = 'none'
+
+  if (state.error) {
+    els.errorMsg().innerText = `Error: ${state.error.message}`
+    els.errorMsg().style.display = 'block'
+    els.login().style.display = 'none'
+    els.profile().style.display = 'none'
+    return
+  }
+
+  if (state.unauthorized || !state.user) {
+    // treat 401/403 or no user as unauthenticated
+    els.login().style.display = 'flex'
+    els.profile().style.display = 'none'
   } else {
     // authenticated
-    els.loginContainer().style.display = 'none'
-    els.profileContainer().style.display = 'flex'
-    els.nameLabel().innerText = user.name
-    els.emailLabel().innerText = user.email
+    els.login().style.display = 'none'
+    els.profile().style.display = 'flex'
+    els.name().innerText = state.user.name
+    els.email().innerText = state.user.email
   }
 }
 
-/**
- * Initialize page: fetch profile and set up Google Auth
- */
 async function bootstrap() {
-  try {
-    const resp = await getUserProfile()
-    state.user = resp.user // may be null
-  } catch (err) {
-    state.error = err
-    console.error('Profile fetch error', err)
-  } finally {
-    state.isLoading = false
-    render()
-  }
+  const profileResult = await getUserProfile()
+  state.loading = profileResult.loading
+  state.user = profileResult.user
+  state.error = profileResult.error
+  state.unauthorized = [401, 403].includes(profileResult.status)
+  render()
 
-  // set up Google button
   await initGoogleAuth(onLoginSuccess, onLoginError)
 }
 
 async function onLoginSuccess(result) {
-  console.log('Login successful:', result)
   state.user = result.user
+  state.error = null
+  state.unauthorized = false
   render()
 }
 
 function onLoginError(err) {
-  console.error('Login error:', err)
-  // optionally set state.error
+  console.error(err)
+  state.error = err
+  render()
 }
 
-/**
- * Logout handler
- */
 async function onLogoutClick() {
-  try {
-    await logout()
-  } catch (err) {
-    console.error('Logout failed', err)
-  } finally {
-    state.user = null
-    render()
-  }
+  await logout()
+  state.user = null
+  state.unauthorized = true
+  render()
 }
 
-// Wire up DOM events
 document.addEventListener('DOMContentLoaded', bootstrap)
 document
   .getElementById('btn-home-logout')
