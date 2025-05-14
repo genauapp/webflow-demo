@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const btn = setupGoogleButton('btn-home-google-signin')
   // const loadingEl = setupLoadingIndicator('google-loading')
   const handler = createCredentialHandler(
-    async (loginRes) => {
+    (loginRes) => {
       console.log('Login successful:', loginRes)
 
       // hide login container

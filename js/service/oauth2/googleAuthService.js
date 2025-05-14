@@ -7,21 +7,21 @@ import { GOOGLE_CLIENT_ID_WEB } from '../../constants/auth/google.js'
  * @param {Function} callback - credential response handler
  */
 export function initializeGoogleAuth(callback) {
-  window.onGoogleLibraryLoad = () => {
-    google.accounts.id.initialize({
-      client_id: GOOGLE_CLIENT_ID_WEB,
-      callback,
-      context: 'use',
-      ux_mode: 'popup',
-    })
-  }
+  // window.onGoogleLibraryLoad = () => {
+  google.accounts.id.initialize({
+    client_id: GOOGLE_CLIENT_ID_WEB,
+    callback,
+    context: 'use',
+    ux_mode: 'popup',
+  })
+  // }
 
-  // const script = document.createElement('script')
-  // script.src = 'https://accounts.google.com/gsi/client'
-  // script.async = true
-  // script.defer = true
-  // script.onload = () => window.onGoogleLibraryLoad()
-  // document.head.appendChild(script)
+  const script = document.createElement('script')
+  script.src = 'https://accounts.google.com/gsi/client'
+  script.async = true
+  script.defer = true
+  script.onload = () => window.onGoogleLibraryLoad()
+  document.head.appendChild(script)
 }
 
 /**
@@ -65,7 +65,7 @@ export function createCredentialHandler(onSuccess, onError) {
 
       if (user) {
         // return the async onSuccess for chaining
-        return await onSuccess(user)
+        return onSuccess(user)
       } else {
         throw new Error('Empty login result')
       }
