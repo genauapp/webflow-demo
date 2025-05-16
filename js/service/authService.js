@@ -7,10 +7,10 @@ export async function googleSignin(idToken) {
     })
     if (response.ok) {
       // Cookies are automatically stored by the browser
-      const data = await response.json()
+      const responseBody = await response.json()
       console.log('Login response status code:', response.status)
-      console.log('Login successful:', data)
-      return data
+      console.log('Login successful:', responseBody.data)
+      return responseBody.data
     }
   } catch (error) {
     console.error('Login request failed:', error)
