@@ -33,12 +33,12 @@ export async function initGoogleAuth(onSuccess, onError) {
     try {
       const idToken = response.credential // JWT from Google
       // console.log(`google id_token: ${idToken}`)
-      const result = await googleSignin(idToken)
+      const responseBody = await googleSignin(idToken)
 
-      if (result) {
-        onSuccess(result.data)
+      if (responseBody.data) {
+        onSuccess(responseBody.data)
       } else {
-        const errText = result.error // .text()
+        const errText = responseBody.error
         console.error('Google login failed:', errText)
         onError(errText)
       }
