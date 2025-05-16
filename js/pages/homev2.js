@@ -56,8 +56,7 @@ function render({ loading, error, unauthorized, user }) {
 async function bootstrap() {
   render({ loading: true })
 
-  const { data, status, error } = await getUserProfile()
-  const user = data.user
+  const { user, status, error } = await getUserProfile()
   const unauthorized = status === 401 || status === 403
 
   render({ loading: false, error, unauthorized, user })
@@ -65,8 +64,8 @@ async function bootstrap() {
   await initGoogleAuth(onLoginSuccess, onLoginError)
 }
 
-function onLoginSuccess({ data }) {
-  render({ loading: false, error: null, unauthorized: false, user: data.user })
+function onLoginSuccess({ user }) {
+  render({ loading: false, error: null, unauthorized: false, user })
 }
 
 function onLoginError(err) {

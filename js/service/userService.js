@@ -6,12 +6,13 @@ import protectedFetch from '../api/protectedApi.js'
 export async function getUserProfile() {
   try {
     const resp = await protectedFetch.get('/api/v1/user/me')
-    if (!resp.ok) {
-      return { data: null, status: resp.status, error: await resp.json().error }
+    const respObj = await resp.json()
+    if (resp.ok) {
+      return { user: respObj.user, status: resp.status, error: null }
     }
-    return { data: await resp.json().data, status: resp.status, error: null }
+    return { user: null, status: resp.status, error: respObj.error }
   } catch (error) {
     console.error('User profile request failed:', error)
-    return { data: null, status: null, error }
+    return { user: null, status: null, error }
   }
 }
