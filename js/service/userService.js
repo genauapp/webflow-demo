@@ -7,7 +7,7 @@ export async function getUserProfile() {
   try {
     const resp = await protectedFetch.get('/api/v1/user/me')
     if (resp.ok) {
-      return { user: await resp.json().data.user, status: resp.status, error: null }
+      return { user: await resp.json().data, status: resp.status, error: null }
     }
     return { user: null, status: resp.status, error: await resp.json().error }
   } catch (error) {
