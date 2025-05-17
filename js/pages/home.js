@@ -1,4 +1,4 @@
-import { CURRENT_LEVEL_KEY, CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY, LEARNED_WITH_LEARN_WORDS_KEY, CURRENT_CATEGORY_KEY, WORD_LIST_EXERCISE_KEY, IN_PROGRESS_WORDS_KEY, WORD_LIST_KEY, TOTAL_WORD_EXERCISE_KEY, TOTAL_WORD_LEARN_KEY, IS_ON_LEARN_KEY, PAYMENT_TRIGGER_COUNTER_KEY } from '../constants/storageKeys.js'
+import { CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY, LEARNED_WITH_LEARN_WORDS_KEY, CURRENT_CATEGORY_KEY, WORD_LIST_EXERCISE_KEY, IN_PROGRESS_WORDS_KEY, WORD_LIST_KEY, TOTAL_WORD_EXERCISE_KEY, TOTAL_WORD_LEARN_KEY, IS_ON_LEARN_KEY, PAYMENT_TRIGGER_COUNTER_KEY } from '../constants/storageKeys.js'
 import { ASSETS_BASE_URL } from '../constants/urls.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
 import ListUtils from '../utils/ListUtils.js'
@@ -16,9 +16,7 @@ import LevelManager from '../utils/LevelManager.js'
 // On Initial Load
 document.addEventListener('DOMContentLoaded', async () => {
   LocalStorageManager.clearDeprecatedLocalStorageItems()
-  LocalStorageManager.save(CURRENT_LEVEL_KEY, DEFAULT_VALUE.CURRENT_LEVEL)
   LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
-  LocalStorageManager.save(CURRENT_CATEGORY_KEY, DEFAULT_VALUE.CURRENT_CATEGORY)
   LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
   LocalStorageManager.save(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
   LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, DEFAULT_VALUE.IN_PROGRESS_WORDS)
@@ -28,10 +26,35 @@ document.addEventListener('DOMContentLoaded', async () => {
   LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
   LocalStorageManager.load('BOOKMARKS', DEFAULT_VALUE.BOOKMARKS)
 
+  const currentLevel = LevelManager.getCurrentLevel()
+  // Load Deck Props for specific Level and manage category prop on localStorage
+  if (isRegularLevel(currentLevel)) {
+    let currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY, DEFAULT_VALUE.CURRENT_CATEGORY)
+    if (!categories[currentLevel].some(cat => cat.nameShort === currentCategory)) {
+      currentCategory = categories[currentLevel][0].nameShort
+      LocalStorageManager.save(CURRENT_CATEGORY_KEY, currentCategory)
+      let deckimgs = document.querySelectorAll('.deck-img')
+      let selectedDeckImg = deckimgs[0]
+      deckimgs.forEach((deckimg) => {
+        if (deckimg.classList.contains('selected-deck-img')) {
+          deckimg.classList.remove('selected-deck-img')
+          deckimg.style.border = ''
+          deckimg.style.borderRadius = ''
+        }
+      })
+      selectedDeckImg.style.border = '2px solid black'
+      selectedDeckImg.style.borderRadius = '16px'
+      selectedDeckImg.classList.add('selected-deck-img')
+    }
+    loadDeckProps()
+    showOrHideDecks(currentLevel)
+  }
+  checkIsOnLearnOrExercise()
   await loadAndShowWords()
 })
 
-// On Level Change
+// Dropdown
+/*
 document.querySelectorAll('.level-dropdown-link').forEach((link) => {
   link.addEventListener('click', async function (event) {
     event.preventDefault()
@@ -43,34 +66,14 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
 
     const updatedLevel = link.getAttribute('data-option')
     const selectedText = link.innerText
-    // Save selected option to localStorage
-    LocalStorageManager.save(CURRENT_LEVEL_KEY, updatedLevel)
 
-    // Load Deck Props for specific Level and manage category prop on localStorage
-    if (isRegularLevel(updatedLevel)) {
-      let currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
-      if (!categories[updatedLevel].some(cat => cat.nameShort === currentCategory)) {
-        currentCategory = categories[updatedLevel][0].nameShort
-        LocalStorageManager.save(CURRENT_CATEGORY_KEY, currentCategory)
-        let deckimgs = document.querySelectorAll('.deck-img')
-        let selectedDeckImg = deckimgs[0]
-        deckimgs.forEach((deckimg) => {
-          if (deckimg.classList.contains('selected-deck-img')) {
-            deckimg.classList.remove('selected-deck-img')
-            deckimg.style.border = ''
-            deckimg.style.borderRadius = ''
-          }
-        })
-        selectedDeckImg.style.border = '2px solid black'
-        selectedDeckImg.style.borderRadius = '16px'
-        selectedDeckImg.classList.add('selected-deck-img')
-      }
-      loadDeckProps()
-    }
+
+
 
     // Dropdown başlığını güncelle
     document.getElementById('dropdownHeader').innerText = selectedText
 
+    
     if (updatedLevel === 'einburgerungstest') {
       LocalStorageManager.save(CURRENT_CATEGORY_KEY, 'einburgerungstest')
       showOrHideDecks('einburgerungstest')
@@ -78,13 +81,15 @@ document.querySelectorAll('.level-dropdown-link').forEach((link) => {
       await loadAndShowWords()
       return
     }
+    
+
 
     showOrHideDecks(updatedLevel)
     checkIsOnLearnOrExercise()
     await loadAndShowWords()
   })
 })
-
+*/
 document.querySelectorAll('.deck-container').forEach((elem) => {
   elem.addEventListener('click', async function (event) {
     event.preventDefault()
