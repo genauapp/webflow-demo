@@ -7,6 +7,7 @@ import {
   LEARNED_WITH_EXERCISE_WORDS_KEY,
   WORD_LIST_EXERCISE_KEY,
 } from '../../constants/storageKeys.js'
+import LevelManager from '../LevelManager.js'
 import LocalStorageManager from '../LocalStorageManager.js'
 import playSound from './PlaySound.js'
 import { confettiAnimation } from './UIUtils.js'
@@ -18,10 +19,7 @@ export default function InProgressManager(isAnswerCorrect) {
     IN_PROGRESS_WORDS_KEY,
     DEFAULT_VALUE.IN_PROGRESS_WORDS
   )
-  const level = LocalStorageManager.load(
-    CURRENT_LEVEL_KEY,
-    DEFAULT_VALUE.CURRENT_LEVEL
-  )
+  const level = LevelManager.getCurrentLevel()
   const category = LocalStorageManager.load(
     CURRENT_CATEGORY_KEY,
     DEFAULT_VALUE.CURRENT_CATEGORY

@@ -123,10 +123,7 @@ export function showOrHideDecks(level) {
 }
 
 export function loadDeckProps() {
-  const level = LocalStorageManager.load(
-    CURRENT_LEVEL_KEY,
-    DEFAULT_VALUE.CURRENT_LEVEL
-  )
+  const level = LevelManager.getCurrentLevel()
   const deckContainers = document.querySelectorAll('.deck-container')
   categories[level].forEach((item, i) => {
     const deckTitle = item.nameEng
