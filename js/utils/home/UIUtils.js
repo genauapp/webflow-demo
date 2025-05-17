@@ -5,13 +5,13 @@ import {
   CURRENT_WORD_TYPE_KEY,
   WORD_LIST_KEY,
   CURRENT_LEVEL_KEY,
-  LEARNED_WITH_EXERCISE_WORDS_KEY,
   CURRENT_CATEGORY_KEY,
   IS_ON_LEARN_KEY,
   WORD_LIST_EXERCISE_KEY,
 } from '../../constants/storageKeys.js'
 import { categories } from '../../constants/props.js'
 import { loadAndShowWords } from '../../pages/home.js'
+import LevelManager from '../LevelManager.js'
 
 // UI visibility functions
 export function showSkeleton() {
@@ -167,7 +167,7 @@ export async function refreshProgress() {
   )
   const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
   const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
-  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+  const level = LevelManager.getCurrentLevel()
   let contentContainer = document.getElementById(
     `content-container-${learnOrExercise}-${wordType}`
   )

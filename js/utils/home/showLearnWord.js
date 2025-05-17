@@ -2,11 +2,11 @@ import {
   DEFAULT_VALUE,
   WORD_LIST_KEY,
   CURRENT_CATEGORY_KEY,
-  CURRENT_LEVEL_KEY,
   CURRENT_WORD_TYPE_KEY,
   LEARNED_WITH_LEARN_WORDS_KEY,
   TOTAL_WORD_LEARN_KEY,
 } from '../../constants/storageKeys.js'
+import LevelManager from '../LevelManager.js'
 import LocalStorageManager from '../LocalStorageManager.js'
 import {
   hideFinishScreen,
@@ -17,6 +17,7 @@ import {
   decideShowingPaymentWorkflowOn,
   PaymentTriggerEvent,
 } from '../payment/PaymentUtils.js'
+import LevelManager from '../LevelManager.js'
 
 // cases for verbs
 const globalCases = ['reflexive', 'akkusativ', 'dativ', 'separable']
@@ -73,10 +74,7 @@ function closeTagRules() {
 }
 
 export default function showLearnWord() {
-  const currentLevel = LocalStorageManager.load(
-    CURRENT_LEVEL_KEY,
-    DEFAULT_VALUE.CURRENT_LEVEL
-  )
+  const currentLevel = LevelManager.getCurrentLevel()
   const wordType = LocalStorageManager.load(
     CURRENT_WORD_TYPE_KEY,
     DEFAULT_VALUE.CURRENT_WORD_TYPE

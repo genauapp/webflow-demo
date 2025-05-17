@@ -10,6 +10,7 @@ import showExerciseWord from '../utils/home/ShowExerciseWord.js'
 import checkNounAnswer from '../utils/home/checkNounAnswer.js'
 import showLearnWord from '../utils/home/showLearnWord.js'
 import { isRegularLevel, showOrHideDecks, loadDeckProps } from '../utils/home/UIUtils.js'
+import LevelManager from '../utils/LevelManager.js'
 
 
 // On Initial Load
@@ -146,7 +147,7 @@ export async function loadAndShowWords() {
 
 // word yükleme fonksiyonu
 export async function loadWords() {
-  const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
+  const level = LevelManager.getCurrentLevel()
   const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
   const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
   let wordList = LocalStorageManager.load(WORD_LIST_KEY)
@@ -198,8 +199,6 @@ function checkIsOnLearnOrExercise() {
 // On Page Changes
 document.addEventListener('DOMContentLoaded', async () => {
   try {
-
-    //const level = LocalStorageManager.load(CURRENT_LEVEL_KEY)
     const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
     setupEventListeners()
 
