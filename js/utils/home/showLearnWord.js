@@ -6,7 +6,6 @@ import {
   LEARNED_WITH_LEARN_WORDS_KEY,
   TOTAL_WORD_LEARN_KEY,
 } from '../../constants/storageKeys.js'
-import LevelManager from '../LevelManager.js'
 import LocalStorageManager from '../LocalStorageManager.js'
 import {
   hideFinishScreen,
