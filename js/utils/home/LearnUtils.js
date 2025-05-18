@@ -5,6 +5,7 @@ import {
   WORD_LIST_KEY,
   TOTAL_WORD_LEARN_KEY,
   LEARNED_WITH_LEARN_WORDS_KEY,
+  CURRENT_LEVEL_KEY,
   CURRENT_WORD_TYPE_KEY,
 } from '../../constants/storageKeys.js'
 import showLearnWord from './showLearnWord.js'
@@ -13,7 +14,6 @@ import {
   decideShowingPaymentWorkflowOn,
   PaymentTriggerEvent,
 } from '../payment/PaymentUtils.js'
-import LevelManager from '../LevelManager.js'
 
 // On Learn: Repeat Click
 export function repeatLearn() {
@@ -41,7 +41,10 @@ export function repeatLearn() {
 
 // On Learn: I Know Click
 export function iKnowLearn() {
-  const level = LevelManager.getCurrentLevel()
+  const level = LocalStorageManager.load(
+    CURRENT_LEVEL_KEY,
+    DEFAULT_VALUE.CURRENT_LEVEL
+  )
   const wordType = LocalStorageManager.load(
     CURRENT_WORD_TYPE_KEY,
     DEFAULT_VALUE.CURRENT_WORD_TYPE

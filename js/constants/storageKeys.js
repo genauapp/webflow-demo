@@ -7,6 +7,7 @@ export const APP_VERSION_KEY = 'APP_VERSION'
 /*
   Homepage
 */
+export const CURRENT_LEVEL_KEY = 'CURRENT_LEVEL'
 export const CURRENT_CATEGORY_KEY = 'CURRENT_CATEGORY'
 export const CURRENT_WORD_TYPE_KEY = 'CURRENT_WORD_TYPE'
 export const LEARNED_WITH_LEARN_WORDS_KEY = 'LEARNED_WITH_LEARN_WORDS'
@@ -39,13 +40,14 @@ export class DEFAULT_VALUE {
    * App
    */
 
-  static APP_VERSION = '1.3.10'
+  static APP_VERSION = '1.3.0'
 
   /** 
   Homepage
   */
   static WORD_LIST_EXERCISE = []
   static WORD_LIST = []
+  static CURRENT_LEVEL = 'a1'
   static CURRENT_WORD_TYPE = 'noun'
   static CURRENT_CATEGORY = 'alltag'
   static TOTAL_WORD_LEARN = 0
