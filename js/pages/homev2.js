@@ -66,7 +66,7 @@ async function bootstrap() {
   await initGoogleAuth(onLoginSuccess, onLoginError)
 }
 
-function onLoginSuccess({ user }) {
+function onLoginSuccess(user) {
   render({ loading: false, error: null, unauthorized: false, user })
 }
 
