@@ -5,6 +5,7 @@ import { logout } from '../service/authService.js'
 const els = {
   login: () => document.getElementById('login-container'),
   profile: () => document.getElementById('user-profile-container'),
+  avatar: () => document.getElementById('image-user-info-avatar'),
   name: () => document.getElementById('label-user-info-name'),
   email: () => document.getElementById('label-user-info-email'),
   // spinner: () => document.getElementById('loading-spinner'),
@@ -50,6 +51,7 @@ function render({ loading, error, unauthorized, user }) {
     els.profile().style.display = 'flex'
     els.name().innerText = user.name
     els.email().innerText = user.email
+    els.avatar().src = user['avatar_url']
   }
 }
 
