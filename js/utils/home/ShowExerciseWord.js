@@ -3,7 +3,6 @@ import {
   IN_PROGRESS_WORDS_KEY,
   WORD_LIST_EXERCISE_KEY,
   CURRENT_CATEGORY_KEY,
-  CURRENT_LEVEL_KEY,
   LEARNED_WITH_EXERCISE_WORDS_KEY,
   CURRENT_WORD_TYPE_KEY,
   TOTAL_WORD_EXERCISE_KEY,
@@ -15,16 +14,14 @@ import {
   decideShowingPaymentWorkflowOn,
   PaymentTriggerEvent,
 } from '../payment/PaymentUtils.js'
+import LevelManager from '../LevelManager.js'
 
 export default function showExerciseWord() {
   let wordListExercise = LocalStorageManager.load(
     WORD_LIST_EXERCISE_KEY,
     DEFAULT_VALUE.WORD_LIST_EXERCISE
   )
-  const currentLevel = LocalStorageManager.load(
-    CURRENT_LEVEL_KEY,
-    DEFAULT_VALUE.CURRENT_LEVEL
-  )
+  const currentLevel = LevelManager.getCurrentLevel()
   const wordType = LocalStorageManager.load(
     CURRENT_WORD_TYPE_KEY,
     DEFAULT_VALUE.CURRENT_WORD_TYPE
