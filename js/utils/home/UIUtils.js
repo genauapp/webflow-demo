@@ -9,7 +9,7 @@ import {
   WORD_LIST_EXERCISE_KEY,
 } from '../../constants/storageKeys.js'
 import { categories } from '../../constants/props.js'
-import { loadAndShowWords } from '../../pages/home.js'
+import { loadAndShowWords } from '../../pages/level.js'
 import LevelManager from '../LevelManager.js'
 
 // UI visibility functions
