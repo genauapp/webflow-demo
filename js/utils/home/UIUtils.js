@@ -121,16 +121,18 @@ export function showOrHideDecks(level) {
   return
 }
 
-export function loadDeckPropsOnLevelPage() {
+export function loadDeckProps() {
   const level = LevelManager.getCurrentLevel()
-  document.getElementById('Deck01').src = categories[level][0].imgUrl
-  document.getElementById('Deck01').dataset.option = categories[level][0].nameShort
-  document.getElementById('Deck02').src = categories[level][1].imgUrl
-  document.getElementById('Deck02').dataset.option = categories[level][1].nameShort
-  document.getElementById('Deck03').src = categories[level][2].imgUrl
-  document.getElementById('Deck03').dataset.option = categories[level][2].nameShort
-  document.getElementById('Deck04').src = categories[level][3].imgUrl
-  document.getElementById('Deck04').dataset.option = categories[level][3].nameShort
+  const deckContainers = document.querySelectorAll('.deck-container')
+  categories[level].forEach((item, i) => {
+    const deckTitle = item.nameEng
+    const deckImgURL = item.imgUrl
+    const deckShortName = item.nameShort
+
+    deckContainers[i].children[0].src = deckImgURL
+    deckContainers[i].children[1].innerText = deckTitle
+    deckContainers[i].dataset.option = deckShortName
+  })
 }
 
 export function showFinishScreen() {
