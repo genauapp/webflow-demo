@@ -56,12 +56,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 document.querySelectorAll('.deck-img').forEach((elem) => {
   elem.addEventListener('click', async function (event) {
     event.preventDefault()
+    //get category name from data-option attribute
     const selectedCategory = elem.getAttribute('data-option')
+    //save category name to localStorage
     LocalStorageManager.save(CURRENT_CATEGORY_KEY, selectedCategory)
-
-    if (!elem.children[0].classList.contains('selected-deck-img')) {
-      elem.children[0].style.border = '2px solid black'
-      elem.children[0].style.borderRadius = '16px'
+    //if the image is not selected, add selected class to it and remove selected class from all other deck images
+    if (!elem.classList.contains('selected-deck-img')) {
+      elem.style.border = '2px solid black'
+      elem.style.borderRadius = '16px'
       //remove selected class from all deck images
       document.querySelectorAll('.deck-img').forEach((deckimg) => {
         if (deckimg.classList.contains('selected-deck-img')) {
@@ -71,7 +73,7 @@ document.querySelectorAll('.deck-img').forEach((elem) => {
         }
       })
       // add selected class into selected image
-      elem.children[0].classList.add('selected-deck-img')
+      elem.classList.add('selected-deck-img')
     }
     checkIsOnLearnOrExercise()
     await loadAndShowWords()
