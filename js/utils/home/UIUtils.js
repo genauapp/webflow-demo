@@ -112,15 +112,6 @@ export function isRegularLevel(level) {
   )
 }
 
-export function showOrHideDecks(level) {
-  if (isRegularLevel(level)) {
-    document.getElementById('decksContainer').style.display = 'flex'
-    return
-  }
-  document.getElementById('decksContainer').style.display = 'none'
-  return
-}
-
 export function loadDeckPropsOnLevelPage() {
   const level = LevelManager.getCurrentLevel()
   document.getElementById('Deck01').src = categories[level][0].imgUrl

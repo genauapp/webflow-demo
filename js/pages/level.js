@@ -9,7 +9,7 @@ import checkNonNounAnswer from '../utils/home/checkNonNounAnswer.js'
 import showExerciseWord from '../utils/home/ShowExerciseWord.js'
 import checkNounAnswer from '../utils/home/checkNounAnswer.js'
 import showLearnWord from '../utils/home/showLearnWord.js'
-import { isRegularLevel, showOrHideDecks, loadDeckPropsOnLevelPage } from '../utils/home/UIUtils.js'
+import { isRegularLevel, loadDeckPropsOnLevelPage } from '../utils/home/UIUtils.js'
 import LevelManager from '../utils/LevelManager.js'
 
 
@@ -48,49 +48,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       selectedDeckImg.classList.add('selected-deck-img')
     }
     loadDeckPropsOnLevelPage()
-    showOrHideDecks(currentLevel)
   }
   checkIsOnLearnOrExercise()
   await loadAndShowWords()
 })
 
-// Dropdown
-/*
-document.querySelectorAll('.level-dropdown-link').forEach((link) => {
-  link.addEventListener('click', async function (event) {
-    event.preventDefault()
-
-    // Avoid errors for C1 and C2 levels which are not fully implemented
-    if (link.classList.contains('passive-level')) {
-      return
-    }
-
-    const updatedLevel = link.getAttribute('data-option')
-    const selectedText = link.innerText
-
-
-
-
-    // Dropdown başlığını güncelle
-    document.getElementById('dropdownHeader').innerText = selectedText
-
-    
-    if (updatedLevel === 'einburgerungstest') {
-      LocalStorageManager.save(CURRENT_CATEGORY_KEY, 'einburgerungstest')
-      showOrHideDecks('einburgerungstest')
-      checkIsOnLearnOrExercise()
-      await loadAndShowWords()
-      return
-    }
-    
-
-
-    showOrHideDecks(updatedLevel)
-    checkIsOnLearnOrExercise()
-    await loadAndShowWords()
-  })
-})
-*/
 document.querySelectorAll('.deck-container').forEach((elem) => {
   elem.addEventListener('click', async function (event) {
     event.preventDefault()
