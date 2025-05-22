@@ -9,7 +9,7 @@ import checkNonNounAnswer from '../utils/home/checkNonNounAnswer.js'
 import showExerciseWord from '../utils/home/ShowExerciseWord.js'
 import checkNounAnswer from '../utils/home/checkNounAnswer.js'
 import showLearnWord from '../utils/home/showLearnWord.js'
-import { isRegularLevel, showOrHideDecks, loadDeckProps } from '../utils/home/UIUtils.js'
+import { isRegularLevel, showOrHideDecks, loadDeckPropsOnLevelPage } from '../utils/home/UIUtils.js'
 import LevelManager from '../utils/LevelManager.js'
 
 
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       selectedDeckImg.style.borderRadius = '16px'
       selectedDeckImg.classList.add('selected-deck-img')
     }
-    loadDeckProps()
+    loadDeckPropsOnLevelPage()
     showOrHideDecks(currentLevel)
   }
   checkIsOnLearnOrExercise()
