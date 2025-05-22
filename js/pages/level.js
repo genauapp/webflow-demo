@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   checkIsOnLearnOrExercise()
   await loadAndShowWords()
 })
-
-document.querySelectorAll('.deck-container').forEach((elem) => {
+//category click handler
+document.querySelectorAll('.deck-img').forEach((elem) => {
   elem.addEventListener('click', async function (event) {
     event.preventDefault()
     const selectedCategory = elem.getAttribute('data-option')
