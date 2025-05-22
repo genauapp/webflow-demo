@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!categories[currentLevel].some(cat => cat.nameShort === currentCategory)) {
       currentCategory = categories[currentLevel][0].nameShort
       LocalStorageManager.save(CURRENT_CATEGORY_KEY, currentCategory)
+      // Select first deck image
       let deckimgs = document.querySelectorAll('.deck-img')
       let selectedDeckImg = deckimgs[0]
       deckimgs.forEach((deckimg) => {
