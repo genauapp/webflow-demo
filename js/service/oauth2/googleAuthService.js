@@ -1,5 +1,5 @@
-import { googleSignin } from '../authService.js'
 import { GOOGLE_CLIENT_ID_WEB } from '../../constants/auth/google.js'
+import { publicApiService } from '../apiService.js'
 
 export async function initGoogleAuth(onSuccess, onError) {
   window.onGoogleLibraryLoad = () => {
@@ -33,12 +33,12 @@ export async function initGoogleAuth(onSuccess, onError) {
     try {
       const idToken = response.credential // JWT from Google
       // console.log(`google id_token: ${idToken}`)
-      const responseBody = await googleSignin(idToken)
+      const response = await publicApiService.googleSignin(idToken)
 
-      if (responseBody.data) {
-        onSuccess(responseBody.data)
+      if (response.data) {
+        onSuccess(response.data)
       } else {
-        const errText = responseBody.error
+        const errText = response.error
         console.error('Google login failed:', errText)
         onError(errText)
       }
