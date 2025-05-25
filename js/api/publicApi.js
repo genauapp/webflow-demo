@@ -13,7 +13,7 @@ const publicFetch = async (endpoint, options) => {
 }
 
 // Helper methods for common verbs
-export default publicApi = {
+const publicApi = {
   get: (endpoint, options) => {
     if (options.body) {
       console.warn('GET requests should not have a body')
@@ -24,3 +24,5 @@ export default publicApi = {
   post: (endpoint, body, options) =>
     publicFetch(endpoint, { method: 'POST', body, ...options }),
 }
+
+export default publicApi

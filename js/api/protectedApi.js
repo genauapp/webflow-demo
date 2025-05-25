@@ -25,7 +25,7 @@ const protectedFetch = async (endpoint, options = {}) => {
 }
 
 // Helper methods for common verbs
-export default protectedApi = {
+const protectedApi = {
   get: (endpoint, options) => {
     if (options.body) {
       console.warn('GET requests should not have a body')
@@ -36,3 +36,5 @@ export default protectedApi = {
   post: (endpoint, body, options) =>
     protectedFetch(endpoint, { method: 'POST', body, ...options }),
 }
+
+export default protectedApi
