@@ -1,5 +1,5 @@
-import protectedApi from '../api/protectedApi'
-import publicApi from '../api/publicApi'
+import protectedApi from '../api/protectedApi.js'
+import publicApi from '../api/publicApi.js'
 
 export const publicApiService = {
   googleSignin: (idToken) => {
