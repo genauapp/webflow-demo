@@ -36,13 +36,14 @@ function initElements(elementIds) {
  */
 function renderInputState({ hasValue, isFocused }) {
   // Show/hide suggestions container (opposite of hasValue)
-  if (hasValue) {
-    els.inputSuggestionsContainer().style.display = 'none'
-  } else {
-    els.inputSuggestionsContainer().style.display = 'block'
-    els.inputSuggestionsContainer().style.visibility = 'visible'
-    els.inputSuggestionsContainer().style.opacity = '1'
-  }
+  // if (hasValue) {
+  //   els.inputSuggestionsContainer().style.display = 'none'
+  // } else {
+  //   els.inputSuggestionsContainer().style.display = 'block'
+  //   els.inputSuggestionsContainer().style.visibility = 'visible'
+  //   els.inputSuggestionsContainer().style.opacity = '1'
+  // }
+  els.inputSuggestionsContainer().style.display = hasValue ? 'none' : 'block'
 
   // Show/hide close button based on focus and value
   const shouldShowCloseButton = isFocused || hasValue
@@ -190,8 +191,8 @@ export function initSearchComponent(elementIds) {
 
   // input focus in
   els.input().addEventListener('focusin', (e) => {
-    console.log("focused in!!!")
-    
+    console.log('focused in!!!')
+
     updateInputUI()
   })
 
