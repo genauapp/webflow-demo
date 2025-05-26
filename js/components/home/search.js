@@ -127,8 +127,8 @@ export function initSearchComponent(elementIds) {
   // form submit (Enter key or button)
   els.form().addEventListener('submit', (e) => {
     e.preventDefault()
-    // Webflow displays it as none after each submission, flex it immediately!
-    e.currentTarget.style.display = 'flex'
+    // Webflow displays it as none after each submission, block it immediately!
+    e.currentTarget.style.display = 'block'
 
     const q = els.input().value.trim()
     if (q.length === 0) {
