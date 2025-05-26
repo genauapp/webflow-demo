@@ -29,9 +29,9 @@ export async function initGoogleAuth(onSuccess, onError) {
   script.onload = () => window.onGoogleLibraryLoad()
   document.head.appendChild(script)
 
-  async function handleCredentialResponse(response) {
+  async function handleCredentialResponse(googleResponse) {
     try {
-      const idToken = response.credential // JWT from Google
+      const idToken = googleResponse.credential // JWT from Google
       // console.log(`google id_token: ${idToken}`)
       const response = await publicApiService.googleSignin(idToken)
 
