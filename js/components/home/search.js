@@ -8,11 +8,11 @@ function initElements(elementIds) {
   els = {
     form: () => document.getElementById(elementIds.searchForm),
     input: () => document.getElementById(elementIds.searchInput),
-    button: () => document.getElementById(elementIds.searchButton),
+    // button: () => document.getElementById(elementIds.searchButton),
     // spinner: () => document.getElementById(elementIds.searchSpinner),
-    errorMsg: () => document.getElementById(elementIds.searchError),
-    emptyMsg: () => document.getElementById(elementIds.searchEmpty),
-    results: () => document.getElementById(elementIds.searchResults),
+    // errorMsg: () => document.getElementById(elementIds.searchError),
+    // emptyMsg: () => document.getElementById(elementIds.searchEmpty),
+    // results: () => document.getElementById(elementIds.searchResults),
   }
 }
 
@@ -29,13 +29,14 @@ function render({ loading, error, results }) {
   // els.button().disabled = loading
 
   // clear messages
-  els.errorMsg().style.display = 'none'
-  els.emptyMsg().style.display = 'none'
-  els.results().innerHTML = ''
+  // els.errorMsg().style.display = 'none'
+  // els.emptyMsg().style.display = 'none'
+  // els.results().innerHTML = ''
 
   if (error) {
-    els.errorMsg().innerText = error
-    els.errorMsg().style.display = 'block'
+    console.error(`Search error: ${error}`)
+    // els.errorMsg().innerText = error
+    // els.errorMsg().style.display = 'block'
     return
   }
 
@@ -45,7 +46,8 @@ function render({ loading, error, results }) {
       return
     }
     if (Array.isArray(results) && results.length === 0) {
-      els.emptyMsg().style.display = 'block'
+      console.log('No results found.')
+      // els.emptyMsg().style.display = 'block'
       return
     }
     // results list
@@ -55,7 +57,10 @@ function render({ loading, error, results }) {
       li.innerText = item.title ?? JSON.stringify(item)
       ul.appendChild(li)
     })
-    els.results().appendChild(ul)
+    // temporarily append them to the search form
+    els.form().appendChild(ul)
+    // todo: then activate bottom
+    // els.results().appendChild(ul)
   }
 }
 
