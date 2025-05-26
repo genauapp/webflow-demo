@@ -70,6 +70,7 @@ function render({ loading, error, results }) {
     if (results === null) {
       // initial blank state: do nothing
       els.emptyInputContainer().style.display = 'flex'
+      els.inputSuggestionsContainer().style.display = 'block'
       return
     }
     if (Array.isArray(results) && results.length === 0) {
