@@ -131,7 +131,7 @@ export function initSearchComponent(elementIds) {
     e.preventDefault()
     e.stopPropagation()
     // Webflow displays it as none after each submission, block it immediately!
-    e.currentTarget.style.display = 'block'
+    // e.currentTarget.style.display = 'block'
 
     const q = els.input().value.trim()
     if (q.length === 0) {
