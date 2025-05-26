@@ -201,6 +201,40 @@ function showWordCard(wordResult) {
   }
 }
 
+const attachVerbCaseHandlers = () => {
+  // Add click handlers for case labels and cancel buttons
+  ALL_VERB_CASES.forEach((verbCase) => {
+    // Case label click handler
+    const label = els.verb.caseLabel(verbCase)
+    if (label) {
+      label.addEventListener('click', () => {
+        // Close all details containers
+        ALL_VERB_CASES.forEach((vc) => {
+          const container = els.verb.caseDetailsContainer(vc)
+          if (container) container.style.display = 'none'
+        })
+        // Open the clicked case's container
+        const detailsContainer = els.verb.caseDetailsContainer(verbCase)
+        if (detailsContainer) detailsContainer.style.display = 'flex'
+      })
+    }
+
+    // Cancel button click handler
+    const detailsContainer = els.verb.caseDetailsContainer(verbCase)
+    if (detailsContainer) {
+      const cancelBtn = detailsContainer.querySelector(
+        '.btn-verb-case-close-details'
+      ) // Use your cancel button's class/ID
+      if (cancelBtn) {
+        cancelBtn.addEventListener('click', (e) => {
+          e.preventDefault()
+          detailsContainer.style.display = 'none'
+        })
+      }
+    }
+  })
+}
+
 /** Initialize the search component */
 export function initSearchComponent(elementIds) {
   // Initialize elements with provided IDs
@@ -247,4 +281,6 @@ export function initSearchComponent(elementIds) {
     clearInput()
     els.input().focus() // Keep focus on input after clearing
   })
+
+  attachVerbCaseHandlers()
 }
