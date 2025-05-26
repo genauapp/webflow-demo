@@ -22,9 +22,9 @@ const elementIds = {
     button: 'search-button',
     spinner: 'search-spinner',
     error: 'search-error',
-    emptyInput: 'search-empty-input',
-    noResults: 'search-no-results',
-    results: 'search-results',
+    emptyInputContainer: 'search-empty-input-container',
+    noResultsContainer: 'search-no-results-container',
+    resultsContainer: 'search-results-container',
   },
 
   level: {
