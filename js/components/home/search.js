@@ -73,6 +73,8 @@ async function doSearch(query) {
 
   // assuming API returns data.results array
   const results = data?.results ?? []
+  console.log(`results:\n${JSON.stringify(results)}`)
+
   render({ loading: false, error: null, results })
 }
 

@@ -17,8 +17,8 @@ const elementIds = {
 
   // Search component elements
   search: {
-    searchForm: 'search-form',
-    searchInput: 'search-input',
+    searchForm: 'form-search',
+    searchInput: 'input-search',
     searchButton: 'search-button',
     searchSpinner: 'search-spinner',
     searchError: 'search-error',
@@ -40,7 +40,7 @@ async function bootstrap() {
   // Initialize both components with their respective element IDs
   await initUserComponent({ ...elementIds.user })
   initSearchComponent({ ...elementIds.search })
-  initLevelComponent({ ...elementIds.level })
+  // initLevelComponent({ ...elementIds.level })
 }
 
 document.addEventListener('DOMContentLoaded', bootstrap)
