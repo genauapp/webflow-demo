@@ -193,8 +193,8 @@ export function initSearchComponent(elementIds) {
     doSearch(q)
   })
 
-  // input focus in/subsequent clicks after focused in
-  els.input().addEventListener('focusin click', (e) => {
+  // input focus in
+  els.input().addEventListener('focusin', (e) => {
     updateInputUI()
   })
 
