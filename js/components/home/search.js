@@ -66,7 +66,7 @@ function render({ loading, error, results }) {
   els.loadingContainer().style.display = loading ? 'flex' : 'none'
 
   // disable input/button while loading
-  els.input().disabled = loading
+  // els.input().disabled = loading
   els.inputCloseButton().style.display = loading ? 'none' : 'flex'
   els.inputCloseButton().disabled = loading
 
