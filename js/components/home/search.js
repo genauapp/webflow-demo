@@ -37,7 +37,7 @@ function renderInputState({ hasValue, isFocused }) {
   if (hasValue) {
     els.inputSuggestionsContainer().style.display = 'none'
   } else {
-    els.inputSuggestionsContainer().style.display = 'inline-block'
+    els.inputSuggestionsContainer().style.display = 'block'
     els.inputSuggestionsContainer().style.visibility = 'visible'
     els.inputSuggestionsContainer().style.opacity = '1'
   }
