@@ -26,7 +26,7 @@ function render({ loading, error, results }) {
 
   // disable input/button while loading
   els.input().disabled = loading
-  els.button().disabled = loading
+  // els.button().disabled = loading
 
   // clear messages
   els.errorMsg().style.display = 'none'
