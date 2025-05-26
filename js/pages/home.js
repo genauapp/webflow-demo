@@ -20,7 +20,7 @@ const elementIds = {
     form: 'form-search',
     input: 'input-search',
     button: 'search-button',
-    spinner: 'search-spinner',
+    loading: 'search-loading-container',
     error: 'search-error',
     emptyInputContainer: 'search-empty-input-container',
     noResultsContainer: 'search-no-results-container',

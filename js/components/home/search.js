@@ -9,7 +9,7 @@ function initElements(elementIds) {
     form: () => document.getElementById(elementIds.form),
     input: () => document.getElementById(elementIds.input),
     // button: () => document.getElementById(elementIds.button),
-    // spinner: () => document.getElementById(elementIds.spinner),
+    loadingContainer: () => document.getElementById(elementIds.loading),
     // errorMsg: () => document.getElementById(elementIds.error),
     emptyInputContainer: () =>
       document.getElementById(elementIds.emptyInputContainer),
@@ -32,7 +32,7 @@ function initElements(elementIds) {
  */
 function render({ loading, error, results }) {
   // spinner
-  // els.spinner().style.display = loading ? 'block' : 'none'
+  els.loadingContainer().style.display = loading ? 'flex' : 'none'
 
   // disable input/button while loading
   els.input().disabled = loading
