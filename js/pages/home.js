@@ -19,6 +19,7 @@ const elementIds = {
   search: {
     form: 'form-search',
     input: 'input-search',
+    inputSuggestionsContainer: 'search-input-suggestions-container',
     inputCloseButton: 'btn-search-input-close',
     // button: 'search-button',
     loading: 'search-loading-container',
