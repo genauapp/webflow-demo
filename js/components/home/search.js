@@ -20,7 +20,7 @@ function initElements(elementIds) {
  * Render UI based on current state.
  * @param {{ loading: boolean, error: string|null, results: Array<any> }} state
  */
-function render({ loading, error, results }) {
+function render({ loading, error, data }) {
   // spinner
   // els.spinner().style.display = loading ? 'block' : 'none'
 
@@ -41,20 +41,20 @@ function render({ loading, error, results }) {
   }
 
   if (!loading) {
-    if (results === null) {
+    if (data === null) {
       // initial blank state: do nothing
       return
     }
-    if (Array.isArray(results) && results.length === 0) {
+    if (Array.isArray(data.results) && data.results.length === 0) {
       console.log('No results found.')
       // els.emptyMsg().style.display = 'block'
       return
     }
     // results list
     const ul = document.createElement('ul')
-    results.forEach((item) => {
+    data.results.forEach((item) => {
       const li = document.createElement('li')
-      li.innerText = item.title ?? JSON.stringify(item)
+      li.innerText = item.word ?? JSON.stringify(word)
       ul.appendChild(li)
     })
     // temporarily append them to the search form
