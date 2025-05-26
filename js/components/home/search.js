@@ -140,7 +140,7 @@ function hideWordCard() {
   els.translation().innerText = ''
   els.sentence().innerText = ''
 
-  els.ruleContainer().visibility = 'hidden'
+  els.ruleContainer().style.visibility = 'hidden'
   els.rule().innerText = ''
 }
 
@@ -155,10 +155,10 @@ function showWordCard(wordResult) {
 
   // Show/hide rule
   if (wordResult.rule.trim().lentgh === 0) {
-    els.ruleContainer().visibility = 'hidden'
+    els.ruleContainer().style.visibility = 'hidden'
     els.rule().innerText = ''
   } else {
-    els.ruleContainer().visibility = 'visible'
+    els.ruleContainer().style.visibility = 'visible'
     els.rule().innerText = wordResult.rule
   }
 }
