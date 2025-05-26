@@ -190,6 +190,8 @@ export function initSearchComponent(elementIds) {
 
   // input focus in
   els.input().addEventListener('focusin', (e) => {
+    console.log("focused in!!!")
+    
     updateInputUI()
   })
 
