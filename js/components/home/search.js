@@ -34,7 +34,8 @@ function initElements(elementIds) {
  */
 function renderInputState({ hasValue, isFocused }) {
   // Show/hide suggestions container (opposite of hasValue)
-  els.inputSuggestionsContainer().style.display = hasValue ? 'none' : 'block'
+  els.inputSuggestionsContainer().style.display = hasValue ? 'none' : 'inline-block'
+  els.inputSuggestionsContainer().style.opacity = hasValue ? '0' : '1'
 
   // Show/hide close button based on focus and value
   const shouldShowCloseButton = isFocused || hasValue
