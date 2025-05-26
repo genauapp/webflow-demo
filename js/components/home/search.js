@@ -16,7 +16,13 @@ function initElements(elementIds) {
     noResultsContainer: () =>
       document.getElementById(elementIds.noResultsContainer),
     resultsContainer: () =>
-      document.getElementById(elementIds.resultsContainer),
+      document.getElementById(elementIds.results.container),
+    levelBadge: () => document.getElementById(elementIds.results.levelBadge),
+    typeBadge: () => document.getElementById(elementIds.results.typeBadge),
+    title: () => document.getElementById(elementIds.results.title),
+    translation: () => document.getElementById(elementIds.results.translation),
+    rule: () => document.getElementById(elementIds.results.rule),
+    sentence: () => document.getElementById(elementIds.results.sentence),
   }
 }
 
@@ -36,7 +42,7 @@ function render({ loading, error, results }) {
   // els.errorMsg().style.display = 'none'
   els.emptyInputContainer().style.display = 'none'
   els.noResultsContainer().style.display = 'none'
-  els.resultsContainer().style.display = 'none'
+  hideWordCard()
 
   if (error) {
     console.error(`Search error: ${error}`)
@@ -57,14 +63,8 @@ function render({ loading, error, results }) {
       return
     }
     // results list
-    const ul = document.createElement('ul')
-    results.forEach((item) => {
-      const li = document.createElement('li')
-      li.innerText = item.title ?? JSON.stringify(item)
-      ul.appendChild(li)
-    })
-    // todo: populate results as word card
-    els.resultsContainer().appendChild(ul)
+    // todo: multiple word results
+    showWordCard(results[0])
   }
 }
 
@@ -85,6 +85,28 @@ async function doSearch(query) {
   console.log(`results:\n${JSON.stringify(results)}`)
 
   render({ loading: false, error: null, results })
+}
+
+function hideWordCard() {
+  els.resultsContainer().style.display = 'none'
+
+  els.levelBadge().innerText = ''
+  els.typeBadge().innerText = ''
+  els.title().innerText = ''
+  els.translation().innerText = ''
+  els.rule().innerText = ''
+  els.sentence().innerText = ''
+}
+
+function showWordCard(wordResult) {
+  els.resultsContainer().style.display = 'flex'
+
+  els.levelBadge().innerText = wordResult.level
+  els.typeBadge().innerText = wordResult.type
+  els.title().innerText = wordResult.word
+  els.translation().innerText = wordResult.english
+  els.rule().innerText = wordResult.rule
+  els.sentence().innerText = wordResult.example
 }
 
 /** Initialize the search component */
