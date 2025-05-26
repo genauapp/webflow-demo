@@ -24,7 +24,15 @@ const elementIds = {
     error: 'search-error',
     emptyInputContainer: 'search-empty-input-container',
     noResultsContainer: 'search-no-results-container',
-    resultsContainer: 'search-results-container',
+    results: {
+      container: 'search-results-container',
+      levelBadge: 'word-card-level-badge',
+      typeBadge: 'word-card-type-badge',
+      title: 'word-card-title',
+      translation: 'word-card-translation',
+      rule: 'word-card-rule',
+      sentence: 'word-card-sentence',
+    },
   },
 
   level: {
