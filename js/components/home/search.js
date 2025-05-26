@@ -12,9 +12,7 @@ function initElements(elementIds) {
       document.getElementById(elementIds.inputSuggestionsContainer),
     inputCloseButton: () =>
       document.getElementById(elementIds.inputCloseButton),
-    // button: () => document.getElementById(elementIds.button),
     loadingContainer: () => document.getElementById(elementIds.loading),
-    // errorMsg: () => document.getElementById(elementIds.error),
     emptyInputContainer: () =>
       document.getElementById(elementIds.emptyInputContainer),
     noResultsContainer: () =>
@@ -31,27 +29,40 @@ function initElements(elementIds) {
 }
 
 /**
- * Render UI based on current state.
+ * Render input UI based on current input state.
+ * @param {{ hasValue: boolean, isFocused: boolean }} inputState
+ */
+function renderInputState({ hasValue, isFocused }) {
+  // Show/hide suggestions container (opposite of hasValue)
+  els.inputSuggestionsContainer().style.display = hasValue ? 'none' : 'block'
+
+  // Show/hide close button based on focus and value
+  const shouldShowCloseButton = isFocused || hasValue
+  els.inputCloseButton().style.display = shouldShowCloseButton ? 'flex' : 'none'
+
+  // Enable/disable close button (only disabled when no value)
+  els.inputCloseButton().disabled = !hasValue
+}
+
+/**
+ * Render main search UI based on current state.
  * @param {{ loading: boolean, error: string|null, results: Array<any> }} state
  */
 function render({ loading, error, results }) {
-  // spinner
+  // loading
   els.loadingContainer().style.display = loading ? 'flex' : 'none'
 
   // disable input/button while loading
   els.input().disabled = loading
-  // els.button().disabled = loading
+  els.inputCloseButton().disabled = loading
 
   // clear messages
-  // els.errorMsg().style.display = 'none'
   els.emptyInputContainer().style.display = 'none'
   els.noResultsContainer().style.display = 'none'
   hideWordCard()
 
   if (error) {
     console.error(`Search error: ${error}`)
-    // els.errorMsg().innerText = error
-    // els.errorMsg().style.display = 'block'
     return
   }
 
@@ -59,7 +70,6 @@ function render({ loading, error, results }) {
     if (results === null) {
       // initial blank state: do nothing
       els.emptyInputContainer().style.display = 'flex'
-      els.inputSuggestionsContainer().style.display = 'block'
       return
     }
     if (Array.isArray(results) && results.length === 0) {
@@ -71,6 +81,26 @@ function render({ loading, error, results }) {
     // todo: multiple word results
     showWordCard(results[0])
   }
+}
+
+/** Get current input state */
+function getInputState() {
+  const hasValue = els.input().value.trim().length > 0
+  const isFocused = document.activeElement === els.input()
+  return { hasValue, isFocused }
+}
+
+/** Update input UI based on current state */
+function updateInputUI() {
+  renderInputState(getInputState())
+}
+
+/** Clear input and update UI */
+function clearInput() {
+  els.input().value = ''
+  updateInputUI()
+  // Also trigger main render for initial state
+  render({ loading: false, error: null, results: null })
 }
 
 /** Kick off a search */
@@ -122,10 +152,12 @@ export function initSearchComponent(elementIds) {
   // initial render (blank)
   render({ loading: false, error: null, results: null })
 
+  // initial input state render
+  updateInputUI()
+
   // form submit (Enter key or button)
   els.form().addEventListener('submit', (e) => {
     e.preventDefault()
-    // Webflow displays it as none after each submission, block it immediately!
     e.stopPropagation()
 
     const q = els.input().value.trim()
@@ -137,33 +169,25 @@ export function initSearchComponent(elementIds) {
     doSearch(q)
   })
 
+  // input focus in
   els.input().addEventListener('focusin', (e) => {
-    // e.preventDefault()
-    // e.stopPropagation()
-
-    console.log('focused in the form!!')
+    updateInputUI()
   })
 
+  // input focus out
   els.input().addEventListener('focusout', (e) => {
-    console.log('focused out of the form!!')
-
-    // els.inputCloseButton().style.display = 'none'
+    updateInputUI()
   })
 
+  // input change/input events (handles typing)
+  els.input().addEventListener('input', (e) => {
+    updateInputUI()
+  })
+
+  // close button click
   els.inputCloseButton().addEventListener('click', (e) => {
-    console.log('clicked on reset button!!')
-
-    els.inputCloseButton().style.display = 'none'
-    els.input().innerText = ''
-  })
-
-  els.input().addEventListener('change', (e) => {
-    console.log(`changed search input: ${e.currentTarget.value}`)
-    const isInputEmpty = e.currentTarget.value.length === 0
-
-    els.inputCloseButton().style.display = isInputEmpty ? 'none' : 'flex'
-    els.inputSuggestionsContainer().style.display = isInputEmpty
-      ? 'flex'
-      : 'none'
+    e.preventDefault()
+    clearInput()
+    els.input().focus() // Keep focus on input after clearing
   })
 }
