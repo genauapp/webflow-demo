@@ -111,7 +111,7 @@ function showWordCard(wordResult) {
 
 function handleWebflowFormElementsAfterSubmit() {
   // Webflow displays none after each submission
-  els.form().style.display = 'flex'
+  els.form().style.display = 'block'
   // unused elements
   // document.getElementById("")
 }
@@ -127,6 +127,7 @@ export function initSearchComponent(elementIds) {
   // form submit (Enter key or button)
   els.form().addEventListener('submit', (e) => {
     e.preventDefault()
+    e.stopPropagation()
     // Webflow displays it as none after each submission, block it immediately!
     e.currentTarget.style.display = 'block'
 
