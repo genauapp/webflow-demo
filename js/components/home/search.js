@@ -6,13 +6,17 @@ let els = {}
 /** Initialize elements dynamically using provided IDs */
 function initElements(elementIds) {
   els = {
-    form: () => document.getElementById(elementIds.searchForm),
-    input: () => document.getElementById(elementIds.searchInput),
-    // button: () => document.getElementById(elementIds.searchButton),
-    // spinner: () => document.getElementById(elementIds.searchSpinner),
-    // errorMsg: () => document.getElementById(elementIds.searchError),
-    // emptyMsg: () => document.getElementById(elementIds.searchEmpty),
-    // results: () => document.getElementById(elementIds.searchResults),
+    form: () => document.getElementById(elementIds.form),
+    input: () => document.getElementById(elementIds.input),
+    // button: () => document.getElementById(elementIds.button),
+    // spinner: () => document.getElementById(elementIds.spinner),
+    // errorMsg: () => document.getElementById(elementIds.error),
+    emptyInputContainer: () =>
+      document.getElementById(elementIds.emptyInputContainer),
+    noResultsContainer: () =>
+      document.getElementById(elementIds.noResultsContainer),
+    resultsContainer: () =>
+      document.getElementById(elementIds.resultsContainer),
   }
 }
 
@@ -30,8 +34,9 @@ function render({ loading, error, results }) {
 
   // clear messages
   // els.errorMsg().style.display = 'none'
-  // els.emptyMsg().style.display = 'none'
-  // els.results().innerHTML = ''
+  els.emptyInputContainer().style.display = 'none'
+  els.noResultsContainer().style.display = 'none'
+  els.resultsContainer().style.display = 'none'
 
   if (error) {
     console.error(`Search error: ${error}`)
@@ -43,11 +48,12 @@ function render({ loading, error, results }) {
   if (!loading) {
     if (results === null) {
       // initial blank state: do nothing
+      els.emptyInputContainer().style.display = 'flex'
       return
     }
     if (Array.isArray(results) && results.length === 0) {
       console.log('No results found.')
-      // els.emptyMsg().style.display = 'block'
+      els.noResultsContainer().style.display = 'flex'
       return
     }
     // results list
@@ -57,10 +63,8 @@ function render({ loading, error, results }) {
       li.innerText = item.title ?? JSON.stringify(item)
       ul.appendChild(li)
     })
-    // temporarily append them to the search form
-    els.form().appendChild(ul)
-    // todo: then activate bottom
-    // els.results().appendChild(ul)
+    // todo: populate results as word card
+    els.resultsContainer().appendChild(ul)
   }
 }
 
@@ -95,6 +99,11 @@ export function initSearchComponent(elementIds) {
   els.form().addEventListener('submit', (e) => {
     e.preventDefault()
     const q = els.input().value.trim()
-    if (q) doSearch(q)
+    if (q.length === 0) {
+      render({ loading: false, error: null, results: null })
+      return
+    }
+
+    doSearch(q)
   })
 }

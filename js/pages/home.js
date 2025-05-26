@@ -17,13 +17,14 @@ const elementIds = {
 
   // Search component elements
   search: {
-    searchForm: 'form-search',
-    searchInput: 'input-search',
-    searchButton: 'search-button',
-    searchSpinner: 'search-spinner',
-    searchError: 'search-error',
-    searchEmpty: 'search-empty',
-    searchResults: 'search-results',
+    form: 'form-search',
+    input: 'input-search',
+    button: 'search-button',
+    spinner: 'search-spinner',
+    error: 'search-error',
+    emptyInput: 'search-empty-input',
+    noResults: 'search-no-results',
+    results: 'search-results',
   },
 
   level: {
