@@ -9,7 +9,7 @@ function initElements(elementIds) {
     form: () => document.getElementById(elementIds.searchForm),
     input: () => document.getElementById(elementIds.searchInput),
     button: () => document.getElementById(elementIds.searchButton),
-    spinner: () => document.getElementById(elementIds.searchSpinner),
+    // spinner: () => document.getElementById(elementIds.searchSpinner),
     errorMsg: () => document.getElementById(elementIds.searchError),
     emptyMsg: () => document.getElementById(elementIds.searchEmpty),
     results: () => document.getElementById(elementIds.searchResults),
@@ -22,7 +22,7 @@ function initElements(elementIds) {
  */
 function render({ loading, error, results }) {
   // spinner
-  els.spinner().style.display = loading ? 'block' : 'none'
+  // els.spinner().style.display = loading ? 'block' : 'none'
 
   // disable input/button while loading
   els.input().disabled = loading
