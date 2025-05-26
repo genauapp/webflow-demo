@@ -8,6 +8,8 @@ function initElements(elementIds) {
   els = {
     form: () => document.getElementById(elementIds.form),
     input: () => document.getElementById(elementIds.input),
+    inputCloseButton: () =>
+      document.getElementById(elementIds.inputCloseButton),
     // button: () => document.getElementById(elementIds.button),
     loadingContainer: () => document.getElementById(elementIds.loading),
     // errorMsg: () => document.getElementById(elementIds.error),
@@ -138,5 +140,26 @@ export function initSearchComponent(elementIds) {
     }
 
     doSearch(q)
+  })
+
+  els.input().addEventListener('focusin', (e) => {
+    // e.preventDefault()
+    // e.stopPropagation()
+
+    console.log('focused in the form!!')
+
+    els.inputCloseButton().style.display = 'flex'
+  })
+
+  els.input().addEventListener('focusout', (e) => {
+    console.log('focused out of the form!!')
+
+    els.inputCloseButton().style.display = 'none'
+  })
+
+  els.inputCloseButton().addEventListener('click', (e) => {
+    console.log('clicked on reset button!!')
+
+    els.inputCloseButton().style.display = 'none'
   })
 }
