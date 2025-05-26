@@ -32,6 +32,7 @@ const elementIds = {
       typeBadge: 'word-card-type-badge',
       title: 'word-card-title',
       translation: 'word-card-translation',
+      ruleContainer: 'word-card-rule-container',
       rule: 'word-card-rule',
       sentence: 'word-card-sentence',
     },

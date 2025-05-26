@@ -23,6 +23,8 @@ function initElements(elementIds) {
     typeBadge: () => document.getElementById(elementIds.results.typeBadge),
     title: () => document.getElementById(elementIds.results.title),
     translation: () => document.getElementById(elementIds.results.translation),
+    ruleContainer: () =>
+      document.getElementById(elementIds.results.ruleContainer),
     rule: () => document.getElementById(elementIds.results.rule),
     sentence: () => document.getElementById(elementIds.results.sentence),
   }
@@ -136,8 +138,10 @@ function hideWordCard() {
   els.typeBadge().innerText = ''
   els.title().innerText = ''
   els.translation().innerText = ''
-  els.rule().innerText = ''
   els.sentence().innerText = ''
+
+  els.ruleContainer().visibility = 'hidden'
+  els.rule().innerText = ''
 }
 
 function showWordCard(wordResult) {
@@ -147,8 +151,16 @@ function showWordCard(wordResult) {
   els.typeBadge().innerText = wordResult.type
   els.title().innerText = wordResult.word
   els.translation().innerText = wordResult.english
-  els.rule().innerText = wordResult.rule
   els.sentence().innerText = wordResult.example
+
+  // Show/hide rule
+  if (wordResult.rule.trim().lentgh === 0) {
+    els.ruleContainer().visibility = 'hidden'
+    els.rule().innerText = ''
+  } else {
+    els.ruleContainer().visibility = 'visible'
+    els.rule().innerText = wordResult.rule
+  }
 }
 
 /** Initialize the search component */
