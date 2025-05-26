@@ -159,7 +159,7 @@ function showWordCard(wordResult) {
   els.sentence().innerText = wordResult.example
 
   // Show/hide rule
-  if (wordResult.rule.trim().lentgh === 0) {
+  if (wordResult.rule.trim().length === 0) {
     els.ruleContainer().style.visibility = 'hidden'
     els.rule().innerText = ''
   } else {
