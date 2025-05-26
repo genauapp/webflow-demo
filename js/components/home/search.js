@@ -109,6 +109,13 @@ function showWordCard(wordResult) {
   els.sentence().innerText = wordResult.example
 }
 
+function handleWebflowFormElementsAfterSubmit() {
+  // Webflow displays none after each submission
+  els.form().style.display = 'flex'
+  // unused elements
+  // document.getElementById("")
+}
+
 /** Initialize the search component */
 export function initSearchComponent(elementIds) {
   // Initialize elements with provided IDs
@@ -120,6 +127,9 @@ export function initSearchComponent(elementIds) {
   // form submit (Enter key or button)
   els.form().addEventListener('submit', (e) => {
     e.preventDefault()
+    // Webflow displays it as none after each submission, flex it immediately!
+    e.currentTarget.style.display = 'flex'
+
     const q = els.input().value.trim()
     if (q.length === 0) {
       render({ loading: false, error: null, results: null })
