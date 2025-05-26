@@ -1,4 +1,9 @@
 // /components/home/search.js
+import {
+  WordTypes,
+  ArtikelColorMap,
+  ALL_VERB_CASES,
+} from '../../constants/props.js'
 import { publicApiService } from '../../service/apiService.js'
 
 let els = {}
@@ -27,6 +32,17 @@ function initElements(elementIds) {
       document.getElementById(elementIds.results.ruleContainer),
     rule: () => document.getElementById(elementIds.results.rule),
     sentence: () => document.getElementById(elementIds.results.sentence),
+
+    verb: {
+      caseLabelsContainer: () =>
+        document.getElementById(elementIds.results.verb.caseLabelsContainer),
+      caseLabel: (verbCase) =>
+        document.getElementById(elementIds.results.verb.caseLabel(verbCase)),
+      caseDetailsContainer: (verbCase) =>
+        document.getElementById(
+          elementIds.results.verb.caseDetailsContainer(verbCase)
+        ),
+    },
   }
 }
 
@@ -36,13 +52,6 @@ function initElements(elementIds) {
  */
 function renderInputState({ hasValue, isFocused }) {
   // Show/hide suggestions container (opposite of hasValue)
-  // if (hasValue) {
-  //   els.inputSuggestionsContainer().style.display = 'none'
-  // } else {
-  //   els.inputSuggestionsContainer().style.display = 'block'
-  //   els.inputSuggestionsContainer().style.visibility = 'visible'
-  //   els.inputSuggestionsContainer().style.opacity = '1'
-  // }
   // its opacity goes 0 magically, so make it 1 any time it is rendered
   els.inputSuggestionsContainer().style.opacity = '1'
   els.inputSuggestionsContainer().style.display = hasValue
@@ -155,12 +164,35 @@ function showWordCard(wordResult) {
 
   els.levelBadge().innerText = wordResult.level
   els.typeBadge().innerText = wordResult.type
-  els.title().innerText = wordResult.word
   els.translation().innerText = wordResult.english
   els.sentence().innerText = wordResult.example
 
-  // Show/hide rule
+  els.title().innerText = wordResult.word
+
+  // noun-specific
+  // // artikel
+  els.title().style.color =
+    wordResult.type === WordTypes.NOUN
+      ? ArtikelColorMap[wordResult.artikel]
+      : ArtikelColorMap['default']
+
+  // verb-specific
+  // // cases
+  if (wordResult.type === WordTypes.VERB) {
+    els.verb.caseLabelsContainer().style.display = 'flex'
+    ALL_VERB_CASES.forEach((verbCase) => {
+      if (wordResult.cases.findIndex((c) => c.toLowerCase() === verbCase)) {
+        els.verb.caseLabel(verbCase).style.display = 'flex'
+      } else {
+        els.verb.caseLabel(verbCase).style.display = 'none'
+      }
+    })
+  } else {
+    els.verb.caseLabelsContainer().style.display = 'none'
+  }
+
   if (wordResult.rule.trim().length === 0) {
+    // Show/hide rule
     els.ruleContainer().style.visibility = 'hidden'
     els.rule().innerText = ''
   } else {

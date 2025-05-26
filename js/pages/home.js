@@ -35,6 +35,11 @@ const elementIds = {
       ruleContainer: 'word-card-rule-container',
       rule: 'word-card-rule',
       sentence: 'word-card-sentence',
+      verb: {
+        caseLabelsContainer: 'word-card-verb-case-labels-container',
+        caseLabel: (verbCase) => `${verbCase}-label`,
+        caseDetailsContainer: (verbCase) => `${verbCase}-details-container`,
+      },
     },
   },
 
