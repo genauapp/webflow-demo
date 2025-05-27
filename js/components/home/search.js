@@ -180,7 +180,7 @@ function showWordCard(wordResult) {
   els.translation().innerText = wordResult.english
   els.sentence().innerText = wordResult.example
 
-  els.title().innerText = wordResult.word
+  els.title().innerText = wordResult.german
 
   // noun-specific
   // // artikel
