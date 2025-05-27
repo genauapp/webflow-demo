@@ -294,3 +294,33 @@ export function confettiAnimation() {
     startVelocity: 45,
   })
 }
+
+export function showSelectCategoryMessage() {
+  const contentContainer = document.getElementById('content-container')
+  contentContainer.style.display = 'none'
+  const selectCategoryMessage = document.getElementById('select-category-message')
+  selectCategoryMessage.style.display = 'flex'
+}
+
+export function hideSelectCategoryMessage() {
+  const contentContainer = document.getElementById('content-container')
+  contentContainer.style.display = 'block'
+  const selectCategoryMessage = document.getElementById('select-category-message')
+  selectCategoryMessage.style.display = 'none'
+}
+
+// Remove border from all deck images and add border to the selected deck image
+// Remove selected class from all deck images and add selected class to the selected deck image
+export function organizeSelectedDeckImage() {
+  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
+  const deckimgs = document.querySelectorAll('.deck-img')
+  deckimgs.forEach((deckimg) => {
+    deckimg.classList.remove('selected-deck-img')
+    deckimg.style.border = ''
+    deckimg.style.borderRadius = ''
+  })
+  const selectedDeckImg = deckimgs.find(deckimg => deckimg.dataset.option === category)
+  selectedDeckImg.classList.add('selected-deck-img')
+  selectedDeckImg.style.border = '2px solid black'
+  selectedDeckImg.style.borderRadius = '16px'
+}

@@ -2,14 +2,14 @@ import { CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY, 
 import { ASSETS_BASE_URL } from '../constants/urls.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
 import ListUtils from '../utils/ListUtils.js'
-import { categories, types } from '../constants/props.js'
+import { types } from '../constants/props.js'
 import { removeFavorite, addToFavorites } from '../utils/home/AddOrRemoveFavs.js'
 import { iKnowLearn, repeatLearn } from '../utils/home/LearnUtils.js'
 import checkNonNounAnswer from '../utils/home/checkNonNounAnswer.js'
 import showExerciseWord from '../utils/home/ShowExerciseWord.js'
 import checkNounAnswer from '../utils/home/checkNounAnswer.js'
 import showLearnWord from '../utils/home/showLearnWord.js'
-import { isRegularLevel, loadDeckPropsOnLevelPage } from '../utils/home/UIUtils.js'
+import { showSelectCategoryMessage, hideSelectCategoryMessage, isRegularLevel, loadDeckPropsOnLevelPage } from '../utils/home/UIUtils.js'
 import LevelManager from '../utils/LevelManager.js'
 
 
@@ -29,30 +29,24 @@ document.addEventListener('DOMContentLoaded', async () => {
   const currentLevel = LevelManager.getCurrentLevel()
   // Load Deck Props for specific Level and manage category prop on localStorage
   if (isRegularLevel(currentLevel)) {
-    let currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY, DEFAULT_VALUE.CURRENT_CATEGORY)
-    if (!categories[currentLevel].some(cat => cat.nameShort === currentCategory)) {
-      currentCategory = categories[currentLevel][0].nameShort
-      LocalStorageManager.save(CURRENT_CATEGORY_KEY, currentCategory)
-      // Select first deck image
-      let deckimgs = document.querySelectorAll('.deck-img')
-      let selectedDeckImg = deckimgs[0]
-      deckimgs.forEach((deckimg) => {
-        if (deckimg.classList.contains('selected-deck-img')) {
-          deckimg.classList.remove('selected-deck-img')
-          deckimg.style.border = ''
-          deckimg.style.borderRadius = ''
-        }
-      })
-      selectedDeckImg.style.border = '2px solid black'
-      selectedDeckImg.style.borderRadius = '16px'
-      selectedDeckImg.classList.add('selected-deck-img')
-    }
+    // Load current category from localStorage
+    let currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
     loadDeckPropsOnLevelPage()
+    // If current category is not in the categories array or is null, undefined or empty, show select category message
+    if (!LevelManager.checkIfCategoryIsInCategories(currentCategory) || currentCategory === null || currentCategory === undefined || currentCategory === '') {
+      showSelectCategoryMessage()
+      return
+    }
+    if (LevelManager.checkIfCategoryIsInCategories(currentCategory)) {
+      hideSelectCategoryMessage()
+      organizeSelectedDeckImage()
+    }
+    checkIsOnLearnOrExercise()
+    await loadAndShowWords()
   }
-  checkIsOnLearnOrExercise()
-  await loadAndShowWords()
 })
-//category click handler
+
+// Category click handler
 document.querySelectorAll('.deck-img').forEach((elem) => {
   elem.addEventListener('click', async function (event) {
     event.preventDefault()
@@ -60,21 +54,8 @@ document.querySelectorAll('.deck-img').forEach((elem) => {
     const selectedCategory = elem.getAttribute('data-option')
     //save category name to localStorage
     LocalStorageManager.save(CURRENT_CATEGORY_KEY, selectedCategory)
-    //if the image is not selected, add selected class to it and remove selected class from all other deck images
-    if (!elem.classList.contains('selected-deck-img')) {
-      elem.style.border = '2px solid black'
-      elem.style.borderRadius = '16px'
-      //remove selected class from all deck images
-      document.querySelectorAll('.deck-img').forEach((deckimg) => {
-        if (deckimg.classList.contains('selected-deck-img')) {
-          deckimg.classList.remove('selected-deck-img')
-          deckimg.style.border = ''
-          deckimg.style.borderRadius = ''
-        }
-      })
-      // add selected class into selected image
-      elem.classList.add('selected-deck-img')
-    }
+    organizeSelectedDeckImage()
+    hideSelectCategoryMessage()
     checkIsOnLearnOrExercise()
     await loadAndShowWords()
   })
