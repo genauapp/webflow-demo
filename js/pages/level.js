@@ -26,7 +26,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
   LocalStorageManager.load('BOOKMARKS', DEFAULT_VALUE.BOOKMARKS)
 
-  const currentLevel = LevelManager.getCurrentLevel()
+  const currentLevel = LevelManager.getCurrentLevel();
+  // change Level Header top of the pack screen
+  const label = `${currentLevel}_level`.toUpperCase();
+  document.getElementById('pack-level-header').innerText = label;
   // Load Deck Props for specific Level and manage category prop on localStorage
   if (isRegularLevel(currentLevel)) {
     // Load current category from localStorage
