@@ -1,4 +1,4 @@
-import { BOOKMARKS_KEY, DEFAULT_VALUE } from '../constants/storageKeys'
+import { BOOKMARKS_KEY, DEFAULT_VALUE } from '../constants/storageKeys.js'
 
 class BookmarkManager {
   static addWordToBookmarks = (currentWord, source) => {
