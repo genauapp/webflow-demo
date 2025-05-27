@@ -9,7 +9,7 @@ import checkNonNounAnswer from '../utils/home/checkNonNounAnswer.js'
 import showExerciseWord from '../utils/home/ShowExerciseWord.js'
 import checkNounAnswer from '../utils/home/checkNounAnswer.js'
 import showLearnWord from '../utils/home/showLearnWord.js'
-import { showSelectCategoryMessage, hideSelectCategoryMessage, isRegularLevel, loadDeckPropsOnLevelPage } from '../utils/home/UIUtils.js'
+import { organizeSelectedDeckImage, showSelectCategoryMessage, hideSelectCategoryMessage, isRegularLevel, loadDeckPropsOnLevelPage } from '../utils/home/UIUtils.js'
 import LevelManager from '../utils/LevelManager.js'
 
 
