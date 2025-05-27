@@ -160,6 +160,8 @@ function hideWordCard() {
 }
 
 function showWordCard(wordResult) {
+  closeAllVerbCaseDetails()
+
   els.resultsContainer().style.display = 'flex'
 
   els.levelBadge().innerText = wordResult.level
@@ -201,6 +203,13 @@ function showWordCard(wordResult) {
   }
 }
 
+function closeAllVerbCaseDetails() {
+  ALL_VERB_CASES.forEach((verbCase) => {
+    const container = els.verb.caseDetailsContainer(verbCase)
+    if (container) container.style.display = 'none'
+  })
+}
+
 const attachVerbCaseHandlers = () => {
   // Add click handlers for case labels and cancel buttons
   ALL_VERB_CASES.forEach((verbCase) => {
@@ -209,10 +218,7 @@ const attachVerbCaseHandlers = () => {
     if (label) {
       label.addEventListener('click', () => {
         // Close all details containers
-        ALL_VERB_CASES.forEach((vc) => {
-          const container = els.verb.caseDetailsContainer(vc)
-          if (container) container.style.display = 'none'
-        })
+        closeAllVerbCaseDetails()
         // Open the clicked case's container
         const detailsContainer = els.verb.caseDetailsContainer(verbCase)
         if (detailsContainer) detailsContainer.style.display = 'flex'

@@ -15,7 +15,7 @@ export const ArtikelColorMap = {
   das: 'green',
   default: 'black',
 }
-export const ALL_VERB_CASES = ['reflexive', 'separable', 'akkusative', 'dative']
+export const ALL_VERB_CASES = ['reflexive', 'separable', 'accusative', 'dative']
 
 export const categories = {
   a1: [
