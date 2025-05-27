@@ -1,5 +1,5 @@
-import { CURRENT_CATEGORY_KEY } from "../constants/storageKeys";
-import LocalStorageManager from "./LocalStorageManager";
+import { CURRENT_CATEGORY_KEY } from "../constants/storageKeys.js";
+import LocalStorageManager from "./LocalStorageManager.js";
 
 export default class LevelManager {
     static getCurrentLevel() {
