@@ -1,4 +1,5 @@
 import { BOOKMARKS_KEY, DEFAULT_VALUE } from '../constants/storageKeys.js'
+import LocalStorageManager from './LocalStorageManager.js'
 
 class BookmarkManager {
   static addWordToBookmarks = (currentWord, source) => {
