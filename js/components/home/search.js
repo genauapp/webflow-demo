@@ -195,11 +195,12 @@ function showWordCard(wordResult) {
   if (wordResult.type === WordTypes.VERB) {
     els.verb.caseLabelsContainer().style.display = 'flex'
     ALL_VERB_CASES.forEach((verbCase) => {
-      if (wordResult.cases.findIndex((c) => c.toLowerCase() === verbCase)) {
-        els.verb.caseLabel(verbCase).style.display = 'flex'
-      } else {
-        els.verb.caseLabel(verbCase).style.display = 'none'
-      }
+      const caseNotExists =
+        wordResult.cases.findIndex((c) => c.toLowerCase() === verbCase) === -1
+
+      els.verb.caseLabel(verbCase).style.display = caseNotExists
+        ? 'none'
+        : 'flex'
     })
   } else {
     els.verb.caseLabelsContainer().style.display = 'none'
