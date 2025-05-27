@@ -6,7 +6,7 @@ import {
   WordSource,
 } from '../../constants/props.js'
 import { publicApiService } from '../../service/apiService.js'
-import { addWordToBookmarks } from '../../utils/home/AddOrRemoveFavs.js'
+import BookmarkManager from '../../utils/BookmarkManager.js'
 
 let els = {}
 let currentWordResults = []
@@ -255,7 +255,10 @@ const attachVerbCaseHandlers = () => {
 
 function handleAddToBookmarks() {
   if (currentWordResults.length === 0) return
-  addWordToBookmarks(currentWordResults[0], WordSource.NORMAL_PROMPT)
+  BookmarkManager.addWordToBookmarks(
+    currentWordResults[0],
+    WordSource.NORMAL_PROMPT
+  )
   const btn = els.addToBookmarksButton()
   btn.textContent = 'Added'
   btn.disabled = true
