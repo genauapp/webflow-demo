@@ -258,9 +258,10 @@ const attachVerbCaseHandlers = () => {
   })
 }
 
-function handleAddToBookmarks() {
+function handleAddToBookmarks(e) {
   e.preventDefault()
   if (currentWordResults.length === 0) return
+
   BookmarkManager.addWordToBookmarks(
     currentWordResults[0],
     WordSource.NORMAL_PROMPT
@@ -322,5 +323,7 @@ export function initSearchComponent(elementIds) {
   attachVerbCaseHandlers()
 
   // add to bookmark click
-  els.addToBookmarksButton().addEventListener('click', handleAddToBookmarks)
+  els
+    .addToBookmarksButton()
+    .addEventListener('click', (e) => handleAddToBookmarks(e))
 }
