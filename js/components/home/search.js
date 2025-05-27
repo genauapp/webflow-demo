@@ -6,6 +6,7 @@ import {
   WordSource,
 } from '../../constants/props.js'
 import { publicApiService } from '../../service/apiService.js'
+import { addWordToBookmarks } from '../../utils/home/AddOrRemoveFavs.js'
 
 let els = {}
 let currentWordResults = []
