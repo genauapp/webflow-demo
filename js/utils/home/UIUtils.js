@@ -319,7 +319,7 @@ export function organizeSelectedDeckImage() {
     deckimg.style.border = ''
     deckimg.style.borderRadius = ''
   })
-  const selectedDeckImg = deckimgs.find(deckimg => deckimg.dataset.option === category)
+  const selectedDeckImg = [...deckimgs].find(deckimg => deckimg.dataset.option === category)
   selectedDeckImg.classList.add('selected-deck-img')
   selectedDeckImg.style.border = '2px solid black'
   selectedDeckImg.style.borderRadius = '16px'
