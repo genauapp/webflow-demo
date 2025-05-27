@@ -92,7 +92,9 @@ function render({ loading, error, results }) {
 
   // clear add bookmark button
   els.addToBookmarksButton().textContent = 'Add to Bookmarks'
-  els.addToBookmarksButton().disabled = false
+  // els.addToBookmarksButton().disabled = false  // not working since it's an anchor element
+  els.addToBookmarksButton().style.pointerEvents = 'auto' // Re-enable clicks
+  els.addToBookmarksButton().style.opacity = '1' // Reset visual state
 
   if (error) {
     console.error(`Search error: ${error}`)
@@ -257,6 +259,7 @@ const attachVerbCaseHandlers = () => {
 }
 
 function handleAddToBookmarks() {
+  e.preventDefault()
   if (currentWordResults.length === 0) return
   BookmarkManager.addWordToBookmarks(
     currentWordResults[0],
@@ -264,7 +267,9 @@ function handleAddToBookmarks() {
   )
   const btn = els.addToBookmarksButton()
   btn.textContent = 'Added'
-  btn.disabled = true
+  // btn.disabled = true // not working since it's an anchor element
+  btn.style.pointerEvents = 'none' // Disable further clicks
+  btn.style.opacity = '0.5' // Visual disabled state
 }
 
 /** Initialize the search component */
