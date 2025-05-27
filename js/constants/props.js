@@ -17,6 +17,12 @@ export const ArtikelColorMap = {
 }
 export const ALL_VERB_CASES = ['reflexive', 'separable', 'accusative', 'dative']
 
+export const WordSource = {
+  NORMAL_PROMPT: 'normal-prompt',
+  ASSISTANT: 'assistant',
+  INTERNAL: 'internal',
+}
+
 export const categories = {
   a1: [
     {

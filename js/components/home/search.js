@@ -3,10 +3,12 @@ import {
   WordTypes,
   ArtikelColorMap,
   ALL_VERB_CASES,
+  WordSource,
 } from '../../constants/props.js'
 import { publicApiService } from '../../service/apiService.js'
 
 let els = {}
+let currentWordResults = []
 
 /** Initialize elements dynamically using provided IDs */
 function initElements(elementIds) {
@@ -43,6 +45,9 @@ function initElements(elementIds) {
           elementIds.results.verb.caseDetailsContainer(verbCase)
         ),
     },
+
+    addToBookmarksButton: () =>
+      document.getElementById(elementIds.results.addToBookmarksButton),
   }
 }
 
@@ -83,6 +88,10 @@ function render({ loading, error, results }) {
   els.emptyInputContainer().style.display = 'none'
   els.noResultsContainer().style.display = 'none'
   hideWordCard()
+
+  // clear add bookmark button
+  els.addToBookmarksButton().textContent = 'Add to Bookmarks'
+  els.addToBookmarksButton().disabled = false
 
   if (error) {
     console.error(`Search error: ${error}`)
@@ -142,6 +151,8 @@ async function doSearch(query) {
   // assuming API returns data.results array
   const results = data?.results ?? []
   console.log(`results:\n${JSON.stringify(results)}`)
+
+  currentWordResults = results
 
   render({ loading: false, error: null, results })
 }
@@ -241,6 +252,14 @@ const attachVerbCaseHandlers = () => {
   })
 }
 
+function handleAddToBookmarks() {
+  if (currentWordResults.length === 0) return
+  addWordToBookmarks(currentWordResults[0], WordSource.NORMAL_PROMPT)
+  const btn = els.addToBookmarksButton()
+  btn.textContent = 'Added'
+  btn.disabled = true
+}
+
 /** Initialize the search component */
 export function initSearchComponent(elementIds) {
   // Initialize elements with provided IDs
@@ -289,4 +308,7 @@ export function initSearchComponent(elementIds) {
   })
 
   attachVerbCaseHandlers()
+
+  // add to bookmark click
+  els.addToBookmarksButton().addEventListener('click', handleAddToBookmarks)
 }

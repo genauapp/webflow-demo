@@ -40,6 +40,7 @@ const elementIds = {
         caseLabel: (verbCase) => `${verbCase}-label`,
         caseDetailsContainer: (verbCase) => `${verbCase}-details-container`,
       },
+      addToBookmarksButton: 'btn-search-add-to-bookmarks',
     },
   },
 
