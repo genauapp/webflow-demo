@@ -192,11 +192,13 @@ function showWordCard(wordResult) {
 
   // verb-specific
   // // cases
-  if (wordResult.type === WordTypes.VERB) {
+  if (wordResult.type === WordTypes.VERB && wordResult.cases.length > 0) {
     els.verb.caseLabelsContainer().style.display = 'flex'
     ALL_VERB_CASES.forEach((verbCase) => {
       const caseNotExists =
-        wordResult.cases.findIndex((c) => c.toLowerCase() === verbCase) === -1
+        wordResult.cases.findIndex(
+          (c) => c.trim().toLowerCase() === verbCase
+        ) === -1
 
       els.verb.caseLabel(verbCase).style.display = caseNotExists
         ? 'none'
