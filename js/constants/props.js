@@ -2,7 +2,7 @@ import { ASSETS_BASE_URL } from './urls.js'
 
 export const levels = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2', 'einburgerungstest']
 export const types = ['noun', 'verb', 'adjective', 'adverb']
-export const WordTypes = {
+export const WordType = {
   NOUN: 'noun',
   VERB: 'verb',
   ADJECTIVE: 'adjective',

@@ -1,6 +1,6 @@
 // /components/home/search.js
 import {
-  WordTypes,
+  WordType,
   ArtikelColorMap,
   ALL_VERB_CASES,
   WordSource,
@@ -178,23 +178,31 @@ function showWordCard(wordResult) {
 
   els.resultsContainer().style.display = 'flex'
 
+  els.title().innerText = wordResult.german
   els.levelBadge().innerText = wordResult.level
   els.typeBadge().innerText = wordResult.type
   els.translation().innerText = wordResult.english
   els.sentence().innerText = wordResult.example
 
-  els.title().innerText = wordResult.german
+  // noun
+  // // show/hide rule
+  if (wordResult.type === WordType.NOUN && wordResult.rule.trim().length > 0) {
+    els.ruleContainer().style.visibility = 'visible'
+    els.rule().innerText = wordResult.rule
+  } else {
+    els.ruleContainer().style.visibility = 'hidden'
+    els.rule().innerText = ''
+  }
 
-  // noun-specific
-  // // artikel
+  // // use artikel/default color for title
   els.title().style.color =
-    wordResult.type === WordTypes.NOUN
+    wordResult.type === WordType.NOUN
       ? ArtikelColorMap[wordResult.artikel]
       : ArtikelColorMap['default']
 
-  // verb-specific
+  // verb
   // // cases
-  if (wordResult.type === WordTypes.VERB && wordResult.cases.length > 0) {
+  if (wordResult.type === WordType.VERB && wordResult.cases.length > 0) {
     els.verb.caseLabelsContainer().style.display = 'flex'
     ALL_VERB_CASES.forEach((verbCase) => {
       const caseNotExists =
@@ -208,15 +216,6 @@ function showWordCard(wordResult) {
     })
   } else {
     els.verb.caseLabelsContainer().style.display = 'none'
-  }
-
-  if (wordResult.rule.trim().length === 0) {
-    // Show/hide rule
-    els.ruleContainer().style.visibility = 'hidden'
-    els.rule().innerText = ''
-  } else {
-    els.ruleContainer().style.visibility = 'visible'
-    els.rule().innerText = wordResult.rule
   }
 }
 
