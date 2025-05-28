@@ -18,6 +18,7 @@ export const TOTAL_WORD_EXERCISE_KEY = 'TOTAL_WORD_EXERCISE'
 export const TOTAL_WORD_LEARN_KEY = 'TOTAL_WORD_LEARN'
 export const IS_ON_LEARN_KEY = 'IS_ON_LEARN_OR_EXERCISE'
 export const PAYMENT_TRIGGER_COUNTER_KEY = 'PAYMENT_TRIGGER_COUNTER'
+export const BOOKMARKS_KEY = 'BOOKMARKS'
 
 /*
   Einbürgerungstest
@@ -39,7 +40,7 @@ export class DEFAULT_VALUE {
    * App
    */
 
-  static APP_VERSION = '1.3.10'
+  static APP_VERSION = '1.4.0'
 
   /** 
   Homepage

@@ -1,94 +1,64 @@
-import { getUserProfile } from '../service/userService.js'
-import { initGoogleAuth } from '../service/oauth2/googleAuthService.js'
-import { logout } from '../service/authService.js'
+// /pages/home.js
+import { initUserComponent } from '../components/home/user.js'
+import { initSearchComponent } from '../components/home/search.js'
+import { initLevelComponent } from '../components/home/level.js'
 
-const els = {
-  login: () => document.getElementById('login-container'),
-  profile: () => document.getElementById('user-profile-container'),
-  avatar: () => document.getElementById('image-user-info-avatar'),
-  name: () => document.getElementById('label-user-info-name'),
-  email: () => document.getElementById('label-user-info-email'),
-  // spinner: () => document.getElementById('loading-spinner'),
-  // errorMsg: () => document.getElementById('error-message'),
-  logoutBtn: () => document.getElementById('btn-home-logout'),
-}
+// Element IDs are kept in the page file
+const elementIds = {
+  // User component elements
+  user: {
+    login: 'login-container',
+    profile: 'user-profile-container',
+    avatar: 'image-user-info-avatar',
+    name: 'label-user-info-name',
+    email: 'label-user-info-email',
+    logoutBtn: 'btn-home-logout',
+  },
 
-/** Show/hide according to simple flags */
-function render({ loading, error, unauthorized, user }) {
-  console.log('States:')
-  console.log(`-> loading: ${loading}`)
-  console.log(`-> error: ${error}`)
-  console.log(`-> unauthorized: ${unauthorized}`)
-  console.log(`-> user: ${user}`)
+  // Search component elements
+  search: {
+    form: 'form-search',
+    input: 'input-search',
+    inputSuggestionsContainer: 'search-input-suggestions-container',
+    inputCloseButton: 'btn-search-input-close',
+    // button: 'search-button',
+    loading: 'search-loading-container',
+    // error: 'search-error',
+    emptyInputContainer: 'search-empty-input-container',
+    noResultsContainer: 'search-no-results-container',
+    results: {
+      container: 'search-results-container',
+      levelBadge: 'word-card-level-badge',
+      typeBadge: 'word-card-type-badge',
+      title: 'word-card-title',
+      translation: 'word-card-translation',
+      ruleContainer: 'word-card-rule-container',
+      rule: 'word-card-rule',
+      sentence: 'word-card-sentence',
+      verb: {
+        caseLabelsContainer: 'word-card-verb-case-labels-container',
+        caseLabel: (verbCase) => `${verbCase}-label`,
+        caseDetailsContainer: (verbCase) => `${verbCase}-details-container`,
+      },
+      addToBookmarksButton: 'btn-search-add-to-bookmarks',
+    },
+  },
 
-  // loading state
-  // els.spinner().style.display = loading ? 'block' : 'none'
-  if (loading) {
-    els.login().style.display = 'none'
-    els.profile().style.display = 'none'
-    return
-  }
-
-  // error state
-  if (error) {
-    //   els.errorMsg().innerText = error.message
-    //   els.errorMsg().style.display = 'block'
-    // alert(`Error: ${error.message}`)
-    // fallback to login
-    els.login().style.display = 'flex'
-    els.profile().style.display = 'none'
-    return
-  }
-
-  // els.errorMsg().style.display = 'none'
-
-  // unauthorized or no user
-  if (unauthorized || !user) {
-    els.login().style.display = 'flex'
-    els.profile().style.display = 'none'
-  } else {
-    els.login().style.display = 'none'
-    els.profile().style.display = 'flex'
-    els.name().innerText = user.name
-    els.email().innerText = user.email
-    els.avatar().src = user['avatar_url']
-  }
+  level: {
+    // Level component elements
+    levelA1Btn: 'level-a1-btn',
+    levelA2Btn: 'level-a2-btn',
+    levelB1Btn: 'level-b1-btn',
+    levelB2Btn: 'level-b2-btn',
+    packsContainer: 'packs-container',
+  },
 }
 
 async function bootstrap() {
-  render({ loading: true })
-
-  const { user, status, error } = await getUserProfile()
-  const unauthorized = status === 401 || status === 403
-
-  render({ loading: false, error, unauthorized, user })
-
-  await initGoogleAuth(onLoginSuccess, onLoginError)
-}
-
-function onLoginSuccess(user) {
-  render({ loading: false, error: null, unauthorized: false, user })
-}
-
-function onLoginError(err) {
-  render({ loading: false, error: err, unauthorized: true, user: null })
-}
-
-async function onLogoutClick() {
-  // disable button and show spinner
-  els.logoutBtn().disabled = true
-  render({ loading: true })
-
-  try {
-    await logout()
-    // after success, clear user
-    render({ loading: false, unauthorized: true, user: null })
-  } catch (err) {
-    // on error, re-enable button and show message
-    els.logoutBtn().disabled = false
-    render({ loading: false, error: err })
-  }
+  // Initialize both components with their respective element IDs
+  await initUserComponent({ ...elementIds.user })
+  initSearchComponent({ ...elementIds.search })
+  // initLevelComponent({ ...elementIds.level })
 }
 
 document.addEventListener('DOMContentLoaded', bootstrap)
-els.logoutBtn().addEventListener('click', onLogoutClick)

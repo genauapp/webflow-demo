@@ -25,10 +25,16 @@ const protectedFetch = async (endpoint, options = {}) => {
 }
 
 // Helper methods for common verbs
-export default {
-  get: (endpoint, options) =>
-    protectedFetch(endpoint, { method: 'GET', ...options }),
+const protectedApi = {
+  get: (endpoint, options) => {
+    if (options && options.body) {
+      console.warn('GET requests should not have a body')
+      delete options.body
+    }
+    return protectedFetch(endpoint, { method: 'GET', ...options })
+  },
   post: (endpoint, body, options) =>
     protectedFetch(endpoint, { method: 'POST', body, ...options }),
-  // Add put, delete, etc. as needed
 }
+
+export default protectedApi
