@@ -1,7 +1,5 @@
-import { DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY } from "../constants/storageKeys.js"
-import LocalStorageManager from "../utils/LocalStorageManager.js"
-import { levels, categories, types } from "../constants/props.js"
-
+import { BOOKMARKS_KEY, DEFAULT_VALUE } from '../constants/storageKeys.js'
+import LocalStorageManager from '../utils/LocalStorageManager.js'
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', () => {
@@ -21,7 +19,10 @@ function listFavorites() {
 
   favoritesContainer.innerHTML = '' // Mevcut listeyi temizle
 
-  const bookmarkedWords = LocalStorageManager.load('BOOKMARKS')
+  const bookmarkedWords = LocalStorageManager.load(
+    BOOKMARKS_KEY,
+    DEFAULT_VALUE.BOOKMARKS
+  )
   let favoriteWords = bookmarkedWords.favorites
 
   if (favoriteWords.length === 0) {
@@ -118,89 +119,87 @@ function removeFavorite(index) {
 }
 
 function listLearnedWords() {
-
-  const learnedWordsContainer = document.getElementById('learnedWordsContainer');
+  const learnedWordsContainer = document.getElementById('learnedWordsContainer')
   const bookmarkedWords = LocalStorageManager.load('BOOKMARKS')
   let learnedWords = bookmarkedWords.learned
 
   // Container ayarları
-  learnedWordsContainer.style.maxHeight = '420px';
-  learnedWordsContainer.style.overflowY = 'auto';
-  learnedWordsContainer.style.padding = '12px';
-  learnedWordsContainer.style.border = '0px solid #ccc';
-  learnedWordsContainer.style.borderRadius = '16px';
-  learnedWordsContainer.style.display = 'block';
-  learnedWordsContainer.innerHTML = '';
+  learnedWordsContainer.style.maxHeight = '420px'
+  learnedWordsContainer.style.overflowY = 'auto'
+  learnedWordsContainer.style.padding = '12px'
+  learnedWordsContainer.style.border = '0px solid #ccc'
+  learnedWordsContainer.style.borderRadius = '16px'
+  learnedWordsContainer.style.display = 'block'
+  learnedWordsContainer.innerHTML = ''
 
   // Eğer tüm word listeleri boşsa, mesaj göster
   if (learnedWords.length === 0 || !learnedWords) {
-    showNoWordsMessage(learnedWordsContainer);
-    return;
+    showNoWordsMessage(learnedWordsContainer)
+    return
   }
 
-  learnedWords.forEach(word => {
+  learnedWords.forEach((word) => {
     // Öğrenilmiş wordler bloğunu kapsayan div
-    const learnedWordsAllBlock = document.createElement('div');
-    learnedWordsAllBlock.classList.add('learnedWordsAllBlock');
-    learnedWordsAllBlock.style.display = 'flex';
-    learnedWordsAllBlock.style.justifyContent = 'space-between';
-    learnedWordsAllBlock.style.alignItems = 'center';
-    learnedWordsAllBlock.style.padding = '12px 0';
-    learnedWordsAllBlock.style.borderBottom = '1px solid #ccc';
+    const learnedWordsAllBlock = document.createElement('div')
+    learnedWordsAllBlock.classList.add('learnedWordsAllBlock')
+    learnedWordsAllBlock.style.display = 'flex'
+    learnedWordsAllBlock.style.justifyContent = 'space-between'
+    learnedWordsAllBlock.style.alignItems = 'center'
+    learnedWordsAllBlock.style.padding = '12px 0'
+    learnedWordsAllBlock.style.borderBottom = '1px solid #ccc'
 
     // word bilgilerini içeren div
-    const learnedWordsBlock = document.createElement('div');
-    learnedWordsBlock.classList.add('learnedWordsBlock');
-    learnedWordsBlock.style.display = 'flex';
-    learnedWordsBlock.style.flexDirection = 'column';
-    learnedWordsBlock.style.textAlign = 'left';
-    learnedWordsBlock.style.flex = '1';
+    const learnedWordsBlock = document.createElement('div')
+    learnedWordsBlock.classList.add('learnedWordsBlock')
+    learnedWordsBlock.style.display = 'flex'
+    learnedWordsBlock.style.flexDirection = 'column'
+    learnedWordsBlock.style.textAlign = 'left'
+    learnedWordsBlock.style.flex = '1'
 
-    const germanWord = document.createElement('p');
-    germanWord.classList.add('learnedWordGerman');
-    germanWord.style.margin = '0';
-    germanWord.style.fontWeight = 'bold';
-    germanWord.textContent = word.german;
+    const germanWord = document.createElement('p')
+    germanWord.classList.add('learnedWordGerman')
+    germanWord.style.margin = '0'
+    germanWord.style.fontWeight = 'bold'
+    germanWord.textContent = word.german
 
-    const englishWord = document.createElement('p');
-    englishWord.classList.add('learnedWordEnglish');
-    englishWord.style.margin = '4px 0 0 0';
-    englishWord.textContent = word.english;
+    const englishWord = document.createElement('p')
+    englishWord.classList.add('learnedWordEnglish')
+    englishWord.style.margin = '4px 0 0 0'
+    englishWord.textContent = word.english
 
-    learnedWordsBlock.appendChild(germanWord);
-    learnedWordsBlock.appendChild(englishWord);
+    learnedWordsBlock.appendChild(germanWord)
+    learnedWordsBlock.appendChild(englishWord)
 
     // level ve tip bilgisini gösteren blok
-    const learnedWordsLevelBlock = document.createElement('div');
-    learnedWordsLevelBlock.classList.add('favLevelBlock');
-    learnedWordsLevelBlock.style.display = 'flex';
-    learnedWordsLevelBlock.style.alignItems = 'center';
-    learnedWordsLevelBlock.style.gap = '8px';
+    const learnedWordsLevelBlock = document.createElement('div')
+    learnedWordsLevelBlock.classList.add('favLevelBlock')
+    learnedWordsLevelBlock.style.display = 'flex'
+    learnedWordsLevelBlock.style.alignItems = 'center'
+    learnedWordsLevelBlock.style.gap = '8px'
 
-    const levelTag = document.createElement('p');
-    levelTag.classList.add('learnedWordLevel');
-    levelTag.style.margin = '0';
-    levelTag.style.color = '#999';
-    levelTag.textContent = word.level;
+    const levelTag = document.createElement('p')
+    levelTag.classList.add('learnedWordLevel')
+    levelTag.style.margin = '0'
+    levelTag.style.color = '#999'
+    levelTag.textContent = word.level
 
-    const typeTag = document.createElement('p');
-    typeTag.classList.add('favoriteWordType');
-    typeTag.style.margin = '0';
-    typeTag.style.color = '#999';
-    typeTag.textContent = word.type;
+    const typeTag = document.createElement('p')
+    typeTag.classList.add('favoriteWordType')
+    typeTag.style.margin = '0'
+    typeTag.style.color = '#999'
+    typeTag.textContent = word.type
 
-    learnedWordsLevelBlock.appendChild(typeTag);
-    learnedWordsLevelBlock.appendChild(levelTag);
+    learnedWordsLevelBlock.appendChild(typeTag)
+    learnedWordsLevelBlock.appendChild(levelTag)
 
     // Ana bloğa ekle
-    learnedWordsAllBlock.appendChild(learnedWordsBlock);
-    learnedWordsAllBlock.appendChild(learnedWordsLevelBlock);
-    learnedWordsContainer.appendChild(learnedWordsAllBlock);
-  });
+    learnedWordsAllBlock.appendChild(learnedWordsBlock)
+    learnedWordsAllBlock.appendChild(learnedWordsLevelBlock)
+    learnedWordsContainer.appendChild(learnedWordsAllBlock)
+  })
 }
 
 function showNoWordsMessage(elem) {
-
   elem.style.display = 'flex' // Flex düzen
   elem.style.justifyContent = 'center' // Yatayda ortala
   elem.style.alignItems = 'center' // Dikeyde ortala
