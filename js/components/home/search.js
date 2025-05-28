@@ -288,8 +288,9 @@ export function initSearchComponent(elementIds) {
     e.preventDefault()
     e.stopPropagation()
 
-    const q = els.input().value.trim()
-    if (q.length === 0) {
+    const q = els.input().value
+    // if in put is invalid or more than max length
+    if (q.trim().length === 0 || q.length > 20) {
       render({ loading: false, error: null, results: null })
       return
     }
