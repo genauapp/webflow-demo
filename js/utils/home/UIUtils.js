@@ -112,27 +112,20 @@ export function isRegularLevel(level) {
   )
 }
 
-export function showOrHideDecks(level) {
-  if (isRegularLevel(level)) {
-    document.getElementById('decksContainer').style.display = 'flex'
-    return
-  }
-  document.getElementById('decksContainer').style.display = 'none'
-  return
-}
-
-export function loadDeckProps() {
+export function loadDeckPropsOnLevelPage() {
   const level = LevelManager.getCurrentLevel()
-  const deckContainers = document.querySelectorAll('.deck-container')
-  categories[level].forEach((item, i) => {
-    const deckTitle = item.nameEng
-    const deckImgURL = item.imgUrl
-    const deckShortName = item.nameShort
-
-    deckContainers[i].children[0].src = deckImgURL
-    deckContainers[i].children[1].innerText = deckTitle
-    deckContainers[i].dataset.option = deckShortName
-  })
+  document.getElementById('Deck01').src = categories[level][0].imgUrl
+  document.getElementById('Deck01').dataset.option = categories[level][0].nameShort
+  document.getElementById('deck-title-01').innerText = categories[level][0].nameEng
+  document.getElementById('Deck02').src = categories[level][1].imgUrl
+  document.getElementById('Deck02').dataset.option = categories[level][1].nameShort
+  document.getElementById('deck-title-02').innerText = categories[level][1].nameEng
+  document.getElementById('Deck03').src = categories[level][2].imgUrl
+  document.getElementById('Deck03').dataset.option = categories[level][2].nameShort
+  document.getElementById('deck-title-03').innerText = categories[level][2].nameEng
+  document.getElementById('Deck04').src = categories[level][3].imgUrl
+  document.getElementById('Deck04').dataset.option = categories[level][3].nameShort
+  document.getElementById('deck-title-04').innerText = categories[level][3].nameEng
 }
 
 export function showFinishScreen() {
@@ -304,4 +297,34 @@ export function confettiAnimation() {
     spread: 120,
     startVelocity: 45,
   })
+}
+
+export function showSelectCategoryMessage() {
+  const contentContainer = document.getElementById('content-container')
+  contentContainer.style.display = 'none'
+  const selectCategoryMessage = document.getElementById('select-category-message')
+  selectCategoryMessage.style.display = 'flex'
+}
+
+export function hideSelectCategoryMessage() {
+  const contentContainer = document.getElementById('content-container')
+  contentContainer.style.display = 'block'
+  const selectCategoryMessage = document.getElementById('select-category-message')
+  selectCategoryMessage.style.display = 'none'
+}
+
+// Remove border from all deck images and add border to the selected deck image
+// Remove selected class from all deck images and add selected class to the selected deck image
+export function organizeSelectedDeckImage() {
+  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
+  const deckimgs = document.querySelectorAll('.deck-img')
+  deckimgs.forEach((deckimg) => {
+    deckimg.classList.remove('selected-deck-img')
+    deckimg.style.border = ''
+    deckimg.style.borderRadius = ''
+  })
+  const selectedDeckImg = [...deckimgs].find(deckimg => deckimg.dataset.option === category)
+  selectedDeckImg.classList.add('selected-deck-img')
+  selectedDeckImg.style.border = '2px solid black'
+  selectedDeckImg.style.borderRadius = '16px'
 }
