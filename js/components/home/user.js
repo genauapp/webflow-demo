@@ -21,11 +21,11 @@ function initElements(elementIds) {
 
 /** Show/hide according to simple flags */
 function render({ loading, error, unauthorized, user }) {
-  console.log('User Component States:')
-  console.log(`-> loading: ${loading}`)
-  console.log(`-> error: ${error}`)
-  console.log(`-> unauthorized: ${unauthorized}`)
-  console.log(`-> user: ${user}`)
+  // console.log('User Component States:')
+  // console.log(`-> loading: ${loading}`)
+  // console.log(`-> error: ${error}`)
+  // console.log(`-> unauthorized: ${unauthorized}`)
+  // console.log(`-> user: ${user}`)
 
   // loading state
   if (loading) {

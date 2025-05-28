@@ -29,7 +29,7 @@ export function decideShowingPaymentWorkflowOn(triggerEvent) {
 }
 
 function showPaymentContainerModal() {
-  console.log('showing: Payment Container Modal')
+  // console.log('showing: Payment Container Modal')
 
   //   const isReadyToPayment = LocalStorageManager.load(
   //     IS_READY_TO_PAYMENT,
@@ -64,7 +64,7 @@ const hideAllModals = () => {
 }
 
 function hidePaymentContainerModal() {
-  console.log('hiding: Payment Container Modal')
+  // console.log('hiding: Payment Container Modal')
 
   const modalContainer = document.getElementById('modal-payment-container')
   modalContainer.style.display = 'none'
@@ -73,7 +73,7 @@ function hidePaymentContainerModal() {
 
 /** // Initial Payment | Show/Hide  */
 function showInitialPaymentModal() {
-  console.log('showing: Initial Payment Modal')
+  // console.log('showing: Initial Payment Modal')
   const modalContainer = document.getElementById('modal-payment-container')
   modalContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.16)'
   modalContainer.removeEventListener('click', showInitialPaymentModal)
@@ -97,11 +97,11 @@ function showInitialPaymentModal() {
       // unselect all
       paymentOptions.forEach((opt) => {
         opt.classList.remove('paymentselected')
-        console.log(`${opt.getAttribute('payment-option')} is unselected.`)
+        // console.log(`${opt.getAttribute('payment-option')} is unselected.`)
       })
       // select clicked
       option.classList.add('paymentselected')
-      console.log(`${option.getAttribute('payment-option')} is selected.`)
+      // console.log(`${option.getAttribute('payment-option')} is selected.`)
     }
     option.addEventListener('click', handler)
     // store handler ref for cleanup
@@ -110,7 +110,7 @@ function showInitialPaymentModal() {
 }
 
 function hideInitialPaymentModal() {
-  console.log('hiding: Initial Payment Modal')
+  // console.log('hiding: Initial Payment Modal')
   const modalInitialPayment = document.getElementById('modal-payment-initial')
   modalInitialPayment.style.display = 'none'
 
@@ -132,7 +132,7 @@ function hideInitialPaymentModal() {
 
 /** // Final Payment | Show/Hide  */
 function showFinalPaymentModal() {
-  console.log('showing: Final Payment Modal')
+  // console.log('showing: Final Payment Modal')
 
   hideInitialPaymentModal()
   const modalFinalPayment = document.getElementById('modal-payment-final')
@@ -153,7 +153,7 @@ const copyToClipBoard = () => {
 }
 
 function hideFinalPaymentModal() {
-  console.log('hiding: Final Payment Modal')
+  // console.log('hiding: Final Payment Modal')
   const modalFinalPayment = document.getElementById('modal-payment-final')
   modalFinalPayment.style.display = 'none'
 }

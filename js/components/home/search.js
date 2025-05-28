@@ -109,7 +109,7 @@ function render({ loading, error, results }) {
       return
     }
     if (Array.isArray(results) && results.length === 0) {
-      console.log('No results found.')
+      // console.log('No results found.')
       els.noResultsContainer().style.display = 'flex'
       return
     }
@@ -153,7 +153,7 @@ async function doSearch(query) {
 
   // assuming API returns data.results array
   const results = data?.results ?? []
-  console.log(`results:\n${JSON.stringify(results)}`)
+  // console.log(`results:\n${JSON.stringify(results)}`)
 
   currentWordResults = results
 
