@@ -28,19 +28,3 @@
 .highlight-animation {
   animation: highlight 1s ease-in-out;
 }
-
-/* home */
-/** search **/
-.add-to-bookmark {
-  background-color: black;
-  box-shadow: transparent 0px 0px 3px 1px;
-  color: white;
-  transition: all 0.3s ease;
-}
-
-.add-to-bookmark,
-.added {
-  background-color: green;
-  box-shadow: black 0px 0px 3px 1px;
-  color: white;
-}

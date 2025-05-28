@@ -94,8 +94,7 @@ function render({ loading, error, results }) {
   els.addToBookmarksButton().textContent = 'Add to Bookmarks'
   // els.addToBookmarksButton().disabled = false  // not working since it's an anchor element
   els.addToBookmarksButton().style.pointerEvents = 'auto' // Re-enable clicks
-  // els.addToBookmarksButton().style.opacity = '1' // Reset visual state
-  els.addToBookmarksButton().classList.remove('added')
+  els.addToBookmarksButton().style.opacity = '1' // Reset visual state
 
   if (error) {
     console.error(`Search error: ${error}`)
@@ -268,11 +267,10 @@ function handleAddToBookmarks(e) {
     WordSource.NORMAL_PROMPT
   )
   const btn = els.addToBookmarksButton()
-  btn.textContent = 'Added'
+  btn.textContent = 'Added to Bookmarks'
   // btn.disabled = true // not working since it's an anchor element
   btn.style.pointerEvents = 'none' // Disable further clicks
-  btn.style.opacity = '0.5' // Visual disabled state
-  btn.classList.add('added')
+  btn.style.opacity = '0.6' // Visual disabled state
 }
 
 /** Initialize the search component */
