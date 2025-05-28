@@ -6,7 +6,7 @@ import {
   WordSource,
 } from '../../constants/props.js'
 import { publicApiService } from '../../service/apiService.js'
-import BookmarkManager from '../../utils/BookmarkManager.js'
+import CollectionsManager from '../../utils/CollectionsManager.js'
 
 let els = {}
 let currentWordResults = []
@@ -261,7 +261,7 @@ function handleAddToBookmarks(e) {
   e.preventDefault()
   if (currentWordResults.length === 0) return
 
-  BookmarkManager.addWordToBookmarks(
+  CollectionsManager.addWordToBookmarks(
     currentWordResults[0],
     WordSource.NORMAL_PROMPT
   )

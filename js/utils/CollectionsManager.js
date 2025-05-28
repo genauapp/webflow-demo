@@ -1,7 +1,7 @@
 import { BOOKMARKS_KEY, DEFAULT_VALUE } from '../constants/storageKeys.js'
 import LocalStorageManager from './LocalStorageManager.js'
 
-class BookmarkManager {
+class CollectionsManager {
   static addWordToBookmarks = (currentWord, source) => {
     // 1. Load existing bookmarks
     const bookmarks = LocalStorageManager.load(
@@ -44,4 +44,4 @@ class BookmarkManager {
   }
 }
 
-export default BookmarkManager
+export default CollectionsManager
