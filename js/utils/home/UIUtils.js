@@ -116,12 +116,16 @@ export function loadDeckPropsOnLevelPage() {
   const level = LevelManager.getCurrentLevel()
   document.getElementById('Deck01').src = categories[level][0].imgUrl
   document.getElementById('Deck01').dataset.option = categories[level][0].nameShort
+  document.getElementById('deck-title-01').innerText = categories[level][0].nameEng
   document.getElementById('Deck02').src = categories[level][1].imgUrl
   document.getElementById('Deck02').dataset.option = categories[level][1].nameShort
+  document.getElementById('deck-title-02').innerText = categories[level][1].nameEng
   document.getElementById('Deck03').src = categories[level][2].imgUrl
   document.getElementById('Deck03').dataset.option = categories[level][2].nameShort
+  document.getElementById('deck-title-03').innerText = categories[level][2].nameEng
   document.getElementById('Deck04').src = categories[level][3].imgUrl
   document.getElementById('Deck04').dataset.option = categories[level][3].nameShort
+  document.getElementById('deck-title-04').innerText = categories[level][3].nameEng
 }
 
 export function showFinishScreen() {

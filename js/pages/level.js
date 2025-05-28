@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const currentLevel = LevelManager.getCurrentLevel();
   // change Level Header top of the pack screen
-  const label = "level " + `${currentLevel}`.toUpperCase();
+  const label = "Level " + `${currentLevel}`.toUpperCase();
   document.getElementById('pack-level-header').innerText = label;
   // Load Deck Props for specific Level and manage category prop on localStorage
   if (isRegularLevel(currentLevel)) {
