@@ -1,4 +1,4 @@
-import { initUserComponent } from '../components/home/user'
+import { initUserComponent } from '../components/home/user.js'
 
 // Element IDs are kept in the page file
 const elementIds = {
