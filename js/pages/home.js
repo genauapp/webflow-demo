@@ -1,5 +1,5 @@
 // /pages/home.js
-import { initUserComponent } from '../components/home/user.js'
+// import { initUserComponent } from '../components/home/user.js'
 import { initSearchComponent } from '../components/home/search.js'
 import { initLevelComponent } from '../components/home/level.js'
 
@@ -56,7 +56,7 @@ const elementIds = {
 
 async function bootstrap() {
   // Initialize both components with their respective element IDs
-  await initUserComponent({ ...elementIds.user })
+  // await initUserComponent({ ...elementIds.user })
   initSearchComponent({ ...elementIds.search })
   // initLevelComponent({ ...elementIds.level })
 }
