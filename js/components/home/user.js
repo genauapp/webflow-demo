@@ -30,6 +30,7 @@ function render({ loading, error, unauthorized, user }) {
   // loading state
   if (loading) {
     els.login().style.display = 'none'
+
     els.profile().style.display = 'none'
     return
   }
@@ -38,20 +39,26 @@ function render({ loading, error, unauthorized, user }) {
   if (error) {
     // fallback to login
     els.login().style.display = 'flex'
+
     els.profile().style.display = 'none'
+    els.logoutBtn().style.display = 'none'
     return
   }
 
   // unauthorized or no user
   if (unauthorized || !user) {
     els.login().style.display = 'flex'
+
     els.profile().style.display = 'none'
+    els.logoutBtn().style.display = 'none'
   } else {
     els.login().style.display = 'none'
+
     els.profile().style.display = 'flex'
     els.name().innerText = user.name
     els.email().innerText = user.email
     els.avatar().src = user['avatar_url']
+    els.logoutBtn().style.display = 'flex'
   }
 }
 
