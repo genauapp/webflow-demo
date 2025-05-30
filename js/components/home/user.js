@@ -13,13 +13,15 @@ function initElements(elementIds, elementClasses) {
     login: () => document.getElementById(elementIds.login),
 
     profileElements: () =>
-      document.querySelectorAll(`.${elementClasses.profile}`),
+      Array.from(document.querySelectorAll(`.${elementClasses.profile}`)),
     avatarElements: () =>
-      document.querySelectorAll(`.${elementClasses.avatar}`),
-    nameElements: () => document.querySelectorAll(`.${elementClasses.name}`),
-    emailElements: () => document.querySelectorAll(`.${elementClasses.email}`),
+      Array.from(document.querySelectorAll(`.${elementClasses.avatar}`)),
+    nameElements: () =>
+      Array.from(document.querySelectorAll(`.${elementClasses.name}`)),
+    emailElements: () =>
+      Array.from(document.querySelectorAll(`.${elementClasses.email}`)),
     logoutButtonElements: () =>
-      document.querySelectorAll(`.${elementClasses.logoutButton}`),
+      Array.from(document.querySelectorAll(`.${elementClasses.logoutButton}`)),
   }
 }
 
@@ -35,7 +37,7 @@ function render({ loading, error, unauthorized, user }) {
   if (loading) {
     els.login().style.display = 'none'
 
-    els.profileElements().array.forEach((element) => {
+    els.profileElements().forEach((element) => {
       element.style.display = 'none'
     })
     return
@@ -46,10 +48,10 @@ function render({ loading, error, unauthorized, user }) {
     // fallback to login
     els.login().style.display = 'flex'
 
-    els.profileElements().array.forEach((element) => {
+    els.profileElements().forEach((element) => {
       element.style.display = 'none'
     })
-    els.logoutButtonElements().array.forEach((element) => {
+    els.logoutButtonElements().forEach((element) => {
       element.style.display = 'none'
     })
     return
@@ -59,28 +61,28 @@ function render({ loading, error, unauthorized, user }) {
   if (unauthorized || !user) {
     els.login().style.display = 'flex'
 
-    els.profileElements().array.forEach((element) => {
+    els.profileElements().forEach((element) => {
       element.style.display = 'none'
     })
-    els.logoutButtonElements().array.forEach((element) => {
+    els.logoutButtonElements().forEach((element) => {
       element.style.display = 'none'
     })
   } else {
     els.login().style.display = 'none'
 
-    els.profileElements().array.forEach((element) => {
+    els.profileElements().forEach((element) => {
       element.style.display = 'flex'
     })
-    els.avatarElements().array.forEach((element) => {
+    els.avatarElements().forEach((element) => {
       element.src = user['avatar_url']
     })
-    els.nameElements().array.forEach((element) => {
+    els.nameElements().forEach((element) => {
       element.innerText = user.name
     })
-    els.emailElements().array.forEach((element) => {
+    els.emailElements().forEach((element) => {
       element.innerText = user.email
     })
-    els.logoutButtonElements().array.forEach((element) => {
+    els.logoutButtonElements().forEach((element) => {
       element.style.display = 'flex'
     })
   }
@@ -96,7 +98,7 @@ function onLoginError(err) {
 
 async function onLogoutClick() {
   // disable button and show spinner
-  els.logoutButtonElements().array.forEach((element) => {
+  els.logoutButtonElements().forEach((element) => {
     element.disabled = true
   })
 
@@ -108,7 +110,7 @@ async function onLogoutClick() {
     render({ loading: false, unauthorized: true, user: null })
   } catch (err) {
     // on error, re-enable button and show message
-    els.logoutButtonElements().array.forEach((element) => {
+    els.logoutButtonElements().forEach((element) => {
       element.disabled = false
     })
     render({ loading: false, error: err })
@@ -134,7 +136,7 @@ export async function initUserComponent(elementIds, elementClasses) {
   await initGoogleAuth(onLoginSuccess, onLoginError)
 
   // Add logout event listener
-  els.logoutButtonElements().array.forEach((element) => {
+  els.logoutButtonElements().forEach((element) => {
     element.addEventListener('click', onLogoutClick)
   })
 }
