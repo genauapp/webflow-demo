@@ -40,7 +40,7 @@ export class DEFAULT_VALUE {
    * App
    */
 
-  static APP_VERSION = '1.4.0'
+  static APP_VERSION = '1.4.1'
 
   /** 
   Homepage
@@ -54,9 +54,9 @@ export class DEFAULT_VALUE {
   static IS_ON_LEARN_OR_EXERCISE = 'learn'
 
   static PAYMENT_TRIGGER_COUNTER = {
-    learn: 0,
-    exercise: 0,
-    einburgerungstest: 0,
+    learn: 1,
+    exercise: 1,
+    einburgerungstest: 1,
   }
 
   static LEARNED_WITH_LEARN_WORDS = {

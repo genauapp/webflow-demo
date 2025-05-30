@@ -8,14 +8,20 @@ import { initGoogleAuth } from '../../service/oauth2/googleAuthService.js'
 let els = {}
 
 /** Initialize elements dynamically using provided IDs */
-function initElements(elementIds) {
+function initElements(elementIds, elementClasses) {
   els = {
     login: () => document.getElementById(elementIds.login),
-    profile: () => document.getElementById(elementIds.profile),
-    avatar: () => document.getElementById(elementIds.avatar),
-    name: () => document.getElementById(elementIds.name),
-    email: () => document.getElementById(elementIds.email),
-    logoutBtn: () => document.getElementById(elementIds.logoutBtn),
+
+    profileElements: () =>
+      Array.from(document.querySelectorAll(`.${elementClasses.profile}`)),
+    avatarElements: () =>
+      Array.from(document.querySelectorAll(`.${elementClasses.avatar}`)),
+    nameElements: () =>
+      Array.from(document.querySelectorAll(`.${elementClasses.name}`)),
+    emailElements: () =>
+      Array.from(document.querySelectorAll(`.${elementClasses.email}`)),
+    logoutButtonElements: () =>
+      Array.from(document.querySelectorAll(`.${elementClasses.logoutButton}`)),
   }
 }
 
@@ -30,7 +36,10 @@ function render({ loading, error, unauthorized, user }) {
   // loading state
   if (loading) {
     els.login().style.display = 'none'
-    els.profile().style.display = 'none'
+
+    els.profileElements().forEach((element) => {
+      element.style.display = 'none'
+    })
     return
   }
 
@@ -38,20 +47,44 @@ function render({ loading, error, unauthorized, user }) {
   if (error) {
     // fallback to login
     els.login().style.display = 'flex'
-    els.profile().style.display = 'none'
+
+    els.profileElements().forEach((element) => {
+      element.style.display = 'none'
+    })
+    els.logoutButtonElements().forEach((element) => {
+      element.style.display = 'none'
+    })
     return
   }
 
   // unauthorized or no user
   if (unauthorized || !user) {
     els.login().style.display = 'flex'
-    els.profile().style.display = 'none'
+
+    els.profileElements().forEach((element) => {
+      element.style.display = 'none'
+    })
+    els.logoutButtonElements().forEach((element) => {
+      element.style.display = 'none'
+    })
   } else {
     els.login().style.display = 'none'
-    els.profile().style.display = 'flex'
-    els.name().innerText = user.name
-    els.email().innerText = user.email
-    els.avatar().src = user['avatar_url']
+
+    els.profileElements().forEach((element) => {
+      element.style.display = 'flex'
+    })
+    els.avatarElements().forEach((element) => {
+      element.src = user['avatar_url']
+    })
+    els.nameElements().forEach((element) => {
+      element.innerText = user.name
+    })
+    els.emailElements().forEach((element) => {
+      element.innerText = user.email
+    })
+    els.logoutButtonElements().forEach((element) => {
+      element.style.display = 'flex'
+    })
   }
 }
 
@@ -65,7 +98,10 @@ function onLoginError(err) {
 
 async function onLogoutClick() {
   // disable button and show spinner
-  els.logoutBtn().disabled = true
+  els.logoutButtonElements().forEach((element) => {
+    element.disabled = true
+  })
+
   render({ loading: true })
 
   try {
@@ -74,15 +110,17 @@ async function onLogoutClick() {
     render({ loading: false, unauthorized: true, user: null })
   } catch (err) {
     // on error, re-enable button and show message
-    els.logoutBtn().disabled = false
+    els.logoutButtonElements().forEach((element) => {
+      element.disabled = false
+    })
     render({ loading: false, error: err })
   }
 }
 
 /** Initialize the user component */
-export async function initUserComponent(elementIds) {
+export async function initUserComponent(elementIds, elementClasses) {
   // Initialize elements with provided IDs
-  initElements(elementIds)
+  initElements(elementIds, elementClasses)
 
   render({ loading: true })
 
@@ -98,5 +136,7 @@ export async function initUserComponent(elementIds) {
   await initGoogleAuth(onLoginSuccess, onLoginError)
 
   // Add logout event listener
-  els.logoutBtn().addEventListener('click', onLogoutClick)
+  els.logoutButtonElements().forEach((element) => {
+    element.addEventListener('click', onLogoutClick)
+  })
 }
