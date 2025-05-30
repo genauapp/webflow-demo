@@ -1,3 +1,7 @@
+body {
+    height: 100dvh;
+}
+
 @keyframes shimmer {
   0% {
     background-position: -200px 0;
@@ -28,3 +32,5 @@
 .highlight-animation {
   animation: highlight 1s ease-in-out;
 }
+
+
