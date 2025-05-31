@@ -31,4 +31,11 @@
 
 [data-slide-wrapper] {
   will-change: height;
+  contain: layout;
+  display: flex;
+  flex-direction: column;
+}
+
+[data-slide-wrapper] > * {
+  flex-shrink: 0; /* Prevent content squishing */
 }
