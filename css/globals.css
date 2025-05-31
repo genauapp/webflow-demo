@@ -28,3 +28,17 @@
 .highlight-animation {
   animation: highlight 1s ease-in-out;
 }
+
+/*  */
+
+.slideable {
+  transform-origin: top;
+  transform: scaleY(0);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.slideable.slideable--expanded {
+  transform: scaleY(1);
+  opacity: 1;
+}

@@ -1,16 +1,20 @@
-// /components/home/user.js
 import {
   protectedApiService,
   publicApiService,
 } from '../../service/apiService.js'
 import { initGoogleAuth } from '../../service/oauth2/googleAuthService.js'
 
+// 1) Import our slide helpers
+import { slideOpen, slideClose } from '../../utils/ui/slide.js'
+
 let els = {}
 
-/** Initialize elements dynamically using provided IDs */
+/**
+ * initElements: store getter functions for all relevant DOM nodes
+ */
 function initElements(elementIds, elementClasses) {
   els = {
-    login: () => document.getElementById(elementIds.login),
+    loginContainer: () => document.getElementById(elementIds.loginContainer),
 
     profileElements: () =>
       Array.from(document.querySelectorAll(`.${elementClasses.profile}`)),
@@ -25,104 +29,122 @@ function initElements(elementIds, elementClasses) {
   }
 }
 
-/** Show/hide according to simple flags */
+/**
+ * render: show/hide containers using slideOpen/slideClose instead of style.display
+ */
 function render({ loading, error, unauthorized, user }) {
-  // console.log('User Component States:')
-  // console.log(`-> loading: ${loading}`)
-  // console.log(`-> error: ${error}`)
-  // console.log(`-> unauthorized: ${unauthorized}`)
-  // console.log(`-> user: ${user}`)
+  const loginContainerEl = els.login()
+  const profileEls = els.profileElements() // Array of profile section containers
+  const avatarEls = els.avatarElements() // <img> tags inside profile
+  const nameEls = els.nameElements() // <span> or <div> for user name
+  const emailEls = els.emailElements() // <span> or <div> for user email
+  const logoutEls = els.logoutButtonElements() // Array of logout button(s)
 
-  // loading state
+  // ─── 1) LOADING: hide everything ─────────────────────────────────────────────
   if (loading) {
-    els.login().style.display = 'none'
-
-    els.profileElements().forEach((element) => {
-      element.style.display = 'none'
-    })
+    slideClose(loginContainerEl)
+    profileEls.forEach(slideClose)
+    logoutEls.forEach(slideClose)
     return
   }
 
-  // error state
+  // ─── 2) ERROR: show login, hide profile + logout ─────────────────────────────
   if (error) {
-    // fallback to login
-    els.login().style.display = 'flex'
-
-    els.profileElements().forEach((element) => {
-      element.style.display = 'none'
-    })
-    els.logoutButtonElements().forEach((element) => {
-      element.style.display = 'none'
-    })
+    // Show login button as FLEX container
+    slideOpen(loginContainerEl, 'flex')
+    // Hide any previously visible profile or logout
+    profileEls.forEach(slideClose)
+    logoutEls.forEach(slideClose)
     return
   }
 
-  // unauthorized or no user
+  // ─── 3) UNAUTHORIZED or NO USER: same as “ERROR” (profile & logout hidden) ───
   if (unauthorized || !user) {
-    els.login().style.display = 'flex'
-
-    els.profileElements().forEach((element) => {
-      element.style.display = 'none'
-    })
-    els.logoutButtonElements().forEach((element) => {
-      element.style.display = 'none'
-    })
-  } else {
-    els.login().style.display = 'none'
-
-    els.profileElements().forEach((element) => {
-      element.style.display = 'flex'
-    })
-    els.avatarElements().forEach((element) => {
-      element.src = user['avatar_url']
-    })
-    els.nameElements().forEach((element) => {
-      element.innerText = user.name
-    })
-    els.emailElements().forEach((element) => {
-      element.innerText = user.email
-    })
-    els.logoutButtonElements().forEach((element) => {
-      element.style.display = 'flex'
-    })
+    slideOpen(loginContainerEl, 'flex')
+    profileEls.forEach(slideClose)
+    logoutEls.forEach(slideClose)
+    return
   }
+
+  // ─── 4) AUTHORIZED (we have a valid user) ───────────────────────────────────
+  // Hide the login button
+  slideClose(loginContainerEl)
+
+  // Expand each profile container (display:flex), then populate the data inside
+  profileEls.forEach((el) => {
+    slideOpen(el, 'flex')
+  })
+  // Populate avatar, name, email
+  avatarEls.forEach((avatar) => {
+    avatar.src = user.avatar_url
+  })
+  nameEls.forEach((nameEl) => {
+    nameEl.innerText = user.name
+  })
+  emailEls.forEach((emailEl) => {
+    emailEl.innerText = user.email
+  })
+
+  // Finally, expand the logout button(s)
+  logoutEls.forEach((btn) => {
+    slideOpen(btn, 'flex')
+  })
 }
 
+/**
+ * Called when Google Auth succeeds
+ */
 function onLoginSuccess(user) {
   render({ loading: false, error: null, unauthorized: false, user })
 }
 
+/**
+ * Called when Google Auth fails
+ */
 function onLoginError(err) {
   render({ loading: false, error: err, unauthorized: true, user: null })
 }
 
+/**
+ * Logout click handler: show spinner (by hiding everything),
+ * call logout API, then re-render as “unauthorized”
+ */
 async function onLogoutClick() {
-  // disable button and show spinner
+  // Disable all logout buttons visually (you could also show a spinner inside)
   els.logoutButtonElements().forEach((element) => {
     element.disabled = true
   })
 
-  render({ loading: true })
+  // Collapse everything while we wait
+  render({ loading: true, error: null, unauthorized: false, user: null })
 
   try {
     await publicApiService.logout()
-    // after success, clear user
-    render({ loading: false, unauthorized: true, user: null })
+    // After successful logout → show login button only
+    render({ loading: false, error: null, unauthorized: true, user: null })
   } catch (err) {
-    // on error, re-enable button and show message
+    // On error, re-enable logout button(s) and show error
     els.logoutButtonElements().forEach((element) => {
       element.disabled = false
     })
-    render({ loading: false, error: err })
+    render({ loading: false, error: err, unauthorized: true, user: null })
   }
 }
 
-/** Initialize the user component */
+/**
+ * initUserComponent: entry point.
+ * 1) Initialize element references.
+ * 2) Render “loading” spinner.
+ * 3) Fetch user profile.
+ * 4) Render based on that result.
+ * 5) Initialize Google Auth (for future logins).
+ * 6) Add logout listeners.
+ */
 export async function initUserComponent(elementIds, elementClasses) {
-  // Initialize elements with provided IDs
   initElements(elementIds, elementClasses)
 
-  render({ loading: true })
+  // Show nothing (all collapsed) while we fetch
+  render({ loading: true, error: null, unauthorized: false, user: null })
 
   const {
     data: user,
@@ -131,12 +153,14 @@ export async function initUserComponent(elementIds, elementClasses) {
   } = await protectedApiService.getUserProfile()
   const unauthorized = status === 401 || status === 403
 
+  // Render now that we have the API result
   render({ loading: false, error, unauthorized, user })
 
+  // Set up Google Auth callbacks (for sign-in button)
   await initGoogleAuth(onLoginSuccess, onLoginError)
 
-  // Add logout event listener
-  els.logoutButtonElements().forEach((element) => {
-    element.addEventListener('click', onLogoutClick)
+  // Attach logout click handlers
+  els.logoutButtonElements().forEach((btn) => {
+    btn.addEventListener('click', onLogoutClick)
   })
 }
