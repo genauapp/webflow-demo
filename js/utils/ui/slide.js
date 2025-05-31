@@ -8,51 +8,40 @@ const animationStates = new WeakMap()
 
 /**
  * Get the natural height of an element's content
+ * Works even when element is display:none
  */
 function getContentHeight(element) {
-  // If element is currently collapsed, we need to temporarily show it to measure
-  const wasHidden = element.style.height === '0px' || element.style.display === 'none'
+  // Store original styles
+  const originalStyles = {
+    display: element.style.display,
+    position: element.style.position,
+    visibility: element.style.visibility,
+    height: element.style.height,
+    overflow: element.style.overflow,
+    opacity: element.style.opacity
+  }
   
-  if (wasHidden) {
-    // Temporarily make it visible but off-screen to measure
-    const originalStyles = {
-      position: element.style.position,
-      visibility: element.style.visibility,
-      height: element.style.height,
-      overflow: element.style.overflow
+  // Temporarily make it measurable
+  element.style.display = 'block'
+  element.style.position = 'absolute'
+  element.style.visibility = 'hidden'
+  element.style.height = 'auto'
+  element.style.overflow = 'visible'
+  element.style.opacity = '0'
+  
+  // Get the height
+  const height = element.scrollHeight
+  
+  // Restore all original styles
+  Object.entries(originalStyles).forEach(([key, value]) => {
+    if (value) {
+      element.style[key] = value
+    } else {
+      element.style.removeProperty(key.replace(/([A-Z])/g, '-$1').toLowerCase())
     }
-    
-    element.style.position = 'absolute'
-    element.style.visibility = 'hidden'
-    element.style.height = 'auto'
-    element.style.overflow = 'visible'
-    
-    const height = element.scrollHeight
-    
-    // Restore original styles
-    Object.assign(element.style, originalStyles)
-    
-    return height
-  }
+  })
   
-  return element.scrollHeight
-}
-
-/**
- * Initialize an element for sliding animations
- */
-function initSlideableElement(element) {
-  if (!element.classList.contains('slideable')) return
-  
-  // Set initial styles for smooth animations
-  element.style.overflow = 'hidden'
-  element.style.transition = 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease'
-  
-  // If element doesn't have explicit height, assume it should start collapsed
-  if (!element.style.height && element.offsetHeight === 0) {
-    element.style.height = '0px'
-    element.style.opacity = '0'
-  }
+  return height
 }
 
 /**
@@ -61,26 +50,21 @@ function initSlideableElement(element) {
  * @param {string} displayType - The display type to use (default: 'block')
  */
 export function slideOpen(element, displayType = 'block') {
-  if (!element || !element.classList.contains('slideable')) return
+  if (!element) return
   
   // Prevent conflicting animations
   if (animationStates.get(element) === 'opening') return
   animationStates.set(element, 'opening')
   
-  // Initialize if not already done
-  initSlideableElement(element)
-  
-  // Make sure element is visible
-  element.style.display = displayType
-  
-  // Get the target height
+  // Get the target height before making any changes
   const targetHeight = getContentHeight(element)
   
-  // Set starting state if collapsed
-  if (element.style.height === '0px') {
-    element.style.height = '0px'
-    element.style.opacity = '0'
-  }
+  // Set up the element for animation
+  element.style.overflow = 'hidden'
+  element.style.display = displayType
+  element.style.height = '0px'
+  element.style.opacity = '0'
+  element.style.transition = 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease'
   
   // Force reflow to ensure starting state is applied
   element.offsetHeight
@@ -91,8 +75,11 @@ export function slideOpen(element, displayType = 'block') {
   
   // Clean up after animation
   const cleanup = () => {
-    element.style.height = 'auto' // Allow natural height changes
-    animationStates.delete(element)
+    if (animationStates.get(element) === 'opening') {
+      element.style.height = 'auto' // Allow natural height changes
+      element.style.overflow = '' // Reset overflow
+      animationStates.delete(element)
+    }
     element.removeEventListener('transitionend', cleanup)
   }
   
@@ -107,14 +94,22 @@ export function slideOpen(element, displayType = 'block') {
  * @param {HTMLElement} element - The element to slide close
  */
 export function slideClose(element) {
-  if (!element || !element.classList.contains('slideable')) return
+  if (!element) return
   
   // Prevent conflicting animations
   if (animationStates.get(element) === 'closing') return
   animationStates.set(element, 'closing')
   
-  // Initialize if not already done
-  initSlideableElement(element)
+  // If already hidden, just ensure it stays hidden
+  if (element.style.display === 'none' || element.offsetHeight === 0) {
+    element.style.display = 'none'
+    animationStates.delete(element)
+    return
+  }
+  
+  // Set up for animation
+  element.style.overflow = 'hidden'
+  element.style.transition = 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease'
   
   // Get current height and set it explicitly for smooth animation
   const currentHeight = element.offsetHeight
@@ -129,8 +124,14 @@ export function slideClose(element) {
   
   // Clean up after animation
   const cleanup = () => {
-    element.style.display = 'none'
-    animationStates.delete(element)
+    if (animationStates.get(element) === 'closing') {
+      element.style.display = 'none'
+      element.style.height = ''
+      element.style.opacity = ''
+      element.style.overflow = ''
+      element.style.transition = ''
+      animationStates.delete(element)
+    }
     element.removeEventListener('transitionend', cleanup)
   }
   
@@ -148,8 +149,8 @@ export function slideClose(element) {
 export function slideToggle(element, displayType = 'block') {
   if (!element) return
   
-  const isCollapsed = element.style.height === '0px' || 
-                      element.style.display === 'none' || 
+  const isCollapsed = element.style.display === 'none' || 
+                      element.style.height === '0px' || 
                       element.offsetHeight === 0
   
   if (isCollapsed) {
@@ -159,15 +160,6 @@ export function slideToggle(element, displayType = 'block') {
   }
 }
 
-// /**
-//  * Initialize all slideable elements on the page
-//  * Call this once when your page loads
-//  */
-// export function initAllSlideableElements() {
-//   const slideableElements = document.querySelectorAll('.slideable')
-//   slideableElements.forEach(initSlideableElement)
-// }
-
 /**
  * Check if an element is currently sliding (animating)
  * @param {HTMLElement} element 
@@ -175,4 +167,18 @@ export function slideToggle(element, displayType = 'block') {
  */
 export function isSliding(element) {
   return animationStates.has(element)
+}
+
+/**
+ * Initialize all slideable elements on the page
+ * Call this once when your page loads if needed
+ */
+export function initAllSlideableElements() {
+  const slideableElements = document.querySelectorAll('.slideable')
+  slideableElements.forEach(element => {
+    // Just add the CSS class for overflow
+    if (!element.style.overflow) {
+      element.style.overflow = 'hidden'
+    }
+  })
 }
