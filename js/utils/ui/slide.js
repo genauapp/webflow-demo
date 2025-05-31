@@ -1,10 +1,9 @@
 const animationStates = new WeakMap();
 
-// Create or get animation wrapper
 function getSlideWrapper(element) {
   if (!element) return null;
   
-  // Check for existing wrapper
+  // Return existing wrapper if present
   if (element.parentElement?.hasAttribute('data-slide-wrapper')) {
     return element.parentElement;
   }
@@ -13,7 +12,6 @@ function getSlideWrapper(element) {
   const wrapper = document.createElement('div');
   wrapper.setAttribute('data-slide-wrapper', 'true');
   wrapper.style.overflow = 'hidden';
-  wrapper.style.transition = 'height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease';
   
   // Insert wrapper and move element into it
   element.parentNode.insertBefore(wrapper, element);
@@ -32,47 +30,56 @@ export function slideOpen(element, displayType = 'block') {
   if (animationStates.get(wrapper)) return;
   animationStates.set(wrapper, 'opening');
   
-  // Reset initial state
-  wrapper.style.display = displayType;
+  // Save original display type of inner element
+  const originalElementDisplay = element.style.display;
+  
+  // Set initial wrapper state
+  wrapper.style.display = 'block'; // Always use block for wrapper
   wrapper.style.height = '0';
   wrapper.style.opacity = '0';
+  wrapper.style.transition = 'height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease';
   
-  // Get current height (force layout calculation)
-  const startHeight = wrapper.offsetHeight;
-  const targetHeight = element.scrollHeight;
+  // Set inner element to display: block temporarily for measurement
+  element.style.display = 'block';
   
-  // Double-check if already visible
-  if (targetHeight === 0) {
-    animationStates.delete(wrapper);
-    return;
-  }
-  
-  // Trigger reflow before animating
-  wrapper.offsetHeight;
-  
-  // Animate to target height
-  wrapper.style.height = `${targetHeight}px`;
-  wrapper.style.opacity = '1';
-  
-  // Cleanup after animation completes
-  const finish = () => {
-    if (animationStates.get(wrapper) !== 'opening') return;
+  // Wait for next frame to ensure layout calculation
+  requestAnimationFrame(() => {
+    // Get target height
+    const targetHeight = element.scrollHeight;
     
-    // Enable natural height changes
-    wrapper.style.height = 'auto';
-    animationStates.delete(wrapper);
+    // Restore original display type of inner element
+    element.style.display = originalElementDisplay || '';
     
-    // Remove transition temporarily to prevent jumpiness
-    wrapper.style.transition = 'none';
-    requestAnimationFrame(() => {
-      wrapper.style.transition = '';
-    });
+    // If height is 0, skip animation
+    if (targetHeight <= 0) {
+      wrapper.style.display = displayType === 'flex' ? 'flex' : 'block';
+      wrapper.style.height = 'auto';
+      wrapper.style.opacity = '1';
+      animationStates.delete(wrapper);
+      return;
+    }
     
-    wrapper.removeEventListener('transitionend', finish);
-  };
-  
-  wrapper.addEventListener('transitionend', finish);
-  setTimeout(finish, 500); // Fallback timeout
+    // Force reflow
+    wrapper.offsetHeight;
+    
+    // Animate to target height
+    wrapper.style.height = `${targetHeight}px`;
+    wrapper.style.opacity = '1';
+    
+    // Cleanup after animation
+    const finish = () => {
+      if (animationStates.get(wrapper) !== 'opening') return;
+      
+      wrapper.style.height = 'auto';
+      wrapper.style.display = displayType === 'flex' ? 'flex' : 'block';
+      animationStates.delete(wrapper);
+      
+      wrapper.removeEventListener('transitionend', finish);
+    };
+    
+    wrapper.addEventListener('transitionend', finish);
+    setTimeout(finish, 500);
+  });
 }
 
 export function slideClose(element) {
@@ -88,7 +95,7 @@ export function slideClose(element) {
   // Capture current height
   const startHeight = element.scrollHeight;
   
-  // Only animate if element has visible height
+  // Skip animation if height is already 0
   if (startHeight <= 0) {
     wrapper.style.display = 'none';
     animationStates.delete(wrapper);
@@ -98,8 +105,9 @@ export function slideClose(element) {
   // Set starting point
   wrapper.style.height = `${startHeight}px`;
   wrapper.style.opacity = '1';
+  wrapper.style.transition = 'height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease';
   
-  // Trigger reflow
+  // Force reflow
   wrapper.offsetHeight;
   
   // Animate collapse
@@ -111,12 +119,11 @@ export function slideClose(element) {
     if (animationStates.get(wrapper) !== 'closing') return;
     
     wrapper.style.display = 'none';
-    wrapper.style.height = 'auto'; // Reset for future animations
     animationStates.delete(wrapper);
     
     wrapper.removeEventListener('transitionend', finish);
   };
   
   wrapper.addEventListener('transitionend', finish);
-  setTimeout(finish, 500); // Fallback timeout
+  setTimeout(finish, 500);
 }
