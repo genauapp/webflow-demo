@@ -4,7 +4,7 @@ import { initUserComponent } from '../components/home/user.js'
 const elementIds = {
   // User component elements
   user: {
-    login: 'login-container',
+    loginContainer: 'login-container',
   },
 }
 
