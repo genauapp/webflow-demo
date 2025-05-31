@@ -28,3 +28,7 @@
 .highlight-animation {
   animation: highlight 1s ease-in-out;
 }
+
+[data-slide-wrapper] {
+  will-change: height;
+}
