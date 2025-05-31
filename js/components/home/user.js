@@ -33,7 +33,7 @@ function initElements(elementIds, elementClasses) {
  * render: show/hide containers using slideOpen/slideClose instead of style.display
  */
 function render({ loading, error, unauthorized, user }) {
-  const loginContainerEl = els.login()
+  const loginContainerEl = els.loginContainer()
   const profileEls = els.profileElements() // Array of profile section containers
   const avatarEls = els.avatarElements() // <img> tags inside profile
   const nameEls = els.nameElements() // <span> or <div> for user name
