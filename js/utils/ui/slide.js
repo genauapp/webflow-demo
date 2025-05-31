@@ -1,47 +1,46 @@
 // ../../utils/ui/slide.js
 
 /**
- * slideOpen: smoothly expand an element from height: 0 → its full (rendered) height.
- * We temporarily “unhide” it off‐screen to measure getBoundingClientRect().height (which
- * includes padding & border). If your children have margins, make sure the wrapper has
- * non‐zero padding (e.g. padding:1px 0) so that margin-collapse is prevented.
+ * slideOpen: smoothly expand an element from height: 0 → its full rendered height.
+ * Uses getBoundingClientRect().height to account for padding/border (and avoids
+ * mid-transition jumps from child margins).
  *
  * @param {HTMLElement} el
- * @param {string} [displayType='block']  CSS display value to use while opened (e.g. 'flex', 'grid', etc.)
+ * @param {string} [displayType='block']  e.g. 'flex', 'grid', 'block', etc.
  */
 export function slideOpen(el, displayType = 'block') {
-  const cs = window.getComputedStyle(el);
-  // If it’s already visible (display≠none) and height≠0, do nothing.
-  if (cs.display !== 'none' && parseFloat(cs.height) > 0) {
+  const computed = window.getComputedStyle(el);
+  // If already visible and not zero‐height, do nothing
+  if (computed.display !== 'none' && parseFloat(computed.height) > 0) {
     return;
   }
 
-  // 1) Make it participate in layout off‐screen so we can measure:
-  el.style.display = displayType;
+  // 1) Make it render off-screen to measure its “auto” height:
   el.style.position = 'absolute';
   el.style.visibility = 'hidden';
-  // Ensure height:auto so getBoundingClientRect is correct:
+  el.style.display = displayType;
   el.style.height = 'auto';
+  el.style.overflow = 'visible';
 
-  // 2) Force a reflow & measure its “natural” rendered height:
-  const fullHeight = el.getBoundingClientRect().height + 'px';
+  // 2) Now that it’s laid out (off-screen), measure its true rendered height:
+  const fullHeightPx = el.getBoundingClientRect().height + 'px';
 
-  // 3) Restore it to normal flow but collapsed to 0:
+  // 3) Remove measurement styles so it returns to normal flow, but collapsed to 0:
   el.style.removeProperty('position');
   el.style.removeProperty('visibility');
   el.style.height = '0px';
   el.style.overflow = 'hidden';
 
-  // 4) Force a reflow so the browser registers height:0:
+  // 4) Force reflow so browser registers height=0 before we start animating:
+  //    (reading offsetHeight triggers it)
   // eslint-disable-next-line @typescript-eslint/no-unused-expressions
   el.offsetHeight;
 
-  // 5) Animate height → fullHeight:
+  // 5) Transition height: 0 → fullHeightPx
   el.style.transition = 'height 300ms ease';
-  el.style.height = fullHeight;
+  el.style.height = fullHeightPx;
 
-  // 6) Clean up after transition—remove all inline height/overflow/transition so
-  // the element can size itself naturally in the future:
+  // 6) On transition end, remove inline height/overflow/transition so it can go “auto” again
   function onEnd(e) {
     if (e.propertyName !== 'height') return;
     el.style.removeProperty('height');
@@ -53,33 +52,34 @@ export function slideOpen(el, displayType = 'block') {
 }
 
 /**
- * slideClose: smoothly collapse an element from its current rendered height → 0, then hide it.
- * Uses getBoundingClientRect().height to lock in an exact start height (including padding & border).
+ * slideClose: smoothly collapse an element from its current rendered height → 0,
+ * then set display:none. Reads getBoundingClientRect().height to account
+ * for padding/border (and any child margins that aren’t captured by scrollHeight).
  *
  * @param {HTMLElement} el
  */
 export function slideClose(el) {
-  const cs = window.getComputedStyle(el);
-  // If already hidden (display:none) or already 0px high, force display:none and bail:
-  if (cs.display === 'none' || parseFloat(cs.height) === 0) {
+  const computed = window.getComputedStyle(el);
+  // If already hidden (display:none) or effectively zero-height, just hide:
+  if (computed.display === 'none' || parseFloat(computed.height) === 0) {
     el.style.display = 'none';
     return;
   }
 
-  // 1) Measure its current rendered height (pixels):
-  const currentHeight = el.getBoundingClientRect().height + 'px';
-  el.style.height = currentHeight;
+  // 1) Lock in its current on-screen height:
+  const currentHeightPx = el.getBoundingClientRect().height + 'px';
+  el.style.height = currentHeightPx;
   el.style.overflow = 'hidden';
 
-  // 2) Force a reflow so the browser sees that height:
+  // 2) Force reflow (so browser knows we start from currentHeightPx):
   // eslint-disable-next-line @typescript-eslint/no-unused-expressions
   el.offsetHeight;
 
-  // 3) Animate height → 0:
+  // 3) Animate height: currentHeightPx → 0
   el.style.transition = 'height 300ms ease';
   el.style.height = '0px';
 
-  // 4) After transition, hide and clean up inline styles:
+  // 4) Once transition ends, hide it fully and clean up:
   function onEnd(e) {
     if (e.propertyName !== 'height') return;
     el.style.display = 'none';
