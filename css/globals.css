@@ -34,14 +34,4 @@
 /* Revised CSS */
 .slideable {
   overflow: hidden;
-  display: none;       /* Ensures element is hidden initially */
-  height: 0;           /* Consistent initial height */
-  opacity: 0;          /* Consistent initial opacity */
-  transition: 
-    height 1s ease, 
-    opacity 1s ease; /* Single transition declaration */
-}
-
-.slideable.expanded {
-  display: flex;      /* Only set display when expanded */
 }
