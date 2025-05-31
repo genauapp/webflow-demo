@@ -1,26 +1,24 @@
-/**
- * Smooth slide animations with proper margin/padding/border handling
- * Works with Webflow elements that have the 'slideable' class
- */
+// ../../utils/ui/slide.js
 
-// Store animation states to prevent conflicts
+// ─── Internal: track whether an element is mid-animation ──────────────────────
 const animationStates = new WeakMap()
 
 /**
- * Get the full height and spacing values including margins, padding, and borders
+ * getFullHeight: measure an element’s full “rendered” height (including padding/border),
+ * plus capture its top/bottom margins and padding so we can animate them.
  */
 function getFullHeight(element) {
-  // Store original styles
-  const originalStyles = {
+  // 1) Remember any inline styles we’ll overwrite
+  const original = {
     display: element.style.display,
     position: element.style.position,
     visibility: element.style.visibility,
     height: element.style.height,
     overflow: element.style.overflow,
-    opacity: element.style.opacity
+    opacity: element.style.opacity,
   }
 
-  // Temporarily make it measurable
+  // 2) Temporarily lay it out off-screen so content/margins don’t affect the visible page
   element.style.display = 'block'
   element.style.position = 'absolute'
   element.style.visibility = 'hidden'
@@ -28,275 +26,207 @@ function getFullHeight(element) {
   element.style.overflow = 'visible'
   element.style.opacity = '0'
 
-  // Get computed styles for all spacing properties
-  const computedStyle = window.getComputedStyle(element)
-  const marginTop = parseFloat(computedStyle.marginTop) || 0
-  const marginBottom = parseFloat(computedStyle.marginBottom) || 0
-  const paddingTop = parseFloat(computedStyle.paddingTop) || 0
-  const paddingBottom = parseFloat(computedStyle.paddingBottom) || 0
-  const borderTopWidth = parseFloat(computedStyle.borderTopWidth) || 0
-  const borderBottomWidth = parseFloat(computedStyle.borderBottomWidth) || 0
+  // 3) Read computed style to capture margins/padding/borders
+  const cs = window.getComputedStyle(element)
+  const marginTop    = parseFloat(cs.marginTop)    || 0
+  const marginBottom = parseFloat(cs.marginBottom) || 0
+  const paddingTop   = parseFloat(cs.paddingTop)   || 0
+  const paddingBottom= parseFloat(cs.paddingBottom)|| 0
+  const borderTop    = parseFloat(cs.borderTopWidth)|| 0
+  const borderBottom = parseFloat(cs.borderBottomWidth)|| 0
 
-  // scrollHeight includes padding and border, so we get content + padding + border
-  const scrollHeight = element.scrollHeight
-  // Total height is scrollHeight + margins
-  const totalHeight = scrollHeight + marginTop + marginBottom
+  // 4) scrollHeight includes content + padding + borders, but not margins.
+  const scrollH = element.scrollHeight
 
-  // Restore all original styles
-  Object.entries(originalStyles).forEach(([key, value]) => {
+  // 5) Restore all inline styles
+  Object.entries(original).forEach(([prop, value]) => {
     if (value) {
-      element.style[key] = value
+      element.style[prop] = value
     } else {
-      element.style.removeProperty(key.replace(/([A-Z])/g, '-$1').toLowerCase())
+      element.style.removeProperty(prop.replace(/([A-Z])/g, '-$1').toLowerCase())
     }
   })
 
-  return { 
-    totalHeight, 
-    marginTop, 
-    marginBottom, 
-    paddingTop, 
+  return {
+    totalHeight: scrollH + marginTop + marginBottom,
+    marginTop,
+    marginBottom,
+    paddingTop,
     paddingBottom,
-    borderTopWidth,
-    borderBottomWidth,
-    contentHeight: scrollHeight - paddingTop - paddingBottom - borderTopWidth - borderBottomWidth
+    borderTop,
+    borderBottom,
+    contentHeight: scrollH - paddingTop - paddingBottom - borderTop - borderBottom
   }
 }
 
 /**
- * Slide open an element smoothly with proper margin and padding handling
+ * slideOpen: expand an element from height:0 → its “full” height, + margins/padding/border.
+ * @param {HTMLElement} element
+ * @param {string} displayType  e.g. 'block', 'flex', 'grid' (default: 'block')
  */
 export function slideOpen(element, displayType = 'block') {
   if (!element) return
 
-  // Prevent conflicting animations
+  // 1) Don’t re-open if already opening
   if (animationStates.get(element) === 'opening') return
   animationStates.set(element, 'opening')
 
-  // Get the target dimensions
-  const { totalHeight, marginTop, marginBottom, paddingTop, paddingBottom, contentHeight } = getFullHeight(element)
+  // 2) Measure everything off-screen:
+  const {
+    totalHeight,
+    marginTop,
+    marginBottom,
+    paddingTop,
+    paddingBottom,
+    contentHeight
+  } = getFullHeight(element)
 
-  // Set up the element for animation - collapse all spacing
-  element.style.overflow = 'hidden'
-  element.style.display = displayType
-  element.style.height = '0px'
-  element.style.marginTop = '0px'
+  // 3) Initialize for animation: collapse height, margins, padding, opacity
+  element.style.display      = displayType
+  element.style.overflow     = 'hidden'
+  element.style.height       = '0px'
+  element.style.marginTop    = '0px'
   element.style.marginBottom = '0px'
-  element.style.paddingTop = '0px'
-  element.style.paddingBottom = '0px'
-  element.style.opacity = '0'
-  element.style.transition = 'height 1s ease, margin 1s ease, padding 1s ease, opacity 1s ease'
+  element.style.paddingTop   = '0px'
+  element.style.paddingBottom= '0px'
+  element.style.opacity      = '0'
+  element.style.transition   = [
+    'height 300ms ease',
+    'margin 300ms ease',
+    'padding 300ms ease',
+    'opacity 300ms ease'
+  ].join(', ')
 
-  // Force reflow to ensure starting state is applied
+  // 4) Force a reflow so starting state (all collapsed) takes effect
+  //    (reading offsetHeight triggers the browser to paint that “zeroed” state)
+  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
   element.offsetHeight
 
-  // Animate to target state
-  element.style.height = `${contentHeight}px`
-  element.style.marginTop = `${marginTop}px`
+  // 5) Animate to the measured values
+  element.style.height       = `${contentHeight}px`
+  element.style.marginTop    = `${marginTop}px`
   element.style.marginBottom = `${marginBottom}px`
-  element.style.paddingTop = `${paddingTop}px`
-  element.style.paddingBottom = `${paddingBottom}px`
-  element.style.opacity = '1'
+  element.style.paddingTop   = `${paddingTop}px`
+  element.style.paddingBottom= `${paddingBottom}px`
+  element.style.opacity      = '1'
 
-  // Clean up after animation
-  const cleanup = () => {
+  // 6) Cleanup after the transition ends
+  const cleanup = (e) => {
+    if (e && e.propertyName !== 'height') return
+    // Only clear styles if we’re still in “opening” state
     if (animationStates.get(element) === 'opening') {
-      element.style.height = 'auto'
-      element.style.marginTop = ''
-      element.style.marginBottom = ''
-      element.style.paddingTop = ''
-      element.style.paddingBottom = ''
-      element.style.overflow = ''
-      element.style.transition = ''
+      element.style.removeProperty('height')
+      element.style.removeProperty('overflow')
+      element.style.removeProperty('transition')
+      element.style.removeProperty('margin-top')
+      element.style.removeProperty('margin-bottom')
+      element.style.removeProperty('padding-top')
+      element.style.removeProperty('padding-bottom')
+      element.style.removeProperty('opacity')
       animationStates.delete(element)
     }
     element.removeEventListener('transitionend', cleanup)
   }
 
   element.addEventListener('transitionend', cleanup)
-  setTimeout(cleanup, 1000) // Fallback
+  // Fallback in case `transitionend` never fires (e.g. displayType ‘none’ forced mid-animation)
+  setTimeout(cleanup, 350)
 }
 
 /**
- * Slide close an element smoothly with proper margin and padding handling
+ * slideClose: collapse an element from its current size → 0, including margins/padding/border,
+ * then hide it (display:none).
+ * @param {HTMLElement} element
  */
 export function slideClose(element) {
   if (!element) return
 
-  // Prevent conflicting animations
+  // 1) Don’t re-collapse if already closing
   if (animationStates.get(element) === 'closing') return
   animationStates.set(element, 'closing')
 
-  // If already hidden, just ensure it stays hidden
-  if (element.style.display === 'none' || element.offsetHeight === 0) {
+  // 2) If already hidden or zero-height, bail
+  const cs = window.getComputedStyle(element)
+  if (cs.display === 'none' || element.offsetHeight === 0) {
     element.style.display = 'none'
     animationStates.delete(element)
     return
   }
 
-  // Get current dimensions
-  const computedStyle = window.getComputedStyle(element)
-  const currentHeight = element.offsetHeight
-  const currentMarginTop = parseFloat(computedStyle.marginTop) || 0
-  const currentMarginBottom = parseFloat(computedStyle.marginBottom) || 0
-  const currentPaddingTop = parseFloat(computedStyle.paddingTop) || 0
-  const currentPaddingBottom = parseFloat(computedStyle.paddingBottom) || 0
-  const borderTopWidth = parseFloat(computedStyle.borderTopWidth) || 0
-  const borderBottomWidth = parseFloat(computedStyle.borderBottomWidth) || 0
+  // 3) Read current margins, padding, border
+  const currentHeight      = element.getBoundingClientRect().height
+  const marginTop          = parseFloat(cs.marginTop)    || 0
+  const marginBottom       = parseFloat(cs.marginBottom) || 0
+  const paddingTop         = parseFloat(cs.paddingTop)   || 0
+  const paddingBottom      = parseFloat(cs.paddingBottom)|| 0
+  const borderTop          = parseFloat(cs.borderTopWidth)|| 0
+  const borderBottom       = parseFloat(cs.borderBottomWidth)|| 0
 
-  // Calculate content height (excluding padding and border)
-  const contentHeight = currentHeight - currentPaddingTop - currentPaddingBottom - borderTopWidth - borderBottomWidth
+  // 4) Calculate “contentHeight” (excluding padding/border) so we collapse exactly
+  const contentHeight = currentHeight - paddingTop - paddingBottom - borderTop - borderBottom
 
-  // Set up for animation with explicit values
-  element.style.overflow = 'hidden'
-  element.style.height = `${contentHeight}px`
-  element.style.marginTop = `${currentMarginTop}px`
-  element.style.marginBottom = `${currentMarginBottom}px`
-  element.style.paddingTop = `${currentPaddingTop}px`
-  element.style.paddingBottom = `${currentPaddingBottom}px`
-  element.style.transition = 'height 1s ease, margin 1s ease, padding 1s ease, opacity 1s ease'
+  // 5) Fix current values inline, then animate to zero
+  element.style.overflow     = 'hidden'
+  element.style.height       = `${contentHeight}px`
+  element.style.marginTop    = `${marginTop}px`
+  element.style.marginBottom = `${marginBottom}px`
+  element.style.paddingTop   = `${paddingTop}px`
+  element.style.paddingBottom= `${paddingBottom}px`
+  element.style.opacity      = '1'
+  element.style.transition   = [
+    'height 300ms ease',
+    'margin 300ms ease',
+    'padding 300ms ease',
+    'opacity 300ms ease'
+  ].join(', ')
 
-  // Force reflow
+  // Force reflow (so browser knows the “from” state)
+  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
   element.offsetHeight
 
-  // Animate to collapsed state
-  element.style.height = '0px'
-  element.style.marginTop = '0px'
+  // Animate everything → 0
+  element.style.height       = '0px'
+  element.style.marginTop    = '0px'
   element.style.marginBottom = '0px'
-  element.style.paddingTop = '0px'
-  element.style.paddingBottom = '0px'
-  element.style.opacity = '0'
+  element.style.paddingTop   = '0px'
+  element.style.paddingBottom= '0px'
+  element.style.opacity      = '0'
 
-  // Clean up after animation
-  const cleanup = () => {
+  // 6) Cleanup once collapsed
+  const cleanup = (e) => {
+    if (e && e.propertyName !== 'height') return
     if (animationStates.get(element) === 'closing') {
-      element.style.display = 'none'
-      element.style.height = ''
-      element.style.marginTop = ''
-      element.style.marginBottom = ''
-      element.style.paddingTop = ''
-      element.style.paddingBottom = ''
-      element.style.opacity = ''
-      element.style.overflow = ''
-      element.style.transition = ''
+      element.style.display       = 'none'
+      element.style.removeProperty('height')
+      element.style.removeProperty('overflow')
+      element.style.removeProperty('transition')
+      element.style.removeProperty('margin-top')
+      element.style.removeProperty('margin-bottom')
+      element.style.removeProperty('padding-top')
+      element.style.removeProperty('padding-bottom')
+      element.style.removeProperty('opacity')
       animationStates.delete(element)
     }
     element.removeEventListener('transitionend', cleanup)
   }
 
   element.addEventListener('transitionend', cleanup)
-  setTimeout(cleanup, 1000) // Fallback
+  setTimeout(cleanup, 350)
 }
 
 /**
- * Alternative: Wrapper-based approach for complex elements
- * This creates a wrapper div that handles the animation
+ * slideToggle: convenience method (open ↔ close)
  */
-export function slideOpenWithWrapper(element, displayType = 'block') {
-  if (!element) return
-
-  // Check if wrapper already exists
-  let wrapper = element.parentElement
-  if (!wrapper || !wrapper.hasAttribute('data-slide-wrapper')) {
-    // Create wrapper
-    wrapper = document.createElement('div')
-    wrapper.setAttribute('data-slide-wrapper', 'true')
-    wrapper.style.overflow = 'hidden'
-
-    // Insert wrapper and move element inside
-    element.parentNode.insertBefore(wrapper, element)
-    wrapper.appendChild(element)
-  }
-
-  // Prevent conflicting animations
-  if (animationStates.get(wrapper) === 'opening') return
-  animationStates.set(wrapper, 'opening')
-
-  // Get target height (element's natural height)
-  const targetHeight = element.scrollHeight
-
-  // Set up wrapper for animation
-  wrapper.style.display = displayType
-  wrapper.style.height = '0px'
-  wrapper.style.opacity = '0'
-  wrapper.style.transition = 'height 1s ease, opacity 1s ease'
-
-  // Show the inner element
-  element.style.display = displayType
-
-  // Force reflow
-  wrapper.offsetHeight
-
-  // Animate wrapper
-  wrapper.style.height = `${targetHeight}px`
-  wrapper.style.opacity = '1'
-
-  // Cleanup
-  const cleanup = () => {
-    if (animationStates.get(wrapper) === 'opening') {
-      wrapper.style.height = 'auto'
-      animationStates.delete(wrapper)
-    }
-    wrapper.removeEventListener('transitionend', cleanup)
-  }
-
-  wrapper.addEventListener('transitionend', cleanup)
-  setTimeout(cleanup, 1000)
-}
-
-/**
- * CSS-only solution helper
- * Add this CSS to your stylesheet for the simplest approach:
- */
-export function addSmoothSlideCSS() {
-  const css = `
-    .slide-element {
-      transition: all 1s ease;
-      overflow: hidden;
-    }
-    
-    .slide-closed {
-      height: 0 !important;
-      margin-top: 0 !important;
-      margin-bottom: 0 !important;
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
-      border-top-width: 0 !important;
-      border-bottom-width: 0 !important;
-      opacity: 0;
-    }
-  `
-
-  const style = document.createElement('style')
-  style.textContent = css
-  document.head.appendChild(style)
-}
-
-/**
- * Simple CSS-based toggle (requires addSmoothSlideCSS to be called first)
- */
-export function simpleSlideToggle(element) {
-  if (!element) return
-
-  element.classList.add('slide-element')
-  element.classList.toggle('slide-closed')
-}
-
-// Keep original functions for backward compatibility
 export function slideToggle(element, displayType = 'block') {
-  if (!element) return
-
-  const isCollapsed = element.style.display === 'none' || 
-                      element.style.height === '0px' || 
-                      element.offsetHeight === 0
-
-  if (isCollapsed) {
-    slideOpen(element, displayType)
-  } else {
-    slideClose(element)
-  }
+  const cs = window.getComputedStyle(element)
+  const isHidden = cs.display === 'none' || element.offsetHeight === 0
+  if (isHidden) slideOpen(element, displayType)
+  else slideClose(element)
 }
 
+/**
+ * isSliding: returns true if an element is mid-transition
+ */
 export function isSliding(element) {
   return animationStates.has(element)
 }
