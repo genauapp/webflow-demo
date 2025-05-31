@@ -9,8 +9,8 @@ const animationStates = new WeakMap()
 // Default animation options (duration in ms, easing curve)
 // ──────────────────────────────────────────────────────────────────────────────
 const DEFAULT_OPTS = {
-  duration: 300,        // milliseconds
-  easing: 'ease',       // any valid CSS easing (e.g. 'ease-in-out', 'cubic-bezier(...)')
+  duration: 600,                    // longer, smoother feel
+  easing: 'cubic-bezier(0.4, 0, 0.2, 1)', // gentle “fast out, slow in”
   props: ['height', 'margin', 'padding', 'opacity'],
 }
 
