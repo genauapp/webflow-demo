@@ -32,13 +32,12 @@
 /*  */
 
 .slideable {
-  transform-origin: top;
-  transform: scaleY(0);
+  overflow: hidden;
+  height: 0;
   opacity: 0;
-  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  transition: height 0.3s ease, opacity 0.3s ease;
 }
 
-.slideable.slideable--expanded {
-  transform: scaleY(1);
+.slideable.expanded {
   opacity: 1;
 }
