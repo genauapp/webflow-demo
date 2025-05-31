@@ -241,7 +241,7 @@ export function slideOpenWithWrapper(element, displayType = 'block') {
   }
 
   wrapper.addEventListener('transitionend', cleanup)
-  setTimeout(cleanup, 350)
+  setTimeout(cleanup, 1000)
 }
 
 /**
