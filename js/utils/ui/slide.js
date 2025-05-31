@@ -114,7 +114,7 @@ export function slideOpen(element, displayType = 'block') {
   }
   
   element.addEventListener('transitionend', cleanup)
-  setTimeout(cleanup, 350) // Fallback
+  setTimeout(cleanup, 1000) // Fallback
 }
 
 /**
@@ -185,7 +185,7 @@ export function slideClose(element) {
   }
   
   element.addEventListener('transitionend', cleanup)
-  setTimeout(cleanup, 350) // Fallback
+  setTimeout(cleanup, 1000) // Fallback
 }
 
 /**
