@@ -1,5 +1,5 @@
 /**
- * Smooth slide animations for elements with dynamic heights
+ * Smooth slide animations with proper margin/padding/border handling
  * Works with Webflow elements that have the 'slideable' class
  */
 
@@ -7,10 +7,9 @@
 const animationStates = new WeakMap()
 
 /**
- * Get the natural height of an element's content
- * Works even when element is display:none
+ * Get the full height including margins, padding, and borders
  */
-function getContentHeight(element) {
+function getFullHeight(element) {
   // Store original styles
   const originalStyles = {
     display: element.style.display,
@@ -29,8 +28,14 @@ function getContentHeight(element) {
   element.style.overflow = 'visible'
   element.style.opacity = '0'
   
-  // Get the height
-  const height = element.scrollHeight
+  // Get computed styles for margins
+  const computedStyle = window.getComputedStyle(element)
+  const marginTop = parseFloat(computedStyle.marginTop) || 0
+  const marginBottom = parseFloat(computedStyle.marginBottom) || 0
+  
+  // Get the total height (scrollHeight includes padding and border)
+  const contentHeight = element.scrollHeight
+  const totalHeight = contentHeight + marginTop + marginBottom
   
   // Restore all original styles
   Object.entries(originalStyles).forEach(([key, value]) => {
@@ -41,13 +46,11 @@ function getContentHeight(element) {
     }
   })
   
-  return height
+  return { totalHeight, marginTop, marginBottom }
 }
 
 /**
- * Slide open an element smoothly
- * @param {HTMLElement} element - The element to slide open
- * @param {string} displayType - The display type to use (default: 'block')
+ * Slide open an element smoothly with proper margin handling
  */
 export function slideOpen(element, displayType = 'block') {
   if (!element) return
@@ -56,42 +59,46 @@ export function slideOpen(element, displayType = 'block') {
   if (animationStates.get(element) === 'opening') return
   animationStates.set(element, 'opening')
   
-  // Get the target height before making any changes
-  const targetHeight = getContentHeight(element)
+  // Get the target dimensions
+  const { totalHeight, marginTop, marginBottom } = getFullHeight(element)
   
   // Set up the element for animation
   element.style.overflow = 'hidden'
   element.style.display = displayType
   element.style.height = '0px'
+  element.style.marginTop = '0px'
+  element.style.marginBottom = '0px'
   element.style.opacity = '0'
-  element.style.transition = 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease'
+  element.style.transition = 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1), margin 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease'
   
   // Force reflow to ensure starting state is applied
   element.offsetHeight
   
-  // Animate to target height
-  element.style.height = `${targetHeight}px`
+  // Animate to target state
+  element.style.height = `${totalHeight - marginTop - marginBottom}px`
+  element.style.marginTop = `${marginTop}px`
+  element.style.marginBottom = `${marginBottom}px`
   element.style.opacity = '1'
   
   // Clean up after animation
   const cleanup = () => {
     if (animationStates.get(element) === 'opening') {
-      element.style.height = 'auto' // Allow natural height changes
-      element.style.overflow = '' // Reset overflow
+      element.style.height = 'auto'
+      element.style.marginTop = ''
+      element.style.marginBottom = ''
+      element.style.overflow = ''
+      element.style.transition = ''
       animationStates.delete(element)
     }
     element.removeEventListener('transitionend', cleanup)
   }
   
   element.addEventListener('transitionend', cleanup)
-  
-  // Fallback cleanup in case transitionend doesn't fire
-  setTimeout(cleanup, 350)
+  setTimeout(cleanup, 350) // Fallback
 }
 
 /**
- * Slide close an element smoothly
- * @param {HTMLElement} element - The element to slide close
+ * Slide close an element smoothly with proper margin handling
  */
 export function slideClose(element) {
   if (!element) return
@@ -107,19 +114,26 @@ export function slideClose(element) {
     return
   }
   
+  // Get current dimensions
+  const computedStyle = window.getComputedStyle(element)
+  const currentHeight = element.offsetHeight
+  const currentMarginTop = parseFloat(computedStyle.marginTop) || 0
+  const currentMarginBottom = parseFloat(computedStyle.marginBottom) || 0
+  
   // Set up for animation
   element.style.overflow = 'hidden'
-  element.style.transition = 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease'
-  
-  // Get current height and set it explicitly for smooth animation
-  const currentHeight = element.offsetHeight
   element.style.height = `${currentHeight}px`
+  element.style.marginTop = `${currentMarginTop}px`
+  element.style.marginBottom = `${currentMarginBottom}px`
+  element.style.transition = 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1), margin 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease'
   
   // Force reflow
   element.offsetHeight
   
   // Animate to collapsed state
   element.style.height = '0px'
+  element.style.marginTop = '0px'
+  element.style.marginBottom = '0px'
   element.style.opacity = '0'
   
   // Clean up after animation
@@ -127,6 +141,8 @@ export function slideClose(element) {
     if (animationStates.get(element) === 'closing') {
       element.style.display = 'none'
       element.style.height = ''
+      element.style.marginTop = ''
+      element.style.marginBottom = ''
       element.style.opacity = ''
       element.style.overflow = ''
       element.style.transition = ''
@@ -136,16 +152,102 @@ export function slideClose(element) {
   }
   
   element.addEventListener('transitionend', cleanup)
+  setTimeout(cleanup, 350) // Fallback
+}
+
+/**
+ * Alternative: Wrapper-based approach for complex elements
+ * This creates a wrapper div that handles the animation
+ */
+export function slideOpenWithWrapper(element, displayType = 'block') {
+  if (!element) return
   
-  // Fallback cleanup
+  // Check if wrapper already exists
+  let wrapper = element.parentElement
+  if (!wrapper || !wrapper.hasAttribute('data-slide-wrapper')) {
+    // Create wrapper
+    wrapper = document.createElement('div')
+    wrapper.setAttribute('data-slide-wrapper', 'true')
+    wrapper.style.overflow = 'hidden'
+    
+    // Insert wrapper and move element inside
+    element.parentNode.insertBefore(wrapper, element)
+    wrapper.appendChild(element)
+  }
+  
+  // Prevent conflicting animations
+  if (animationStates.get(wrapper) === 'opening') return
+  animationStates.set(wrapper, 'opening')
+  
+  // Get target height (element's natural height)
+  const targetHeight = element.scrollHeight
+  
+  // Set up wrapper for animation
+  wrapper.style.display = displayType
+  wrapper.style.height = '0px'
+  wrapper.style.opacity = '0'
+  wrapper.style.transition = 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease'
+  
+  // Show the inner element
+  element.style.display = displayType
+  
+  // Force reflow
+  wrapper.offsetHeight
+  
+  // Animate wrapper
+  wrapper.style.height = `${targetHeight}px`
+  wrapper.style.opacity = '1'
+  
+  // Cleanup
+  const cleanup = () => {
+    if (animationStates.get(wrapper) === 'opening') {
+      wrapper.style.height = 'auto'
+      animationStates.delete(wrapper)
+    }
+    wrapper.removeEventListener('transitionend', cleanup)
+  }
+  
+  wrapper.addEventListener('transitionend', cleanup)
   setTimeout(cleanup, 350)
 }
 
 /**
- * Toggle slide state of an element
- * @param {HTMLElement} element - The element to toggle
- * @param {string} displayType - The display type to use when opening
+ * CSS-only solution helper
+ * Add this CSS to your stylesheet for the simplest approach:
  */
+export function addSmoothSlideCSS() {
+  const css = `
+    .slide-element {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+    
+    .slide-closed {
+      height: 0 !important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      opacity: 0;
+    }
+  `
+  
+  const style = document.createElement('style')
+  style.textContent = css
+  document.head.appendChild(style)
+}
+
+/**
+ * Simple CSS-based toggle (requires addSmoothSlideCSS to be called first)
+ */
+export function simpleSlideToggle(element) {
+  if (!element) return
+  
+  element.classList.add('slide-element')
+  element.classList.toggle('slide-closed')
+}
+
+// Keep original functions for backward compatibility
 export function slideToggle(element, displayType = 'block') {
   if (!element) return
   
@@ -160,23 +262,13 @@ export function slideToggle(element, displayType = 'block') {
   }
 }
 
-/**
- * Check if an element is currently sliding (animating)
- * @param {HTMLElement} element 
- * @returns {boolean}
- */
 export function isSliding(element) {
   return animationStates.has(element)
 }
 
-/**
- * Initialize all slideable elements on the page
- * Call this once when your page loads if needed
- */
 export function initAllSlideableElements() {
   const slideableElements = document.querySelectorAll('.slideable')
   slideableElements.forEach(element => {
-    // Just add the CSS class for overflow
     if (!element.style.overflow) {
       element.style.overflow = 'hidden'
     }
