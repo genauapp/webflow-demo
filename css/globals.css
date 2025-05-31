@@ -28,10 +28,3 @@
 .highlight-animation {
   animation: highlight 1s ease-in-out;
 }
-
-/*  */
-
-/* Revised CSS */
-.slideable {
-  overflow: hidden;
-}
