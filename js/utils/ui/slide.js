@@ -85,7 +85,7 @@ export function slideOpen(element, displayType = 'block') {
   element.style.paddingTop = '0px'
   element.style.paddingBottom = '0px'
   element.style.opacity = '0'
-  element.style.transition = 'height 1s cubic-bezier(0.4, 0, 0.2, 1), margin 1s cubic-bezier(0.4, 0, 0.2, 1), padding 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease'
+  element.style.transition = 'height 1s ease-in-out, margin 1s ease-in-out, padding 1s ease-in-out, opacity 1s ease'
   
   // Force reflow to ensure starting state is applied
   element.offsetHeight
@@ -154,7 +154,7 @@ export function slideClose(element) {
   element.style.marginBottom = `${currentMarginBottom}px`
   element.style.paddingTop = `${currentPaddingTop}px`
   element.style.paddingBottom = `${currentPaddingBottom}px`
-  element.style.transition = 'height 1s cubic-bezier(0.4, 0, 0.2, 1), margin 1s cubic-bezier(0.4, 0, 0.2, 1), padding 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease'
+  element.style.transition = 'height 1s ease-in-out, margin 1s ease-in-out, padding 1s ease-in-out, opacity 1s ease'
   
   // Force reflow
   element.offsetHeight
@@ -219,7 +219,7 @@ export function slideOpenWithWrapper(element, displayType = 'block') {
   wrapper.style.display = displayType
   wrapper.style.height = '0px'
   wrapper.style.opacity = '0'
-  wrapper.style.transition = 'height 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease'
+  wrapper.style.transition = 'height 1s ease-in-out, opacity 1s ease'
   
   // Show the inner element
   element.style.display = displayType
@@ -251,7 +251,7 @@ export function slideOpenWithWrapper(element, displayType = 'block') {
 export function addSmoothSlideCSS() {
   const css = `
     .slide-element {
-      transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 1s ease-in-out;
       overflow: hidden;
     }
     
