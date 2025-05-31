@@ -7,7 +7,7 @@
 const animationStates = new WeakMap()
 
 /**
- * Get the full height including margins, padding, and borders
+ * Get the full height and spacing values including margins, padding, and borders
  */
 function getFullHeight(element) {
   // Store original styles
@@ -28,14 +28,19 @@ function getFullHeight(element) {
   element.style.overflow = 'visible'
   element.style.opacity = '0'
   
-  // Get computed styles for margins
+  // Get computed styles for all spacing properties
   const computedStyle = window.getComputedStyle(element)
   const marginTop = parseFloat(computedStyle.marginTop) || 0
   const marginBottom = parseFloat(computedStyle.marginBottom) || 0
+  const paddingTop = parseFloat(computedStyle.paddingTop) || 0
+  const paddingBottom = parseFloat(computedStyle.paddingBottom) || 0
+  const borderTopWidth = parseFloat(computedStyle.borderTopWidth) || 0
+  const borderBottomWidth = parseFloat(computedStyle.borderBottomWidth) || 0
   
-  // Get the total height (scrollHeight includes padding and border)
-  const contentHeight = element.scrollHeight
-  const totalHeight = contentHeight + marginTop + marginBottom
+  // scrollHeight includes padding and border, so we get content + padding + border
+  const scrollHeight = element.scrollHeight
+  // Total height is scrollHeight + margins
+  const totalHeight = scrollHeight + marginTop + marginBottom
   
   // Restore all original styles
   Object.entries(originalStyles).forEach(([key, value]) => {
@@ -46,11 +51,20 @@ function getFullHeight(element) {
     }
   })
   
-  return { totalHeight, marginTop, marginBottom }
+  return { 
+    totalHeight, 
+    marginTop, 
+    marginBottom, 
+    paddingTop, 
+    paddingBottom,
+    borderTopWidth,
+    borderBottomWidth,
+    contentHeight: scrollHeight - paddingTop - paddingBottom - borderTopWidth - borderBottomWidth
+  }
 }
 
 /**
- * Slide open an element smoothly with proper margin handling
+ * Slide open an element smoothly with proper margin and padding handling
  */
 export function slideOpen(element, displayType = 'block') {
   if (!element) return
@@ -60,24 +74,28 @@ export function slideOpen(element, displayType = 'block') {
   animationStates.set(element, 'opening')
   
   // Get the target dimensions
-  const { totalHeight, marginTop, marginBottom } = getFullHeight(element)
+  const { totalHeight, marginTop, marginBottom, paddingTop, paddingBottom, contentHeight } = getFullHeight(element)
   
-  // Set up the element for animation
+  // Set up the element for animation - collapse all spacing
   element.style.overflow = 'hidden'
   element.style.display = displayType
   element.style.height = '0px'
   element.style.marginTop = '0px'
   element.style.marginBottom = '0px'
+  element.style.paddingTop = '0px'
+  element.style.paddingBottom = '0px'
   element.style.opacity = '0'
-  element.style.transition = 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1), margin 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease'
+  element.style.transition = 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1), margin 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease'
   
   // Force reflow to ensure starting state is applied
   element.offsetHeight
   
   // Animate to target state
-  element.style.height = `${totalHeight - marginTop - marginBottom}px`
+  element.style.height = `${contentHeight}px`
   element.style.marginTop = `${marginTop}px`
   element.style.marginBottom = `${marginBottom}px`
+  element.style.paddingTop = `${paddingTop}px`
+  element.style.paddingBottom = `${paddingBottom}px`
   element.style.opacity = '1'
   
   // Clean up after animation
@@ -86,6 +104,8 @@ export function slideOpen(element, displayType = 'block') {
       element.style.height = 'auto'
       element.style.marginTop = ''
       element.style.marginBottom = ''
+      element.style.paddingTop = ''
+      element.style.paddingBottom = ''
       element.style.overflow = ''
       element.style.transition = ''
       animationStates.delete(element)
@@ -98,7 +118,7 @@ export function slideOpen(element, displayType = 'block') {
 }
 
 /**
- * Slide close an element smoothly with proper margin handling
+ * Slide close an element smoothly with proper margin and padding handling
  */
 export function slideClose(element) {
   if (!element) return
@@ -119,13 +139,22 @@ export function slideClose(element) {
   const currentHeight = element.offsetHeight
   const currentMarginTop = parseFloat(computedStyle.marginTop) || 0
   const currentMarginBottom = parseFloat(computedStyle.marginBottom) || 0
+  const currentPaddingTop = parseFloat(computedStyle.paddingTop) || 0
+  const currentPaddingBottom = parseFloat(computedStyle.paddingBottom) || 0
+  const borderTopWidth = parseFloat(computedStyle.borderTopWidth) || 0
+  const borderBottomWidth = parseFloat(computedStyle.borderBottomWidth) || 0
   
-  // Set up for animation
+  // Calculate content height (excluding padding and border)
+  const contentHeight = currentHeight - currentPaddingTop - currentPaddingBottom - borderTopWidth - borderBottomWidth
+  
+  // Set up for animation with explicit values
   element.style.overflow = 'hidden'
-  element.style.height = `${currentHeight}px`
+  element.style.height = `${contentHeight}px`
   element.style.marginTop = `${currentMarginTop}px`
   element.style.marginBottom = `${currentMarginBottom}px`
-  element.style.transition = 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1), margin 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease'
+  element.style.paddingTop = `${currentPaddingTop}px`
+  element.style.paddingBottom = `${currentPaddingBottom}px`
+  element.style.transition = 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1), margin 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease'
   
   // Force reflow
   element.offsetHeight
@@ -134,6 +163,8 @@ export function slideClose(element) {
   element.style.height = '0px'
   element.style.marginTop = '0px'
   element.style.marginBottom = '0px'
+  element.style.paddingTop = '0px'
+  element.style.paddingBottom = '0px'
   element.style.opacity = '0'
   
   // Clean up after animation
@@ -143,6 +174,8 @@ export function slideClose(element) {
       element.style.height = ''
       element.style.marginTop = ''
       element.style.marginBottom = ''
+      element.style.paddingTop = ''
+      element.style.paddingBottom = ''
       element.style.opacity = ''
       element.style.overflow = ''
       element.style.transition = ''
@@ -228,6 +261,8 @@ export function addSmoothSlideCSS() {
       margin-bottom: 0 !important;
       padding-top: 0 !important;
       padding-bottom: 0 !important;
+      border-top-width: 0 !important;
+      border-bottom-width: 0 !important;
       opacity: 0;
     }
   `
