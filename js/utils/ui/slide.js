@@ -1,44 +1,96 @@
 export function slideOpen(el, displayMode = 'block') {
-  if (!el || el.classList.contains('expanded')) return;
+  if (!el) return;
   
-  // Set initial state
+  // If already expanded, just ensure it's visible
+  if (el.classList.contains('expanded')) {
+    el.style.display = displayMode;
+    return;
+  }
+  
+  // Clear any existing transition end listeners
+  el.removeEventListener('transitionend', el._slideTransitionHandler);
+  
+  // Set up CSS transition if not already present
+  if (!el.style.transition) {
+    el.style.transition = 'height 0.3s ease-out, opacity 0.3s ease-out';
+  }
+  
+  // Set initial collapsed state
   el.style.display = displayMode;
-  el.style.height = '0';
+  el.style.overflow = 'hidden';
+  el.style.height = '0px';
   el.style.opacity = '0';
-  el.classList.add('expanded');
   
-  // Get natural height
-  const fullHeight = el.scrollHeight + 'px';
+  // Force reflow to ensure initial state is applied
+  el.offsetHeight;
   
-  // Trigger reflow to apply initial state
-  void el.offsetHeight;
+  // Get the natural height by temporarily removing height constraint
+  el.style.height = 'auto';
+  const targetHeight = el.scrollHeight;
+  el.style.height = '0px';
   
-  // Start transition
-  el.style.height = fullHeight;
-  el.style.opacity = '1';
+  // Force another reflow
+  el.offsetHeight;
+  
+  // Start the animation
+  requestAnimationFrame(() => {
+    el.style.height = targetHeight + 'px';
+    el.style.opacity = '1';
+    el.classList.add('expanded');
+  });
+  
+  // Clean up after animation completes
+  const onTransitionEnd = (evt) => {
+    if (evt.target !== el) return;
+    if (evt.propertyName === 'height') {
+      // Set height to auto for responsive behavior
+      el.style.height = 'auto';
+      el.style.overflow = '';
+    }
+  };
+  
+  el._slideTransitionHandler = onTransitionEnd;
+  el.addEventListener('transitionend', onTransitionEnd);
 }
 
 export function slideClose(el) {
   if (!el || !el.classList.contains('expanded')) return;
   
-  // Capture current height
-  const currentHeight = el.scrollHeight + 'px';
+  // Clear any existing transition end listeners
+  el.removeEventListener('transitionend', el._slideTransitionHandler);
   
-  // Prepare for transition
-  el.style.height = currentHeight;
-  void el.offsetHeight;  // Trigger reflow
+  // Set up CSS transition if not already present
+  if (!el.style.transition) {
+    el.style.transition = 'height 0.3s ease-out, opacity 0.3s ease-out';
+  }
   
-  // Start transition
-  el.style.height = '0';
-  el.style.opacity = '0';
+  // Set current height explicitly and prepare for transition
+  el.style.overflow = 'hidden';
+  el.style.height = el.scrollHeight + 'px';
   
-  // Cleanup after transition
-  const onEnd = (evt) => {
-    if (evt.propertyName !== 'height') return;
-    el.style.display = 'none';
-    el.classList.remove('expanded');
-    el.removeEventListener('transitionend', onEnd);
+  // Force reflow
+  el.offsetHeight;
+  
+  // Start the closing animation
+  requestAnimationFrame(() => {
+    el.style.height = '0px';
+    el.style.opacity = '0';
+  });
+  
+  // Clean up after animation completes
+  const onTransitionEnd = (evt) => {
+    if (evt.target !== el) return;
+    if (evt.propertyName === 'height') {
+      el.style.display = 'none';
+      el.style.height = '';
+      el.style.opacity = '';
+      el.style.overflow = '';
+      el.classList.remove('expanded');
+      el.removeEventListener('transitionend', onTransitionEnd);
+      delete el._slideTransitionHandler;
+    }
   };
   
-  el.addEventListener('transitionend', onEnd);
+  el._slideTransitionHandler = onTransitionEnd;
+  el.addEventListener('transitionend', onTransitionEnd);
 }
