@@ -1,39 +1,44 @@
 export function slideOpen(el, displayMode = 'block') {
   if (!el || el.classList.contains('expanded')) return;
+  
+  // Set initial state
   el.style.display = displayMode;
-  el.style.height = '0px';
+  el.style.height = '0';
   el.style.opacity = '0';
-  void el.offsetHeight;
+  el.classList.add('expanded');
+  
+  // Get natural height
   const fullHeight = el.scrollHeight + 'px';
-  el.style.transition = 'height 0.3s ease, opacity 0.3s ease';
+  
+  // Trigger reflow to apply initial state
+  void el.offsetHeight;
+  
+  // Start transition
   el.style.height = fullHeight;
   el.style.opacity = '1';
-  el.classList.add('expanded');
-  const onEnd = (evt) => {
-    if (evt.propertyName === 'height') {
-      el.style.height = 'auto';
-      el.removeEventListener('transitionend', onEnd);
-    }
-  };
-  el.addEventListener('transitionend', onEnd);
 }
 
 export function slideClose(el) {
   if (!el || !el.classList.contains('expanded')) return;
-  const currentHeight = el.getBoundingClientRect().height + 'px';
+  
+  // Capture current height
+  const currentHeight = el.scrollHeight + 'px';
+  
+  // Prepare for transition
   el.style.height = currentHeight;
-  el.style.opacity = '1';
-  el.classList.remove('expanded');
-  void el.offsetHeight;
-  el.style.transition = 'height 0.3s ease, opacity 0.3s ease';
-  el.style.height = '0px';
+  void el.offsetHeight;  // Trigger reflow
+  
+  // Start transition
+  el.style.height = '0';
   el.style.opacity = '0';
+  
+  // Cleanup after transition
   const onEnd = (evt) => {
-    if (evt.propertyName === 'height') {
-      el.style.display = 'none';
-      el.style.height = '';
-      el.removeEventListener('transitionend', onEnd);
-    }
+    if (evt.propertyName !== 'height') return;
+    el.style.display = 'none';
+    el.classList.remove('expanded');
+    el.removeEventListener('transitionend', onEnd);
   };
+  
   el.addEventListener('transitionend', onEnd);
 }
