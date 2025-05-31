@@ -1,33 +1,48 @@
 // ../../utils/ui/slide.js
 
 /**
- * slideOpen: smoothly expand an element from height: 0 → its full height.
+ * slideOpen: smoothly expand an element from height: 0 → its full (auto) height.
+ * We temporarily take it out of the document flow (position:absolute; visibility:hidden)
+ * so that measuring scrollHeight doesn’t cause inner‐content repaints in the middle
+ * of the animation.
+ *
  * @param {HTMLElement} el
- * @param {string} [displayType='block']  CSS display value to use while opened (e.g. 'flex', 'grid', etc.)
+ * @param {string} [displayType='block']  CSS display value to use once opened (e.g. 'flex', 'grid', etc.)
  */
 export function slideOpen(el, displayType = 'block') {
-  // If already visible and no height=0, bail out
+  // If already visible and its height isn’t 0, do nothing
   const computed = window.getComputedStyle(el);
-  if (computed.display !== 'none' && computed.height !== '0px') return;
+  if (computed.display !== 'none' && computed.height !== '0px') {
+    return;
+  }
 
-  // 1) Set it to the final display type and measure its full (auto) height:
+  // 1) Put the element into the DOM flow as displayType, but hidden & absolutely placed
   el.style.display = displayType;
-  el.style.overflow = 'hidden';
-  // Temporarily set height to auto so we can read scrollHeight:
+  el.style.position = 'absolute';
+  el.style.visibility = 'hidden';
+  // Let it size itself to its "auto" height (so scrollHeight is correct)
   el.style.height = 'auto';
+
+  // 2) Measure its full height
   const fullHeight = el.scrollHeight + 'px';
-  // Immediately collapse back to 0 to prepare for the transition:
+
+  // 3) Remove our “measuring” styles so it returns to normal flow,
+  //    but set height:0 immediately so we can animate from 0→fullHeight
+  el.style.removeProperty('position');
+  el.style.removeProperty('visibility');
   el.style.height = '0px';
+  el.style.overflow = 'hidden';
 
-  // 2) Force a reflow so the browser sees height=0 before we switch to fullHeight:
-  //    (reading offsetHeight forces a reflow)
-  void el.offsetHeight;
+  // 4) Force a reflow so the browser registers height=0 before the transition
+  //    (reading offsetHeight is the easiest way to do that)
+  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+  el.offsetHeight;
 
-  // 3) Animate height → fullHeight:
+  // 5) Now animate height from 0 → fullHeight
   el.style.transition = 'height 300ms ease';
   el.style.height = fullHeight;
 
-  // 4) Once transition ends, clean up inline styles so the element can flex/grow normally:
+  // 6) Once the transition completes, clean up inline styles: remove height/overflow/transition
   function onEnd(e) {
     if (e.propertyName !== 'height') return;
     el.style.removeProperty('height');
@@ -40,31 +55,33 @@ export function slideOpen(el, displayType = 'block') {
 
 /**
  * slideClose: smoothly collapse an element from its current height → 0, then hide it.
+ * We measure its current pixel height, lock that in, then animate it down to 0.
+ *
  * @param {HTMLElement} el
  */
 export function slideClose(el) {
-  // If already hidden, bail out
   const computed = window.getComputedStyle(el);
+  // If it’s already hidden (display:none) or already 0px tall, ensure display:none
   if (computed.display === 'none' || computed.height === '0px') {
-    // Ensure it’s completely hidden (display:none)
     el.style.display = 'none';
     return;
   }
 
-  // 1) Measure the element’s current full height as a pixel value:
+  // 1) Measure the element’s current full height in pixels:
+  //    If computed.height is "auto", setting height=scrollHeight makes sure we start from the right pixel height.
   const fullHeight = el.scrollHeight + 'px';
-  // If the element’s computed height is "auto", force it to be the measured pixel height:
   el.style.height = fullHeight;
   el.style.overflow = 'hidden';
 
-  // 2) Force a reflow so the browser knows we’re starting from fullHeight
-  void el.offsetHeight;
+  // 2) Force a reflow so the browser registers that height before we start animating
+  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+  el.offsetHeight;
 
-  // 3) Animate height from fullHeight → 0:
+  // 3) Animate height from fullHeight → 0
   el.style.transition = 'height 300ms ease';
   el.style.height = '0px';
 
-  // 4) Once transition ends, hide it and clean up inline styles:
+  // 4) Once the transition ends, set display:none and clean up inline styles
   function onEnd(e) {
     if (e.propertyName !== 'height') return;
     el.style.display = 'none';
