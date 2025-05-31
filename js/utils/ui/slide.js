@@ -1,42 +1,47 @@
 /**
  * Smooth slide animations for elements with dynamic heights
- * Works with Webflow elements including all padding, margins, and borders
- * No persistent storage - uses data attributes for state tracking
+ * Works with Webflow elements that have the 'slideable' class
  */
 
+// Store animation states to prevent conflicts
+const animationStates = new WeakMap()
+
 /**
- * Get the complete natural height of an element including padding, borders, and margins
+ * Get the natural height of an element's content
  * Works even when element is display:none
  */
-function getFullHeight(element) {
-  // Create a clone to measure without affecting the original
-  const clone = element.cloneNode(true)
+function getContentHeight(element) {
+  // Store original styles
+  const originalStyles = {
+    display: element.style.display,
+    position: element.style.position,
+    visibility: element.style.visibility,
+    height: element.style.height,
+    overflow: element.style.overflow,
+    opacity: element.style.opacity
+  }
   
-  // Set up clone for measurement
-  clone.style.position = 'absolute'
-  clone.style.visibility = 'hidden'
-  clone.style.display = 'block'
-  clone.style.height = 'auto'
-  clone.style.minHeight = 'auto'
-  clone.style.maxHeight = 'none'
-  clone.style.overflow = 'visible'
-  clone.style.top = '-9999px'
-  clone.style.left = '-9999px'
+  // Temporarily make it measurable
+  element.style.display = 'block'
+  element.style.position = 'absolute'
+  element.style.visibility = 'hidden'
+  element.style.height = 'auto'
+  element.style.overflow = 'visible'
+  element.style.opacity = '0'
   
-  // Add to DOM temporarily
-  document.body.appendChild(clone)
+  // Get the height
+  const height = element.scrollHeight
   
-  // Get measurements
-  const computedStyle = window.getComputedStyle(clone)
-  const marginTop = parseFloat(computedStyle.marginTop) || 0
-  const marginBottom = parseFloat(computedStyle.marginBottom) || 0
-  const contentHeight = clone.offsetHeight
-  const totalHeight = contentHeight + marginTop + marginBottom
+  // Restore all original styles
+  Object.entries(originalStyles).forEach(([key, value]) => {
+    if (value) {
+      element.style[key] = value
+    } else {
+      element.style.removeProperty(key.replace(/([A-Z])/g, '-$1').toLowerCase())
+    }
+  })
   
-  // Clean up
-  document.body.removeChild(clone)
-  
-  return totalHeight
+  return height
 }
 
 /**
@@ -47,96 +52,85 @@ function getFullHeight(element) {
 export function slideOpen(element, displayType = 'block') {
   if (!element) return
   
-  // Prevent conflicting animations using data attribute
-  if (element.dataset.sliding === 'opening') return
-  element.dataset.sliding = 'opening'
+  // Prevent conflicting animations
+  if (animationStates.get(element) === 'opening') return
+  animationStates.set(element, 'opening')
   
-  // Get the target height
-  const targetHeight = getFullHeight(element)
+  // Get the target height before making any changes
+  const targetHeight = getContentHeight(element)
   
   // Set up the element for animation
   element.style.overflow = 'hidden'
   element.style.display = displayType
   element.style.height = '0px'
-  element.style.minHeight = '0px'
   element.style.opacity = '0'
-  element.style.transition = 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, min-height 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+  element.style.transition = 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease'
   
-  // Force reflow
+  // Force reflow to ensure starting state is applied
   element.offsetHeight
   
   // Animate to target height
   element.style.height = `${targetHeight}px`
-  element.style.minHeight = `${targetHeight}px`
   element.style.opacity = '1'
   
   // Clean up after animation
   const cleanup = () => {
-    if (element.dataset.sliding === 'opening') {
-      // Reset to auto for responsive behavior
-      element.style.height = 'auto'
-      element.style.removeProperty('min-height')
-      element.style.removeProperty('overflow')
-      element.style.removeProperty('transition')
-      delete element.dataset.sliding
+    if (animationStates.get(element) === 'opening') {
+      element.style.height = 'auto' // Allow natural height changes
+      element.style.overflow = '' // Reset overflow
+      animationStates.delete(element)
     }
     element.removeEventListener('transitionend', cleanup)
   }
   
   element.addEventListener('transitionend', cleanup)
   
-  // Fallback cleanup
+  // Fallback cleanup in case transitionend doesn't fire
   setTimeout(cleanup, 350)
 }
 
 /**
- * Slide close an element smoothly  
+ * Slide close an element smoothly
  * @param {HTMLElement} element - The element to slide close
  */
 export function slideClose(element) {
   if (!element) return
   
   // Prevent conflicting animations
-  if (element.dataset.sliding === 'closing') return
-  element.dataset.sliding = 'closing'
+  if (animationStates.get(element) === 'closing') return
+  animationStates.set(element, 'closing')
   
   // If already hidden, just ensure it stays hidden
   if (element.style.display === 'none' || element.offsetHeight === 0) {
     element.style.display = 'none'
-    delete element.dataset.sliding
+    animationStates.delete(element)
     return
   }
   
-  // Get current height including margins
-  const computedStyle = window.getComputedStyle(element)
-  const marginTop = parseFloat(computedStyle.marginTop) || 0
-  const marginBottom = parseFloat(computedStyle.marginBottom) || 0
-  const currentHeight = element.offsetHeight + marginTop + marginBottom
-  
   // Set up for animation
   element.style.overflow = 'hidden'
-  element.style.transition = 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, min-height 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+  element.style.transition = 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease'
+  
+  // Get current height and set it explicitly for smooth animation
+  const currentHeight = element.offsetHeight
   element.style.height = `${currentHeight}px`
-  element.style.minHeight = `${currentHeight}px`
   
   // Force reflow
   element.offsetHeight
   
   // Animate to collapsed state
   element.style.height = '0px'
-  element.style.minHeight = '0px'
   element.style.opacity = '0'
   
   // Clean up after animation
   const cleanup = () => {
-    if (element.dataset.sliding === 'closing') {
+    if (animationStates.get(element) === 'closing') {
       element.style.display = 'none'
-      element.style.removeProperty('height')
-      element.style.removeProperty('min-height')
-      element.style.removeProperty('opacity')
-      element.style.removeProperty('overflow')
-      element.style.removeProperty('transition')
-      delete element.dataset.sliding
+      element.style.height = ''
+      element.style.opacity = ''
+      element.style.overflow = ''
+      element.style.transition = ''
+      animationStates.delete(element)
     }
     element.removeEventListener('transitionend', cleanup)
   }
@@ -172,5 +166,19 @@ export function slideToggle(element, displayType = 'block') {
  * @returns {boolean}
  */
 export function isSliding(element) {
-  return element && element.dataset.sliding !== undefined
+  return animationStates.has(element)
+}
+
+/**
+ * Initialize all slideable elements on the page
+ * Call this once when your page loads if needed
+ */
+export function initAllSlideableElements() {
+  const slideableElements = document.querySelectorAll('.slideable')
+  slideableElements.forEach(element => {
+    // Just add the CSS class for overflow
+    if (!element.style.overflow) {
+      element.style.overflow = 'hidden'
+    }
+  })
 }
