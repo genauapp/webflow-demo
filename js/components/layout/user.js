@@ -1,4 +1,4 @@
-// /components/home/user.js
+// /components/layout/user.js
 import {
   protectedApiService,
   publicApiService,
