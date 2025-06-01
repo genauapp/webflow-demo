@@ -134,12 +134,26 @@ function setCollapsedStyles(el, displayType) {
 // Helper: apply inline “expanded” styles using the measured values
 // ──────────────────────────────────────────────────────────────────────────────
 function setExpandedStyles(el, dims, opts) {
-  const { contentHeight, marginTop, marginBottom, paddingTop, paddingBottom } = dims
+  const { 
+    contentHeight, 
+    marginTop, 
+    marginBottom, 
+    paddingTop, 
+    paddingBottom,
+    borderTop,
+    borderBottom 
+  } = dims
+  
   // Build transition string if not already present
   if (!el.style.transition || el.style.transition === 'none') {
     el.style.transition = buildTransitionString(opts)
   }
-  el.style.height       = `${contentHeight}px`
+  
+  // Calculate TOTAL visible height (content + padding + borders)
+  const totalHeight = contentHeight + paddingTop + paddingBottom + borderTop + borderBottom
+  
+  // Use total height instead of contentHeight - this prevents the jump!
+  el.style.height       = `${totalHeight}px`
   el.style.marginTop    = `${marginTop}px`
   el.style.marginBottom = `${marginBottom}px`
   el.style.paddingTop   = `${paddingTop}px`
