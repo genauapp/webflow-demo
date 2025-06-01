@@ -1,4 +1,4 @@
-import { initUserComponent } from '../components/home/user.js'
+import { initUserComponent } from '../components/layout/user'
 
 // "Single Element" IDs are kept in the page file
 const elementIds = {
@@ -12,7 +12,7 @@ const elementIds = {
 const elementClasses = {
   // User component elements appear in desktop/mobile
   user: {
-    profile: 'user-profile-container',
+    profileContainer: 'user-profile-container',
     avatar: 'image-user-info-avatar',
     name: 'label-user-info-name',
     email: 'label-user-info-email',
