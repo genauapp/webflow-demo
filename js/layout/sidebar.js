@@ -1,4 +1,4 @@
-import { initUserComponent } from '../components/layout/user'
+import { initUserComponent } from '../components/layout/user.js'
 
 // "Single Element" IDs are kept in the page file
 const elementIds = {
