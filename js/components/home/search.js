@@ -5,7 +5,10 @@ import {
   ALL_VERB_CASES,
   WordSource,
 } from '../../constants/props.js'
-import { publicApiService, protectedApiService } from '../../service/apiService.js'
+import {
+  publicApiService,
+  protectedApiService,
+} from '../../service/apiService.js'
 import CollectionsManager from '../../utils/CollectionsManager.js'
 
 let els = {}
@@ -49,7 +52,8 @@ function initElements(elementIds) {
 
     addToBookmarksButton: () =>
       document.getElementById(elementIds.results.addToBookmarksButton),
-    labelRequiresSignin: () => document.getElementById(elementIds.results.labelRequiresSignin)
+    labelRequiresSignin: () =>
+      document.getElementById(elementIds.results.labelRequiresSignin),
   }
 }
 
@@ -273,11 +277,14 @@ async function handleAddToBookmarks(e) {
   const unauthorized = status === 401 || status === 403
 
   if (unauthorized) {
-    // btn.style.pointerEvents = 'none' // Disable further clicks
-    // btn.style.opacity = '0.6' // Visual disabled state
+    btn.style.pointerEvents = 'none' // Disable further clicks
+    btn.style.opacity = '0.6' // Visual disabled state
 
     requiresSigninLabel.style.display = 'flex'
     setTimeout(() => {
+      // default state to re-enable clicking
+      btn.style.pointerEvents = 'auto'
+      btn.style.opacity = '1'
       requiresSigninLabel.style.display = 'none'
     }, 3000)
     return
