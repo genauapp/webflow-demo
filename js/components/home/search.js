@@ -5,7 +5,7 @@ import {
   ALL_VERB_CASES,
   WordSource,
 } from '../../constants/props.js'
-import { publicApiService } from '../../service/apiService.js'
+import { publicApiService, protectedApiService } from '../../service/apiService.js'
 import CollectionsManager from '../../utils/CollectionsManager.js'
 
 let els = {}
@@ -49,6 +49,7 @@ function initElements(elementIds) {
 
     addToBookmarksButton: () =>
       document.getElementById(elementIds.results.addToBookmarksButton),
+    labelRequiresSignin: () => document.getElementById(elementIds.results.labelRequiresSignin)
   }
 }
 
@@ -257,15 +258,40 @@ const attachVerbCaseHandlers = () => {
   })
 }
 
-function handleAddToBookmarks(e) {
+async function handleAddToBookmarks(e) {
   e.preventDefault()
   if (currentWordResults.length === 0) return
+
+  const btn = els.addToBookmarksButton()
+  const requiresSigninLabel = els.labelRequiresSignin()
+
+  const {
+    data: user,
+    status,
+    error,
+  } = await protectedApiService.getUserProfile()
+  const unauthorized = status === 401 || status === 403
+
+  if (unauthorized) {
+    btn.style.pointerEvents = 'none' // Disable further clicks
+    btn.style.opacity = '0.6' // Visual disabled state
+
+    requiresSigninLabel.style.display = 'flex'
+    setTimeout(() => {
+      // default state to re-enable clicking
+      btn.style.pointerEvents = 'auto'
+      btn.style.opacity = '1'
+      requiresSigninLabel.style.display = 'none'
+    }, 3000)
+    return
+  }
+
+  requiresSigninLabel.style.display = 'none'
 
   CollectionsManager.addWordToBookmarks(
     currentWordResults[0],
     WordSource.NORMAL_PROMPT
   )
-  const btn = els.addToBookmarksButton()
   btn.textContent = 'Added to Bookmarks'
   // btn.disabled = true // not working since it's an anchor element
   btn.style.pointerEvents = 'none' // Disable further clicks
@@ -325,5 +351,5 @@ export function initSearchComponent(elementIds) {
   // add to bookmark click
   els
     .addToBookmarksButton()
-    .addEventListener('click', (e) => handleAddToBookmarks(e))
+    .addEventListener('click', async (e) => await handleAddToBookmarks(e))
 }
