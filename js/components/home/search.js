@@ -344,5 +344,5 @@ export function initSearchComponent(elementIds) {
   // add to bookmark click
   els
     .addToBookmarksButton()
-    .addEventListener('click', (e) => handleAddToBookmarks(e))
+    .addEventListener('click', async (e) => await handleAddToBookmarks(e))
 }
