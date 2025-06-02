@@ -49,6 +49,7 @@ function initElements(elementIds) {
 
     addToBookmarksButton: () =>
       document.getElementById(elementIds.results.addToBookmarksButton),
+    labelRequiresSignin: () => document.getElementById(elementIds.results.labelRequiresSignin)
   }
 }
 
@@ -257,15 +258,33 @@ const attachVerbCaseHandlers = () => {
   })
 }
 
-function handleAddToBookmarks(e) {
+async function handleAddToBookmarks(e) {
   e.preventDefault()
   if (currentWordResults.length === 0) return
+
+  const btn = els.addToBookmarksButton()
+  const requiresSigninLabel = els.labelRequiresSignin()
+
+  const {
+    data: user,
+    status,
+    error,
+  } = await protectedApiService.getUserProfile()
+  const unauthorized = status === 401 || status === 403
+
+  if (unauthorized) {
+    // btn.style.pointerEvents = 'none' // Disable further clicks
+    // btn.style.opacity = '0.6' // Visual disabled state
+
+    labelRequiresSignin.style.display = 'flex'
+  }
+
+  labelRequiresSignin.style.display = 'none'
 
   CollectionsManager.addWordToBookmarks(
     currentWordResults[0],
     WordSource.NORMAL_PROMPT
   )
-  const btn = els.addToBookmarksButton()
   btn.textContent = 'Added to Bookmarks'
   // btn.disabled = true // not working since it's an anchor element
   btn.style.pointerEvents = 'none' // Disable further clicks

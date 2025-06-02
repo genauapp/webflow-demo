@@ -4,16 +4,6 @@ import { initLevelComponent } from '../components/home/level.js'
 
 // Element IDs are kept in the page file
 const elementIds = {
-  // User component elements
-  user: {
-    login: 'login-container',
-    profile: 'user-profile-container',
-    avatar: 'image-user-info-avatar',
-    name: 'label-user-info-name',
-    email: 'label-user-info-email',
-    logoutBtn: 'btn-home-logout',
-  },
-
   // Search component elements
   search: {
     form: 'form-search',
@@ -40,6 +30,7 @@ const elementIds = {
         caseDetailsContainer: (verbCase) => `${verbCase}-details-container`,
       },
       addToBookmarksButton: 'btn-search-add-to-bookmarks',
+      labelRequiresSignin: 'label-requires-signin'
     },
   },
 
