@@ -276,10 +276,10 @@ async function handleAddToBookmarks(e) {
     // btn.style.pointerEvents = 'none' // Disable further clicks
     // btn.style.opacity = '0.6' // Visual disabled state
 
-    labelRequiresSignin.style.display = 'flex'
+    requiresSigninLabel.style.display = 'flex'
   }
 
-  labelRequiresSignin.style.display = 'none'
+  requiresSigninLabel.style.display = 'none'
 
   CollectionsManager.addWordToBookmarks(
     currentWordResults[0],
