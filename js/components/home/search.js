@@ -5,7 +5,7 @@ import {
   ALL_VERB_CASES,
   WordSource,
 } from '../../constants/props.js'
-import { publicApiService } from '../../service/apiService.js'
+import { publicApiService, protectedApiService } from '../../service/apiService.js'
 import CollectionsManager from '../../utils/CollectionsManager.js'
 
 let els = {}
