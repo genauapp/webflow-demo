@@ -277,6 +277,9 @@ async function handleAddToBookmarks(e) {
     // btn.style.opacity = '0.6' // Visual disabled state
 
     requiresSigninLabel.style.display = 'flex'
+    setTimeout(() => {
+      requiresSigninLabel.style.display = 'none'
+    }, 3000)
     return
   }
 
