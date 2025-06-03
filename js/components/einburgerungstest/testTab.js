@@ -52,6 +52,8 @@ const initializeTest = () => {
 
   // UI Changes
   hideTestResultsModal()
+  
+  showTestQuestionContainers()
   switchTestPreviousNextButtons(
     initialTestProgression.currentIndex,
     initialTestProgression.questions.length
@@ -289,6 +291,7 @@ const answerClickHandler = (event) => {
     updatedTestProgression.score = TestManager.calculateScore(
       updatedTestProgression.questions
     )
+    hideTestQuestionContainers()
     showTestResultsModal(
       updatedTestProgression,
       TestManager.isTestResultSuccessful(updatedTestProgression.score)
@@ -299,6 +302,18 @@ const answerClickHandler = (event) => {
   LocalStorageManager.save(TEST_PROGRESSION_KEY, updatedTestProgression)
 
   switchTestAnswers(answeredQuestion)
+}
+
+const showTestQuestionContainers = () => {
+  document.getElementById('test-header-container').style.display = 'flex'
+  document.getElementById('test-question-container').style.display = 'flex'
+  document.getElementById('test-action-container').style.display = 'flex'
+}
+
+const hideTestQuestionContainers = () => {
+  document.getElementById('test-header-container').style.display = 'none'
+  document.getElementById('test-question-container').style.display = 'none'
+  document.getElementById('test-action-container').style.display = 'none'
 }
 
 /** UI Changes
