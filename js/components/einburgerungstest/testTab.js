@@ -52,7 +52,7 @@ const initializeTest = () => {
 
   // UI Changes
   hideTestResultsModal()
-  
+
   showTestQuestionContainers()
   switchTestPreviousNextButtons(
     initialTestProgression.currentIndex,
@@ -108,6 +108,8 @@ document
     // Update UI
     hideTestSkeleton()
     hideTestResultsModal()
+    
+    showTestQuestionContainers()
     switchTestPreviousNextButtons(
       resettedTestProgression.currentIndex,
       resettedTestProgression.questions.length
