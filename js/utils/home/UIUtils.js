@@ -11,6 +11,7 @@ import {
 import { categories } from '../../constants/props.js'
 import { loadAndShowWords } from '../../pages/level.js'
 import LevelManager from '../LevelManager.js'
+import
 
 // UI visibility functions
 export function showSkeleton() {
@@ -114,18 +115,78 @@ export function isRegularLevel(level) {
 
 export function loadDeckPropsOnLevelPage() {
   const level = LevelManager.getCurrentLevel()
-  document.getElementById('Deck01').src = categories[level][0].imgUrl
-  document.getElementById('Deck01').dataset.option = categories[level][0].nameShort
-  document.getElementById('deck-title-01').innerText = categories[level][0].nameEng
-  document.getElementById('Deck02').src = categories[level][1].imgUrl
-  document.getElementById('Deck02').dataset.option = categories[level][1].nameShort
-  document.getElementById('deck-title-02').innerText = categories[level][1].nameEng
-  document.getElementById('Deck03').src = categories[level][2].imgUrl
-  document.getElementById('Deck03').dataset.option = categories[level][2].nameShort
-  document.getElementById('deck-title-03').innerText = categories[level][2].nameEng
-  document.getElementById('Deck04').src = categories[level][3].imgUrl
-  document.getElementById('Deck04').dataset.option = categories[level][3].nameShort
-  document.getElementById('deck-title-04').innerText = categories[level][3].nameEng
+  for (let i = 0; i = categories[level].length; i++) {
+
+    // <a> elementini oluştur
+    const linkBlock = document.createElement('a');
+    linkBlock.href = '#action-content';
+    linkBlock.classList.add('pack-link-block', 'w-inline-block');
+    linkBlock.style.display = 'flex';
+    linkBlock.style.flexDirection = 'column';
+    linkBlock.style.position = 'relative'
+
+    // <img> elementini oluştur
+    const img = document.createElement('img');
+    img.src = categories[level][i].imgUrl;
+    img.loading = 'lazy';
+    img.style.width = '100%';
+    img.style.height = '100%';
+    img.style.maxWidth = '100%';
+    img.id = `deck-${i}`;
+    img.dataset.option = categories[level][i].nameShort
+    img.alt = '';
+    img.classList.add('deck-img', 'image-19');
+
+    // <h1> elementini oluştur
+    const h1 = document.createElement('h1');
+    h1.id = `deck-title-${i}`;
+    h1.classList.add('heading-42');
+    h1.textContent = categories[level][i].nameEng;
+    h1.style.fontFamily = 'Lato, sans-serif';
+    h1.style.fontWeight = '400';
+    h1.style.fontSize = '16px';
+    h1.style.lineHeight = '16px';
+    h1.style.color = '#333';
+
+    linkBlock.appendChild(img);
+    linkBlock.appendChild(h1);
+
+    // Son olarak istediğin yere ekle, örneğin bir container'a:
+    document.getElementById('pack-container-grid').appendChild(linkBlock);
+
+    /* Word Count Badge için burayı düzenleyeceğiz
+
+    // <div id="Word_Count_Badge" ...> elementini oluştur
+    const wordCountBadge = document.createElement('div');
+    wordCountBadge.id = 'Word_Count_Badge';
+    wordCountBadge.classList.add('w-layout-hflex', 'wordcountbadge');
+
+    // <img> icon için
+    const wordIcon = document.createElement('img');
+    wordIcon.src = 'https://cdn.prod.website-files.com/677da6ae8464f53ea15d73ac/683c7cefa0f6a98cfe516c78_WordsIcon.svg';
+    wordIcon.loading = 'lazy';
+    wordIcon.alt = '';
+    wordIcon.classList.add('image-21');
+
+    // <div class="w-layout-hflex flex-block-94">
+    const flexBlock = document.createElement('div');
+    flexBlock.classList.add('w-layout-hflex', 'flex-block-94');
+
+    // <div id="Word_Count_Text" ...>
+    const wordCountText = document.createElement('div');
+    wordCountText.id = 'Word_Count_Text';
+    wordCountText.classList.add('wordcounttext');
+    wordCountText.textContent = `${}` + ' Words'; // kelime sayısını burada dinamik verebilirsiniz
+
+    // Elementleri birbirine bağla
+    flexBlock.appendChild(wordCountText);
+    flexBlock.appendChild(textBlock);
+    wordCountBadge.appendChild(wordIcon);
+    wordCountBadge.appendChild(flexBlock);
+    */
+
+    //linkBlock.appendChild(wordCountBadge);
+  }
 }
 
 export function showFinishScreen() {
