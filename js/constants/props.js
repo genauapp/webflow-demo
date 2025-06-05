@@ -8,6 +8,9 @@ export const WordType = {
   ADJECTIVE: 'adjective',
   ADVERB: 'adverb',
 }
+export const MicroQuizType = {
+  PREPOSITION: 'prepositon'
+}
 
 export const ArtikelColorMap = {
   der: 'blue',
