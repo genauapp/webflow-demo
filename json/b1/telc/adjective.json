@@ -1,0 +1,331 @@
+[
+  {
+    "german": "überfüllt",
+    "english": "overcrowded",
+    "level": "B1",
+    "example": "Die Straßenbahn war total überfüllt.",
+    "word": "überfüllt",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "adjective_gefuehle_01"
+  },
+  {
+    "german": "lehrreich",
+    "english": "educational / instructive",
+    "level": "B1",
+    "example": "Die Erfahrung war sehr lehrreich.",
+    "word": "lehrreich",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "adjective_gefuehle_02"
+  },
+  {
+    "german": "anstrengend",
+    "english": "exhausting",
+    "level": "B1",
+    "example": "Das war ein anstrengender Tag.",
+    "word": "anstrengend",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "adjective_gefuehle_03"
+  },
+  {
+    "german": "hervorragend",
+    "english": "excellent / outstanding",
+    "level": "B1",
+    "example": "Sie hat eine hervorragende Arbeit geleistet.",
+    "word": "hervorragend",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "adjective_gefuehle_04"
+  },
+  {
+    "german": "beschäftigt",
+    "english": "busy",
+    "level": "B1",
+    "example": "Ich bin momentan sehr beschäftigt.",
+    "word": "beschäftigt",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "adjective_gefuehle_05"
+  },
+  {
+    "german": "grausam",
+    "english": "cruel",
+    "level": "B1",
+    "example": "Das war eine grausame Entscheidung.",
+    "word": "grausam",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "adjective_gefuehle_06"
+  },{
+    "german": "ausbaufähig",
+    "english": "expandable / improvable",
+    "level": "B1",
+    "example": "Deine Idee ist gut, aber noch ausbaufähig.",
+    "word": "ausbaufähig",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_07"
+  },
+  {
+    "german": "erfolgreich",
+    "english": "successful",
+    "level": "B1",
+    "example": "Er ist ein erfolgreicher Unternehmer.",
+    "word": "erfolgreich",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_08"
+  },
+  {
+    "german": "faszinierend",
+    "english": "fascinating",
+    "level": "B1",
+    "example": "Das war eine faszinierende Geschichte.",
+    "word": "faszinierend",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_09"
+  },
+  {
+    "german": "finanziell unabhängig",
+    "english": "financially independent",
+    "level": "B1",
+    "example": "Ich möchte finanziell unabhängig sein.",
+    "word": "finanziell unabhängig",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_10"
+  },
+  {
+    "german": "fragil",
+    "english": "fragile",
+    "level": "B1",
+    "example": "Das Gleichgewicht war sehr fragil.",
+    "word": "fragil",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_11"
+  },
+  {
+    "german": "gleichwertig",
+    "english": "equivalent / of equal value",
+    "level": "B1",
+    "example": "Beide Meinungen sind gleichwertig.",
+    "word": "gleichwertig",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_12"
+  },
+  {
+    "german": "jetzig",
+    "english": "current / present",
+    "level": "B1",
+    "example": "Die jetzige Situation ist schwierig.",
+    "word": "jetzig",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_13"
+  },
+  {
+    "german": "traumhaft",
+    "english": "dreamlike",
+    "level": "B1",
+    "example": "Das war ein traumhafter Urlaub.",
+    "word": "traumhaft",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_14"
+  },
+  {
+    "german": "verbesserungsfähig",
+    "english": "capable of improvement",
+    "level": "B1",
+    "example": "Deine Leistung ist noch verbesserungsfähig.",
+    "word": "verbesserungsfähig",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_15"
+  },
+  {
+    "german": "beliebte",
+    "english": "popular",
+    "level": "B1",
+    "example": "Das ist ein beliebter Ort.",
+    "word": "beliebte",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_16"
+  },
+  {
+    "german": "gewordene",
+    "english": "become",
+    "level": "B1",
+    "example": "Ein erwachsen gewordener Junge.",
+    "word": "gewordene",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_17"
+  },
+  {
+    "german": "solchen",
+    "english": "such",
+    "level": "B1",
+    "example": "Solche Fehler sind normal.",
+    "word": "solchen",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_18"
+  },
+  {
+    "german": "verblüfft",
+    "english": "astonished",
+    "level": "B1",
+    "example": "Ich war verblüfft über das Ergebnis.",
+    "word": "verblüfft",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_19"
+  },
+  {
+    "german": "fasziniert",
+    "english": "fascinated",
+    "level": "B1",
+    "example": "Sie war fasziniert von der Geschichte.",
+    "word": "fasziniert",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_20"
+  },
+  {
+    "german": "schlagartig",
+    "english": "sudden / abruptly",
+    "level": "B1",
+    "example": "Es änderte sich schlagartig.",
+    "word": "schlagartig",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_21"
+  },
+  {
+    "german": "neugieriger",
+    "english": "more curious",
+    "level": "B1",
+    "example": "Er ist neugieriger als sein Bruder.",
+    "word": "neugieriger",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_22"
+  },
+  {
+    "german": "farbenfrohen",
+    "english": "colorful",
+    "level": "B1",
+    "example": "Sie trägt immer farbenfrohe Kleidung.",
+    "word": "farbenfrohen",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_23"
+  },
+  {
+    "german": "berufstätig",
+    "english": "employed",
+    "level": "B1",
+    "example": "Sie ist berufstätig und hat zwei Kinder.",
+    "word": "berufstätig",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_24"
+  },
+  {
+    "german": "ungerecht",
+    "english": "unfair",
+    "level": "B1",
+    "example": "Das war eine ungerechte Entscheidung.",
+    "word": "ungerecht",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_25"
+  },
+  {
+    "german": "schlagfertig",
+    "english": "quick-witted",
+    "level": "B1",
+    "example": "Er gab eine schlagfertige Antwort.",
+    "word": "schlagfertig",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_26"
+  },
+  {
+    "german": "ehrlich",
+    "english": "honest",
+    "level": "B1",
+    "example": "Sie ist immer ehrlich.",
+    "word": "ehrlich",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_27"
+  },
+  {
+    "german": "eng",
+    "english": "tight / narrow / close",
+    "level": "B1",
+    "example": "Wir haben eine enge Beziehung.",
+    "word": "eng",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_28"
+  },
+  {
+    "german": "breit",
+    "english": "wide",
+    "level": "B1",
+    "example": "Die Straße ist sehr breit.",
+    "word": "breit",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_29"
+  },
+  {
+    "german": "übermäßig",
+    "english": "excessive",
+    "level": "B1",
+    "example": "Übermäßiger Konsum ist ungesund.",
+    "word": "übermäßig",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_30"
+  },
+  {
+    "german": "abgesagt",
+    "english": "cancelled",
+    "level": "B1",
+    "example": "Die Veranstaltung wurde abgesagt.",
+    "word": "abgesagt",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_31"
+  },
+  {
+    "german": "anpassend",
+    "english": "adaptive / fitting",
+    "level": "B1",
+    "example": "Er zeigte ein anpassendes Verhalten.",
+    "word": "anpassend",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_32"
+  },
+  {
+    "german": "gewöhnlich",
+    "english": "usual / ordinary",
+    "level": "B1",
+    "example": "Zu gewöhnlichen Zeiten ist es ruhig.",
+    "word": "gewöhnlich",
+    "type": "adjective",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adjective_33"
+  }
+]

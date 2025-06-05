@@ -137,6 +137,12 @@ export class DEFAULT_VALUE {
         adjective: [],
         adverb: [],
       },
+      telc: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      }
     },
     b2: {
       bildung: {
@@ -299,6 +305,12 @@ export class DEFAULT_VALUE {
         adjective: [],
         adverb: [],
       },
+      telc: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      }
     },
     b2: {
       bildung: {
@@ -461,6 +473,12 @@ export class DEFAULT_VALUE {
         adjective: [],
         adverb: [],
       },
+      telc: {
+        noun: [],
+        verb: [],
+        adjective: [],
+        adverb: [],
+      }
     },
     b2: {
       bildung: {
