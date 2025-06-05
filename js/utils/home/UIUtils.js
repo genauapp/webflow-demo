@@ -11,7 +11,6 @@ import {
 import { categories } from '../../constants/props.js'
 import { loadAndShowWords } from '../../pages/level.js'
 import LevelManager from '../LevelManager.js'
-import
 
 // UI visibility functions
 export function showSkeleton() {
