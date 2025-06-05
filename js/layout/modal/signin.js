@@ -1,4 +1,4 @@
-import { initSigninComponent } from '../components/layout/signin.js'
+import { initSigninComponent } from "../../components/layout/signin"
 
 // "Single Element" IDs are kept in the page file
 const elementIds = {
