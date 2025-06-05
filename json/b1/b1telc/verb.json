@@ -30,7 +30,7 @@
     "word": "sorgen",
     "type": "verb",
     "category": "Gefühle & Beziehungen",
-    "cases": ["reflexive", "akkusative"]
+    "cases": ["reflexive", "akkusativ"]
   },
   {
     "id": "B1_TELC_verb_04",
@@ -41,7 +41,7 @@
     "word": "sorgen",
     "type": "verb",
     "category": "Gefühle & Beziehungen",
-    "cases": ["akkusative"]
+    "cases": ["akkusativ"]
   },
   {
     "id": "B1_TELC_verb_05",
@@ -63,7 +63,7 @@
     "word": "erleben",
     "type": "verb",
     "category": "Gefühle & Beziehungen",
-    "cases": ["akkusative"]
+    "cases": ["akkusativ"]
   },
   {
     "id": "B1_TELC_verb_07",
@@ -74,7 +74,7 @@
     "word": "verdienen",
     "type": "verb",
     "category": "Gefühle & Beziehungen",
-    "cases": ["akkusative"]
+    "cases": ["akkusativ"]
   },
   {
     "id": "B1_TELC_verb_08",
@@ -85,7 +85,7 @@
     "word": "erledigen",
     "type": "verb",
     "category": "Gefühle & Beziehungen",
-    "cases": ["akkusative"]
+    "cases": ["akkusativ"]
   },
   {
     "id": "B1_TELC_verb_09",
@@ -107,7 +107,7 @@
     "word": "bemühen",
     "type": "verb",
     "category": "Gefühle & Beziehungen",
-    "cases": ["reflexive", "akkusative"]
+    "cases": ["reflexive", "akkusativ"]
   },
   {
     "id": "B1_TELC_verb_11",
@@ -129,7 +129,7 @@
     "word": "erhalten",
     "type": "verb",
     "category": "Gefühle & Beziehungen",
-    "cases": ["akkusative"]
+    "cases": ["akkusativ"]
   },
   {
     "id": "B1_TELC_verb_13",
@@ -173,7 +173,7 @@
     "word": "merken",
     "type": "verb",
     "category": "Gefühle & Beziehungen",
-    "cases": ["akkusative"]
+    "cases": ["akkusativ"]
   },
   {
     "id": "B1_TELC_verb_17",
@@ -184,7 +184,7 @@
     "word": "beantragen",
     "type": "verb",
     "category": "Gefühle & Beziehungen",
-    "cases": ["akkusative"]
+    "cases": ["akkusativ"]
   },
     {
       "id": "B1_TELC_verb_18",
@@ -195,7 +195,7 @@
       "word": "aufhalten",
       "type": "verb",
       "category": "Gefühle & Beziehungen",
-      "cases": ["akkusative", "separable"]
+      "cases": ["akkusativ", "separable"]
     },
     {
       "id": "B1_TELC_verb_19",
@@ -228,7 +228,7 @@
       "word": "begleiten",
       "type": "verb",
       "category": "Gefühle & Beziehungen",
-      "cases": ["akkusative"]
+      "cases": ["akkusativ"]
     },
     {
       "id": "B1_TELC_verb_22",
@@ -239,7 +239,7 @@
       "word": "erreichen",
       "type": "verb",
       "category": "Gefühle & Beziehungen",
-      "cases": ["akkusative"]
+      "cases": ["akkusativ"]
     },
     {
       "id": "B1_TELC_verb_23",
@@ -250,7 +250,7 @@
       "word": "erledigen",
       "type": "verb",
       "category": "Gefühle & Beziehungen",
-      "cases": ["akkusative"]
+      "cases": ["akkusativ"]
     },
     {
       "id": "B1_TELC_verb_24",
@@ -261,7 +261,7 @@
       "word": "nerven",
       "type": "verb",
       "category": "Gefühle & Beziehungen",
-      "cases": ["akkusative"]
+      "cases": ["akkusativ"]
     },
     {
       "id": "B1_TELC_verb_25",
@@ -294,7 +294,7 @@
         "word": "verfolgen",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["akkusative"]
+        "cases": ["akkusativ"]
       },
       {
         "id": "B1_TELC_verb_28",
@@ -305,7 +305,7 @@
         "word": "versauen",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["akkusative"]
+        "cases": ["akkusativ"]
       },
       {
         "id": "B1_TELC_verb_29",
@@ -316,7 +316,7 @@
         "word": "verwirklichen",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["akkusative"]
+        "cases": ["akkusativ"]
       },
       {
         "id": "B1_TELC_verb_30",
@@ -338,7 +338,7 @@
         "word": "zeichnen",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["akkusative"]
+        "cases": ["akkusativ"]
       },
       {
         "id": "B1_TELC_verb_32",
@@ -349,7 +349,7 @@
         "word": "kitzeln",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["akkusative"]
+        "cases": ["akkusativ"]
       },
       {
         "id": "B1_TELC_verb_33",
@@ -360,7 +360,7 @@
         "word": "stecken",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["akkusative", "dative"]
+        "cases": ["akkusativ", "dative"]
       },
       {
         "id": "B1_TELC_verb_34",
@@ -371,7 +371,7 @@
         "word": "beweisen",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["akkusative"]
+        "cases": ["akkusativ"]
       },
       {
         "id": "B1_TELC_verb_35",
@@ -404,7 +404,7 @@
         "word": "gewinnen",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["akkusative"]
+        "cases": ["akkusativ"]
       },
       {
         "id": "B1_TELC_verb_38",
@@ -415,7 +415,7 @@
         "word": "verlieren",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["akkusative"]
+        "cases": ["akkusativ"]
       },
       {
         "id": "B1_TELC_verb_39",
@@ -426,7 +426,7 @@
         "word": "vergleichen",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["akkusative"]
+        "cases": ["akkusativ"]
       },
       {
         "id": "B1_TELC_verb_40",
@@ -470,7 +470,7 @@
         "word": "bevorzugen",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["akkusative"]
+        "cases": ["akkusativ"]
       },
       {
         "id": "B1_TELC_verb_44",
@@ -481,7 +481,7 @@
         "word": "veröffentlichen",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["akkusative"]
+        "cases": ["akkusativ"]
       },
       {
         "id": "B1_TELC_verb_45",
@@ -514,7 +514,7 @@
         "word": "ausprobieren",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["separable", "akkusative"]
+        "cases": ["separable", "akkusativ"]
       },
       {
         "id": "B1_TELC_verb_48",
@@ -525,7 +525,7 @@
         "word": "packen",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["akkusative"]
+        "cases": ["akkusativ"]
       },
       {
         "id": "B1_TELC_verb_49",
@@ -536,7 +536,7 @@
         "word": "einpacken",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["separable", "akkusative"]
+        "cases": ["separable", "akkusativ"]
       },
       {
         "id": "B1_TELC_verb_50",
@@ -547,7 +547,7 @@
         "word": "auspacken",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["separable", "akkusative"]
+        "cases": ["separable", "akkusativ"]
       },
       {
         "id": "B1_TELC_verb_51",
@@ -569,7 +569,7 @@
         "word": "aufräumen",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["separable", "akkusative"]
+        "cases": ["separable", "akkusativ"]
       },
       {
         "id": "B1_TELC_verb_53",
@@ -580,7 +580,7 @@
         "word": "herausfinden",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["separable", "akkusative"]
+        "cases": ["separable", "akkusativ"]
       },
       {
         "id": "B1_TELC_verb_54",
@@ -591,7 +591,7 @@
         "word": "anfassen",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["separable", "akkusative"]
+        "cases": ["separable", "akkusativ"]
       },
       {
         "id": "B1_TELC_verb_55",
@@ -624,7 +624,7 @@
         "word": "bedienen",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["akkusative"]
+        "cases": ["akkusativ"]
       },
       {
         "id": "B1_TELC_verb_58",
@@ -646,7 +646,7 @@
         "word": "anbieten",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["akkusative"]
+        "cases": ["akkusativ"]
       },
       {
         "id": "B1_TELC_verb_60",
@@ -657,6 +657,6 @@
         "word": "verlassen",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["akkusative"]
+        "cases": ["akkusativ"]
       }
 ]
