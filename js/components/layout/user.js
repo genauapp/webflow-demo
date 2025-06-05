@@ -133,7 +133,7 @@ export async function initUserComponent(elementIds, elementClasses) {
 
   render({ loading: false, error, unauthorized, user })
 
-  await initGoogleAuth(onLoginSuccess, onLoginError)
+  await initGoogleAuth(elementIds.googleSigninButton, onLoginSuccess, onLoginError)
 
   // Add logout event listener
   els.logoutButtons().forEach((element) => {

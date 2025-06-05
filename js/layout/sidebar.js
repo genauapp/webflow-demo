@@ -5,6 +5,7 @@ const elementIds = {
   // User component elements
   user: {
     loginContainer: 'login-container',
+    googleSigninButton: "btn-home-google-signin"
   },
 }
 
