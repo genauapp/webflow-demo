@@ -57,6 +57,7 @@ document.querySelectorAll('.deck-img').forEach((elem) => {
     const selectedCategory = elem.getAttribute('data-option')
     //save category name to localStorage
     LocalStorageManager.save(CURRENT_CATEGORY_KEY, selectedCategory)
+    console.log(elem)
     organizeSelectedDeckImage()
     hideSelectCategoryMessage()
     checkIsOnLearnOrExercise()
