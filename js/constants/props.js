@@ -106,8 +106,8 @@ export const categories = {
     },
     {
       nameShort: 'b1telc',
-      name: 'B1 TELC',
-      nameEng: 'B1 TELC',
+      name: 'B1 TELC EXAM',
+      nameEng: 'B1 TELC EXAM',
       imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/B1-TELC.jpg`,
     }
   ],
