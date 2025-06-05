@@ -124,11 +124,12 @@ function checkIsOnLearnOrExercise() {
   const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
   const exerciseTab = document.getElementById(`${wordType}Tab-exercise`)
   const learnTab = document.getElementById(`${wordType}Tab-learn`)
-  if (learnTab.classList.contains('w--current')) {
+  const isOnLearn = localStorage.load(IS_ON_LEARN_KEY)
+  if (learnTab.classList.contains('w--current') && !(isOnLearn === 'learn')) {
     LocalStorageManager.save(IS_ON_LEARN_KEY, 'learn')
     return
   }
-  if (exerciseTab.classList.contains('w--current')) {
+  if (exerciseTab.classList.contains('w--current') && !(isOnLearn === 'exercise')) {
     LocalStorageManager.save(IS_ON_LEARN_KEY, 'exercise')
     return
   }
