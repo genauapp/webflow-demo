@@ -137,7 +137,7 @@ export class DEFAULT_VALUE {
         adjective: [],
         adverb: [],
       },
-      telc: {
+      b1telc: {
         noun: [],
         verb: [],
         adjective: [],
@@ -305,7 +305,7 @@ export class DEFAULT_VALUE {
         adjective: [],
         adverb: [],
       },
-      telc: {
+      b1telc: {
         noun: [],
         verb: [],
         adjective: [],
@@ -473,7 +473,7 @@ export class DEFAULT_VALUE {
         adjective: [],
         adverb: [],
       },
-      telc: {
+      b1telc: {
         noun: [],
         verb: [],
         adjective: [],
