@@ -1,11 +1,11 @@
-import { initSigninComponent } from '../components/layout/user.js'
+import { initSigninComponent } from '../components/layout/signin.js'
 
 // "Single Element" IDs are kept in the page file
 const elementIds = {
   // User component elements
   signin: {
     signinModal: 'modal-signin-container',
-    googleSigninButton: 'btn-home-google-signin',
+    googleSigninButton: 'btn-modal-google-signin',
   },
 }
 
