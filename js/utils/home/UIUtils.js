@@ -127,7 +127,7 @@ export function loadDeckPropsOnLevelPage() {
     // <img> elementini oluştur
     const img = document.createElement('img');
     img.src = categories[level][i].imgUrl;
-    //img.loading = 'lazy';
+    img.loading = 'lazy';
     img.style.width = '100%';
     img.style.height = '100%';
     img.style.maxWidth = '100%';
@@ -185,6 +185,9 @@ export function loadDeckPropsOnLevelPage() {
     */
 
     //linkBlock.appendChild(wordCountBadge);
+
+    // remove placeholders
+    document.querySelectorAll('.placeholder').forEach(elem => () {elem.style.display = 'none';})
   }
 }
 
