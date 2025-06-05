@@ -1,7 +1,7 @@
 import { GOOGLE_CLIENT_ID_WEB } from '../../constants/auth/google.js'
 import { publicApiService } from '../apiService.js'
 
-export async function initGoogleAuth(onSuccess, onError) {
+export async function initGoogleAuth(buttonId, onSuccess, onError) {
   window.onGoogleLibraryLoad = () => {
     // 1) Configure the client
     google.accounts.id.initialize({
@@ -13,7 +13,7 @@ export async function initGoogleAuth(onSuccess, onError) {
 
     // 2) Render the real button into your container
     google.accounts.id.renderButton(
-      document.getElementById('btn-home-google-signin'),
+      document.getElementById(buttonId),
       {
         theme: 'outline',
         size: 'large',
