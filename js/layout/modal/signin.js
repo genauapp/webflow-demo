@@ -11,7 +11,7 @@ const elementIds = {
 
 async function bootstrap() {
   // Initialize both components with their respective element IDs
-  await initSigninComponent({ ...elementIds.user })
+  await initSigninComponent({ ...elementIds.signin })
 }
 
 document.addEventListener('DOMContentLoaded', bootstrap)
