@@ -187,7 +187,9 @@ export function loadDeckPropsOnLevelPage() {
     //linkBlock.appendChild(wordCountBadge);
 
     // remove placeholders
-    document.querySelectorAll('.placeholder').forEach(elem => () {elem.style.display = 'none';})
+    document.querySelectorAll('.placeholder').forEach((element) => {
+      element.style.display = 'none'
+    })
   }
 }
 
