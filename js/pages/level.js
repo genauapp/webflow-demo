@@ -44,24 +44,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       hideSelectCategoryMessage()
       organizeSelectedDeckImage()
     }
-    checkIsOnLearnOrExercise()
     await loadAndShowWords()
   }
-})
-
-// Category click handler
-document.querySelectorAll('.deck-img').forEach((elem) => {
-  elem.addEventListener('click', async function (event) {
-    event.preventDefault()
-    //get category name from data-option attribute
-    const selectedCategory = elem.getAttribute('data-option')
-    //save category name to localStorage
-    LocalStorageManager.save(CURRENT_CATEGORY_KEY, selectedCategory)
-    organizeSelectedDeckImage()
-    hideSelectCategoryMessage()
-    checkIsOnLearnOrExercise()
-    await loadAndShowWords()
-  })
 })
 
 // On Word Type Change
@@ -69,7 +53,6 @@ document.querySelectorAll('.deck-img').forEach((elem) => {
 types.forEach((type) => {
   document.getElementById(`${type}Tab`).addEventListener('click', async () => {
     LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, type)
-    checkIsOnLearnOrExercise()
     await loadAndShowWords()
   })
   document.getElementById(`${type}Tab-learn`).addEventListener('click', async () => {
@@ -83,6 +66,7 @@ types.forEach((type) => {
 })
 
 export async function loadAndShowWords() {
+  checkIsOnLearnOrExercise()
   const isOnLearn = LocalStorageManager.load(IS_ON_LEARN_KEY)
   try {
     await loadWords()
@@ -140,11 +124,12 @@ function checkIsOnLearnOrExercise() {
   const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
   const exerciseTab = document.getElementById(`${wordType}Tab-exercise`)
   const learnTab = document.getElementById(`${wordType}Tab-learn`)
-  if (learnTab.classList.contains('w--current')) {
+  const isOnLearn = LocalStorageManager.load(IS_ON_LEARN_KEY)
+  if (learnTab.classList.contains('w--current') && !(isOnLearn === 'learn')) {
     LocalStorageManager.save(IS_ON_LEARN_KEY, 'learn')
     return
   }
-  if (exerciseTab.classList.contains('w--current')) {
+  if (exerciseTab.classList.contains('w--current') && !(isOnLearn === 'exercise')) {
     LocalStorageManager.save(IS_ON_LEARN_KEY, 'exercise')
     return
   }

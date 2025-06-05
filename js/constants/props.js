@@ -101,6 +101,12 @@ export const categories = {
       nameEng: 'German Slang',
       imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/B1-German Slang.jpg`,
     },
+    {
+      nameShort: 'b1telc',
+      name: 'B1 TELC',
+      nameEng: 'B1 TELC',
+      imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/B1-TELC.jpg`,
+    }
   ],
   b2: [
     {

@@ -1,0 +1,189 @@
+[
+  {
+    "german": "vor allem",
+    "english": "above all / especially",
+    "level": "B1",
+    "example": "Vor allem Kinder brauchen Schutz.",
+    "word": "vor allem",
+    "rule": "",
+    "type": "adverb",
+    "category": "Gefühle & Beziehungen",
+    "id": "adverb_gefuehle_01"
+  },
+  {
+    "german": "auch wenn",
+    "english": "even if",
+    "level": "B1",
+    "example": "Ich komme, auch wenn ich müde bin.",
+    "word": "auch wenn",
+    "rule": "",
+    "type": "adverb",
+    "category": "Gefühle & Beziehungen",
+    "id": "adverb_gefuehle_02"
+  },
+  {
+    "german": "im Freien",
+    "english": "outdoors",
+    "level": "B1",
+    "example": "Wir essen gern im Freien.",
+    "word": "im Freien",
+    "rule": "",
+    "type": "adverb",
+    "category": "Gefühle & Beziehungen",
+    "id": "adverb_gefuehle_03"
+  },
+  {
+    "german": "im Voraus",
+    "english": "in advance",
+    "level": "B1",
+    "example": "Vielen Dank im Voraus für Ihre Hilfe.",
+    "word": "im Voraus",
+    "rule": "",
+    "type": "adverb",
+    "category": "Gefühle & Beziehungen",
+    "id": "adverb_gefuehle_04"
+  },
+  {
+    "german": "gleichzeitig",
+    "english": "simultaneously / at the same time",
+    "level": "B1",
+    "example": "Sie kann nicht gleichzeitig arbeiten und lernen.",
+    "word": "gleichzeitig",
+    "rule": "",
+    "type": "adverb",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adverb_05"
+  },
+  {
+    "german": "tatsächlich",
+    "english": "indeed / actually",
+    "level": "B1",
+    "example": "Tatsächlich hat er gewonnen.",
+    "word": "tatsächlich",
+    "rule": "",
+    "type": "adverb",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adverb_06"
+  },
+  {
+    "german": "allerdings",
+    "english": "however / indeed",
+    "level": "B1",
+    "example": "Das ist möglich, allerdings sehr teuer.",
+    "word": "allerdings",
+    "rule": "",
+    "type": "adverb",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adverb_07"
+  },
+  {
+    "german": "jedoch",
+    "english": "however",
+    "level": "B1",
+    "example": "Ich wollte helfen, konnte jedoch nicht.",
+    "word": "jedoch",
+    "rule": "",
+    "type": "adverb",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adverb_08"
+  },
+  {
+    "german": "absichtlich",
+    "english": "intentionally",
+    "level": "B1",
+    "example": "Er hat das absichtlich getan.",
+    "word": "absichtlich",
+    "rule": "",
+    "type": "adverb",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adverb_09"
+  },
+  {
+    "german": "versehentlich",
+    "english": "accidentally",
+    "level": "B1",
+    "example": "Ich habe versehentlich das falsche Buch genommen.",
+    "word": "versehentlich",
+    "rule": "",
+    "type": "adverb",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adverb_10"
+  },
+  {
+    "german": "indem",
+    "english": "by doing (something)",
+    "level": "B1",
+    "example": "Er löste das Problem, indem er nachfragte.",
+    "word": "indem",
+    "rule": "",
+    "type": "adverb",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adverb_11"
+  },
+  {
+    "german": "kaum",
+    "english": "hardly / barely",
+    "level": "B1",
+    "example": "Ich habe kaum geschlafen.",
+    "word": "kaum",
+    "rule": "",
+    "type": "adverb",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adverb_12"
+  },
+  {
+    "german": "schriftlich",
+    "english": "in writing",
+    "level": "B1",
+    "example": "Bitte reichen Sie die Bewerbung schriftlich ein.",
+    "word": "schriftlich",
+    "rule": "",
+    "type": "adverb",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adverb_13"
+  },
+  {
+    "german": "mündlich",
+    "english": "orally",
+    "level": "B1",
+    "example": "Die Prüfung wird mündlich durchgeführt.",
+    "word": "mündlich",
+    "rule": "",
+    "type": "adverb",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adverb_14"
+  },
+  {
+    "german": "immerhin",
+    "english": "after all / at least",
+    "level": "B1",
+    "example": "Er hat es immerhin versucht.",
+    "word": "immerhin",
+    "rule": "",
+    "type": "adverb",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adverb_15"
+  },
+  {
+    "german": "umsonst",
+    "english": "for free / in vain",
+    "level": "B1",
+    "example": "Die Mühe war nicht umsonst.",
+    "word": "umsonst",
+    "rule": "",
+    "type": "adverb",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adverb_16"
+  },
+  {
+    "german": "zufällig",
+    "english": "by chance",
+    "level": "B1",
+    "example": "Ich habe ihn zufällig getroffen.",
+    "word": "zufällig",
+    "rule": "",
+    "type": "adverb",
+    "category": "Gefühle & Beziehungen",
+    "id": "B1_TELC_adverb_17"
+  }
+]
