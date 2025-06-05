@@ -116,9 +116,8 @@ export function loadDeckPropsOnLevelPage() {
   const level = LevelManager.getCurrentLevel()
   for (let i = 0; i <= categories[level].length-1; i++) {
 
-    // <a> elementini oluştur
-    const linkBlock = document.createElement('a');
-    //linkBlock.href = '#action-content';
+    // <div> elementini oluştur
+    const linkBlock = document.createElement('div');
     linkBlock.classList.add('pack-link-block', 'w-inline-block');
     linkBlock.style.display = 'flex';
     linkBlock.style.flexDirection = 'column';
