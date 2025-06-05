@@ -114,7 +114,7 @@ export function isRegularLevel(level) {
 
 export function loadDeckPropsOnLevelPage() {
   const level = LevelManager.getCurrentLevel()
-  for (let i = 0; i <= categories[level].length-1; i++) {
+  for (let i = 0; i <= categories[level].length - 1; i++) {
 
     // <div> elementini oluştur
     const linkBlock = document.createElement('div');
@@ -183,6 +183,23 @@ export function loadDeckPropsOnLevelPage() {
     */
 
     //linkBlock.appendChild(wordCountBadge);
+
+    // Category click handler
+    document.querySelectorAll('.deck-img').forEach((elem) => {
+      elem.addEventListener('click', async function (event) {
+        event.preventDefault()
+        //get category name from data-option attribute
+        const selectedCategory = elem.getAttribute('data-option')
+        //save category name to localStorage
+        LocalStorageManager.save(CURRENT_CATEGORY_KEY, selectedCategory)
+        console.log(elem)
+        organizeSelectedDeckImage()
+        hideSelectCategoryMessage()
+        await loadAndShowWords()
+        // focus user Learn/Exercise area
+        window.location.hash = '#action-content'
+      })
+    })
 
     // remove placeholders
     document.querySelectorAll('.placeholder').forEach((element) => {

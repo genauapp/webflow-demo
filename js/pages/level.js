@@ -44,27 +44,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       hideSelectCategoryMessage()
       organizeSelectedDeckImage()
     }
-    checkIsOnLearnOrExercise()
     await loadAndShowWords()
   }
-})
-
-// Category click handler
-document.querySelectorAll('.deck-img').forEach((elem) => {
-  elem.addEventListener('click', async function (event) {
-    event.preventDefault()
-    //get category name from data-option attribute
-    const selectedCategory = elem.getAttribute('data-option')
-    //save category name to localStorage
-    LocalStorageManager.save(CURRENT_CATEGORY_KEY, selectedCategory)
-    console.log(elem)
-    organizeSelectedDeckImage()
-    hideSelectCategoryMessage()
-    checkIsOnLearnOrExercise()
-    await loadAndShowWords()
-    // focus user Learn/Exercise area
-    window.location.hash = '#action-content'
-  })
 })
 
 // On Word Type Change
@@ -86,6 +67,7 @@ types.forEach((type) => {
 })
 
 export async function loadAndShowWords() {
+  checkIsOnLearnOrExercise()
   const isOnLearn = LocalStorageManager.load(IS_ON_LEARN_KEY)
   try {
     await loadWords()
