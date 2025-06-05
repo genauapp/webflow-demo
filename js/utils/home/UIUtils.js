@@ -118,7 +118,7 @@ export function loadDeckPropsOnLevelPage() {
 
     // <a> elementini oluştur
     const linkBlock = document.createElement('a');
-    linkBlock.href = '#action-content';
+    //linkBlock.href = '#action-content';
     linkBlock.classList.add('pack-link-block', 'w-inline-block');
     linkBlock.style.display = 'flex';
     linkBlock.style.flexDirection = 'column';
