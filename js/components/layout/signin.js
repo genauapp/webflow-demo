@@ -35,6 +35,7 @@ function render({ loading, error, unauthorized, user }) {
 
 function onLoginSuccess(user) {
   render({ loading: false, error: null, unauthorized: false, user })
+  window.location.reload()
 }
 
 function onLoginError(err) {
