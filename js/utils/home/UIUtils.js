@@ -192,7 +192,6 @@ export function loadDeckPropsOnLevelPage() {
         const selectedCategory = elem.getAttribute('data-option')
         //save category name to localStorage
         LocalStorageManager.save(CURRENT_CATEGORY_KEY, selectedCategory)
-        console.log(elem)
         organizeSelectedDeckImage()
         hideSelectCategoryMessage()
         await loadAndShowWords()
