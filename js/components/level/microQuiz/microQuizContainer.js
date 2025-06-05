@@ -10,6 +10,7 @@ let state = {
   error: null,
   words: [],
   sessionId: 'microQuiz', // Unique session identifier
+  streakTarget: 3, // Default streak target (1-5)
 }
 
 /** Initialize elements dynamically using provided IDs */
@@ -27,16 +28,18 @@ function initElements(elementIds, elementClasses) {
     learnContainer: () => document.getElementById(elementIds.learnContainer),
     exerciseContainer: () => document.getElementById(elementIds.exerciseContainer),
     
-    // Navigation elements
-    learnPrevious: () => document.getElementById(elementIds.learnPrevious),
-    learnNext: () => document.getElementById(elementIds.learnNext),
+    // Learn navigation elements
+    learnRepeat: () => document.getElementById(elementIds.learnRepeat),
+    learnNext: () => document.getElementById(elementIds.learnNext), // "I Know" button
     learnReset: () => document.getElementById(elementIds.learnReset),
-    learnShuffle: () => document.getElementById(elementIds.learnShuffle),
     
-    exercisePrevious: () => document.getElementById(elementIds.exercisePrevious),
-    exerciseNext: () => document.getElementById(elementIds.exerciseNext),
-    exerciseCorrect: () => document.getElementById(elementIds.exerciseCorrect),
-    exerciseWrong: () => document.getElementById(elementIds.exerciseWrong),
+    // Exercise navigation elements
+    exerciseCorrect: () => document.getElementById(elementIds.exerciseCorrect), // "True" button
+    exerciseWrong: () => document.getElementById(elementIds.exerciseWrong), // "False" button
+    exerciseReset: () => document.getElementById(elementIds.exerciseReset),
+    
+    // Optional streak configuration
+    streakSelector: () => document.getElementById(elementIds.streakSelector),
   }
 }
 
@@ -97,26 +100,50 @@ function updateTabStates(navigationState) {
 /** Update navigation button states */
 function updateNavigationButtons(navigationState) {
   // Learn navigation buttons
-  const learnPrevBtn = els.learnPrevious()
-  const learnNextBtn = els.learnNext()
+  const learnRepeatBtn = els.learnRepeat()
+  const learnNextBtn = els.learnNext() // "I Know" button
+  const learnResetBtn = els.learnReset()
   
-  if (learnPrevBtn) {
-    learnPrevBtn.disabled = !navigationState.canGoPrevious
+  if (learnRepeatBtn) {
+    // Disable repeat if no current item
+    learnRepeatBtn.disabled = !navigationState.currentItem || navigationState.activeListLength === 0
   }
   if (learnNextBtn) {
-    learnNextBtn.disabled = !navigationState.canGoNext
+    // Disable "I Know" if no current item  
+    learnNextBtn.disabled = !navigationState.currentItem || navigationState.activeListLength === 0
+  }
+  if (learnResetBtn) {
+    // Show reset button only when all words are known
+    learnResetBtn.style.display = navigationState.isLearnCompleted ? 'block' : 'none'
   }
   
   // Exercise navigation buttons
-  const exercisePrevBtn = els.exercisePrevious()
-  const exerciseNextBtn = els.exerciseNext()
+  const exerciseCorrectBtn = els.exerciseCorrect() // "True" button
+  const exerciseWrongBtn = els.exerciseWrong() // "False" button
+  const exerciseResetBtn = els.exerciseReset()
   
-  if (exercisePrevBtn) {
-    exercisePrevBtn.disabled = !navigationState.canGoPrevious
+  if (exerciseCorrectBtn) {
+    exerciseCorrectBtn.disabled = !navigationState.currentItem || navigationState.activeListLength === 0
   }
-  if (exerciseNextBtn) {
-    exerciseNextBtn.disabled = !navigationState.canGoNext
+  if (exerciseWrongBtn) {
+    exerciseWrongBtn.disabled = !navigationState.currentItem || navigationState.activeListLength === 0
   }
+  if (exerciseResetBtn) {
+    // Show reset button only when all exercises are completed
+    exerciseResetBtn.style.display = navigationState.isExerciseCompleted ? 'block' : 'none'
+  }
+}
+
+/** Enhance words with required properties */
+function enhanceWordsWithProperties(words) {
+  return words.map(word => ({
+    ...word,
+    // Learn list properties
+    isKnown: false,
+    // Exercise list properties  
+    streak: 0,
+    isCorrectlyAnswered: false
+  }))
 }
 
 /** Fetch words from API service */
@@ -133,10 +160,11 @@ async function fetchWords() {
       state.error = error
       state.words = []
     } else {
-      state.words = words || []
+      // Enhance words with required properties
+      state.words = enhanceWordsWithProperties(words || [])
       state.error = null
       
-      // Initialize navigation service with the words
+      // Initialize navigation service with the enhanced words
       if (state.words.length > 0) {
         initializeNavigationService()
       }
@@ -154,6 +182,7 @@ async function fetchWords() {
 function initializeNavigationService() {
   navigationService.createSession(state.sessionId, state.words, {
     mode: 'learn', // Start with learn mode
+    streakTarget: state.streakTarget,
     onUpdate: (navigationState) => {
       // Called whenever navigation state changes
       updateTabStates(navigationState)
@@ -161,11 +190,15 @@ function initializeNavigationService() {
     },
     onLearnUpdate: (navigationState) => {
       // Update learn component
-      initLearn(state.words, navigationState.currentIndex)
+      if (navigationState.currentItem) {
+        initLearn(navigationState.currentItem, navigationState.currentIndex, navigationState.totalItems)
+      }
     },
     onExerciseUpdate: (navigationState) => {
-      // Update exercise component
-      initExercise(state.words, navigationState.currentIndex)
+      // Update exercise component  
+      if (navigationState.currentItem) {
+        initExercise(navigationState.currentItem, navigationState.currentIndex, navigationState.totalItems, navigationState.exerciseState.score)
+      }
     }
   })
 }
@@ -179,9 +212,9 @@ function onExerciseTabClick() {
   navigationService.switchMode(state.sessionId, 'exercise')
 }
 
-/** Learn navigation handlers - now just delegate to navigation service */
-function onLearnPrevious() {
-  navigationService.learnPrevious(state.sessionId)
+/** Learn navigation handlers */
+function onLearnRepeat() {
+  navigationService.learnRepeat(state.sessionId)
 }
 
 function onLearnNext() {
@@ -192,25 +225,23 @@ function onLearnReset() {
   navigationService.learnReset(state.sessionId)
 }
 
-function onLearnShuffle() {
-  navigationService.learnShuffle(state.sessionId)
-}
-
-/** Exercise navigation handlers - now just delegate to navigation service */
-function onExercisePrevious() {
-  navigationService.exercisePrevious(state.sessionId)
-}
-
-function onExerciseNext() {
-  navigationService.exerciseNext(state.sessionId)
-}
-
+/** Exercise navigation handlers */
 function onExerciseCorrect() {
-  navigationService.exerciseCorrect(state.sessionId, true) // auto-advance enabled
+  navigationService.exerciseCorrect(state.sessionId)
 }
 
 function onExerciseWrong() {
-  navigationService.exerciseWrong(state.sessionId, true) // auto-advance enabled
+  navigationService.exerciseWrong(state.sessionId) 
+}
+
+function onExerciseReset() {
+  navigationService.exerciseReset(state.sessionId)
+}
+
+/** Streak target configuration handler */
+function onStreakChange(newStreakTarget) {
+  state.streakTarget = newStreakTarget
+  navigationService.updateStreakTarget(state.sessionId, newStreakTarget)
 }
 
 /** Initialize event listeners */
@@ -219,21 +250,35 @@ function initEventListeners() {
   els.learnTab().addEventListener('click', onLearnTabClick)
   els.exerciseTab().addEventListener('click', onExerciseTabClick)
   
-  // Learn navigation - all logic now handled by navigation service
-  els.learnPrevious().addEventListener('click', onLearnPrevious)
-  els.learnNext().addEventListener('click', onLearnNext)
+  // Learn navigation
+  els.learnRepeat().addEventListener('click', onLearnRepeat)
+  els.learnNext().addEventListener('click', onLearnNext) // "I Know" button
   els.learnReset().addEventListener('click', onLearnReset)
-  els.learnShuffle().addEventListener('click', onLearnShuffle)
   
-  // Exercise navigation - all logic now handled by navigation service
-  els.exercisePrevious().addEventListener('click', onExercisePrevious)
-  els.exerciseNext().addEventListener('click', onExerciseNext)
-  els.exerciseCorrect().addEventListener('click', onExerciseCorrect)
-  els.exerciseWrong().addEventListener('click', onExerciseWrong)
+  // Exercise navigation  
+  els.exerciseCorrect().addEventListener('click', onExerciseCorrect) // "True" button
+  els.exerciseWrong().addEventListener('click', onExerciseWrong) // "False" button
+  els.exerciseReset().addEventListener('click', onExerciseReset)
+  
+  // Optional streak configuration
+  const streakSelector = els.streakSelector()
+  if (streakSelector) {
+    streakSelector.addEventListener('change', (e) => {
+      const newTarget = parseInt(e.target.value, 10)
+      if (newTarget >= 1 && newTarget <= 5) {
+        onStreakChange(newTarget)
+      }
+    })
+  }
 }
 
 /** Initialize the micro quiz container */
-export async function initMicroQuizContainer(elementIds, elementClasses) {
+export async function initMicroQuizContainer(elementIds, elementClasses, config = {}) {
+  // Set streak target from config if provided
+  if (config.streakTarget && config.streakTarget >= 1 && config.streakTarget <= 5) {
+    state.streakTarget = config.streakTarget
+  }
+
   // Initialize elements with provided IDs
   initElements(elementIds, elementClasses)
   
@@ -250,4 +295,9 @@ export async function initMicroQuizContainer(elementIds, elementClasses) {
 /** Cleanup function to destroy navigation session */
 export function destroyMicroQuizContainer() {
   navigationService.destroySession(state.sessionId)
+}
+
+/** Get current navigation state (useful for debugging or external access) */
+export function getCurrentState() {
+  return navigationService.getCurrentState(state.sessionId)
 }

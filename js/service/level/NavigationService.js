@@ -1,6 +1,6 @@
 // /service/navigationService.js
 
-/** 
+/**
  * Reusable navigation service for learn and exercise modes
  * Handles all navigation logic, state management, and provides callbacks for UI updates
  */
@@ -19,6 +19,7 @@ class NavigationService {
    * @param {Function} options.onLearnUpdate - Callback for learn mode updates
    * @param {Function} options.onExerciseUpdate - Callback for exercise mode updates
    * @param {string} options.mode - 'learn' or 'exercise'
+   * @param {number} options.streakTarget - Target streak for exercise completion (1-5)
    */
   createSession(sessionId, items, options = {}) {
     const session = {
@@ -26,6 +27,7 @@ class NavigationService {
       items: [...items],
       originalItems: [...items],
       mode: options.mode || 'learn',
+      streakTarget: options.streakTarget || 3, // Default streak target
       learnState: {
         currentIndex: 0,
         history: [],
@@ -40,7 +42,7 @@ class NavigationService {
         onUpdate: options.onUpdate || (() => {}),
         onLearnUpdate: options.onLearnUpdate || (() => {}),
         onExerciseUpdate: options.onExerciseUpdate || (() => {}),
-      }
+      },
     }
 
     this.sessions.set(sessionId, session)
@@ -68,159 +70,212 @@ class NavigationService {
   }
 
   /**
+   * Update streak target configuration
+   */
+  updateStreakTarget(sessionId, streakTarget) {
+    const session = this.sessions.get(sessionId)
+    if (!session) return null
+
+    session.streakTarget = Math.max(1, Math.min(5, streakTarget))
+    return session
+  }
+
+  /**
    * LEARN MODE NAVIGATION
    */
 
-  // Navigate to previous item in learn mode
-  learnPrevious(sessionId) {
+  // Repeat current word - move to end of learn list, stay at same index
+  learnRepeat(sessionId) {
     const session = this.sessions.get(sessionId)
     if (!session || session.items.length === 0) return null
 
     const state = session.learnState
-    if (state.currentIndex > 0) {
-      state.history.push(state.currentIndex)
-      state.currentIndex--
-      this._notifyLearnUpdate(session)
+    const currentIndex = state.currentIndex
+
+    // Get active learn list (words that are not known)
+    const activeLearnList = this._getActiveLearnList(session)
+    if (activeLearnList.length === 0) return null
+
+    // Find the current word in the active list
+    const currentWord = activeLearnList[currentIndex]
+    if (!currentWord) return null
+
+    // Remove current word from its position and add to end
+    activeLearnList.splice(currentIndex, 1)
+    activeLearnList.push(currentWord)
+
+    // Update the session items with the reordered active list plus known words
+    this._updateSessionItems(session, activeLearnList)
+
+    // Keep the same index (no progression)
+    // If we're at the end and moved word to end, adjust index
+    if (state.currentIndex >= activeLearnList.length) {
+      state.currentIndex = Math.max(0, activeLearnList.length - 1)
     }
+
+    this._notifyLearnUpdate(session)
     return this._getCurrentItem(session)
   }
 
-  // Navigate to next item in learn mode
+  // "I Know" button - mark as known and move to next
   learnNext(sessionId) {
     const session = this.sessions.get(sessionId)
     if (!session || session.items.length === 0) return null
 
     const state = session.learnState
-    if (state.currentIndex < session.items.length - 1) {
-      state.history.push(state.currentIndex)
-      state.currentIndex++
-      this._notifyLearnUpdate(session)
+    const activeLearnList = this._getActiveLearnList(session)
+
+    if (activeLearnList.length === 0) return null
+
+    const currentWord = activeLearnList[state.currentIndex]
+    if (currentWord) {
+      // Mark word as known
+      currentWord.isKnown = true
+
+      // Remove from active learn list
+      activeLearnList.splice(state.currentIndex, 1)
+
+      // Update session items
+      this._updateSessionItems(session, activeLearnList)
+
+      // Adjust index if we're at or past the end
+      if (state.currentIndex >= activeLearnList.length) {
+        state.currentIndex = Math.max(0, activeLearnList.length - 1)
+      }
     }
+
+    this._notifyLearnUpdate(session)
     return this._getCurrentItem(session)
   }
 
-  // Reset learn mode to beginning
+  // Reset learn mode - appears when all words are known
   learnReset(sessionId) {
     const session = this.sessions.get(sessionId)
     if (!session) return null
 
-    session.learnState.currentIndex = 0
-    session.learnState.history = []
-    this._notifyLearnUpdate(session)
-    return this._getCurrentItem(session)
-  }
+    // Reset isKnown flags for all words
+    session.originalItems.forEach((word) => {
+      word.isKnown = false
+    })
 
-  // Shuffle items and reset learn mode
-  learnShuffle(sessionId) {
-    const session = this.sessions.get(sessionId)
-    if (!session) return null
-
-    // Fisher-Yates shuffle
-    const items = [...session.items]
-    for (let i = items.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [items[i], items[j]] = [items[j], items[i]]
+    // Shuffle the original items
+    const shuffledItems = [...session.originalItems]
+    for (let i = shuffledItems.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1))
+      ;[shuffledItems[i], shuffledItems[j]] = [
+        shuffledItems[j],
+        shuffledItems[i],
+      ]
     }
 
-    session.items = items
+    // Update session
+    session.items = shuffledItems
     session.learnState.currentIndex = 0
     session.learnState.history = []
+
     this._notifyLearnUpdate(session)
     return this._getCurrentItem(session)
   }
 
-  // Go to specific index in learn mode
-  learnGoTo(sessionId, index) {
+  // Check if all words are known (for showing reset button)
+  isLearnCompleted(sessionId) {
     const session = this.sessions.get(sessionId)
-    if (!session || session.items.length === 0) return null
+    if (!session) return false
 
-    const safeIndex = Math.max(0, Math.min(index, session.items.length - 1))
-    session.learnState.history.push(session.learnState.currentIndex)
-    session.learnState.currentIndex = safeIndex
-    this._notifyLearnUpdate(session)
-    return this._getCurrentItem(session)
+    return session.originalItems.every((word) => word.isKnown === true)
   }
 
   /**
    * EXERCISE MODE NAVIGATION
    */
 
-  // Navigate to previous item in exercise mode
-  exercisePrevious(sessionId) {
-    const session = this.sessions.get(sessionId)
-    if (!session || session.items.length === 0) return null
-
-    const state = session.exerciseState
-    if (state.currentIndex > 0) {
-      state.history.push(state.currentIndex)
-      state.currentIndex--
-      this._notifyExerciseUpdate(session)
-    }
-    return this._getCurrentItem(session)
-  }
-
-  // Navigate to next item in exercise mode
-  exerciseNext(sessionId) {
-    const session = this.sessions.get(sessionId)
-    if (!session || session.items.length === 0) return null
-
-    const state = session.exerciseState
-    if (state.currentIndex < session.items.length - 1) {
-      state.history.push(state.currentIndex)
-      state.currentIndex++
-      this._notifyExerciseUpdate(session)
-    }
-    return this._getCurrentItem(session)
-  }
-
   // Handle correct answer in exercise mode
-  exerciseCorrect(sessionId, autoAdvance = true) {
+  exerciseCorrect(sessionId) {
     const session = this.sessions.get(sessionId)
     if (!session) return null
 
+    const activeExerciseList = this._getActiveExerciseList(session)
+    if (activeExerciseList.length === 0) return null
+
     const state = session.exerciseState
     const currentIndex = state.currentIndex
-    
-    // Update score if not already answered
-    if (!state.answered.has(currentIndex)) {
-      state.score.correct++
-      state.score.total++
-      state.answered.add(currentIndex)
-    }
+    const currentWord = activeExerciseList[currentIndex]
+
+    if (!currentWord) return null
+
+    // Increment streak
+    currentWord.streak = (currentWord.streak || 0) + 1
+
+    // Update score
+    state.score.correct++
+    state.score.total++
     state.score.attempts++
 
-    this._notifyExerciseUpdate(session)
+    // Check if word has reached target streak
+    if (currentWord.streak >= session.streakTarget) {
+      // Mark as correctly answered and remove from active exercise list
+      currentWord.isCorrectlyAnswered = true
+      activeExerciseList.splice(currentIndex, 1)
 
-    // Auto-advance to next question if enabled
-    if (autoAdvance && currentIndex < session.items.length - 1) {
-      return this.exerciseNext(sessionId)
+      // Update session items
+      this._updateSessionItems(session, null, activeExerciseList)
+
+      // Adjust index if needed
+      if (state.currentIndex >= activeExerciseList.length) {
+        state.currentIndex = Math.max(0, activeExerciseList.length - 1)
+      }
+    } else {
+      // Move word to end of exercise list
+      activeExerciseList.splice(currentIndex, 1)
+      activeExerciseList.push(currentWord)
+
+      // Update session items
+      this._updateSessionItems(session, null, activeExerciseList)
+
+      // Keep same index (auto-advance to next word)
+      if (state.currentIndex >= activeExerciseList.length) {
+        state.currentIndex = Math.max(0, activeExerciseList.length - 1)
+      }
     }
 
+    this._notifyExerciseUpdate(session)
     return this._getCurrentItem(session)
   }
 
   // Handle wrong answer in exercise mode
-  exerciseWrong(sessionId, autoAdvance = true) {
+  exerciseWrong(sessionId) {
     const session = this.sessions.get(sessionId)
     if (!session) return null
 
+    const activeExerciseList = this._getActiveExerciseList(session)
+    if (activeExerciseList.length === 0) return null
+
     const state = session.exerciseState
     const currentIndex = state.currentIndex
-    
-    // Update score if not already answered
-    if (!state.answered.has(currentIndex)) {
-      state.score.total++
-      state.answered.add(currentIndex)
-    }
+    const currentWord = activeExerciseList[currentIndex]
+
+    if (!currentWord) return null
+
+    // Reset streak to 0
+    currentWord.streak = 0
+
+    // Update score
+    state.score.total++
     state.score.attempts++
 
-    this._notifyExerciseUpdate(session)
+    // Move word to end of exercise list
+    activeExerciseList.splice(currentIndex, 1)
+    activeExerciseList.push(currentWord)
 
-    // Auto-advance to next question if enabled
-    if (autoAdvance && currentIndex < session.items.length - 1) {
-      return this.exerciseNext(sessionId)
+    // Update session items
+    this._updateSessionItems(session, null, activeExerciseList)
+
+    // Keep same index (auto-advance to next word)
+    if (state.currentIndex >= activeExerciseList.length) {
+      state.currentIndex = Math.max(0, activeExerciseList.length - 1)
     }
 
+    this._notifyExerciseUpdate(session)
     return this._getCurrentItem(session)
   }
 
@@ -229,31 +284,62 @@ class NavigationService {
     const session = this.sessions.get(sessionId)
     if (!session) return null
 
+    // Reset streak and isCorrectlyAnswered for all words
+    session.originalItems.forEach((word) => {
+      word.streak = 0
+      word.isCorrectlyAnswered = false
+    })
+
+    // Reset exercise state
     session.exerciseState = {
       currentIndex: 0,
       score: { correct: 0, total: 0, attempts: 0 },
       answered: new Set(),
       history: [],
     }
+
     this._notifyExerciseUpdate(session)
     return this._getCurrentItem(session)
   }
 
-  // Go to specific index in exercise mode
-  exerciseGoTo(sessionId, index) {
+  // Check if all exercises are completed (for showing reset button)
+  isExerciseCompleted(sessionId) {
     const session = this.sessions.get(sessionId)
-    if (!session || session.items.length === 0) return null
+    if (!session) return false
 
-    const safeIndex = Math.max(0, Math.min(index, session.items.length - 1))
-    session.exerciseState.history.push(session.exerciseState.currentIndex)
-    session.exerciseState.currentIndex = safeIndex
-    this._notifyExerciseUpdate(session)
-    return this._getCurrentItem(session)
+    return session.originalItems.every(
+      (word) => word.isCorrectlyAnswered === true
+    )
   }
 
   /**
    * UTILITY METHODS
    */
+
+  // Get active learn list (words that are not known)
+  _getActiveLearnList(session) {
+    return session.items.filter((word) => !word.isKnown)
+  }
+
+  // Get active exercise list (words that are not correctly answered)
+  _getActiveExerciseList(session) {
+    return session.items.filter((word) => !word.isCorrectlyAnswered)
+  }
+
+  // Update session items maintaining the filtered lists
+  _updateSessionItems(session, newLearnList = null, newExerciseList = null) {
+    if (session.mode === 'learn' && newLearnList) {
+      // Combine active learn list with known words
+      const knownWords = session.items.filter((word) => word.isKnown)
+      session.items = [...newLearnList, ...knownWords]
+    } else if (session.mode === 'exercise' && newExerciseList) {
+      // Combine active exercise list with completed words
+      const completedWords = session.items.filter(
+        (word) => word.isCorrectlyAnswered
+      )
+      session.items = [...newExerciseList, ...completedWords]
+    }
+  }
 
   // Get current item based on active mode
   getCurrentItem(sessionId) {
@@ -266,27 +352,42 @@ class NavigationService {
     const session = this.sessions.get(sessionId)
     if (!session) return null
 
-    const currentIndex = session.mode === 'learn' 
-      ? session.learnState.currentIndex 
-      : session.exerciseState.currentIndex
+    let currentIndex, totalItems, currentItem, activeList
+
+    if (session.mode === 'learn') {
+      activeList = this._getActiveLearnList(session)
+      currentIndex = session.learnState.currentIndex
+      totalItems = activeList.length
+      currentItem = activeList[currentIndex] || null
+    } else {
+      activeList = this._getActiveExerciseList(session)
+      currentIndex = session.exerciseState.currentIndex
+      totalItems = activeList.length
+      currentItem = activeList[currentIndex] || null
+    }
 
     return {
       mode: session.mode,
       currentIndex,
-      currentItem: this._getCurrentItem(session),
-      totalItems: session.items.length,
+      currentItem,
+      totalItems,
       progress: {
-        current: currentIndex + 1,
-        total: session.items.length,
-        percentage: session.items.length > 0 ? ((currentIndex + 1) / session.items.length) * 100 : 0
+        current: totalItems > 0 ? currentIndex + 1 : 0,
+        total: totalItems,
+        percentage:
+          totalItems > 0 ? ((currentIndex + 1) / totalItems) * 100 : 0,
       },
       learnState: { ...session.learnState },
-      exerciseState: { 
+      exerciseState: {
         ...session.exerciseState,
-        score: { ...session.exerciseState.score }
+        score: { ...session.exerciseState.score },
       },
-      canGoPrevious: currentIndex > 0,
-      canGoNext: currentIndex < session.items.length - 1,
+      canGoPrevious: false, // No previous functionality in new design
+      canGoNext: totalItems > 0 && currentIndex < totalItems - 1,
+      isLearnCompleted: this.isLearnCompleted(sessionId),
+      isExerciseCompleted: this.isExerciseCompleted(sessionId),
+      streakTarget: session.streakTarget,
+      activeListLength: activeList.length,
     }
   }
 
@@ -297,13 +398,19 @@ class NavigationService {
 
     session.items = [...newItems]
     session.originalItems = [...newItems]
-    
+
     // Reset indices if they're out of bounds
-    if (session.learnState.currentIndex >= newItems.length) {
-      session.learnState.currentIndex = Math.max(0, newItems.length - 1)
+    const activeLearnList = this._getActiveLearnList(session)
+    const activeExerciseList = this._getActiveExerciseList(session)
+
+    if (session.learnState.currentIndex >= activeLearnList.length) {
+      session.learnState.currentIndex = Math.max(0, activeLearnList.length - 1)
     }
-    if (session.exerciseState.currentIndex >= newItems.length) {
-      session.exerciseState.currentIndex = Math.max(0, newItems.length - 1)
+    if (session.exerciseState.currentIndex >= activeExerciseList.length) {
+      session.exerciseState.currentIndex = Math.max(
+        0,
+        activeExerciseList.length - 1
+      )
     }
 
     this._notifyUpdate(session)
@@ -320,19 +427,25 @@ class NavigationService {
    */
 
   _getCurrentItem(session) {
-    if (!session || session.items.length === 0) return null
-    
-    const currentIndex = session.mode === 'learn' 
-      ? session.learnState.currentIndex 
-      : session.exerciseState.currentIndex
-    
-    return session.items[currentIndex] || null
+    if (!session) return null
+
+    let activeList, currentIndex
+
+    if (session.mode === 'learn') {
+      activeList = this._getActiveLearnList(session)
+      currentIndex = session.learnState.currentIndex
+    } else {
+      activeList = this._getActiveExerciseList(session)
+      currentIndex = session.exerciseState.currentIndex
+    }
+
+    return activeList[currentIndex] || null
   }
 
   _notifyUpdate(session) {
     const state = this.getCurrentState(session.id)
     session.callbacks.onUpdate(state)
-    
+
     if (session.mode === 'learn') {
       this._notifyLearnUpdate(session)
     } else {
