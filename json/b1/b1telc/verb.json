@@ -8,7 +8,7 @@
     "word": "auffallen",
     "type": "verb",
     "category": "Gefühle & Beziehungen",
-    "cases": ["dative", "separable"]
+    "cases": ["dativ", "separable"]
   },
   {
     "id": "B1_TELC_verb_02",
@@ -52,7 +52,7 @@
     "word": "stehen",
     "type": "verb",
     "category": "Gefühle & Beziehungen",
-    "cases": ["dative"]
+    "cases": ["dativ"]
   },
   {
     "id": "B1_TELC_verb_06",
@@ -283,7 +283,7 @@
         "word": "teilhaben",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["dative", "separable"]
+        "cases": ["dativ", "separable"]
       },
       {
         "id": "B1_TELC_verb_27",
@@ -360,7 +360,7 @@
         "word": "stecken",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["akkusativ", "dative"]
+        "cases": ["akkusativ", "dativ"]
       },
       {
         "id": "B1_TELC_verb_34",
@@ -437,7 +437,7 @@
         "word": "vertraut sein",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["dative"]
+        "cases": ["dativ"]
       },
       {
         "id": "B1_TELC_verb_41",
@@ -602,7 +602,7 @@
         "word": "berichten",
         "type": "verb",
         "category": "Gefühle & Beziehungen",
-        "cases": ["dative"]
+        "cases": ["dativ"]
       },
       {
         "id": "B1_TELC_verb_56",
