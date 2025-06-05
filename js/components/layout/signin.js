@@ -1,4 +1,3 @@
-// /components/layout/user.js
 import {
   protectedApiService,
   publicApiService,
