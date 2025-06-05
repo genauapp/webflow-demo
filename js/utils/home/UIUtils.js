@@ -132,7 +132,6 @@ export function loadDeckPropsOnLevelPage() {
     img.style.maxWidth = '100%';
     img.id = `deck-${i}`;
     img.dataset.option = categories[level][i].nameShort
-    img.alt = '';
     img.classList.add('deck-img', 'image-19');
 
     // <h1> elementini oluştur
