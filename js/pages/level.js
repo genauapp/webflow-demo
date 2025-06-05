@@ -62,6 +62,8 @@ document.querySelectorAll('.deck-img').forEach((elem) => {
     hideSelectCategoryMessage()
     checkIsOnLearnOrExercise()
     await loadAndShowWords()
+    // focus user Learn/Exercise area
+    window.location.hash = '#action-content'
   })
 })
 
