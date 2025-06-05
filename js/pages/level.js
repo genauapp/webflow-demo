@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 types.forEach((type) => {
   document.getElementById(`${type}Tab`).addEventListener('click', async () => {
     LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, type)
-    checkIsOnLearnOrExercise()
     await loadAndShowWords()
   })
   document.getElementById(`${type}Tab-learn`).addEventListener('click', async () => {
