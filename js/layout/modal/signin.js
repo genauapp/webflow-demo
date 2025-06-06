@@ -4,7 +4,7 @@ import {
   showSigninModal,
   hideSigninModal,
 } from '../../components/layout/signin.js'
-import { SigninModalTriggerEvents } from '../../constants/events.js'
+import { SigninModalTriggerEvent } from '../../constants/events.js'
 
 import { incrementEventCount, shouldTriggerModal } from '../../utils/events/eventCounter/eventCounterManager.js'
 
@@ -19,7 +19,7 @@ async function bootstrap() {
   await initSigninComponent({ ...elementIds.signin })
 
   // Add event listeners for all trigger events
-  Object.values(SigninModalTriggerEvents).forEach((eventName) => {
+  Object.values(SigninModalTriggerEvent).forEach((eventName) => {
     document.addEventListener(eventName, () => {
       // Update counter and check if we should trigger
       incrementEventCount(eventName)

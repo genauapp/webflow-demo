@@ -1,5 +1,5 @@
 // /constants/events.js
-export const SigninModalTriggerEvents = Object.freeze({
+export const SigninModalTriggerEvent = Object.freeze({
   HOME_SEARCH_ADD_TO_BOOKMARKS: 'home:search-add-to-bookmarks',
   LEVEL_LEARN_ADD_TO_BOOKMARKS: 'level:learn-add-to-bookmarks',
   LEVEL_LEARN_FINISH: 'level:learn-finish',

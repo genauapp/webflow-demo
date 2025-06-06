@@ -1,4 +1,4 @@
-import { SigninModalTriggerEvents } from './events.js'
+import { SigninModalTriggerEvent } from './events.js'
 import { STATE_NATIONWIDE } from './states.js'
 
 /*
@@ -61,17 +61,17 @@ export class DEFAULT_VALUE {
     einburgerungstest: 0,
   }
   static SIGNIN_TRIGGER_COUNTER = {
-    [SigninModalTriggerEvents.HOME_SEARCH_ADD_TO_BOOKMARKS]: {
+    [SigninModalTriggerEvent.HOME_SEARCH_ADD_TO_BOOKMARKS]: {
       current: 0,
       max: 1,
     },
-    [SigninModalTriggerEvents.LEVEL_LEARN_ADD_TO_BOOKMARKS]: {
+    [SigninModalTriggerEvent.LEVEL_LEARN_ADD_TO_BOOKMARKS]: {
       current: 0,
       max: 1,
     },
-    [SigninModalTriggerEvents.LEVEL_LEARN_FINISH]: { current: 0, max: 3 },
-    [SigninModalTriggerEvents.LEVEL_EXERCISE_FINISH]: { current: 0, max: 1 },
-    [SigninModalTriggerEvents.EINBURGERUNGSTEST_TEST_FINISH]: {
+    [SigninModalTriggerEvent.LEVEL_LEARN_FINISH]: { current: 0, max: 3 },
+    [SigninModalTriggerEvent.LEVEL_EXERCISE_FINISH]: { current: 0, max: 1 },
+    [SigninModalTriggerEvent.EINBURGERUNGSTEST_TEST_FINISH]: {
       current: 0,
       max: null,
     },
