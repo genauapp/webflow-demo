@@ -1,4 +1,5 @@
 // /components/home/search.js
+import { SigninModalTriggerEvent } from '../../constants/events.js'
 import {
   WordType,
   ArtikelColorMap,
@@ -7,6 +8,7 @@ import {
 } from '../../constants/props.js'
 import { publicApiService, protectedApiService } from '../../service/apiService.js'
 import CollectionsManager from '../../utils/CollectionsManager.js'
+import { EventManager } from '../../utils/events/EventManager.js'
 
 let els = {}
 let currentWordResults = []
@@ -292,6 +294,7 @@ async function handleAddToBookmarks(e) {
     currentWordResults[0],
     WordSource.NORMAL_PROMPT
   )
+  EventManager.dispatchEvent(SigninModalTriggerEvent.HOME_SEARCH_ADD_TO_BOOKMARKS)
   btn.textContent = 'Added to Bookmarks'
   // btn.disabled = true // not working since it's an anchor element
   btn.style.pointerEvents = 'none' // Disable further clicks
