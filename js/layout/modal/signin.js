@@ -1,8 +1,14 @@
-import { initSigninComponent } from "../../components/layout/signin.js"
+// /layout/modal/signin.js
+import {
+  initSigninComponent,
+  showSigninModal,
+  hideSigninModal,
+} from '../../components/layout/signin.js'
+import { SigninModalTriggerEvents } from '../../constants/events.js'
 
-// "Single Element" IDs are kept in the page file
+import { incrementEventCount, shouldTriggerModal } from '../../utils/events/eventCounter/eventCounterManager.js'
+
 const elementIds = {
-  // User component elements
   signin: {
     signinModal: 'modal-signin-container',
     googleSigninButton: 'btn-modal-google-signin',
@@ -10,8 +16,27 @@ const elementIds = {
 }
 
 async function bootstrap() {
-  // Initialize both components with their respective element IDs
   await initSigninComponent({ ...elementIds.signin })
+
+  // Add event listeners for all trigger events
+  Object.values(SigninModalTriggerEvents).forEach((eventName) => {
+    document.addEventListener(eventName, () => {
+      // Update counter and check if we should trigger
+      incrementEventCount(eventName)
+
+      if (shouldTriggerModal(eventName)) {
+        showSigninModal()
+      }
+    })
+  })
+
+  // DON'T CLOSE modal when clicking outside
+  // document.addEventListener('click', (e) => {
+  //   const modal = document.getElementById(elementIds.signin.signinModal)
+  //   if (modal && e.target === modal) {
+  //     hideSigninModal()
+  //   }
+  // })
 }
 
 document.addEventListener('DOMContentLoaded', bootstrap)

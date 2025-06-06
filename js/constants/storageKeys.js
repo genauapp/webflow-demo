@@ -1,3 +1,4 @@
+import { SigninModalTriggerEvents } from './events.js'
 import { STATE_NATIONWIDE } from './states.js'
 
 /*
@@ -18,6 +19,7 @@ export const TOTAL_WORD_EXERCISE_KEY = 'TOTAL_WORD_EXERCISE'
 export const TOTAL_WORD_LEARN_KEY = 'TOTAL_WORD_LEARN'
 export const IS_ON_LEARN_KEY = 'IS_ON_LEARN_OR_EXERCISE'
 export const PAYMENT_TRIGGER_COUNTER_KEY = 'PAYMENT_TRIGGER_COUNTER'
+export const SIGNIN_TRIGGER_COUNTER_KEY = 'SIGNIN_TRIGGER_COUNTER'
 export const BOOKMARKS_KEY = 'BOOKMARKS'
 
 /*
@@ -57,6 +59,22 @@ export class DEFAULT_VALUE {
     learn: 0,
     exercise: 0,
     einburgerungstest: 0,
+  }
+  static SIGNIN_TRIGGER_COUNTER = {
+    [SigninModalTriggerEvents.HOME_SEARCH_ADD_TO_BOOKMARKS]: {
+      current: 0,
+      max: 1,
+    },
+    [SigninModalTriggerEvents.LEVEL_LEARN_ADD_TO_BOOKMARKS]: {
+      current: 0,
+      max: 1,
+    },
+    [SigninModalTriggerEvents.LEVEL_LEARN_FINISH]: { current: 0, max: 3 },
+    [SigninModalTriggerEvents.LEVEL_EXERCISE_FINISH]: { current: 0, max: 1 },
+    [SigninModalTriggerEvents.EINBURGERUNGSTEST_TEST_FINISH]: {
+      current: 0,
+      max: null,
+    },
   }
 
   static LEARNED_WITH_LEARN_WORDS = {
@@ -142,7 +160,7 @@ export class DEFAULT_VALUE {
         verb: [],
         adjective: [],
         adverb: [],
-      }
+      },
     },
     b2: {
       bildung: {
@@ -310,7 +328,7 @@ export class DEFAULT_VALUE {
         verb: [],
         adjective: [],
         adverb: [],
-      }
+      },
     },
     b2: {
       bildung: {
@@ -478,7 +496,7 @@ export class DEFAULT_VALUE {
         verb: [],
         adjective: [],
         adverb: [],
-      }
+      },
     },
     b2: {
       bildung: {
