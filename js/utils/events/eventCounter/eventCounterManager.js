@@ -1,9 +1,9 @@
 // /utils/events/eventCounterManager.js
-import LocalStorageManager from '../../LocalStorageManager'
+import LocalStorageManager from '../../LocalStorageManager.js'
 import {
   SIGNIN_TRIGGER_COUNTER_KEY,
   DEFAULT_VALUE,
-} from '../../../constants/storageKeys'
+} from '../../../constants/storageKeys.js'
 
 // Get the entire counter object
 export function getCounterObject() {
