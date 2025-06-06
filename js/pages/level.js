@@ -10,6 +10,7 @@ import {
   TOTAL_WORD_EXERCISE_KEY,
   TOTAL_WORD_LEARN_KEY,
   IS_ON_LEARN_KEY,
+  BOOKMARKS_KEY,
   // PAYMENT_TRIGGER_COUNTER_KEY,
 } from '../constants/storageKeys.js'
 import { ASSETS_BASE_URL } from '../constants/urls.js'
@@ -60,7 +61,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     LEARNED_WITH_LEARN_WORDS_KEY,
     DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS
   )
-  LocalStorageManager.load('BOOKMARKS', DEFAULT_VALUE.BOOKMARKS)
+  LocalStorageManager.load(BOOKMARKS_KEY, DEFAULT_VALUE.BOOKMARKS)
 
   const currentLevel = LevelManager.getCurrentLevel()
   // change Level Header top of the pack screen

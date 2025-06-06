@@ -17,6 +17,7 @@ import {
 //   PaymentTriggerEvent,
 // } from '../payment/PaymentUtils.js'
 import LevelManager from '../LevelManager.js'
+import EventManager from '../events/EventManager.js'
 
 // cases for verbs
 const globalCases = ['reflexive', 'akkusativ', 'dativ', 'separable']
@@ -100,6 +101,7 @@ export default function showLearnWord() {
   ) {
     showFinishScreen()
     // decideShowingPaymentWorkflowOn(PaymentTriggerEvent.LEARN)
+    EventManager.publish(SigninModalTriggerEvent.LEVEL_LEARN_FINISH)
     return
   }
   refreshCasesUI()

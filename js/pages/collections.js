@@ -110,17 +110,17 @@ function listFavorites() {
 
 // Favori wordyi silme
 function removeFavorite(index) {
-  let bookmarkedWords = LocalStorageManager.load('BOOKMARKS')
+  let bookmarkedWords = LocalStorageManager.load(BOOKMARKS_KEY)
   let favoriteWords = bookmarkedWords.favorites
   favoriteWords.splice(index, 1) // İlgili indeksi kaldır
   bookmarkedWords.favorites = favoriteWords
-  LocalStorageManager.save('BOOKMARKS', bookmarkedWords)
+  LocalStorageManager.save(BOOKMARKS_KEY, bookmarkedWords)
   listFavorites() // Listeyi yeniden yükle
 }
 
 function listLearnedWords() {
   const learnedWordsContainer = document.getElementById('learnedWordsContainer')
-  const bookmarkedWords = LocalStorageManager.load('BOOKMARKS')
+  const bookmarkedWords = LocalStorageManager.load(BOOKMARKS_KEY)
   let learnedWords = bookmarkedWords.learned
 
   // Container ayarları

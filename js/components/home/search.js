@@ -8,7 +8,7 @@ import {
 } from '../../constants/props.js'
 import { publicApiService, protectedApiService } from '../../service/apiService.js'
 import CollectionsManager from '../../utils/CollectionsManager.js'
-import { EventManager } from '../../utils/events/EventManager.js'
+import EventManager from '../../utils/events/EventManager.js'
 
 let els = {}
 let currentWordResults = []
@@ -262,7 +262,7 @@ const attachVerbCaseHandlers = () => {
 
 async function handleAddToBookmarks(e) {
   e.preventDefault()
-  EventManager.dispatchEvent(SigninModalTriggerEvent.HOME_SEARCH_ADD_TO_BOOKMARKS)
+  EventManager.publish(SigninModalTriggerEvent.HOME_SEARCH_ADD_TO_BOOKMARKS)
 
   if (currentWordResults.length === 0) return
 
