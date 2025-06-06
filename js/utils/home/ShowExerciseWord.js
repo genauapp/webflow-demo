@@ -10,10 +10,10 @@ import {
 import LocalStorageManager from '../LocalStorageManager.js'
 import ExerciseUtils from './ExerciseUtils.js'
 import { hideFinishScreen, showFinishScreen } from './UIUtils.js'
-import {
-  decideShowingPaymentWorkflowOn,
-  PaymentTriggerEvent,
-} from '../payment/PaymentUtils.js'
+// import {
+//   decideShowingPaymentWorkflowOn,
+//   PaymentTriggerEvent,
+// } from '../payment/PaymentUtils.js'
 import LevelManager from '../LevelManager.js'
 
 export default function showExerciseWord() {
@@ -60,7 +60,7 @@ export default function showExerciseWord() {
     totalWordsExercise
   ) {
     showFinishScreen()
-    decideShowingPaymentWorkflowOn(PaymentTriggerEvent.EXERCISE)
+    // decideShowingPaymentWorkflowOn(PaymentTriggerEvent.EXERCISE)
     return
   }
 
