@@ -1,6 +1,7 @@
 // /pages/home.js
 import { initSearchComponent } from '../components/home/search.js'
 import { initLevelComponent } from '../components/home/level.js'
+import LocalStorageManager from '../utils/LocalStorageManager.js'
 
 // Element IDs are kept in the page file
 const elementIds = {
@@ -30,7 +31,7 @@ const elementIds = {
         caseDetailsContainer: (verbCase) => `${verbCase}-details-container`,
       },
       addToBookmarksButton: 'btn-search-add-to-bookmarks',
-      labelRequiresSignin: 'label-requires-signin'
+      labelRequiresSignin: 'label-requires-signin',
     },
   },
 
@@ -45,6 +46,8 @@ const elementIds = {
 }
 
 async function bootstrap() {
+  LocalStorageManager.clearDeprecatedLocalStorageItems()
+
   // Initialize both components with their respective element IDs
   initSearchComponent({ ...elementIds.search })
   // initLevelComponent({ ...elementIds.level })
