@@ -15,6 +15,8 @@ import { hideFinishScreen, showFinishScreen } from './UIUtils.js'
 //   PaymentTriggerEvent,
 // } from '../payment/PaymentUtils.js'
 import LevelManager from '../LevelManager.js'
+import EventManager from '../events/EventManager.js'
+import { SigninModalTriggerEvent } from '../../constants/events.js'
 
 export default function showExerciseWord() {
   let wordListExercise = LocalStorageManager.load(
@@ -61,6 +63,7 @@ export default function showExerciseWord() {
   ) {
     showFinishScreen()
     // decideShowingPaymentWorkflowOn(PaymentTriggerEvent.EXERCISE)
+    EventManager.publish(SigninModalTriggerEvent.LEVEL_EXERCISE_FINISH)
     return
   }
 

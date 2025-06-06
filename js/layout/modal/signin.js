@@ -10,7 +10,7 @@ import {
   incrementEventCount,
   shouldTriggerModal,
 } from '../../utils/events/eventCounter/eventCounterManager.js'
-import { EventManager } from '../../utils/events/EventManager.js'
+import EventManager from '../../utils/events/EventManager.js'
 
 const elementIds = {
   signin: {
@@ -24,7 +24,7 @@ async function bootstrap() {
 
   // Add event listeners for all trigger events
   Object.values(SigninModalTriggerEvent).forEach((eventName) => {
-    EventManager.addEventListener(eventName, () => {
+    EventManager.subscribe(eventName, () => {
       // Update counter and check if we should trigger
       incrementEventCount(eventName)
 

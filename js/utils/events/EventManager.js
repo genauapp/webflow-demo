@@ -1,9 +1,11 @@
-export class EventManager {
-  static dispatchEvent(eventName) {
-    document.dispatchEvent(new Event(eventName))
+class EventManager {
+  static publish(eventName) {
+    document.dispatchEvent(new CustomEvent(eventName))
   }
 
-  static addEventListener(eventName, callback) {
+  static subscribe(eventName, callback) {
     document.addEventListener(eventName, callback)
   }
 }
+
+export default EventManager
