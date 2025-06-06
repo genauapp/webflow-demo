@@ -262,6 +262,8 @@ const attachVerbCaseHandlers = () => {
 
 async function handleAddToBookmarks(e) {
   e.preventDefault()
+  EventManager.dispatchEvent(SigninModalTriggerEvent.HOME_SEARCH_ADD_TO_BOOKMARKS)
+
   if (currentWordResults.length === 0) return
 
   const btn = els.addToBookmarksButton()
@@ -294,7 +296,6 @@ async function handleAddToBookmarks(e) {
     currentWordResults[0],
     WordSource.NORMAL_PROMPT
   )
-  EventManager.dispatchEvent(SigninModalTriggerEvent.HOME_SEARCH_ADD_TO_BOOKMARKS)
   btn.textContent = 'Added to Bookmarks'
   // btn.disabled = true // not working since it's an anchor element
   btn.style.pointerEvents = 'none' // Disable further clicks
