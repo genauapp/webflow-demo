@@ -17,7 +17,7 @@ export function getCounterObject() {
 
 // Save the entire counter object
 function saveCounterObject(counters) {
-  localStorage.setItem(SIGNIN_TRIGGER_COUNTER_KEY, counters)
+  LocalStorageManager.save(SIGNIN_TRIGGER_COUNTER_KEY, counters)
 }
 
 // Increment a specific counter
