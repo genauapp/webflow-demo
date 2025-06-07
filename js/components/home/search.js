@@ -6,12 +6,16 @@ import {
   ALL_VERB_CASES,
   WordSource,
 } from '../../constants/props.js'
-import { publicApiService, protectedApiService } from '../../service/apiService.js'
+import {
+  publicApiService,
+  protectedApiService,
+} from '../../service/apiService.js'
 import CollectionsManager from '../../utils/CollectionsManager.js'
 import eventService from '../../service/events/EventService.js'
 
 let els = {}
 let currentWordResults = []
+let unauthorized = true
 
 /** Initialize elements dynamically using provided IDs */
 function initElements(elementIds) {
@@ -51,7 +55,8 @@ function initElements(elementIds) {
 
     addToBookmarksButton: () =>
       document.getElementById(elementIds.results.addToBookmarksButton),
-    labelRequiresSignin: () => document.getElementById(elementIds.results.labelRequiresSignin)
+    labelRequiresSignin: () =>
+      document.getElementById(elementIds.results.labelRequiresSignin),
   }
 }
 
@@ -269,13 +274,6 @@ async function handleAddToBookmarks(e) {
   const btn = els.addToBookmarksButton()
   const requiresSigninLabel = els.labelRequiresSignin()
 
-  const {
-    data: user,
-    status,
-    error,
-  } = await protectedApiService.getUserProfile()
-  const unauthorized = status === 401 || status === 403
-
   if (unauthorized) {
     btn.style.pointerEvents = 'none' // Disable further clicks
     btn.style.opacity = '0.6' // Visual disabled state
@@ -306,6 +304,13 @@ async function handleAddToBookmarks(e) {
 export function initSearchComponent(elementIds) {
   // Initialize elements with provided IDs
   initElements(elementIds)
+
+  // Subscribe to auth events
+  eventService.subscribe(AuthEvent.AUTH_STATE_CHANGED, (event) => {
+    const { unauthorized } = event.detail
+
+    unauthorized = unauthorized
+  })
 
   // initial render (blank)
   render({ loading: false, error: null, results: null })

@@ -1,7 +1,6 @@
 import { GOOGLE_CLIENT_ID_WEB } from '../../constants/auth/google.js'
-import { publicApiService } from '../apiService.js'
 
-export async function initGoogleAuth(buttonId, onSuccess, onError) {
+export async function initGoogleAuth(buttonId, onSuccess) {
   window.onGoogleLibraryLoad = () => {
     // 1) Configure the client
     google.accounts.id.initialize({
@@ -12,13 +11,10 @@ export async function initGoogleAuth(buttonId, onSuccess, onError) {
     })
 
     // 2) Render the real button into your container
-    google.accounts.id.renderButton(
-      document.getElementById(buttonId),
-      {
-        theme: 'outline',
-        size: 'large',
-      }
-    )
+    google.accounts.id.renderButton(document.getElementById(buttonId), {
+      theme: 'outline',
+      size: 'large',
+    })
   }
 
   // 3) Load the library (ensures onGoogleLibraryLoad is called)
@@ -30,21 +26,8 @@ export async function initGoogleAuth(buttonId, onSuccess, onError) {
   document.head.appendChild(script)
 
   async function handleCredentialResponse(googleResponse) {
-    try {
-      const idToken = googleResponse.credential // JWT from Google
-      // console.log(`google id_token: ${idToken}`)
-      const response = await publicApiService.googleSignin(idToken)
-
-      if (response.data) {
-        onSuccess(response.data)
-      } else {
-        const errText = response.error
-        console.error('Google login failed:', errText)
-        onError(errText)
-      }
-    } catch (err) {
-      console.error('Error in googleSignin request:', err)
-      onError(err)
-    }
+    const idToken = googleResponse.credential // JWT from Google
+    // console.log(`google id_token: ${idToken}`)
+    onSuccess(idToken)
   }
 }
