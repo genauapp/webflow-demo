@@ -19,16 +19,14 @@ const elementIds = {
 }
 
 async function bootstrap() {
-  await initSigninComponent({ ...elementIds.signin })
-
   // Add event listeners for all trigger events
   Object.values(SigninModalTriggerEvent).forEach((eventName) => {
-    eventService.subscribe(eventName, () => {
+    eventService.subscribe(eventName, async () => {
       // Update counter and check if we should trigger
       incrementEventCount(eventName)
 
       if (shouldTriggerModal(eventName)) {
-        showSigninModal()
+        await initSigninComponent({ ...elementIds.signin })
       }
     })
   })

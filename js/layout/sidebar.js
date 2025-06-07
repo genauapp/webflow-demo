@@ -1,11 +1,12 @@
 import { initUserComponent } from '../components/layout/user.js'
+import authService from '../service/AuthService.js'
 
 // "Single Element" IDs are kept in the page file
 const elementIds = {
   // User component elements
   user: {
     loginContainer: 'login-container',
-    googleSigninButton: "btn-home-google-signin"
+    googleSigninButton: 'btn-home-google-signin',
   },
 }
 
@@ -24,6 +25,9 @@ const elementClasses = {
 async function bootstrap() {
   // Initialize both components with their respective element IDs
   await initUserComponent({ ...elementIds.user }, { ...elementClasses.user })
+
+  // Initialize global auth service
+  await authService.initialize()
 }
 
 document.addEventListener('DOMContentLoaded', bootstrap)
