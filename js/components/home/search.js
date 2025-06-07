@@ -308,9 +308,7 @@ export function initSearchComponent(elementIds) {
 
   // Subscribe to auth events
   eventService.subscribe(AuthEvent.AUTH_STATE_CHANGED, (event) => {
-    const { unauthorized } = event.detail
-
-    unauthorized = unauthorized
+    unauthorized = event.detail.unauthorized
   })
 
   // initial render (blank)
