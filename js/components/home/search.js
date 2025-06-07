@@ -12,6 +12,7 @@ import {
 } from '../../service/apiService.js'
 import CollectionsManager from '../../utils/CollectionsManager.js'
 import eventService from '../../service/events/EventService.js'
+import { AuthEvent } from '../../constants/events.js'
 
 let els = {}
 let currentWordResults = []

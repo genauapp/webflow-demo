@@ -1,8 +1,6 @@
 // /layout/modal/signin.js
 import {
   initSigninComponent,
-  showSigninModal,
-  hideSigninModal,
 } from '../../components/layout/signin.js'
 import { SigninModalTriggerEvent } from '../../constants/events.js'
 import {
