@@ -9,7 +9,7 @@ import {
   DEFAULT_VALUE,
   TEST_PROGRESSION_KEY,
 } from '../../constants/storageKeys.js'
-import EventManager from '../../utils/events/EventManager.js'
+import eventService from '../../service/events/EventService.js'
 import { SigninModalTriggerEvent } from '../../constants/events.js'
 // import {
 //   decideShowingPaymentWorkflowOn,
@@ -301,7 +301,7 @@ const answerClickHandler = (event) => {
       TestManager.isTestResultSuccessful(updatedTestProgression.score)
     )
     // decideShowingPaymentWorkflowOn(PaymentTriggerEvent.EINBURGERUNGSTEST)
-    EventManager.publish(SigninModalTriggerEvent.EINBURGERUNGSTEST_TEST_FINISH)
+    eventService.publish(SigninModalTriggerEvent.EINBURGERUNGSTEST_TEST_FINISH)
   }
 
   LocalStorageManager.save(TEST_PROGRESSION_KEY, updatedTestProgression)

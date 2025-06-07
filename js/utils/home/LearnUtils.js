@@ -14,7 +14,7 @@ import { showFinishScreen } from './UIUtils.js'
 //   PaymentTriggerEvent,
 // } from '../payment/PaymentUtils.js'
 import LevelManager from '../LevelManager.js'
-import EventManager from '../events/EventManager.js'
+import eventService from '../../service/events/EventService.js'
 import { SigninModalTriggerEvent } from '../../constants/events.js'
 
 // On Learn: Repeat Click
@@ -79,7 +79,7 @@ export function iKnowLearn() {
   ) {
     showFinishScreen()
     // decideShowingPaymentWorkflowOn(PaymentTriggerEvent.LEARN)
-    EventManager.publish(SigninModalTriggerEvent.LEVEL_LEARN_FINISH)
+    eventService.publish(SigninModalTriggerEvent.LEVEL_LEARN_FINISH)
     return
   }
   showLearnWord()

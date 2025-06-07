@@ -6,7 +6,7 @@ import {
   TOTAL_WORD_LEARN_KEY,
   WORD_LIST_KEY,
 } from '../../constants/storageKeys.js'
-import EventManager from '../events/EventManager.js'
+import eventService from '../../service/events/EventService.js'
 import LocalStorageManager from '../LocalStorageManager.js'
 import { updateFavoriteIcons } from './UIUtils.js'
 
@@ -42,7 +42,7 @@ export const addToFavorites = () => {
   })
   bookmarkedWords.favorites = favoriteWords
   LocalStorageManager.save(BOOKMARKS_KEY, bookmarkedWords)
-  EventManager.publish(SigninModalTriggerEvent.LEVEL_LEARN_ADD_TO_BOOKMARKS)
+  eventService.publish(SigninModalTriggerEvent.LEVEL_LEARN_ADD_TO_BOOKMARKS)
 
   feedbackElement.innerText = `"${currentWord.german}" has been added to favorites!`
   feedbackElement.style.color = 'green'

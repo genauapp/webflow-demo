@@ -1,5 +1,5 @@
-// /utils/events/eventCounterManager.js
-import LocalStorageManager from '../../LocalStorageManager.js'
+// /service/events/counter/signinModalTriggerCounterService.js
+import LocalStorageManager from '../../../utils/LocalStorageManager.js'
 import {
   SIGNIN_TRIGGER_COUNTER_KEY,
   DEFAULT_VALUE,
