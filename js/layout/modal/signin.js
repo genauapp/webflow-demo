@@ -22,7 +22,7 @@ async function bootstrap() {
 
   // Add event listeners for all trigger events
   Object.values(SigninModalTriggerEvent).forEach((eventName) => {
-    eventService.subscribe(eventName, async () => {
+    eventService.subscribe(eventName, () => {
       // Update counter and check if we should trigger
       incrementEventCount(eventName)
 
