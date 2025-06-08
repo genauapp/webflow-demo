@@ -46,8 +46,8 @@ export async function initSigninComponent(elementIds) {
     setState({
       loading: isLoading,
       error: hasError,
-      user: user,
       isVisible: !unauthorized,
+      user: user,
     })
   })
 
