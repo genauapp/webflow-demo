@@ -35,16 +35,16 @@ class AuthService {
         error,
       } = await protectedApiService.getUserProfile()
       console.debug(
-        `[AuthService] getUserProfile response - Status: ${
-          response.status
-        }, Error: ${response.error || 'None'}`
+        `[AuthService] getUserProfile response - Status: ${status}, Error: ${
+          error || 'None'
+        }`
       )
       const unauthorized = status === 401 || status === 403
 
       if (unauthorized || error) {
         console.warn(
           `[AuthService] Profile fetch failed - Unauthorized: ${unauthorized}, Error: ${
-            response.error || 'None'
+            error || 'None'
           }`
         )
         this.currentUser = null
@@ -57,7 +57,7 @@ class AuthService {
       } else {
         console.log(
           `[AuthService] Profile fetched successfully - User ID: ${
-            response.data?.id || 'Unknown'
+            user.id || 'Unknown'
           }`
         )
         this.currentUser = user
