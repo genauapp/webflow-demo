@@ -10,11 +10,13 @@ import {
 import LocalStorageManager from '../LocalStorageManager.js'
 import ExerciseUtils from './ExerciseUtils.js'
 import { hideFinishScreen, showFinishScreen } from './UIUtils.js'
-import {
-  decideShowingPaymentWorkflowOn,
-  PaymentTriggerEvent,
-} from '../payment/PaymentUtils.js'
+// import {
+//   decideShowingPaymentWorkflowOn,
+//   PaymentTriggerEvent,
+// } from '../payment/PaymentUtils.js'
 import LevelManager from '../LevelManager.js'
+import eventService from '../../service/events/EventService.js'
+import { SigninModalTriggerEvent } from '../../constants/events.js'
 
 export default function showExerciseWord() {
   let wordListExercise = LocalStorageManager.load(
@@ -60,7 +62,8 @@ export default function showExerciseWord() {
     totalWordsExercise
   ) {
     showFinishScreen()
-    decideShowingPaymentWorkflowOn(PaymentTriggerEvent.EXERCISE)
+    // decideShowingPaymentWorkflowOn(PaymentTriggerEvent.EXERCISE)
+    eventService.publish(SigninModalTriggerEvent.LEVEL_EXERCISE_FINISH)
     return
   }
 

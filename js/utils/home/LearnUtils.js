@@ -9,11 +9,13 @@ import {
 } from '../../constants/storageKeys.js'
 import showLearnWord from './showLearnWord.js'
 import { showFinishScreen } from './UIUtils.js'
-import {
-  decideShowingPaymentWorkflowOn,
-  PaymentTriggerEvent,
-} from '../payment/PaymentUtils.js'
+// import {
+//   decideShowingPaymentWorkflowOn,
+//   PaymentTriggerEvent,
+// } from '../payment/PaymentUtils.js'
 import LevelManager from '../LevelManager.js'
+import eventService from '../../service/events/EventService.js'
+import { SigninModalTriggerEvent } from '../../constants/events.js'
 
 // On Learn: Repeat Click
 export function repeatLearn() {
@@ -76,7 +78,8 @@ export function iKnowLearn() {
     learnedWithLearnWords[level][category][wordType].length === totalWordsLearn
   ) {
     showFinishScreen()
-    decideShowingPaymentWorkflowOn(PaymentTriggerEvent.LEARN)
+    // decideShowingPaymentWorkflowOn(PaymentTriggerEvent.LEARN)
+    eventService.publish(SigninModalTriggerEvent.LEVEL_LEARN_FINISH)
     return
   }
   showLearnWord()

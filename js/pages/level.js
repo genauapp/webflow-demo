@@ -1,42 +1,84 @@
-import { CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE, LEARNED_WITH_EXERCISE_WORDS_KEY, LEARNED_WITH_LEARN_WORDS_KEY, CURRENT_CATEGORY_KEY, WORD_LIST_EXERCISE_KEY, IN_PROGRESS_WORDS_KEY, WORD_LIST_KEY, TOTAL_WORD_EXERCISE_KEY, TOTAL_WORD_LEARN_KEY, IS_ON_LEARN_KEY, PAYMENT_TRIGGER_COUNTER_KEY } from '../constants/storageKeys.js'
+import {
+  CURRENT_WORD_TYPE_KEY,
+  DEFAULT_VALUE,
+  LEARNED_WITH_EXERCISE_WORDS_KEY,
+  LEARNED_WITH_LEARN_WORDS_KEY,
+  CURRENT_CATEGORY_KEY,
+  WORD_LIST_EXERCISE_KEY,
+  IN_PROGRESS_WORDS_KEY,
+  WORD_LIST_KEY,
+  TOTAL_WORD_EXERCISE_KEY,
+  TOTAL_WORD_LEARN_KEY,
+  IS_ON_LEARN_KEY,
+  BOOKMARKS_KEY,
+  // PAYMENT_TRIGGER_COUNTER_KEY,
+} from '../constants/storageKeys.js'
 import { ASSETS_BASE_URL } from '../constants/urls.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
 import ListUtils from '../utils/ListUtils.js'
 import { types } from '../constants/props.js'
-import { removeFavorite, addToFavorites } from '../utils/home/AddOrRemoveFavs.js'
+import {
+  removeFavorite,
+  addToFavorites,
+} from '../utils/home/AddOrRemoveFavs.js'
 import { iKnowLearn, repeatLearn } from '../utils/home/LearnUtils.js'
 import checkNonNounAnswer from '../utils/home/checkNonNounAnswer.js'
 import showExerciseWord from '../utils/home/ShowExerciseWord.js'
 import checkNounAnswer from '../utils/home/checkNounAnswer.js'
 import showLearnWord from '../utils/home/showLearnWord.js'
-import { organizeSelectedDeckImage, showSelectCategoryMessage, hideSelectCategoryMessage, isRegularLevel, loadDeckPropsOnLevelPage } from '../utils/home/UIUtils.js'
+import {
+  organizeSelectedDeckImage,
+  showSelectCategoryMessage,
+  hideSelectCategoryMessage,
+  isRegularLevel,
+  loadDeckPropsOnLevelPage,
+} from '../utils/home/UIUtils.js'
 import LevelManager from '../utils/LevelManager.js'
-
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', async () => {
   LocalStorageManager.clearDeprecatedLocalStorageItems()
-  LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, DEFAULT_VALUE.CURRENT_WORD_TYPE)
-  LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, DEFAULT_VALUE.WORD_LIST_EXERCISE)
+  LocalStorageManager.save(
+    CURRENT_WORD_TYPE_KEY,
+    DEFAULT_VALUE.CURRENT_WORD_TYPE
+  )
+  LocalStorageManager.save(
+    WORD_LIST_EXERCISE_KEY,
+    DEFAULT_VALUE.WORD_LIST_EXERCISE
+  )
   LocalStorageManager.save(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
-  LocalStorageManager.save(IN_PROGRESS_WORDS_KEY, DEFAULT_VALUE.IN_PROGRESS_WORDS)
-  LocalStorageManager.save(IS_ON_LEARN_KEY, "learn")
-  LocalStorageManager.load(PAYMENT_TRIGGER_COUNTER_KEY, DEFAULT_VALUE.PAYMENT_TRIGGER_COUNTER)
-  LocalStorageManager.load(LEARNED_WITH_EXERCISE_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS)
-  LocalStorageManager.load(LEARNED_WITH_LEARN_WORDS_KEY, DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS)
-  LocalStorageManager.load('BOOKMARKS', DEFAULT_VALUE.BOOKMARKS)
+  LocalStorageManager.save(
+    IN_PROGRESS_WORDS_KEY,
+    DEFAULT_VALUE.IN_PROGRESS_WORDS
+  )
+  LocalStorageManager.save(IS_ON_LEARN_KEY, 'learn')
+  // LocalStorageManager.load(PAYMENT_TRIGGER_COUNTER_KEY, DEFAULT_VALUE.PAYMENT_TRIGGER_COUNTER)
+  LocalStorageManager.load(
+    LEARNED_WITH_EXERCISE_WORDS_KEY,
+    DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS
+  )
+  LocalStorageManager.load(
+    LEARNED_WITH_LEARN_WORDS_KEY,
+    DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS
+  )
+  LocalStorageManager.load(BOOKMARKS_KEY, DEFAULT_VALUE.BOOKMARKS)
 
-  const currentLevel = LevelManager.getCurrentLevel();
+  const currentLevel = LevelManager.getCurrentLevel()
   // change Level Header top of the pack screen
-  const label = "Level " + `${currentLevel}`.toUpperCase();
-  document.getElementById('pack-level-header').innerText = label;
+  const label = 'Level ' + `${currentLevel}`.toUpperCase()
+  document.getElementById('pack-level-header').innerText = label
   // Load Deck Props for specific Level and manage category prop on localStorage
   if (isRegularLevel(currentLevel)) {
     // Load current category from localStorage
     let currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
     loadDeckPropsOnLevelPage()
     // If current category is not in the categories array or is null, undefined or empty, show select category message
-    if (!LevelManager.checkIfCategoryIsInCategories(currentCategory) || currentCategory === null || currentCategory === undefined || currentCategory === '') {
+    if (
+      !LevelManager.checkIfCategoryIsInCategories(currentCategory) ||
+      currentCategory === null ||
+      currentCategory === undefined ||
+      currentCategory === ''
+    ) {
       showSelectCategoryMessage()
       return
     }
@@ -55,14 +97,18 @@ types.forEach((type) => {
     LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, type)
     await loadAndShowWords()
   })
-  document.getElementById(`${type}Tab-learn`).addEventListener('click', async () => {
-    LocalStorageManager.save(IS_ON_LEARN_KEY, "learn")
-    await loadAndShowWords()
-  })
-  document.getElementById(`${type}Tab-exercise`).addEventListener('click', async () => {
-    LocalStorageManager.save(IS_ON_LEARN_KEY, "exercise")
-    await loadAndShowWords()
-  })
+  document
+    .getElementById(`${type}Tab-learn`)
+    .addEventListener('click', async () => {
+      LocalStorageManager.save(IS_ON_LEARN_KEY, 'learn')
+      await loadAndShowWords()
+    })
+  document
+    .getElementById(`${type}Tab-exercise`)
+    .addEventListener('click', async () => {
+      LocalStorageManager.save(IS_ON_LEARN_KEY, 'exercise')
+      await loadAndShowWords()
+    })
 })
 
 export async function loadAndShowWords() {
@@ -70,11 +116,11 @@ export async function loadAndShowWords() {
   const isOnLearn = LocalStorageManager.load(IS_ON_LEARN_KEY)
   try {
     await loadWords()
-    if (isOnLearn === "learn") {
+    if (isOnLearn === 'learn') {
       showLearnWord()
       return
     }
-    if (isOnLearn === "exercise") {
+    if (isOnLearn === 'exercise') {
       showExerciseWord()
       return
     }
@@ -91,12 +137,10 @@ export async function loadWords() {
   let wordList = LocalStorageManager.load(WORD_LIST_KEY)
   let wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY)
 
-
   try {
-
-    const response = await fetch(`${ASSETS_BASE_URL}/json/${level}/${category}/${wordType}.json`)
-
-
+    const response = await fetch(
+      `${ASSETS_BASE_URL}/json/${level}/${category}/${wordType}.json`
+    )
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
@@ -112,8 +156,10 @@ export async function loadWords() {
     LocalStorageManager.save(TOTAL_WORD_EXERCISE_KEY, totalWordsExercise)
     LocalStorageManager.save(TOTAL_WORD_LEARN_KEY, totalWordsLearn)
     LocalStorageManager.save(WORD_LIST_KEY, ListUtils.shuffleArray(wordList))
-    LocalStorageManager.save(WORD_LIST_EXERCISE_KEY, ListUtils.shuffleArray(wordListExercise))
-
+    LocalStorageManager.save(
+      WORD_LIST_EXERCISE_KEY,
+      ListUtils.shuffleArray(wordListExercise)
+    )
   } catch (error) {
     console.error('Error fetching JSON:', error)
     throw error
@@ -129,7 +175,10 @@ function checkIsOnLearnOrExercise() {
     LocalStorageManager.save(IS_ON_LEARN_KEY, 'learn')
     return
   }
-  if (exerciseTab.classList.contains('w--current') && !(isOnLearn === 'exercise')) {
+  if (
+    exerciseTab.classList.contains('w--current') &&
+    !(isOnLearn === 'exercise')
+  ) {
     LocalStorageManager.save(IS_ON_LEARN_KEY, 'exercise')
     return
   }
@@ -173,7 +222,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 export const nounDerAnswerClickHandler = function (event) {
   event.preventDefault() // Sayfanın yukarı kaymasını engeller
   checkNounAnswer('der')
-
 }
 
 export const nounDieAnswerClickHandler = function (event) {
@@ -208,9 +256,9 @@ const nonNounCorrectAnswerClickHandler = (event) => {
   checkNonNounAnswer(true)
 }
 
-const filteredTypes = types.filter(type => type !== 'noun')
+const filteredTypes = types.filter((type) => type !== 'noun')
 
-filteredTypes.forEach(type => {
+filteredTypes.forEach((type) => {
   document
     .getElementById(`wrongButton-${type}`)
     .addEventListener('click', nonNounWrongAnswerClickHandler)
@@ -318,7 +366,6 @@ function setupListenerForIknowAndLearn(iKnowButton, repeatButton) {
   if (repeatButton && !repeatButton.hasAttribute('listener-attached')) {
     repeatButton.addEventListener('click', repeatButtonClickHandler)
     repeatButton.setAttribute('listener-attached', 'true')
-
   }
 }
 

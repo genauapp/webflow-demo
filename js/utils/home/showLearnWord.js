@@ -12,10 +12,10 @@ import {
   showFinishScreen,
   updateFavoriteIcons,
 } from './UIUtils.js'
-import {
-  decideShowingPaymentWorkflowOn,
-  PaymentTriggerEvent,
-} from '../payment/PaymentUtils.js'
+// import {
+//   decideShowingPaymentWorkflowOn,
+//   PaymentTriggerEvent,
+// } from '../payment/PaymentUtils.js'
 import LevelManager from '../LevelManager.js'
 
 // cases for verbs
@@ -99,7 +99,7 @@ export default function showLearnWord() {
     totalWordsLearn
   ) {
     showFinishScreen()
-    decideShowingPaymentWorkflowOn(PaymentTriggerEvent.LEARN)
+    // decideShowingPaymentWorkflowOn(PaymentTriggerEvent.LEARN)
     return
   }
   refreshCasesUI()

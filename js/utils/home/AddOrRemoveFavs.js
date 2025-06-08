@@ -1,3 +1,4 @@
+import { SigninModalTriggerEvent } from '../../constants/events.js'
 import {
   BOOKMARKS_KEY,
   CURRENT_WORD_TYPE_KEY,
@@ -5,6 +6,7 @@ import {
   TOTAL_WORD_LEARN_KEY,
   WORD_LIST_KEY,
 } from '../../constants/storageKeys.js'
+import eventService from '../../service/events/EventService.js'
 import LocalStorageManager from '../LocalStorageManager.js'
 import { updateFavoriteIcons } from './UIUtils.js'
 
@@ -25,7 +27,10 @@ export const addToFavorites = () => {
   )
 
   const currentWord = wordList[0]
-  let bookmarkedWords = LocalStorageManager.load('BOOKMARKS')
+  let bookmarkedWords = LocalStorageManager.load(
+    BOOKMARKS_KEY,
+    DEFAULT_VALUE.BOOKMARKS
+  )
   let favoriteWords = bookmarkedWords.favorites
 
   // Favorilere ekle
@@ -36,7 +41,8 @@ export const addToFavorites = () => {
     level: currentWord.level || 'N/A',
   })
   bookmarkedWords.favorites = favoriteWords
-  LocalStorageManager.save('BOOKMARKS', bookmarkedWords)
+  LocalStorageManager.save(BOOKMARKS_KEY, bookmarkedWords)
+  eventService.publish(SigninModalTriggerEvent.LEVEL_LEARN_ADD_TO_BOOKMARKS)
 
   feedbackElement.innerText = `"${currentWord.german}" has been added to favorites!`
   feedbackElement.style.color = 'green'
@@ -67,14 +73,14 @@ export function removeFavorite() {
     `favoritesFeedback-${wordType}`
   )
   const currentWord = wordList[0]
-  let bookmarkedWords = LocalStorageManager.load('BOOKMARKS')
+  let bookmarkedWords = LocalStorageManager.load(BOOKMARKS_KEY)
   let favoriteWords = bookmarkedWords.favorites
 
   favoriteWords = favoriteWords.filter(
     (word) => word.german !== currentWord.german
   )
   bookmarkedWords.favorites = favoriteWords
-  LocalStorageManager.save('BOOKMARKS', bookmarkedWords)
+  LocalStorageManager.save(BOOKMARKS_KEY, bookmarkedWords)
 
   feedbackElement.innerText = `"${currentWord.german}" has been removed from favorites.`
   feedbackElement.style.color = 'orange'

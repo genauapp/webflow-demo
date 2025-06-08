@@ -1,9 +1,8 @@
 // /components/layout/user.js
-import {
-  protectedApiService,
-  publicApiService,
-} from '../../service/apiService.js'
 import { initGoogleAuth } from '../../service/oauth2/googleAuthService.js'
+import eventService from '../../service/events/EventService.js'
+import authService from '../../service/AuthService.js'
+import { AuthEvent } from '../../constants/events.js'
 
 let els = {}
 
@@ -13,7 +12,9 @@ function initElements(elementIds, elementClasses) {
     loginContainer: () => document.getElementById(elementIds.loginContainer),
 
     profileContainers: () =>
-      Array.from(document.querySelectorAll(`.${elementClasses.profileContainer}`)),
+      Array.from(
+        document.querySelectorAll(`.${elementClasses.profileContainer}`)
+      ),
     avatarImages: () =>
       Array.from(document.querySelectorAll(`.${elementClasses.avatar}`)),
     nameLabels: () =>
@@ -88,14 +89,6 @@ function render({ loading, error, unauthorized, user }) {
   }
 }
 
-function onLoginSuccess(user) {
-  render({ loading: false, error: null, unauthorized: false, user })
-}
-
-function onLoginError(err) {
-  render({ loading: false, error: err, unauthorized: true, user: null })
-}
-
 async function onLogoutClick() {
   // disable button and show spinner
   els.logoutButtons().forEach((element) => {
@@ -104,17 +97,8 @@ async function onLogoutClick() {
 
   render({ loading: true })
 
-  try {
-    await publicApiService.logout()
-    // after success, clear user
-    render({ loading: false, unauthorized: true, user: null })
-  } catch (err) {
-    // on error, re-enable button and show message
-    els.logoutButtons().forEach((element) => {
-      element.disabled = false
-    })
-    render({ loading: false, error: err })
-  }
+  // Use authService instead of direct API call
+  await authService.logout()
 }
 
 /** Initialize the user component */
@@ -124,16 +108,24 @@ export async function initUserComponent(elementIds, elementClasses) {
 
   render({ loading: true })
 
-  const {
-    data: user,
-    status,
-    error,
-  } = await protectedApiService.getUserProfile()
-  const unauthorized = status === 401 || status === 403
+  // Subscribe to auth events
+  eventService.subscribe(AuthEvent.AUTH_STATE_CHANGED, (event) => {
+    const { isLoading, hasError, unauthorized, user } = event.detail
 
-  render({ loading: false, error, unauthorized, user })
+    if (unauthorized) {
+      // Re-enable logout buttons
+      els.logoutButtons().forEach((element) => {
+        element.disabled = false
+      })
+    }
 
-  await initGoogleAuth(onLoginSuccess, onLoginError)
+    render({ loading: isLoading, error: hasError, unauthorized, user })
+  })
+
+  initGoogleAuth(
+    elementIds.googleSigninButton,
+    async (idToken) => await authService.googleSignin(idToken)
+  )
 
   // Add logout event listener
   els.logoutButtons().forEach((element) => {

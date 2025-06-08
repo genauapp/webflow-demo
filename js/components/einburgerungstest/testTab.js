@@ -9,10 +9,12 @@ import {
   DEFAULT_VALUE,
   TEST_PROGRESSION_KEY,
 } from '../../constants/storageKeys.js'
-import {
-  decideShowingPaymentWorkflowOn,
-  PaymentTriggerEvent,
-} from '../../utils/payment/PaymentUtils.js'
+import eventService from '../../service/events/EventService.js'
+import { SigninModalTriggerEvent } from '../../constants/events.js'
+// import {
+//   decideShowingPaymentWorkflowOn,
+//   PaymentTriggerEvent,
+// } from '../../utils/payment/PaymentUtils.js'
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', () => {
@@ -298,7 +300,8 @@ const answerClickHandler = (event) => {
       updatedTestProgression,
       TestManager.isTestResultSuccessful(updatedTestProgression.score)
     )
-    decideShowingPaymentWorkflowOn(PaymentTriggerEvent.EINBURGERUNGSTEST)
+    // decideShowingPaymentWorkflowOn(PaymentTriggerEvent.EINBURGERUNGSTEST)
+    eventService.publish(SigninModalTriggerEvent.EINBURGERUNGSTEST_TEST_FINISH)
   }
 
   LocalStorageManager.save(TEST_PROGRESSION_KEY, updatedTestProgression)

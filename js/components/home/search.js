@@ -1,15 +1,22 @@
 // /components/home/search.js
+import { SigninModalTriggerEvent } from '../../constants/events.js'
 import {
   WordType,
   ArtikelColorMap,
   ALL_VERB_CASES,
   WordSource,
 } from '../../constants/props.js'
-import { publicApiService, protectedApiService } from '../../service/apiService.js'
+import {
+  publicApiService,
+  protectedApiService,
+} from '../../service/apiService.js'
 import CollectionsManager from '../../utils/CollectionsManager.js'
+import eventService from '../../service/events/EventService.js'
+import { AuthEvent } from '../../constants/events.js'
 
 let els = {}
 let currentWordResults = []
+let unauthorized = true
 
 /** Initialize elements dynamically using provided IDs */
 function initElements(elementIds) {
@@ -49,7 +56,8 @@ function initElements(elementIds) {
 
     addToBookmarksButton: () =>
       document.getElementById(elementIds.results.addToBookmarksButton),
-    labelRequiresSignin: () => document.getElementById(elementIds.results.labelRequiresSignin)
+    labelRequiresSignin: () =>
+      document.getElementById(elementIds.results.labelRequiresSignin),
   }
 }
 
@@ -260,17 +268,12 @@ const attachVerbCaseHandlers = () => {
 
 async function handleAddToBookmarks(e) {
   e.preventDefault()
+  eventService.publish(SigninModalTriggerEvent.HOME_SEARCH_ADD_TO_BOOKMARKS)
+
   if (currentWordResults.length === 0) return
 
   const btn = els.addToBookmarksButton()
   const requiresSigninLabel = els.labelRequiresSignin()
-
-  const {
-    data: user,
-    status,
-    error,
-  } = await protectedApiService.getUserProfile()
-  const unauthorized = status === 401 || status === 403
 
   if (unauthorized) {
     btn.style.pointerEvents = 'none' // Disable further clicks
@@ -302,6 +305,11 @@ async function handleAddToBookmarks(e) {
 export function initSearchComponent(elementIds) {
   // Initialize elements with provided IDs
   initElements(elementIds)
+
+  // Subscribe to auth events
+  eventService.subscribe(AuthEvent.AUTH_STATE_CHANGED, (event) => {
+    unauthorized = event.detail.unauthorized
+  })
 
   // initial render (blank)
   render({ loading: false, error: null, results: null })
