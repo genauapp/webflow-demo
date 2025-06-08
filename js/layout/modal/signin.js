@@ -27,10 +27,11 @@ async function bootstrap() {
     (event) => (unauthorized = event.detail.unauthorized)
   )
 
-  initSigninComponent({ ...elementIds.signin })
   // Add event listeners for all trigger events
   Object.values(SigninModalTriggerEvent).forEach((eventName) => {
     eventService.subscribe(eventName, () => {
+      initSigninComponent({ ...elementIds.signin })
+
       // Update counter and check if we should trigger
       incrementEventCount(eventName)
 
