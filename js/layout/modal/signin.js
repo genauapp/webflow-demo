@@ -4,7 +4,7 @@ import {
   initSigninComponent,
   showSigninModal,
 } from '../../components/layout/signin.js'
-import { SigninModalTriggerEvent } from '../../constants/events.js'
+import { AuthEvent, SigninModalTriggerEvent } from '../../constants/events.js'
 import {
   incrementEventCount,
   shouldTriggerModal,
