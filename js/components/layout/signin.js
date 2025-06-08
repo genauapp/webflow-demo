@@ -34,7 +34,7 @@ function setState(newState) {
   render()
 }
 
-export async function initSigninComponent(elementIds) {
+export function initSigninComponent(elementIds) {
   initElements(elementIds)
   if (!els.modal || !els.googleButton) return
 
