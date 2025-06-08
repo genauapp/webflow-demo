@@ -27,12 +27,16 @@ export function initSigninComponent(elementIds) {
 
   initGoogleAuth(elementIds.googleSigninButton, async (idToken) => {
     await authService.googleSignin(idToken)
+    
+    render(false)
 
     // NO NEED to refresh the page anymore!
     // const url = new URL(window.location.href)
     // url.searchParams.set('signin-modal-successful', 'true')
     // window.history.replaceState({}, '', url)
     // window.location.reload()
+
+    
   })
 
   // Initial render
