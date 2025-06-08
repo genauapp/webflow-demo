@@ -8,7 +8,7 @@ class AuthService {
     this.currentUser = null
     this.isLoading = false
     this.isInitialized = false
-    console.info('[AuthService] Initialized')
+    // console.info('[AuthService] Initialized')
   }
 
   /**
@@ -18,14 +18,14 @@ class AuthService {
   async getUserProfile() {
     // If already loading, don't make another request
     if (this.isLoading) {
-      console.debug(
-        '[AuthService] getUserProfile: Skipped due to ongoing request'
-      )
+      // console.debug(
+      //   '[AuthService] getUserProfile: Skipped due to ongoing request'
+      // )
 
       return
     }
 
-    console.log('[AuthService] Fetching user profile...')
+    // console.log('[AuthService] Fetching user profile...')
     this.isLoading = true
 
     try {
@@ -34,19 +34,19 @@ class AuthService {
         status,
         error,
       } = await protectedApiService.getUserProfile()
-      console.debug(
-        `[AuthService] getUserProfile response - Status: ${status}, Error: ${
-          error || 'None'
-        }`
-      )
+      // console.debug(
+      //   `[AuthService] getUserProfile response - Status: ${status}, Error: ${
+      //     error || 'None'
+      //   }`
+      // )
       const unauthorized = status === 401 || status === 403
 
       if (unauthorized || error) {
-        console.warn(
-          `[AuthService] Profile fetch failed - Unauthorized: ${unauthorized}, Error: ${
-            error || 'None'
-          }`
-        )
+        // console.warn(
+        //   `[AuthService] Profile fetch failed - Unauthorized: ${unauthorized}, Error: ${
+        //     error || 'None'
+        //   }`
+        // )
         this.currentUser = null
         eventService.publish(AuthEvent.AUTH_STATE_CHANGED, {
           isLoading: false,
@@ -55,11 +55,11 @@ class AuthService {
           user: null,
         })
       } else {
-        console.log(
-          `[AuthService] Profile fetched successfully - User ID: ${
-            user.id || 'Unknown'
-          }`
-        )
+        // console.log(
+        //   `[AuthService] Profile fetched successfully - User ID: ${
+        //     user.id || 'Unknown'
+        //   }`
+        // )
         this.currentUser = user
         eventService.publish(AuthEvent.AUTH_STATE_CHANGED, {
           isLoading: false,
@@ -69,10 +69,10 @@ class AuthService {
         })
       }
     } catch (err) {
-      console.error(
-        `[AuthService] getUserProfile exception - ${err.message || err}`,
-        err.stack ? { stack: err.stack } : ''
-      )
+      // console.error(
+      //   `[AuthService] getUserProfile exception - ${err.message || err}`,
+      //   err.stack ? { stack: err.stack } : ''
+      // )
       this.currentUser = null
       eventService.publish(AuthEvent.AUTH_STATE_CHANGED, {
         isLoading: false,
@@ -83,7 +83,7 @@ class AuthService {
     } finally {
       this.isLoading = false
       this.isInitialized = true
-      console.debug('[AuthService] Profile loading completed')
+      // console.debug('[AuthService] Profile loading completed')
     }
   }
 
@@ -91,9 +91,9 @@ class AuthService {
    * Handle successful login - publishes login success event
    */
   handleLoginSuccess(user) {
-    console.log(
-      `[AuthService] Login success - User ID: ${user?.id || 'Unknown'}`
-    )
+    // console.log(
+    //   `[AuthService] Login success - User ID: ${user?.id || 'Unknown'}`
+    // )
     this.currentUser = user
     eventService.publish(AuthEvent.AUTH_STATE_CHANGED, {
       isLoading: false,
@@ -108,7 +108,7 @@ class AuthService {
    */
   handleLoginError(err) {
     const errorMsg = err.message || err
-    console.error(`[AuthService] Login failed - ${errorMsg}`)
+    // console.error(`[AuthService] Login failed - ${errorMsg}`)
     this.currentUser = null
     eventService.publish(AuthEvent.AUTH_STATE_CHANGED, {
       isLoading: false,
@@ -123,37 +123,37 @@ class AuthService {
    */
   async googleSignin(idToken) {
     if (this.isLoading) {
-      console.debug(
-        '[AuthService] googleSignin: Skipped due to ongoing request'
-      )
+      // console.debug(
+      //   '[AuthService] googleSignin: Skipped due to ongoing request'
+      // )
       return
     }
 
-    console.log('[AuthService] Google sign-in initiated')
+    // console.log('[AuthService] Google sign-in initiated')
     this.isLoading = true
 
     try {
       const response = await publicApiService.googleSignin(idToken)
-      console.debug('[AuthService] Google sign-in API response:', response)
+      // console.debug('[AuthService] Google sign-in API response:', response)
 
       if (response.data) {
-        console.log('[AuthService] Google authentication successful')
+        // console.log('[AuthService] Google authentication successful')
         const user = response.data
         this.handleLoginSuccess(user)
       } else {
         const errText = response.error || 'Unknown error'
-        console.warn(`[AuthService] Google sign-in failed: ${errText}`)
+        // console.warn(`[AuthService] Google sign-in failed: ${errText}`)
         this.handleLoginError(errText)
       }
     } catch (err) {
-      console.error(
-        `[AuthService] Google sign-in exception: ${err.message || err}`,
-        err.stack ? { stack: err.stack } : ''
-      )
+      // console.error(
+      //   `[AuthService] Google sign-in exception: ${err.message || err}`,
+      //   err.stack ? { stack: err.stack } : ''
+      // )
       this.handleLoginError(err)
     } finally {
       this.isLoading = false
-      console.debug('[AuthService] Google sign-in completed')
+      // console.debug('[AuthService] Google sign-in completed')
     }
   }
 
@@ -162,16 +162,16 @@ class AuthService {
    */
   async logout() {
     if (this.isLoading) {
-      console.debug('[AuthService] logout: Skipped due to ongoing request')
+      // console.debug('[AuthService] logout: Skipped due to ongoing request')
       return
     }
 
-    console.log('[AuthService] Logging out...')
+    // console.log('[AuthService] Logging out...')
     this.isLoading = true
 
     try {
       await publicApiService.logout()
-      console.log('[AuthService] Logout successful')
+      // console.log('[AuthService] Logout successful')
       this.currentUser = null
       eventService.publish(AuthEvent.AUTH_STATE_CHANGED, {
         isLoading: false,
@@ -180,10 +180,10 @@ class AuthService {
         user: null,
       })
     } catch (err) {
-      console.error(
-        `[AuthService] Logout failed: ${err.message || err}`,
-        err.stack ? { stack: err.stack } : ''
-      )
+      // console.error(
+      //   `[AuthService] Logout failed: ${err.message || err}`,
+      //   err.stack ? { stack: err.stack } : ''
+      // )
       // Even if logout API fails, clear user locally
       this.currentUser = null
       eventService.publish(AuthEvent.AUTH_STATE_CHANGED, {
@@ -194,7 +194,7 @@ class AuthService {
       })
     } finally {
       this.isLoading = false
-      console.debug('[AuthService] Logout process completed')
+      // console.debug('[AuthService] Logout process completed')
     }
   }
 
@@ -203,10 +203,10 @@ class AuthService {
    */
   async initialize() {
     if (!this.isInitialized) {
-      console.log('[AuthService] Initializing auth service...')
+      // console.log('[AuthService] Initializing auth service...')
       await this.getUserProfile()
     } else {
-      console.debug('[AuthService] Already initialized')
+      // console.debug('[AuthService] Already initialized')
     }
   }
 
