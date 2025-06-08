@@ -21,14 +21,13 @@ const elementIds = {
 }
 
 async function bootstrap() {
-  initSigninComponent({ ...elementIds.signin })
-
   // Subscribe to auth events
   eventService.subscribe(
     AuthEvent.AUTH_STATE_CHANGED,
     (event) => (unauthorized = event.detail.unauthorized)
   )
 
+  initSigninComponent({ ...elementIds.signin })
   // Add event listeners for all trigger events
   Object.values(SigninModalTriggerEvent).forEach((eventName) => {
     eventService.subscribe(eventName, () => {
