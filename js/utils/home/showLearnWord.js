@@ -18,6 +18,7 @@ import {
 // } from '../payment/PaymentUtils.js'
 import LevelManager from '../LevelManager.js'
 import eventService from '../../service/events/EventService.js'
+import { SigninModalTriggerEvent } from '../../constants/events.js'
 
 // cases for verbs
 const globalCases = ['reflexive', 'akkusativ', 'dativ', 'separable']
