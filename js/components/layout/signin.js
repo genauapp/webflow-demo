@@ -51,7 +51,7 @@ export async function initSigninComponent(elementIds) {
     })
   })
 
-  await initGoogleAuth(elementIds.googleSigninButton, async (idToken) => {
+  initGoogleAuth(elementIds.googleSigninButton, async (idToken) => {
     await authService.googleSignin(idToken)
 
     const url = new URL(window.location.href)

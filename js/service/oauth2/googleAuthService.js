@@ -1,6 +1,6 @@
 import { GOOGLE_CLIENT_ID_WEB } from '../../constants/auth/google.js'
 
-export async function initGoogleAuth(buttonId, onSuccess) {
+export function initGoogleAuth(buttonId, onSuccess) {
   // 1) Load the library (ensures onGoogleLibraryLoad is called)
   const script = document.createElement('script')
   script.src = 'https://accounts.google.com/gsi/client'

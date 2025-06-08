@@ -122,8 +122,9 @@ export async function initUserComponent(elementIds, elementClasses) {
     render({ loading: isLoading, error: hasError, unauthorized, user })
   })
 
-  await initGoogleAuth(elementIds.googleSigninButton, (idToken) =>
-    authService.googleSignin(idToken)
+  initGoogleAuth(
+    elementIds.googleSigninButton,
+    async (idToken) => await authService.googleSignin(idToken)
   )
 
   // Add logout event listener
