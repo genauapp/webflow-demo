@@ -64,9 +64,9 @@ export function initSigninComponent(elementIds) {
   render()
 }
 
-// export function showSigninModal() {
-//   if (!state.user) setState({ isVisible: true })
-// }
+export function showSigninModal() {
+  if (!state.user) setState({ isVisible: true })
+}
 
 // export function hideSigninModal() {
 //   setState({ isVisible: false })

@@ -1,7 +1,7 @@
 // /layout/modal/signin.js
 import {
   initSigninComponent,
-  // showSigninModal,
+  showSigninModal,
 } from '../../components/layout/signin.js'
 import { SigninModalTriggerEvent } from '../../constants/events.js'
 import {
@@ -26,7 +26,7 @@ async function bootstrap() {
 
       if (shouldTriggerModal(eventName)) {
         initSigninComponent({ ...elementIds.signin })
-        // showSigninModal()
+        showSigninModal()
       }
     })
   })
