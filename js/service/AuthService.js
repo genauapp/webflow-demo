@@ -21,7 +21,6 @@ class AuthService {
     }
 
     this.isLoading = true
-    eventService.publish(AuthEvent.AUTH_STATE_LOADING)
 
     try {
       const {
