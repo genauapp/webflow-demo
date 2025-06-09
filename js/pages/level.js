@@ -100,12 +100,18 @@ types.forEach((type) => {
   document
     .getElementById(`${type}Tab-learn`)
     .addEventListener('click', async () => {
+      document.getElementById(`${type}Tab-exercise`).classList.remove('w--current')
+      document.getElementById(`${type}Tab-learn`).classList.remove('w--current')
+      document.getElementById(`${type}Tab-learn`).classList.add('w--current')
       LocalStorageManager.save(IS_ON_LEARN_KEY, 'learn')
       await loadAndShowWords()
     })
   document
     .getElementById(`${type}Tab-exercise`)
     .addEventListener('click', async () => {
+      document.getElementById(`${type}Tab-learn`).classList.remove('w--current')
+      document.getElementById(`${type}Tab-exercise`).classList.remove('w--current')
+      document.getElementById(`${type}Tab-exercise`).classList.add('w--current')
       LocalStorageManager.save(IS_ON_LEARN_KEY, 'exercise')
       await loadAndShowWords()
     })
