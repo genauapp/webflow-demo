@@ -194,7 +194,14 @@ export function loadDeckPropsOnLevelPage() {
         LocalStorageManager.save(CURRENT_CATEGORY_KEY, selectedCategory)
         organizeSelectedDeckImage()
         hideSelectCategoryMessage()
-        await loadAndShowWords()
+        if (selectedCategory === 'prepositionsA1') {
+          let contentContainer = document.getElementById(
+            `content-container-${learnOrExercise}-${wordType}`
+          )
+          contentContainer.style.display = 'none'
+        } else {
+          await loadAndShowWords()
+        }
         // focus user Learn/Exercise area
         window.location.hash = '#action-content'
       })
