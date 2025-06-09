@@ -49,6 +49,12 @@ export const categories = {
       nameEng: 'Official Appointments',
       imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/A1-OfficialAppointments.jpg`,
     },
+    {
+      nameShort: 'prepositionsA1',
+      name: 'Prepositions Micrp Quiz',
+      nameEng: 'Prepositions Micro Quiz',
+      imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/A1-OfficialAppointments.jpg`,
+    },
   ],
   a2: [
     {
