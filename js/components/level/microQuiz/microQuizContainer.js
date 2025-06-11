@@ -18,49 +18,50 @@ let state = {
 function initElements() {
   els = {
     container: () => document.getElementById("micro-quiz-container"),
-    loadingContainer: () => document.getElementById("tbd"),
-    errorContainer: () => document.getElementById("tbd"),
-    emptyContainer: () => document.getElementById("tbd"),
-    learnTab: () => document.getElementById("tbd"),
-    exerciseTab: () => document.getElementById("tbd"),
-    learnContainer: () => document.getElementById("tbd"),
-    exerciseContainer: () => document.getElementById("tbd"),
-    learnRepeat: () => document.getElementById("tbd"),
-    learnNext: () => document.getElementById("tbd"),
-    learnReset: () => document.getElementById("tbd"),
-    exerciseCorrect: () => document.getElementById("tbd"),
-    exerciseWrong: () => document.getElementById("tbd"),
-    exerciseReset: () => document.getElementById("tbd"),
-    streakSelector: () => document.getElementById("tbd"),
+    // loadingContainer: () => document.getElementById("tbd"),
+    // errorContainer: () => document.getElementById("tbd"),
+    // emptyContainer: () => document.getElementById("tbd"),
+    learnTab: () => document.getElementById("micro-quiz-tab-learn"),
+    exerciseTab: () => document.getElementById("micro-quiz-tab-exercise"),
+    learnContainer: () => document.getElementById("micro-quiz-learn-container"),
+    exerciseContainer: () => document.getElementById("micro-quiz-exercise-container"),
+    learnRepeat: () => document.getElementById("micro-quiz-learn-repeat-button"),
+    learnNext: () => document.getElementById("micro-quiz-learn-i-know-button"),
+    learnCompletedContainer: () => document.getElementById("micro-quiz-learn-completed-container"),
+    learnReset: () => document.getElementById("micro-quiz-learn-reset-button"),
+    // exerciseCorrect: () => document.getElementById("tbd"),
+    // exerciseWrong: () => document.getElementById("tbd"),
+    // exerciseReset: () => document.getElementById("tbd"),
+    // streakSelector: () => document.getElementById("tbd"),
   }
 }
 
 /** Show/hide according to state flags */
 function render() {
   if (state.loading) {
-    els.loadingContainer().style.display = 'flex'
-    els.errorContainer().style.display = 'none'
-    els.emptyContainer().style.display = 'none'
+    // els.loadingContainer().style.display = 'flex'
+    // els.errorContainer().style.display = 'none'
+    // els.emptyContainer().style.display = 'none'
     els.container().style.display = 'none'
     return
   }
   if (state.error) {
-    els.loadingContainer().style.display = 'none'
-    els.errorContainer().style.display = 'flex'
-    els.emptyContainer().style.display = 'none'
+    // els.loadingContainer().style.display = 'none'
+    // els.errorContainer().style.display = 'flex'
+    // els.emptyContainer().style.display = 'none'
     els.container().style.display = 'none'
     return
   }
   if (state.words.length === 0) {
-    els.loadingContainer().style.display = 'none'
-    els.errorContainer().style.display = 'none'
-    els.emptyContainer().style.display = 'flex'
+    // els.loadingContainer().style.display = 'none'
+    // els.errorContainer().style.display = 'none'
+    // els.emptyContainer().style.display = 'flex'
     els.container().style.display = 'none'
     return
   }
-  els.loadingContainer().style.display = 'none'
-  els.errorContainer().style.display = 'none'
-  els.emptyContainer().style.display = 'none'
+  // els.loadingContainer().style.display = 'none'
+  // els.errorContainer().style.display = 'none'
+  // els.emptyContainer().style.display = 'none'
   els.container().style.display = 'block'
 }
 
@@ -91,9 +92,9 @@ function updateNavigationButtons(navigationState) {
   els.learnReset().style.display = isLearnCompleted ? 'block' : 'none'
 
   // Exercise buttons
-  els.exerciseCorrect()?.disabled = !currentItem || activeListLength === 0
-  els.exerciseWrong()?.disabled   = !currentItem || activeListLength === 0
-  els.exerciseReset().style.display = isExerciseCompleted ? 'block' : 'none'
+  // els.exerciseCorrect()?.disabled = !currentItem || activeListLength === 0
+  // els.exerciseWrong()?.disabled   = !currentItem || activeListLength === 0
+  // els.exerciseReset().style.display = isExerciseCompleted ? 'block' : 'none'
 }
 
 /** Enhance words with required properties */
@@ -167,14 +168,14 @@ function initEventListeners() {
   els.learnRepeat().addEventListener('click', onLearnRepeat)
   els.learnNext().addEventListener('click', onLearnNext)
   els.learnReset().addEventListener('click', onLearnReset)
-  els.exerciseCorrect().addEventListener('click', onExerciseCorrect)
-  els.exerciseWrong().addEventListener('click', onExerciseWrong)
-  els.exerciseReset().addEventListener('click', onExerciseReset)
-  const sel = els.streakSelector()
-  if (sel) sel.addEventListener('change', e => {
-    const v = parseInt(e.target.value, 10)
-    if (v >= 1 && v <= 5) onStreakChange(v)
-  })
+  // els.exerciseCorrect().addEventListener('click', onExerciseCorrect)
+  // els.exerciseWrong().addEventListener('click', onExerciseWrong)
+  // els.exerciseReset().addEventListener('click', onExerciseReset)
+  // const sel = els.streakSelector()
+  // if (sel) sel.addEventListener('change', e => {
+  //   const v = parseInt(e.target.value, 10)
+  //   if (v >= 1 && v <= 5) onStreakChange(v)
+  // })
 }
 
 /**
