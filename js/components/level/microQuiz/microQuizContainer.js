@@ -87,13 +87,13 @@ function updateNavigationButtons(navigationState) {
   const { currentItem, activeListLength, isLearnCompleted, isExerciseCompleted } = navigationState
 
   // Learn buttons
-  els.learnRepeat()?.disabled = !currentItem || activeListLength === 0
-  els.learnNext()?.disabled   = !currentItem || activeListLength === 0
+  els.learnRepeat().disabled = !currentItem || activeListLength === 0
+  els.learnNext().disabled   = !currentItem || activeListLength === 0
   els.learnReset().style.display = isLearnCompleted ? 'block' : 'none'
 
   // Exercise buttons
-  // els.exerciseCorrect()?.disabled = !currentItem || activeListLength === 0
-  // els.exerciseWrong()?.disabled   = !currentItem || activeListLength === 0
+  // els.exerciseCorrect().disabled = !currentItem || activeListLength === 0
+  // els.exerciseWrong().disabled   = !currentItem || activeListLength === 0
   // els.exerciseReset().style.display = isExerciseCompleted ? 'block' : 'none'
 }
 
