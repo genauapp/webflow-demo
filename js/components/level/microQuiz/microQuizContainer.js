@@ -9,26 +9,29 @@ let state = {
   loading: false,
   error: null,
   words: [],
-  sessionId: 'microQuiz',   // Unique session identifier
-  streakTarget: 3,          // Default streak target (1-5)
-  mounted: false,           // New: has the component been initialized?
+  sessionId: 'microQuiz', // Unique session identifier
+  streakTarget: 3, // Default streak target (1-5)
+  mounted: false, // New: has the component been initialized?
 }
 
 /** Initialize elements dynamically using provided IDs */
 function initElements() {
   els = {
-    container: () => document.getElementById("micro-quiz-container"),
+    container: () => document.getElementById('micro-quiz-container'),
     // loadingContainer: () => document.getElementById("tbd"),
     // errorContainer: () => document.getElementById("tbd"),
     // emptyContainer: () => document.getElementById("tbd"),
-    learnTab: () => document.getElementById("micro-quiz-tab-learn"),
-    exerciseTab: () => document.getElementById("micro-quiz-tab-exercise"),
-    learnContainer: () => document.getElementById("micro-quiz-learn-container"),
-    exerciseContainer: () => document.getElementById("micro-quiz-exercise-container"),
-    learnRepeat: () => document.getElementById("micro-quiz-learn-repeat-button"),
-    learnNext: () => document.getElementById("micro-quiz-learn-i-know-button"),
-    learnCompletedContainer: () => document.getElementById("micro-quiz-learn-completed-container"),
-    learnReset: () => document.getElementById("micro-quiz-learn-reset-button"),
+    learnTab: () => document.getElementById('micro-quiz-tab-learn'),
+    exerciseTab: () => document.getElementById('micro-quiz-tab-exercise'),
+    learnContainer: () => document.getElementById('micro-quiz-learn-container'),
+    exerciseContainer: () =>
+      document.getElementById('micro-quiz-exercise-container'),
+    learnRepeat: () =>
+      document.getElementById('micro-quiz-learn-repeat-button'),
+    learnNext: () => document.getElementById('micro-quiz-learn-i-know-button'),
+    learnCompletedContainer: () =>
+      document.getElementById('micro-quiz-learn-completed-container'),
+    learnReset: () => document.getElementById('micro-quiz-learn-reset-button'),
     // exerciseCorrect: () => document.getElementById("tbd"),
     // exerciseWrong: () => document.getElementById("tbd"),
     // exerciseReset: () => document.getElementById("tbd"),
@@ -84,11 +87,16 @@ function updateTabStates(navigationState) {
 
 /** Update navigation button states */
 function updateNavigationButtons(navigationState) {
-  const { currentItem, activeListLength, isLearnCompleted, isExerciseCompleted } = navigationState
+  const {
+    currentItem,
+    activeListLength,
+    isLearnCompleted,
+    isExerciseCompleted,
+  } = navigationState
 
   // Learn buttons
   els.learnRepeat().disabled = !currentItem || activeListLength === 0
-  els.learnNext().disabled   = !currentItem || activeListLength === 0
+  els.learnNext().disabled = !currentItem || activeListLength === 0
   els.learnReset().style.display = isLearnCompleted ? 'block' : 'none'
 
   // Exercise buttons
@@ -99,7 +107,7 @@ function updateNavigationButtons(navigationState) {
 
 /** Enhance words with required properties */
 function enhanceWordsWithProperties(words) {
-  return words.map(word => ({
+  return words.map((word) => ({
     ...word,
     isKnown: false,
     streak: 0,
@@ -142,21 +150,33 @@ function initializeNavigationService() {
       updateTabStates(nav)
       updateNavigationButtons(nav)
     },
-    onLearnUpdate: (nav) => nav.currentItem && initLearn(nav.currentItem, nav.currentIndex, nav.totalItems),
-    onExerciseUpdate: (nav) => nav.currentItem && initExercise(nav.currentItem, nav.currentIndex, nav.totalItems, nav.exerciseState.score),
+    onLearnUpdate: (nav) =>
+      nav.currentItem &&
+      initLearn(nav.currentItem, nav.currentIndex, nav.totalItems),
+    onExerciseUpdate: (nav) =>
+      nav.currentItem &&
+      initExercise(
+        nav.currentItem,
+        nav.currentIndex,
+        nav.totalItems,
+        nav.exerciseState.score
+      ),
   })
 }
 
 /** Handlers */
-const onLearnTabClick = () => navigationService.switchMode(state.sessionId, 'learn')
-const onExerciseTabClick = () => navigationService.switchMode(state.sessionId, 'exercise')
-const onLearnRepeat    = () => navigationService.learnRepeat(state.sessionId)
-const onLearnNext      = () => navigationService.learnNext(state.sessionId)
-const onLearnReset     = () => navigationService.learnReset(state.sessionId)
-const onExerciseCorrect= () => navigationService.exerciseCorrect(state.sessionId)
-const onExerciseWrong  = () => navigationService.exerciseWrong(state.sessionId)
-const onExerciseReset  = () => navigationService.exerciseReset(state.sessionId)
-const onStreakChange   = (newTarget) => {
+const onLearnTabClick = () =>
+  navigationService.switchMode(state.sessionId, 'learn')
+const onExerciseTabClick = () =>
+  navigationService.switchMode(state.sessionId, 'exercise')
+const onLearnRepeat = () => navigationService.learnRepeat(state.sessionId)
+const onLearnNext = () => navigationService.learnNext(state.sessionId)
+const onLearnReset = () => navigationService.learnReset(state.sessionId)
+const onExerciseCorrect = () =>
+  navigationService.exerciseCorrect(state.sessionId)
+const onExerciseWrong = () => navigationService.exerciseWrong(state.sessionId)
+const onExerciseReset = () => navigationService.exerciseReset(state.sessionId)
+const onStreakChange = (newTarget) => {
   state.streakTarget = newTarget
   navigationService.updateStreakTarget(state.sessionId, newTarget)
 }
@@ -182,13 +202,11 @@ function initEventListeners() {
  * Mount: set up everything once and show container
  * Prevents double-init via state.mounted
  */
-export async function mountMicroQuiz({streakTarget = 3}) {
+export async function mountMicroQuiz({ streakTarget = 3 } = {}) {
   if (state.mounted) return
   state.mounted = true
 
-  if (streakTarget >= 1 && streakTarget <= 5) {
-    state.streakTarget = streakTarget
-  }
+  state.streakTarget = streakTarget >= 1 && streakTarget <= 5 ? streakTarget : 3
 
   initElements()
   initEventListeners()
