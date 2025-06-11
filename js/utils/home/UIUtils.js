@@ -206,7 +206,7 @@ export function loadDeckPropsOnLevelPage() {
           document.getElementById('content-container').style.display = 'none'
 
           // show preposition learn/exercise
-          mountMicroQuiz()
+          await mountMicroQuiz()
         } else {
           // hide preposition learn/exercise
           unmountMicroQuiz()
