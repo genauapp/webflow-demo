@@ -227,12 +227,11 @@ export function unmountMicroQuiz() {
   state.error = null
   state.mounted = false
 
+  // Hide root
+  els.container().style.display = 'none'
+
   // Clear element refs
   els = {}
-
-  // Hide root
-  const c = els.container()
-  if (c) c.style.display = 'none'
 }
 
 /** For debugging or external inspection */
