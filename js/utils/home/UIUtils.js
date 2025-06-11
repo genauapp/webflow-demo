@@ -199,10 +199,11 @@ export function loadDeckPropsOnLevelPage() {
         hideSelectCategoryMessage()
         if (selectedCategory === 'prepositionsA1') {
           // hide regular learn/exercise
-          let contentContainer = document.getElementById(
-            `content-container-${learnOrExercise}-${wordType}`
-          )
-          contentContainer.style.display = 'none'
+          // let contentContainer = document.getElementById(
+          //   `content-container-${learnOrExercise}-${wordType}`
+          // )
+          // contentContainer.style.display = 'none'
+          document.getElementById('content-container').style.display = 'none'
 
           // show preposition learn/exercise
           mountMicroQuiz()
