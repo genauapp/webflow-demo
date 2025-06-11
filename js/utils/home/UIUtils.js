@@ -11,6 +11,10 @@ import {
 import { categories } from '../../constants/props.js'
 import { loadAndShowWords } from '../../pages/level.js'
 import LevelManager from '../LevelManager.js'
+import {
+  mountMicroQuiz,
+  unmountMicroQuiz,
+} from '../../components/level/microQuiz/microQuizContainer.js'
 
 // UI visibility functions
 export function showSkeleton() {
@@ -115,41 +119,40 @@ export function isRegularLevel(level) {
 export function loadDeckPropsOnLevelPage() {
   const level = LevelManager.getCurrentLevel()
   for (let i = 0; i <= categories[level].length - 1; i++) {
-
     // <div> elementini oluştur
-    const linkBlock = document.createElement('div');
-    linkBlock.classList.add('pack-link-block');
-    linkBlock.style.display = 'flex';
-    linkBlock.style.flexDirection = 'column';
+    const linkBlock = document.createElement('div')
+    linkBlock.classList.add('pack-link-block')
+    linkBlock.style.display = 'flex'
+    linkBlock.style.flexDirection = 'column'
     linkBlock.style.position = 'relative'
 
     // <img> elementini oluştur
-    const img = document.createElement('img');
-    img.src = categories[level][i].imgUrl;
-    img.loading = 'lazy';
-    img.style.width = '100%';
-    img.style.height = '100%';
-    img.style.maxWidth = '100%';
-    img.id = `deck-${i}`;
+    const img = document.createElement('img')
+    img.src = categories[level][i].imgUrl
+    img.loading = 'lazy'
+    img.style.width = '100%'
+    img.style.height = '100%'
+    img.style.maxWidth = '100%'
+    img.id = `deck-${i}`
     img.dataset.option = categories[level][i].nameShort
-    img.classList.add('deck-img', 'image-19');
+    img.classList.add('deck-img', 'image-19')
 
     // <h1> elementini oluştur
-    const h1 = document.createElement('h1');
-    h1.id = `deck-title-${i}`;
-    h1.classList.add('heading-42');
-    h1.textContent = categories[level][i].nameEng;
-    h1.style.fontFamily = 'Lato, sans-serif';
-    h1.style.fontWeight = '400';
-    h1.style.fontSize = '16px';
-    h1.style.lineHeight = '16px';
-    h1.style.color = '#333';
+    const h1 = document.createElement('h1')
+    h1.id = `deck-title-${i}`
+    h1.classList.add('heading-42')
+    h1.textContent = categories[level][i].nameEng
+    h1.style.fontFamily = 'Lato, sans-serif'
+    h1.style.fontWeight = '400'
+    h1.style.fontSize = '16px'
+    h1.style.lineHeight = '16px'
+    h1.style.color = '#333'
 
-    linkBlock.appendChild(img);
-    linkBlock.appendChild(h1);
+    linkBlock.appendChild(img)
+    linkBlock.appendChild(h1)
 
     // Son olarak istediğin yere ekle, örneğin bir container'a:
-    document.getElementById('pack-container-grid').appendChild(linkBlock);
+    document.getElementById('pack-container-grid').appendChild(linkBlock)
 
     /* Word Count Badge için burayı düzenleyeceğiz
 
@@ -195,11 +198,19 @@ export function loadDeckPropsOnLevelPage() {
         organizeSelectedDeckImage()
         hideSelectCategoryMessage()
         if (selectedCategory === 'prepositionsA1') {
+          // hide regular learn/exercise
           let contentContainer = document.getElementById(
             `content-container-${learnOrExercise}-${wordType}`
           )
           contentContainer.style.display = 'none'
+
+          // show preposition learn/exercise
+          mountMicroQuiz()
         } else {
+          // hide preposition learn/exercise
+          unmountMicroQuiz()
+
+          // show regular learn/exercise
           await loadAndShowWords()
         }
         // focus user Learn/Exercise area
@@ -388,14 +399,18 @@ export function confettiAnimation() {
 export function showSelectCategoryMessage() {
   const contentContainer = document.getElementById('content-container')
   contentContainer.style.display = 'none'
-  const selectCategoryMessage = document.getElementById('select-category-message')
+  const selectCategoryMessage = document.getElementById(
+    'select-category-message'
+  )
   selectCategoryMessage.style.display = 'flex'
 }
 
 export function hideSelectCategoryMessage() {
   const contentContainer = document.getElementById('content-container')
   contentContainer.style.display = 'block'
-  const selectCategoryMessage = document.getElementById('select-category-message')
+  const selectCategoryMessage = document.getElementById(
+    'select-category-message'
+  )
   selectCategoryMessage.style.display = 'none'
 }
 
@@ -409,7 +424,9 @@ export function organizeSelectedDeckImage() {
     deckimg.style.border = ''
     deckimg.style.borderRadius = ''
   })
-  const selectedDeckImg = [...deckimgs].find(deckimg => deckimg.dataset.option === category)
+  const selectedDeckImg = [...deckimgs].find(
+    (deckimg) => deckimg.dataset.option === category
+  )
   selectedDeckImg.classList.add('selected-deck-img')
   selectedDeckImg.style.border = '2px solid black'
   selectedDeckImg.style.borderRadius = '16px'

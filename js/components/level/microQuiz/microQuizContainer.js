@@ -181,12 +181,12 @@ function initEventListeners() {
  * Mount: set up everything once and show container
  * Prevents double-init via state.mounted
  */
-export async function mountMicroQuiz(config = {}) {
+export async function mountMicroQuiz({streakTarget = 3}) {
   if (state.mounted) return
   state.mounted = true
 
-  if (config.streakTarget >= 1 && config.streakTarget <= 5) {
-    state.streakTarget = config.streakTarget
+  if (streakTarget >= 1 && streakTarget <= 5) {
+    state.streakTarget = streakTarget
   }
 
   initElements()
