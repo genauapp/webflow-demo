@@ -61,7 +61,7 @@ function render() {
   els.loadingContainer().style.display = 'none'
   els.errorContainer().style.display = 'none'
   els.emptyContainer().style.display = 'none'
-  els.container().style.display = 'flex'
+  els.container().style.display = 'block'
 }
 
 /** Update tab button states based on navigation service */
