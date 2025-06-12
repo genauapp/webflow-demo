@@ -156,16 +156,14 @@ class NavigationService {
       // Update session items
       this._updateSessionItems(session, activeLearnList)
 
-      // FIXED: Don't increment index when removing items
-      // The next word will naturally appear at the same index position
+      // FIXED: Cycle through indices to show progression
       if (activeLearnList.length === 0) {
         // All words completed
         state.currentIndex = 0
-      } else if (state.currentIndex >= activeLearnList.length) {
-        // If we were at the last item and it got removed, wrap to start
-        state.currentIndex = 0
+      } else {
+        // Move to next index, but wrap around if we go past the end
+        state.currentIndex = (state.currentIndex + 1) % activeLearnList.length
       }
-      // Otherwise, keep the same index - the next word appears at this position
     }
 
     this._notifyUpdate(session)
