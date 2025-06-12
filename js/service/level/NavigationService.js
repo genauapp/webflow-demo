@@ -150,27 +150,21 @@ class NavigationService {
       // Mark word as known
       currentWord.isKnown = true
 
-      // Store the length BEFORE removing the item
-      const lengthBeforeRemoval = activeLearnList.length
-
       // Remove from active learn list
       activeLearnList.splice(currentIndex, 1)
 
       // Update session items
       this._updateSessionItems(session, activeLearnList)
 
-      // Fix index management - use length from before removal
-      if (currentIndex < lengthBeforeRemoval - 1) {
-        // There are more words after current position
-        // Stay at same index (next word slides into current position)
-        state.currentIndex = currentIndex
-      } else if (activeLearnList.length > 0) {
-        // We were at the end, move to new last item
-        state.currentIndex = activeLearnList.length - 1
-      } else {
-        // List is now empty
+      // Index management: If we removed the last item, go to previous
+      // Otherwise stay at same index (next word slides in)
+      if (activeLearnList.length === 0) {
         state.currentIndex = 0
+      } else if (currentIndex >= activeLearnList.length) {
+        // We were at or past the end, go to last available item
+        state.currentIndex = activeLearnList.length - 1
       }
+      // If currentIndex < activeLearnList.length, stay at same index
     }
 
     this._notifyUpdate(session)
@@ -382,18 +376,33 @@ class NavigationService {
     if (!session) return null
 
     let currentIndex, totalItems, currentItem, activeList
+    let totalOriginalItems, completedItems
 
     if (session.mode === 'learn') {
       activeList = this._getActiveLearnList(session)
       currentIndex = session.learnState.currentIndex
       totalItems = activeList.length
       currentItem = activeList[currentIndex] || null
+      totalOriginalItems = session.originalItems.length
+      completedItems = session.originalItems.filter(
+        (word) => word.isKnown
+      ).length
     } else {
       activeList = this._getActiveExerciseList(session)
       currentIndex = session.exerciseState.currentIndex
       totalItems = activeList.length
       currentItem = activeList[currentIndex] || null
+      totalOriginalItems = session.originalItems.length
+      completedItems = session.originalItems.filter(
+        (word) => word.isCorrectlyAnswered
+      ).length
     }
+
+    // Calculate progress based on completed vs total original items
+    const progressCurrent = completedItems
+    const progressTotal = totalOriginalItems
+    const progressPercentage =
+      totalOriginalItems > 0 ? (completedItems / totalOriginalItems) * 100 : 0
 
     return {
       mode: session.mode,
@@ -401,17 +410,17 @@ class NavigationService {
       currentItem,
       totalItems,
       progress: {
-        current: totalItems > 0 ? currentIndex + 1 : 0,
-        total: totalItems,
-        percentage:
-          totalItems > 0 ? ((currentIndex + 1) / totalItems) * 100 : 0,
+        current: progressCurrent, // How many completed
+        total: progressTotal, // Total original items
+        percentage: progressPercentage,
+        remaining: totalItems, // How many left to do
       },
       learnState: { ...session.learnState },
       exerciseState: {
         ...session.exerciseState,
         score: { ...session.exerciseState.score },
       },
-      canGoPrevious: false, // No previous functionality in new design
+      canGoPrevious: false,
       canGoNext: totalItems > 0 && currentIndex < totalItems - 1,
       isLearnCompleted: this.isLearnCompleted(sessionId),
       isExerciseCompleted: this.isExerciseCompleted(sessionId),
