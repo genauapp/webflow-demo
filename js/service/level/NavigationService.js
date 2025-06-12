@@ -100,6 +100,14 @@ class NavigationService {
     const currentWord = activeLearnList[currentIndex]
     if (!currentWord) return null
 
+    // Add to history
+    state.history.push({
+      word: currentWord,
+      action: 'repeat',
+      timestamp: Date.now(),
+      previousIndex: currentIndex,
+    })
+
     // Remove current word from its position and add to end
     activeLearnList.splice(currentIndex, 1)
     activeLearnList.push(currentWord)
@@ -131,25 +139,37 @@ class NavigationService {
     const currentWord = activeLearnList[currentIndex]
 
     if (currentWord) {
-      // 1. Mark word as known
+      // Add to history BEFORE removing from list
+      state.history.push({
+        word: currentWord,
+        action: 'known',
+        timestamp: Date.now(),
+        previousIndex: currentIndex,
+      })
+
+      // Mark word as known
       currentWord.isKnown = true
 
-      // 2. Remove from active learn list
+      // Store the length BEFORE removing the item
+      const lengthBeforeRemoval = activeLearnList.length
+
+      // Remove from active learn list
       activeLearnList.splice(currentIndex, 1)
 
-      // 3. Update session items
+      // Update session items
       this._updateSessionItems(session, activeLearnList)
 
-      // 4. Index adjustment logic (FIXED)
-      if (activeLearnList.length === 0) {
-        // Case 1: List is now empty
-        state.currentIndex = 0
-      } else if (currentIndex >= activeLearnList.length) {
-        // Case 2: Was at last position
+      // Fix index management - use length from before removal
+      if (currentIndex < lengthBeforeRemoval - 1) {
+        // There are more words after current position
+        // Stay at same index (next word slides into current position)
+        state.currentIndex = currentIndex
+      } else if (activeLearnList.length > 0) {
+        // We were at the end, move to new last item
         state.currentIndex = activeLearnList.length - 1
       } else {
-        // Case 3: Stay at same index (next item slides in)
-        state.currentIndex = currentIndex
+        // List is now empty
+        state.currentIndex = 0
       }
     }
 
