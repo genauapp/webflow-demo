@@ -375,53 +375,57 @@ class NavigationService {
     const session = this.sessions.get(sessionId)
     if (!session) return null
 
-    let currentIndex, totalItems, currentItem, activeList
-    let totalOriginalItems, completedItems
+    let activeIndex, totalActiveItems, currentItem, activeList
+    let totalOriginalItems, completedItems, overallProgress
 
     if (session.mode === 'learn') {
       activeList = this._getActiveLearnList(session)
-      currentIndex = session.learnState.currentIndex
-      totalItems = activeList.length
-      currentItem = activeList[currentIndex] || null
+      activeIndex = session.learnState.currentIndex // Learn mode's own index
+      totalActiveItems = activeList.length
+      currentItem = activeList[activeIndex] || null
       totalOriginalItems = session.originalItems.length
       completedItems = session.originalItems.filter(
         (word) => word.isKnown
       ).length
+      overallProgress = completedItems
     } else {
       activeList = this._getActiveExerciseList(session)
-      currentIndex = session.exerciseState.currentIndex
-      totalItems = activeList.length
-      currentItem = activeList[currentIndex] || null
+      activeIndex = session.exerciseState.currentIndex // Exercise mode's own index
+      totalActiveItems = activeList.length
+      currentItem = activeList[activeIndex] || null
       totalOriginalItems = session.originalItems.length
       completedItems = session.originalItems.filter(
         (word) => word.isCorrectlyAnswered
       ).length
+      overallProgress = completedItems
     }
 
     // Calculate progress based on completed vs total original items
-    const progressCurrent = completedItems
-    const progressTotal = totalOriginalItems
     const progressPercentage =
       totalOriginalItems > 0 ? (completedItems / totalOriginalItems) * 100 : 0
 
     return {
       mode: session.mode,
-      currentIndex,
+      currentIndex: overallProgress, // This is what shows in navbar - items completed
       currentItem,
-      totalItems,
+      totalItems: totalActiveItems, // Items remaining in current mode
       progress: {
-        current: progressCurrent, // How many completed
-        total: progressTotal, // Total original items
+        current: overallProgress, // How many completed
+        total: totalOriginalItems, // Total original items
         percentage: progressPercentage,
-        remaining: totalItems, // How many left to do
+        remaining: totalActiveItems, // How many left to do
       },
-      learnState: { ...session.learnState },
+      learnState: {
+        ...session.learnState,
+        // Keep learn mode's own currentIndex unchanged
+      },
       exerciseState: {
         ...session.exerciseState,
+        // Keep exercise mode's own currentIndex unchanged
         score: { ...session.exerciseState.score },
       },
       canGoPrevious: false,
-      canGoNext: totalItems > 0 && currentIndex < totalItems - 1,
+      canGoNext: totalActiveItems > 0 && activeIndex < totalActiveItems - 1,
       isLearnCompleted: this.isLearnCompleted(sessionId),
       isExerciseCompleted: this.isExerciseCompleted(sessionId),
       streakTarget: session.streakTarget,
