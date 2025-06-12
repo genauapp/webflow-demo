@@ -156,15 +156,21 @@ class NavigationService {
       // Update session items
       this._updateSessionItems(session, activeLearnList)
 
-      // Index management: If we removed the last item, go to previous
-      // Otherwise stay at same index (next word slides in)
+      // FIX: Instead of keeping same index, increment to show progression
+      // Only reset to 0 if we've reached the end
       if (activeLearnList.length === 0) {
         state.currentIndex = 0
       } else if (currentIndex >= activeLearnList.length) {
-        // We were at or past the end, go to last available item
-        state.currentIndex = activeLearnList.length - 1
+        // We were at the end, wrap to beginning or stay at last valid index
+        state.currentIndex = 0 // or activeLearnList.length - 1 if you prefer
+      } else {
+        // This is the key change: increment the index to show progression
+        state.currentIndex = currentIndex + 1
+        // But make sure we don't go past the end
+        if (state.currentIndex >= activeLearnList.length) {
+          state.currentIndex = 0 // wrap around or use activeLearnList.length - 1
+        }
       }
-      // If currentIndex < activeLearnList.length, stay at same index
     }
 
     this._notifyUpdate(session)
