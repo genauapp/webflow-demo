@@ -1,6 +1,6 @@
 import protectedApi from '../api/protectedApi.js'
 import publicApi from '../api/publicApi.js'
-import prepositionData from '../../json/a1/micro-quiz/preposition.json'
+import prepositionData from '../../json/a1/micro-quiz/preposition.json' assert { type: "json" }
 
 export const publicApiService = {
   googleSignin: (idToken) => {
