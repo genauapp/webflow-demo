@@ -1,5 +1,6 @@
 import protectedApi from '../api/protectedApi.js'
 import publicApi from '../api/publicApi.js'
+import prepositionData from '../../json/a1/micro-quiz/preposition.json'
 
 export const publicApiService = {
   googleSignin: (idToken) => {
@@ -25,6 +26,17 @@ export const publicApiService = {
 export const protectedApiService = {
   getUserProfile: () => {
     return handleRequest(() => protectedApi.get('/api/v1/user/me'))
+  },
+  getPackWords: (packId) => {
+    // todo: activate when ready to integrate with api
+    // return handleRequest(() => protectedApi.get(`/api/v1/pack/${packId}`))
+    return handleRequest(() =>
+      Promise.resolve({
+        ok: true,
+        status: 200,
+        json: () => Promise.resolve(prepositionData),
+      })
+    )
   },
 }
 

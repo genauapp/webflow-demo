@@ -2,7 +2,7 @@
 import { initLearn } from './learn.js'
 import { initExercise } from './exercise.js'
 import { navigationService } from '../../../service/level/NavigationService.js'
-import { publicApiService } from '../../../service/apiService.js'
+import { protectedApiService } from '../../../service/apiService.js'
 
 let els = {}
 let state = {
@@ -122,7 +122,7 @@ async function fetchWords() {
     state.error = null
     render()
 
-    const { data: words, error } = await publicApiService.getWords()
+    const { data: words, error } = await protectedApiService.getWords()
 
     if (error) {
       state.error = error
