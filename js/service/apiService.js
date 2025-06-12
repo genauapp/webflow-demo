@@ -30,13 +30,15 @@ export const protectedApiService = {
   getPackWords: (packId) => {
     // todo: activate when ready to integrate with api
     // return handleRequest(() => protectedApi.get(`/api/v1/pack/${packId}`))
-    return handleRequest(() =>
-      Promise.resolve({
-        ok: true,
-        status: 200,
-        json: () => Promise.resolve(prepositionData),
-      })
-    )
+  return handleRequest(() =>
+    Promise.resolve({
+      ok: true,
+      status: 200,
+      json: () => Promise.resolve({ 
+        data: prepositionData  // Wrap in {data} to match real API
+      }),
+    })
+  )
   },
 }
 
