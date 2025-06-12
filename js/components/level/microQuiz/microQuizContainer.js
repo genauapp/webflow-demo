@@ -122,7 +122,7 @@ async function fetchWords() {
     state.error = null
     render()
 
-    const { data: words, error } = await protectedApiService.getWords()
+    const { data: words, error } = await protectedApiService.getPackWords()
 
     if (error) {
       state.error = error
