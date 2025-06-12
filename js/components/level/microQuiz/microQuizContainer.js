@@ -152,12 +152,12 @@ function initializeNavigationService() {
     },
     onLearnUpdate: (nav) =>
       nav.currentItem &&
-      initLearn(nav.currentItem, nav.currentIndex, nav.totalItems),
+      initLearn(nav.currentItem, nav.learnState.currentIndex, nav.totalItems),
     onExerciseUpdate: (nav) =>
       nav.currentItem &&
       initExercise(
         nav.currentItem,
-        nav.currentIndex,
+        nav.exerciseState.currentIndex,
         nav.totalItems,
         nav.exerciseState.score
       ),
