@@ -197,7 +197,7 @@ export function loadDeckPropsOnLevelPage() {
         LocalStorageManager.save(CURRENT_CATEGORY_KEY, selectedCategory)
         organizeSelectedDeckImage()
         hideSelectCategoryMessage()
-        if (selectedCategory === 'prepositionsA1') {
+        if (selectedCategory === 'preposition') {
           // hide regular learn/exercise
           // let contentContainer = document.getElementById(
           //   `content-container-${learnOrExercise}-${wordType}`
