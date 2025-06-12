@@ -127,24 +127,31 @@ class NavigationService {
 
     if (activeLearnList.length === 0) return null
 
-    const currentWord = activeLearnList[state.currentIndex]
+    const currentIndex = state.currentIndex
+    const currentWord = activeLearnList[currentIndex]
+
     if (currentWord) {
       // Mark word as known
       currentWord.isKnown = true
 
       // Remove from active learn list
-      activeLearnList.splice(state.currentIndex, 1)
+      activeLearnList.splice(currentIndex, 1)
 
       // Update session items
       this._updateSessionItems(session, activeLearnList)
 
-      // Adjust index if we're at or past the end
-      if (state.currentIndex >= activeLearnList.length) {
-        state.currentIndex = Math.max(0, activeLearnList.length - 1)
+      // Only advance index if we're not at the end
+      if (currentIndex < activeLearnList.length) {
+        // Stay at same position (next word slides in)
+        state.currentIndex = currentIndex
+      } else if (activeLearnList.length > 0) {
+        // Move to last item if we were at end
+        state.currentIndex = activeLearnList.length - 1
       }
+      // If list is now empty, index becomes 0 (handled by completion)
     }
 
-    this._notifyLearnUpdate(session)
+    this._notifyUpdate(session) // Important: Use _notifyUpdate instead of _notifyLearnUpdate
     return this._getCurrentItem(session)
   }
 
