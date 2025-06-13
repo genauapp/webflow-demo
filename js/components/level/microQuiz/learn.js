@@ -6,18 +6,17 @@ function initElements() {
   els = {
     // Learn card elements
     wordCard: () => document.getElementById('learn-word-card'),
+    // Progress elements
+    currentIndexLabel: () =>
+      document.getElementById('learn-word-card-index-current'),
+    totalIndexLabel: () =>
+      document.getElementById('learn-word-card-index-total'),
     wordLevel: () => document.getElementById('learn-word-card-level'),
     wordType: () => document.getElementById('learn-word-card-type'),
     wordText: () => document.getElementById('learn-word-card-text'),
     wordTranslation: () =>
       document.getElementById('learn-word-card-translation'),
     wordExample: () => document.getElementById('learn-word-card-example'),
-
-    // Progress elements
-    currentIndexLabel: () =>
-      document.getElementById('learn-word-card-index-current'),
-    totalIndexLabel: () =>
-      document.getElementById('learn-word-card-index-total'),
   }
 }
 
