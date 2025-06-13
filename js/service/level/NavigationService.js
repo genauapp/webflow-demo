@@ -77,19 +77,38 @@ class NavigationService {
     if (!session) return null
 
     const state = session.learnState
-    if (state.currentIndex === -1) return null // Completed state
+    if (state.currentIndex === -1) return null // already done
 
     const currentWord = state.activeLearnOrder[state.currentIndex]
     if (!currentWord) return null
 
-    // Remove current word and reinsert at random position
-    state.activeLearnOrder.splice(state.currentIndex, 1)
-    const newIndex = Math.floor(
-      Math.random() * (state.activeLearnOrder.length + 1)
-    )
-    state.activeLearnOrder.splice(newIndex, 0, currentWord)
+    // Build list of unknown words (including current)
+    const unknownWords = state.activeLearnOrder.filter((w) => !w.isKnown)
 
-    // Stay at same index (now shows next word)
+    // If there's only one unknown, it'll always be the next one
+    if (unknownWords.length <= 1) {
+      this._notifyUpdate(session)
+      return currentWord
+    }
+
+    // Remove the current word from the main array
+    state.activeLearnOrder.splice(state.currentIndex, 1)
+
+    // Choose a random position *among* the unknowns
+    // First find the indices of unknowns in the new array
+    const unknownIndices = state.activeLearnOrder
+      .map((w, idx) => (!w.isKnown ? idx : -1))
+      .filter((idx) => idx >= 0)
+
+    // Randomly pick one of those indices to insert before
+    const nextRandomIndex =
+      unknownIndices[Math.floor(Math.random() * unknownIndices.length)]
+
+    // Re‑insert currentWord at that index
+    state.activeLearnOrder.splice(nextRandomIndex, 0, currentWord)
+
+    // Keep the cursor where it is so you’ll see whatever ends up at currentIndex next
+    // (it’ll be one of the unknowns, with probability 1/uCount each)
     if (state.currentIndex >= state.activeLearnOrder.length) {
       state.currentIndex = state.activeLearnOrder.length - 1
     }
