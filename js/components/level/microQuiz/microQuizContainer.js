@@ -65,27 +65,27 @@ function render() {
     // els.loadingContainer().style.display = 'flex'
     // els.errorContainer().style.display = 'none'
     // els.emptyContainer().style.display = 'none'
-    els.container().style.display = 'none'
+    els.learnContainer().style.display = 'none'
     return
   }
   if (state.error) {
     // els.loadingContainer().style.display = 'none'
     // els.errorContainer().style.display = 'flex'
     // els.emptyContainer().style.display = 'none'
-    els.container().style.display = 'none'
+    els.learnContainer().style.display = 'none'
     return
   }
   if (state.words.length === 0) {
     // els.loadingContainer().style.display = 'none'
     // els.errorContainer().style.display = 'none'
     // els.emptyContainer().style.display = 'flex'
-    els.container().style.display = 'none'
+    els.learnContainer().style.display = 'none'
     return
   }
   // els.loadingContainer().style.display = 'none'
   // els.errorContainer().style.display = 'none'
   // els.emptyContainer().style.display = 'none'
-  els.container().style.display = 'block'
+  els.learnContainer().style.display = 'block'
 }
 
 /** Update tab button states based on navigation service */
