@@ -77,38 +77,41 @@ class NavigationService {
     if (!session) return null
 
     const state = session.learnState
-    if (state.currentIndex === -1) return null // already done
+    if (state.currentIndex === -1) return null // done
 
     const currentWord = state.activeLearnOrder[state.currentIndex]
     if (!currentWord) return null
 
-    // Build list of unknown words (including current)
-    const unknownWords = state.activeLearnOrder.filter((w) => !w.isKnown)
+    // Gather pre‑removal indices of ALL unknowns
+    const preUnknownIndices = state.activeLearnOrder
+      .map((w, idx) => (!w.isKnown ? idx : -1))
+      .filter((idx) => idx >= 0)
+    const uCount = preUnknownIndices.length
 
-    // If there's only one unknown, it'll always be the next one
-    if (unknownWords.length <= 1) {
+    // If only one unknown, short‐circuit
+    if (uCount <= 1) {
       this._notifyUpdate(session)
       return currentWord
     }
 
-    // Remove the current word from the main array
+    // Pick one of those u slots at random
+    const pickPreIndex = preUnknownIndices[Math.floor(Math.random() * uCount)]
+
+    // Remove currentWord
     state.activeLearnOrder.splice(state.currentIndex, 1)
 
-    // Choose a random position *among* the unknowns
-    // First find the indices of unknowns in the new array
-    const unknownIndices = state.activeLearnOrder
-      .map((w, idx) => (!w.isKnown ? idx : -1))
-      .filter((idx) => idx >= 0)
+    // Adjust insertion index if needed
+    let insertIndex = pickPreIndex
+    if (pickPreIndex > state.currentIndex) {
+      insertIndex = pickPreIndex - 1
+    }
+    // (if pickPreIndex < currentIndex, it stays the same;
+    // if pickPreIndex === currentIndex, you’ll reinsert at the same spot)
 
-    // Randomly pick one of those indices to insert before
-    const nextRandomIndex =
-      unknownIndices[Math.floor(Math.random() * unknownIndices.length)]
+    // Reinsert currentWord at the chosen unknown slot
+    state.activeLearnOrder.splice(insertIndex, 0, currentWord)
 
-    // Re‑insert currentWord at that index
-    state.activeLearnOrder.splice(nextRandomIndex, 0, currentWord)
-
-    // Keep the cursor where it is so you’ll see whatever ends up at currentIndex next
-    // (it’ll be one of the unknowns, with probability 1/uCount each)
+    // Keep the cursor pointing at the same array index
     if (state.currentIndex >= state.activeLearnOrder.length) {
       state.currentIndex = state.activeLearnOrder.length - 1
     }
