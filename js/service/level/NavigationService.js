@@ -82,37 +82,39 @@ class NavigationService {
     const currentWord = state.activeLearnOrder[state.currentIndex]
     if (!currentWord) return null
 
-    // Get all unknown word indices (excluding current word)
-    const otherUnknownIndices = state.activeLearnOrder
-      .map((w, idx) => (!w.isKnown && idx !== state.currentIndex ? idx : -1))
+    // Gather pre‑removal indices of ALL unknowns
+    const preUnknownIndices = state.activeLearnOrder
+      .map((w, idx) => (!w.isKnown ? idx : -1))
       .filter((idx) => idx >= 0)
+    const uCount = preUnknownIndices.length
 
-    // If no other unknown words, just stay at current position
-    if (otherUnknownIndices.length === 0) {
+    // If only one unknown, short‐circuit
+    if (uCount <= 1) {
       this._notifyUpdate(session)
       return currentWord
     }
 
-    // Pick a random position among other unknown words
-    const targetIndex =
-      otherUnknownIndices[
-        Math.floor(Math.random() * otherUnknownIndices.length)
-      ]
+    // Pick one of those u slots at random
+    const pickPreIndex = preUnknownIndices[Math.floor(Math.random() * uCount)]
 
-    // Remove current word
+    // Remove currentWord
     state.activeLearnOrder.splice(state.currentIndex, 1)
 
-    // Calculate adjusted insertion index
-    let insertIndex = targetIndex
-    if (targetIndex > state.currentIndex) {
-      insertIndex = targetIndex - 1 // Adjust for the removal
+    // Adjust insertion index if needed
+    let insertIndex = pickPreIndex
+    if (pickPreIndex > state.currentIndex) {
+      insertIndex = pickPreIndex - 1
     }
+    // (if pickPreIndex < currentIndex, it stays the same;
+    // if pickPreIndex === currentIndex, you’ll reinsert at the same spot)
 
-    // Insert the word at the target position
+    // Reinsert currentWord at the chosen unknown slot
     state.activeLearnOrder.splice(insertIndex, 0, currentWord)
 
-    // Update current index to point to the inserted word
-    state.currentIndex = insertIndex
+    // Keep the cursor pointing at the same array index
+    if (state.currentIndex >= state.activeLearnOrder.length) {
+      state.currentIndex = state.activeLearnOrder.length - 1
+    }
 
     this._notifyUpdate(session)
     return currentWord
