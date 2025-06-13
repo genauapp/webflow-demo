@@ -46,13 +46,10 @@ function resetElements() {
   els = {}
 }
 
-function initState({ streakTarget }) {
+function initState() {
   state = {
     ...DEFAULT_STATE,
   }
-
-  state.mounted = true
-  state.streakTarget = streakTarget >= 1 && streakTarget <= 5 ? streakTarget : 3
 }
 
 function resetState() {
@@ -259,6 +256,9 @@ export async function mountMicroQuiz({ streakTarget = 3 } = {}) {
   initState({ streakTarget })
 
   if (state.mounted) return
+
+  state.mounted = true
+  state.streakTarget = streakTarget >= 1 && streakTarget <= 5 ? streakTarget : 3
 
   initElements()
   initEventListeners()
