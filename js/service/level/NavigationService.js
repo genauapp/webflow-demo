@@ -82,38 +82,36 @@ class NavigationService {
     const currentWord = state.activeLearnOrder[state.currentIndex]
     if (!currentWord) return null
 
-    // Gather pre‑removal indices of ALL unknowns
-    const preUnknownIndices = state.activeLearnOrder
-      .map((w, idx) => (!w.isKnown ? idx : -1))
+    // Get all unknown word indices (excluding current word)
+    const otherUnknownIndices = state.activeLearnOrder
+      .map((w, idx) => (!w.isKnown && idx !== state.currentIndex ? idx : -1))
       .filter((idx) => idx >= 0)
-    const uCount = preUnknownIndices.length
 
-    // If only one unknown, short‐circuit
-    if (uCount <= 1) {
+    // If no other unknown words, just stay at current position
+    if (otherUnknownIndices.length === 0) {
       this._notifyUpdate(session)
       return currentWord
     }
 
-    // Pick one of those u slots at random, but exclude current position
-    const availableIndices = preUnknownIndices.filter(
-      (idx) => idx !== state.currentIndex
-    )
-    const pickPreIndex =
-      availableIndices[Math.floor(Math.random() * availableIndices.length)]
+    // Pick a random position among other unknown words
+    const targetIndex =
+      otherUnknownIndices[
+        Math.floor(Math.random() * otherUnknownIndices.length)
+      ]
 
-    // Remove currentWord
+    // Remove current word
     state.activeLearnOrder.splice(state.currentIndex, 1)
 
-    // Adjust insertion index if needed
-    let insertIndex = pickPreIndex
-    if (pickPreIndex > state.currentIndex) {
-      insertIndex = pickPreIndex - 1
+    // Calculate adjusted insertion index
+    let insertIndex = targetIndex
+    if (targetIndex > state.currentIndex) {
+      insertIndex = targetIndex - 1 // Adjust for the removal
     }
 
-    // Reinsert currentWord at the chosen unknown slot
+    // Insert the word at the target position
     state.activeLearnOrder.splice(insertIndex, 0, currentWord)
 
-    // Update current index to the new position
+    // Update current index to point to the inserted word
     state.currentIndex = insertIndex
 
     this._notifyUpdate(session)
