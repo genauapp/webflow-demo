@@ -82,12 +82,9 @@ class NavigationService {
     const currentWord = state.activeLearnOrder[state.currentIndex]
     if (!currentWord) return null
 
-    // Find ALL unknown words (including current)
-    const allUnknownIndices = state.activeLearnOrder
-      .map((w, idx) => (!w.isKnown ? idx : -1))
-      .filter((idx) => idx >= 0)
-
-    const totalUnknown = allUnknownIndices.length
+    // Count total unknown words
+    const unknownWords = state.activeLearnOrder.filter((w) => !w.isKnown)
+    const totalUnknown = unknownWords.length
 
     // If only one unknown word left, no repositioning needed
     if (totalUnknown <= 1) {
@@ -95,33 +92,61 @@ class NavigationService {
       return currentWord
     }
 
-    // Find unknown positions EXCLUDING the current word's position
-    const otherUnknownIndices = allUnknownIndices.filter(
-      (idx) => idx !== state.currentIndex
-    )
-
-    // Pick a random position from the OTHER unknown positions
-    const randomOtherIndex =
-      otherUnknownIndices[
-        Math.floor(Math.random() * otherUnknownIndices.length)
-      ]
-
-    // Remove current word from its position
-    state.activeLearnOrder.splice(state.currentIndex, 1)
-
-    // Calculate the adjusted insertion index
-    let adjustedInsertIndex = randomOtherIndex
-    if (randomOtherIndex > state.currentIndex) {
-      adjustedInsertIndex = randomOtherIndex - 1
+    // Get all unknown positions EXCEPT the current one
+    const otherUnknownPositions = []
+    for (let i = 0; i < state.activeLearnOrder.length; i++) {
+      if (i !== state.currentIndex && !state.activeLearnOrder[i].isKnown) {
+        otherUnknownPositions.push(i)
+      }
     }
 
-    // Insert the current word at the new position
-    state.activeLearnOrder.splice(adjustedInsertIndex, 0, currentWord)
+    // Pick a random position from the other unknown positions
+    const targetPosition =
+      otherUnknownPositions[
+        Math.floor(Math.random() * otherUnknownPositions.length)
+      ]
 
-    // Update current index to point to the word at the original position
-    // (or adjust if we're at the end)
-    if (state.currentIndex >= state.activeLearnOrder.length) {
-      state.currentIndex = state.activeLearnOrder.length - 1
+    // Remove current word
+    state.activeLearnOrder.splice(state.currentIndex, 1)
+
+    // Adjust target position if it was after the removed word
+    const adjustedTarget =
+      targetPosition > state.currentIndex ? targetPosition - 1 : targetPosition
+
+    // Insert current word at the target position
+    state.activeLearnOrder.splice(adjustedTarget, 0, currentWord)
+
+    // Now find the next unknown word starting from the original currentIndex
+    // (or from 0 if currentIndex is now out of bounds)
+    let nextIndex = Math.min(
+      state.currentIndex,
+      state.activeLearnOrder.length - 1
+    )
+
+    // Look for the next unknown word
+    while (nextIndex < state.activeLearnOrder.length) {
+      if (!state.activeLearnOrder[nextIndex].isKnown) {
+        state.currentIndex = nextIndex
+        break
+      }
+      nextIndex++
+    }
+
+    // If we didn't find any unknown words after currentIndex, start from beginning
+    if (nextIndex >= state.activeLearnOrder.length) {
+      nextIndex = 0
+      while (nextIndex < state.activeLearnOrder.length) {
+        if (!state.activeLearnOrder[nextIndex].isKnown) {
+          state.currentIndex = nextIndex
+          break
+        }
+        nextIndex++
+      }
+    }
+
+    // If still no unknown words found, we're done
+    if (nextIndex >= state.activeLearnOrder.length) {
+      state.currentIndex = -1
     }
 
     this._notifyUpdate(session)
