@@ -4,13 +4,18 @@ import { navigationService } from '../../../service/level/NavigationService.js'
 import { protectedApiService } from '../../../service/apiService.js'
 
 let els = {}
-let state = {
+
+const DEFAULT_STATE = {
   loading: false,
   error: null,
   words: [],
-  sessionId: 'microQuiz', // Unique session identifier
+  sessionId: 'micro-quiz', // Unique session identifier
   streakTarget: 3, // Default streak target (1-5)
   mounted: false, // New: has the component been initialized?
+}
+
+let state = {
+  ...DEFAULT_STATE
 }
 
 /** Initialize elements dynamically using provided IDs */

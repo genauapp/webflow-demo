@@ -33,6 +33,10 @@ class NavigationService {
     return this.sessions.get(sessionId)
   }
 
+  destroySession(sessionId) {
+    return this.sessions.delete(sessionId)
+  }
+
   switchMode(sessionId, mode) {
     const session = this.sessions.get(sessionId)
     if (!session) return null
@@ -144,10 +148,6 @@ class NavigationService {
         ? 0
         : learnState.activeLearnOrder.length - learnState.currentIndex,
     }
-  }
-
-  destroySession(sessionId) {
-    return this.sessions.delete(sessionId)
   }
 
   // PRIVATE METHODS
