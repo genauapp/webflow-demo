@@ -1,6 +1,6 @@
 // /service/navigationService.js
 
-import ListUtils from '../../utils/ListUtils'
+import ListUtils from '../../utils/ListUtils.js'
 
 /**
  * Reusable navigation service for learn and exercise modes
