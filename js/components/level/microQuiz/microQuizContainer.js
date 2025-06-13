@@ -1,4 +1,3 @@
-// /components/microQuiz/microQuizContainer.js
 import { initLearn } from './learn.js'
 import { initExercise } from './exercise.js'
 import { navigationService } from '../../../service/level/NavigationService.js'
@@ -77,29 +76,34 @@ function updateTabStates(navigationState) {
     exerciseTabEl.classList.remove('active')
     els.learnContainer().style.display = 'block'
     els.exerciseContainer().style.display = 'none'
+
+    // Show completed container if learn is completed
+    if (navigationState.isLearnCompleted) {
+      els.learnCompletedContainer().style.display = 'block'
+      els.learnContainer().style.display = 'none'
+    } else {
+      els.learnCompletedContainer().style.display = 'none'
+      els.learnContainer().style.display = 'block'
+    }
   } else {
     learnTabEl.classList.remove('active')
     exerciseTabEl.classList.add('active')
     els.learnContainer().style.display = 'none'
     els.exerciseContainer().style.display = 'block'
+    els.learnCompletedContainer().style.display = 'none'
   }
 }
 
 /** Update navigation button states */
 function updateNavigationButtons(navigationState) {
-  const {
-    currentItem,
-    activeListLength,
-    isLearnCompleted,
-    isExerciseCompleted,
-  } = navigationState
+  const { currentItem, isLearnCompleted } = navigationState
 
   // Learn buttons
-  els.learnRepeat().disabled = !currentItem || activeListLength === 0
-  els.learnNext().disabled = !currentItem || activeListLength === 0
+  els.learnRepeat().disabled = !currentItem || isLearnCompleted
+  els.learnNext().disabled = !currentItem || isLearnCompleted
   els.learnReset().style.display = isLearnCompleted ? 'block' : 'none'
 
-  // Exercise buttons
+  // Exercise buttons - keeping your original commented code
   // els.exerciseCorrect().disabled = !currentItem || activeListLength === 0
   // els.exerciseWrong().disabled   = !currentItem || activeListLength === 0
   // els.exerciseReset().style.display = isExerciseCompleted ? 'block' : 'none'
@@ -149,18 +153,27 @@ function initializeNavigationService() {
     onUpdate: (nav) => {
       updateTabStates(nav)
       updateNavigationButtons(nav)
+
+      // Initialize learn component with current word
+      if (nav.mode === 'learn' && nav.currentItem) {
+        initLearn(nav.currentItem, nav.progress.current, nav.progress.total)
+      }
     },
-    onLearnUpdate: (nav) =>
-      nav.currentItem &&
-      initLearn(nav.currentItem, nav.learnState.currentIndex, nav.totalItems),
-    onExerciseUpdate: (nav) =>
-      nav.currentItem &&
-      initExercise(
-        nav.currentItem,
-        nav.exerciseState.currentIndex,
-        nav.totalItems,
-        nav.exerciseState.score
-      ),
+    onLearnUpdate: (nav) => {
+      if (nav.currentItem) {
+        initLearn(nav.currentItem, nav.progress.current, nav.progress.total)
+      }
+    },
+    onExerciseUpdate: (nav) => {
+      // Keeping your original exercise code
+      // nav.currentItem &&
+      // initExercise(
+      //   nav.currentItem,
+      //   nav.exerciseState.currentIndex,
+      //   nav.totalItems,
+      //   nav.exerciseState.score
+      // )
+    },
   })
 }
 
