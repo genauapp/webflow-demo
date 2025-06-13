@@ -1,5 +1,7 @@
 // /service/navigationService.js
 
+import ListUtils from '../../utils/ListUtils'
+
 /**
  * Reusable navigation service for learn and exercise modes
  * Handles all navigation logic, state management, and provides callbacks for UI updates
@@ -147,22 +149,28 @@ class NavigationService {
         previousIndex: currentIndex,
       })
 
-      // Mark word as known
+      // Mark word as known (only affects learn mode)
       currentWord.isKnown = true
 
       // Remove from active learn list
       activeLearnList.splice(currentIndex, 1)
 
-      // Update session items
+      // Update session items (only affects learn ordering)
       this._updateSessionItems(session, activeLearnList)
 
-      // FIXED: Cycle through indices to show progression
+      // Handle index adjustment
       if (activeLearnList.length === 0) {
-        // All words completed
+        // All words learned - reset to 0
         state.currentIndex = 0
       } else {
-        // Move to next index, but wrap around if we go past the end
-        state.currentIndex = (state.currentIndex + 1) % activeLearnList.length
+        // Stay at current position if not at end
+        if (currentIndex < activeLearnList.length) {
+          // Next item slides into current position
+          state.currentIndex = currentIndex
+        } else {
+          // Reset to last position if beyond bounds
+          state.currentIndex = activeLearnList.length - 1
+        }
       }
     }
 
@@ -350,16 +358,35 @@ class NavigationService {
 
   // Update session items maintaining the filtered lists
   _updateSessionItems(session, newLearnList = null, newExerciseList = null) {
+    // Learn mode update - doesn't affect exercise index
     if (session.mode === 'learn' && newLearnList) {
-      // Combine active learn list with known words
       const knownWords = session.items.filter((word) => word.isKnown)
-      session.items = [...newLearnList, ...knownWords]
-    } else if (session.mode === 'exercise' && newExerciseList) {
-      // Combine active exercise list with completed words
+
+      // Maintain original order for known words
+      const sortedKnown = [...knownWords].sort((a, b) =>
+        a.id.localeCompare(b.id)
+      )
+
+      // Shuffle active learn list for better learning
+      const shuffledActive = ListUtils.shuffleArray([...newLearnList])
+
+      session.items = [...shuffledActive, ...sortedKnown]
+    }
+    // Exercise mode update - doesn't affect learn index
+    else if (session.mode === 'exercise' && newExerciseList) {
       const completedWords = session.items.filter(
         (word) => word.isCorrectlyAnswered
       )
-      session.items = [...newExerciseList, ...completedWords]
+
+      // Maintain original order for completed words
+      const sortedCompleted = [...completedWords].sort((a, b) =>
+        a.id.localeCompare(b.id)
+      )
+
+      // Shuffle active exercise list
+      const shuffledActive = ListUtils.shuffleArray([...newExerciseList])
+
+      session.items = [...shuffledActive, ...sortedCompleted]
     }
   }
 
