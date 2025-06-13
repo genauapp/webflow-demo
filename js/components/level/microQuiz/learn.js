@@ -6,78 +6,65 @@ function initElements() {
   els = {
     // Learn card elements
     wordCard: () => document.getElementById('learn-word-card'),
-    wordText: () => document.getElementById('learn-word-text'),
-    wordDefinition: () => document.getElementById('learn-word-definition'),
-    wordExample: () => document.getElementById('learn-word-example'),
-    wordPronunciation: () => document.getElementById('learn-word-pronunciation'),
-    
+    wordLevel: () => document.getElementById('learn-word-card-level'),
+    wordType: () => document.getElementById('learn-word-card-type'),
+    wordText: () => document.getElementById('learn-word-card-text'),
+    wordTranslation: () =>
+      document.getElementById('learn-word-card-translation'),
+    wordExample: () => document.getElementById('learn-word-card-example'),
+
     // Progress elements
-    progressText: () => document.getElementById('learn-progress-text'),
-    progressBar: () => document.getElementById('learn-progress-bar'),
+    currentIndexLabel: () =>
+      document.getElementById('learn-word-card-index-current'),
+    totalIndexLabel: () =>
+      document.getElementById('learn-word-card-index-total'),
   }
 }
 
 /** Render learn component with current word */
-function renderLearnCard(word, currentIndex, totalWords) {
+function renderLearnCard(word, currentIndex, totalIndex) {
   if (!word) return
-  
-  // Update word content
-  if (els.wordText()) {
-    els.wordText().textContent = word.word || word.text || ''
-  }
-  
-  if (els.wordDefinition()) {
-    els.wordDefinition().textContent = word.definition || word.meaning || ''
-  }
-  
-  if (els.wordExample()) {
-    els.wordExample().textContent = word.example || ''
-    els.wordExample().style.display = word.example ? 'block' : 'none'
-  }
-  
-  if (els.wordPronunciation()) {
-    els.wordPronunciation().textContent = word.pronunciation || ''
-    els.wordPronunciation().style.display = word.pronunciation ? 'block' : 'none'
-  }
-  
+
   // Update progress
-  if (els.progressText()) {
-    els.progressText().textContent = `${currentIndex + 1} of ${totalWords}`
-  }
-  
-  if (els.progressBar()) {
-    const progressPercentage = ((currentIndex + 1) / totalWords) * 100
-    els.progressBar().style.width = `${progressPercentage}%`
-  }
-  
-  // Show the card
-  if (els.wordCard()) {
-    els.wordCard().style.display = 'block'
-  }
+  els.currentIndexLabel().textContent = `${currentIndex}`
+  els.totalIndexLabel().textContent = `${totalIndex}`
+
+  els.wordLevel().textContent = word.level || ''
+  els.wordType().textContent = word.type || ''
+  els.wordText().textContent = word.word || ''
+  els.wordTranslation().textContent = word.english || ''
+
+  els.wordExample().textContent = word.example || ''
+  els.wordExample().style.display = word.example ? 'block' : 'none'
+
+  // // Show the card
+  // if (els.wordCard()) {
+  //   els.wordCard().style.display = 'block'
+  // }
 }
 
 /** Hide learn component */
-function hideLearnCard() {
-  if (els.wordCard()) {
-    els.wordCard().style.display = 'none'
-  }
-}
+// function hideLearnCard() {
+//   if (els.wordCard()) {
+//     els.wordCard().style.display = 'none'
+//   }
+// }
 
 /** Initialize learn component */
-export function initLearn(words, currentIndex = 0) {
+export function initLearn(currentWord, currentIndex, totalIndex) {
   // Initialize elements
   initElements()
-  
-  // Validate input
-  if (!words || words.length === 0) {
-    hideLearnCard()
-    return
-  }
-  
-  // Ensure currentIndex is within bounds
-  const safeIndex = Math.max(0, Math.min(currentIndex, words.length - 1))
-  const currentWord = words[safeIndex]
-  
+
+  // // Validate input
+  // if (!words || words.length === 0) {
+  //   hideLearnCard()
+  //   return
+  // }
+
+  // // Ensure currentIndex is within bounds
+  // const safeIndex = Math.max(0, Math.min(currentIndex, words.length - 1))
+  // const currentWord = words[safeIndex]
+
   // Render the current word
-  renderLearnCard(currentWord, safeIndex, words.length)
+  renderLearnCard(currentWord, currentIndex, totalIndex)
 }

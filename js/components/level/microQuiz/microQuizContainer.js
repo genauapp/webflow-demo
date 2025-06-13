@@ -177,12 +177,12 @@ function initializeNavigationService() {
 
       // Initialize learn component with current word
       if (nav.mode === NavigationMode.LEARN && nav.currentItem) {
-        initLearn(nav.currentItem, nav.progress.current, nav.progress.total)
+        initLearn(nav.currentItem, nav.progress.current + 1, nav.progress.total)
       }
     },
     onLearnUpdate: (nav) => {
       if (nav.currentItem) {
-        initLearn(nav.currentItem, nav.progress.current, nav.progress.total)
+        initLearn(nav.currentItem, nav.progress.current + 1, nav.progress.total)
       }
     },
     onExerciseUpdate: (nav) => {
