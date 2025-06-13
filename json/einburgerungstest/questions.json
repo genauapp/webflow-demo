@@ -871,12 +871,12 @@
     "id": 72,
     "question": "Wie heißt der jetzige Bundeskanzler / die jetzige Bundeskanzlerin von Deutschland?",
     "answers": [
-      "Gerhard Schröder",
+      "Friedrich Merz",
       "Angela Merkel",
       "Franziska Giffey",
       "Olaf Scholz"
     ],
-    "correct_answer": "Olaf Scholz",
+    "correct_answer": "Friedrich Merz",
     "state": "Bundesweit",
     "has_image": false
   },
