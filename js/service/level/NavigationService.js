@@ -83,11 +83,10 @@ class NavigationService {
     if (!currentWord) return null
 
     // Count total unknown words
-    const unknownWords = state.activeLearnOrder.filter((w) => !w.isKnown)
-    const totalUnknown = unknownWords.length
+    const unknownCount = state.activeLearnOrder.filter((w) => !w.isKnown).length
 
     // If only one unknown word left, no repositioning needed
-    if (totalUnknown <= 1) {
+    if (unknownCount <= 1) {
       this._notifyUpdate(session)
       return currentWord
     }
@@ -109,45 +108,44 @@ class NavigationService {
     // Remove current word
     state.activeLearnOrder.splice(state.currentIndex, 1)
 
-    // Adjust target position if it was after the removed word
-    const adjustedTarget =
-      targetPosition > state.currentIndex ? targetPosition - 1 : targetPosition
+    // FIXED: Insert at the target position WITHOUT adjustment
+    // The targetPosition is already the correct index in the NEW array (after removal)
+    let insertPosition = targetPosition
+    if (targetPosition > state.currentIndex) {
+      insertPosition = targetPosition - 1
+    }
 
-    // Insert current word at the target position
-    state.activeLearnOrder.splice(adjustedTarget, 0, currentWord)
+    // Insert current word at the calculated position
+    state.activeLearnOrder.splice(insertPosition, 0, currentWord)
 
-    // Now find the next unknown word starting from the original currentIndex
-    // (or from 0 if currentIndex is now out of bounds)
-    let nextIndex = Math.min(
-      state.currentIndex,
-      state.activeLearnOrder.length - 1
-    )
+    // Update currentIndex to point to the next unknown word from original position
+    let newCurrentIndex = state.currentIndex
+    if (newCurrentIndex >= state.activeLearnOrder.length) {
+      newCurrentIndex = state.activeLearnOrder.length - 1
+    }
 
-    // Look for the next unknown word
-    while (nextIndex < state.activeLearnOrder.length) {
-      if (!state.activeLearnOrder[nextIndex].isKnown) {
-        state.currentIndex = nextIndex
-        break
+    // Find next unknown word starting from the adjusted position
+    while (
+      newCurrentIndex < state.activeLearnOrder.length &&
+      state.activeLearnOrder[newCurrentIndex].isKnown
+    ) {
+      newCurrentIndex++
+    }
+
+    // If no unknown word found after current position, search from beginning
+    if (newCurrentIndex >= state.activeLearnOrder.length) {
+      newCurrentIndex = 0
+      while (
+        newCurrentIndex < state.activeLearnOrder.length &&
+        state.activeLearnOrder[newCurrentIndex].isKnown
+      ) {
+        newCurrentIndex++
       }
-      nextIndex++
     }
 
-    // If we didn't find any unknown words after currentIndex, start from beginning
-    if (nextIndex >= state.activeLearnOrder.length) {
-      nextIndex = 0
-      while (nextIndex < state.activeLearnOrder.length) {
-        if (!state.activeLearnOrder[nextIndex].isKnown) {
-          state.currentIndex = nextIndex
-          break
-        }
-        nextIndex++
-      }
-    }
-
-    // If still no unknown words found, we're done
-    if (nextIndex >= state.activeLearnOrder.length) {
-      state.currentIndex = -1
-    }
+    // Update the current index
+    state.currentIndex =
+      newCurrentIndex >= state.activeLearnOrder.length ? -1 : newCurrentIndex
 
     this._notifyUpdate(session)
     return currentWord
