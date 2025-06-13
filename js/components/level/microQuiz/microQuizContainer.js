@@ -53,12 +53,6 @@ function initState() {
 }
 
 function resetState() {
-  // // Reset local state
-  // state.words = []
-  // state.loading = false
-  // state.error = null
-  // state.mounted = false
-
   state = {}
 }
 
