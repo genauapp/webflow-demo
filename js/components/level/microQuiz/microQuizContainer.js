@@ -87,11 +87,16 @@ function render() {
 
 /** Update tab button states based on navigation service */
 function updateTabStates(navigationState) {
+  const activeClasses = ['active', 'w--current']
   const learnTabEl = els.learnTab()
   const exerciseTabEl = els.exerciseTab()
+
+  learnTabEl.classList.remove(...activeClasses)
+  exerciseTabEl.classList.remove(...activeClasses)
+
   if (navigationState.mode === NavigationMode.LEARN) {
-    learnTabEl.classList.add('active')
-    exerciseTabEl.classList.remove('active')
+    learnTabEl.classList.add(...activeClasses)
+
     els.learnContainer().style.display = 'block'
     els.exerciseContainer().style.display = 'none'
 
@@ -104,8 +109,7 @@ function updateTabStates(navigationState) {
       els.learnWordCard().style.display = 'flex'
     }
   } else if (navigationState.mode === NavigationMode.EXERCISE) {
-    learnTabEl.classList.remove('active')
-    exerciseTabEl.classList.add('active')
+    exerciseTabEl.classList.add(...activeClasses)
     els.learnContainer().style.display = 'none'
     els.exerciseContainer().style.display = 'block'
   }
