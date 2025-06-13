@@ -11,7 +11,7 @@ function initElements() {
       document.getElementById('learn-word-card-index-current'),
     totalIndexLabel: () =>
       document.getElementById('learn-word-card-index-total'),
-    wordLevel: () => document.getElementById('learn-word-card-level'),
+    // wordLevel: () => document.getElementById('learn-word-card-level'),
     wordType: () => document.getElementById('learn-word-card-type'),
     wordText: () => document.getElementById('learn-word-card-text'),
     wordTranslation: () =>
@@ -28,7 +28,7 @@ function renderLearnCard(word, currentIndex, totalIndex) {
   els.currentIndexLabel().textContent = `${currentIndex}`
   els.totalIndexLabel().textContent = `${totalIndex}`
 
-  els.wordLevel().textContent = word.level || ''
+  // els.wordLevel().textContent = word.level || ''
   els.wordType().textContent = word.type || ''
   els.wordText().textContent = word.word || ''
   els.wordTranslation().textContent = word.english || ''
