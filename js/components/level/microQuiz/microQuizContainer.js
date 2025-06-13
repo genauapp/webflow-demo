@@ -23,6 +23,7 @@ function initElements() {
     learnTab: () => document.getElementById('micro-quiz-tab-learn'),
     exerciseTab: () => document.getElementById('micro-quiz-tab-exercise'),
     learnContainer: () => document.getElementById('micro-quiz-learn-container'),
+    learnWordCard: () => document.getElementById('micro-quiz-learn-word-card'),
     exerciseContainer: () =>
       document.getElementById('micro-quiz-exercise-container'),
     learnRepeat: () =>
@@ -79,18 +80,17 @@ function updateTabStates(navigationState) {
 
     // Show completed container if learn is completed
     if (navigationState.isLearnCompleted) {
-      els.learnCompletedContainer().style.display = 'block'
-      els.learnContainer().style.display = 'none'
+      els.learnCompletedContainer().style.display = 'flex'
+      els.learnWordCard().style.display = 'none'
     } else {
       els.learnCompletedContainer().style.display = 'none'
-      els.learnContainer().style.display = 'block'
+      els.learnWordCard().style.display = 'flex'
     }
   } else {
     learnTabEl.classList.remove('active')
     exerciseTabEl.classList.add('active')
     els.learnContainer().style.display = 'none'
     els.exerciseContainer().style.display = 'block'
-    els.learnCompletedContainer().style.display = 'none'
   }
 }
 
