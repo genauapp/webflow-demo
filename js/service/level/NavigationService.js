@@ -82,36 +82,44 @@ class NavigationService {
     const currentWord = state.activeLearnOrder[state.currentIndex]
     if (!currentWord) return null
 
-    // Gather pre‑removal indices of ALL unknowns
-    const preUnknownIndices = state.activeLearnOrder
+    // Find ALL unknown words (including current)
+    const allUnknownIndices = state.activeLearnOrder
       .map((w, idx) => (!w.isKnown ? idx : -1))
       .filter((idx) => idx >= 0)
-    const uCount = preUnknownIndices.length
 
-    // If only one unknown, short‐circuit
-    if (uCount <= 1) {
+    const totalUnknown = allUnknownIndices.length
+
+    // If only one unknown word left, no repositioning needed
+    if (totalUnknown <= 1) {
       this._notifyUpdate(session)
       return currentWord
     }
 
-    // Pick one of those u slots at random
-    const pickPreIndex = preUnknownIndices[Math.floor(Math.random() * uCount)]
+    // Find unknown positions EXCLUDING the current word's position
+    const otherUnknownIndices = allUnknownIndices.filter(
+      (idx) => idx !== state.currentIndex
+    )
 
-    // Remove currentWord
+    // Pick a random position from the OTHER unknown positions
+    const randomOtherIndex =
+      otherUnknownIndices[
+        Math.floor(Math.random() * otherUnknownIndices.length)
+      ]
+
+    // Remove current word from its position
     state.activeLearnOrder.splice(state.currentIndex, 1)
 
-    // Adjust insertion index if needed
-    let insertIndex = pickPreIndex
-    if (pickPreIndex > state.currentIndex) {
-      insertIndex = pickPreIndex - 1
+    // Calculate the adjusted insertion index
+    let adjustedInsertIndex = randomOtherIndex
+    if (randomOtherIndex > state.currentIndex) {
+      adjustedInsertIndex = randomOtherIndex - 1
     }
-    // (if pickPreIndex < currentIndex, it stays the same;
-    // if pickPreIndex === currentIndex, you’ll reinsert at the same spot)
 
-    // Reinsert currentWord at the chosen unknown slot
-    state.activeLearnOrder.splice(insertIndex, 0, currentWord)
+    // Insert the current word at the new position
+    state.activeLearnOrder.splice(adjustedInsertIndex, 0, currentWord)
 
-    // Keep the cursor pointing at the same array index
+    // Update current index to point to the word at the original position
+    // (or adjust if we're at the end)
     if (state.currentIndex >= state.activeLearnOrder.length) {
       state.currentIndex = state.activeLearnOrder.length - 1
     }
