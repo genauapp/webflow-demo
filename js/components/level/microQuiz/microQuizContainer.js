@@ -53,6 +53,12 @@ function initState() {
 }
 
 function resetState() {
+  // // Reset local state
+  // state.words = []
+  // state.loading = false
+  // state.error = null
+  // state.mounted = false
+
   state = {}
 }
 
@@ -252,10 +258,10 @@ function resetEventListeners() {
  * Prevents double-init via state.mounted
  */
 export async function mountMicroQuiz({ streakTarget = 3 } = {}) {
-  // First Step: initialize state
-  initState({ streakTarget })
+  if (state && state.mounted) return
 
-  if (state.mounted) return
+  // First Step: initialize state
+  initState()
 
   state.mounted = true
   state.streakTarget = streakTarget >= 1 && streakTarget <= 5 ? streakTarget : 3
@@ -274,7 +280,7 @@ export async function mountMicroQuiz({ streakTarget = 3 } = {}) {
  * Unmount: teardown session & reset state, hide container
  */
 export function unmountMicroQuiz() {
-  if (!state.mounted) return
+  if (!state || !state.mounted) return
 
   // Hide root
   els.container().style.display = 'none'
