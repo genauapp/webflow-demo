@@ -2,21 +2,19 @@ import { initLearn } from './learn.js'
 import { initExercise } from './exercise.js'
 import { navigationService } from '../../../service/level/NavigationService.js'
 import { protectedApiService } from '../../../service/apiService.js'
+import { NavigationMode } from '../../../constants/props.js'
 
-let els = {}
-
-const DEFAULT_STATE = {
+const DEFAULT_STATE = Object.freeze({
   loading: false,
   error: null,
   words: [],
   sessionId: 'micro-quiz', // Unique session identifier
   streakTarget: 3, // Default streak target (1-5)
   mounted: false, // New: has the component been initialized?
-}
+})
 
-let state = {
-  ...DEFAULT_STATE
-}
+let els = {}
+let state = {}
 
 /** Initialize elements dynamically using provided IDs */
 function initElements() {
@@ -42,6 +40,23 @@ function initElements() {
     // exerciseReset: () => document.getElementById("tbd"),
     // streakSelector: () => document.getElementById("tbd"),
   }
+}
+
+function resetElements() {
+  els = {}
+}
+
+function initState({ streakTarget }) {
+  state = {
+    ...DEFAULT_STATE,
+  }
+
+  state.mounted = true
+  state.streakTarget = streakTarget >= 1 && streakTarget <= 5 ? streakTarget : 3
+}
+
+function resetState() {
+  state = {}
 }
 
 /** Show/hide according to state flags */
@@ -77,7 +92,7 @@ function render() {
 function updateTabStates(navigationState) {
   const learnTabEl = els.learnTab()
   const exerciseTabEl = els.exerciseTab()
-  if (navigationState.mode === 'learn') {
+  if (navigationState.mode === NavigationMode.LEARN) {
     learnTabEl.classList.add('active')
     exerciseTabEl.classList.remove('active')
     els.learnContainer().style.display = 'block'
@@ -91,7 +106,7 @@ function updateTabStates(navigationState) {
       els.learnCompletedContainer().style.display = 'none'
       els.learnWordCard().style.display = 'flex'
     }
-  } else {
+  } else if (navigationState.mode === NavigationMode.EXERCISE) {
     learnTabEl.classList.remove('active')
     exerciseTabEl.classList.add('active')
     els.learnContainer().style.display = 'none'
@@ -152,15 +167,15 @@ async function fetchWords() {
 
 /** Initialize navigation service with callbacks */
 function initializeNavigationService() {
-  navigationService.createSession(state.sessionId, state.words, {
-    mode: 'learn',
+  const SESSION_OPTIONS = {
+    mode: NavigationMode.LEARN,
     streakTarget: state.streakTarget,
     onUpdate: (nav) => {
       updateTabStates(nav)
       updateNavigationButtons(nav)
 
       // Initialize learn component with current word
-      if (nav.mode === 'learn' && nav.currentItem) {
+      if (nav.mode === NavigationMode.LEARN && nav.currentItem) {
         initLearn(nav.currentItem, nav.progress.current, nav.progress.total)
       }
     },
@@ -179,14 +194,20 @@ function initializeNavigationService() {
       //   nav.exerciseState.score
       // )
     },
-  })
+  }
+
+  navigationService.createSession(state.sessionId, state.words, SESSION_OPTIONS)
+}
+
+function resetNavigationService() {
+  navigationService.destroySession(state.sessionId)
 }
 
 /** Handlers */
 const onLearnTabClick = () =>
-  navigationService.switchMode(state.sessionId, 'learn')
+  navigationService.switchMode(state.sessionId, NavigationMode.LEARN)
 const onExerciseTabClick = () =>
-  navigationService.switchMode(state.sessionId, 'exercise')
+  navigationService.switchMode(state.sessionId, NavigationMode.EXERCISE)
 const onLearnRepeat = () => navigationService.learnRepeat(state.sessionId)
 const onLearnNext = () => navigationService.learnNext(state.sessionId)
 const onLearnReset = () => navigationService.learnReset(state.sessionId)
@@ -216,19 +237,36 @@ function initEventListeners() {
   // })
 }
 
+function resetEventListeners() {
+  els.learnTab().removeEventListener('click', onLearnTabClick)
+  els.exerciseTab().removeEventListener('click', onExerciseTabClick)
+  els.learnRepeat().removeEventListener('click', onLearnRepeat)
+  els.learnNext().removeEventListener('click', onLearnNext)
+  els.learnReset().removeEventListener('click', onLearnReset)
+  // els.exerciseCorrect().removeEventListener('click', onExerciseCorrect)
+  // els.exerciseWrong().removeEventListener('click', onExerciseWrong)
+  // els.exerciseReset().removeEventListener('click', onExerciseReset)
+  // const sel = els.streakSelector()
+  // if (sel) sel.removeEventListener('change', todoAnonymousMethod)
+}
+
 /**
  * Mount: set up everything once and show container
  * Prevents double-init via state.mounted
  */
 export async function mountMicroQuiz({ streakTarget = 3 } = {}) {
-  if (state.mounted) return
-  state.mounted = true
+  // First Step: initialize state
+  initState({ streakTarget })
 
-  state.streakTarget = streakTarget >= 1 && streakTarget <= 5 ? streakTarget : 3
+  if (state.mounted) return
 
   initElements()
   initEventListeners()
-  render()
+
+  // Show root
+  els.container().style.display = 'block'
+
+  // Fetch words, initialize navigation service and render
   await fetchWords()
 }
 
@@ -237,19 +275,17 @@ export async function mountMicroQuiz({ streakTarget = 3 } = {}) {
  */
 export function unmountMicroQuiz() {
   if (!state.mounted) return
-  navigationService.destroySession(state.sessionId)
-
-  // Reset local state
-  state.words = []
-  state.loading = false
-  state.error = null
-  state.mounted = false
 
   // Hide root
   els.container().style.display = 'none'
 
-  // Clear element refs
-  els = {}
+  resetEventListeners()
+  resetElements()
+
+  resetNavigationService()
+
+  // Last Step: reset state
+  resetState()
 }
 
 /** For debugging or external inspection */

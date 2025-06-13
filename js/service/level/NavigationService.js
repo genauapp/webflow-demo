@@ -1,3 +1,4 @@
+import { NavigationMode } from '../../constants/props.js'
 import ListUtils from '../../utils/ListUtils.js'
 
 class NavigationService {
@@ -16,7 +17,7 @@ class NavigationService {
     const session = {
       id: sessionId,
       originalItems: [...items],
-      mode: options.mode || 'learn',
+      mode: options.mode || NavigationMode.LEARN,
       learnState,
       callbacks: {
         onUpdate: options.onUpdate || (() => {}),
@@ -153,7 +154,7 @@ class NavigationService {
   // PRIVATE METHODS
   _getCurrentItem(session) {
     if (!session) return null
-    if (session.mode !== 'learn') return null
+    if (session.mode !== NavigationMode.LEARN) return null
 
     const state = session.learnState
     if (state.currentIndex === -1) return null

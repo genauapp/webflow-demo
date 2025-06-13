@@ -9,6 +9,11 @@ export const WordType = {
   ADVERB: 'adverb',
 }
 
+export const NavigationMode = Object.freeze({
+  LEARN: "learn",
+  EXERCISE: "exercise"
+})
+
 export const ArtikelColorMap = {
   der: 'blue',
   die: 'red',
