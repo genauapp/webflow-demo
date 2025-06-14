@@ -39,11 +39,10 @@ function initElements() {
       document.getElementById('micro-quiz-exercise-container'),
     exerciseResultContainer: () =>
       document.getElementById('micro-quiz-exercise-result-container'),
-    exerciseReset: () =>
-      document.getElementById('micro-quiz-exercise-reset-button'),
     // exerciseCorrect: () => document.getElementById("tbd"),
     // exerciseWrong: () => document.getElementById("tbd"),
-    // exerciseReset: () => document.getElementById("tbd"),
+    // exerciseReset: () =>
+    //   document.getElementById('micro-quiz-exercise-reset-button'),
     // streakSelector: () => document.getElementById("tbd"),
   }
 }
@@ -143,12 +142,9 @@ function updateNavigationButtons(navigationState) {
   // Exercise buttons - keeping your original commented code
   // els.exerciseCorrect().disabled = !currentItem || activeListLength === 0
   // els.exerciseWrong().disabled   = !currentItem || activeListLength === 0
-  // els.exerciseReset().style.display = isExerciseCompleted ? 'block' : 'none'
-
-  // Exercise buttons
   const { isExerciseCompleted, exerciseState } = navigationState
   // Exercise options are handled by the exercise component itself
-  els.exerciseReset().style.display = isExerciseCompleted ? 'block' : 'none'
+  // els.exerciseReset().style.display = isExerciseCompleted ? 'block' : 'none'
 }
 
 /** Enhance words with required properties */
@@ -275,7 +271,7 @@ function initEventListeners() {
   els.learnReset().addEventListener('click', onLearnReset)
   // els.exerciseCorrect().addEventListener('click', onExerciseCorrect)
   // els.exerciseWrong().addEventListener('click', onExerciseWrong)
-  els.exerciseReset().addEventListener('click', onExerciseReset)
+  // els.exerciseReset().addEventListener('click', onExerciseReset)
   // const sel = els.streakSelector()
   // if (sel) sel.addEventListener('change', e => {
   //   const v = parseInt(e.target.value, 10)
@@ -291,7 +287,7 @@ function resetEventListeners() {
   els.learnReset().removeEventListener('click', onLearnReset)
   // els.exerciseCorrect().removeEventListener('click', onExerciseCorrect)
   // els.exerciseWrong().removeEventListener('click', onExerciseWrong)
-  els.exerciseReset().removeEventListener('click', onExerciseReset)
+  // els.exerciseReset().removeEventListener('click', onExerciseReset)
   // const sel = els.streakSelector()
   // if (sel) sel.removeEventListener('change', todoAnonymousMethod)
 }
