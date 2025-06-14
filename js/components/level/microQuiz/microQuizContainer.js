@@ -148,7 +148,7 @@ function updateNavigationButtons(sessionState) {
   // els.exerciseWrong().disabled   = !currentItem || activeListLength === 0
   const isExerciseCompleted = progression[NavigationMode.EXERCISE].isCompleted
   // Exercise options are handled by the exercise component itself
-  els.exerciseReset().style.display = isExerciseCompleted ? 'block' : 'none'
+  // els.exerciseReset().style.display = isExerciseCompleted ? 'block' : 'none'
 }
 
 /** Enhance words with required properties */
