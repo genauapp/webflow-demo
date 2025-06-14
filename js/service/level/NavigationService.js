@@ -287,8 +287,6 @@ class NavigationService {
   }
 
   _notifyUpdate(session) {
-    const session = this.getSession(session.id)
-
     session.callbacks.onUpdate(session)
 
     if (session.mode === NavigationMode.LEARN) {
