@@ -181,10 +181,10 @@ function renderExerciseCard(
   // Update score
   updateScore(score)
 
-  // Show the card
-  if (els.exerciseCard()) {
-    els.exerciseCard().style.display = 'block'
-  }
+  // // Show the card
+  // if (els.exerciseCard()) {
+  //   els.exerciseCard().style.display = 'block'
+  // }
 }
 
 /** Update score display */
@@ -217,10 +217,10 @@ export function initExercise(
   initElements()
 
   // Validate input
-  if (!currentWord || !allWords || allWords.length === 0) {
-    hideExerciseCard()
-    return
-  }
+  // if (!currentWord || !allWords || allWords.length === 0) {
+  //   hideExerciseCard()
+  //   return
+  // }
 
   renderExerciseCard(
     currentWord,

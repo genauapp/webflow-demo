@@ -33,10 +33,11 @@ function initElements() {
     learnCompletedContainer: () =>
       document.getElementById('micro-quiz-learn-completed-container'),
     learnReset: () => document.getElementById('micro-quiz-learn-reset-button'),
-
+    
     exerciseTab: () => document.getElementById('micro-quiz-tab-exercise'),
     exerciseContainer: () =>
       document.getElementById('micro-quiz-exercise-container'),
+    exerciseWordCard: () => document.getElementById('micro-quiz-exercise-word-card'),
     exerciseResultContainer: () =>
       document.getElementById('micro-quiz-exercise-result-container'),
     // exerciseCorrect: () => document.getElementById("tbd"),
