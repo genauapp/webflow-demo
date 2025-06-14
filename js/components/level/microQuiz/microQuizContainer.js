@@ -23,18 +23,24 @@ function initElements() {
     // loadingContainer: () => document.getElementById("tbd"),
     // errorContainer: () => document.getElementById("tbd"),
     // emptyContainer: () => document.getElementById("tbd"),
+
     learnTab: () => document.getElementById('micro-quiz-tab-learn'),
-    exerciseTab: () => document.getElementById('micro-quiz-tab-exercise'),
     learnContainer: () => document.getElementById('micro-quiz-learn-container'),
     learnWordCard: () => document.getElementById('micro-quiz-learn-word-card'),
-    exerciseContainer: () =>
-      document.getElementById('micro-quiz-exercise-container'),
     learnRepeat: () =>
       document.getElementById('micro-quiz-learn-repeat-button'),
     learnNext: () => document.getElementById('micro-quiz-learn-i-know-button'),
     learnCompletedContainer: () =>
       document.getElementById('micro-quiz-learn-completed-container'),
     learnReset: () => document.getElementById('micro-quiz-learn-reset-button'),
+
+    exerciseTab: () => document.getElementById('micro-quiz-tab-exercise'),
+    exerciseContainer: () =>
+      document.getElementById('micro-quiz-exercise-container'),
+    exerciseResultContainer: () =>
+      document.getElementById('micro-quiz-exercise-result-container'),
+    exerciseReset: () =>
+      document.getElementById('micro-quiz-exercise-reset-button'),
     // exerciseCorrect: () => document.getElementById("tbd"),
     // exerciseWrong: () => document.getElementById("tbd"),
     // exerciseReset: () => document.getElementById("tbd"),
@@ -63,6 +69,7 @@ function render() {
     // els.errorContainer().style.display = 'none'
     // els.emptyContainer().style.display = 'none'
     els.learnContainer().style.display = 'none'
+    els.exerciseContainer().style.display = 'none'
     return
   }
   if (state.error) {
@@ -112,6 +119,15 @@ function updateTabStates(navigationState) {
     exerciseTabEl.classList.add(...activeClasses)
     els.learnContainer().style.display = 'none'
     els.exerciseContainer().style.display = 'block'
+
+    // Show completed container if exercise is completed
+    if (navigationState.isExerciseCompleted) {
+      els.exerciseCompletedContainer().style.display = 'flex'
+      els.exerciseWordCard().style.display = 'none'
+    } else {
+      els.exerciseCompletedContainer().style.display = 'none'
+      els.exerciseWordCard().style.display = 'flex'
+    }
   }
 }
 
@@ -128,6 +144,11 @@ function updateNavigationButtons(navigationState) {
   // els.exerciseCorrect().disabled = !currentItem || activeListLength === 0
   // els.exerciseWrong().disabled   = !currentItem || activeListLength === 0
   // els.exerciseReset().style.display = isExerciseCompleted ? 'block' : 'none'
+
+  // Exercise buttons
+  const { isExerciseCompleted, exerciseState } = navigationState
+  // Exercise options are handled by the exercise component itself
+  els.exerciseReset().style.display = isExerciseCompleted ? 'block' : 'none'
 }
 
 /** Enhance words with required properties */
@@ -179,6 +200,18 @@ function initializeNavigationService() {
       if (nav.mode === NavigationMode.LEARN && nav.currentItem) {
         initLearn(nav.currentItem, nav.progress.current + 1, nav.progress.total)
       }
+      // Initialize exercise component with current word
+      else if (nav.mode === NavigationMode.EXERCISE && nav.currentItem) {
+        initExercise(
+          nav.currentItem,
+          nav.exerciseState.currentIndex + 1,
+          nav.totalItems,
+          nav.exerciseState.score,
+          state.words, // All words for generating options
+          (isCorrect) =>
+            navigationService.exerciseAnswer(state.sessionId, isCorrect)
+        )
+      }
     },
     onLearnUpdate: (nav) => {
       if (nav.currentItem) {
@@ -194,6 +227,18 @@ function initializeNavigationService() {
       //   nav.totalItems,
       //   nav.exerciseState.score
       // )
+
+      if (nav.currentItem) {
+        initExercise(
+          nav.currentItem,
+          nav.exerciseState.currentIndex + 1,
+          nav.totalItems,
+          nav.exerciseState.score,
+          state.words, // All words for generating options
+          (isCorrect) =>
+            navigationService.exerciseAnswer(state.sessionId, isCorrect)
+        )
+      }
     },
   }
 
@@ -212,9 +257,9 @@ const onExerciseTabClick = () =>
 const onLearnRepeat = () => navigationService.learnRepeat(state.sessionId)
 const onLearnNext = () => navigationService.learnNext(state.sessionId)
 const onLearnReset = () => navigationService.learnReset(state.sessionId)
-const onExerciseCorrect = () =>
-  navigationService.exerciseCorrect(state.sessionId)
-const onExerciseWrong = () => navigationService.exerciseWrong(state.sessionId)
+// const onExerciseCorrect = () =>
+//   navigationService.exerciseCorrect(state.sessionId)
+// const onExerciseWrong = () => navigationService.exerciseWrong(state.sessionId)
 const onExerciseReset = () => navigationService.exerciseReset(state.sessionId)
 const onStreakChange = (newTarget) => {
   state.streakTarget = newTarget
@@ -230,7 +275,7 @@ function initEventListeners() {
   els.learnReset().addEventListener('click', onLearnReset)
   // els.exerciseCorrect().addEventListener('click', onExerciseCorrect)
   // els.exerciseWrong().addEventListener('click', onExerciseWrong)
-  // els.exerciseReset().addEventListener('click', onExerciseReset)
+  els.exerciseReset().addEventListener('click', onExerciseReset)
   // const sel = els.streakSelector()
   // if (sel) sel.addEventListener('change', e => {
   //   const v = parseInt(e.target.value, 10)
@@ -246,7 +291,7 @@ function resetEventListeners() {
   els.learnReset().removeEventListener('click', onLearnReset)
   // els.exerciseCorrect().removeEventListener('click', onExerciseCorrect)
   // els.exerciseWrong().removeEventListener('click', onExerciseWrong)
-  // els.exerciseReset().removeEventListener('click', onExerciseReset)
+  els.exerciseReset().removeEventListener('click', onExerciseReset)
   // const sel = els.streakSelector()
   // if (sel) sel.removeEventListener('change', todoAnonymousMethod)
 }
