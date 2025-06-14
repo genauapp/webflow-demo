@@ -136,17 +136,19 @@ function updateTabStates(sessionState) {
 function updateNavigationButtons(sessionState) {
   const { currentItem, progression } = sessionState
 
+  const isLearnCompleted = progression[NavigationMode.LEARN].isCompleted
+
   // Learn buttons
-  els.learnRepeat().disabled = !currentItem || isLearnCompleted
-  els.learnNext().disabled = !currentItem || isLearnCompleted
+  els.learnRepeat().disabled = isLearnCompleted
+  els.learnNext().disabled = isLearnCompleted
   els.learnReset().style.display = isLearnCompleted ? 'block' : 'none'
 
   // Exercise buttons - keeping your original commented code
   // els.exerciseCorrect().disabled = !currentItem || activeListLength === 0
   // els.exerciseWrong().disabled   = !currentItem || activeListLength === 0
-  const { isExerciseCompleted, exerciseState } = sessionState
+  const isExerciseCompleted = progression[NavigationMode.EXERCISE].isCompleted
   // Exercise options are handled by the exercise component itself
-  // els.exerciseReset().style.display = isExerciseCompleted ? 'block' : 'none'
+  els.exerciseReset().style.display = isExerciseCompleted ? 'block' : 'none'
 }
 
 /** Enhance words with required properties */
