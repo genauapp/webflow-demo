@@ -121,10 +121,10 @@ function updateTabStates(navigationState) {
 
     // Show completed container if exercise is completed
     if (navigationState.isExerciseCompleted) {
-      els.exerciseCompletedContainer().style.display = 'flex'
+      // els.exerciseResultContainer().style.display = 'flex'
       els.exerciseWordCard().style.display = 'none'
     } else {
-      els.exerciseCompletedContainer().style.display = 'none'
+      // els.exerciseResultContainer().style.display = 'none'
       els.exerciseWordCard().style.display = 'flex'
     }
   }
