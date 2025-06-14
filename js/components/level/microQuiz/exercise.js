@@ -41,7 +41,7 @@ function generateOptions(correctWord, allWords, optionsCount = null) {
   }
 
   const options = [correctWord]
-  const otherWords = allWords.filter((w) => w !== correctWord)
+  const otherWords = allWords.filter((w) => w.german !== correctWord.german)
 
   // Randomly select other options
   while (options.length < optionsCount && options.length < allWords.length) {

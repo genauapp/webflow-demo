@@ -7,32 +7,25 @@ class NavigationService {
   }
 
   createSession(sessionId, items, options = {}) {
-    // Initialize learn state with shuffled non-known words
-    const learnState = {
-      currentIndex: 0,
-      activeLearnOrder: ListUtils.shuffleArray([...items]),
-      history: [],
-    }
-
-    // Initialize exercise state with shuffled items
-    const exerciseState = {
-      currentIndex: 0,
-      activeExerciseOrder: ListUtils.shuffleArray([...items]),
-      score: { correct: 0, total: 0 },
-      numberOfWrongAnswers: new Map(), // Map of word -> wrong answer count
-    }
+    const baseItems = [...items]
+    const currentMode = options.mode || NavigationMode.LEARN
 
     const session = {
       id: sessionId,
-      originalItems: [...items],
-      mode: options.mode || NavigationMode.LEARN,
-      learnState,
-      exerciseState,
+      originalItems: baseItems,
+      mode: currentMode,
       streakTarget: options.streakTarget || 3,
       callbacks: {
         onUpdate: options.onUpdate || (() => {}),
         onLearnUpdate: options.onLearnUpdate || (() => {}),
         onExerciseUpdate: options.onExerciseUpdate || (() => {}),
+      },
+      progression: {
+        learn: this._getInitialModeProgression(NavigationMode.LEARN, items),
+        exercise: this._getInitialModeProgression(
+          NavigationMode.EXERCISE,
+          items
+        ),
       },
     }
 
@@ -62,21 +55,22 @@ class NavigationService {
     const session = this.sessions.get(sessionId)
     if (!session) return null
 
-    const state = session.learnState
+    const state = session.progression[NavigationMode.LEARN]
     if (state.currentIndex === -1) return null // Already completed
 
-    const currentWord = state.activeLearnOrder[state.currentIndex]
+    const currentWord = state.activeOrder[state.currentIndex]
     if (!currentWord) return null
 
     // Mark word as known
     currentWord.isKnown = true
 
     // Move to next word
-    if (state.currentIndex < state.activeLearnOrder.length - 1) {
+    if (state.currentIndex < state.activeOrder.length - 1) {
       state.currentIndex++
     } else {
       // Reached end of list
       state.currentIndex = -1
+      state.isCompleted = true
     }
 
     this._notifyUpdate(session)
@@ -87,34 +81,34 @@ class NavigationService {
     const session = this.sessions.get(sessionId)
     if (!session) return null
 
-    const state = session.learnState
+    const state = session.progression[NavigationMode.LEARN]
     if (state.currentIndex === -1) return null
 
-    const currentWord = state.activeLearnOrder[state.currentIndex]
+    const currentWord = state.activeOrder[state.currentIndex]
     if (!currentWord) return null
 
     // Get all unknown words
-    const unknownWords = state.activeLearnOrder.filter((word) => !word.isKnown)
-    const uCount = unknownWords.length
+    const unknownWords = state.activeOrder.filter((word) => !word.isKnown)
+    const totalUnknownWords = unknownWords.length
 
     // Handle case with only one unknown word
-    if (uCount <= 1) {
+    if (totalUnknownWords <= 1) {
       this._notifyUpdate(session)
       return currentWord
     }
 
     // Pick a random unknown word
-    const randomIndex = Math.floor(Math.random() * uCount)
+    const randomIndex = Math.floor(Math.random() * totalUnknownWords)
     const pickedWord = unknownWords[randomIndex]
 
     // If picked word is different from current, swap positions
     if (pickedWord !== currentWord) {
-      const pickedWordIndex = state.activeLearnOrder.indexOf(pickedWord)
-      state.activeLearnOrder[state.currentIndex] = pickedWord
-      state.activeLearnOrder[pickedWordIndex] = currentWord
+      const pickedWordIndex = state.activeOrder.indexOf(pickedWord)
+      state.activeOrder[state.currentIndex] = pickedWord
+      state.activeOrder[pickedWordIndex] = currentWord
     }
 
-    const wordToShow = state.activeLearnOrder[state.currentIndex]
+    const wordToShow = state.activeOrder[state.currentIndex]
     this._notifyUpdate(session)
     return wordToShow
   }
@@ -129,11 +123,10 @@ class NavigationService {
     })
 
     // Reinitialize learn state
-    session.learnState = {
-      currentIndex: 0,
-      activeLearnOrder: ListUtils.shuffleArray([...session.originalItems]),
-      history: [],
-    }
+    session.progression[NavigationMode.LEARN] = this._getInitialModeProgression(
+      NavigationMode.LEARN,
+      session.originalItems
+    )
 
     this._notifyUpdate(session)
     return this._getCurrentItem(session)
@@ -142,7 +135,10 @@ class NavigationService {
   isLearnCompleted(sessionId) {
     const session = this.sessions.get(sessionId)
     if (!session) return false
-    return session.learnState.currentIndex === -1
+
+    const state = session.progression[NavigationMode.LEARN]
+
+    return state.isCompleted || state.currentIndex === -1
   }
 
   // EXERCISE MODE NAVIGATION
@@ -150,10 +146,10 @@ class NavigationService {
     const session = this.sessions.get(sessionId)
     if (!session) return null
 
-    const state = session.exerciseState
+    const state = session.progression[NavigationMode.EXERCISE]
     if (state.currentIndex === -1) return null // Already completed
 
-    const currentWord = state.activeExerciseOrder[state.currentIndex]
+    const currentWord = state.activeOrder[state.currentIndex]
     if (!currentWord) return null
 
     // Update total score
@@ -168,25 +164,25 @@ class NavigationService {
       if (currentWord.streak >= session.streakTarget) {
         currentWord.isCorrectlyAnswered = true
         // Remove from active exercise order
-        state.activeExerciseOrder.splice(state.currentIndex, 1)
+        state.activeOrder.splice(state.currentIndex, 1)
         // Don't increment index since we removed current item
-        if (state.currentIndex >= state.activeExerciseOrder.length) {
-          state.currentIndex = state.activeExerciseOrder.length > 0 ? 0 : -1
+        if (state.currentIndex >= state.activeOrder.length) {
+          const isCompleted = state.activeOrder.length > 0
+          state.currentIndex = isCompleted ? 0 : -1
+          state.isCompleted = isCompleted
         }
       } else {
         // Move to next word but keep current word in the list
-        state.currentIndex =
-          (state.currentIndex + 1) % state.activeExerciseOrder.length
+        state.currentIndex = (state.currentIndex + 1) % state.activeOrder.length
       }
     } else {
       // Reset streak and track wrong answer
       currentWord.streak = 0
-      const wrongCount = state.numberOfWrongAnswers.get(currentWord) || 0
-      state.numberOfWrongAnswers.set(currentWord, wrongCount + 1)
+      const wrongCount = state.wrongAnswerCountMap.get(currentWord) || 0
+      state.wrongAnswerCountMap.set(currentWord, wrongCount + 1)
 
       // Move to next word
-      state.currentIndex =
-        (state.currentIndex + 1) % state.activeExerciseOrder.length
+      state.currentIndex = (state.currentIndex + 1) % state.activeOrder.length
     }
 
     this._notifyUpdate(session)
@@ -204,12 +200,11 @@ class NavigationService {
     })
 
     // Reinitialize exercise state
-    session.exerciseState = {
-      currentIndex: 0,
-      activeExerciseOrder: ListUtils.shuffleArray([...session.originalItems]),
-      score: { correct: 0, total: 0 },
-      numberOfWrongAnswers: new Map(),
-    }
+    session.progression[NavigationMode.EXERCISE] =
+      this._getInitialModeProgression(
+        NavigationMode.EXERCISE,
+        session.originalItems
+      )
 
     this._notifyUpdate(session)
     return this._getCurrentItem(session)
@@ -218,9 +213,13 @@ class NavigationService {
   isExerciseCompleted(sessionId) {
     const session = this.sessions.get(sessionId)
     if (!session) return false
+
+    const state = session.progression[NavigationMode.EXERCISE]
+
     return (
-      session.exerciseState.currentIndex === -1 ||
-      session.exerciseState.activeExerciseOrder.length === 0
+      state.isCompleted ||
+      state.currentIndex === -1 ||
+      state.activeOrder.length === 0
     )
   }
 
@@ -233,60 +232,71 @@ class NavigationService {
   }
 
   // UTILITY METHODS
-  getCurrentState(sessionId) {
-    const session = this.sessions.get(sessionId)
-    if (!session) return null
+  // getCurrentItem() {
+  //   return this._getCurrentItem(this.getSession())
+  // }
 
-    const learnState = session.learnState
-    const exerciseState = session.exerciseState
-    const isLearnCompleted = this.isLearnCompleted(sessionId)
-    const isExerciseCompleted = this.isExerciseCompleted(sessionId)
-    const remaining = isLearnCompleted
-      ? 0
-      : learnState.activeLearnOrder.length - learnState.currentIndex
+  // PRIVATE METHODS
+  _getInitialModeProgression(mode, items) {
+    switch (mode) {
+      case NavigationMode.LEARN:
+        const shuffledLearnList = ListUtils.shuffleArray([...items])
 
-    return {
-      mode: session.mode,
-      currentItem: this._getCurrentItem(session),
-      totalItems: session.originalItems.length,
-      streakTarget: session.streakTarget,
-      progress: {
-        current: session.originalItems.filter((w) => w.isKnown).length,
-        total: session.originalItems.length,
-        remaining,
-      },
-      isLearnCompleted: isLearnCompleted,
-      isExerciseCompleted: isExerciseCompleted,
-      activeListLength: isLearnCompleted
-        ? 0
-        : learnState.activeLearnOrder.length - learnState.currentIndex,
+        const initialLearnProgression = {
+          isCompleted: false,
+          currentIndex: 0,
+          totalIndex: shuffledLearnList.length,
+          activeOrder: shuffledLearnList,
+          history: [],
+        }
+
+        return initialLearnProgression
+      case NavigationMode.EXERCISE:
+        const shuffledExerciseList = ListUtils.shuffleArray([...items])
+
+        const initialExerciseProgression = {
+          isCompleted: false,
+          currentIndex: 0,
+          totalIndex: shuffledExerciseList.length,
+          activeOrder: shuffledExerciseList,
+          originalItems: [...items],
+          score: { correct: 0, total: 0 },
+          wrongAnswerHistory: new Map(), // Map of word -> wrong answer count
+        }
+
+        return initialExerciseProgression
+      default:
+        console.warn('Unsupported Mode!')
+        break
     }
   }
 
-  // PRIVATE METHODS
   _getCurrentItem(session) {
     if (!session) return null
 
-    if (session.mode === NavigationMode.LEARN) {
-      const state = session.learnState
-      if (state.currentIndex === -1) return null
-      return state.activeLearnOrder[state.currentIndex] || null
-    } else if (session.mode === NavigationMode.EXERCISE) {
-      const state = session.exerciseState
-      if (state.currentIndex === -1 || state.activeExerciseOrder.length === 0)
-        return null
-      return state.activeExerciseOrder[state.currentIndex] || null
+    const state = session.progression[session.mode]
+    if (
+      state.isCompleted ||
+      state.currentIndex === -1 ||
+      state.activeOrder.length === 0
+    ) {
+      return null
     }
-    return null
+
+    return state.activeOrder[state.currentIndex] || null
   }
 
   _notifyUpdate(session) {
-    const state = this.getCurrentState(session.id)
-    session.callbacks.onUpdate(state)
+    const session = this.getSession(session.id)
+
+    session.callbacks.onUpdate(session)
+
     if (session.mode === NavigationMode.LEARN) {
-      session.callbacks.onLearnUpdate(state)
+      session.callbacks.onLearnUpdate(session.progression[NavigationMode.LEARN])
     } else if (session.mode === NavigationMode.EXERCISE) {
-      session.callbacks.onExerciseUpdate(state)
+      session.callbacks.onExerciseUpdate(
+        session.progression[NavigationMode.EXERCISE]
+      )
     }
   }
 }

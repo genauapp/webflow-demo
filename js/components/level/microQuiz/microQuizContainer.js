@@ -33,11 +33,12 @@ function initElements() {
     learnCompletedContainer: () =>
       document.getElementById('micro-quiz-learn-completed-container'),
     learnReset: () => document.getElementById('micro-quiz-learn-reset-button'),
-    
+
     exerciseTab: () => document.getElementById('micro-quiz-tab-exercise'),
     exerciseContainer: () =>
       document.getElementById('micro-quiz-exercise-container'),
-    exerciseWordCard: () => document.getElementById('micro-quiz-exercise-word-card'),
+    exerciseWordCard: () =>
+      document.getElementById('micro-quiz-exercise-word-card'),
     exerciseResultContainer: () =>
       document.getElementById('micro-quiz-exercise-result-container'),
     // exerciseCorrect: () => document.getElementById("tbd"),
@@ -93,7 +94,7 @@ function render() {
 }
 
 /** Update tab button states based on navigation service */
-function updateTabStates(navigationState) {
+function updateTabStates(sessionState) {
   const activeClasses = ['active', 'w--current']
   const learnTabEl = els.learnTab()
   const exerciseTabEl = els.exerciseTab()
@@ -101,27 +102,27 @@ function updateTabStates(navigationState) {
   learnTabEl.classList.remove(...activeClasses)
   exerciseTabEl.classList.remove(...activeClasses)
 
-  if (navigationState.mode === NavigationMode.LEARN) {
+  if (sessionState.mode === NavigationMode.LEARN) {
     learnTabEl.classList.add(...activeClasses)
 
     els.learnContainer().style.display = 'block'
     els.exerciseContainer().style.display = 'none'
 
     // Show completed container if learn is completed
-    if (navigationState.isLearnCompleted) {
+    if (sessionState.progression[sessionState.mode].isCompleted) {
       els.learnCompletedContainer().style.display = 'flex'
       els.learnWordCard().style.display = 'none'
     } else {
       els.learnCompletedContainer().style.display = 'none'
       els.learnWordCard().style.display = 'flex'
     }
-  } else if (navigationState.mode === NavigationMode.EXERCISE) {
+  } else if (sessionState.mode === NavigationMode.EXERCISE) {
     exerciseTabEl.classList.add(...activeClasses)
     els.learnContainer().style.display = 'none'
     els.exerciseContainer().style.display = 'block'
 
     // Show completed container if exercise is completed
-    if (navigationState.isExerciseCompleted) {
+    if (sessionState.progression[sessionState.mode].isCompleted) {
       // els.exerciseResultContainer().style.display = 'flex'
       els.exerciseWordCard().style.display = 'none'
     } else {
@@ -132,8 +133,8 @@ function updateTabStates(navigationState) {
 }
 
 /** Update navigation button states */
-function updateNavigationButtons(navigationState) {
-  const { currentItem, isLearnCompleted } = navigationState
+function updateNavigationButtons(sessionState) {
+  const { currentItem, progression } = sessionState
 
   // Learn buttons
   els.learnRepeat().disabled = !currentItem || isLearnCompleted
@@ -143,7 +144,7 @@ function updateNavigationButtons(navigationState) {
   // Exercise buttons - keeping your original commented code
   // els.exerciseCorrect().disabled = !currentItem || activeListLength === 0
   // els.exerciseWrong().disabled   = !currentItem || activeListLength === 0
-  const { isExerciseCompleted, exerciseState } = navigationState
+  const { isExerciseCompleted, exerciseState } = sessionState
   // Exercise options are handled by the exercise component itself
   // els.exerciseReset().style.display = isExerciseCompleted ? 'block' : 'none'
 }
@@ -152,9 +153,9 @@ function updateNavigationButtons(navigationState) {
 function enhanceWordsWithProperties(words) {
   return words.map((word) => ({
     ...word,
-    isKnown: false,
-    streak: 0,
-    isCorrectlyAnswered: false,
+    isKnown: false, // learn
+    streak: 0, // exercise
+    isCorrectlyAnswered: false, // exercise
   }))
 }
 
@@ -189,49 +190,34 @@ function initializeNavigationService() {
   const SESSION_OPTIONS = {
     mode: NavigationMode.LEARN,
     streakTarget: state.streakTarget,
-    onUpdate: (nav) => {
-      updateTabStates(nav)
-      updateNavigationButtons(nav)
+    onUpdate: (sessionState) => {
+      updateTabStates(sessionState)
+      updateNavigationButtons(sessionState)
+    },
+    onLearnUpdate: (learnProgressionState) => {
+      if (learnProgressionState) {
+        const { currentIndex, totalIndex, activeOrder } = learnProgressionState
+        const currentWord = activeOrder[currentIndex]
 
-      // Initialize learn component with current word
-      if (nav.mode === NavigationMode.LEARN && nav.currentItem) {
-        initLearn(nav.currentItem, nav.progress.current + 1, nav.progress.total)
-      }
-      // Initialize exercise component with current word
-      else if (nav.mode === NavigationMode.EXERCISE && nav.currentItem) {
-        initExercise(
-          nav.currentItem,
-          nav.exerciseState.currentIndex + 1,
-          nav.totalItems,
-          nav.exerciseState.score,
-          state.words, // All words for generating options
-          (isCorrect) =>
-            navigationService.exerciseAnswer(state.sessionId, isCorrect)
+        initLearn(
+          currentWord,
+          currentIndex + 1, // visual index starts from 1
+          totalIndex
         )
       }
     },
-    onLearnUpdate: (nav) => {
-      if (nav.currentItem) {
-        initLearn(nav.currentItem, nav.progress.current + 1, nav.progress.total)
-      }
-    },
-    onExerciseUpdate: (nav) => {
-      // Keeping your original exercise code
-      // nav.currentItem &&
-      // initExercise(
-      //   nav.currentItem,
-      //   nav.exerciseState.currentIndex,
-      //   nav.totalItems,
-      //   nav.exerciseState.score
-      // )
+    onExerciseUpdate: (exerciseProgressionState) => {
+      if (exerciseProgressionState) {
+        const { currentIndex, totalIndex, activeOrder, originalItems, score } =
+          exerciseProgressionState
+        const currentWord = activeOrder[currentIndex]
 
-      if (nav.currentItem) {
         initExercise(
-          nav.currentItem,
-          nav.exerciseState.currentIndex + 1,
-          nav.totalItems,
-          nav.exerciseState.score,
-          state.words, // All words for generating options
+          currentWord,
+          currentIndex + 1, // visual index starts from 1
+          totalIndex,
+          score,
+          originalItems, // All words for generating options
           (isCorrect) =>
             navigationService.exerciseAnswer(state.sessionId, isCorrect)
         )
@@ -335,6 +321,6 @@ export function unmountMicroQuiz() {
 }
 
 /** For debugging or external inspection */
-export function getCurrentState() {
-  return navigationService.getCurrentState(state.sessionId)
-}
+// export function getCurrentState() {
+//   return navigationService.getCurrentState(state.sessionId)
+// }
