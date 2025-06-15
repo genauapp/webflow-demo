@@ -226,8 +226,8 @@ export function initExercise(
     currentWord,
     currentIndex,
     lastIndex,
-    score,
     allWords,
+    score,
     onAnswerCallback
   )
 }
