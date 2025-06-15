@@ -13,7 +13,7 @@ function initElements() {
     lastIndexLabel: () =>
       document.getElementById('exercise-word-card-index-last'),
 
-    wordType: () => document.getElementById('learn-word-card-type'),
+    wordType: () => document.getElementById('exercise-word-card-type'),
     wordText: () => document.getElementById('exercise-word-card-text'),
     optionsContainer: () =>
       document.getElementById('exercise-options-container'),

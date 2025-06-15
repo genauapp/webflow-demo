@@ -324,7 +324,13 @@ class NavigationService {
   }
 
   _notifyUpdate(session) {
-    console.info(`SESSION UPDATED:\n > ${JSON.stringify(session, null, 4)}`)
+    console.info(
+      `SESSION ITEMS UPDATED:\n > ${JSON.stringify(
+        session.originalItems,
+        null,
+        4
+      )}`
+    )
 
     session.callbacks.onUpdate(session)
 
