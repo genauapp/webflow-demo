@@ -147,9 +147,9 @@ function hideFeedback() {
 function renderExerciseCard(
   word,
   currentIndex,
-  totalWords,
-  score,
+  lastIndex,
   allWords,
+  score,
   onAnswerCallback
 ) {
   if (!word || !allWords) return
@@ -162,7 +162,7 @@ function renderExerciseCard(
   }
 
   if (els.lastIndexLabel()) {
-    els.lastIndexLabel().textContent = `${totalWords}`
+    els.lastIndexLabel().textContent = `${lastIndex}`
   }
 
   // Update question and word
@@ -208,9 +208,9 @@ function hideExerciseCard() {
 export function initExercise(
   currentWord,
   currentIndex,
-  totalWords,
-  score,
+  lastIndex,
   allWords,
+  score,
   onAnswerCallback
 ) {
   // Initialize elements
@@ -225,7 +225,7 @@ export function initExercise(
   renderExerciseCard(
     currentWord,
     currentIndex,
-    totalWords,
+    lastIndex,
     score,
     allWords,
     onAnswerCallback
