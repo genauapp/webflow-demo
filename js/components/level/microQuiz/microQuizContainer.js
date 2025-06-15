@@ -198,28 +198,22 @@ function initializeNavigationService() {
     },
     onLearnUpdate: (learnProgressionState) => {
       if (learnProgressionState) {
-        const { currentIndex, totalIndex, activeOrder } = learnProgressionState
-        const currentWord = activeOrder[currentIndex]
+        const { currentWord, currentIndex, lastIndex } = learnProgressionState
 
-        initLearn(
-          currentWord,
-          currentIndex + 1, // visual index starts from 1
-          totalIndex
-        )
+        initLearn(currentWord, currentIndex, lastIndex)
       }
     },
     onExerciseUpdate: (exerciseProgressionState) => {
       if (exerciseProgressionState) {
-        const { currentIndex, totalIndex, activeOrder, originalItems, score } =
+        const { currentWord, currentIndex, lastIndex, allWords, score } =
           exerciseProgressionState
-        const currentWord = activeOrder[currentIndex]
 
         initExercise(
           currentWord,
-          currentIndex + 1, // visual index starts from 1
-          totalIndex,
+          currentIndex,
+          lastIndex,
+          allWords, // for generating options
           score,
-          originalItems, // All words for generating options
           (isCorrect) =>
             navigationService.exerciseAnswer(state.sessionId, isCorrect)
         )

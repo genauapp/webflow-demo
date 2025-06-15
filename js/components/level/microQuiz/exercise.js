@@ -10,8 +10,8 @@ function initElements() {
       document.getElementById('micro-quiz-exercise-word-card'),
     currentIndexLabel: () =>
       document.getElementById('exercise-word-card-index-current'),
-    totalIndexLabel: () =>
-      document.getElementById('exercise-word-card-index-total'),
+    lastIndexLabel: () =>
+      document.getElementById('exercise-word-card-index-last'),
 
     wordType: () => document.getElementById('learn-word-card-type'),
     wordText: () => document.getElementById('exercise-word-card-text'),
@@ -161,8 +161,8 @@ function renderExerciseCard(
     els.currentIndexLabel().textContent = `${currentIndex}`
   }
 
-  if (els.totalIndexLabel()) {
-    els.totalIndexLabel().textContent = `${totalWords}`
+  if (els.lastIndexLabel()) {
+    els.lastIndexLabel().textContent = `${totalWords}`
   }
 
   // Update question and word

@@ -9,8 +9,8 @@ function initElements() {
     // Progress elements
     currentIndexLabel: () =>
       document.getElementById('learn-word-card-index-current'),
-    totalIndexLabel: () =>
-      document.getElementById('learn-word-card-index-total'),
+    lastIndexLabel: () =>
+      document.getElementById('learn-word-card-index-last'),
     // wordLevel: () => document.getElementById('learn-word-card-level'),
     wordType: () => document.getElementById('learn-word-card-type'),
     wordText: () => document.getElementById('learn-word-card-text'),
@@ -21,12 +21,12 @@ function initElements() {
 }
 
 /** Render learn component with current word */
-function renderLearnCard(word, currentIndex, totalIndex) {
+function renderLearnCard(word, currentIndex, lastIndex) {
   if (!word) return
 
   // Update progress
   els.currentIndexLabel().textContent = `${currentIndex}`
-  els.totalIndexLabel().textContent = `${totalIndex}`
+  els.lastIndexLabel().textContent = `${lastIndex}`
 
   // els.wordLevel().textContent = word.level || ''
   els.wordType().textContent = word.type || ''
@@ -50,7 +50,7 @@ function renderLearnCard(word, currentIndex, totalIndex) {
 // }
 
 /** Initialize learn component */
-export function initLearn(currentWord, currentIndex, totalIndex) {
+export function initLearn(currentWord, currentIndex, lastIndex) {
   // Initialize elements
   initElements()
 
@@ -65,5 +65,5 @@ export function initLearn(currentWord, currentIndex, totalIndex) {
   // const currentWord = words[safeIndex]
 
   // Render the current word
-  renderLearnCard(currentWord, currentIndex, totalIndex)
+  renderLearnCard(currentWord, currentIndex, lastIndex)
 }

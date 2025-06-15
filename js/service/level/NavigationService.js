@@ -165,7 +165,9 @@ class NavigationService {
         currentWord.isCorrectlyAnswered = true
         // Remove from active exercise order
         state.activeOrder.splice(state.currentIndex, 1)
-        // Don't increment index since we removed current item
+        // Increment index
+        state.currentIndex = (state.currentIndex + 1) % state.activeOrder.length
+
         if (state.currentIndex >= state.activeOrder.length) {
           const isCompleted = state.activeOrder.length > 0
           state.currentIndex = isCompleted ? 0 : -1
@@ -187,7 +189,7 @@ class NavigationService {
       state.wrongAnswerCountMap.set(currentWord, wrongCount + 1)
 
       // Move to next word
-      state.currentIndex = (state.currentIndex + 1) % state.activeOrder.length
+      // state.currentIndex = (state.currentIndex + 1) % state.activeOrder.length
     }
 
     this._notifyUpdate(session)
@@ -250,7 +252,7 @@ class NavigationService {
         const initialLearnProgression = {
           isCompleted: false,
           currentIndex: 0,
-          totalIndex: shuffledLearnList.length,
+          lastIndex: shuffledLearnList.length - 1,
           activeOrder: shuffledLearnList,
           history: [],
         }
@@ -262,9 +264,8 @@ class NavigationService {
         const initialExerciseProgression = {
           isCompleted: false,
           currentIndex: 0,
-          totalIndex: shuffledExerciseList.length,
+          lastIndex: shuffledExerciseList.length - 1,
           activeOrder: shuffledExerciseList,
-          originalItems: [...items],
           score: { correct: 0, total: 0 },
           wrongAnswerCountMap: new Map(), // Map of word -> wrong answer count
         }
@@ -297,11 +298,28 @@ class NavigationService {
     session.callbacks.onUpdate(session)
 
     if (session.mode === NavigationMode.LEARN) {
-      session.callbacks.onLearnUpdate(session.progression[NavigationMode.LEARN])
+      const learnProgressionState = session.progression[NavigationMode.LEARN]
+
+      session.callbacks.onLearnUpdate({
+        currentWord:
+          learnProgressionState.activeOrder[learnProgressionState.currentIndex],
+        currentIndex: learnProgressionState.currentIndex + 1, // visual index starts from 1
+        lastIndex: learnProgressionState.lastIndex + 1, // visual index ends at n + 1
+      })
     } else if (session.mode === NavigationMode.EXERCISE) {
-      session.callbacks.onExerciseUpdate(
+      const exerciseProgressionState =
         session.progression[NavigationMode.EXERCISE]
-      )
+
+      session.callbacks.onExerciseUpdate({
+        currentWord:
+          exerciseProgressionState.activeOrder[
+            exerciseProgressionState.currentIndex
+          ],
+        currentIndex: exerciseProgressionState.currentIndex + 1, // visual index starts from 1
+        lastIndex: exerciseProgressionState.lastIndex + 1, // visual index ends at n + 1
+        allWords: session.originalItems,
+        score: exerciseProgressionState.score,
+      })
     }
   }
 }
