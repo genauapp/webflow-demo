@@ -175,7 +175,7 @@ class NavigationService {
       state.wrongAnswerCountMap.set(currentWord, wrongCount + 1)
     }
 
-    // Move to next word in remaining list (always cycle to avoid repetition)
+    // Get updated remaining words after potential mastery
     const updatedRemainingWords = this.getRemainingExerciseWords(
       session.streakTarget,
       session.originalItems
@@ -185,35 +185,33 @@ class NavigationService {
       // Exercise completed
       state.isCompleted = true
       state.currentIndex = -1
+    } else if (currentWord.isCorrectlyAnswered) {
+      // Only increment index if word was mastered (reached streak target)
+      if (state.currentIndex >= updatedRemainingWords.length) {
+        state.currentIndex = 0 // Wrap to beginning
+      }
     } else {
-      // Cycle to next word
-      state.currentIndex =
+      // Word wasn't mastered - cycle to next word but keep same index
+      // This ensures next word is loaded without changing the remaining count
+      const nextWordIndex =
         (state.currentIndex + 1) % updatedRemainingWords.length
+      const nextWord = updatedRemainingWords[nextWordIndex]
+
+      // Find and swap the next word to current index position
+      const currentIndexInOriginal = session.originalItems.indexOf(
+        updatedRemainingWords[state.currentIndex]
+      )
+      const nextIndexInOriginal = session.originalItems.indexOf(nextWord)
+
+      // Swap positions in original array
+      const temp = session.originalItems[currentIndexInOriginal]
+      session.originalItems[currentIndexInOriginal] =
+        session.originalItems[nextIndexInOriginal]
+      session.originalItems[nextIndexInOriginal] = temp
     }
 
     this._notifyUpdate(session)
     return currentWord
-  }
-
-  exerciseReset(sessionId) {
-    const session = this.sessions.get(sessionId)
-    if (!session) return null
-
-    // Reset all exercise-related properties
-    session.originalItems.forEach((word) => {
-      word.streak = 0
-      word.isCorrectlyAnswered = false
-    })
-
-    // Reinitialize exercise state
-    session.progression[NavigationMode.EXERCISE] =
-      this._getInitialModeProgression(
-        NavigationMode.EXERCISE,
-        session.originalItems
-      )
-
-    this._notifyUpdate(session)
-    return this._getCurrentItem(session)
   }
 
   // Helper method for exercise mode - get words that haven't reached streak target
