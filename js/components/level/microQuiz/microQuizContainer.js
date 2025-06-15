@@ -1,0 +1,322 @@
+import { initLearn } from './learn.js'
+import { initExercise } from './exercise.js'
+import { navigationService } from '../../../service/level/NavigationService.js'
+import { protectedApiService } from '../../../service/apiService.js'
+import { NavigationMode } from '../../../constants/props.js'
+
+const DEFAULT_STATE = Object.freeze({
+  loading: false,
+  error: null,
+  words: [],
+  sessionId: 'micro-quiz', // Unique session identifier
+  streakTarget: 3, // Default streak target (1-5)
+  mounted: false, // New: has the component been initialized?
+})
+
+let els = {}
+let state = {}
+
+/** Initialize elements dynamically using provided IDs */
+function initElements() {
+  els = {
+    container: () => document.getElementById('micro-quiz-container'),
+    // loadingContainer: () => document.getElementById("tbd"),
+    // errorContainer: () => document.getElementById("tbd"),
+    // emptyContainer: () => document.getElementById("tbd"),
+
+    learnTab: () => document.getElementById('micro-quiz-tab-learn'),
+    learnContainer: () => document.getElementById('micro-quiz-learn-container'),
+    learnWordCard: () => document.getElementById('micro-quiz-learn-word-card'),
+    learnRepeat: () =>
+      document.getElementById('micro-quiz-learn-repeat-button'),
+    learnNext: () => document.getElementById('micro-quiz-learn-i-know-button'),
+    learnCompletedContainer: () =>
+      document.getElementById('micro-quiz-learn-completed-container'),
+    learnReset: () => document.getElementById('micro-quiz-learn-reset-button'),
+
+    exerciseTab: () => document.getElementById('micro-quiz-tab-exercise'),
+    exerciseContainer: () =>
+      document.getElementById('micro-quiz-exercise-container'),
+    exerciseWordCard: () =>
+      document.getElementById('micro-quiz-exercise-word-card'),
+    exerciseResultContainer: () =>
+      document.getElementById('micro-quiz-exercise-result-container'),
+    // exerciseCorrect: () => document.getElementById("tbd"),
+    // exerciseWrong: () => document.getElementById("tbd"),
+    // exerciseReset: () =>
+    //   document.getElementById('micro-quiz-exercise-reset-button'),
+    // streakSelector: () => document.getElementById("tbd"),
+  }
+}
+
+function resetElements() {
+  els = {}
+}
+
+function initState() {
+  state = {
+    ...DEFAULT_STATE,
+  }
+}
+
+function resetState() {
+  state = {}
+}
+
+/** Show/hide according to state flags */
+function render() {
+  if (state.loading) {
+    // els.loadingContainer().style.display = 'flex'
+    // els.errorContainer().style.display = 'none'
+    // els.emptyContainer().style.display = 'none'
+    els.learnContainer().style.display = 'none'
+    els.exerciseContainer().style.display = 'none'
+    return
+  }
+  if (state.error) {
+    // els.loadingContainer().style.display = 'none'
+    // els.errorContainer().style.display = 'flex'
+    // els.emptyContainer().style.display = 'none'
+    els.learnContainer().style.display = 'none'
+    return
+  }
+  if (state.words.length === 0) {
+    // els.loadingContainer().style.display = 'none'
+    // els.errorContainer().style.display = 'none'
+    // els.emptyContainer().style.display = 'flex'
+    els.learnContainer().style.display = 'none'
+    return
+  }
+  // els.loadingContainer().style.display = 'none'
+  // els.errorContainer().style.display = 'none'
+  // els.emptyContainer().style.display = 'none'
+  els.learnContainer().style.display = 'block'
+}
+
+/** Update tab button states based on navigation service */
+function updateTabStates(sessionState) {
+  const activeClasses = ['active', 'w--current']
+  const learnTabEl = els.learnTab()
+  const exerciseTabEl = els.exerciseTab()
+
+  learnTabEl.classList.remove(...activeClasses)
+  exerciseTabEl.classList.remove(...activeClasses)
+
+  if (sessionState.mode === NavigationMode.LEARN) {
+    learnTabEl.classList.add(...activeClasses)
+
+    els.learnContainer().style.display = 'block'
+    els.exerciseContainer().style.display = 'none'
+
+    // Show completed container if learn is completed
+    if (sessionState.progression[sessionState.mode].isCompleted) {
+      els.learnCompletedContainer().style.display = 'flex'
+      els.learnWordCard().style.display = 'none'
+    } else {
+      els.learnCompletedContainer().style.display = 'none'
+      els.learnWordCard().style.display = 'flex'
+    }
+  } else if (sessionState.mode === NavigationMode.EXERCISE) {
+    exerciseTabEl.classList.add(...activeClasses)
+    els.learnContainer().style.display = 'none'
+    els.exerciseContainer().style.display = 'block'
+
+    // Show completed container if exercise is completed
+    if (sessionState.progression[sessionState.mode].isCompleted) {
+      // els.exerciseResultContainer().style.display = 'flex'
+      els.exerciseWordCard().style.display = 'none'
+    } else {
+      // els.exerciseResultContainer().style.display = 'none'
+      els.exerciseWordCard().style.display = 'flex'
+    }
+  }
+}
+
+/** Update navigation button states */
+function updateNavigationButtons(sessionState) {
+  const { currentItem, progression } = sessionState
+
+  const isLearnCompleted = progression[NavigationMode.LEARN].isCompleted
+
+  // Learn buttons
+  els.learnRepeat().disabled = isLearnCompleted
+  els.learnNext().disabled = isLearnCompleted
+  els.learnReset().style.display = isLearnCompleted ? 'block' : 'none'
+
+  // Exercise buttons - keeping your original commented code
+  // els.exerciseCorrect().disabled = !currentItem || activeListLength === 0
+  // els.exerciseWrong().disabled   = !currentItem || activeListLength === 0
+  const isExerciseCompleted = progression[NavigationMode.EXERCISE].isCompleted
+  // Exercise options are handled by the exercise component itself
+  // els.exerciseReset().style.display = isExerciseCompleted ? 'block' : 'none'
+}
+
+/** Enhance words with required properties */
+function enhanceWordsWithProperties(words) {
+  return words.map((word) => ({
+    ...word,
+    isKnown: false, // learn
+    streak: 0, // exercise
+    isCorrectlyAnswered: false, // exercise
+  }))
+}
+
+/** Fetch words from API service */
+async function fetchWords() {
+  try {
+    state.loading = true
+    state.error = null
+    render()
+
+    const { data: words, error } = await protectedApiService.getPackWords()
+
+    if (error) {
+      state.error = error
+      state.words = []
+    } else {
+      state.words = enhanceWordsWithProperties(words || [])
+      state.error = null
+      if (state.words.length > 0) initializeNavigationService()
+    }
+  } catch (err) {
+    state.error = err.message || 'Failed to fetch words'
+    state.words = []
+  } finally {
+    state.loading = false
+    render()
+  }
+}
+
+/** Initialize navigation service with callbacks */
+function initializeNavigationService() {
+  const SESSION_OPTIONS = {
+    mode: NavigationMode.LEARN,
+    streakTarget: state.streakTarget,
+    onUpdate: (sessionState) => {
+      updateTabStates(sessionState)
+      updateNavigationButtons(sessionState)
+    },
+    onLearnUpdate: (learnProgressionState) => {
+      if (learnProgressionState) {
+        const { currentWord, currentIndex, lastIndex } = learnProgressionState
+
+        initLearn(currentWord, currentIndex, lastIndex)
+      }
+    },
+    onExerciseUpdate: (exerciseProgressionState) => {
+      if (exerciseProgressionState) {
+        const { currentWord, currentIndex, lastIndex, allWords, score } =
+          exerciseProgressionState
+
+        initExercise(
+          currentWord,
+          currentIndex,
+          lastIndex,
+          allWords, // for generating options
+          score,
+          (isCorrect) =>
+            navigationService.exerciseAnswer(state.sessionId, isCorrect)
+        )
+      }
+    },
+  }
+
+  navigationService.createSession(state.sessionId, state.words, SESSION_OPTIONS)
+}
+
+function resetNavigationService() {
+  navigationService.destroySession(state.sessionId)
+}
+
+/** Handlers */
+const onLearnTabClick = () =>
+  navigationService.switchMode(state.sessionId, NavigationMode.LEARN)
+const onExerciseTabClick = () =>
+  navigationService.switchMode(state.sessionId, NavigationMode.EXERCISE)
+const onLearnRepeat = () => navigationService.learnRepeat(state.sessionId)
+const onLearnNext = () => navigationService.learnNext(state.sessionId)
+const onLearnReset = () => navigationService.learnReset(state.sessionId)
+// const onExerciseCorrect = () =>
+//   navigationService.exerciseCorrect(state.sessionId)
+// const onExerciseWrong = () => navigationService.exerciseWrong(state.sessionId)
+const onExerciseReset = () => navigationService.exerciseReset(state.sessionId)
+const onStreakChange = (newTarget) => {
+  state.streakTarget = newTarget
+  navigationService.updateStreakTarget(state.sessionId, newTarget)
+}
+
+/** Initialize event listeners */
+function initEventListeners() {
+  els.learnTab().addEventListener('click', onLearnTabClick)
+  els.exerciseTab().addEventListener('click', onExerciseTabClick)
+  els.learnRepeat().addEventListener('click', onLearnRepeat)
+  els.learnNext().addEventListener('click', onLearnNext)
+  els.learnReset().addEventListener('click', onLearnReset)
+  // els.exerciseCorrect().addEventListener('click', onExerciseCorrect)
+  // els.exerciseWrong().addEventListener('click', onExerciseWrong)
+  // els.exerciseReset().addEventListener('click', onExerciseReset)
+  // const sel = els.streakSelector()
+  // if (sel) sel.addEventListener('change', e => {
+  //   const v = parseInt(e.target.value, 10)
+  //   if (v >= 1 && v <= 5) onStreakChange(v)
+  // })
+}
+
+function resetEventListeners() {
+  els.learnTab().removeEventListener('click', onLearnTabClick)
+  els.exerciseTab().removeEventListener('click', onExerciseTabClick)
+  els.learnRepeat().removeEventListener('click', onLearnRepeat)
+  els.learnNext().removeEventListener('click', onLearnNext)
+  els.learnReset().removeEventListener('click', onLearnReset)
+  // els.exerciseCorrect().removeEventListener('click', onExerciseCorrect)
+  // els.exerciseWrong().removeEventListener('click', onExerciseWrong)
+  // els.exerciseReset().removeEventListener('click', onExerciseReset)
+  // const sel = els.streakSelector()
+  // if (sel) sel.removeEventListener('change', todoAnonymousMethod)
+}
+
+/**
+ * Mount: set up everything once and show container
+ * Prevents double-init via state.mounted
+ */
+export async function mountMicroQuiz({ streakTarget = 3 } = {}) {
+  if (state && state.mounted) return
+
+  // First Step: initialize state
+  initState()
+
+  state.mounted = true
+  state.streakTarget = streakTarget >= 1 && streakTarget <= 5 ? streakTarget : 3
+
+  initElements()
+  initEventListeners()
+
+  // Show root
+  els.container().style.display = 'block'
+
+  // Fetch words, initialize navigation service and render
+  await fetchWords()
+}
+
+/**
+ * Unmount: teardown session & reset state, hide container
+ */
+export function unmountMicroQuiz() {
+  if (!state || !state.mounted) return
+
+  // Hide root
+  els.container().style.display = 'none'
+
+  resetEventListeners()
+  resetElements()
+
+  resetNavigationService()
+
+  // Last Step: reset state
+  resetState()
+}
+
+/** For debugging or external inspection */
+// export function getCurrentState() {
+//   return navigationService.getCurrentState(state.sessionId)
+// }
