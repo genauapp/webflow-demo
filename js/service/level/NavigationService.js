@@ -146,7 +146,10 @@ class NavigationService {
     const session = this.sessions.get(sessionId)
     if (!session) return null
 
-    const remainingWords = this._getExerciseRemainingWords(session)
+    const remainingWords = this.getRemainingExerciseWords(
+      session.streakTarget,
+      session.originalItems
+    )
     if (remainingWords.length === 0) return null // Exercise completed
 
     const state = session.progression[NavigationMode.EXERCISE]
@@ -173,7 +176,10 @@ class NavigationService {
     }
 
     // Move to next word in remaining list (always cycle to avoid repetition)
-    const updatedRemainingWords = this._getExerciseRemainingWords(session)
+    const updatedRemainingWords = this.getRemainingExerciseWords(
+      session.streakTarget,
+      session.originalItems
+    )
 
     if (updatedRemainingWords.length === 0) {
       // Exercise completed
