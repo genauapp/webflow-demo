@@ -171,10 +171,15 @@ class NavigationService {
           state.currentIndex = isCompleted ? 0 : -1
           state.isCompleted = isCompleted
         }
-      } else {
-        // Move to next word but keep current word in the list
-        state.currentIndex = (state.currentIndex + 1) % state.activeOrder.length
       }
+      // FIX: Don't increment index - stay on same word until mastered
+      // The word stays in the same position for repeated practice
+
+      //    else {
+      //   // 🔧 ALTERNATIVE: Move to next word but with smart cycling
+      //   // This allows practicing other words while building streaks
+      //   state.currentIndex = (state.currentIndex + 1) % state.activeOrder.length
+      // }
     } else {
       // Reset streak and track wrong answer
       currentWord.streak = 0
