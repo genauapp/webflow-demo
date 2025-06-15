@@ -146,68 +146,52 @@ class NavigationService {
     const session = this.sessions.get(sessionId)
     if (!session) return null
 
-    const remainingWords = this.getRemainingExerciseWords(
-      session.streakTarget,
-      session.originalItems
-    )
-    if (remainingWords.length === 0) return null // Exercise completed
-
     const state = session.progression[NavigationMode.EXERCISE]
-    const currentWord = remainingWords[state.currentIndex]
-    if (!currentWord) return null
+    if (state.currentIndex === -1) return null // Completed
 
-    // Update total score
+    // Filter remaining words
+    const remaining = state.activeOrder.filter(
+      (word) =>
+        !word.isCorrectlyAnswered && (word.streak || 0) < session.streakTarget
+    )
+    if (remaining.length === 0) {
+      state.isCompleted = true
+      state.currentIndex = -1
+      this._notifyUpdate(session)
+      return null
+    }
+
+    // Ensure currentIndex is in bounds
+    if (state.currentIndex >= remaining.length) {
+      state.currentIndex = 0
+    }
+
+    const currentWord = remaining[state.currentIndex]
     state.score.total++
 
     if (isCorrect) {
-      // Increment streak and score
       currentWord.streak = (currentWord.streak || 0) + 1
       state.score.correct++
 
-      // Check if word reached streak target
       if (currentWord.streak >= session.streakTarget) {
         currentWord.isCorrectlyAnswered = true
+        // Advance index on mastery
+        state.currentIndex++
+        if (state.currentIndex >= state.activeOrder.length) {
+          state.currentIndex = 0
+        }
       }
     } else {
-      // Wrong answer - reset streak and track mistake
+      // Wrong answer: reset streak
       currentWord.streak = 0
-      const wrongCount = state.wrongAnswerCountMap.get(currentWord) || 0
-      state.wrongAnswerCountMap.set(currentWord, wrongCount + 1)
-    }
+      const wrong = state.wrongAnswerCountMap.get(currentWord) || 0
+      state.wrongAnswerCountMap.set(currentWord, wrong + 1)
 
-    // Get updated remaining words after potential mastery
-    const updatedRemainingWords = this.getRemainingExerciseWords(
-      session.streakTarget,
-      session.originalItems
-    )
-
-    if (updatedRemainingWords.length === 0) {
-      // Exercise completed
-      state.isCompleted = true
-      state.currentIndex = -1
-    } else if (currentWord.isCorrectlyAnswered) {
-      // Only increment index if word was mastered (reached streak target)
-      if (state.currentIndex >= updatedRemainingWords.length) {
-        state.currentIndex = 0 // Wrap to beginning
-      }
-    } else {
-      // Word wasn't mastered - cycle to next word but keep same index
-      // This ensures next word is loaded without changing the remaining count
-      const nextWordIndex =
-        (state.currentIndex + 1) % updatedRemainingWords.length
-      const nextWord = updatedRemainingWords[nextWordIndex]
-
-      // Find and swap the next word to current index position
-      const currentIndexInOriginal = session.originalItems.indexOf(
-        updatedRemainingWords[state.currentIndex]
-      )
-      const nextIndexInOriginal = session.originalItems.indexOf(nextWord)
-
-      // Swap positions in original array
-      const temp = session.originalItems[currentIndexInOriginal]
-      session.originalItems[currentIndexInOriginal] =
-        session.originalItems[nextIndexInOriginal]
-      session.originalItems[nextIndexInOriginal] = temp
+      // Swap with next to show a different word at same index
+      const active = state.activeOrder
+      const currIdx = state.activeOrder.indexOf(currentWord)
+      const nextIdx = (currIdx + 1) % active.length
+      ;[active[currIdx], active[nextIdx]] = [active[nextIdx], active[currIdx]]
     }
 
     this._notifyUpdate(session)
@@ -228,9 +212,9 @@ class NavigationService {
     const state = session.progression[NavigationMode.EXERCISE]
 
     // Check if any words are still remaining
-    const remainingWords = this.getRemainingExerciseWords(
-      session.streakTarget,
-      session.originalItems
+    const remainingWords = state.activeOrder.filter(
+      (word) =>
+        !word.isCorrectlyAnswered && (word.streak || 0) < session.streakTarget
     )
 
     return (
@@ -307,11 +291,10 @@ class NavigationService {
       if (state.isCompleted || state.currentIndex === -1) return null
 
       // Filter remaining words on-the-fly
-      const remainingWords = this.getRemainingExerciseWords(
-        session.streakTarget,
-        session.originalItems
+      const remainingWords = state.activeOrder.filter(
+        (word) =>
+          !word.isCorrectlyAnswered && (word.streak || 0) < session.streakTarget
       )
-
       if (remainingWords.length === 0) {
         state.isCompleted = true
         return null
@@ -322,13 +305,7 @@ class NavigationService {
   }
 
   _notifyUpdate(session) {
-    console.info(
-      `SESSION ITEMS UPDATED:\n > ${JSON.stringify(
-        session.originalItems,
-        null,
-        4
-      )}`
-    )
+    console.info(`SESSION UPDATED:\n > ${JSON.stringify(session, null, 4)}`)
 
     session.callbacks.onUpdate(session)
 
@@ -348,9 +325,10 @@ class NavigationService {
         currentWord: this._getCurrentItem(session),
         currentIndex: exerciseProgressionState.currentIndex + 1, // visual index starts from 1
         lastIndex: exerciseProgressionState.lastIndex + 1, // visual index ends at n + 1
-        allWords: this.getRemainingExerciseWords(
-          session.streakTarget,
-          session.originalItems
+        allWords: state.activeOrder.filter(
+          (word) =>
+            !word.isCorrectlyAnswered &&
+            (word.streak || 0) < session.streakTarget
         ),
         score: exerciseProgressionState.score,
       })
