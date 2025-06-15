@@ -230,7 +230,7 @@ class NavigationService {
     const state = session.progression[NavigationMode.EXERCISE]
 
     // Check if any words are still remaining
-    const remainingWords = getRemainingExerciseWords(
+    const remainingWords = this.getRemainingExerciseWords(
       session.streakTarget,
       session.originalItems
     )
@@ -309,7 +309,7 @@ class NavigationService {
       if (state.isCompleted || state.currentIndex === -1) return null
 
       // Filter remaining words on-the-fly
-      const remainingWords = getRemainingExerciseWords(
+      const remainingWords = this.getRemainingExerciseWords(
         session.streakTarget,
         session.originalItems
       )
