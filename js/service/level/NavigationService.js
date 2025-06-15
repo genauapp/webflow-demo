@@ -325,7 +325,7 @@ class NavigationService {
         currentWord: this._getCurrentItem(session),
         currentIndex: exerciseProgressionState.currentIndex + 1, // visual index starts from 1
         lastIndex: exerciseProgressionState.lastIndex + 1, // visual index ends at n + 1
-        allWords: state.activeOrder.filter(
+        allWords: exerciseProgressionState.activeOrder.filter(
           (word) =>
             !word.isCorrectlyAnswered &&
             (word.streak || 0) < session.streakTarget
