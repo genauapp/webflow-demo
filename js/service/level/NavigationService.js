@@ -261,7 +261,7 @@ class NavigationService {
           activeOrder: shuffledExerciseList,
           originalItems: [...items],
           score: { correct: 0, total: 0 },
-          wrongAnswerHistory: new Map(), // Map of word -> wrong answer count
+          wrongAnswerCountMap: new Map(), // Map of word -> wrong answer count
         }
 
         return initialExerciseProgression
