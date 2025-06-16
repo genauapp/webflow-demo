@@ -149,24 +149,9 @@ class NavigationService {
     const state = session.progression[NavigationMode.EXERCISE]
     if (state.currentIndex === -1) return null // Completed
 
-    // Filter remaining words
-    const remaining = state.activeOrder.filter(
-      (word) =>
-        !word.isCorrectlyAnswered && (word.streak || 0) < session.streakTarget
-    )
-    if (remaining.length === 0) {
-      state.isCompleted = true
-      state.currentIndex = -1
-      this._notifyUpdate(session)
-      return null
-    }
+    const currentWord = state.activeOrder[state.currentIndex]
+    if (!currentWord) return null
 
-    // Ensure currentIndex is in bounds
-    if (state.currentIndex >= remaining.length) {
-      state.currentIndex = 0
-    }
-
-    const currentWord = remaining[state.currentIndex]
     state.score.total++
 
     if (isCorrect) {
@@ -174,24 +159,68 @@ class NavigationService {
       state.score.correct++
 
       if (currentWord.streak >= session.streakTarget) {
+        // SAME as learnNext: Mark as mastered and move to next
         currentWord.isCorrectlyAnswered = true
-        // Advance index on mastery
-        state.currentIndex++
-        if (state.currentIndex >= state.activeOrder.length) {
-          state.currentIndex = 0
+
+        if (state.currentIndex < state.activeOrder.length - 1) {
+          state.currentIndex++
+        } else {
+          // Reached end of list
+          state.currentIndex = -1
+          state.isCompleted = true
         }
+      } else {
+        // SAME as learnRepeat: Keep same index, change current word
+        // Get all words that haven't reached streak target
+        const remainingWords = state.activeOrder.filter(
+          (word) =>
+            !word.isCorrectlyAnswered &&
+            (word.streak || 0) < session.streakTarget
+        )
+
+        if (remainingWords.length <= 1) {
+          // Only one word left, nothing to swap
+          this._notifyUpdate(session)
+          return currentWord
+        }
+
+        // Pick a random remaining word (excluding current)
+        const otherWords = remainingWords.filter((word) => word !== currentWord)
+        const randomIndex = Math.floor(Math.random() * otherWords.length)
+        const pickedWord = otherWords[randomIndex]
+
+        // Swap picked word with current position
+        const pickedWordIndex = state.activeOrder.indexOf(pickedWord)
+        state.activeOrder[state.currentIndex] = pickedWord
+        state.activeOrder[pickedWordIndex] = currentWord
       }
     } else {
-      // Wrong answer: reset streak
+      // Wrong answer: reset streak and apply learnRepeat logic
       currentWord.streak = 0
       const wrong = state.wrongAnswerCountMap.get(currentWord) || 0
       state.wrongAnswerCountMap.set(currentWord, wrong + 1)
 
-      // Swap with next to show a different word at same index
-      const active = state.activeOrder
-      const currIdx = state.activeOrder.indexOf(currentWord)
-      const nextIdx = (currIdx + 1) % active.length
-      ;[active[currIdx], active[nextIdx]] = [active[nextIdx], active[currIdx]]
+      // SAME as learnRepeat: Keep same index, change current word
+      const remainingWords = state.activeOrder.filter(
+        (word) =>
+          !word.isCorrectlyAnswered && (word.streak || 0) < session.streakTarget
+      )
+
+      if (remainingWords.length <= 1) {
+        // Only one word left, nothing to swap
+        this._notifyUpdate(session)
+        return currentWord
+      }
+
+      // Pick a random remaining word (excluding current)
+      const otherWords = remainingWords.filter((word) => word !== currentWord)
+      const randomIndex = Math.floor(Math.random() * otherWords.length)
+      const pickedWord = otherWords[randomIndex]
+
+      // Swap picked word with current position
+      const pickedWordIndex = state.activeOrder.indexOf(pickedWord)
+      state.activeOrder[state.currentIndex] = pickedWord
+      state.activeOrder[pickedWordIndex] = currentWord
     }
 
     this._notifyUpdate(session)
@@ -211,17 +240,8 @@ class NavigationService {
 
     const state = session.progression[NavigationMode.EXERCISE]
 
-    // Check if any words are still remaining
-    const remainingWords = state.activeOrder.filter(
-      (word) =>
-        !word.isCorrectlyAnswered && (word.streak || 0) < session.streakTarget
-    )
-
-    return (
-      state.isCompleted ||
-      state.currentIndex === -1 ||
-      remainingWords.length === 0
-    )
+    // Simple check: completed if index is -1 or explicitly marked as completed
+    return state.isCompleted || state.currentIndex === -1
   }
 
   updateStreakTarget(sessionId, newTarget) {
@@ -275,7 +295,8 @@ class NavigationService {
     if (!session) return null
 
     if (session.mode === NavigationMode.LEARN) {
-      const state = session.progression[NavigationMode.EXERCISE]
+      // BUG FIX: was using EXERCISE state instead of LEARN state
+      const state = session.progression[NavigationMode.LEARN]
       if (
         state.isCompleted ||
         state.currentIndex === -1 ||
@@ -290,17 +311,8 @@ class NavigationService {
 
       if (state.isCompleted || state.currentIndex === -1) return null
 
-      // Filter remaining words on-the-fly
-      const remainingWords = state.activeOrder.filter(
-        (word) =>
-          !word.isCorrectlyAnswered && (word.streak || 0) < session.streakTarget
-      )
-      if (remainingWords.length === 0) {
-        state.isCompleted = true
-        return null
-      }
-
-      return remainingWords[state.currentIndex] || null
+      // Simplified: just return the current word at current index
+      return state.activeOrder[state.currentIndex] || null
     }
   }
 
@@ -325,6 +337,7 @@ class NavigationService {
         currentWord: this._getCurrentItem(session),
         currentIndex: exerciseProgressionState.currentIndex + 1, // visual index starts from 1
         lastIndex: exerciseProgressionState.lastIndex + 1, // visual index ends at n + 1
+        // Simplified: just show remaining words without complex filtering
         allWords: exerciseProgressionState.activeOrder.filter(
           (word) =>
             !word.isCorrectlyAnswered &&

@@ -69,7 +69,7 @@ function renderOptions(options, correctWord, onAnswerCallback) {
 
   options.forEach((option, index) => {
     const button = document.createElement('button')
-    button.className = 'w-button exercise-option-btn'
+    button.className = 'action-button exercise-option-btn'
 
     button.textContent =
       option.english || option.definition || option.meaning || option.text || ''
