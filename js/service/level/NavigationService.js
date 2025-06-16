@@ -14,7 +14,7 @@ class NavigationService {
       id: sessionId,
       originalItems: baseItems,
       mode: currentMode,
-      streakTarget: options.streakTarget || 3,
+      streakTarget: options.streakTarget || 0,
       callbacks: {
         onUpdate: options.onUpdate || (() => {}),
         onLearnUpdate: options.onLearnUpdate || (() => {}),
@@ -42,6 +42,16 @@ class NavigationService {
     return this.sessions.delete(sessionId)
   }
 
+  // STREAK TARGET
+  updateStreakTarget(sessionId, newTarget) {
+    const session = this.sessions.get(sessionId)
+    if (!session) return null
+    session.streakTarget = newTarget
+    this._notifyUpdate(session)
+    return session
+  }
+
+  // LEARN/EXERCISE MODE
   switchMode(sessionId, mode) {
     const session = this.sessions.get(sessionId)
     if (!session) return null
@@ -50,7 +60,7 @@ class NavigationService {
     return session
   }
 
-  // LEARN MODE NAVIGATION
+  // // LEARN MODE NAVIGATION
   learnNext(sessionId) {
     const session = this.sessions.get(sessionId)
     if (!session) return null
@@ -141,7 +151,7 @@ class NavigationService {
     return state.isCompleted || state.currentIndex === -1
   }
 
-  // EXERCISE MODE NAVIGATION
+  // // EXERCISE MODE NAVIGATION
   exerciseAnswer(sessionId, isCorrect) {
     const session = this.sessions.get(sessionId)
     if (!session) return null
@@ -242,14 +252,6 @@ class NavigationService {
 
     // Simple check: completed if index is -1 or explicitly marked as completed
     return state.isCompleted || state.currentIndex === -1
-  }
-
-  updateStreakTarget(sessionId, newTarget) {
-    const session = this.sessions.get(sessionId)
-    if (!session) return null
-    session.streakTarget = newTarget
-    this._notifyUpdate(session)
-    return session
   }
 
   // UTILITY METHODS

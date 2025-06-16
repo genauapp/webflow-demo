@@ -3,13 +3,14 @@ import { initExercise } from './exercise.js'
 import { navigationService } from '../../../service/level/NavigationService.js'
 import { protectedApiService } from '../../../service/apiService.js'
 import { NavigationMode } from '../../../constants/props.js'
+import { initStreakSettings } from './shared/streakSettings.js'
 
 const DEFAULT_STATE = Object.freeze({
   loading: false,
   error: null,
   words: [],
   sessionId: 'micro-quiz', // Unique session identifier
-  streakTarget: 3, // Default streak target (1-5)
+  streakTarget: 0, // Initially unset streak target
   mounted: false, // New: has the component been initialized?
 })
 
@@ -37,6 +38,8 @@ function initElements() {
     exerciseTab: () => document.getElementById('micro-quiz-tab-exercise'),
     exerciseContainer: () =>
       document.getElementById('micro-quiz-exercise-container'),
+    exerciseStreakSettingsCard: () =>
+      document.getElementById('micro-quiz-exercise-streak-settings-card'),
     exerciseWordCard: () =>
       document.getElementById('micro-quiz-exercise-word-card'),
     exerciseResultContainer: () =>
@@ -71,6 +74,7 @@ function render() {
     // els.emptyContainer().style.display = 'none'
     els.learnContainer().style.display = 'none'
     els.exerciseContainer().style.display = 'none'
+
     return
   }
   if (state.error) {
@@ -78,6 +82,7 @@ function render() {
     // els.errorContainer().style.display = 'flex'
     // els.emptyContainer().style.display = 'none'
     els.learnContainer().style.display = 'none'
+    els.exerciseContainer().style.display = 'none'
     return
   }
   if (state.words.length === 0) {
@@ -85,6 +90,7 @@ function render() {
     // els.errorContainer().style.display = 'none'
     // els.emptyContainer().style.display = 'flex'
     els.learnContainer().style.display = 'none'
+    els.exerciseContainer().style.display = 'none'
     return
   }
   // els.loadingContainer().style.display = 'none'
@@ -121,13 +127,20 @@ function updateTabStates(sessionState) {
     els.learnContainer().style.display = 'none'
     els.exerciseContainer().style.display = 'block'
 
-    // Show completed container if exercise is completed
-    if (sessionState.progression[sessionState.mode].isCompleted) {
-      // els.exerciseResultContainer().style.display = 'flex'
+    // Check if exercise streak settings are set
+    if (sessionState.streakTarget === 0) {
       els.exerciseWordCard().style.display = 'none'
+      els.exerciseStreakSettingsCard().style.display = 'flex'
     } else {
-      // els.exerciseResultContainer().style.display = 'none'
-      els.exerciseWordCard().style.display = 'flex'
+      els.exerciseStreakSettingsCard().style.display = 'none'
+      // Show completed container if exercise is completed
+      if (sessionState.progression[sessionState.mode].isCompleted) {
+        // els.exerciseResultContainer().style.display = 'flex'
+        els.exerciseWordCard().style.display = 'none'
+      } else {
+        // els.exerciseResultContainer().style.display = 'none'
+        els.exerciseWordCard().style.display = 'flex'
+      }
     }
   }
 }
@@ -229,10 +242,10 @@ const onLearnReset = () => navigationService.learnReset(state.sessionId)
 //   navigationService.exerciseCorrect(state.sessionId)
 // const onExerciseWrong = () => navigationService.exerciseWrong(state.sessionId)
 const onExerciseReset = () => navigationService.exerciseReset(state.sessionId)
-const onStreakChange = (newTarget) => {
-  state.streakTarget = newTarget
-  navigationService.updateStreakTarget(state.sessionId, newTarget)
-}
+// const onStreakChange = (newTarget) => {
+//   state.streakTarget = newTarget
+//   navigationService.updateStreakTarget(state.sessionId, newTarget)
+// }
 
 /** Initialize event listeners */
 function initEventListeners() {
@@ -249,6 +262,12 @@ function initEventListeners() {
   //   const v = parseInt(e.target.value, 10)
   //   if (v >= 1 && v <= 5) onStreakChange(v)
   // })
+}
+
+function handleStreakTargetChange(selectedTarget) {
+  // Update both local state and navigation service
+  state.streakTarget = selectedTarget
+  navigationService.updateStreakTarget(state.sessionId, selectedTarget)
 }
 
 function resetEventListeners() {
@@ -268,14 +287,15 @@ function resetEventListeners() {
  * Mount: set up everything once and show container
  * Prevents double-init via state.mounted
  */
-export async function mountMicroQuiz({ streakTarget = 3 } = {}) {
+export async function mountMicroQuiz() {
   if (state && state.mounted) return
 
   // First Step: initialize state
   initState()
 
   state.mounted = true
-  state.streakTarget = streakTarget >= 1 && streakTarget <= 5 ? streakTarget : 3
+  // state.streakTarget = streakTarget >= 1 && streakTarget <= 5 ? streakTarget : 3
+  initStreakSettings(handleStreakTargetChange)
 
   initElements()
   initEventListeners()
