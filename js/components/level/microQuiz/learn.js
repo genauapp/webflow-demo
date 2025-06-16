@@ -20,7 +20,7 @@ function initElements() {
 }
 
 /** Render learn component with current word */
-function renderLearnCard({ word, currentIndex, lastIndex }) {
+function renderLearnCard({ currentWord: word, currentIndex, lastIndex }) {
   if (!word) return
 
   // Update progress
