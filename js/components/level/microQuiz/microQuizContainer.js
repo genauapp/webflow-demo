@@ -198,9 +198,7 @@ function initializeNavigationService() {
     },
     onLearnUpdate: (learnProgressionState) => {
       if (learnProgressionState) {
-        const { currentWord, currentIndex, lastIndex } = learnProgressionState
-
-        initLearn(currentWord, currentIndex, lastIndex)
+        initLearn({ ...learnProgressionState })
       }
     },
     onExerciseUpdate: (exerciseProgressionState) => {

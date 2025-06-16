@@ -9,8 +9,7 @@ function initElements() {
     // Progress elements
     currentIndexLabel: () =>
       document.getElementById('learn-word-card-index-current'),
-    lastIndexLabel: () =>
-      document.getElementById('learn-word-card-index-last'),
+    lastIndexLabel: () => document.getElementById('learn-word-card-index-last'),
     // wordLevel: () => document.getElementById('learn-word-card-level'),
     wordType: () => document.getElementById('learn-word-card-type'),
     wordText: () => document.getElementById('learn-word-card-text'),
@@ -21,7 +20,7 @@ function initElements() {
 }
 
 /** Render learn component with current word */
-function renderLearnCard(word, currentIndex, lastIndex) {
+function renderLearnCard({ word, currentIndex, lastIndex }) {
   if (!word) return
 
   // Update progress
@@ -50,7 +49,7 @@ function renderLearnCard(word, currentIndex, lastIndex) {
 // }
 
 /** Initialize learn component */
-export function initLearn(currentWord, currentIndex, lastIndex) {
+export function initLearn(learnState) {
   // Initialize elements
   initElements()
 
@@ -65,5 +64,5 @@ export function initLearn(currentWord, currentIndex, lastIndex) {
   // const currentWord = words[safeIndex]
 
   // Render the current word
-  renderLearnCard(currentWord, currentIndex, lastIndex)
+  renderLearnCard(learnState)
 }
