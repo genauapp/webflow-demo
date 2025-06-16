@@ -334,6 +334,7 @@ class NavigationService {
         session.progression[NavigationMode.EXERCISE]
 
       session.callbacks.onExerciseUpdate({
+        streakTarget: session.streakTarget,
         currentWord: this._getCurrentItem(session),
         currentIndex: exerciseProgressionState.currentIndex + 1, // visual index starts from 1
         lastIndex: exerciseProgressionState.lastIndex + 1, // visual index ends at n + 1

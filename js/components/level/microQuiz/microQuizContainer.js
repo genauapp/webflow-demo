@@ -205,17 +205,8 @@ function initializeNavigationService() {
     },
     onExerciseUpdate: (exerciseProgressionState) => {
       if (exerciseProgressionState) {
-        const { currentWord, currentIndex, lastIndex, allWords, score } =
-          exerciseProgressionState
-
-        initExercise(
-          currentWord,
-          currentIndex,
-          lastIndex,
-          allWords, // for generating options
-          score,
-          (isCorrect) =>
-            navigationService.exerciseAnswer(state.sessionId, isCorrect)
+        initExercise({ ...exerciseProgressionState }, (isCorrect) =>
+          navigationService.exerciseAnswer(state.sessionId, isCorrect)
         )
       }
     },

@@ -26,7 +26,8 @@ function initElements() {
 
     // Progress elements
     //    progressText: () => document.getElementById('exercise-progress-text'),
-    //    progressBar: () => document.getElementById('exercise-progress-bar'),
+    progressBarContainer: () =>
+      document.getElementById('exercise-streak-progress-bar-container'),
 
     scoreText: () => document.getElementById('exercise-score-text'),
   }
@@ -107,6 +108,19 @@ function renderOptions(options, correctWord, onAnswerCallback) {
   })
 }
 
+/** Render the streak bars into the progress bar container */
+function renderStreakProgression(word, streakTarget) {
+  const container = els.progressBarContainer()
+  if (!container) return
+  container.innerHTML = ''
+  for (let i = 1; i <= streakTarget; i++) {
+    const bar = document.createElement('div')
+    bar.className = 'streak-progression-bar'
+    if ((word.streak || 0) >= i) bar.classList.add('reached')
+    container.appendChild(bar)
+  }
+}
+
 /** Show feedback */
 function showFeedback(isCorrect, correctWord, selectedWord) {
   const feedbackContainer = els.feedbackContainer()
@@ -145,11 +159,7 @@ function hideFeedback() {
 /** Render exercise component with current word */
 
 function renderExerciseCard(
-  word,
-  currentIndex,
-  lastIndex,
-  allWords,
-  score,
+  { streakTarget, currentWord: word, currentIndex, lastIndex, allWords, score },
   onAnswerCallback
 ) {
   if (!word || !allWords) return
@@ -178,6 +188,8 @@ function renderExerciseCard(
   const options = generateOptions(word, allWords)
   renderOptions(options, word, onAnswerCallback)
 
+  renderStreakProgression(word, streakTarget)
+
   // Update score
   updateScore(score)
 
@@ -205,14 +217,7 @@ function hideExerciseCard() {
 
 /** Initialize exercise component */
 
-export function initExercise(
-  currentWord,
-  currentIndex,
-  lastIndex,
-  allWords,
-  score,
-  onAnswerCallback
-) {
+export function initExercise(exerciseState, onAnswerCallback) {
   // Initialize elements
   initElements()
 
@@ -222,12 +227,5 @@ export function initExercise(
   //   return
   // }
 
-  renderExerciseCard(
-    currentWord,
-    currentIndex,
-    lastIndex,
-    allWords,
-    score,
-    onAnswerCallback
-  )
+  renderExerciseCard(exerciseState, onAnswerCallback)
 }
