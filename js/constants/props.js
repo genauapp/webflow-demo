@@ -23,12 +23,12 @@ export const ExerciseTypeSettingsMap = Object.freeze({
   [ExerciseType.VOCABULARY]: {
     description:
       "Vocabulary type of exercises. 'english' properties of other words in the list are selected as 'wrong' answers",
-    optionsCount: 3,
+    optionsCount: null, // so 2-3-4 is going to work
   },
   [ExerciseType.GRAMMAR]: {
     description:
       "Grammar fill in the blank 'example' element in the exercise. 'german' properties of other words in the list are selected as 'wrong' answers",
-    optionsCount: null, // so 2-3-4 is going to work
+    optionsCount: 3,
   },
 })
 
