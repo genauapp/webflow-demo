@@ -181,7 +181,7 @@ function renderExerciseCard(
   }
 
   if (els.wordText()) {
-    els.wordText().textContent = word.word || word.text || word.turkish || ''
+    els.wordText().textContent = word.german || word.text || word.turkish || ''
   }
 
   // Generate and render options with dynamic count (2-4)
