@@ -1,4 +1,4 @@
-import { PrepositionCaseColorMap } from "../../../constants/props"
+import { PrepositionCaseColorMap } from "../../../constants/props.js"
 
 // /components/microQuiz/learn.js
 let els = {}
