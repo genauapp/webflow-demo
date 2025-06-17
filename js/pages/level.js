@@ -16,7 +16,7 @@ import {
 import { ASSETS_BASE_URL } from '../constants/urls.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
 import ListUtils from '../utils/ListUtils.js'
-import { types } from '../constants/props.js'
+import { categories, types } from '../constants/props.js'
 import {
   removeFavorite,
   addToFavorites,
@@ -85,8 +85,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (LevelManager.checkIfCategoryIsInCategories(currentCategory)) {
       hideSelectCategoryMessage()
       organizeSelectedDeckImage()
+      if (categories[currentCategory].type &&categories[currentCategory].type === 'micro-quiz') {
+
+        // show preposition learn/exercise
+        await mountMicroQuiz()
+        return
+      }
+      if (categories[currentCategory].type && categories[currentCategory].type === 'regular') {
+        await loadAndShowWords()
+        return
+      }
     }
-    await loadAndShowWords()
   }
 })
 
