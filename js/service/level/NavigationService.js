@@ -14,6 +14,7 @@ class NavigationService {
       id: sessionId,
       originalItems: baseItems,
       mode: currentMode,
+      exerciseType: options.exerciseType,
       streakTarget: options.streakTarget || 0,
       callbacks: {
         onUpdate: options.onUpdate || (() => {}),
