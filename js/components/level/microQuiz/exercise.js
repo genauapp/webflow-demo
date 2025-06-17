@@ -22,7 +22,7 @@ function initElements() {
     feedbackContainer: () =>
       document.getElementById('exercise-feedback-container'),
     feedbackText: () => document.getElementById('exercise-feedback-text'),
-    // correctAnswer: () => document.getElementById('exercise-correct-answer'),
+    correctAnswer: () => document.getElementById('exercise-correct-answer'),
 
     // Progress elements
     //    progressText: () => document.getElementById('exercise-progress-text'),
