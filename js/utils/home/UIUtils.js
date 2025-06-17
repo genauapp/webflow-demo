@@ -199,23 +199,22 @@ export function loadDeckPropsOnLevelPage() {
         hideSelectCategoryMessage()
         if (selectedCategory === 'preposition') {
           // hide regular learn/exercise
-          // let contentContainer = document.getElementById(
-          //   `content-container-${learnOrExercise}-${wordType}`
-          // )
-          // contentContainer.style.display = 'none'
           document.getElementById('content-container').style.display = 'none'
 
           // show preposition learn/exercise
           await mountMicroQuiz()
+          // focus user Learn/Exercise area
+          window.location.hash = '#action-content'
+          return
         } else {
           // hide preposition learn/exercise
           unmountMicroQuiz()
 
           // show regular learn/exercise
           await loadAndShowWords()
+          // focus user Learn/Exercise area
+          window.location.hash = '#action-content'
         }
-        // focus user Learn/Exercise area
-        window.location.hash = '#action-content'
       })
     })
 
