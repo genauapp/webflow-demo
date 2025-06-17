@@ -34,6 +34,7 @@ import {
   loadDeckPropsOnLevelPage,
 } from '../utils/home/UIUtils.js'
 import LevelManager from '../utils/LevelManager.js'
+import mountMicroQuiz from '../utils/home/mountMicroQuiz.js'
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', async () => {
