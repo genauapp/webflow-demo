@@ -1,20 +1,26 @@
-// /components/microQuiz/exercise.js
+import { ExerciseType } from '../../../../constants/props'
+import {
+  mountGrammarExerciseCard,
+  renderGrammarExerciseCard,
+} from '../exercise/grammarExerciseCard'
+
+// /components/microQuiz/shared/exercise.js
 let els = {}
 
 /** Initialize elements for exercise component */
 function initElements() {
   els = {
     // Exercise card elements
-
     exerciseCard: () =>
       document.getElementById('micro-quiz-exercise-word-card'),
     currentIndexLabel: () =>
       document.getElementById('exercise-word-card-index-current'),
     lastIndexLabel: () =>
       document.getElementById('exercise-word-card-index-last'),
-
     wordType: () => document.getElementById('exercise-word-card-type'),
     wordText: () => document.getElementById('exercise-word-card-text'),
+
+    // Options
     optionsContainer: () =>
       document.getElementById('exercise-options-container'),
 
@@ -35,7 +41,7 @@ function initElements() {
 
 /** Generate multiple choice options for a word */
 
-function generateOptions(correctWord, allWords, optionsCount = null) {
+function generateVocabularyOptions(correctWord, allWords, optionsCount = null) {
   // Dynamic option count (2-4) if not specified
   if (optionsCount === null) {
     optionsCount = Math.floor(Math.random() * 3) + 2 // 2, 3, or 4 options
@@ -62,7 +68,7 @@ function generateOptions(correctWord, allWords, optionsCount = null) {
 }
 
 /** Render exercise options */
-function renderOptions(options, correctWord, onAnswerCallback) {
+function renderVocabularyOptions(options, correctWord, onAnswerCallback) {
   const container = els.optionsContainer()
   if (!container) return
 
@@ -84,7 +90,7 @@ function renderOptions(options, correctWord, onAnswerCallback) {
       const isCorrect = option === correctWord
 
       // Show immediate feedback
-      showFeedback(isCorrect, correctWord, option)
+      showVocabularyFeedback(isCorrect, correctWord, option)
 
       // Disable all buttons
       const allButtons = container.querySelectorAll('.exercise-option-btn')
@@ -100,7 +106,7 @@ function renderOptions(options, correctWord, onAnswerCallback) {
       // Call navigation service after a short delay for user to see feedback
       setTimeout(() => {
         onAnswerCallback(isCorrect)
-        hideFeedback()
+        hideVocabularyFeedback()
       }, 1500)
     })
 
@@ -122,7 +128,7 @@ function renderStreakProgression(word, streakTarget) {
 }
 
 /** Show feedback */
-function showFeedback(isCorrect, correctWord, selectedWord) {
+function showVocabularyFeedback(isCorrect, correctWord, selectedWord) {
   const feedbackContainer = els.feedbackContainer()
   const feedbackText = els.feedbackText()
   const correctAnswerEl = els.correctAnswer()
@@ -149,23 +155,48 @@ function showFeedback(isCorrect, correctWord, selectedWord) {
 }
 
 /** Hide feedback */
-function hideFeedback() {
+function hideVocabularyFeedback() {
   const feedbackContainer = els.feedbackContainer()
   if (feedbackContainer) {
     feedbackContainer.style.display = 'none'
   }
 }
 
-/** Render exercise component with current word */
-
-function renderExerciseCard(
+/** Render vocabulary card */
+function mountVocabularyExerciseCard(
   { streakTarget, currentWord: word, currentIndex, lastIndex, allWords, score },
   onAnswerCallback
 ) {
   if (!word || !allWords) return
 
   // Hide feedback from previous question
-  hideFeedback()
+  hideVocabularyFeedback()
+
+  // Update question and word
+
+  if (els.wordText()) {
+    els.wordText().textContent = word.german || word.text || word.turkish || ''
+  }
+
+  // Generate and render options with dynamic count (2-4)
+  const options = generateVocabularyOptions(word, allWords, 3)
+  renderVocabularyOptions(options, word, onAnswerCallback)
+}
+
+/** UPDATED: Main render function with exercise type routing */
+function renderExerciseCard(
+  {
+    exerciseType,
+    streakTarget,
+    currentWord: word,
+    currentIndex,
+    lastIndex,
+    allWords,
+    score,
+  },
+  onAnswerCallback
+) {
+  if (!word || !allWords) return
 
   if (els.currentIndexLabel()) {
     els.currentIndexLabel().textContent = `${currentIndex}`
@@ -175,18 +206,37 @@ function renderExerciseCard(
     els.lastIndexLabel().textContent = `${lastIndex}`
   }
 
-  // Update question and word
   if (els.wordType()) {
     els.wordType().textContent = word.type || ''
   }
 
-  if (els.wordText()) {
-    els.wordText().textContent = word.german || word.text || word.turkish || ''
+  // Route to appropriate renderer based on exercise type
+  if (exerciseType === ExerciseType.VOCABULARY) {
+    // Default to vocabulary exercise
+    mountVocabularyExerciseCard(
+      {
+        streakTarget,
+        currentWord: word,
+        currentIndex,
+        lastIndex,
+        allWords,
+        score,
+      },
+      onAnswerCallback
+    )
+  } else if (exerciseType === ExerciseType.GRAMMAR) {
+    mountGrammarExerciseCard(
+      {
+        streakTarget,
+        currentWord: word,
+        currentIndex,
+        lastIndex,
+        allWords,
+        score,
+      },
+      onAnswerCallback
+    )
   }
-
-  // Generate and render options with dynamic count (2-4)
-  const options = generateOptions(word, allWords, 3)
-  renderOptions(options, word, onAnswerCallback)
 
   renderStreakProgression(word, streakTarget)
 

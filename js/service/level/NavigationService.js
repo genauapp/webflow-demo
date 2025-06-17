@@ -1,4 +1,4 @@
-import { NavigationMode } from '../../constants/props.js'
+import { ExerciseType, NavigationMode } from '../../constants/props.js'
 import ListUtils from '../../utils/ListUtils.js'
 
 class NavigationService {
@@ -278,6 +278,7 @@ class NavigationService {
         const shuffledExerciseList = ListUtils.shuffleArray([...items])
 
         const initialExerciseProgression = {
+          type: ExerciseType.VOCABULARY,
           isCompleted: false,
           currentIndex: 0,
           lastIndex: shuffledExerciseList.length - 1,
@@ -336,6 +337,7 @@ class NavigationService {
         session.progression[NavigationMode.EXERCISE]
 
       session.callbacks.onExerciseUpdate({
+        exerciseType: exerciseProgressionState.exerciseType,
         streakTarget: session.streakTarget,
         currentWord: this._getCurrentItem(session),
         currentIndex: exerciseProgressionState.currentIndex + 1, // visual index starts from 1

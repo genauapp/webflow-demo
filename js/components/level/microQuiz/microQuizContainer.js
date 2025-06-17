@@ -1,5 +1,5 @@
-import { initLearn } from './learn.js'
-import { initExercise } from './exercise.js'
+import { initLearn } from './shared/learn.js'
+import { initExercise } from './shared/exercise.js'
 import { navigationService } from '../../../service/level/NavigationService.js'
 import { protectedApiService } from '../../../service/apiService.js'
 import { NavigationMode } from '../../../constants/props.js'
@@ -56,9 +56,10 @@ function resetElements() {
   els = {}
 }
 
-function initState() {
+function initState(exerciseType) {
   state = {
     ...DEFAULT_STATE,
+    exerciseType,
   }
 }
 
@@ -204,6 +205,7 @@ async function fetchWords() {
 function initializeNavigationService() {
   const SESSION_OPTIONS = {
     mode: NavigationMode.LEARN,
+    exerciseType: state.exerciseType,
     streakTarget: state.streakTarget,
     onUpdate: (sessionState) => {
       updateTabStates(sessionState)
@@ -287,11 +289,11 @@ function resetEventListeners() {
  * Mount: set up everything once and show container
  * Prevents double-init via state.mounted
  */
-export async function mountMicroQuiz() {
+export async function mountMicroQuiz(exerciseType) {
   if (state && state.mounted) return
 
   // First Step: initialize state
-  initState()
+  initState(exerciseType)
 
   state.mounted = true
   // state.streakTarget = streakTarget >= 1 && streakTarget <= 5 ? streakTarget : 3

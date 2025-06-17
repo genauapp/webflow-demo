@@ -1,6 +1,6 @@
-import { PrepositionCaseColorMap } from "../../../constants/props.js"
+// /components/microQuiz/shared/learn.js
+import { PrepositionCaseColorMap } from '../../../../constants/props.js'
 
-// /components/microQuiz/learn.js
 let els = {}
 
 /** Initialize elements for learn component */
@@ -18,7 +18,7 @@ function initElements() {
     wordTranslation: () =>
       document.getElementById('learn-word-card-translation'),
     wordExample: () => document.getElementById('learn-word-card-example'),
-    wordRule: () => document.getElementById('learn-word-card-rule')
+    wordRule: () => document.getElementById('learn-word-card-rule'),
   }
 }
 
