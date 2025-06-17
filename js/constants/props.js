@@ -20,6 +20,13 @@ export const ArtikelColorMap = {
   das: 'green',
   default: 'black',
 }
+export const PrepositionCaseColorMap = {
+  nominative: '#000000',
+  accusative: '#E94DEC',
+  dative: '#7ACC20',
+  genitive: '#A259FF',
+  dual: '#F9731F'
+}
 export const ALL_VERB_CASES = ['reflexive', 'separable', 'accusative', 'dative']
 
 export const WordSource = {

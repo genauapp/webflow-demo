@@ -1,3 +1,5 @@
+import { PrepositionCaseColorMap } from "../../../constants/props"
+
 // /components/microQuiz/learn.js
 let els = {}
 
@@ -16,6 +18,7 @@ function initElements() {
     wordTranslation: () =>
       document.getElementById('learn-word-card-translation'),
     wordExample: () => document.getElementById('learn-word-card-example'),
+    wordRule: () => document.getElementById('learn-word-card-rule')
   }
 }
 
@@ -29,11 +32,14 @@ function renderLearnCard({ currentWord: word, currentIndex, lastIndex }) {
 
   // els.wordLevel().textContent = word.level || ''
   els.wordType().textContent = word.type || ''
-  els.wordText().textContent = word.word || ''
+  els.wordText().textContent = word.german || ''
+  els.wordText().style.color = PrepositionCaseColorMap[word.case]
   els.wordTranslation().textContent = word.english || ''
 
   els.wordExample().textContent = word.example || ''
   els.wordExample().style.display = word.example ? 'block' : 'none'
+
+  els.wordRule().textContent = word.rule || ''
 
   // // Show the card
   // if (els.wordCard()) {
