@@ -1,4 +1,8 @@
 // /components/microQuiz/exercise/grammarExerciseCard.js
+import {
+  ExerciseType,
+  ExerciseTypeSettingsMap,
+} from '../../../../constants/props.js'
 import ListUtils from '../../../../utils/ListUtils.js'
 
 let els = {}
@@ -50,7 +54,7 @@ function parseSentence(sentence, germanWord) {
 }
 
 /** NEW: Generate options for grammar exercise */
-function generateGrammarOptions(correctWord, allWords, optionsCount = 3) {
+function generateGrammarOptions(correctWord, allWords, optionsCount) {
   const options = [correctWord]
   const otherWords = allWords.filter((w) => w.german !== correctWord.german)
 
@@ -164,6 +168,7 @@ function hideGrammarFeedback() {
 /** NEW: Render grammar exercise card */
 function renderGrammarExerciseCard(
   { currentWord: word, currentIndex, lastIndex, allWords, score },
+  optionsCount,
   onAnswerCallback
 ) {
   if (!word || !allWords) return
@@ -212,7 +217,7 @@ function renderGrammarExerciseCard(
   }
 
   // Generate options from German words
-  const options = generateGrammarOptions(word, allWords, 3)
+  const options = generateGrammarOptions(word, allWords, optionsCount)
   renderGrammarOptions(options, word, onAnswerCallback)
 }
 
@@ -220,5 +225,8 @@ export function mountGrammarExerciseCard(exerciseState, onAnswerCallback) {
   // Initialize elements
   initElements()
 
-  renderGrammarExerciseCard(exerciseState, onAnswerCallback)
+  const optionsCount =
+    ExerciseTypeSettingsMap[ExerciseType.GRAMMAR].optionsCount
+
+  renderGrammarExerciseCard(exerciseState, optionsCount, onAnswerCallback)
 }

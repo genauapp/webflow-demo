@@ -8,7 +8,7 @@ import {
   IS_ON_LEARN_KEY,
   WORD_LIST_EXERCISE_KEY,
 } from '../../constants/storageKeys.js'
-import { categories } from '../../constants/props.js'
+import { categories, ExerciseType } from '../../constants/props.js'
 import { loadAndShowWords } from '../../pages/level.js'
 import LevelManager from '../LevelManager.js'
 import {
@@ -202,7 +202,7 @@ export function loadDeckPropsOnLevelPage() {
           document.getElementById('content-container').style.display = 'none'
 
           // show preposition learn/exercise
-          await mountMicroQuiz()
+          await mountMicroQuiz(ExerciseType.GRAMMAR)
           // focus user Learn/Exercise area
           window.location.hash = '#action-content'
           return

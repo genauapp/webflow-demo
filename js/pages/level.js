@@ -16,7 +16,7 @@ import {
 import { ASSETS_BASE_URL } from '../constants/urls.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
 import ListUtils from '../utils/ListUtils.js'
-import { categories, types } from '../constants/props.js'
+import { categories, ExerciseType, types } from '../constants/props.js'
 import {
   removeFavorite,
   addToFavorites,
@@ -34,7 +34,10 @@ import {
   loadDeckPropsOnLevelPage,
 } from '../utils/home/UIUtils.js'
 import LevelManager from '../utils/LevelManager.js'
-import { mountMicroQuiz, unmountMicroQuiz } from '../components/level/microQuiz/microQuizContainer.js'
+import {
+  mountMicroQuiz,
+  unmountMicroQuiz,
+} from '../components/level/microQuiz/microQuizContainer.js'
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', async () => {
@@ -86,14 +89,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (LevelManager.checkIfCategoryIsInCategories(currentCategory)) {
       hideSelectCategoryMessage()
       organizeSelectedDeckImage()
-      if (categories[currentLevel].some(cat => cat.nameShort === currentCategory && cat.type === 'micro-quiz')) {
+      if (
+        categories[currentLevel].some(
+          (cat) =>
+            cat.nameShort === currentCategory && cat.type === 'micro-quiz'
+        )
+      ) {
         // hide regular learn/exercise elements
         document.getElementById('content-container').style.display = 'none'
         // show preposition learn/exercise
-        await mountMicroQuiz()
-      }
-
-      else if (categories[currentLevel].some(cat => cat.nameShort === currentCategory && cat.type === 'regular')) {
+        await mountMicroQuiz(ExerciseType.GRAMMAR)
+      } else if (
+        categories[currentLevel].some(
+          (cat) => cat.nameShort === currentCategory && cat.type === 'regular'
+        )
+      ) {
         // hide preposition learn/exercise
         unmountMicroQuiz()
         await loadAndShowWords()
@@ -112,7 +122,9 @@ types.forEach((type) => {
   document
     .getElementById(`${type}Tab-learn`)
     .addEventListener('click', async () => {
-      document.getElementById(`${type}Tab-exercise`).classList.remove('w--current')
+      document
+        .getElementById(`${type}Tab-exercise`)
+        .classList.remove('w--current')
       document.getElementById(`${type}Tab-learn`).classList.remove('w--current')
       document.getElementById(`${type}Tab-learn`).classList.add('w--current')
       LocalStorageManager.save(IS_ON_LEARN_KEY, 'learn')
@@ -122,7 +134,9 @@ types.forEach((type) => {
     .getElementById(`${type}Tab-exercise`)
     .addEventListener('click', async () => {
       document.getElementById(`${type}Tab-learn`).classList.remove('w--current')
-      document.getElementById(`${type}Tab-exercise`).classList.remove('w--current')
+      document
+        .getElementById(`${type}Tab-exercise`)
+        .classList.remove('w--current')
       document.getElementById(`${type}Tab-exercise`).classList.add('w--current')
       LocalStorageManager.save(IS_ON_LEARN_KEY, 'exercise')
       await loadAndShowWords()
