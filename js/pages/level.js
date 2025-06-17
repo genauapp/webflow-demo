@@ -85,15 +85,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (LevelManager.checkIfCategoryIsInCategories(currentCategory)) {
       hideSelectCategoryMessage()
       organizeSelectedDeckImage()
-      if (categories[currentCategory].type &&categories[currentCategory].type === 'micro-quiz') {
+      if (categories[currentLevel].some(cat => cat.nameShort === currentCategory && cat.type === 'micro-quiz')) {
 
         // show preposition learn/exercise
         await mountMicroQuiz()
-        return
       }
-      if (categories[currentCategory].type && categories[currentCategory].type === 'regular') {
+
+      else if (categories[currentLevel].some(cat => cat.nameShort === currentCategory && cat.type === 'regular')) {
         await loadAndShowWords()
-        return
       }
     }
   }
