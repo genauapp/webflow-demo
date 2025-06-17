@@ -36,8 +36,8 @@ function renderLearnCard({ currentWord: word, currentIndex, lastIndex }) {
   els.wordText().style.color = PrepositionCaseColorMap[word.case]
   els.wordTranslation().textContent = word.english || ''
 
-  els.wordExample().textContent = word.example || ''
-  els.wordExample().style.display = word.example ? 'block' : 'none'
+  // els.wordExample().textContent = word.example || '' // disable when exercise type is grammar?? 
+  // els.wordExample().style.display = word.example ? 'block' : 'none'
 
   els.wordRule().textContent = word.rule || ''
 
