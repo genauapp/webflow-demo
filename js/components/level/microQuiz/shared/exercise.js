@@ -1,10 +1,9 @@
-import { ExerciseType } from '../../../../constants/props'
+// /components/microQuiz/shared/exercise.js
+import { ExerciseType } from '../../../../constants/props.js'
 import {
   mountGrammarExerciseCard,
-  renderGrammarExerciseCard,
-} from '../exercise/grammarExerciseCard'
+} from '../exercise/grammarExerciseCard.js'
 
-// /components/microQuiz/shared/exercise.js
 let els = {}
 
 /** Initialize elements for exercise component */
