@@ -22,7 +22,7 @@ function initElements() {
     feedbackContainer: () =>
       document.getElementById('exercise-feedback-container'),
     feedbackText: () => document.getElementById('exercise-feedback-text'),
-    correctAnswer: () => document.getElementById('exercise-correct-answer'),
+    // correctAnswer: () => document.getElementById('exercise-correct-answer'),
 
     // Progress elements
     //    progressText: () => document.getElementById('exercise-progress-text'),
@@ -185,7 +185,7 @@ function renderExerciseCard(
   }
 
   // Generate and render options with dynamic count (2-4)
-  const options = generateOptions(word, allWords)
+  const options = generateOptions(word, allWords, 3)
   renderOptions(options, word, onAnswerCallback)
 
   renderStreakProgression(word, streakTarget)
