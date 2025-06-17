@@ -1,152 +1,92 @@
 [
   {
-    "german": "in",
-    "english": "in, into",
-    "level": "A1",
-    "example": "Ich bin in der Schule.",
-    "word": "in",
-    "type": "preposition",
-    "category": "location",
-    "id": "preposition_location_01"
-  },
-  {
-    "german": "auf",
-    "english": "on, upon",
-    "level": "A1",
-    "example": "Das Buch liegt auf dem Tisch.",
-    "word": "auf",
-    "type": "preposition",
-    "category": "location",
-    "id": "preposition_location_02"
-  },
-  {
-    "german": "unter",
-    "english": "under",
-    "level": "A1",
-    "example": "Die Katze ist unter dem Tisch.",
-    "word": "unter",
-    "type": "preposition",
-    "category": "location",
-    "id": "preposition_location_03"
-  },
-  {
-    "german": "neben",
-    "english": "next to",
-    "level": "A1",
-    "example": "Er sitzt neben mir.",
-    "word": "neben",
-    "type": "preposition",
-    "category": "location",
-    "id": "preposition_location_04"
-  },
-  {
-    "german": "vor",
-    "english": "in front of",
-    "level": "A1",
-    "example": "Das Auto steht vor dem Haus.",
-    "word": "vor",
-    "type": "preposition",
-    "category": "location",
-    "id": "preposition_location_05"
-  },
-  {
-    "german": "hinter",
-    "english": "behind",
-    "level": "A1",
-    "example": "Der Garten ist hinter dem Haus.",
-    "word": "hinter",
-    "type": "preposition",
-    "category": "location",
-    "id": "preposition_location_06"
-  },
-  {
-    "german": "zwischen",
-    "english": "between",
-    "level": "A1",
-    "example": "Der Bahnhof ist zwischen der Bank und der Post.",
-    "word": "zwischen",
-    "type": "preposition",
-    "category": "location",
-    "id": "preposition_location_07"
-  },
-  {
-    "german": "bei",
-    "english": "at, near",
-    "level": "A1",
-    "example": "Ich wohne bei meinen Eltern.",
-    "word": "bei",
-    "type": "preposition",
-    "category": "location",
-    "id": "preposition_location_08"
-  },
-  {
+    "id": "prep_a1_01",
     "german": "mit",
     "english": "with",
     "level": "A1",
     "example": "Ich fahre mit dem Bus.",
-    "word": "mit",
     "type": "preposition",
-    "category": "accompaniment",
-    "id": "preposition_accompaniment_01"
+    "rule": "Takes dative: der → dem, das → dem, die → der",
+    "case": "dative"
   },
   {
+    "id": "prep_a1_02",
+    "german": "durch",
+    "english": "through",
+    "level": "A1",
+    "example": "Wir gehen durch den Park.",
+    "type": "preposition",
+    "rule": "Takes accusative: der → den, das → das, die → die",
+    "case": "accusative"
+  },
+  {
+    "id": "prep_a1_03",
     "german": "zu",
     "english": "to",
     "level": "A1",
-    "example": "Ich gehe zu meiner Freundin.",
-    "word": "zu",
+    "example": "Ich gehe zu dem Supermarkt.",
     "type": "preposition",
-    "category": "direction",
-    "id": "preposition_direction_01"
+    "rule": "Takes dative: der → dem, das → dem, die → der",
+    "case": "dative"
   },
   {
-    "german": "aus",
-    "english": "from, out of",
+    "id": "prep_a1_04",
+    "german": "ohne",
+    "english": "without",
     "level": "A1",
-    "example": "Ich komme aus Deutschland.",
-    "word": "aus",
+    "example": "Ich gehe ohne meinen Freund.",
     "type": "preposition",
-    "category": "origin",
-    "id": "preposition_origin_01"
+    "rule": "Takes accusative: der → den, das → das, die → die",
+    "case": "accusative"
   },
   {
-    "german": "nach",
-    "english": "to, after",
-    "level": "A1",
-    "example": "Ich fahre nach Berlin.",
-    "word": "nach",
-    "type": "preposition",
-    "category": "direction",
-    "id": "preposition_direction_02"
-  },
-  {
+    "id": "prep_a1_05",
     "german": "von",
-    "english": "from, of",
+    "english": "from/of",
     "level": "A1",
-    "example": "Das Buch ist von meinem Bruder.",
-    "word": "von",
+    "example": "Das Geschenk ist von meiner Mutter.",
     "type": "preposition",
-    "category": "origin",
-    "id": "preposition_origin_02"
+    "rule": "Takes dative: der → dem, das → dem, die → der",
+    "case": "dative"
   },
   {
+    "id": "prep_a1_06",
     "german": "für",
     "english": "for",
     "level": "A1",
     "example": "Das Geschenk ist für dich.",
-    "word": "für",
     "type": "preposition",
-    "category": "purpose",
-    "id": "preposition_purpose_01"
+    "rule": "Takes accusative: der → den, das → das, die → die",
+    "case": "accusative"
   },
   {
+    "id": "prep_a1_07",
+    "german": "vor",
+    "english": "in front of",
+    "level": "A1",
+    "example": "Das Auto steht vor dem Haus.",
+    "type": "preposition",
+    "rule": "Dual: Takes accusative for motion, dative for location",
+    "case": "dual"
+  },
+  {
+    "id": "prep_a1_08",
+    "german": "unter",
+    "english": "under",
+    "level": "A1",
+    "example": "Die Katze schläft unter dem Bett.",
+    "type": "preposition",
+    "rule": "Dual: Takes accusative for motion, dative for location",
+    "case": "dual"
+  },
+  {
+    "id": "prep_a1_09",
     "german": "an",
-    "english": "at, on",
+    "english": "on/at (vertical surface)",
     "level": "A1",
     "example": "Das Bild hängt an der Wand.",
-    "word": "an",
     "type": "preposition",
-    "category": "location",
-    "id": "preposition_location_09"
+    "rule": "Dual: Takes accusative for motion, dative for location",
+    "case": "dual"
   }
 ]
