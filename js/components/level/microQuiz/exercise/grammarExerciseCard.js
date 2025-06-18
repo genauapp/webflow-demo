@@ -10,23 +10,10 @@ let els = {}
 /** Initialize elements for exercise component */
 function initElements() {
   els = {
-    // Exercise card elements
-    exerciseCard: () =>
-      document.getElementById('micro-quiz-exercise-word-card'),
-    currentIndexLabel: () =>
-      document.getElementById('exercise-word-card-index-current'),
-    lastIndexLabel: () =>
-      document.getElementById('exercise-word-card-index-last'),
-    wordType: () => document.getElementById('exercise-word-card-type'),
-    wordText: () => document.getElementById('exercise-word-card-text'),
-
     grammarSentenceContainer: () =>
       document.getElementById('exercise-grammar-sentence-container'),
-    grammarSentenceBefore: () =>
-      document.getElementById('exercise-grammar-sentence-before'),
+    grammarSentence: () => document.getElementById('exercise-grammar-sentence'),
     grammarBlank: () => document.getElementById('exercise-grammar-blank'),
-    grammarSentenceAfter: () =>
-      document.getElementById('exercise-grammar-sentence-after'),
 
     // Options
     optionsContainer: () =>
@@ -98,8 +85,9 @@ function renderGrammarOptions(options, correctWord, onAnswerCallback) {
 
       // Fill the blank with selected answer
       if (els.grammarBlank()) {
-        els.grammarBlank().innerText = option.german || option.text || ''
-        els.grammarBlank().className = isCorrect
+        const blank = els.grammarBlank()
+        blank.textContent = option.german || option.text || ''
+        blank.className = isCorrect
           ? 'grammar-blank correct'
           : 'grammar-blank incorrect'
       }
@@ -162,9 +150,10 @@ function hideGrammarFeedback() {
   }
 
   // Reset blank for next question
-  if (els.grammarBlank()) {
-    els.grammarBlank().innerText = '______'
-    els.grammarBlank().className = 'grammar-blank'
+  const blank = els.grammarBlank()
+  if (blank) {
+    blank.textContent = '______'
+    blank.className = 'grammar-blank'
   }
 }
 
@@ -206,18 +195,11 @@ function renderGrammarExerciseCard(
     els.grammarSentenceContainer().style.display = 'flex'
   }
 
-  if (els.grammarSentenceBefore()) {
-    els.grammarSentenceBefore().textContent = before
-  }
-
-  if (els.grammarBlank()) {
-    els.grammarBlank().innerText = '______'
-    els.grammarBlank().className = 'grammar-blank'
-  }
-
-  if (els.grammarSentenceAfter()) {
-    els.grammarSentenceAfter().textContent = after
-  }
+  const sentenceEl = els.grammarSentence()
+  sentenceEl.style.display = 'flex'
+  // generate span in here
+  const blankElStr = `<span id="exercise-grammar-blank" class="exercise-grammar-sentence grammar-blank">______</span>`
+  sentenceEl.innerHTML = `${before} ${blankElStr} ${after}`
 
   // Generate options from German words
   const options = generateGrammarOptions(word, allWords, optionsCount)
