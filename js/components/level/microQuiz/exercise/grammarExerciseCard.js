@@ -135,10 +135,12 @@ function showGrammarFeedback(isCorrect, correctWord, selectedWord) {
   feedbackContainer.style.display = 'block'
 
   if (feedbackText) {
-    feedbackText.textContent = isCorrect ? 'Correct!' : 'Incorrect!'
-    feedbackText.className = isCorrect
+    feedbackContainer.className = isCorrect
       ? 'feedback-correct'
       : 'feedback-incorrect'
+    feedbackText.textContent = isCorrect
+      ? 'Correct! 🎉'
+      : `✨ No worries! ${correctWord.rule || ''}`
   }
 
   if (correctAnswerEl && !isCorrect) {
