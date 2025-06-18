@@ -98,7 +98,7 @@ function renderGrammarOptions(options, correctWord, onAnswerCallback) {
 
       // Fill the blank with selected answer
       if (els.grammarBlank()) {
-        els.grammarBlank().textContent = option.german || option.text || ''
+        els.grammarBlank().innerText = option.german || option.text || ''
         els.grammarBlank().className = isCorrect
           ? 'grammar-blank correct'
           : 'grammar-blank incorrect'
@@ -163,7 +163,7 @@ function hideGrammarFeedback() {
 
   // Reset blank for next question
   if (els.grammarBlank()) {
-    els.grammarBlank().textContent = '______'
+    els.grammarBlank().innerText = '______'
     els.grammarBlank().className = 'grammar-blank'
   }
 }
@@ -211,7 +211,7 @@ function renderGrammarExerciseCard(
   }
 
   if (els.grammarBlank()) {
-    els.grammarBlank().textContent = '______'
+    els.grammarBlank().innerText = '______'
     els.grammarBlank().className = 'grammar-blank'
   }
 
