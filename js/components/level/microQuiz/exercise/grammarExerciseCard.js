@@ -87,9 +87,16 @@ function renderGrammarOptions(options, correctWord, onAnswerCallback) {
       if (els.grammarBlank()) {
         const blank = els.grammarBlank()
         blank.textContent = option.german || option.text || ''
-        blank.className = isCorrect
-          ? 'grammar-blank correct'
-          : 'grammar-blank incorrect'
+        blank.classList.remove(
+          'exercise-grammar-blank-correct',
+          'exercise-grammar-blank-incorrect'
+        )
+
+        blank.classList.add(
+          isCorrect
+            ? 'exercise-grammar-blank-correct'
+            : 'exercise-grammar-blank-incorrect'
+        )
       }
 
       // Show immediate feedback
