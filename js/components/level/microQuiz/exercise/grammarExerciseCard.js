@@ -152,7 +152,7 @@ function hideGrammarFeedback() {
   // Reset blank for next question
   const blank = els.grammarBlank()
   if (blank) {
-    blank.textContent = '______'
+    blank.textContent = ' ______ '
     blank.className = 'grammar-blank'
   }
 }
@@ -198,7 +198,7 @@ function renderGrammarExerciseCard(
   const sentenceEl = els.grammarSentence()
   sentenceEl.style.display = 'flex'
   // generate span in here
-  const blankElStr = `<span id="exercise-grammar-blank" class="exercise-grammar-sentence grammar-blank">______</span>`
+  const blankElStr = `<span id="exercise-grammar-blank" class="exercise-grammar-sentence grammar-blank"> ______ </span>`
   sentenceEl.innerHTML = `${before} ${blankElStr} ${after}`
 
   // Generate options from German words
