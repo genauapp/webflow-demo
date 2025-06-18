@@ -133,11 +133,12 @@ function showGrammarFeedback(isCorrect, correctWord, selectedWord) {
   if (!feedbackContainer) return
 
   feedbackContainer.style.display = 'block'
+  feedbackContainer.classList.remove('feedback-correct', 'feedback-incorrect')
 
-  if (feedbackText) {
-    feedbackContainer.className = isCorrect
-      ? 'feedback-correct'
-      : 'feedback-incorrect'
+  if (feedbackContainer && feedbackText) {
+    feedbackContainer.classList.add(
+      isCorrect ? 'feedback-correct' : 'feedback-incorrect'
+    )
     feedbackText.textContent = isCorrect
       ? 'Correct! 🎉'
       : `✨ No worries! ${correctWord.rule || ''}`
