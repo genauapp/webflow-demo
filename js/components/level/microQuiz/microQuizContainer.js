@@ -2,7 +2,7 @@ import { initLearn } from './shared/learn.js'
 import { initExercise } from './shared/exercise.js'
 import { navigationService } from '../../../service/level/NavigationService.js'
 import { protectedApiService } from '../../../service/apiService.js'
-import { NavigationMode } from '../../../constants/props.js'
+import { NavigationMode, PackType } from '../../../constants/props.js'
 import { initStreakSettings } from './shared/streakSettings.js'
 
 const DEFAULT_STATE = Object.freeze({
@@ -176,13 +176,18 @@ function enhanceWordsWithProperties(words) {
 }
 
 /** Fetch words from API service */
-async function fetchWords() {
+async function fetchWords(packId, packLevel, exerciseType) {
   try {
     state.loading = true
     state.error = null
     render()
 
-    const { data: words, error } = await protectedApiService.getPackWords()
+    const { data: words, error } = await protectedApiService.getPackWords(
+      packId,
+      packLevel,
+      PackType.MICRO_QUIZ,
+      exerciseType
+    )
 
     if (error) {
       state.error = error
@@ -289,7 +294,7 @@ function resetEventListeners() {
  * Mount: set up everything once and show container
  * Prevents double-init via state.mounted
  */
-export async function mountMicroQuiz(exerciseType) {
+export async function mountMicroQuiz(packId, packLevel, exerciseType) {
   if (state && state.mounted) return
 
   // First Step: initialize state
@@ -306,7 +311,7 @@ export async function mountMicroQuiz(exerciseType) {
   els.container().style.display = 'block'
 
   // Fetch words, initialize navigation service and render
-  await fetchWords()
+  await fetchWords(packId, packLevel, state.exerciseType)
 }
 
 /**
