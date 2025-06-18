@@ -337,12 +337,13 @@ class NavigationService {
         currentWord: this._getCurrentItem(session),
         currentIndex: exerciseProgressionState.currentIndex + 1, // visual index starts from 1
         lastIndex: exerciseProgressionState.lastIndex + 1, // visual index ends at n + 1
-        // Simplified: just show remaining words without complex filtering
-        allWords: exerciseProgressionState.activeOrder.filter(
-          (word) =>
-            !word.isCorrectlyAnswered &&
-            (word.streak || 0) < session.streakTarget
-        ),
+        // // Simplified: just show remaining words without complex filtering
+        // allWords: exerciseProgressionState.activeOrder.filter(
+        //   (word) =>
+        //     !word.isCorrectlyAnswered &&
+        //     (word.streak || 0) < session.streakTarget
+        // ),
+        allWords: session.originalItems,
         score: exerciseProgressionState.score,
       })
     }
