@@ -8,7 +8,7 @@ import {
   IS_ON_LEARN_KEY,
   WORD_LIST_EXERCISE_KEY,
 } from '../../constants/storageKeys.js'
-import { categories, ExerciseType } from '../../constants/props.js'
+import { categories } from '../../constants/props.js'
 import { loadAndShowWords } from '../../pages/level.js'
 import LevelManager from '../LevelManager.js'
 import {
@@ -201,8 +201,21 @@ export function loadDeckPropsOnLevelPage() {
           // hide regular learn/exercise
           document.getElementById('content-container').style.display = 'none'
 
-          // show preposition learn/exercise
-          await mountMicroQuiz(ExerciseType.GRAMMAR)
+          // show micro-quiz learn/exercise
+          // 1. grab the first matching category
+          const firstQuiz = categories[currentLevel].find(
+            (cat) => cat.type === PackType.MICRO_QUIZ
+          )
+
+          // 2. if one exists, mount it once
+          if (firstQuiz) {
+            await mountMicroQuiz(
+              firstQuiz.id,
+              firstQuiz.level,
+              firstQuiz.exerciseType
+            )
+          }
+
           // focus user Learn/Exercise area
           window.location.hash = '#action-content'
           return

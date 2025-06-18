@@ -16,7 +16,12 @@ import {
 import { ASSETS_BASE_URL } from '../constants/urls.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
 import ListUtils from '../utils/ListUtils.js'
-import { categories, ExerciseType, types } from '../constants/props.js'
+import {
+  categories,
+  ExerciseType,
+  PackType,
+  types,
+} from '../constants/props.js'
 import {
   removeFavorite,
   addToFavorites,
@@ -92,16 +97,31 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (
         categories[currentLevel].some(
           (cat) =>
-            cat.nameShort === currentCategory && cat.type === 'micro-quiz'
+            cat.nameShort === currentCategory &&
+            cat.type === PackType.MICRO_QUIZ
         )
       ) {
         // hide regular learn/exercise elements
         document.getElementById('content-container').style.display = 'none'
-        // show preposition learn/exercise
-        await mountMicroQuiz(ExerciseType.GRAMMAR)
+
+        // show micro-quiz learn/exercise
+        // 1. grab the first matching category
+        const firstQuiz = categories[currentLevel].find(
+          (cat) => cat.type === PackType.MICRO_QUIZ
+        )
+
+        // 2. if one exists, mount it once
+        if (firstQuiz) {
+          await mountMicroQuiz(
+            firstQuiz.id,
+            firstQuiz.level,
+            firstQuiz.exerciseType
+          )
+        }
       } else if (
         categories[currentLevel].some(
-          (cat) => cat.nameShort === currentCategory && cat.type === 'regular'
+          (cat) =>
+            cat.nameShort === currentCategory && cat.type === PackType.REGULAR
         )
       ) {
         // hide preposition learn/exercise

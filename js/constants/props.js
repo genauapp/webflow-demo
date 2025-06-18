@@ -90,7 +90,9 @@ export const categories = {
     },
     {
       id: 'preposition-001', // same as file name!
+      level: 'a1',
       type: PackType.MICRO_QUIZ,
+      exerciseType: ExerciseType.GRAMMAR,
       nameShort: 'preposition',
       name: 'Prepositions Micro Quiz',
       nameEng: 'Micro Quiz - Prepositions',
