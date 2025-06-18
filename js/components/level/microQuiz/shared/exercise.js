@@ -1,5 +1,6 @@
 // /components/microQuiz/shared/exercise.js
 import { ExerciseType } from '../../../../constants/props.js'
+import { DURATION_FEEDBACK_MS } from '../../../../constants/timeout.js'
 import {
   mountGrammarExerciseCard,
 } from '../exercise/grammarExerciseCard.js'
@@ -106,7 +107,7 @@ function renderVocabularyOptions(options, correctWord, onAnswerCallback) {
       setTimeout(() => {
         onAnswerCallback(isCorrect)
         hideVocabularyFeedback()
-      }, 1500)
+      }, DURATION_FEEDBACK_MS)
     })
 
     container.appendChild(button)

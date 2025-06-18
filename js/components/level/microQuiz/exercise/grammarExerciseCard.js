@@ -3,6 +3,7 @@ import {
   ExerciseType,
   ExerciseTypeSettingsMap,
 } from '../../../../constants/props.js'
+import { DURATION_FEEDBACK_MS } from '../../../../constants/timeout.js'
 import ListUtils from '../../../../utils/ListUtils.js'
 
 let els = {}
@@ -117,7 +118,7 @@ function renderGrammarOptions(options, correctWord, onAnswerCallback) {
       setTimeout(() => {
         onAnswerCallback(isCorrect)
         hideGrammarFeedback()
-      }, 1500)
+      }, DURATION_FEEDBACK_MS)
     })
 
     container.appendChild(button)

@@ -13,6 +13,7 @@ import {
 import CollectionsManager from '../../utils/CollectionsManager.js'
 import eventService from '../../service/events/EventService.js'
 import { AuthEvent } from '../../constants/events.js'
+import { DURATION_FEEDBACK_MS } from '../../constants/timeout.js'
 
 let els = {}
 let currentWordResults = []
@@ -285,7 +286,7 @@ async function handleAddToBookmarks(e) {
       btn.style.pointerEvents = 'auto'
       btn.style.opacity = '1'
       requiresSigninLabel.style.display = 'none'
-    }, 3000)
+    }, DURATION_FEEDBACK_MS)
     return
   }
 
