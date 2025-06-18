@@ -1,3 +1,5 @@
+// /components/microQuiz/exercise/vocabularyExerciseCard.js
+
 import {
   ExerciseType,
   ExerciseTypeSettingsMap,

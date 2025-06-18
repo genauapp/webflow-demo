@@ -1,6 +1,5 @@
 // /components/microQuiz/shared/exercise.js
 import { ExerciseType } from '../../../../constants/props.js'
-import { DURATION_FEEDBACK_MS } from '../../../../constants/timeout.js'
 import { mountGrammarExerciseCard } from '../exercise/grammarExerciseCard.js'
 import { mountVocabularyExerciseCard } from '../exercise/vocabularyExerciseCard.js'
 
