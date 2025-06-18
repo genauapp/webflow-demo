@@ -20,6 +20,7 @@ class NavigationService {
         onUpdate: options.onUpdate || (() => {}),
         onLearnUpdate: options.onLearnUpdate || (() => {}),
         onExerciseUpdate: options.onExerciseUpdate || (() => {}),
+        onStreakUpdate: options.onStreakUpdate || (() => {}),
       },
       progression: {
         learn: this._getInitialLearnProgression(items),
@@ -167,6 +168,8 @@ class NavigationService {
       currentWord.streak = (currentWord.streak || 0) + 1
       state.score.correct++
 
+      this._notifyStreakUpdate(session, currentWord)
+
       if (currentWord.streak >= session.streakTarget) {
         // SAME as learnNext: Mark as mastered and move to next
         currentWord.isCorrectlyAnswered = true
@@ -206,6 +209,8 @@ class NavigationService {
     } else {
       // Wrong answer: reset streak and apply learnRepeat logic
       currentWord.streak = 0
+      this._notifyStreakUpdate(session, currentWord)
+
       const wrong = state.wrongAnswerCountMap.get(currentWord) || 0
       state.wrongAnswerCountMap.set(currentWord, wrong + 1)
 
@@ -345,6 +350,16 @@ class NavigationService {
         // ),
         allWords: session.originalItems,
         score: exerciseProgressionState.score,
+      })
+    }
+  }
+
+  _notifyStreakUpdate(session, word) {
+    if (session.callbacks.onStreakUpdate) {
+      session.callbacks.onStreakUpdate({
+        word: word,
+        streak: word.streak,
+        streakTarget: session.streakTarget,
       })
     }
   }

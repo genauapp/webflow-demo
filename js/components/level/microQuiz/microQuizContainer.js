@@ -1,5 +1,5 @@
 import { initLearn } from './shared/learn.js'
-import { initExercise } from './shared/exercise.js'
+import { initExercise, renderStreakProgression } from './shared/exercise.js'
 import { navigationService } from '../../../service/level/NavigationService.js'
 import { protectedApiService } from '../../../service/apiService.js'
 import { NavigationMode, PackType } from '../../../constants/props.js'
@@ -227,6 +227,9 @@ function initializeNavigationService() {
           navigationService.exerciseAnswer(state.sessionId, isCorrect)
         )
       }
+    },
+    onStreakUpdate: (streakData) => {
+      renderStreakProgression(streakData.word, streakData.streakTarget)
     },
   }
 

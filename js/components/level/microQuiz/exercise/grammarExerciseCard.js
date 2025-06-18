@@ -185,22 +185,6 @@ function renderGrammarExerciseCard(
     word.german || ''
   )
 
-  // if (!found) {
-  //   // Fallback to regular vocabulary mode if parsing fails
-  //   renderVocabularyExerciseCard(
-  //     {
-  //       streakTarget,
-  //       currentWord: word,
-  //       currentIndex,
-  //       lastIndex,
-  //       allWords,
-  //       score,
-  //     },
-  //     onAnswerCallback
-  //   )
-  //   return
-  // }
-
   // Show grammar sentence elements
   if (els.grammarSentenceContainer()) {
     els.grammarSentenceContainer().style.display = 'flex'
