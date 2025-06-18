@@ -22,10 +22,10 @@ class NavigationService {
         onExerciseUpdate: options.onExerciseUpdate || (() => {}),
       },
       progression: {
-        learn: this._getInitialModeProgression(NavigationMode.LEARN, items),
-        exercise: this._getInitialModeProgression(
-          NavigationMode.EXERCISE,
-          items
+        learn: this._getInitialLearnProgression(items),
+        exercise: this._getInitialExerciseProgression(
+          items,
+          options.exerciseType
         ),
       },
     }
@@ -134,10 +134,8 @@ class NavigationService {
     })
 
     // Reinitialize learn state
-    session.progression[NavigationMode.LEARN] = this._getInitialModeProgression(
-      NavigationMode.LEARN,
-      session.originalItems
-    )
+    session.progression[NavigationMode.LEARN] =
+      this._getInitialLearnProgression(session.originalItems)
 
     this._notifyUpdate(session)
     return this._getCurrentItem(session)
@@ -261,38 +259,34 @@ class NavigationService {
   // }
 
   // PRIVATE METHODS
-  _getInitialModeProgression(mode, items) {
-    switch (mode) {
-      case NavigationMode.LEARN:
-        const shuffledLearnList = ListUtils.shuffleArray([...items])
+  _getInitialLearnProgression(items) {
+    const shuffledLearnList = ListUtils.shuffleArray([...items])
 
-        const initialLearnProgression = {
-          isCompleted: false,
-          currentIndex: 0,
-          lastIndex: shuffledLearnList.length - 1,
-          activeOrder: shuffledLearnList,
-          history: [],
-        }
-
-        return initialLearnProgression
-      case NavigationMode.EXERCISE:
-        const shuffledExerciseList = ListUtils.shuffleArray([...items])
-
-        const initialExerciseProgression = {
-          type: ExerciseType.VOCABULARY,
-          isCompleted: false,
-          currentIndex: 0,
-          lastIndex: shuffledExerciseList.length - 1,
-          activeOrder: shuffledExerciseList,
-          score: { correct: 0, total: 0 },
-          wrongAnswerCountMap: new Map(), // Map of word -> wrong answer count
-        }
-
-        return initialExerciseProgression
-      default:
-        console.warn('Unsupported Mode!')
-        break
+    const initialLearnProgression = {
+      isCompleted: false,
+      currentIndex: 0,
+      lastIndex: shuffledLearnList.length - 1,
+      activeOrder: shuffledLearnList,
+      history: [],
     }
+
+    return initialLearnProgression
+  }
+
+  _getInitialExerciseProgression(items, exerciseType) {
+    const shuffledExerciseList = ListUtils.shuffleArray([...items])
+
+    const initialExerciseProgression = {
+      exerciseType: exerciseType,
+      isCompleted: false,
+      currentIndex: 0,
+      lastIndex: shuffledExerciseList.length - 1,
+      activeOrder: shuffledExerciseList,
+      score: { correct: 0, total: 0 },
+      wrongAnswerCountMap: new Map(), // Map of word -> wrong answer count
+    }
+
+    return initialExerciseProgression
   }
 
   _getCurrentItem(session) {
