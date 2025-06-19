@@ -44,11 +44,8 @@ function initElements() {
       document.getElementById('micro-quiz-exercise-word-card'),
     exerciseResultContainer: () =>
       document.getElementById('micro-quiz-exercise-result-container'),
-    // exerciseCorrect: () => document.getElementById("tbd"),
-    // exerciseWrong: () => document.getElementById("tbd"),
-    // exerciseReset: () =>
-    //   document.getElementById('micro-quiz-exercise-reset-button'),
-    // streakSelector: () => document.getElementById("tbd"),
+    exerciseReset: () =>
+      document.getElementById('micro-quiz-exercise-reset-button'),
   }
 }
 
@@ -150,19 +147,17 @@ function updateTabStates(sessionState) {
 function updateNavigationButtons(sessionState) {
   const { currentItem, progression } = sessionState
 
+  // Learn buttons
   const isLearnCompleted = progression[NavigationMode.LEARN].isCompleted
 
-  // Learn buttons
   els.learnRepeat().disabled = isLearnCompleted
   els.learnNext().disabled = isLearnCompleted
   els.learnReset().style.display = isLearnCompleted ? 'block' : 'none'
 
-  // Exercise buttons - keeping your original commented code
-  // els.exerciseCorrect().disabled = !currentItem || activeListLength === 0
-  // els.exerciseWrong().disabled   = !currentItem || activeListLength === 0
+  // Exercise buttons
   const isExerciseCompleted = progression[NavigationMode.EXERCISE].isCompleted
-  // Exercise options are handled by the exercise component itself
-  // els.exerciseReset().style.display = isExerciseCompleted ? 'block' : 'none'
+  // option buttons are dynamically generated via service to sub-component
+  els.exerciseReset().style.display = isExerciseCompleted ? 'block' : 'none'
 }
 
 /** Enhance words with required properties */
@@ -258,14 +253,7 @@ const onExerciseTabClick = (e) => {
 const onLearnRepeat = () => navigationService.learnRepeat(state.sessionId)
 const onLearnNext = () => navigationService.learnNext(state.sessionId)
 const onLearnReset = () => navigationService.learnReset(state.sessionId)
-// const onExerciseCorrect = () =>
-//   navigationService.exerciseCorrect(state.sessionId)
-// const onExerciseWrong = () => navigationService.exerciseWrong(state.sessionId)
 const onExerciseReset = () => navigationService.exerciseReset(state.sessionId)
-// const onStreakChange = (newTarget) => {
-//   state.streakTarget = newTarget
-//   navigationService.updateStreakTarget(state.sessionId, newTarget)
-// }
 
 /** Initialize event listeners */
 function initEventListeners() {
@@ -274,14 +262,7 @@ function initEventListeners() {
   els.learnRepeat().addEventListener('click', onLearnRepeat)
   els.learnNext().addEventListener('click', onLearnNext)
   els.learnReset().addEventListener('click', onLearnReset)
-  // els.exerciseCorrect().addEventListener('click', onExerciseCorrect)
-  // els.exerciseWrong().addEventListener('click', onExerciseWrong)
-  // els.exerciseReset().addEventListener('click', onExerciseReset)
-  // const sel = els.streakSelector()
-  // if (sel) sel.addEventListener('change', e => {
-  //   const v = parseInt(e.target.value, 10)
-  //   if (v >= 1 && v <= 5) onStreakChange(v)
-  // })
+  els.exerciseReset().addEventListener('click', onExerciseReset)
 }
 
 function handleStreakTargetChange(selectedTarget) {
@@ -296,11 +277,7 @@ function resetEventListeners() {
   els.learnRepeat().removeEventListener('click', onLearnRepeat)
   els.learnNext().removeEventListener('click', onLearnNext)
   els.learnReset().removeEventListener('click', onLearnReset)
-  // els.exerciseCorrect().removeEventListener('click', onExerciseCorrect)
-  // els.exerciseWrong().removeEventListener('click', onExerciseWrong)
-  // els.exerciseReset().removeEventListener('click', onExerciseReset)
-  // const sel = els.streakSelector()
-  // if (sel) sel.removeEventListener('change', todoAnonymousMethod)
+  els.exerciseReset().removeEventListener('click', onExerciseReset)
 }
 
 /**

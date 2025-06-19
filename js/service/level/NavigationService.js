@@ -262,6 +262,31 @@ class NavigationService {
     )
   }
 
+  /**
+   * Reset exercise progression: wipe streaks, isCorrectlyAnswered flags,
+   * and re‑init the exercise state.
+   */
+  exerciseReset(sessionId) {
+    const session = this.sessions.get(sessionId)
+    if (!session) return null
+
+    // Reset per‑word exercise flags
+    session.originalItems.forEach((word) => {
+      word.streak = 0
+      word.isCorrectlyAnswered = false
+    })
+
+    // Re‑init exercise progression
+    session.progression[NavigationMode.EXERCISE] =
+      this._getInitialExerciseProgression(
+        session.originalItems,
+        session.exerciseType
+      )
+
+    this._notifyUpdate(session)
+    return this._getCurrentItem(session)
+  }
+
   isExerciseCompleted(sessionId) {
     const session = this.sessions.get(sessionId)
     if (!session) return false
@@ -398,7 +423,9 @@ class NavigationService {
         exerciseType: session.exerciseType,
         streakTarget: session.streakTarget,
         currentWord: currentWord,
-        options: ListUtils.shuffleArray(exerciseProgressionState.currentOptions), // for shuffling options visually
+        options: ListUtils.shuffleArray(
+          exerciseProgressionState.currentOptions
+        ), // for shuffling options visually
         currentIndex: exerciseProgressionState.currentIndex + 1, // visual index starts from 1
         lastIndex: exerciseProgressionState.lastIndex + 1, // visual index ends at n + 1
         allWords: session.originalItems,
