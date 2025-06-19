@@ -27,6 +27,7 @@ class NavigationService {
         onLearnUpdate: configOptions.onLearnUpdate || (() => {}),
         onExerciseUpdate: configOptions.onExerciseUpdate || (() => {}),
         onStreakUpdate: configOptions.onStreakUpdate || (() => {}),
+        onExerciseResults: configOptions.onExerciseResults || (() => {}),
       },
       progression: {
         learn: this._getInitialLearnProgression(items),
@@ -208,8 +209,37 @@ class NavigationService {
       // Wrong answer: reset streak and apply learnRepeat logic
       currentWord.streak = 0
 
-      // const wrong = state.wrongAnswerCountMap.get(wrong + 1) || 0
-      // state.wrongAnswerCountMap.set(wrong + 1, currentWord)
+      /** ************ */
+      /** Track wrong answers properly */
+      const currentWrongCount = currentWord.wrongCount || 0
+      const newWrongCount = currentWrongCount + 1
+      currentWord.wrongCount = newWrongCount
+
+      // Update wrongAnswerCountMap
+      const existingWordsAtCount =
+        state.wrongAnswerCountMap.get(newWrongCount) || []
+      const existingWordsAtPrevCount =
+        state.wrongAnswerCountMap.get(currentWrongCount) || []
+
+      // Remove from previous count (if any)
+      if (currentWrongCount > 0) {
+        const filteredPrevCount = existingWordsAtPrevCount.filter(
+          (w) => w.id !== currentWord.id
+        )
+        if (filteredPrevCount.length > 0) {
+          state.wrongAnswerCountMap.set(currentWrongCount, filteredPrevCount)
+        } else {
+          state.wrongAnswerCountMap.delete(currentWrongCount)
+        }
+      }
+
+      // Add to new count
+      state.wrongAnswerCountMap.set(newWrongCount, [
+        ...existingWordsAtCount,
+        currentWord,
+      ])
+
+      /** ************ */
 
       // SAME as learnRepeat: Keep same index, change current word
       const remainingWords = state.activeOrder.filter(
@@ -241,6 +271,11 @@ class NavigationService {
 
     // 5) notify other UI elements after the delay
     this._notifyUpdate(session)
+
+    // 6) If exercise is completed, notify results callback
+    if (state.isCompleted) {
+      this._notifyExerciseResults(session)
+    }
     return currentWord
   }
 
@@ -286,6 +321,48 @@ class NavigationService {
     return state.isCompleted || state.currentIndex === -1
   }
 
+  /**
+   * Get exercise results organized by wrong answer count
+   * Returns categorized results for the results UI
+   */
+  getExerciseResults(sessionId) {
+    const session = this.sessions.get(sessionId)
+    if (!session) return null
+
+    const state = session.progression[NavigationMode.EXERCISE]
+    const wrongAnswerCountMap = state.wrongAnswerCountMap
+
+    // Categorize words: good (0-1 wrongs) vs bad (2+ wrongs)
+    const goodWords = []
+    const badWords = []
+
+    // Process each wrong count bucket
+    for (const [wrongCount, words] of wrongAnswerCountMap.entries()) {
+      if (wrongCount <= 1) {
+        goodWords.push(
+          ...words.map((word) => ({
+            ...word,
+            wrongCount,
+          }))
+        )
+      } else {
+        badWords.push(
+          ...words.map((word) => ({
+            ...word,
+            wrongCount,
+          }))
+        )
+      }
+    }
+
+    return {
+      goodWords,
+      badWords,
+      totalWords: session.originalItems.length,
+      score: state.score,
+    }
+  }
+
   // UTILITY METHODS
   // getCurrentItem() {
   //   return this._getCurrentItem(this.getSession())
@@ -317,7 +394,7 @@ class NavigationService {
       lastIndex: shuffledExerciseList.length - 1,
       activeOrder: shuffledExerciseList,
       score: { correct: 0, total: 0 },
-      wrongAnswerCountMap: new Map(), // Map of word -> wrong answer count
+      wrongAnswerCountMap: new Map(), // Map of wrongCount -> [words]
     }
 
     return initialExerciseProgression
@@ -366,6 +443,13 @@ class NavigationService {
         allWords,
         optionsCount
       )
+    }
+  }
+
+  _notifyExerciseResults(session) {
+    if (session.callbacks.onExerciseResults) {
+      const results = this.getExerciseResults(session.id)
+      session.callbacks.onExerciseResults(results)
     }
   }
 

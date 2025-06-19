@@ -4,6 +4,7 @@ import { navigationService } from '../../../service/level/NavigationService.js'
 import { protectedApiService } from '../../../service/apiService.js'
 import { NavigationMode, PackType } from '../../../constants/props.js'
 import { initStreakSettings } from './shared/streakSettings.js'
+import { initExerciseResults } from './shared/exerciseResults.js'
 
 const DEFAULT_STATE = Object.freeze({
   loading: false,
@@ -225,6 +226,9 @@ function initializeNavigationService() {
     },
     onStreakUpdate: (streakData) => {
       updateStreakProgression(streakData.word, streakData.streakTarget)
+    },
+    onExerciseResults: (resultsData) => {
+      initExerciseResults(resultsData)
     },
   }
 
