@@ -121,6 +121,10 @@ class NavigationService {
       // Assign it back
       state.activeOrder = swappedActiveOrder
     }
+
+    const wordToShow = state.activeOrder[state.currentIndex]
+    this._notifyUpdate(session)
+    return wordToShow
   }
 
   learnReset(sessionId) {
