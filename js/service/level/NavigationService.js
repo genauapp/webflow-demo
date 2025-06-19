@@ -330,14 +330,19 @@ class NavigationService {
     }
   }
 
-  _getCurrentExerciseOptions(correctWord, allWords, optionsCount) {
-    if (session.exerciseType === ExerciseType.VOCABULARY) {
+  _getCurrentExerciseOptions(
+    exerciseType,
+    correctWord,
+    allWords,
+    optionsCount
+  ) {
+    if (exerciseType === ExerciseType.VOCABULARY) {
       NavigationUtils.generateVocabularyOptions(
         correctWord,
         allWords,
         optionsCount
       )
-    } else if (session.exerciseType === ExerciseType.GRAMMAR) {
+    } else if (exerciseType === ExerciseType.GRAMMAR) {
       NavigationUtils.generateGrammarOptions(
         correctWord,
         allWords,
@@ -349,12 +354,13 @@ class NavigationService {
   _notifyUpdate(session) {
     session.callbacks.onUpdate(session)
 
+    const currentWord = this._getCurrentItem(session)
+
     if (session.mode === NavigationMode.LEARN) {
       const learnProgressionState = session.progression[NavigationMode.LEARN]
-      const currentLearnWord = this._getCurrentItem(session)
 
       session.callbacks.onLearnUpdate({
-        currentWord: currentLearnWord,
+        currentWord: currentWord,
         currentIndex: learnProgressionState.currentIndex + 1, // visual index starts from 1
         lastIndex: learnProgressionState.lastIndex + 1, // visual index ends at n + 1
       })
@@ -368,9 +374,9 @@ class NavigationService {
       )
       const exerciseProgressionState =
         session.progression[NavigationMode.EXERCISE]
-      const currentExerciseWord = this._getCurrentItem(session)
       const currentExerciseOptions = this._getCurrentExerciseOptions(
-        currentExerciseWord,
+        session.exerciseType,
+        currentWord,
         session.originalItems,
         ExerciseTypeSettingsMap[session.exerciseType].optionsCount
       )
@@ -378,10 +384,10 @@ class NavigationService {
       session.callbacks.onExerciseUpdate({
         exerciseType: session.exerciseType,
         streakTarget: session.streakTarget,
+        currentWord: currentWord,
+        options: currentExerciseOptions,
         currentIndex: exerciseProgressionState.currentIndex + 1, // visual index starts from 1
         lastIndex: exerciseProgressionState.lastIndex + 1, // visual index ends at n + 1
-        currentWord: currentExerciseWord,
-        options: currentExerciseOptions,
         allWords: session.originalItems,
         score: exerciseProgressionState.score,
       })
