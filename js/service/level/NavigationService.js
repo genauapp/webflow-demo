@@ -384,23 +384,21 @@ class NavigationService {
       // - Options array is empty
       if (currentWord && exerciseProgressionState.currentOptions.length === 0) {
         // shuffle it to change their order
-        const shuffledCachedOptions = ListUtils.shuffleArray(
-          this._getCurrentExerciseOptions(
-            session.exerciseType,
-            currentWord,
-            session.originalItems,
-            ExerciseTypeSettingsMap[session.exerciseType].optionsCount
-          )
+        const cachedOptions = this._getCurrentExerciseOptions(
+          session.exerciseType,
+          currentWord,
+          session.originalItems,
+          ExerciseTypeSettingsMap[session.exerciseType].optionsCount
         )
 
-        exerciseProgressionState.currentOptions = shuffledCachedOptions
+        exerciseProgressionState.currentOptions = cachedOptions
       }
 
       session.callbacks.onExerciseUpdate({
         exerciseType: session.exerciseType,
         streakTarget: session.streakTarget,
         currentWord: currentWord,
-        options: exerciseProgressionState.currentOptions,
+        options: ListUtils.shuffleArray(exerciseProgressionState.currentOptions), // for shuffling options visually
         currentIndex: exerciseProgressionState.currentIndex + 1, // visual index starts from 1
         lastIndex: exerciseProgressionState.lastIndex + 1, // visual index ends at n + 1
         allWords: session.originalItems,
