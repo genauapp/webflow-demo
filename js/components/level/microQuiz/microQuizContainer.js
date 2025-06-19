@@ -241,10 +241,14 @@ function resetNavigationService() {
 }
 
 /** Handlers */
-const onLearnTabClick = () =>
+const onLearnTabClick = (e) => {
+  e.preventDefault()
   navigationService.switchMode(state.sessionId, NavigationMode.LEARN)
-const onExerciseTabClick = () =>
+}
+const onExerciseTabClick = (e) => {
+  e.preventDefault()
   navigationService.switchMode(state.sessionId, NavigationMode.EXERCISE)
+}
 const onLearnRepeat = () => navigationService.learnRepeat(state.sessionId)
 const onLearnNext = () => navigationService.learnNext(state.sessionId)
 const onLearnReset = () => navigationService.learnReset(state.sessionId)
