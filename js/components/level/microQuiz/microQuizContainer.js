@@ -242,11 +242,17 @@ function resetNavigationService() {
 
 /** Handlers */
 const onLearnTabClick = (e) => {
+  // to disable Webflow orchestration
   e.preventDefault()
+  e.stopPropagation()
+
   navigationService.switchMode(state.sessionId, NavigationMode.LEARN)
 }
 const onExerciseTabClick = (e) => {
+  // to disable Webflow orchestration
   e.preventDefault()
+  e.stopPropagation()
+
   navigationService.switchMode(state.sessionId, NavigationMode.EXERCISE)
 }
 const onLearnRepeat = () => navigationService.learnRepeat(state.sessionId)
