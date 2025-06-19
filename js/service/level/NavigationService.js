@@ -106,29 +106,21 @@ class NavigationService {
     if (!currentWord) return null
 
     // Get all unknown words
-    const unknownWords = state.activeOrder.filter((word) => !word.isKnown)
-    const totalUnknownWords = unknownWords.length
+    const remainingUnknownWords = state.activeOrder.filter(
+      (word) => !word.isKnown
+    )
 
     // Handle case with only one unknown word
-    if (totalUnknownWords <= 1) {
-      this._notifyUpdate(session)
-      return currentWord
+    if (remainingUnknownWords.length > 1) {
+      const swappedActiveOrder = NavigationUtils.getSwappedActiveOrder(
+        state.activeOrder,
+        state.currentIndex,
+        remainingUnknownWords
+      )
+
+      // Assign it back
+      state.activeOrder = swappedActiveOrder
     }
-
-    // Pick a random unknown word
-    const randomIndex = Math.floor(Math.random() * totalUnknownWords)
-    const pickedWord = unknownWords[randomIndex]
-
-    // If picked word is different from current, swap positions
-    if (pickedWord !== currentWord) {
-      const pickedWordIndex = state.activeOrder.indexOf(pickedWord)
-      state.activeOrder[state.currentIndex] = pickedWord
-      state.activeOrder[pickedWordIndex] = currentWord
-    }
-
-    const wordToShow = state.activeOrder[state.currentIndex]
-    this._notifyUpdate(session)
-    return wordToShow
   }
 
   learnReset(sessionId) {
@@ -196,21 +188,17 @@ class NavigationService {
             (word.streak || 0) < session.streakTarget
         )
 
-        if (remainingWords.length <= 1) {
-          // Only one word left, nothing to swap
-          this._notifyUpdate(session)
-          return currentWord
+        // Only swap when there’s more than one candidate
+        if (remainingWords.length > 1) {
+          const swappedActiveOrder = NavigationUtils.getSwappedActiveOrder(
+            state.activeOrder,
+            state.currentIndex,
+            remainingWords
+          )
+
+          // Assign it back
+          state.activeOrder = swappedActiveOrder
         }
-
-        // Pick a random remaining word (excluding current)
-        const otherWords = remainingWords.filter((word) => word !== currentWord)
-        const randomIndex = Math.floor(Math.random() * otherWords.length)
-        const pickedWord = otherWords[randomIndex]
-
-        // Swap picked word with current position
-        const pickedWordIndex = state.activeOrder.indexOf(pickedWord)
-        state.activeOrder[state.currentIndex] = pickedWord
-        state.activeOrder[pickedWordIndex] = currentWord
       }
     } else {
       // Wrong answer: reset streak and apply learnRepeat logic
@@ -225,21 +213,17 @@ class NavigationService {
           !word.isCorrectlyAnswered && (word.streak || 0) < session.streakTarget
       )
 
-      if (remainingWords.length <= 1) {
-        // Only one word left, nothing to swap
-        this._notifyUpdate(session)
-        return currentWord
+      // Only swap when there’s more than one candidate
+      if (remainingWords.length > 1) {
+        const swappedActiveOrder = NavigationUtils.getSwappedActiveOrder(
+          state.activeOrder,
+          state.currentIndex,
+          remainingWords
+        )
+
+        // Assign it back
+        state.activeOrder = swappedActiveOrder
       }
-
-      // Pick a random remaining word (excluding current)
-      const otherWords = remainingWords.filter((word) => word !== currentWord)
-      const randomIndex = Math.floor(Math.random() * otherWords.length)
-      const pickedWord = otherWords[randomIndex]
-
-      // Swap picked word with current position
-      const pickedWordIndex = state.activeOrder.indexOf(pickedWord)
-      state.activeOrder[state.currentIndex] = pickedWord
-      state.activeOrder[pickedWordIndex] = currentWord
     }
 
     // Clear options for new word
@@ -251,6 +235,7 @@ class NavigationService {
     // 4) WAIT for the feedback duration _inside_ the service
     await new Promise((res) => setTimeout(res, DURATION_FEEDBACK_MS))
 
+    // 5) notify other UI elements after the delay
     this._notifyUpdate(session)
     return currentWord
   }
