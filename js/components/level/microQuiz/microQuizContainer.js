@@ -31,8 +31,8 @@ function initElements() {
     learnRepeat: () =>
       document.getElementById('micro-quiz-learn-repeat-button'),
     learnNext: () => document.getElementById('micro-quiz-learn-i-know-button'),
-    learnCompletedContainer: () =>
-      document.getElementById('micro-quiz-learn-completed-container'),
+    learnCompletedCard: () =>
+      document.getElementById('micro-quiz-learn-completed-card'),
     learnReset: () => document.getElementById('micro-quiz-learn-reset-button'),
 
     exerciseTab: () => document.getElementById('micro-quiz-tab-exercise'),
@@ -42,8 +42,8 @@ function initElements() {
       document.getElementById('micro-quiz-exercise-streak-settings-card'),
     exerciseWordCard: () =>
       document.getElementById('micro-quiz-exercise-word-card'),
-    exerciseResultContainer: () =>
-      document.getElementById('micro-quiz-exercise-result-container'),
+    exerciseResultsCard: () =>
+      document.getElementById('micro-quiz-exercise-results-card'),
     exerciseReset: () =>
       document.getElementById('micro-quiz-exercise-reset-button'),
   }
@@ -114,10 +114,10 @@ function updateTabStates(sessionState) {
 
     // Show completed container if learn is completed
     if (sessionState.progression[sessionState.mode].isCompleted) {
-      els.learnCompletedContainer().style.display = 'flex'
+      els.learnCompletedCard().style.display = 'flex'
       els.learnWordCard().style.display = 'none'
     } else {
-      els.learnCompletedContainer().style.display = 'none'
+      els.learnCompletedCard().style.display = 'none'
       els.learnWordCard().style.display = 'flex'
     }
   } else if (sessionState.mode === NavigationMode.EXERCISE) {
@@ -133,10 +133,10 @@ function updateTabStates(sessionState) {
       els.exerciseStreakSettingsCard().style.display = 'none'
       // Show completed container if exercise is completed
       if (sessionState.progression[sessionState.mode].isCompleted) {
-        // els.exerciseResultContainer().style.display = 'flex'
+        els.exerciseResultsCard().style.display = 'flex'
         els.exerciseWordCard().style.display = 'none'
       } else {
-        // els.exerciseResultContainer().style.display = 'none'
+        els.exerciseResultsCard().style.display = 'none'
         els.exerciseWordCard().style.display = 'flex'
       }
     }
