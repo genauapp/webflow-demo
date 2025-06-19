@@ -12,27 +12,27 @@ class NavigationService {
     this.sessions = new Map()
   }
 
-  createSession(sessionId, items, options = {}) {
+  createSession(sessionId, items, configOptions = {}) {
     const baseItems = [...items]
-    const currentMode = options.mode || NavigationMode.LEARN
+    const currentMode = configOptions.mode || NavigationMode.LEARN
 
     const session = {
       id: sessionId,
       originalItems: baseItems,
       mode: currentMode,
-      exerciseType: options.exerciseType,
-      streakTarget: options.streakTarget || 0,
+      exerciseType: configOptions.exerciseType,
+      streakTarget: configOptions.streakTarget || 0,
       callbacks: {
-        onUpdate: options.onUpdate || (() => {}),
-        onLearnUpdate: options.onLearnUpdate || (() => {}),
-        onExerciseUpdate: options.onExerciseUpdate || (() => {}),
-        onStreakUpdate: options.onStreakUpdate || (() => {}),
+        onUpdate: configOptions.onUpdate || (() => {}),
+        onLearnUpdate: configOptions.onLearnUpdate || (() => {}),
+        onExerciseUpdate: configOptions.onExerciseUpdate || (() => {}),
+        onStreakUpdate: configOptions.onStreakUpdate || (() => {}),
       },
       progression: {
         learn: this._getInitialLearnProgression(items),
         exercise: this._getInitialExerciseProgression(
           items,
-          options.exerciseType
+          configOptions.exerciseType
         ),
       },
     }
