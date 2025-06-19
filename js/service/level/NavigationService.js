@@ -383,13 +383,17 @@ class NavigationService {
       // - We have a current word
       // - Options array is empty
       if (currentWord && exerciseProgressionState.currentOptions.length === 0) {
-        exerciseProgressionState.currentOptions =
+        // shuffle it to change their order
+        const shuffledCachedOptions = ListUtils.shuffleArray(
           this._getCurrentExerciseOptions(
             session.exerciseType,
             currentWord,
             session.originalItems,
             ExerciseTypeSettingsMap[session.exerciseType].optionsCount
           )
+        )
+
+        exerciseProgressionState.currentOptions = shuffledCachedOptions
       }
 
       session.callbacks.onExerciseUpdate({
