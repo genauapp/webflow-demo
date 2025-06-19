@@ -47,6 +47,7 @@ function renderExerciseCard(
     exerciseType,
     streakTarget,
     currentWord: word,
+    options,
     currentIndex,
     lastIndex,
     allWords,
@@ -75,6 +76,7 @@ function renderExerciseCard(
       {
         streakTarget,
         currentWord: word,
+        options,
         currentIndex,
         lastIndex,
         allWords,
@@ -87,6 +89,7 @@ function renderExerciseCard(
       {
         streakTarget,
         currentWord: word,
+        options,
         currentIndex,
         lastIndex,
         allWords,
