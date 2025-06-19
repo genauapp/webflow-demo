@@ -8,7 +8,7 @@ import {
   IS_ON_LEARN_KEY,
   WORD_LIST_EXERCISE_KEY,
 } from '../../constants/storageKeys.js'
-import { categories } from '../../constants/props.js'
+import { categories, PackType } from '../../constants/props.js'
 import { loadAndShowWords } from '../../pages/level.js'
 import LevelManager from '../LevelManager.js'
 import {
