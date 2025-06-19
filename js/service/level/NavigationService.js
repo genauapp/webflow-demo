@@ -242,6 +242,9 @@ class NavigationService {
       state.activeOrder[pickedWordIndex] = currentWord
     }
 
+    // Clear options for new word
+    state.currentOptions = []
+
     // 3) fire immediate streak‐update callback
     this._notifyStreakUpdate(session, currentWord)
 
@@ -295,6 +298,7 @@ class NavigationService {
     const initialExerciseProgression = {
       exerciseType: exerciseType,
       isCompleted: false,
+      currentOptions: [],
       currentIndex: 0,
       lastIndex: shuffledExerciseList.length - 1,
       activeOrder: shuffledExerciseList,
@@ -374,18 +378,25 @@ class NavigationService {
       )
       const exerciseProgressionState =
         session.progression[NavigationMode.EXERCISE]
-      const currentExerciseOptions = this._getCurrentExerciseOptions(
-        session.exerciseType,
-        currentWord,
-        session.originalItems,
-        ExerciseTypeSettingsMap[session.exerciseType].optionsCount
-      )
+
+      // Generate options only if:
+      // - We have a current word
+      // - Options array is empty
+      if (currentWord && exerciseProgressionState.currentOptions.length === 0) {
+        exerciseProgressionState.currentOptions =
+          this._getCurrentExerciseOptions(
+            session.exerciseType,
+            currentWord,
+            session.originalItems,
+            ExerciseTypeSettingsMap[session.exerciseType].optionsCount
+          )
+      }
 
       session.callbacks.onExerciseUpdate({
         exerciseType: session.exerciseType,
         streakTarget: session.streakTarget,
         currentWord: currentWord,
-        options: currentExerciseOptions,
+        options: exerciseProgressionState.currentExerciseOptions,
         currentIndex: exerciseProgressionState.currentIndex + 1, // visual index starts from 1
         lastIndex: exerciseProgressionState.lastIndex + 1, // visual index ends at n + 1
         allWords: session.originalItems,
