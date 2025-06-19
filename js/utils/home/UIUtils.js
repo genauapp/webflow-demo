@@ -203,7 +203,7 @@ export function loadDeckPropsOnLevelPage() {
 
           // show micro-quiz learn/exercise
           // 1. grab the first matching category
-          const firstQuiz = categories[currentLevel].find(
+          const firstQuiz = categories[level].find(
             (cat) => cat.type === PackType.MICRO_QUIZ
           )
 
