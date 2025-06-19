@@ -216,8 +216,8 @@ class NavigationService {
       // Wrong answer: reset streak and apply learnRepeat logic
       currentWord.streak = 0
 
-      const wrong = state.wrongAnswerCountMap.get(wrong + 1) || 0
-      state.wrongAnswerCountMap.set(wrong + 1, currentWord)
+      // const wrong = state.wrongAnswerCountMap.get(wrong + 1) || 0
+      // state.wrongAnswerCountMap.set(wrong + 1, currentWord)
 
       // SAME as learnRepeat: Keep same index, change current word
       const remainingWords = state.activeOrder.filter(
