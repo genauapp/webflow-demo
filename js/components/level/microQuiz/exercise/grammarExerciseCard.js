@@ -81,10 +81,11 @@ function renderGrammarOptions(options, correctWord, onAnswerCallback) {
       option === correctWord ? 'true' : 'false'
     )
 
-    button.addEventListener('click', () => {
+    button.addEventListener('click', async () => {
       const isCorrect = option === correctWord
 
-      // Fill the blank with selected answer
+      // 1) show blank + feedback immediately
+      // // fill the blank with selected answer
       if (els.grammarBlank()) {
         const blank = els.grammarBlank()
         blank.textContent = option.german || option.text || ''
@@ -99,11 +100,10 @@ function renderGrammarOptions(options, correctWord, onAnswerCallback) {
             : 'exercise-grammar-blank-incorrect'
         )
       }
-
-      // Show immediate feedback
+      // // show feedback
       showGrammarFeedback(isCorrect, correctWord, option)
 
-      // Disable all buttons
+      // // disable all buttons
       const allButtons = container.querySelectorAll('.exercise-option-btn')
       allButtons.forEach((btn) => {
         btn.disabled = true
@@ -114,11 +114,11 @@ function renderGrammarOptions(options, correctWord, onAnswerCallback) {
         }
       })
 
-      // Call navigation service after a short delay for user to see feedback
-      setTimeout(() => {
-        onAnswerCallback(isCorrect)
-        hideGrammarFeedback()
-      }, DURATION_FEEDBACK_MS)
+      // 2) await the service taking its own delay then updating state
+      await onAnswerCallback(isCorrect)
+
+      // 3) hide feedback after service has done its update+delay
+      hideGrammarFeedback()
     })
 
     container.appendChild(button)

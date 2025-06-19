@@ -152,7 +152,7 @@ class NavigationService {
   }
 
   // // EXERCISE MODE NAVIGATION
-  exerciseAnswer(sessionId, isCorrect) {
+  async exerciseAnswer(sessionId, isCorrect) {
     const session = this.sessions.get(sessionId)
     if (!session) return null
 
@@ -162,13 +162,13 @@ class NavigationService {
     const currentWord = state.activeOrder[state.currentIndex]
     if (!currentWord) return null
 
+     // 1) update score
     state.score.total++
 
+    // 2) streak logic lives here only
     if (isCorrect) {
       currentWord.streak = (currentWord.streak || 0) + 1
       state.score.correct++
-
-      this._notifyStreakUpdate(session, currentWord)
 
       if (currentWord.streak >= session.streakTarget) {
         // SAME as learnNext: Mark as mastered and move to next
@@ -209,7 +209,6 @@ class NavigationService {
     } else {
       // Wrong answer: reset streak and apply learnRepeat logic
       currentWord.streak = 0
-      this._notifyStreakUpdate(session, currentWord)
 
       const wrong = state.wrongAnswerCountMap.get(currentWord) || 0
       state.wrongAnswerCountMap.set(currentWord, wrong + 1)
@@ -236,6 +235,12 @@ class NavigationService {
       state.activeOrder[state.currentIndex] = pickedWord
       state.activeOrder[pickedWordIndex] = currentWord
     }
+
+    // 3) fire immediate streak‐update callback
+    this._notifyStreakUpdate(session, currentWord)
+
+    // 4) WAIT for the feedback duration _inside_ the service
+    await new Promise((res) => setTimeout(res, DURATION_FEEDBACK_MS))
 
     this._notifyUpdate(session)
     return currentWord
