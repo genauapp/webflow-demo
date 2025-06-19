@@ -396,7 +396,7 @@ class NavigationService {
         exerciseType: session.exerciseType,
         streakTarget: session.streakTarget,
         currentWord: currentWord,
-        options: exerciseProgressionState.currentExerciseOptions,
+        options: exerciseProgressionState.currentOptions,
         currentIndex: exerciseProgressionState.currentIndex + 1, // visual index starts from 1
         lastIndex: exerciseProgressionState.lastIndex + 1, // visual index ends at n + 1
         allWords: session.originalItems,
