@@ -4,7 +4,6 @@ import {
   ExerciseType,
   ExerciseTypeSettingsMap,
 } from '../../../../constants/props.js'
-import { DURATION_FEEDBACK_MS } from '../../../../constants/timeout.js'
 
 let els = {}
 

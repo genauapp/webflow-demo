@@ -1,5 +1,6 @@
 import { ExerciseType, NavigationMode } from '../../constants/props.js'
 import ListUtils from '../../utils/ListUtils.js'
+import { DURATION_FEEDBACK_MS } from '../../constants/timeout.js'
 
 class NavigationService {
   constructor() {
@@ -162,7 +163,7 @@ class NavigationService {
     const currentWord = state.activeOrder[state.currentIndex]
     if (!currentWord) return null
 
-     // 1) update score
+    // 1) update score
     state.score.total++
 
     // 2) streak logic lives here only
