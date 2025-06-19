@@ -337,13 +337,13 @@ class NavigationService {
     optionsCount
   ) {
     if (exerciseType === ExerciseType.VOCABULARY) {
-      NavigationUtils.generateVocabularyOptions(
+      return NavigationUtils.generateVocabularyOptions(
         correctWord,
         allWords,
         optionsCount
       )
     } else if (exerciseType === ExerciseType.GRAMMAR) {
-      NavigationUtils.generateGrammarOptions(
+      return NavigationUtils.generateGrammarOptions(
         correctWord,
         allWords,
         optionsCount
