@@ -29,7 +29,7 @@ function initElements() {
 }
 
 /** Render the streak bars into the progress bar container */
-export function renderStreakProgression(word, streakTarget) {
+function renderStreakProgression(word, streakTarget) {
   const container = els.progressBarContainer()
   if (!container) return
   container.innerHTML = ''
@@ -136,4 +136,8 @@ export function initExercise(exerciseState, onAnswerCallback) {
   // }
 
   renderExerciseCard(exerciseState, onAnswerCallback)
+}
+
+export function updateStreakProgression(word, streakTarget) {
+  renderStreakProgression(word, streakTarget)
 }
