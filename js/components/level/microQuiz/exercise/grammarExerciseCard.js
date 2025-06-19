@@ -117,7 +117,7 @@ function showGrammarFeedback(isCorrect, correctWord, selectedWord) {
     feedbackContainer.classList.add(
       isCorrect ? 'feedback-correct' : 'feedback-incorrect'
     )
-    feedbackText.textContent = isCorrect ? 'Correct! 🎉' : `✨ No worries!` // ${correctWord.rule || ''}`
+    feedbackText.textContent = isCorrect ? 'Correct! 🎉' : `No worries! Let’s try again 💪` // ${correctWord.rule || ''}`
   }
 
   if (correctAnswerEl && !isCorrect) {
