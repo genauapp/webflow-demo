@@ -49,10 +49,8 @@ function renderGoodWords(goodWords) {
 
     wordElement.innerHTML = `
       <div class="word-content">
-        <div class="word-text">${word.word || word.text || 'Word'}</div>
-        <div class="word-translation">${
-          word.translation || word.meaning || ''
-        }</div>
+        <div class="word-text">${word.german || 'Word'}</div>
+        <div class="word-translation">${word.english || ''}</div>
       </div>
       <div class="${badgeClass}">${badge}</div>
     `
@@ -73,10 +71,8 @@ function renderBadWords(badWords) {
 
     wordElement.innerHTML = `
       <div class="word-content">
-        <div class="word-text">${word.word || word.text || 'Word'}</div>
-        <div class="word-translation">${
-          word.translation || word.meaning || ''
-        }</div>
+        <div class="word-text">${word.german || 'Word'}</div>
+        <div class="word-translation">${word.english || ''}</div>
       </div>
       <div class="miss-badge">${word.wrongCount}x missed</div>
     `
