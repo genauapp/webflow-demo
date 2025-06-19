@@ -24,34 +24,6 @@ function initElements() {
   }
 }
 
-/** Generate multiple choice options for a word */
-
-function generateVocabularyOptions(correctWord, allWords, optionsCount = null) {
-  // Dynamic option count (2-4) if not specified
-  if (optionsCount === null) {
-    optionsCount = Math.floor(Math.random() * 3) + 2 // 2, 3, or 4 options
-  }
-
-  const options = [correctWord]
-  const otherWords = allWords.filter((w) => w.german !== correctWord.german)
-
-  // Randomly select other options
-  while (options.length < optionsCount && options.length < allWords.length) {
-    const randomWord = otherWords[Math.floor(Math.random() * otherWords.length)]
-    if (!options.includes(randomWord)) {
-      options.push(randomWord)
-    }
-  }
-
-  // Shuffle the options
-  for (let i = options.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[options[i], options[j]] = [options[j], options[i]]
-  }
-
-  return options
-}
-
 /** Render exercise options */
 function renderVocabularyOptions(options, correctWord, onAnswerCallback) {
   const container = els.optionsContainer()
@@ -136,22 +108,27 @@ function hideVocabularyFeedback() {
 
 /** Render vocabulary card */
 function renderVocabularyExerciseCard(
-  { streakTarget, currentWord: word, currentIndex, lastIndex, allWords, score },
+  {
+    streakTarget,
+    currentWord: word,
+    options,
+    currentIndex,
+    lastIndex,
+    allWords,
+    score,
+  },
   onAnswerCallback
 ) {
-  if (!word || !allWords) return
+  if (!word || !options) return
 
   // Hide feedback from previous question
   hideVocabularyFeedback()
 
   // Update question and word
-
   if (els.wordText()) {
     els.wordText().textContent = word.german || word.text || word.turkish || ''
   }
 
-  // Generate and render options with dynamic count (2-4)
-  const options = generateVocabularyOptions(word, allWords, 3)
   renderVocabularyOptions(options, word, onAnswerCallback)
 }
 
@@ -159,8 +136,5 @@ export function mountVocabularyExerciseCard(exerciseState, onAnswerCallback) {
   // Initialize elements
   initElements()
 
-  const optionsCount =
-    ExerciseTypeSettingsMap[ExerciseType.VOCABULARY].optionsCount
-
-  renderVocabularyExerciseCard(exerciseState, optionsCount, onAnswerCallback)
+  renderVocabularyExerciseCard(exerciseState, onAnswerCallback)
 }

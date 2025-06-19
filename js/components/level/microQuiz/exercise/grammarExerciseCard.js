@@ -40,28 +40,6 @@ function parseSentence(sentence, germanWord) {
   return { before, after, found: true }
 }
 
-/** NEW: Generate options for grammar exercise */
-function generateGrammarOptions(correctWord, allWords, optionsCount) {
-  const options = [correctWord]
-  const otherWords = allWords.filter((w) => w.german !== correctWord.german)
-
-  // Randomly select other German words
-  while (options.length < optionsCount && options.length < allWords.length) {
-    const randomWord = otherWords[Math.floor(Math.random() * otherWords.length)]
-    if (!options.includes(randomWord)) {
-      options.push(randomWord)
-    }
-  }
-
-  // Shuffle the options
-  for (let i = options.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[options[i], options[j]] = [options[j], options[i]]
-  }
-
-  return options
-}
-
 /** NEW: Render grammar exercise options */
 function renderGrammarOptions(options, correctWord, onAnswerCallback) {
   const container = els.optionsContainer()
@@ -169,11 +147,10 @@ function hideGrammarFeedback() {
 
 /** NEW: Render grammar exercise card */
 function renderGrammarExerciseCard(
-  { currentWord: word, currentIndex, lastIndex, allWords, score },
-  optionsCount,
+  { currentWord: word, options, currentIndex, lastIndex, allWords, score },
   onAnswerCallback
 ) {
-  if (!word || !allWords) return
+  if (!word || !options) return
 
   // Hide feedback from previous question
   hideGrammarFeedback()
@@ -195,8 +172,6 @@ function renderGrammarExerciseCard(
   const blankElStr = `<span id="exercise-grammar-blank" class="exercise-grammar-sentence grammar-blank"> ______ </span>`
   sentenceEl.innerHTML = `${before} ${blankElStr} ${after}`
 
-  // Generate options from German words
-  const options = generateGrammarOptions(word, allWords, optionsCount)
   renderGrammarOptions(options, word, onAnswerCallback)
 }
 
@@ -204,8 +179,5 @@ export function mountGrammarExerciseCard(exerciseState, onAnswerCallback) {
   // Initialize elements
   initElements()
 
-  const optionsCount =
-    ExerciseTypeSettingsMap[ExerciseType.GRAMMAR].optionsCount
-
-  renderGrammarExerciseCard(exerciseState, optionsCount, onAnswerCallback)
+  renderGrammarExerciseCard(exerciseState, onAnswerCallback)
 }

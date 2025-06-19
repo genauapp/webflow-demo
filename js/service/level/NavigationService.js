@@ -1,6 +1,11 @@
-import { ExerciseType, NavigationMode } from '../../constants/props.js'
+import {
+  ExerciseType,
+  ExerciseTypeSettingsMap,
+  NavigationMode,
+} from '../../constants/props.js'
 import ListUtils from '../../utils/ListUtils.js'
 import { DURATION_FEEDBACK_MS } from '../../constants/timeout.js'
+import NavigationUtils from '../../utils/level/NavigationUtils.js'
 
 class NavigationService {
   constructor() {
@@ -211,8 +216,8 @@ class NavigationService {
       // Wrong answer: reset streak and apply learnRepeat logic
       currentWord.streak = 0
 
-      const wrong = state.wrongAnswerCountMap.get(currentWord) || 0
-      state.wrongAnswerCountMap.set(currentWord, wrong + 1)
+      const wrong = state.wrongAnswerCountMap.get(wrong + 1) || 0
+      state.wrongAnswerCountMap.set(wrong + 1, currentWord)
 
       // SAME as learnRepeat: Keep same index, change current word
       const remainingWords = state.activeOrder.filter(
@@ -325,35 +330,58 @@ class NavigationService {
     }
   }
 
-  _notifyUpdate(session) {
-    console.info(`SESSION UPDATED:\n > ${JSON.stringify(session, null, 4)}`)
+  _getCurrentExerciseOptions(correctWord, allWords, optionsCount) {
+    if (session.exerciseType === ExerciseType.VOCABULARY) {
+      NavigationUtils.generateVocabularyOptions(
+        correctWord,
+        allWords,
+        optionsCount
+      )
+    } else if (session.exerciseType === ExerciseType.GRAMMAR) {
+      NavigationUtils.generateGrammarOptions(
+        correctWord,
+        allWords,
+        optionsCount
+      )
+    }
+  }
 
+  _notifyUpdate(session) {
     session.callbacks.onUpdate(session)
 
     if (session.mode === NavigationMode.LEARN) {
       const learnProgressionState = session.progression[NavigationMode.LEARN]
+      const currentLearnWord = this._getCurrentItem(session)
 
       session.callbacks.onLearnUpdate({
-        currentWord: this._getCurrentItem(session),
+        currentWord: currentLearnWord,
         currentIndex: learnProgressionState.currentIndex + 1, // visual index starts from 1
         lastIndex: learnProgressionState.lastIndex + 1, // visual index ends at n + 1
       })
     } else if (session.mode === NavigationMode.EXERCISE) {
+      console.info(
+        `EXERCISE PROGRESSION UPDATE:\n > ${JSON.stringify(
+          session.progression[NavigationMode.EXERCISE],
+          null,
+          4
+        )}`
+      )
       const exerciseProgressionState =
         session.progression[NavigationMode.EXERCISE]
+      const currentExerciseWord = this._getCurrentItem(session)
+      const currentExerciseOptions = this._getCurrentExerciseOptions(
+        currentExerciseWord,
+        session.originalItems,
+        ExerciseTypeSettingsMap[session.exerciseType].optionsCount
+      )
 
       session.callbacks.onExerciseUpdate({
         exerciseType: session.exerciseType,
         streakTarget: session.streakTarget,
-        currentWord: this._getCurrentItem(session),
         currentIndex: exerciseProgressionState.currentIndex + 1, // visual index starts from 1
         lastIndex: exerciseProgressionState.lastIndex + 1, // visual index ends at n + 1
-        // // Simplified: just show remaining words without complex filtering
-        // allWords: exerciseProgressionState.activeOrder.filter(
-        //   (word) =>
-        //     !word.isCorrectlyAnswered &&
-        //     (word.streak || 0) < session.streakTarget
-        // ),
+        currentWord: currentExerciseWord,
+        options: currentExerciseOptions,
         allWords: session.originalItems,
         score: exerciseProgressionState.score,
       })
