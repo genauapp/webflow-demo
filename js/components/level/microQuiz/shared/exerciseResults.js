@@ -87,7 +87,7 @@ function renderBadWords(badWords) {
       section.className = 'bad-word-group'
 
       const wordList = document.createElement('div')
-      section.className = 'bad-word-list'
+      wordList.className = 'bad-word-list'
 
       // Word list for this count
       groups[countKey].forEach((word) => {
