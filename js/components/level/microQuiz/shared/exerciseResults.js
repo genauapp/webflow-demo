@@ -129,7 +129,7 @@ function renderBadWords(badWords) {
 
 function showSection(section) {
   if (section) {
-    section.style.display = 'block'
+    section.style.display = 'flex'
   }
 }
 
@@ -197,7 +197,7 @@ function renderResults({ goodWords, badWords, totalWords, score }) {
 
   // Show the results container
   if (els.resultsContainer()) {
-    els.resultsContainer().style.display = 'block'
+    els.resultsContainer().style.display = 'flex'
   }
 }
 
