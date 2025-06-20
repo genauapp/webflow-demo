@@ -210,36 +210,49 @@ class NavigationService {
       currentWord.streak = 0
 
       /** ************ */
-      /** Track wrong answers properly */
-      const currentWrongCount = currentWord.wrongCount || 0
-      const newWrongCount = currentWrongCount + 1
-      currentWord.wrongCount = newWrongCount
+      // /** Track wrong answers properly */
+      // const currentWrongCount = currentWord.wrongCount || 0
+      // const newWrongCount = currentWrongCount + 1
+      // currentWord.wrongCount = newWrongCount
 
       // Update wrongAnswerCountMap
-      const existingWordsAtCount =
-        state.wrongAnswerCountMap.get(newWrongCount) || []
-      const existingWordsAtPrevCount =
-        state.wrongAnswerCountMap.get(currentWrongCount) || []
+      // const existingWordsAtCount =
+      //   state.wrongAnswerCountMap.get(newWrongCount) || []
+      // const existingWordsAtPrevCount =
+      //   state.wrongAnswerCountMap.get(currentWrongCount) || []
 
-      // Remove from previous count (if any)
-      if (currentWrongCount > 0) {
-        const filteredPrevCount = existingWordsAtPrevCount.filter(
-          (w) => w.id !== currentWord.id
-        )
-        if (filteredPrevCount.length > 0) {
-          state.wrongAnswerCountMap.set(currentWrongCount, filteredPrevCount)
-        } else {
-          state.wrongAnswerCountMap.delete(currentWrongCount)
-        }
-      }
+      // // Remove from previous count (if any)
+      // if (currentWrongCount > 0) {
+      //   const filteredPrevCount = existingWordsAtPrevCount.filter(
+      //     (w) => w.id !== currentWord.id
+      //   )
+      //   if (filteredPrevCount.length > 0) {
+      //     state.wrongAnswerCountMap.set(currentWrongCount, filteredPrevCount)
+      //   } else {
+      //     state.wrongAnswerCountMap.delete(currentWrongCount)
+      //   }
+      // }
 
-      // Add to new count
-      state.wrongAnswerCountMap.set(newWrongCount, [
-        ...existingWordsAtCount,
-        currentWord,
-      ])
+      // // Add to new count
+      // state.wrongAnswerCountMap.set(newWrongCount, [
+      //   ...existingWordsAtCount,
+      //   currentWord,
+      // ])
 
       /** ************ */
+
+      // REFACTORED: Use helper methods instead of direct wrongCount manipulation
+      const currentCount = this._getWordWrongCount(
+        state.wrongAnswerCountMap,
+        currentWord.id
+      )
+      const newCount = currentCount + 1
+      this._updateWrongAnswerMap(
+        state.wrongAnswerCountMap,
+        currentWord,
+        currentCount,
+        newCount
+      )
 
       // SAME as learnRepeat: Keep same index, change current word
       const remainingWords = state.activeOrder.filter(
@@ -325,6 +338,45 @@ class NavigationService {
    * Get exercise results organized by wrong answer count
    * Returns categorized results for the results UI
    */
+  // getExerciseResults(sessionId) {
+  //   const session = this.sessions.get(sessionId)
+  //   if (!session) return null
+
+  //   const state = session.progression[NavigationMode.EXERCISE]
+  //   const wrongAnswerCountMap = state.wrongAnswerCountMap
+
+  //   // Categorize words: good (0-1 wrongs) vs bad (2+ wrongs)
+  //   const goodWords = []
+  //   const badWords = []
+
+  //   // Process each wrong count bucket
+  //   for (const [wrongCount, words] of wrongAnswerCountMap.entries()) {
+  //     if (wrongCount <= 1) {
+  //       goodWords.push(
+  //         ...words.map((word) => ({
+  //           ...word,
+  //           wrongCount,
+  //         }))
+  //       )
+  //     } else {
+  //       badWords.push(
+  //         ...words.map((word) => ({
+  //           ...word,
+  //           wrongCount,
+  //         }))
+  //       )
+  //     }
+  //   }
+
+  //   return {
+  //     goodWords,
+  //     badWords,
+  //     totalWords: session.originalItems.length,
+  //     score: state.score,
+  //   }
+  // }
+
+  // REFACTORED: Updated getExerciseResults method
   getExerciseResults(sessionId) {
     const session = this.sessions.get(sessionId)
     if (!session) return null
@@ -332,28 +384,29 @@ class NavigationService {
     const state = session.progression[NavigationMode.EXERCISE]
     const wrongAnswerCountMap = state.wrongAnswerCountMap
 
-    // Categorize words: good (0-1 wrongs) vs bad (2+ wrongs)
     const goodWords = []
     const badWords = []
 
-    // Process each wrong count bucket
+    // Get all words that have wrong answers
+    const wordsInMap = new Set()
     for (const [wrongCount, words] of wrongAnswerCountMap.entries()) {
+      const wordsWithCount = words.map((word) => ({ ...word, wrongCount }))
+
       if (wrongCount <= 1) {
-        goodWords.push(
-          ...words.map((word) => ({
-            ...word,
-            wrongCount,
-          }))
-        )
+        goodWords.push(...wordsWithCount)
       } else {
-        badWords.push(
-          ...words.map((word) => ({
-            ...word,
-            wrongCount,
-          }))
-        )
+        badWords.push(...wordsWithCount)
       }
+
+      words.forEach((word) => wordsInMap.add(word.id))
     }
+
+    // Add perfect words (0 wrong answers)
+    const perfectWords = session.originalItems
+      .filter((word) => !wordsInMap.has(word.id))
+      .map((word) => ({ ...word, wrongCount: 0 }))
+
+    goodWords.unshift(...perfectWords)
 
     return {
       goodWords,
@@ -446,10 +499,42 @@ class NavigationService {
     }
   }
 
-  _notifyExerciseResults(session) {
-    if (session.callbacks.onExerciseResults) {
-      const results = this.getExerciseResults(session.id)
-      session.callbacks.onExerciseResults(results)
+  // NEW: Helper method to get wrong count for a word
+  _getWordWrongCount(wrongAnswerCountMap, wordId) {
+    for (const [count, words] of wrongAnswerCountMap.entries()) {
+      if (words.some((w) => w.id === wordId)) {
+        return count
+      }
+    }
+    return 0
+  }
+
+  // NEW: Helper method to update wrong answer map
+  _updateWrongAnswerMap(wrongAnswerCountMap, word, oldCount, newCount) {
+    // Remove from old count
+    if (oldCount > 0) {
+      const oldWords = wrongAnswerCountMap.get(oldCount) || []
+      const filtered = oldWords.filter((w) => w.id !== word.id)
+      if (filtered.length > 0) {
+        wrongAnswerCountMap.set(oldCount, filtered)
+      } else {
+        wrongAnswerCountMap.delete(oldCount)
+      }
+    }
+
+    // Add to new count
+    const newWords = wrongAnswerCountMap.get(newCount) || []
+    wrongAnswerCountMap.set(newCount, [...newWords, word])
+  }
+
+  /** Inform UI about changes */
+  _notifyStreakUpdate(session, word) {
+    if (session.callbacks.onStreakUpdate) {
+      session.callbacks.onStreakUpdate({
+        word: word,
+        streak: word.streak,
+        streakTarget: session.streakTarget,
+      })
     }
   }
 
@@ -507,13 +592,10 @@ class NavigationService {
     }
   }
 
-  _notifyStreakUpdate(session, word) {
-    if (session.callbacks.onStreakUpdate) {
-      session.callbacks.onStreakUpdate({
-        word: word,
-        streak: word.streak,
-        streakTarget: session.streakTarget,
-      })
+  _notifyExerciseResults(session) {
+    if (session.callbacks.onExerciseResults) {
+      const results = this.getExerciseResults(session.id)
+      session.callbacks.onExerciseResults(results)
     }
   }
 }
