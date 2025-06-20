@@ -16,13 +16,17 @@ function initElements() {
     goodSection: () => document.getElementById('exercise-results-good-section'),
     goodSectionTitle: () =>
       document.getElementById('exercise-results-good-title'),
-    goodWordsList: () => document.getElementById('exercise-results-good-list'),
+    goodWordsContent: () =>
+      document.getElementById('exercise-results-good-content'),
+    // goodWordsList: () => document.getElementById('exercise-results-good-list'),
 
     // Bad words section
     badSection: () => document.getElementById('exercise-results-bad-section'),
     badSectionTitle: () =>
       document.getElementById('exercise-results-bad-title'),
-    badWordsList: () => document.getElementById('exercise-results-bad-list'),
+    badWordsContent: () =>
+      document.getElementById('exercise-results-bad-content'),
+    // badWordsList: () => document.getElementById('exercise-results-bad-list'),
 
     // Empty state
     emptyState: () => document.getElementById('exercise-results-empty-state'),
@@ -34,7 +38,7 @@ function resetElements() {
 }
 
 function renderGoodWords(goodWords) {
-  const container = els.goodWordsList()
+  const container = els.goodWordsContent()
   if (!container) return
 
   container.innerHTML = ''
@@ -68,30 +72,8 @@ function groupByWrongCount(words) {
   }, {})
 }
 
-// function renderBadWords(badWords) {
-//   const container = els.badWordsList()
-//   if (!container) return
-
-//   container.innerHTML = ''
-
-//   badWords.forEach((word) => {
-//     const wordElement = document.createElement('div')
-//     wordElement.className = 'exercise-result-word-item bad-word'
-
-//     wordElement.innerHTML = `
-//       <div class="word-content">
-//         <div class="word-text">${word.german || 'Word'}</div>
-//         <div class="word-translation">${word.english || ''}</div>
-//       </div>
-//       <div class="miss-badge">${word.wrongCount}x missed</div>
-//     `
-
-//     container.appendChild(wordElement)
-//   })
-// }
-
 function renderBadWords(badWords) {
-  const container = els.badWordsList()
+  const container = els.badWordsContent()
   if (!container) return
   container.innerHTML = ''
 
@@ -104,6 +86,9 @@ function renderBadWords(badWords) {
       const section = document.createElement('div')
       section.className = 'bad-word-group'
 
+      const wordList = document.createElement('div')
+      section.className = 'bad-word-list'
+
       // Word list for this count
       groups[countKey].forEach((word) => {
         const wordEl = document.createElement('div')
@@ -114,14 +99,16 @@ function renderBadWords(badWords) {
             <div class="word-translation">${word.english}</div>
           </div>
         `
-        section.appendChild(wordEl)
+        wordList.appendChild(wordEl)
       })
 
       // Wrong Count Badge shared with words with same wrongCount
       const wrongBadge = document.createElement('div')
       wrongBadge.className = 'miss-badge'
       wrongBadge.textContent = `${countKey}x missed`
-      section.appendChild(wrongBadge)
+      wordList.appendChild(wrongBadge)
+
+      section.appendChild(wordList)
 
       container.appendChild(section)
     })
