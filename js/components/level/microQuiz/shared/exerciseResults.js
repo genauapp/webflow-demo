@@ -1,5 +1,7 @@
 // components/microQuiz/shared/exerciseResults.js
 
+import { ASSETS_BASE_URL } from '../../../../constants/urls'
+
 let els = {}
 
 function initElements() {
@@ -47,9 +49,15 @@ function renderGoodWords(goodWords) {
     const wordElement = document.createElement('div')
     wordElement.className = 'exercise-result-word-item good-word'
 
-    const badge =
-      word.wrongCount === 0 ? 'Perfect!' : `${word.wrongCount}x missed`
-    const badgeClass = word.wrongCount === 0 ? 'perfect-badge' : 'miss-badge'
+    // const badge =
+    //   word.wrongCount === 0 ? 'Perfect!' : `${word.wrongCount}x missed`
+    // const badgeClass = word.wrongCount === 0 ? 'perfect-badge' : 'miss-badge'
+
+    const icon = document.createElement('img')
+    icon.src = `${ASSETS_BASE_URL}/svg/level/exercise/GoodWordIcon.svg`
+    icon.alt = 'good word'
+    icon.className = 'result-icon'
+    wordElement.prepend(icon)
 
     wordElement.innerHTML = `
       <div class="word-content">
@@ -89,9 +97,17 @@ function renderBadWords(badWords) {
       const wordList = document.createElement('div')
       wordList.className = 'bad-word-list'
 
+      const icon = document.createElement('img')
+      icon.src = `${ASSETS_BASE_URL}/svg/level/exercise/BadWordIcon.svg`
+      icon.alt = 'bad word'
+      icon.className = 'result-icon'
+      
       // Word list for this count
       groups[countKey].forEach((word) => {
         const wordEl = document.createElement('div')
+        
+        wordEl.prepend(icon)
+
         wordEl.className = 'exercise-result-word-item bad-word'
         wordEl.innerHTML = `
           <div class="word-content">
