@@ -1,6 +1,6 @@
 // components/microQuiz/shared/exerciseResults.js
 
-import { ASSETS_BASE_URL } from '../../../../constants/urls.js'
+import { CDN_BASE_URL } from '../../../../constants/urls.js'
 
 let els = {}
 
@@ -53,7 +53,7 @@ function renderGoodWords(goodWords) {
     //   word.wrongCount === 0 ? 'Perfect!' : `${word.wrongCount}x missed`
     // const badgeClass = word.wrongCount === 0 ? 'perfect-badge' : 'miss-badge'
 
-    const iconSrc = `${ASSETS_BASE_URL}/svg/level/exercise/GoodWordIcon.svg`
+    const iconSrc = `${CDN_BASE_URL}/svg/level/exercise/GoodWordIcon.svg`
     const iconAlt = 'good word'
 
     wordElement.innerHTML = `
@@ -99,7 +99,7 @@ function renderBadWords(badWords) {
       const wordList = document.createElement('div')
       wordList.className = 'bad-word-list'
 
-      const iconSrc = `${ASSETS_BASE_URL}/svg/level/exercise/BadWordIcon.svg`
+      const iconSrc = `${CDN_BASE_URL}/svg/level/exercise/BadWordIcon.svg`
       const iconAlt = 'bad word'
 
       // Word list for this count
