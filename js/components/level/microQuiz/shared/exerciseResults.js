@@ -57,7 +57,7 @@ function renderGoodWords(goodWords) {
     icon.src = `${ASSETS_BASE_URL}/svg/level/exercise/GoodWordIcon.svg`
     icon.alt = 'good word'
     icon.className = 'result-icon'
-    wordElement.prepend(icon)
+    wordElement.appendChild(icon)
 
     wordElement.innerHTML = `
       <div class="word-content">
@@ -101,12 +101,12 @@ function renderBadWords(badWords) {
       icon.src = `${ASSETS_BASE_URL}/svg/level/exercise/BadWordIcon.svg`
       icon.alt = 'bad word'
       icon.className = 'result-icon'
-      
+
       // Word list for this count
       groups[countKey].forEach((word) => {
         const wordEl = document.createElement('div')
-        
-        wordEl.prepend(icon)
+
+        wordEl.appendChild(icon)
 
         wordEl.className = 'exercise-result-word-item bad-word'
         wordEl.innerHTML = `
