@@ -88,26 +88,32 @@ function renderBadWords(badWords) {
   container.innerHTML = ''
 
   const groups = groupByWrongCount(badWords)
-  // Sort counts descending (optional)
-  Object.keys(groups)
-    .sort((a, b) => b - a)
-    .forEach((countKey) => {
-      // Section container
-      const section = document.createElement('div')
-      section.className = 'bad-word-group'
 
-      const wordList = document.createElement('div')
-      wordList.className = 'bad-word-list'
+  // 1) Grab all counts as numbers, sort descending, take the first 5,
+  // 2) then re‑sort that slice ascending
+  const topFiveCounts = Object.keys(groups)
+    .map(Number) // ["8","4","3","2"] → [8,4,3,2]
+    .sort((a, b) => b - a) // → [8,4,3,2]
+    .slice(0, 5) // → [8,4,3,2]  (if more, trims to 5)
+    .sort((a, b) => a - b) // → [2,3,4,8]
 
-      const iconSrc = `${CDN_BASE_URL}/svg/level/exercise/BadWordIcon.svg`
-      const iconAlt = 'bad word'
+  topFiveCounts.forEach((countKey) => {
+    // Section container
+    const section = document.createElement('div')
+    section.className = 'bad-word-group'
 
-      // Word list for this count
-      groups[countKey].forEach((word) => {
-        const wordEl = document.createElement('div')
+    const wordList = document.createElement('div')
+    wordList.className = 'bad-word-list'
 
-        wordEl.className = 'exercise-result-word-item bad-word'
-        wordEl.innerHTML = `
+    const iconSrc = `${CDN_BASE_URL}/svg/level/exercise/BadWordIcon.svg`
+    const iconAlt = 'bad word'
+
+    // Word list for this count
+    groups[countKey].forEach((word) => {
+      const wordEl = document.createElement('div')
+
+      wordEl.className = 'exercise-result-word-item bad-word'
+      wordEl.innerHTML = `
           <img 
             src="${iconSrc}" 
             alt="${iconAlt}" 
@@ -118,19 +124,19 @@ function renderBadWords(badWords) {
             <div class="word-translation">${word.english}</div>
           </div>
         `
-        wordList.appendChild(wordEl)
-      })
-
-      section.appendChild(wordList)
-
-      // Wrong Count Badge shared with words with same wrongCount
-      const wrongBadge = document.createElement('div')
-      wrongBadge.className = 'miss-badge'
-      wrongBadge.textContent = `${countKey}x missed`
-      section.appendChild(wrongBadge)
-
-      container.appendChild(section)
+      wordList.appendChild(wordEl)
     })
+
+    section.appendChild(wordList)
+
+    // Wrong Count Badge shared with words with same wrongCount
+    const wrongBadge = document.createElement('div')
+    wrongBadge.className = 'miss-badge'
+    wrongBadge.textContent = `${countKey}x missed`
+    section.appendChild(wrongBadge)
+
+    container.appendChild(section)
+  })
 }
 
 function showSection(section) {
