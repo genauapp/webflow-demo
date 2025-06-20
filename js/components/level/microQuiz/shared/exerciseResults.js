@@ -53,8 +53,8 @@ function renderGoodWords(goodWords) {
     //   word.wrongCount === 0 ? 'Perfect!' : `${word.wrongCount}x missed`
     // const badgeClass = word.wrongCount === 0 ? 'perfect-badge' : 'miss-badge'
 
-    iconSrc = `${ASSETS_BASE_URL}/svg/level/exercise/GoodWordIcon.svg`
-    iconAlt = 'good word'
+    const iconSrc = `${ASSETS_BASE_URL}/svg/level/exercise/GoodWordIcon.svg`
+    const iconAlt = 'good word'
 
     wordElement.innerHTML = `
       <img 
@@ -99,8 +99,8 @@ function renderBadWords(badWords) {
       const wordList = document.createElement('div')
       wordList.className = 'bad-word-list'
 
-      iconSrc = `${ASSETS_BASE_URL}/svg/level/exercise/BadWordIcon.svg`
-      iconAlt = 'bad word'
+      const iconSrc = `${ASSETS_BASE_URL}/svg/level/exercise/BadWordIcon.svg`
+      const iconAlt = 'bad word'
 
       // Word list for this count
       groups[countKey].forEach((word) => {
