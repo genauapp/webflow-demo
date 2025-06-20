@@ -1,6 +1,6 @@
 // components/microQuiz/shared/exerciseResults.js
 
-import { ASSETS_BASE_URL } from '../../../../constants/urls'
+import { ASSETS_BASE_URL } from '../../../../constants/urls.js'
 
 let els = {}
 
