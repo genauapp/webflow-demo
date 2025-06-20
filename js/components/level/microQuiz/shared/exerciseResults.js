@@ -102,13 +102,13 @@ function renderBadWords(badWords) {
         wordList.appendChild(wordEl)
       })
 
+      section.appendChild(wordList)
+
       // Wrong Count Badge shared with words with same wrongCount
       const wrongBadge = document.createElement('div')
       wrongBadge.className = 'miss-badge'
       wrongBadge.textContent = `${countKey}x missed`
-      wordList.appendChild(wrongBadge)
-
-      section.appendChild(wordList)
+      section.appendChild(wrongBadge)
 
       container.appendChild(section)
     })
