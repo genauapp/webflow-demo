@@ -53,13 +53,15 @@ function renderGoodWords(goodWords) {
     //   word.wrongCount === 0 ? 'Perfect!' : `${word.wrongCount}x missed`
     // const badgeClass = word.wrongCount === 0 ? 'perfect-badge' : 'miss-badge'
 
-    const icon = document.createElement('img')
-    icon.src = `${ASSETS_BASE_URL}/svg/level/exercise/GoodWordIcon.svg`
-    icon.alt = 'good word'
-    icon.className = 'result-icon'
-    wordElement.appendChild(icon)
+    iconSrc = `${ASSETS_BASE_URL}/svg/level/exercise/GoodWordIcon.svg`
+    iconAlt = 'good word'
 
     wordElement.innerHTML = `
+      <img 
+            src="${iconSrc}" 
+            alt="${iconAlt}" 
+            class="result-word-icon" 
+      />
       <div class="word-content">
         <div class="word-text">${word.german || 'Word'}</div>
         <div class="word-translation">${word.english || ''}</div>
@@ -97,19 +99,20 @@ function renderBadWords(badWords) {
       const wordList = document.createElement('div')
       wordList.className = 'bad-word-list'
 
-      const icon = document.createElement('img')
-      icon.src = `${ASSETS_BASE_URL}/svg/level/exercise/BadWordIcon.svg`
-      icon.alt = 'bad word'
-      icon.className = 'result-icon'
+      iconSrc = `${ASSETS_BASE_URL}/svg/level/exercise/BadWordIcon.svg`
+      iconAlt = 'bad word'
 
       // Word list for this count
       groups[countKey].forEach((word) => {
         const wordEl = document.createElement('div')
 
-        wordEl.appendChild(icon)
-
         wordEl.className = 'exercise-result-word-item bad-word'
         wordEl.innerHTML = `
+          <img 
+            src="${iconSrc}" 
+            alt="${iconAlt}" 
+            class="result-word-icon" 
+          />
           <div class="word-content">
             <div class="word-text">${word.german}</div>
             <div class="word-translation">${word.english}</div>
