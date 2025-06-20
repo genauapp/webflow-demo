@@ -295,7 +295,6 @@ export async function mountMicroQuiz(packId, packLevel, exerciseType) {
   initState(exerciseType)
 
   state.mounted = true
-  // state.streakTarget = streakTarget >= 1 && streakTarget <= 5 ? streakTarget : 3
   initStreakSettings(handleStreakTargetChange)
 
   initElements()
@@ -325,8 +324,3 @@ export function unmountMicroQuiz() {
   // Last Step: reset state
   resetState()
 }
-
-/** For debugging or external inspection */
-// export function getCurrentState() {
-//   return navigationService.getCurrentState(state.sessionId)
-// }

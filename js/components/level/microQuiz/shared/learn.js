@@ -59,16 +59,6 @@ export function initLearn(learnState) {
   // Initialize elements
   initElements()
 
-  // // Validate input
-  // if (!words || words.length === 0) {
-  //   hideLearnCard()
-  //   return
-  // }
-
-  // // Ensure currentIndex is within bounds
-  // const safeIndex = Math.max(0, Math.min(currentIndex, words.length - 1))
-  // const currentWord = words[safeIndex]
-
   // Render the current word
   renderLearnCard(learnState)
 }

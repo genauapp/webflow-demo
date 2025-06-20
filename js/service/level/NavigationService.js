@@ -7,11 +7,27 @@ import ListUtils from '../../utils/ListUtils.js'
 import { DURATION_FEEDBACK_MS } from '../../constants/timeout.js'
 import NavigationUtils from '../../utils/level/NavigationUtils.js'
 
+// =============================================================================
+// NAVIGATION SERVICE - LEARNING AND EXERCISE SESSION MANAGEMENT
+// =============================================================================
+// This service manages user sessions for learning vocabulary/grammar through
+// two modes: LEARN (flashcard-style review) and EXERCISE (quiz with streak tracking)
+// =============================================================================
+
 class NavigationService {
   constructor() {
     this.sessions = new Map()
   }
 
+  // =============================================================================
+  // SESSION LIFECYCLE MANAGEMENT
+  // =============================================================================
+  // Core session operations: create, retrieve, and destroy user sessions
+
+  /**
+   * Initializes a new learning session with specified items and configuration.
+   * Sets up both learn and exercise progression states for the session.
+   */
   createSession(sessionId, items, configOptions = {}) {
     const baseItems = [...items]
     const currentMode = configOptions.mode || NavigationMode.LEARN
@@ -43,15 +59,31 @@ class NavigationService {
     return session
   }
 
+  /**
+   * Retrieves an existing session by its unique identifier.
+   * Returns null if session doesn't exist.
+   */
   getSession(sessionId) {
     return this.sessions.get(sessionId)
   }
 
+  /**
+   * Permanently removes a session and all its associated data.
+   * Returns true if session was found and deleted, false otherwise.
+   */
   destroySession(sessionId) {
     return this.sessions.delete(sessionId)
   }
 
-  // STREAK TARGET
+  // =============================================================================
+  // GLOBAL SESSION CONFIGURATION
+  // =============================================================================
+  // Methods to modify session-wide settings that affect both modes
+
+  /**
+   * Updates the streak target for exercise mode - how many correct answers
+   * in a row are needed to master a word.
+   */
   updateStreakTarget(sessionId, newTarget) {
     const session = this.sessions.get(sessionId)
     if (!session) return null
@@ -60,7 +92,10 @@ class NavigationService {
     return session
   }
 
-  // LEARN/EXERCISE MODE
+  /**
+   * Switches between LEARN (flashcard) and EXERCISE (quiz) modes.
+   * Preserves progress in both modes when switching.
+   */
   switchMode(sessionId, mode) {
     const session = this.sessions.get(sessionId)
     if (!session) return null
@@ -69,7 +104,16 @@ class NavigationService {
     return session
   }
 
-  // // LEARN MODE NAVIGATION
+  // =============================================================================
+  // LEARN MODE NAVIGATION
+  // =============================================================================
+  // Flashcard-style learning where users mark words as known/unknown
+  // Words are shuffled and users can repeat unknown words
+
+  /**
+   * Marks the current word as known and advances to the next word.
+   * Completes the session if this was the last word.
+   */
   learnNext(sessionId) {
     const session = this.sessions.get(sessionId)
     if (!session) return null
@@ -96,6 +140,10 @@ class NavigationService {
     return currentWord
   }
 
+  /**
+   * Keeps the current word in rotation for continued practice.
+   * Shuffles remaining unknown words to vary the learning sequence.
+   */
   learnRepeat(sessionId) {
     const session = this.sessions.get(sessionId)
     if (!session) return null
@@ -128,6 +176,10 @@ class NavigationService {
     return wordToShow
   }
 
+  /**
+   * Resets all learn progress - marks all words as unknown and
+   * starts the session over with a fresh shuffle.
+   */
   learnReset(sessionId) {
     const session = this.sessions.get(sessionId)
     if (!session) return null
@@ -145,6 +197,10 @@ class NavigationService {
     return this._getCurrentItem(session)
   }
 
+  /**
+   * Checks if the learn session has been completed.
+   * Returns true when all words have been marked as known.
+   */
   isLearnCompleted(sessionId) {
     const session = this.sessions.get(sessionId)
     if (!session) return false
@@ -154,7 +210,17 @@ class NavigationService {
     return state.isCompleted || state.currentIndex === -1
   }
 
-  // // EXERCISE MODE NAVIGATION
+  // =============================================================================
+  // EXERCISE MODE NAVIGATION
+  // =============================================================================
+  // Quiz-style exercises with multiple choice options and streak tracking
+  // Words must be answered correctly N times in a row to be mastered
+
+  /**
+   * Processes a user's answer in exercise mode with streak tracking.
+   * Handles correct/incorrect logic, word advancement, and completion detection.
+   * Includes built-in feedback delay before updating UI.
+   */
   async exerciseAnswer(sessionId, isCorrect) {
     const session = this.sessions.get(sessionId)
     if (!session) return null
@@ -209,50 +275,23 @@ class NavigationService {
       // Wrong answer: reset streak and apply learnRepeat logic
       currentWord.streak = 0
 
-      /** ************ */
-      // /** Track wrong answers properly */
-      // const currentWrongCount = currentWord.wrongCount || 0
-      // const newWrongCount = currentWrongCount + 1
-      // currentWord.wrongCount = newWrongCount
-
-      // Update wrongAnswerCountMap
-      // const existingWordsAtCount =
-      //   state.wrongAnswerCountMap.get(newWrongCount) || []
-      // const existingWordsAtPrevCount =
-      //   state.wrongAnswerCountMap.get(currentWrongCount) || []
-
-      // // Remove from previous count (if any)
-      // if (currentWrongCount > 0) {
-      //   const filteredPrevCount = existingWordsAtPrevCount.filter(
-      //     (w) => w.id !== currentWord.id
-      //   )
-      //   if (filteredPrevCount.length > 0) {
-      //     state.wrongAnswerCountMap.set(currentWrongCount, filteredPrevCount)
-      //   } else {
-      //     state.wrongAnswerCountMap.delete(currentWrongCount)
-      //   }
-      // }
-
-      // // Add to new count
-      // state.wrongAnswerCountMap.set(newWrongCount, [
-      //   ...existingWordsAtCount,
-      //   currentWord,
-      // ])
-
-      /** ************ */
-
-      // REFACTORED: Use helper methods instead of direct wrongCount manipulation
+      /** Word Count Map for Exercise Results */
+      // // get current wrong count of the word
       const currentCount = this._getWordWrongCount(
         state.wrongAnswerCountMap,
         currentWord.id
       )
+      // // increment it
       const newCount = currentCount + 1
-      this._updateWrongAnswerMap(
+      // // set it to wrong count map
+      this.updateWrongAnswerMap(
         state.wrongAnswerCountMap,
         currentWord,
         currentCount,
         newCount
       )
+
+      /** ************ */
 
       // SAME as learnRepeat: Keep same index, change current word
       const remainingWords = state.activeOrder.filter(
@@ -292,16 +331,9 @@ class NavigationService {
     return currentWord
   }
 
-  // Helper method for exercise mode - get words that haven't reached streak target
-  getRemainingExerciseWords(streakTarget, allWords) {
-    return allWords.filter(
-      (word) => !word.isCorrectlyAnswered && (word.streak || 0) < streakTarget
-    )
-  }
-
   /**
-   * Reset exercise progression: wipe streaks, isCorrectlyAnswered flags,
-   * and re‑init the exercise state.
+   * Resets all exercise progress - clears streaks and mastery flags.
+   * Restarts the exercise session with a fresh shuffle.
    */
   exerciseReset(sessionId) {
     const session = this.sessions.get(sessionId)
@@ -324,6 +356,10 @@ class NavigationService {
     return this._getCurrentItem(session)
   }
 
+  /**
+   * Checks if the exercise session has been completed.
+   * Returns true when all words have reached the streak target.
+   */
   isExerciseCompleted(sessionId) {
     const session = this.sessions.get(sessionId)
     if (!session) return false
@@ -334,49 +370,46 @@ class NavigationService {
     return state.isCompleted || state.currentIndex === -1
   }
 
+  // =============================================================================
+  // EXERCISE ANALYTICS AND RESULTS
+  // =============================================================================
+  // Methods for tracking performance and generating detailed exercise results
+
   /**
-   * Get exercise results organized by wrong answer count
-   * Returns categorized results for the results UI
+   * Filters words that still need practice based on streak target.
+   * Used internally for exercise progression logic.
    */
-  // getExerciseResults(sessionId) {
-  //   const session = this.sessions.get(sessionId)
-  //   if (!session) return null
+  getRemainingExerciseWords(streakTarget, allWords) {
+    return allWords.filter(
+      (word) => !word.isCorrectlyAnswered && (word.streak || 0) < streakTarget
+    )
+  }
 
-  //   const state = session.progression[NavigationMode.EXERCISE]
-  //   const wrongAnswerCountMap = state.wrongAnswerCountMap
+  /**
+   * Updates the wrong answer tracking map when a word is answered incorrectly.
+   * Manages the count-based grouping of words by mistake frequency.
+   */
+  updateWrongAnswerMap(wrongAnswerCountMap, word, oldCount, newCount) {
+    // Remove from old count
+    if (oldCount > 0) {
+      const oldWords = wrongAnswerCountMap.get(oldCount) || []
+      const filtered = oldWords.filter((w) => w.id !== word.id)
+      if (filtered.length > 0) {
+        wrongAnswerCountMap.set(oldCount, filtered)
+      } else {
+        wrongAnswerCountMap.delete(oldCount)
+      }
+    }
 
-  //   // Categorize words: good (0-1 wrongs) vs bad (2+ wrongs)
-  //   const goodWords = []
-  //   const badWords = []
+    // Add to new count
+    const newWords = wrongAnswerCountMap.get(newCount) || []
+    wrongAnswerCountMap.set(newCount, [...newWords, word])
+  }
 
-  //   // Process each wrong count bucket
-  //   for (const [wrongCount, words] of wrongAnswerCountMap.entries()) {
-  //     if (wrongCount <= 1) {
-  //       goodWords.push(
-  //         ...words.map((word) => ({
-  //           ...word,
-  //           wrongCount,
-  //         }))
-  //       )
-  //     } else {
-  //       badWords.push(
-  //         ...words.map((word) => ({
-  //           ...word,
-  //           wrongCount,
-  //         }))
-  //       )
-  //     }
-  //   }
-
-  //   return {
-  //     goodWords,
-  //     badWords,
-  //     totalWords: session.originalItems.length,
-  //     score: state.score,
-  //   }
-  // }
-
-  // REFACTORED: Updated getExerciseResults method
+  /**
+   * Generates comprehensive exercise results including performance analytics.
+   * Categorizes words as 'good' (0-1 mistakes) or 'bad' (2+ mistakes).
+   */
   getExerciseResults(sessionId) {
     const session = this.sessions.get(sessionId)
     if (!session) return null
@@ -416,12 +449,15 @@ class NavigationService {
     }
   }
 
-  // UTILITY METHODS
-  // getCurrentItem() {
-  //   return this._getCurrentItem(this.getSession())
-  // }
+  // =============================================================================
+  // PRIVATE HELPER METHODS
+  // =============================================================================
+  // Internal methods for state management and UI notifications
 
-  // PRIVATE METHODS
+  /**
+   * Creates the initial learn mode state with shuffled word order.
+   * Sets up tracking for current position and completion status.
+   */
   _getInitialLearnProgression(items) {
     const shuffledLearnList = ListUtils.shuffleArray([...items])
 
@@ -436,6 +472,10 @@ class NavigationService {
     return initialLearnProgression
   }
 
+  /**
+   * Creates the initial exercise mode state with shuffled word order.
+   * Initializes scoring, streak tracking, and wrong answer analytics.
+   */
   _getInitialExerciseProgression(items, exerciseType) {
     const shuffledExerciseList = ListUtils.shuffleArray([...items])
 
@@ -453,6 +493,10 @@ class NavigationService {
     return initialExerciseProgression
   }
 
+  /**
+   * Gets the current active word based on session mode and progression state.
+   * Returns null if session is completed or invalid.
+   */
   _getCurrentItem(session) {
     if (!session) return null
 
@@ -478,6 +522,10 @@ class NavigationService {
     }
   }
 
+  /**
+   * Generates multiple choice options for the current exercise question.
+   * Adapts option generation based on vocabulary vs grammar exercise type.
+   */
   _getCurrentExerciseOptions(
     exerciseType,
     correctWord,
@@ -499,7 +547,10 @@ class NavigationService {
     }
   }
 
-  // NEW: Helper method to get wrong count for a word
+  /**
+   * Retrieves how many times a specific word has been answered incorrectly.
+   * Searches through the wrong answer count map for the word's mistake count.
+   */
   _getWordWrongCount(wrongAnswerCountMap, wordId) {
     for (const [count, words] of wrongAnswerCountMap.entries()) {
       if (words.some((w) => w.id === wordId)) {
@@ -509,25 +560,10 @@ class NavigationService {
     return 0
   }
 
-  // NEW: Helper method to update wrong answer map
-  _updateWrongAnswerMap(wrongAnswerCountMap, word, oldCount, newCount) {
-    // Remove from old count
-    if (oldCount > 0) {
-      const oldWords = wrongAnswerCountMap.get(oldCount) || []
-      const filtered = oldWords.filter((w) => w.id !== word.id)
-      if (filtered.length > 0) {
-        wrongAnswerCountMap.set(oldCount, filtered)
-      } else {
-        wrongAnswerCountMap.delete(oldCount)
-      }
-    }
-
-    // Add to new count
-    const newWords = wrongAnswerCountMap.get(newCount) || []
-    wrongAnswerCountMap.set(newCount, [...newWords, word])
-  }
-
-  /** Inform UI about changes */
+  /**
+   * Notifies UI components about streak updates immediately after answering.
+   * Provides real-time feedback for correct/incorrect streak changes.
+   */
   _notifyStreakUpdate(session, word) {
     if (session.callbacks.onStreakUpdate) {
       session.callbacks.onStreakUpdate({
@@ -538,6 +574,10 @@ class NavigationService {
     }
   }
 
+  /**
+   * Notifies all registered UI callbacks about session state changes.
+   * Handles mode-specific updates and generates fresh exercise options.
+   */
   _notifyUpdate(session) {
     session.callbacks.onUpdate(session)
 
@@ -592,6 +632,10 @@ class NavigationService {
     }
   }
 
+  /**
+   * Triggers the exercise results callback when a session is completed.
+   * Provides comprehensive analytics and performance summary.
+   */
   _notifyExerciseResults(session) {
     if (session.callbacks.onExerciseResults) {
       const results = this.getExerciseResults(session.id)
