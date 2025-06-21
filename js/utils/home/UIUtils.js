@@ -119,15 +119,15 @@ export function isRegularLevel(level) {
 export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
   // Regular Pack Elements
   const regularPackSummaryGrid = document.getElementById(
-    'pack-summary-container-grid'
+    'regular-pack-summary-container-grid'
   )
 
   // Micro Quiz Pack Elements
   const microQuizSummarySection = document.getElementById(
-    'micro-quiz-summary-section'
+    'micro-quiz-pack-summary-section'
   )
   const microQuizSummaryGrid = document.getElementById(
-    'micro-quiz-summary-container-grid'
+    'micro-quiz-pack-summary-container-grid'
   )
 
   const isMicroQuizAbsent = !packSummariesOfCurrentLevel.some(
