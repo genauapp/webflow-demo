@@ -58,7 +58,7 @@ export const WordSource = {
   INTERNAL: 'internal',
 }
 
-export const categories = {
+export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
   a1: [
     {
       type: PackType.REGULAR,
@@ -198,4 +198,4 @@ export const categories = {
   ],
   c1: [],
   c2: [],
-}
+})

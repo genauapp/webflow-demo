@@ -17,7 +17,7 @@ import { ASSETS_BASE_URL } from '../constants/urls.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
 import ListUtils from '../utils/ListUtils.js'
 import {
-  categories,
+  PACK_SUMMARIES_BY_LEVEL,
   ExerciseType,
   PackType,
   types,
@@ -73,6 +73,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   LocalStorageManager.load(BOOKMARKS_KEY, DEFAULT_VALUE.BOOKMARKS)
 
   const currentLevel = LevelManager.getCurrentLevel()
+  const packSummariesOfCurrentLevel = PACK_SUMMARIES_BY_LEVEL[currentLevel]
   // change Level Header top of the pack screen
   const label = 'Level ' + `${currentLevel}`.toUpperCase()
   document.getElementById('pack-level-header').innerText = label
@@ -80,8 +81,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (isRegularLevel(currentLevel)) {
     // Load current category from localStorage
     let currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
-    loadDeckPropsOnLevelPage()
-    // If current category is not in the categories array or is null, undefined or empty, show select category message
+    loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel)
+    // If current category is not in the list or is null, undefined or empty, show select category message
     if (
       !LevelManager.checkIfCategoryIsInCategories(currentCategory) ||
       currentCategory === null ||
@@ -95,10 +96,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       hideSelectCategoryMessage()
       organizeSelectedDeckImage()
       if (
-        categories[currentLevel].some(
-          (cat) =>
-            cat.nameShort === currentCategory &&
-            cat.type === PackType.MICRO_QUIZ
+        packSummariesOfCurrentLevel.some(
+          (packSummary) =>
+            packSummary.nameShort === currentCategory &&
+            packSummary.type === PackType.MICRO_QUIZ
         )
       ) {
         // hide regular learn/exercise elements
@@ -106,8 +107,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // show micro-quiz learn/exercise
         // 1. grab the first matching category
-        const firstQuiz = categories[currentLevel].find(
-          (cat) => cat.type === PackType.MICRO_QUIZ
+        const firstQuiz = packSummariesOfCurrentLevel.find(
+          (packSummary) => packSummary.type === PackType.MICRO_QUIZ
         )
 
         // 2. if one exists, mount it once
@@ -119,9 +120,9 @@ document.addEventListener('DOMContentLoaded', async () => {
           )
         }
       } else if (
-        categories[currentLevel].some(
-          (cat) =>
-            cat.nameShort === currentCategory && cat.type === PackType.REGULAR
+        [packSummariesOfCurrentLevel].some(
+          (packSummary) =>
+            packSummary.nameShort === currentCategory && packSummary.type === PackType.REGULAR
         )
       ) {
         // hide preposition learn/exercise
