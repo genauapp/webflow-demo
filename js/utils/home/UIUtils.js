@@ -155,7 +155,7 @@ export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
     // img.style.maxWidth = '100%'
     img.id = `deck-${i}`
     img.dataset.option = packSummary.nameShort
-    img.classList.add('deck-img', 'image-19')
+    img.classList.add('deck-img') //, 'image-19')
 
     // <h1> elementini oluştur
     const h1 = document.createElement('h1')
@@ -458,13 +458,13 @@ export function organizeSelectedDeckImage() {
   const deckimgs = document.querySelectorAll('.deck-img')
   deckimgs.forEach((deckimg) => {
     deckimg.classList.remove('selected-deck-img')
-    deckimg.style.border = 'none'
+    // deckimg.style.border = 'none'
     // deckimg.style.borderRadius = ''
   })
   const selectedDeckImg = [...deckimgs].find(
     (deckimg) => deckimg.dataset.option === category
   )
   selectedDeckImg.classList.add('selected-deck-img')
-  selectedDeckImg.style.border = '2px solid black'
+  // selectedDeckImg.style.border = '2px solid black'
   // selectedDeckImg.style.borderRadius = '16px'
 }
