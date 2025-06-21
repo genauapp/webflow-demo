@@ -96,7 +96,7 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
       nameShort: 'preposition',
       name: 'Präpositions',
       nameEng: 'Prepositions',
-      imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/A1-MQ-Prepositions-Grammar.jpg`,
+      imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/A1-MQ-Prepositions-Grammar.svg`,
     },
   ],
   a2: [
@@ -136,7 +136,7 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
       nameShort: 'preposition',
       name: 'Präpositions',
       nameEng: 'Prepositions',
-      imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/A2-MQ-Prepositions-Grammar.jpg`,
+      imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/A2-MQ-Prepositions-Grammar.svg`,
     },
   ],
   b1: [

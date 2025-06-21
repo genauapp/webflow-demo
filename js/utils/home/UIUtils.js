@@ -142,17 +142,17 @@ export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
     // <div> elementini oluştur
     const linkBlock = document.createElement('div')
     linkBlock.classList.add('pack-link-block')
-    linkBlock.style.display = 'flex'
-    linkBlock.style.flexDirection = 'column'
-    linkBlock.style.position = 'relative'
+    // linkBlock.style.display = 'flex'
+    // linkBlock.style.flexDirection = 'column'
+    // linkBlock.style.position = 'relative'
 
     // <img> elementini oluştur
     const img = document.createElement('img')
     img.src = packSummary.imgUrl
     img.loading = 'lazy'
-    img.style.width = '100%'
-    img.style.height = '100%'
-    img.style.maxWidth = '100%'
+    // img.style.width = '100%'
+    // img.style.height = '100%'
+    // img.style.maxWidth = '100%'
     img.id = `deck-${i}`
     img.dataset.option = packSummary.nameShort
     img.classList.add('deck-img', 'image-19')
@@ -162,11 +162,11 @@ export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
     h1.id = `deck-title-${i}`
     h1.classList.add('heading-42')
     h1.textContent = packSummary.nameEng
-    h1.style.fontFamily = 'Lato, sans-serif'
-    h1.style.fontWeight = '400'
-    h1.style.fontSize = '16px'
-    h1.style.lineHeight = '16px'
-    h1.style.color = '#333'
+    // h1.style.fontFamily = 'Lato, sans-serif'
+    // h1.style.fontWeight = '400'
+    // h1.style.fontSize = '16px'
+    // h1.style.lineHeight = '16px'
+    // h1.style.color = '#333'
 
     linkBlock.appendChild(img)
     linkBlock.appendChild(h1)
