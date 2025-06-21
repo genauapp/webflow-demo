@@ -94,9 +94,9 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
       type: PackType.MICRO_QUIZ,
       exerciseType: ExerciseType.GRAMMAR,
       nameShort: 'preposition',
-      name: 'Prepositions Micro Quiz',
-      nameEng: 'Micro Quiz - Prepositions',
-      imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/A1-OfficialAppointments.jpg`,
+      name: 'Präpositions',
+      nameEng: 'Prepositions',
+      imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/A1-MQ-Prepositions-Grammar.jpg`,
     },
   ],
   a2: [
@@ -127,6 +127,16 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
       name: 'Arbeit & Behörden',
       nameEng: 'Work & Authorities',
       imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/A2-Work&Authorities.jpg`,
+    },
+    {
+      id: 'preposition-002', // same as file name!
+      level: 'a2',
+      type: PackType.MICRO_QUIZ,
+      exerciseType: ExerciseType.GRAMMAR,
+      nameShort: 'preposition',
+      name: 'Präpositions',
+      nameEng: 'Prepositions',
+      imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/A2-MQ-Prepositions-Grammar.jpg`,
     },
   ],
   b1: [
