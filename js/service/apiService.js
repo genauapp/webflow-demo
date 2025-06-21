@@ -26,6 +26,26 @@ export const protectedApiService = {
   getUserProfile: () => {
     return handleRequest(() => protectedApi.get('/api/v1/user/me'))
   },
+  getPackWords: (packId, packLevel, packType, exerciseType) => {
+    // todo: activate when ready to integrate with api
+    // return handleRequest(() => protectedApi.get(`/api/v1/pack/${packId}`))
+    return handleRequest(async () => {
+      // dynamically resolve the JSON module
+      const module = await import(
+        /* webpackMode: "lazy", webpackChunkName: "pack-[request]" */
+        `../../json/${packType}/${packLevel}/${exerciseType}/${packId}.json`,
+        { with: { type: 'json' } }
+      )
+
+      return {
+        ok: true,
+        status: 200,
+        json: () =>
+          // match your real API shape
+          Promise.resolve({ data: module.default }),
+      }
+    })
+  },
 }
 
 async function handleRequest(fetchCall) {

@@ -16,7 +16,12 @@ import {
 import { ASSETS_BASE_URL } from '../constants/urls.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
 import ListUtils from '../utils/ListUtils.js'
-import { types } from '../constants/props.js'
+import {
+  PACK_SUMMARIES_BY_LEVEL,
+  ExerciseType,
+  PackType,
+  types,
+} from '../constants/props.js'
 import {
   removeFavorite,
   addToFavorites,
@@ -34,6 +39,10 @@ import {
   loadDeckPropsOnLevelPage,
 } from '../utils/home/UIUtils.js'
 import LevelManager from '../utils/LevelManager.js'
+import {
+  mountMicroQuiz,
+  unmountMicroQuiz,
+} from '../components/level/microQuiz/microQuizContainer.js'
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', async () => {
@@ -64,6 +73,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   LocalStorageManager.load(BOOKMARKS_KEY, DEFAULT_VALUE.BOOKMARKS)
 
   const currentLevel = LevelManager.getCurrentLevel()
+  const packSummariesOfCurrentLevel = PACK_SUMMARIES_BY_LEVEL[currentLevel]
   // change Level Header top of the pack screen
   const label = 'Level ' + `${currentLevel}`.toUpperCase()
   document.getElementById('pack-level-header').innerText = label
@@ -71,8 +81,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (isRegularLevel(currentLevel)) {
     // Load current category from localStorage
     let currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
-    loadDeckPropsOnLevelPage()
-    // If current category is not in the categories array or is null, undefined or empty, show select category message
+    loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel)
+    // If current category is not in the list or is null, undefined or empty, show select category message
     if (
       !LevelManager.checkIfCategoryIsInCategories(currentCategory) ||
       currentCategory === null ||
@@ -85,8 +95,42 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (LevelManager.checkIfCategoryIsInCategories(currentCategory)) {
       hideSelectCategoryMessage()
       organizeSelectedDeckImage()
+      if (
+        packSummariesOfCurrentLevel.some(
+          (packSummary) =>
+            packSummary.category === currentCategory &&
+            packSummary.type === PackType.MICRO_QUIZ
+        )
+      ) {
+        // hide regular learn/exercise elements
+        document.getElementById('content-container').style.display = 'none'
+
+        // show micro-quiz learn/exercise
+        // 1. grab the first matching category
+        const firstQuiz = packSummariesOfCurrentLevel.find(
+          (packSummary) => packSummary.type === PackType.MICRO_QUIZ
+        )
+
+        // 2. if one exists, mount it once
+        if (firstQuiz) {
+          await mountMicroQuiz(
+            firstQuiz.id,
+            firstQuiz.level,
+            firstQuiz.exerciseType
+          )
+        }
+      } else if (
+        packSummariesOfCurrentLevel.some(
+          (packSummary) =>
+            packSummary.category === currentCategory &&
+            packSummary.type === PackType.REGULAR
+        )
+      ) {
+        // hide preposition learn/exercise
+        unmountMicroQuiz()
+        await loadAndShowWords()
+      }
     }
-    await loadAndShowWords()
   }
 })
 
@@ -100,7 +144,9 @@ types.forEach((type) => {
   document
     .getElementById(`${type}Tab-learn`)
     .addEventListener('click', async () => {
-      document.getElementById(`${type}Tab-exercise`).classList.remove('w--current')
+      document
+        .getElementById(`${type}Tab-exercise`)
+        .classList.remove('w--current')
       document.getElementById(`${type}Tab-learn`).classList.remove('w--current')
       document.getElementById(`${type}Tab-learn`).classList.add('w--current')
       LocalStorageManager.save(IS_ON_LEARN_KEY, 'learn')
@@ -110,7 +156,9 @@ types.forEach((type) => {
     .getElementById(`${type}Tab-exercise`)
     .addEventListener('click', async () => {
       document.getElementById(`${type}Tab-learn`).classList.remove('w--current')
-      document.getElementById(`${type}Tab-exercise`).classList.remove('w--current')
+      document
+        .getElementById(`${type}Tab-exercise`)
+        .classList.remove('w--current')
       document.getElementById(`${type}Tab-exercise`).classList.add('w--current')
       LocalStorageManager.save(IS_ON_LEARN_KEY, 'exercise')
       await loadAndShowWords()

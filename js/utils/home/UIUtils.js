@@ -8,9 +8,13 @@ import {
   IS_ON_LEARN_KEY,
   WORD_LIST_EXERCISE_KEY,
 } from '../../constants/storageKeys.js'
-import { categories } from '../../constants/props.js'
+import { PackType } from '../../constants/props.js'
 import { loadAndShowWords } from '../../pages/level.js'
 import LevelManager from '../LevelManager.js'
+import {
+  mountMicroQuiz,
+  unmountMicroQuiz,
+} from '../../components/level/microQuiz/microQuizContainer.js'
 
 // UI visibility functions
 export function showSkeleton() {
@@ -112,44 +116,67 @@ export function isRegularLevel(level) {
   )
 }
 
-export function loadDeckPropsOnLevelPage() {
-  const level = LevelManager.getCurrentLevel()
-  for (let i = 0; i <= categories[level].length - 1; i++) {
+export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
+  // Regular Pack Elements
+  const regularPackSummaryGrid = document.getElementById(
+    'regular-pack-summary-container-grid'
+  )
 
+  // Micro Quiz Pack Elements
+  const microQuizSummarySection = document.getElementById(
+    'micro-quiz-pack-summary-section'
+  )
+  const microQuizSummaryGrid = document.getElementById(
+    'micro-quiz-pack-summary-container-grid'
+  )
+
+  const isMicroQuizAbsent = !packSummariesOfCurrentLevel.some(
+    (ps) => ps.type === PackType.MICRO_QUIZ
+  )
+
+  if (isMicroQuizAbsent) {
+    microQuizSummarySection.style.display = 'none'
+  }
+
+  packSummariesOfCurrentLevel.forEach((packSummary, i) => {
     // <div> elementini oluştur
-    const linkBlock = document.createElement('div');
-    linkBlock.classList.add('pack-link-block');
-    linkBlock.style.display = 'flex';
-    linkBlock.style.flexDirection = 'column';
-    linkBlock.style.position = 'relative'
+    const linkBlock = document.createElement('div')
+    linkBlock.classList.add('pack-link-block')
+    // linkBlock.style.display = 'flex'
+    // linkBlock.style.flexDirection = 'column'
+    // linkBlock.style.position = 'relative'
 
     // <img> elementini oluştur
-    const img = document.createElement('img');
-    img.src = categories[level][i].imgUrl;
-    img.loading = 'lazy';
-    img.style.width = '100%';
-    img.style.height = '100%';
-    img.style.maxWidth = '100%';
-    img.id = `deck-${i}`;
-    img.dataset.option = categories[level][i].nameShort
-    img.classList.add('deck-img', 'image-19');
+    const img = document.createElement('img')
+    img.src = packSummary.imgUrl
+    img.loading = 'lazy'
+    // img.style.width = '100%'
+    // img.style.height = '100%'
+    // img.style.maxWidth = '100%'
+    img.id = `deck-${i}`
+    img.dataset.option = packSummary.category
+    img.classList.add('deck-img') //, 'image-19')
 
     // <h1> elementini oluştur
-    const h1 = document.createElement('h1');
-    h1.id = `deck-title-${i}`;
-    h1.classList.add('heading-42');
-    h1.textContent = categories[level][i].nameEng;
-    h1.style.fontFamily = 'Lato, sans-serif';
-    h1.style.fontWeight = '400';
-    h1.style.fontSize = '16px';
-    h1.style.lineHeight = '16px';
-    h1.style.color = '#333';
+    const h1 = document.createElement('h1')
+    h1.id = `deck-title-${i}`
+    h1.classList.add('heading-42')
+    h1.textContent = packSummary.nameEng
+    // h1.style.fontFamily = 'Lato, sans-serif'
+    // h1.style.fontWeight = '400'
+    // h1.style.fontSize = '16px'
+    // h1.style.lineHeight = '16px'
+    // h1.style.color = '#333'
 
-    linkBlock.appendChild(img);
-    linkBlock.appendChild(h1);
+    linkBlock.appendChild(img)
+    linkBlock.appendChild(h1)
 
     // Son olarak istediğin yere ekle, örneğin bir container'a:
-    document.getElementById('pack-container-grid').appendChild(linkBlock);
+    if (packSummary.type === PackType.REGULAR) {
+      regularPackSummaryGrid.appendChild(linkBlock)
+    } else if (packSummary.type === PackType.MICRO_QUIZ) {
+      microQuizSummaryGrid.appendChild(linkBlock)
+    }
 
     /* Word Count Badge için burayı düzenleyeceğiz
 
@@ -183,28 +210,60 @@ export function loadDeckPropsOnLevelPage() {
     */
 
     //linkBlock.appendChild(wordCountBadge);
+  })
 
-    // Category click handler
-    document.querySelectorAll('.deck-img').forEach((elem) => {
-      elem.addEventListener('click', async function (event) {
-        event.preventDefault()
-        //get category name from data-option attribute
-        const selectedCategory = elem.getAttribute('data-option')
-        //save category name to localStorage
-        LocalStorageManager.save(CURRENT_CATEGORY_KEY, selectedCategory)
-        organizeSelectedDeckImage()
-        hideSelectCategoryMessage()
+  // Category click handler
+  document.querySelectorAll('.deck-img').forEach((elem) => {
+    elem.addEventListener('click', async function (event) {
+      event.preventDefault()
+
+      // clear location hash for re-focusing
+      window.location.hash = ''
+
+      //get category name from data-option attribute
+      const selectedCategory = elem.getAttribute('data-option')
+      //save category name to localStorage
+      LocalStorageManager.save(CURRENT_CATEGORY_KEY, selectedCategory)
+      organizeSelectedDeckImage()
+      hideSelectCategoryMessage()
+      if (selectedCategory === 'preposition') {
+        // hide regular learn/exercise
+        document.getElementById('content-container').style.display = 'none'
+
+        // show micro-quiz learn/exercise
+        // 1. grab the first matching category
+        const firstQuiz = packSummariesOfCurrentLevel.find(
+          (ps) => ps.type === PackType.MICRO_QUIZ
+        )
+
+        // 2. if one exists, mount it once
+        if (firstQuiz) {
+          await mountMicroQuiz(
+            firstQuiz.id,
+            firstQuiz.level,
+            firstQuiz.exerciseType
+          )
+        }
+
+        // focus user Learn/Exercise area
+        window.location.hash = '#action-content'
+        return
+      } else {
+        // hide preposition learn/exercise
+        unmountMicroQuiz()
+
+        // show regular learn/exercise
         await loadAndShowWords()
         // focus user Learn/Exercise area
         window.location.hash = '#action-content'
-      })
+      }
     })
+  })
 
-    // remove placeholders
-    document.querySelectorAll('.placeholder').forEach((element) => {
-      element.style.display = 'none'
-    })
-  }
+  // remove placeholders
+  document.querySelectorAll('.placeholder').forEach((element) => {
+    element.style.display = 'none'
+  })
 }
 
 export function showFinishScreen() {
@@ -381,14 +440,18 @@ export function confettiAnimation() {
 export function showSelectCategoryMessage() {
   const contentContainer = document.getElementById('content-container')
   contentContainer.style.display = 'none'
-  const selectCategoryMessage = document.getElementById('select-category-message')
+  const selectCategoryMessage = document.getElementById(
+    'select-category-message'
+  )
   selectCategoryMessage.style.display = 'flex'
 }
 
 export function hideSelectCategoryMessage() {
   const contentContainer = document.getElementById('content-container')
   contentContainer.style.display = 'block'
-  const selectCategoryMessage = document.getElementById('select-category-message')
+  const selectCategoryMessage = document.getElementById(
+    'select-category-message'
+  )
   selectCategoryMessage.style.display = 'none'
 }
 
@@ -399,11 +462,13 @@ export function organizeSelectedDeckImage() {
   const deckimgs = document.querySelectorAll('.deck-img')
   deckimgs.forEach((deckimg) => {
     deckimg.classList.remove('selected-deck-img')
-    deckimg.style.border = ''
-    deckimg.style.borderRadius = ''
+    // deckimg.style.border = 'none'
+    // deckimg.style.borderRadius = ''
   })
-  const selectedDeckImg = [...deckimgs].find(deckimg => deckimg.dataset.option === category)
+  const selectedDeckImg = [...deckimgs].find(
+    (deckimg) => deckimg.dataset.option === category
+  )
   selectedDeckImg.classList.add('selected-deck-img')
-  selectedDeckImg.style.border = '2px solid black'
-  selectedDeckImg.style.borderRadius = '16px'
+  // selectedDeckImg.style.border = '2px solid black'
+  // selectedDeckImg.style.borderRadius = '16px'
 }

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "prep_a1_01",
+    "german": "mit",
+    "english": "with",
+    "level": "A1",
+    "example": "Ich fahre mit dem Bus.",
+    "type": "preposition",
+    "rule": "Takes dative: der → dem, das → dem, die → der",
+    "case": "dative"
+  },
+  {
+    "id": "prep_a1_02",
+    "german": "durch",
+    "english": "through",
+    "level": "A1",
+    "example": "Wir gehen durch den Park.",
+    "type": "preposition",
+    "rule": "Takes accusative: der → den, das → das, die → die",
+    "case": "accusative"
+  },
+  {
+    "id": "prep_a1_03",
+    "german": "zu",
+    "english": "to",
+    "level": "A1",
+    "example": "Ich gehe zu dem Supermarkt.",
+    "type": "preposition",
+    "rule": "Takes dative: der → dem, das → dem, die → der",
+    "case": "dative"
+  },
+  {
+    "id": "prep_a1_04",
+    "german": "ohne",
+    "english": "without",
+    "level": "A1",
+    "example": "Ich gehe ohne meinen Freund.",
+    "type": "preposition",
+    "rule": "Takes accusative: der → den, das → das, die → die",
+    "case": "accusative"
+  },
+  {
+    "id": "prep_a1_05",
+    "german": "von",
+    "english": "from/of",
+    "level": "A1",
+    "example": "Das Geschenk ist von meiner Mutter.",
+    "type": "preposition",
+    "rule": "Takes dative: der → dem, das → dem, die → der",
+    "case": "dative"
+  },
+  {
+    "id": "prep_a1_06",
+    "german": "für",
+    "english": "for",
+    "level": "A1",
+    "example": "Das Geschenk ist für dich.",
+    "type": "preposition",
+    "rule": "Takes accusative: der → den, das → das, die → die",
+    "case": "accusative"
+  },
+  {
+    "id": "prep_a1_07",
+    "german": "vor",
+    "english": "in front of",
+    "level": "A1",
+    "example": "Das Auto steht vor dem Haus.",
+    "type": "preposition",
+    "rule": "Dual: Takes accusative for motion, dative for location",
+    "case": "dual"
+  },
+  {
+    "id": "prep_a1_08",
+    "german": "unter",
+    "english": "under",
+    "level": "A1",
+    "example": "Die Katze schläft unter dem Bett.",
+    "type": "preposition",
+    "rule": "Dual: Takes accusative for motion, dative for location",
+    "case": "dual"
+  },
+  {
+    "id": "prep_a1_09",
+    "german": "an",
+    "english": "on/at (vertical surface)",
+    "level": "A1",
+    "example": "Das Bild hängt an der Wand.",
+    "type": "preposition",
+    "rule": "Dual: Takes accusative for motion, dative for location",
+    "case": "dual"
+  }
+]

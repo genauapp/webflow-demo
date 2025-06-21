@@ -9,11 +9,46 @@ export const WordType = {
   ADVERB: 'adverb',
 }
 
+export const PackType = Object.freeze({
+  REGULAR: 'regular',
+  MICRO_QUIZ: 'micro-quiz',
+})
+
+export const NavigationMode = Object.freeze({
+  LEARN: 'learn',
+  EXERCISE: 'exercise',
+})
+
+export const ExerciseType = Object.freeze({
+  VOCABULARY: 'vocabulary',
+  GRAMMAR: 'grammar',
+})
+
+export const ExerciseTypeSettingsMap = Object.freeze({
+  [ExerciseType.VOCABULARY]: {
+    description:
+      "Vocabulary type of exercises. 'english' properties of other words in the list are selected as 'wrong' answers",
+    optionsCount: null, // so 2-3-4 is going to work
+  },
+  [ExerciseType.GRAMMAR]: {
+    description:
+      "Grammar fill in the blank 'example' element in the exercise. 'german' properties of other words in the list are selected as 'wrong' answers",
+    optionsCount: 3,
+  },
+})
+
 export const ArtikelColorMap = {
   der: 'blue',
   die: 'red',
   das: 'green',
   default: 'black',
+}
+export const PrepositionCaseColorMap = {
+  nominative: '#000000',
+  accusative: '#E94DEC',
+  dative: '#7ACC20',
+  genitive: '#A259FF',
+  dual: '#F9731F',
 }
 export const ALL_VERB_CASES = ['reflexive', 'separable', 'accusative', 'dative']
 
@@ -23,112 +58,149 @@ export const WordSource = {
   INTERNAL: 'internal',
 }
 
-export const categories = {
+export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
   a1: [
     {
-      nameShort: 'alltag',
+      type: PackType.REGULAR,
+      category: 'alltag',
       name: 'Alltag',
       nameEng: 'Daily Life',
       imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/A1-DailyLife.jpg`,
     },
     {
-      nameShort: 'einkaufen',
+      type: PackType.REGULAR,
+      category: 'einkaufen',
       name: 'Einkaufen & Essen',
       nameEng: 'Shopping & Food',
       imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/A1-Shopping&Food.jpg`,
     },
     {
-      nameShort: 'gesundheit',
+      type: PackType.REGULAR,
+      category: 'gesundheit',
       name: 'Gesundheit',
       nameEng: 'Health',
       imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/A1-Gesundheit.jpg`,
     },
     {
-      nameShort: 'behoerden',
+      type: PackType.REGULAR,
+      category: 'behoerden',
       name: 'Behörden & Termin',
       nameEng: 'Official Appointments',
       imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/A1-OfficialAppointments.jpg`,
     },
+    {
+      id: 'preposition-001', // same as file name!
+      level: 'a1',
+      type: PackType.MICRO_QUIZ,
+      exerciseType: ExerciseType.GRAMMAR,
+      category: 'preposition',
+      name: 'Präpositions',
+      nameEng: 'Prepositions',
+      imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/A1-MQ-Prepositions-Grammar.svg`,
+    },
   ],
   a2: [
     {
-      nameShort: 'alltag',
+      type: PackType.REGULAR,
+      category: 'alltag',
       name: 'Alltag',
       nameEng: 'Daily Life',
       imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/A1-DailyLife.jpg`,
     },
     {
-      nameShort: 'freizeit',
+      type: PackType.REGULAR,
+      category: 'freizeit',
       name: 'Freizeit & Konsum',
       nameEng: 'Leisure & Consumption',
       imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/A2-Leisure.jpg`,
     },
     {
-      nameShort: 'medien',
+      type: PackType.REGULAR,
+      category: 'medien',
       name: 'Medien & Kommunikation',
       nameEng: 'Media & Comm.',
       imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/A2-Media&Consumption.jpg`,
     },
     {
-      nameShort: 'arbeit',
+      type: PackType.REGULAR,
+      category: 'arbeit',
       name: 'Arbeit & Behörden',
       nameEng: 'Work & Authorities',
       imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/A2-Work&Authorities.jpg`,
     },
+    {
+      id: 'preposition-002', // same as file name!
+      level: 'a2',
+      type: PackType.MICRO_QUIZ,
+      exerciseType: ExerciseType.GRAMMAR,
+      category: 'preposition',
+      name: 'Präpositions',
+      nameEng: 'Prepositions',
+      imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/A2-MQ-Prepositions-Grammar.svg`,
+    },
   ],
   b1: [
     {
-      nameShort: 'gefuehle',
+      type: PackType.REGULAR,
+      category: 'gefuehle',
       name: 'Gefühle & Beziehungen',
       nameEng: 'Emotions & Relationships',
       imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/B1-Emotions.jpg`,
     },
     {
-      nameShort: 'reisen',
+      type: PackType.REGULAR,
+      category: 'reisen',
       name: 'Reisen & Verkehr',
       nameEng: 'Travel & Transportation',
       imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/B1-Travel&Transportation.jpg`,
     },
     {
-      nameShort: 'wohnen',
+      type: PackType.REGULAR,
+      category: 'wohnen',
       name: 'Wohnen & Umwelt',
       nameEng: 'Living & Environment',
       imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/B1-Living&Environment.jpg`,
     },
     {
-      nameShort: 'slang',
+      type: PackType.REGULAR,
+      category: 'slang',
       name: 'German Slang',
       nameEng: 'German Slang',
       imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/B1-German Slang.jpg`,
     },
     {
-      nameShort: 'b1telc',
+      type: PackType.REGULAR,
+      category: 'b1telc',
       name: 'B1 TELC EXAM',
       nameEng: 'B1 TELC EXAM',
       imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/B1-TELC.jpg`,
-    }
+    },
   ],
   b2: [
     {
-      nameShort: 'bildung',
+      type: PackType.REGULAR,
+      category: 'bildung',
       name: 'Wissenschaft & Bildung',
       nameEng: 'Science & Education',
       imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/B2-Science&Education.jpg`,
     },
     {
-      nameShort: 'kultur',
+      type: PackType.REGULAR,
+      category: 'kultur',
       name: 'Gesellschaft & Kultur',
       nameEng: 'Society & Culture',
       imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/B2-Society&Culture.jpg`,
     },
     {
-      nameShort: 'politik',
+      type: PackType.REGULAR,
+      category: 'politik',
       name: 'Politik & Umwelt',
       nameEng: 'Politics & Environment',
       imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/B2-Politics&Environment.jpg`,
     },
     {
-      nameShort: 'technik',
+      type: PackType.REGULAR,
+      category: 'technik',
       name: 'Digitalisierung & Technik',
       nameEng: 'Digitalization & Technology',
       imgUrl: `${ASSETS_BASE_URL}/assets/images/decks/B2-Digitalization&TEchnology.jpg`,
@@ -136,4 +208,4 @@ export const categories = {
   ],
   c1: [],
   c2: [],
-}
+})
