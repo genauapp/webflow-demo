@@ -67,12 +67,6 @@ function renderGrammarOptions(
 
     button.textContent = option.german || option.text || ''
 
-    // // Store both the option data AND capitalization info
-    // const optionData = {
-    //   ...option,
-    //   shouldCapitalize: isCapitalized,
-    // }
-
     button.setAttribute('data-word', JSON.stringify(option))
     button.setAttribute(
       'data-correct',
