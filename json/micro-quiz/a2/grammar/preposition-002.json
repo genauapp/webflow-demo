@@ -1,0 +1,102 @@
+[
+  {
+    "id": "prep_a2_01",
+    "german": "trotz",
+    "english": "despite",
+    "level": "A2",
+    "type": "preposition",
+    "example": "Trotz des Regens gehen wir spazieren.",
+    "rule": "Takes genitive: der → des, das → des, die → der",
+    "case": "genitive"
+  },
+  {
+    "id": "prep_a2_02",
+    "german": "wegen",
+    "english": "because of",
+    "level": "A2",
+    "type": "preposition",
+    "example": "Wegen des Staus komme ich zu spät.",
+    "rule": "Takes genitive: der → des, das → des, die → der",
+    "case": "genitive"
+  },
+  {
+    "id": "prep_a2_03",
+    "german": "während",
+    "english": "during",
+    "level": "A2",
+    "type": "preposition",
+    "example": "Während des Unterrichts soll man nicht sprechen.",
+    "rule": "Takes genitive: der → des, das → des, die → der",
+    "case": "genitive"
+  },
+  {
+    "id": "prep_a2_04",
+    "german": "anstatt",
+    "english": "instead of",
+    "level": "A2",
+    "type": "preposition",
+    "example": "Anstatt des Kuchens bringt er Obst mit.",
+    "rule": "Takes genitive: der → des, das → des, die → der",
+    "case": "genitive"
+  },
+  {
+    "id": "prep_a2_05",
+    "german": "außer",
+    "english": "except (for)",
+    "level": "A2",
+    "type": "preposition",
+    "example": "Außer meinem Bruder kommt niemand.",
+    "rule": "Takes dative: der → dem, das → dem, die → der",
+    "case": "dative"
+  },
+  {
+    "id": "prep_a2_06",
+    "german": "gegenüber",
+    "english": "opposite",
+    "level": "A2",
+    "type": "preposition",
+    "example": "Der Park liegt dem Museum gegenüber.",
+    "rule": "Takes dative: der → dem, das → dem, die → der",
+    "case": "dative"
+  },
+  {
+    "id": "prep_a2_07",
+    "german": "entlang",
+    "english": "along",
+    "level": "A2",
+    "type": "preposition",
+    "example": "Wir gehen die Straße entlang.",
+    "rule": "Takes accusative: der → den, das → das, die → die",
+    "case": "accusative"
+  },
+  {
+    "id": "prep_a2_08",
+    "german": "innerhalb",
+    "english": "within",
+    "level": "A2",
+    "type": "preposition",
+    "example": "Innerhalb einer Woche bekommen Sie eine Antwort.",
+    "rule": "Takes genitive: der → der, das → des, die → der",
+    "case": "genitive"
+  },
+  {
+    "id": "prep_a2_09",
+    "german": "seit",
+    "english": "since / for",
+    "level": "A2",
+    "type": "preposition",
+    "example": "Ich wohne seit einem Jahr in Berlin.",
+    "rule": "Takes dative: der → dem, das → dem, die → der",
+    "case": "dative"
+  },
+  {
+    "id": "prep_a2_10",
+    "german": "ab",
+    "english": "from (a time point)",
+    "level": "A2",
+    "type": "preposition",
+    "example": "Ab nächster Woche habe ich Urlaub.",
+    "rule": "Takes dative: der → dem, das → dem, die → der",
+    "case": "dative"
+  }
+]
