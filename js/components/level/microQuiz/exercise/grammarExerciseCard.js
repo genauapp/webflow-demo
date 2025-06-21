@@ -1,9 +1,5 @@
 // /components/microQuiz/exercise/grammarExerciseCard.js
-import {
-  ExerciseType,
-  ExerciseTypeSettingsMap,
-} from '../../../../constants/props.js'
-import ListUtils from '../../../../utils/ListUtils.js'
+import StringUtils from '../../../../utils/StringUtils.js'
 
 let els = {}
 
@@ -27,44 +23,39 @@ function initElements() {
   }
 }
 
-/** OLD: Parse sentence and extract German word */
-// function parseSentence(sentence, germanWord) {
-//   const index = sentence.indexOf(germanWord)
-//   if (index === -1) {
-//     return { before: sentence, after: '', found: false }
-//   }
-
-//   const before = sentence.substring(0, index).trim()
-//   const after = sentence.substring(index + germanWord.length).trim()
-
-//   return { before, after, found: true }
-// }
-
 /** Parse sentence and extract German word */
 function parseSentence(sentence, germanWord) {
   const lower = germanWord
-  const cap = germanWord[0].toUpperCase() + germanWord.slice(1)
+  const cap = StringUtils.capitalize(germanWord)
 
   // try lowercase first, then capitalized
   let index = sentence.indexOf(lower)
   let match = lower
+  let isCapitalized = false
 
   if (index === -1) {
     index = sentence.indexOf(cap)
     match = cap
+    isCapitalized = true
   }
 
+  // if neither of them are found, early return
   if (index === -1) {
-    return { before: sentence, after: '', found: false }
+    return { before: sentence, after: '', found: false, isCapitalized: false }
   }
 
   const before = sentence.substring(0, index).trim()
   const after = sentence.substring(index + match.length).trim()
-  return { before, after, found: true }
+  return { before, after, found: true, isCapitalized }
 }
 
-/** NEW: Render grammar exercise options */
-function renderGrammarOptions(options, correctWord, onAnswerCallback) {
+/** Render grammar exercise options */
+function renderGrammarOptions(
+  options,
+  correctWord,
+  onAnswerCallback,
+  isCapitalized
+) {
   const container = els.optionsContainer()
   if (!container) return
 
@@ -75,6 +66,13 @@ function renderGrammarOptions(options, correctWord, onAnswerCallback) {
     button.className = 'action-button exercise-option-btn'
 
     button.textContent = option.german || option.text || ''
+
+    // // Store both the option data AND capitalization info
+    // const optionData = {
+    //   ...option,
+    //   shouldCapitalize: isCapitalized,
+    // }
+
     button.setAttribute('data-word', JSON.stringify(option))
     button.setAttribute(
       'data-correct',
@@ -88,11 +86,18 @@ function renderGrammarOptions(options, correctWord, onAnswerCallback) {
       // // fill the blank with selected answer
       if (els.grammarBlank()) {
         const blank = els.grammarBlank()
-        blank.textContent = option.german || option.text || ''
         blank.classList.remove(
           'exercise-grammar-blank-correct',
           'exercise-grammar-blank-incorrect'
         )
+
+        // Get the word text and apply capitalization if needed
+        const wordText = option.german || option.text || ''
+        const displayText = isCapitalized
+          ? StringUtils.capitalize(wordText)
+          : wordText
+
+        blank.textContent = displayText
 
         blank.classList.add(
           isCorrect
@@ -125,7 +130,7 @@ function renderGrammarOptions(options, correctWord, onAnswerCallback) {
   })
 }
 
-/** NEW: Show grammar-specific feedback */
+/** Show grammar-specific feedback */
 function showGrammarFeedback(isCorrect, correctWord, selectedWord) {
   const feedbackContainer = els.feedbackContainer()
   const feedbackText = els.feedbackText()
@@ -153,7 +158,7 @@ function showGrammarFeedback(isCorrect, correctWord, selectedWord) {
   }
 }
 
-/** NEW: Hide grammar feedback and reset blank */
+/** Hide grammar feedback and reset blank */
 function hideGrammarFeedback() {
   const feedbackContainer = els.feedbackContainer()
   if (feedbackContainer) {
@@ -168,7 +173,7 @@ function hideGrammarFeedback() {
   }
 }
 
-/** NEW: Render grammar exercise card */
+/** Render grammar exercise card */
 function renderGrammarExerciseCard(
   { currentWord: word, options, currentIndex, lastIndex, allWords, score },
   onAnswerCallback
@@ -178,8 +183,8 @@ function renderGrammarExerciseCard(
   // Hide feedback from previous question
   hideGrammarFeedback()
 
-  // Parse the sentence
-  const { before, after, found } = parseSentence(
+  // Parse the sentence (also learn if it was capitalized)
+  const { before, after, found, isCapitalized } = parseSentence(
     word.example || '',
     word.german || ''
   )
@@ -195,7 +200,7 @@ function renderGrammarExerciseCard(
   const blankElStr = `<span id="exercise-grammar-blank" class="exercise-grammar-sentence grammar-blank"> ______ </span>`
   sentenceEl.innerHTML = `${before} ${blankElStr} ${after}`
 
-  renderGrammarOptions(options, word, onAnswerCallback)
+  renderGrammarOptions(options, word, onAnswerCallback, isCapitalized)
 }
 
 export function mountGrammarExerciseCard(exerciseState, onAnswerCallback) {
