@@ -216,6 +216,10 @@ export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
   document.querySelectorAll('.deck-img').forEach((elem) => {
     elem.addEventListener('click', async function (event) {
       event.preventDefault()
+
+      // clear location hash for re-focusing
+      window.location.hash = ''
+
       //get category name from data-option attribute
       const selectedCategory = elem.getAttribute('data-option')
       //save category name to localStorage
