@@ -27,16 +27,39 @@ function initElements() {
   }
 }
 
-/** NEW: Parse sentence and extract German word */
+/** OLD: Parse sentence and extract German word */
+// function parseSentence(sentence, germanWord) {
+//   const index = sentence.indexOf(germanWord)
+//   if (index === -1) {
+//     return { before: sentence, after: '', found: false }
+//   }
+
+//   const before = sentence.substring(0, index).trim()
+//   const after = sentence.substring(index + germanWord.length).trim()
+
+//   return { before, after, found: true }
+// }
+
+/** Parse sentence and extract German word */
 function parseSentence(sentence, germanWord) {
-  const index = sentence.indexOf(germanWord)
+  const lower = germanWord
+  const cap = germanWord[0].toUpperCase() + germanWord.slice(1)
+
+  // try lowercase first, then capitalized
+  let index = sentence.indexOf(lower)
+  let match = lower
+
+  if (index === -1) {
+    index = sentence.indexOf(cap)
+    match = cap
+  }
+
   if (index === -1) {
     return { before: sentence, after: '', found: false }
   }
 
   const before = sentence.substring(0, index).trim()
-  const after = sentence.substring(index + germanWord.length).trim()
-
+  const after = sentence.substring(index + match.length).trim()
   return { before, after, found: true }
 }
 
@@ -117,7 +140,9 @@ function showGrammarFeedback(isCorrect, correctWord, selectedWord) {
     feedbackContainer.classList.add(
       isCorrect ? 'feedback-correct' : 'feedback-incorrect'
     )
-    feedbackText.textContent = isCorrect ? 'Correct! 🎉' : `No worries! Let’s try again 💪` // ${correctWord.rule || ''}`
+    feedbackText.textContent = isCorrect
+      ? 'Correct! 🎉'
+      : `No worries! Let’s try again 💪` // ${correctWord.rule || ''}`
   }
 
   if (correctAnswerEl && !isCorrect) {
