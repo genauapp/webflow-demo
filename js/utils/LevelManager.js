@@ -18,6 +18,6 @@ export default class LevelManager {
 
   static checkIfCategoryIsInCategories(category) {
     const packSummaries = PACK_SUMMARIES_BY_LEVEL[this.getCurrentLevel()]
-    return packSummaries.some((cat) => cat.nameShort === category)
+    return packSummaries.some((packSummary) => packSummary.category === category)
   }
 }

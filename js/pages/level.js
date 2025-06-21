@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (
         packSummariesOfCurrentLevel.some(
           (packSummary) =>
-            packSummary.nameShort === currentCategory &&
+            packSummary.category === currentCategory &&
             packSummary.type === PackType.MICRO_QUIZ
         )
       ) {
@@ -120,9 +120,10 @@ document.addEventListener('DOMContentLoaded', async () => {
           )
         }
       } else if (
-        [packSummariesOfCurrentLevel].some(
+        packSummariesOfCurrentLevel.some(
           (packSummary) =>
-            packSummary.nameShort === currentCategory && packSummary.type === PackType.REGULAR
+            packSummary.category === currentCategory &&
+            packSummary.type === PackType.REGULAR
         )
       ) {
         // hide preposition learn/exercise

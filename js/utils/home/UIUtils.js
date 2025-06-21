@@ -154,7 +154,7 @@ export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
     // img.style.height = '100%'
     // img.style.maxWidth = '100%'
     img.id = `deck-${i}`
-    img.dataset.option = packSummary.nameShort
+    img.dataset.option = packSummary.category
     img.classList.add('deck-img') //, 'image-19')
 
     // <h1> elementini oluştur
