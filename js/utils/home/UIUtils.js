@@ -458,13 +458,13 @@ export function organizeSelectedDeckImage() {
   const deckimgs = document.querySelectorAll('.deck-img')
   deckimgs.forEach((deckimg) => {
     deckimg.classList.remove('selected-deck-img')
-    deckimg.style.border = ''
-    deckimg.style.borderRadius = ''
+    deckimg.style.border = 'none'
+    // deckimg.style.borderRadius = ''
   })
   const selectedDeckImg = [...deckimgs].find(
     (deckimg) => deckimg.dataset.option === category
   )
   selectedDeckImg.classList.add('selected-deck-img')
   selectedDeckImg.style.border = '2px solid black'
-  selectedDeckImg.style.borderRadius = '16px'
+  // selectedDeckImg.style.borderRadius = '16px'
 }
