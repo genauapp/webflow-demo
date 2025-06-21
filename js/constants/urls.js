@@ -2,7 +2,7 @@
 //export const ASSETS_BASE_URL = `https://genauapp.github.io/webflow-demo/`
 // STAGING
 export const ASSETS_BASE_URL =
-  'https://cdn.jsdelivr.net/gh/genauapp/webflow-demo@1586399'
+  'https://cdn.jsdelivr.net/gh/genauapp/webflow-demo@8eee61c'
 
 export const CDN_BASE_URL = 'https://genauapp.github.io/cdn-temp'
 
