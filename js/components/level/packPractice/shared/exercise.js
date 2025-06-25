@@ -1,4 +1,4 @@
-// /components/microQuiz/shared/exercise.js
+// /components/level/packPractice/shared/exercise.js
 import { ExerciseType } from '../../../../constants/props.js'
 import { mountGrammarExerciseCard } from '../exercise/grammarExerciseCard.js'
 import { mountVocabularyExerciseCard } from '../exercise/vocabularyExerciseCard.js'

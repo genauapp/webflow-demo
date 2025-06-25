@@ -1,4 +1,4 @@
-// components/microQuiz/shared/streakSetting.js
+// components/level/packPractice/shared/streakSettings.js
 let els = {}
 
 function initElements() {

@@ -1,4 +1,4 @@
-// components/microQuiz/shared/exerciseResults.js
+// components/level/packPractice/shared/exerciseResults.js
 
 import { CDN_BASE_URL } from '../../../../constants/urls.js'
 
