@@ -4,7 +4,7 @@ let els = {}
 function initElements() {
   els = {
     container: () =>
-      document.getElementById('micro-quiz-streak-target-selector'),
+      document.getElementById('pack-practice-streak-target-selector'),
     option1: () => document.getElementById('streak-target-option-1'),
     option3: () => document.getElementById('streak-target-option-3'),
     option5: () => document.getElementById('streak-target-option-5'),
