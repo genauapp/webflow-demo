@@ -40,9 +40,9 @@ import {
 } from '../utils/home/UIUtils.js'
 import LevelManager from '../utils/LevelManager.js'
 import {
-  mountMicroQuiz,
-  unmountMicroQuiz,
-} from '../components/level/microQuiz/microQuizContainer.js'
+  mountPackPractice,
+  unmountPackPractice,
+} from '../components/level/packPractice/packPractice.js'
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', async () => {
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // 2. if one exists, mount it once
         if (firstQuiz) {
-          await mountMicroQuiz(
+          await mountPackPractice(
             firstQuiz.id,
             firstQuiz.level,
             firstQuiz.exerciseType
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         )
       ) {
         // hide preposition learn/exercise
-        unmountMicroQuiz()
+        unmountPackPractice()
         await loadAndShowWords()
       }
     }

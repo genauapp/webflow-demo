@@ -1,4 +1,4 @@
-// /components/microQuiz/exercise/grammarExerciseCard.js
+// /components/level/packPractice/exercise/grammarExerciseCard.js
 import StringUtils from '../../../../utils/StringUtils.js'
 
 let els = {}

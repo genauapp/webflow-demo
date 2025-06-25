@@ -1,4 +1,4 @@
-// /components/microQuiz/exercise/vocabularyExerciseCard.js
+// /components/level/packPractice/exercise/vocabularyExerciseCard.js
 
 import {
   ExerciseType,

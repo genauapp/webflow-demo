@@ -1,4 +1,4 @@
-// components/microQuiz/shared/exerciseResults.js
+// components/level/packPractice/shared/exerciseResults.js
 
 import { CDN_BASE_URL } from '../../../../constants/urls.js'
 
@@ -8,7 +8,7 @@ function initElements() {
   els = {
     // Main results container
     resultsContainer: () =>
-      document.getElementById('micro-quiz-exercise-results-card'),
+      document.getElementById('pack-practice-exercise-results-card'),
 
     // Header elements
     resultsTitle: () => document.getElementById('exercise-results-title'),

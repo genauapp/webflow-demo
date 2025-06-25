@@ -1,4 +1,4 @@
-// /components/microQuiz/shared/exercise.js
+// /components/level/packPractice/shared/exercise.js
 import { ExerciseType } from '../../../../constants/props.js'
 import { mountGrammarExerciseCard } from '../exercise/grammarExerciseCard.js'
 import { mountVocabularyExerciseCard } from '../exercise/vocabularyExerciseCard.js'
@@ -10,7 +10,7 @@ function initElements() {
   els = {
     // Exercise card elements
     exerciseCard: () =>
-      document.getElementById('micro-quiz-exercise-word-card'),
+      document.getElementById('pack-practice-exercise-word-card'),
 
     // header
     currentIndexLabel: () =>

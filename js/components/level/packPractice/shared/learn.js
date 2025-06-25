@@ -1,4 +1,4 @@
-// /components/microQuiz/shared/learn.js
+// /components/level/packPractice/shared/learn.js
 import { PrepositionCaseColorMap } from '../../../../constants/props.js'
 
 let els = {}
