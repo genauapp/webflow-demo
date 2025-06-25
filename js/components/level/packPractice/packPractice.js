@@ -1,16 +1,16 @@
-import { initLearn } from './shared/learn.js'
-import { initExercise, updateStreakProgression } from './shared/exercise.js'
-import { navigationService } from '../../../service/level/NavigationService.js'
-import { protectedApiService } from '../../../service/apiService.js'
 import { NavigationMode, PackType } from '../../../constants/props.js'
+import { protectedApiService } from '../../../service/apiService.js'
+import { navigationService } from '../../../service/level/NavigationService.js'
+import { initLearn } from './shared/learn.js'
 import { initStreakSettings } from './shared/streakSettings.js'
+import { initExercise, updateStreakProgression } from './shared/exercise.js'
 import { initExerciseResults } from './shared/exerciseResults.js'
 
 const DEFAULT_STATE = Object.freeze({
   loading: false,
   error: null,
   words: [],
-  sessionId: 'micro-quiz', // Unique session identifier
+  sessionId: 'pack-practice', // Unique session identifier
   streakTarget: 0, // Initially unset streak target
   mounted: false, // New: has the component been initialized?
 })
@@ -21,32 +21,32 @@ let state = {}
 /** Initialize elements dynamically using provided IDs */
 function initElements() {
   els = {
-    container: () => document.getElementById('micro-quiz-container'),
+    container: () => document.getElementById('pack-practice-container'),
     // loadingContainer: () => document.getElementById("tbd"),
     // errorContainer: () => document.getElementById("tbd"),
     // emptyContainer: () => document.getElementById("tbd"),
 
-    learnTab: () => document.getElementById('micro-quiz-tab-learn'),
-    learnContainer: () => document.getElementById('micro-quiz-learn-container'),
-    learnWordCard: () => document.getElementById('micro-quiz-learn-word-card'),
+    learnTab: () => document.getElementById('pack-practice-tab-learn'),
+    learnContainer: () => document.getElementById('pack-practice-learn-container'),
+    learnWordCard: () => document.getElementById('pack-practice-learn-word-card'),
     learnRepeat: () =>
-      document.getElementById('micro-quiz-learn-repeat-button'),
-    learnNext: () => document.getElementById('micro-quiz-learn-i-know-button'),
+      document.getElementById('pack-practice-learn-repeat-button'),
+    learnNext: () => document.getElementById('pack-practice-learn-i-know-button'),
     learnCompletedCard: () =>
-      document.getElementById('micro-quiz-learn-completed-card'),
-    learnReset: () => document.getElementById('micro-quiz-learn-reset-button'),
+      document.getElementById('pack-practice-learn-completed-card'),
+    learnReset: () => document.getElementById('pack-practice-learn-reset-button'),
 
-    exerciseTab: () => document.getElementById('micro-quiz-tab-exercise'),
+    exerciseTab: () => document.getElementById('pack-practice-tab-exercise'),
     exerciseContainer: () =>
-      document.getElementById('micro-quiz-exercise-container'),
+      document.getElementById('pack-practice-exercise-container'),
     exerciseStreakSettingsCard: () =>
-      document.getElementById('micro-quiz-exercise-streak-settings-card'),
+      document.getElementById('pack-practice-exercise-streak-settings-card'),
     exerciseWordCard: () =>
-      document.getElementById('micro-quiz-exercise-word-card'),
+      document.getElementById('pack-practice-exercise-word-card'),
     exerciseResultsCard: () =>
-      document.getElementById('micro-quiz-exercise-results-card'),
+      document.getElementById('pack-practice-exercise-results-card'),
     exerciseReset: () =>
-      document.getElementById('micro-quiz-exercise-reset-button'),
+      document.getElementById('pack-practice-exercise-reset-button'),
   }
 }
 
@@ -172,7 +172,7 @@ function enhanceWordsWithProperties(words) {
 }
 
 /** Fetch words from API service */
-async function fetchWords(packId, packLevel, exerciseType) {
+async function fetchWords(packId, packLevel, packType, exerciseType) {
   try {
     state.loading = true
     state.error = null
@@ -181,7 +181,7 @@ async function fetchWords(packId, packLevel, exerciseType) {
     const { data: words, error } = await protectedApiService.getPackWords(
       packId,
       packLevel,
-      PackType.MICRO_QUIZ,
+      packType,
       exerciseType
     )
 
@@ -288,7 +288,7 @@ function resetEventListeners() {
  * Mount: set up everything once and show container
  * Prevents double-init via state.mounted
  */
-export async function mountMicroQuiz(packId, packLevel, exerciseType) {
+export async function mountPackPractice(packId, packLevel, exerciseType) {
   if (state && state.mounted) return
 
   // First Step: initialize state
@@ -304,13 +304,13 @@ export async function mountMicroQuiz(packId, packLevel, exerciseType) {
   els.container().style.display = 'block'
 
   // Fetch words, initialize navigation service and render
-  await fetchWords(packId, packLevel, state.exerciseType)
+  await fetchWords(packId, packLevel, PackType.MICRO_QUIZ, state.exerciseType)
 }
 
 /**
  * Unmount: teardown session & reset state, hide container
  */
-export function unmountMicroQuiz() {
+export function unmountPackPractice() {
   if (!state || !state.mounted) return
 
   // Hide root

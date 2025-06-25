@@ -12,9 +12,9 @@ import { PackType } from '../../constants/props.js'
 import { loadAndShowWords } from '../../pages/level.js'
 import LevelManager from '../LevelManager.js'
 import {
-  mountMicroQuiz,
-  unmountMicroQuiz,
-} from '../../components/level/microQuiz/microQuizContainer.js'
+  mountPackPractice,
+  unmountPackPractice,
+} from '../../components/level/packPractice/packPractice.js'
 
 // UI visibility functions
 export function showSkeleton() {
@@ -238,7 +238,7 @@ export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
 
         // 2. if one exists, mount it once
         if (firstQuiz) {
-          await mountMicroQuiz(
+          await mountPackPractice(
             firstQuiz.id,
             firstQuiz.level,
             firstQuiz.exerciseType
@@ -250,7 +250,7 @@ export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
         return
       } else {
         // hide preposition learn/exercise
-        unmountMicroQuiz()
+        unmountPackPractice()
 
         // show regular learn/exercise
         await loadAndShowWords()
