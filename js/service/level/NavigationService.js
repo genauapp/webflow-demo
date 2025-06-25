@@ -592,13 +592,13 @@ class NavigationService {
         lastIndex: learnProgressionState.lastIndex + 1, // visual index ends at n + 1
       })
     } else if (session.mode === NavigationMode.EXERCISE) {
-      console.info(
-        `EXERCISE PROGRESSION UPDATE:\n > ${JSON.stringify(
-          session.progression[NavigationMode.EXERCISE],
-          null,
-          4
-        )}`
-      )
+      // console.info(
+      //   `EXERCISE PROGRESSION UPDATE:\n > ${JSON.stringify(
+      //     session.progression[NavigationMode.EXERCISE],
+      //     null,
+      //     4
+      //   )}`
+      // )
       const exerciseProgressionState =
         session.progression[NavigationMode.EXERCISE]
 
