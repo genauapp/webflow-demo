@@ -1,4 +1,4 @@
-import { DeckStatus } from '../../constants/props'
+import { DeckStatus } from '../../constants/props.js'
 
 const JOURNEY_STAGES = ['noun', 'verb', 'adjective', 'adverb']
 

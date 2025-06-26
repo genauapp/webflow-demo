@@ -1,4 +1,4 @@
-import { DeckStatus } from '../../../constants/props'
+import { DeckStatus } from '../../../constants/props.js'
 
 let els = {}
 
