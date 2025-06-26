@@ -28,8 +28,8 @@ class PackPracticeJourneyService {
           english: packSummary.name_eng,
         },
         imageUrl: packSummary.img_url,
-        deckSummaries: deckSummaries,
       },
+      deckSummaries: deckSummaries,
     }
 
     this.journeys.set(journeySessionState.pack.id, {

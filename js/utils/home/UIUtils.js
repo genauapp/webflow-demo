@@ -257,14 +257,14 @@ export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
       } else {
         // hide preposition learn/exercise
         unmountPackPractice()
-        
+
         mountPackPracticeJourney(packSummariesOfCurrentLevel[0])
+        window.location.hash = '#action-content'
         return
 
         // show regular learn/exercise
         // await loadAndShowWords()
         // focus user Learn/Exercise area
-        window.location.hash = '#action-content'
       }
     })
   })
