@@ -1,0 +1,202 @@
+[
+    {
+        "german": "verliebt",
+        "english": "in love",
+        "level": "B1",
+        "example": "Sie ist frisch verliebt.",
+        "word": "verliebt",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_01"
+    },
+    {
+        "german": "eifersüchtig",
+        "english": "jealous",
+        "level": "B1",
+        "example": "Er ist sehr eifersüchtig.",
+        "word": "eifersüchtig",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_02"
+    },
+    {
+        "german": "traurig",
+        "english": "sad",
+        "level": "B1",
+        "example": "Ich bin heute traurig.",
+        "word": "traurig",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_03"
+    },
+    {
+        "german": "glücklich",
+        "english": "happy",
+        "level": "B1",
+        "example": "Sie sind glücklich verheiratet.",
+        "word": "glücklich",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_04"
+    },
+    {
+        "german": "zufrieden",
+        "english": "content",
+        "level": "B1",
+        "example": "Ich bin mit meinem Leben zufrieden.",
+        "word": "zufrieden",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_05"
+    },
+    {
+        "german": "unzufrieden",
+        "english": "dissatisfied",
+        "level": "B1",
+        "example": "Sie ist unzufrieden mit der Beziehung.",
+        "word": "unzufrieden",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_06"
+    },
+    {
+        "german": "verletzt",
+        "english": "hurt",
+        "level": "B1",
+        "example": "Er fühlt sich verletzt.",
+        "word": "verletzt",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_07"
+    },
+    {
+        "german": "einsam",
+        "english": "lonely",
+        "level": "B1",
+        "example": "Sie fühlt sich oft einsam.",
+        "word": "einsam",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_08"
+    },
+    {
+        "german": "nah",
+        "english": "close",
+        "level": "B1",
+        "example": "Wir sind uns sehr nah.",
+        "word": "nah",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_09"
+    },
+    {
+        "german": "fern",
+        "english": "distant",
+        "level": "B1",
+        "example": "In letzter Zeit ist er mir fern.",
+        "word": "fern",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_10"
+    },
+    {
+        "german": "wütend",
+        "english": "angry",
+        "level": "B1",
+        "example": "Sie war sehr wütend auf ihn.",
+        "word": "wütend",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_11"
+    },
+    {
+        "german": "freundlich",
+        "english": "friendly",
+        "level": "B1",
+        "example": "Er ist immer freundlich zu allen.",
+        "word": "freundlich",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_12"
+    },
+    {
+        "german": "gemein",
+        "english": "mean",
+        "level": "B1",
+        "example": "Das war eine gemeine Bemerkung.",
+        "word": "gemein",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_13"
+    },
+    {
+        "german": "zärtlich",
+        "english": "tender",
+        "level": "B1",
+        "example": "Er ist sehr zärtlich zu ihr.",
+        "word": "zärtlich",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_14"
+    },
+    {
+        "german": "rücksichtsvoll",
+        "english": "considerate",
+        "level": "B1",
+        "example": "Sie ist immer rücksichtsvoll.",
+        "word": "rücksichtsvoll",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_15"
+    },
+    {
+        "german": "ehrlich",
+        "english": "honest",
+        "level": "B1",
+        "example": "Er war immer ehrlich zu mir.",
+        "word": "ehrlich",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_16"
+    },
+    {
+        "german": "treu",
+        "english": "loyal",
+        "level": "B1",
+        "example": "Ein guter Freund ist immer treu.",
+        "word": "treu",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_17"
+    },
+    {
+        "german": "neidisch",
+        "english": "envious",
+        "level": "B1",
+        "example": "Er ist neidisch auf ihren Erfolg.",
+        "word": "neidisch",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_18"
+    },
+    {
+        "german": "hilfsbereit",
+        "english": "helpful",
+        "level": "B1",
+        "example": "Sie ist sehr hilfsbereit.",
+        "word": "hilfsbereit",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_19"
+    },
+    {
+        "german": "verschlossen",
+        "english": "reserved",
+        "level": "B1",
+        "example": "Er ist sehr verschlossen und redet wenig.",
+        "word": "verschlossen",
+        "type": "adjective",
+        "category": "Gefühle & Beziehungen",
+        "id": "adjective_gefuehle_B1_20"
+    }
+]

@@ -1,0 +1,222 @@
+[
+  {
+    "id": "verb_alltag_01",
+    "german": "aufstehen",
+    "english": "to get up",
+    "level": "A1",
+    "example": "Ich stehe um 7 Uhr auf.",
+    "word": "aufstehen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["separable"]
+  },
+  {
+    "id": "verb_alltag_02",
+    "german": "essen",
+    "english": "to eat",
+    "level": "A1",
+    "example": "Ich esse gern Pizza.",
+    "word": "essen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_alltag_03",
+    "german": "trinken",
+    "english": "to drink",
+    "level": "A1",
+    "example": "Ich trinke Wasser.",
+    "word": "trinken",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_alltag_04",
+    "german": "lesen",
+    "english": "to read",
+    "level": "A1",
+    "example": "Ich lese die Zeitung.",
+    "word": "lesen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_alltag_05",
+    "german": "schlafen",
+    "english": "to sleep",
+    "level": "A1",
+    "example": "Ich schlafe acht Stunden.",
+    "word": "schlafen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": []
+  },
+  {
+    "id": "verb_alltag_06",
+    "german": "arbeiten",
+    "english": "to work",
+    "level": "A1",
+    "example": "Ich arbeite im Büro.",
+    "word": "arbeiten",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": []
+  },
+  {
+    "id": "verb_alltag_07",
+    "german": "lernen",
+    "english": "to learn",
+    "level": "A1",
+    "example": "Ich lerne Deutsch.",
+    "word": "lernen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": []
+  },
+  {
+    "id": "verb_alltag_08",
+    "german": "fahren",
+    "english": "to drive",
+    "level": "A1",
+    "example": "Ich fahre zur Arbeit.",
+    "word": "fahren",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": []
+  },
+  {
+    "id": "verb_alltag_09",
+    "german": "gehen",
+    "english": "to go",
+    "level": "A1",
+    "example": "Ich gehe nach Hause.",
+    "word": "gehen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": []
+  },
+  {
+    "id": "verb_alltag_10",
+    "german": "sehen",
+    "english": "to see",
+    "level": "A1",
+    "example": "Ich sehe einen Film.",
+    "word": "sehen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_alltag_11",
+    "german": "hören",
+    "english": "to hear",
+    "level": "A1",
+    "example": "Ich höre Musik.",
+    "word": "hören",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_alltag_12",
+    "german": "telefonieren",
+    "english": "to make a phone call",
+    "level": "A1",
+    "example": "Ich telefoniere mit meiner Mutter.",
+    "word": "telefonieren",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["dativ"]
+  },
+  {
+    "id": "verb_alltag_13",
+    "german": "putzen",
+    "english": "to clean",
+    "level": "A1",
+    "example": "Ich putze die Wohnung.",
+    "word": "putzen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_alltag_14",
+    "german": "kochen",
+    "english": "to cook",
+    "level": "A1",
+    "example": "Ich koche Pasta.",
+    "word": "kochen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_alltag_15",
+    "german": "machen",
+    "english": "to do/make",
+    "level": "A1",
+    "example": "Ich mache meine Hausaufgaben.",
+    "word": "machen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_alltag_16",
+    "german": "anrufen",
+    "english": "to call (on the phone)",
+    "level": "A1",
+    "example": "Ich rufe meinen Freund an.",
+    "word": "anrufen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ", "separable"]
+  },
+  {
+    "id": "verb_alltag_17",
+    "german": "fernsehen",
+    "english": "to watch TV",
+    "level": "A1",
+    "example": "Ich sehe am Abend fern.",
+    "word": "fernsehen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ", "separable"]
+  },
+  {
+    "id": "verb_alltag_18",
+    "german": "aufmachen",
+    "english": "to open",
+    "level": "A1",
+    "example": "Ich mache die Tür auf.",
+    "word": "aufmachen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ", "separable"]
+  },
+  {
+    "id": "verb_alltag_19",
+    "german": "zumachen",
+    "english": "to close",
+    "level": "A1",
+    "example": "Ich mache das Fenster zu.",
+    "word": "zumachen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ", "separable"]
+  },
+  {
+    "id": "verb_alltag_20",
+    "german": "spielen",
+    "english": "to play",
+    "level": "A1",
+    "example": "Ich spiele gern Fußball.",
+    "word": "spielen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ"]
+  }
+]

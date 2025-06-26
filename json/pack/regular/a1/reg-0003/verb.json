@@ -1,0 +1,222 @@
+[
+  {
+    "id": "verb_gesundheit_01",
+    "german": "gehen",
+    "english": "to go",
+    "level": "A1",
+    "example": "Ich gehe zum Arzt.",
+    "word": "gehen",
+    "type": "verb",
+    "category": "Gesundheit",
+    "cases": []
+  },
+  {
+    "id": "verb_gesundheit_02",
+    "german": "haben",
+    "english": "to have",
+    "level": "A1",
+    "example": "Ich habe Fieber.",
+    "word": "haben",
+    "type": "verb",
+    "category": "Gesundheit",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_gesundheit_03",
+    "german": "nehmen",
+    "english": "to take",
+    "level": "A1",
+    "example": "Ich nehme eine Tablette.",
+    "word": "nehmen",
+    "type": "verb",
+    "category": "Gesundheit",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_gesundheit_04",
+    "german": "bekommen",
+    "english": "to receive",
+    "level": "A1",
+    "example": "Ich bekomme ein Rezept.",
+    "word": "bekommen",
+    "type": "verb",
+    "category": "Gesundheit",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_gesundheit_05",
+    "german": "brauchen",
+    "english": "to need",
+    "level": "A1",
+    "example": "Ich brauche Hilfe.",
+    "word": "brauchen",
+    "type": "verb",
+    "category": "Gesundheit",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_gesundheit_06",
+    "german": "fühlen",
+    "english": "to feel",
+    "level": "A1",
+    "example": "Ich fühle mich schlecht.",
+    "word": "fühlen",
+    "type": "verb",
+    "category": "Gesundheit",
+    "cases": ["reflexive"]
+  },
+  {
+    "id": "verb_gesundheit_07",
+    "german": "helfen",
+    "english": "to help",
+    "level": "A1",
+    "example": "Der Arzt hilft mir.",
+    "word": "helfen",
+    "type": "verb",
+    "category": "Gesundheit",
+    "cases": ["dativ"]
+  },
+  {
+    "id": "verb_gesundheit_08",
+    "german": "kommen",
+    "english": "to come",
+    "level": "A1",
+    "example": "Ich komme zur Untersuchung.",
+    "word": "kommen",
+    "type": "verb",
+    "category": "Gesundheit",
+    "cases": []
+  },
+  {
+    "id": "verb_gesundheit_09",
+    "german": "warten",
+    "english": "to wait",
+    "level": "A1",
+    "example": "Ich warte im Wartezimmer.",
+    "word": "warten",
+    "type": "verb",
+    "category": "Gesundheit",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_gesundheit_10",
+    "german": "sprechen",
+    "english": "to speak",
+    "level": "A1",
+    "example": "Ich spreche mit der Ärztin.",
+    "word": "sprechen",
+    "type": "verb",
+    "category": "Gesundheit",
+    "cases": []
+  },
+  {
+    "id": "verb_gesundheit_11",
+    "german": "untersuchen",
+    "english": "to examine",
+    "level": "A1",
+    "example": "Der Arzt untersucht den Patienten.",
+    "word": "untersuchen",
+    "type": "verb",
+    "category": "Gesundheit",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_gesundheit_12",
+    "german": "verschreiben",
+    "english": "to prescribe",
+    "level": "A1",
+    "example": "Die Ärztin verschreibt ein Medikament.",
+    "word": "verschreiben",
+    "type": "verb",
+    "category": "Gesundheit",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_gesundheit_13",
+    "german": "bleiben",
+    "english": "to stay",
+    "level": "A1",
+    "example": "Ich bleibe im Bett.",
+    "word": "bleiben",
+    "type": "verb",
+    "category": "Gesundheit",
+    "cases": []
+  },
+  {
+    "id": "verb_gesundheit_14",
+    "german": "schlafen",
+    "english": "to sleep",
+    "level": "A1",
+    "example": "Ich schlafe viel.",
+    "word": "schlafen",
+    "type": "verb",
+    "category": "Gesundheit",
+    "cases": []
+  },
+  {
+    "id": "verb_gesundheit_15",
+    "german": "trinken",
+    "english": "to drink",
+    "level": "A1",
+    "example": "Ich trinke Wasser.",
+    "word": "trinken",
+    "type": "verb",
+    "category": "Gesundheit",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_gesundheit_16",
+    "german": "essen",
+    "english": "to eat",
+    "level": "A1",
+    "example": "Ich esse gesund.",
+    "word": "essen",
+    "type": "verb",
+    "category": "Gesundheit",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_gesundheit_17",
+    "german": "rufen",
+    "english": "to call",
+    "level": "A1",
+    "example": "Ich rufe den Arzt.",
+    "word": "rufen",
+    "type": "verb",
+    "category": "Gesundheit",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_gesundheit_18",
+    "german": "kommen",
+    "english": "to come",
+    "level": "A1",
+    "example": "Die Ärztin kommt gleich.",
+    "word": "kommen",
+    "type": "verb",
+    "category": "Gesundheit",
+    "cases": []
+  },
+  {
+    "id": "verb_gesundheit_19",
+    "german": "vergessen",
+    "english": "to forget",
+    "level": "A1",
+    "example": "Ich vergesse den Termin nicht.",
+    "word": "vergessen",
+    "type": "verb",
+    "category": "Gesundheit",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_gesundheit_20",
+    "german": "zeigen",
+    "english": "to show",
+    "level": "A1",
+    "example": "Ich zeige das Rezept.",
+    "word": "zeigen",
+    "type": "verb",
+    "category": "Gesundheit",
+    "cases": ["akkusativ"]
+  }
+]

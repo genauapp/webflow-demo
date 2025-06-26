@@ -27,14 +27,18 @@ function initElements() {
     // emptyContainer: () => document.getElementById("tbd"),
 
     learnTab: () => document.getElementById('pack-practice-tab-learn'),
-    learnContainer: () => document.getElementById('pack-practice-learn-container'),
-    learnWordCard: () => document.getElementById('pack-practice-learn-word-card'),
+    learnContainer: () =>
+      document.getElementById('pack-practice-learn-container'),
+    learnWordCard: () =>
+      document.getElementById('pack-practice-learn-word-card'),
     learnRepeat: () =>
       document.getElementById('pack-practice-learn-repeat-button'),
-    learnNext: () => document.getElementById('pack-practice-learn-i-know-button'),
+    learnNext: () =>
+      document.getElementById('pack-practice-learn-i-know-button'),
     learnCompletedCard: () =>
       document.getElementById('pack-practice-learn-completed-card'),
-    learnReset: () => document.getElementById('pack-practice-learn-reset-button'),
+    learnReset: () =>
+      document.getElementById('pack-practice-learn-reset-button'),
 
     exerciseTab: () => document.getElementById('pack-practice-tab-exercise'),
     exerciseContainer: () =>
@@ -172,17 +176,17 @@ function enhanceWordsWithProperties(words) {
 }
 
 /** Fetch words from API service */
-async function fetchWords(packId, packLevel, packType, exerciseType) {
+async function fetchWords(packId, packType, packLevel, packDeckWordType) {
   try {
     state.loading = true
     state.error = null
     render()
 
-    const { data: words, error } = await protectedApiService.getPackWords(
+    const { data: words, error } = await protectedApiService.getPackDeckWords(
       packId,
-      packLevel,
       packType,
-      exerciseType
+      packLevel,
+      packDeckWordType
     )
 
     if (error) {
@@ -288,7 +292,13 @@ function resetEventListeners() {
  * Mount: set up everything once and show container
  * Prevents double-init via state.mounted
  */
-export async function mountPackPractice(packId, packLevel, exerciseType) {
+export async function mountPackPractice(
+  packId,
+  packType,
+  packLevel,
+  packDeckWordType,
+  exerciseType
+) {
   if (state && state.mounted) return
 
   // First Step: initialize state
@@ -304,7 +314,7 @@ export async function mountPackPractice(packId, packLevel, exerciseType) {
   els.container().style.display = 'block'
 
   // Fetch words, initialize navigation service and render
-  await fetchWords(packId, packLevel, PackType.MICRO_QUIZ, state.exerciseType)
+  await fetchWords(packId, packType, packLevel, packDeckWordType)
 }
 
 /**

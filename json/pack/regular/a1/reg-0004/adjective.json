@@ -1,0 +1,203 @@
+[
+    {
+        "german": "wichtig",
+        "english": "important",
+        "level": "A1",
+        "example": "Der Termin ist wichtig.",
+        "word": "wichtig",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_01"
+    },
+    {
+        "german": "nötig",
+        "english": "necessary",
+        "level": "A1",
+        "example": "Ein Pass ist nötig.",
+        "word": "nötig",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_02"
+    },
+    {
+        "german": "bereit",
+        "english": "ready",
+        "level": "A1",
+        "example": "Ich bin bereit für den Termin.",
+        "word": "bereit",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_03"
+    },
+    {
+        "german": "offen",
+        "english": "open",
+        "level": "A1",
+        "example": "Das Amt ist offen.",
+        "word": "offen",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_04"
+    },
+    {
+        "german": "geschlossen",
+        "english": "closed",
+        "level": "A1",
+        "example": "Die Behörde ist heute geschlossen.",
+        "word": "geschlossen",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_05"
+    },
+    {
+        "german": "freundlich",
+        "english": "friendly",
+        "level": "A1",
+        "example": "Die Mitarbeiterin ist freundlich.",
+        "word": "freundlich",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_06"
+    },
+    {
+        "german": "unfreundlich",
+        "english": "unfriendly",
+        "level": "A1",
+        "example": "Der Sachbearbeiter war unfreundlich.",
+        "word": "unfreundlich",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_07"
+    },
+    {
+        "german": "leer",
+        "english": "empty",
+        "level": "A1",
+        "example": "Das Wartezimmer ist leer.",
+        "word": "leer",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_08"
+    },
+    {
+        "german": "voll",
+        "english": "full",
+        "level": "A1",
+        "example": "Die Behörde ist voll.",
+        "word": "voll",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_09"
+    },
+    {
+        "german": "neu",
+        "english": "new",
+        "level": "A1",
+        "example": "Ich brauche einen neuen Ausweis.",
+        "word": "neu",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_10"
+    },
+    {
+        "german": "gültig",
+        "english": "valid",
+        "level": "A1",
+        "example": "Der Pass ist noch gültig.",
+        "word": "gültig",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_11"
+    },
+    {
+        "german": "ungültig",
+        "english": "invalid",
+        "level": "A1",
+        "example": "Das Formular ist ungültig.",
+        "word": "ungültig",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_12"
+    },
+    {
+        "german": "offiziell",
+        "english": "official",
+        "level": "A1",
+        "example": "Das ist ein offizielles Schreiben.",
+        "word": "offiziell",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_13"
+    },
+    {
+        "german": "einfach",
+        "english": "simple",
+        "level": "A1",
+        "example": "Die Anmeldung ist einfach.",
+        "word": "einfach",
+        "rule": "Describes complexity.",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_14"
+    },
+    {
+        "german": "kompliziert",
+        "english": "complicated",
+        "level": "A1",
+        "example": "Der Antrag ist kompliziert.",
+        "word": "kompliziert",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_15"
+    },
+    {
+        "german": "lang",
+        "english": "long",
+        "level": "A1",
+        "example": "Die Wartezeit ist lang.",
+        "word": "lang",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_16"
+    },
+    {
+        "german": "kurz",
+        "english": "short",
+        "level": "A1",
+        "example": "Das Gespräch war kurz.",
+        "word": "kurz",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_17"
+    },
+    {
+        "german": "klar",
+        "english": "clear",
+        "level": "A1",
+        "example": "Die Information ist klar.",
+        "word": "klar",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_18"
+    },
+    {
+        "german": "unklar",
+        "english": "unclear",
+        "level": "A1",
+        "example": "Die Anweisung ist unklar.",
+        "word": "unklar",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_19"
+    },
+    {
+        "german": "richtig",
+        "english": "correct",
+        "level": "A1",
+        "example": "Die Angaben sind richtig.",
+        "word": "richtig",
+        "type": "adjective",
+        "category": "Behoerden",
+        "id": "adjective_behoerden_20"
+    }
+]

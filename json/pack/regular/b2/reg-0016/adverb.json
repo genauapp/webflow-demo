@@ -1,0 +1,202 @@
+[
+    {
+        "german": "politisch",
+        "english": "politically",
+        "level": "B2",
+        "example": "Das Thema wurde politisch diskutiert.",
+        "word": "politisch",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_01"
+    },
+    {
+        "german": "umweltfreundlich",
+        "english": "environmentally friendly",
+        "level": "B2",
+        "example": "Man sollte umweltfreundlich handeln.",
+        "word": "umweltfreundlich",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_02"
+    },
+    {
+        "german": "demokratisch",
+        "english": "democratically",
+        "level": "B2",
+        "example": "Die Entscheidung wurde demokratisch getroffen.",
+        "word": "demokratisch",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_03"
+    },
+    {
+        "german": "gesetzlich",
+        "english": "legally / by law",
+        "level": "B2",
+        "example": "Die Rechte sind gesetzlich geregelt.",
+        "word": "gesetzlich",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_04"
+    },
+    {
+        "german": "global",
+        "english": "globally",
+        "level": "B2",
+        "example": "Klimawandel ist ein globales Problem.",
+        "word": "global",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_05"
+    },
+    {
+        "german": "öffentlich",
+        "english": "publicly",
+        "level": "B2",
+        "example": "Die Debatte fand öffentlich statt.",
+        "word": "öffentlich",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_06"
+    },
+    {
+        "german": "nachhaltig",
+        "english": "sustainably",
+        "level": "B2",
+        "example": "Wir müssen nachhaltiger leben.",
+        "word": "nachhaltig",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_07"
+    },
+    {
+        "german": "friedlich",
+        "english": "peacefully",
+        "level": "B2",
+        "example": "Die Demonstration verlief friedlich.",
+        "word": "friedlich",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_08"
+    },
+    {
+        "german": "gerecht",
+        "english": "justly / fairly",
+        "level": "B2",
+        "example": "Die Ressourcen müssen gerecht verteilt werden.",
+        "word": "gerecht",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_09"
+    },
+    {
+        "german": "verantwortungsvoll",
+        "english": "responsibly",
+        "level": "B2",
+        "example": "Politiker sollten verantwortungsvoll handeln.",
+        "word": "verantwortungsvoll",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_10"
+    },
+    {
+        "german": "effektiv",
+        "english": "effectively",
+        "level": "B2",
+        "example": "Die Maßnahmen wurden effektiv umgesetzt.",
+        "word": "effektiv",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_11"
+    },
+    {
+        "german": "aktiv",
+        "english": "actively",
+        "level": "B2",
+        "example": "Viele Bürger beteiligen sich aktiv an der Politik.",
+        "word": "aktiv",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_12"
+    },
+    {
+        "german": "regelmäßig",
+        "english": "regularly",
+        "level": "B2",
+        "example": "Regelmäßig finden Sitzungen im Parlament statt.",
+        "word": "regelmäßig",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_13"
+    },
+    {
+        "german": "deutlich",
+        "english": "clearly",
+        "level": "B2",
+        "example": "Die Kritik wurde deutlich formuliert.",
+        "word": "deutlich",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_14"
+    },
+    {
+        "german": "kritisch",
+        "english": "critically",
+        "level": "B2",
+        "example": "Viele Experten betrachten die Lage kritisch.",
+        "word": "kritisch",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_15"
+    },
+    {
+        "german": "sozial",
+        "english": "socially",
+        "level": "B2",
+        "example": "Sozial benachteiligte Gruppen brauchen Unterstützung.",
+        "word": "sozial",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_16"
+    },
+    {
+        "german": "sinnvoll",
+        "english": "meaningfully",
+        "level": "B2",
+        "example": "Die Spenden sollten sinnvoll eingesetzt werden.",
+        "word": "sinnvoll",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_17"
+    },
+    {
+        "german": "engagiert",
+        "english": "committedly",
+        "level": "B2",
+        "example": "Viele junge Menschen engagieren sich politisch.",
+        "word": "engagiert",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_18"
+    },
+    {
+        "german": "international",
+        "english": "internationally",
+        "level": "B2",
+        "example": "Die Konferenz wurde international organisiert.",
+        "word": "international",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_19"
+    },
+    {
+        "german": "intensiv",
+        "english": "intensively",
+        "level": "B2",
+        "example": "Das Thema wurde intensiv diskutiert.",
+        "word": "intensiv",
+        "type": "adverb",
+        "category": "Politik & Umwelt",
+        "id": "adverb_politik_B2_20"
+    }
+]

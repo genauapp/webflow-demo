@@ -1,0 +1,222 @@
+[
+  {
+    "id": "verb_gefuehle_B1_01",
+    "german": "lieben",
+    "english": "to love",
+    "level": "B1",
+    "example": "Ich liebe meine Familie sehr.",
+    "word": "lieben",
+    "type": "verb",
+    "category": "Gefühle & Beziehungen",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_gefuehle_B1_02",
+    "german": "hassen",
+    "english": "to hate",
+    "level": "B1",
+    "example": "Man sollte niemanden hassen.",
+    "word": "hassen",
+    "type": "verb",
+    "category": "Gefühle & Beziehungen",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_gefuehle_B1_03",
+    "german": "sich fühlen",
+    "english": "to feel",
+    "level": "B1",
+    "example": "Ich fühle mich heute traurig.",
+    "word": "fühlen",
+    "type": "verb",
+    "category": "Gefühle & Beziehungen",
+    "cases": ["reflexive"]
+  },
+  {
+    "id": "verb_gefuehle_B1_04",
+    "german": "verzeihen",
+    "english": "to forgive",
+    "level": "B1",
+    "example": "Kannst du mir verzeihen?",
+    "word": "verzeihen",
+    "type": "verb",
+    "category": "Gefühle & Beziehungen",
+    "cases": ["dativ"]
+  },
+  {
+    "id": "verb_gefuehle_B1_05",
+    "german": "vermissen",
+    "english": "to miss (someone)",
+    "level": "B1",
+    "example": "Ich vermisse dich sehr.",
+    "word": "vermissen",
+    "type": "verb",
+    "category": "Gefühle & Beziehungen",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_gefuehle_B1_06",
+    "german": "sich streiten",
+    "english": "to argue",
+    "level": "B1",
+    "example": "Wir streiten uns oft wegen Kleinigkeiten.",
+    "word": "streiten",
+    "type": "verb",
+    "category": "Gefühle & Beziehungen",
+    "cases": ["reflexive"]
+  },
+  {
+    "id": "verb_gefuehle_B1_07",
+    "german": "sich versöhnen",
+    "english": "to reconcile",
+    "level": "B1",
+    "example": "Nach dem Streit haben wir uns versöhnt.",
+    "word": "versöhnen",
+    "type": "verb",
+    "category": "Gefühle & Beziehungen",
+    "cases": ["reflexive"]
+  },
+  {
+    "id": "verb_gefuehle_B1_08",
+    "german": "vertrauen",
+    "english": "to trust",
+    "level": "B1",
+    "example": "Ich vertraue dir.",
+    "word": "vertrauen",
+    "type": "verb",
+    "category": "Gefühle & Beziehungen",
+    "cases": ["dativ"]
+  },
+  {
+    "id": "verb_gefuehle_B1_09",
+    "german": "sich verlieben",
+    "english": "to fall in love",
+    "level": "B1",
+    "example": "Er hat sich in sie verliebt.",
+    "word": "verlieben",
+    "type": "verb",
+    "category": "Gefühle & Beziehungen",
+    "cases": ["reflexive"]
+  },
+  {
+    "id": "verb_gefuehle_B1_10",
+    "german": "eifersüchtig sein",
+    "english": "to be jealous",
+    "level": "B1",
+    "example": "Er ist oft eifersüchtig.",
+    "word": "sein (eifersüchtig)",
+    "type": "verb",
+    "category": "Gefühle & Beziehungen",
+    "cases": []
+  },
+  {
+    "id": "verb_gefuehle_B1_11",
+    "german": "sich ärgern",
+    "english": "to get annoyed",
+    "level": "B1",
+    "example": "Ich ärgere mich über seine Worte.",
+    "word": "ärgern",
+    "type": "verb",
+    "category": "Gefühle & Beziehungen",
+    "cases": ["reflexive"]
+  },
+  {
+    "id": "verb_gefuehle_B1_12",
+    "german": "respektieren",
+    "english": "to respect",
+    "level": "B1",
+    "example": "Wir sollten einander respektieren.",
+    "word": "respektieren",
+    "type": "verb",
+    "category": "Gefühle & Beziehungen",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_gefuehle_B1_13",
+    "german": "trösten",
+    "english": "to comfort",
+    "level": "B1",
+    "example": "Ich tröste meinen Freund.",
+    "word": "trösten",
+    "type": "verb",
+    "category": "Gefühle & Beziehungen",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_gefuehle_B1_14",
+    "german": "weinen",
+    "english": "to cry",
+    "level": "B1",
+    "example": "Sie weint oft bei Filmen.",
+    "word": "weinen",
+    "type": "verb",
+    "category": "Gefühle & Beziehungen",
+    "cases": []
+  },
+  {
+    "id": "verb_gefuehle_B1_15",
+    "german": "lächeln",
+    "english": "to smile",
+    "level": "B1",
+    "example": "Sie lächelt, wenn sie glücklich ist.",
+    "word": "lächeln",
+    "type": "verb",
+    "category": "Gefühle & Beziehungen",
+    "cases": []
+  },
+  {
+    "id": "verb_gefuehle_B1_16",
+    "german": "beleidigen",
+    "english": "to insult",
+    "level": "B1",
+    "example": "Er hat mich beleidigt.",
+    "word": "beleidigen",
+    "type": "verb",
+    "category": "Gefühle & Beziehungen",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_gefuehle_B1_17",
+    "german": "sich entschuldigen",
+    "english": "to apologize",
+    "level": "B1",
+    "example": "Ich möchte mich bei dir entschuldigen.",
+    "word": "entschuldigen",
+    "type": "verb",
+    "category": "Gefühle & Beziehungen",
+    "cases": ["reflexive"]
+  },
+  {
+    "id": "verb_gefuehle_B1_18",
+    "german": "ermutigen",
+    "english": "to encourage",
+    "level": "B1",
+    "example": "Sie hat mich sehr ermutigt.",
+    "word": "ermutigen",
+    "type": "verb",
+    "category": "Gefühle & Beziehungen",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_gefuehle_B1_19",
+    "german": "sich kümmern um",
+    "english": "to take care of",
+    "level": "B1",
+    "example": "Ich kümmere mich um meinen Bruder.",
+    "word": "kümmern",
+    "type": "verb",
+    "category": "Gefühle & Beziehungen",
+    "cases": ["reflexive"]
+  },
+  {
+    "id": "verb_gefuehle_B1_20",
+    "german": "sich schämen",
+    "english": "to be ashamed",
+    "level": "B1",
+    "example": "Er schämt sich für sein Verhalten.",
+    "word": "schämen",
+    "type": "verb",
+    "category": "Gefühle & Beziehungen",
+    "cases": ["reflexive"]
+  }
+]

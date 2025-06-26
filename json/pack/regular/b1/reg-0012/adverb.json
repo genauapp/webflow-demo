@@ -1,0 +1,202 @@
+[
+    {
+        "german": "voll",
+        "english": "totally",
+        "level": "B1",
+        "example": "Das war voll peinlich!",
+        "word": "voll",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_01"
+    },
+    {
+        "german": "krass",
+        "english": "crazy / extreme",
+        "level": "B1",
+        "example": "Krass, was du gemacht hast!",
+        "word": "krass",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_02"
+    },
+    {
+        "german": "mega",
+        "english": "super / mega",
+        "level": "B1",
+        "example": "Das Konzert war mega gut!",
+        "word": "mega",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_03"
+    },
+    {
+        "german": "übel",
+        "english": "really / badly (slang)",
+        "level": "B1",
+        "example": "Das war übelst laut.",
+        "word": "übel",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_04"
+    },
+    {
+        "german": "extrem",
+        "english": "extremely",
+        "level": "B1",
+        "example": "Die Party war extrem cool.",
+        "word": "extrem",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_05"
+    },
+    {
+        "german": "hammer",
+        "english": "awesome (slang)",
+        "level": "B1",
+        "example": "Das Wetter ist heute hammer!",
+        "word": "hammer",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_06"
+    },
+    {
+        "german": "echt",
+        "english": "really",
+        "level": "B1",
+        "example": "Echt jetzt?",
+        "word": "echt",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_07"
+    },
+    {
+        "german": "heftig",
+        "english": "intensely / heavily",
+        "level": "B1",
+        "example": "Das war heftig!",
+        "word": "heftig",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_08"
+    },
+    {
+        "german": "total",
+        "english": "totally",
+        "level": "B1",
+        "example": "Ich bin total fertig.",
+        "word": "total",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_09"
+    },
+    {
+        "german": "super",
+        "english": "super",
+        "level": "B1",
+        "example": "Das war super lecker.",
+        "word": "super",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_10"
+    },
+    {
+        "german": "eiskalt",
+        "english": "cold-bloodedly",
+        "level": "B1",
+        "example": "Er hat eiskalt gelogen.",
+        "word": "eiskalt",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_11"
+    },
+    {
+        "german": "sau",
+        "english": "very / damn (prefix)",
+        "level": "B1",
+        "example": "Das war saugut!",
+        "word": "sau",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_12"
+    },
+    {
+        "german": "witzig",
+        "english": "funny (slang use)",
+        "level": "B1",
+        "example": "Du bist witzig, echt.",
+        "word": "witzig",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_13"
+    },
+    {
+        "german": "nervig",
+        "english": "annoyingly",
+        "level": "B1",
+        "example": "Die Musik ist voll nervig.",
+        "word": "nervig",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_14"
+    },
+    {
+        "german": "null",
+        "english": "not at all",
+        "level": "B1",
+        "example": "Ich hab null Ahnung.",
+        "word": "null",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_15"
+    },
+    {
+        "german": "voll krass",
+        "english": "totally insane",
+        "level": "B1",
+        "example": "Das war voll krass gestern!",
+        "word": "voll krass",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_16"
+    },
+    {
+        "german": "so was von",
+        "english": "totally / so much",
+        "level": "B1",
+        "example": "Ich bin so was von müde.",
+        "word": "so was von",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_17"
+    },
+    {
+        "german": "echt jetzt",
+        "english": "seriously?",
+        "level": "B1",
+        "example": "Echt jetzt? Du hast das getan?",
+        "word": "echt jetzt",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_18"
+    },
+    {
+        "german": "nicht mal",
+        "english": "not even",
+        "level": "B1",
+        "example": "Ich habe nicht mal gefrühstückt.",
+        "word": "nicht mal",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_19"
+    },
+    {
+        "german": "schon wieder",
+        "english": "again (with frustration)",
+        "level": "B1",
+        "example": "Schon wieder zu spät!",
+        "word": "schon wieder",
+        "type": "adverb",
+        "category": "German Slang",
+        "id": "adverb_slang_B1_20"
+    }
+]

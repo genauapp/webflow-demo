@@ -1,0 +1,202 @@
+[
+    {
+        "german": "gegenseitig",
+        "english": "mutually",
+        "level": "B2",
+        "example": "Respekt sollte immer gegenseitig sein.",
+        "word": "gegenseitig",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_01"
+    },
+    {
+        "german": "beispielsweise",
+        "english": "for example",
+        "level": "B2",
+        "example": "Viele Menschen, beispielsweise Migranten, erleben Diskriminierung.",
+        "word": "beispielsweise",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_02"
+    },
+    {
+        "german": "grundsätzlich",
+        "english": "fundamentally",
+        "level": "B2",
+        "example": "Grundsätzlich gilt das Recht auf Gleichbehandlung.",
+        "word": "grundsätzlich",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_03"
+    },
+    {
+        "german": "respektvoll",
+        "english": "respectfully",
+        "level": "B2",
+        "example": "Man sollte respektvoll miteinander umgehen.",
+        "word": "respektvoll",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_04"
+    },
+    {
+        "german": "unabhängig",
+        "english": "independently",
+        "level": "B2",
+        "example": "Jeder Mensch sollte unabhängig leben können.",
+        "word": "unabhängig",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_05"
+    },
+    {
+        "german": "bewusst",
+        "english": "consciously",
+        "level": "B2",
+        "example": "Wir sollten uns unserer Vorurteile bewusst sein.",
+        "word": "bewusst",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_06"
+    },
+    {
+        "german": "kulturell",
+        "english": "culturally",
+        "level": "B2",
+        "example": "Menschen sind kulturell unterschiedlich geprägt.",
+        "word": "kulturell",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_07"
+    },
+    {
+        "german": "tolerant",
+        "english": "tolerantly",
+        "level": "B2",
+        "example": "Wir sollten tolerant gegenüber anderen Meinungen sein.",
+        "word": "tolerant",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_08"
+    },
+    {
+        "german": "sozial",
+        "english": "socially",
+        "level": "B2",
+        "example": "Sozial engagierte Menschen verändern die Welt.",
+        "word": "sozial",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_09"
+    },
+    {
+        "german": "politisch",
+        "english": "politically",
+        "level": "B2",
+        "example": "Viele Jugendliche sind politisch aktiv.",
+        "word": "politisch",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_10"
+    },
+    {
+        "german": "öffentlich",
+        "english": "publicly",
+        "level": "B2",
+        "example": "Die Diskussion wurde öffentlich geführt.",
+        "word": "öffentlich",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_11"
+    },
+    {
+        "german": "indirekt",
+        "english": "indirectly",
+        "level": "B2",
+        "example": "Viele Aussagen wurden nur indirekt gemacht.",
+        "word": "indirekt",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_12"
+    },
+    {
+        "german": "deutlich",
+        "english": "clearly",
+        "level": "B2",
+        "example": "Er hat sich sehr deutlich geäußert.",
+        "word": "deutlich",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_13"
+    },
+    {
+        "german": "intensiv",
+        "english": "intensively",
+        "level": "B2",
+        "example": "Wir haben intensiv über das Thema diskutiert.",
+        "word": "intensiv",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_14"
+    },
+    {
+        "german": "zunehmend",
+        "english": "increasingly",
+        "level": "B2",
+        "example": "Die Gesellschaft wird zunehmend digital.",
+        "word": "zunehmend",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_15"
+    },
+    {
+        "german": "angeblich",
+        "english": "allegedly",
+        "level": "B2",
+        "example": "Angeblich soll es Diskriminierung geben.",
+        "word": "angeblich",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_16"
+    },
+    {
+        "german": "ausdrücklich",
+        "english": "explicitly",
+        "level": "B2",
+        "example": "Er hat ausdrücklich seine Meinung gesagt.",
+        "word": "ausdrücklich",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_17"
+    },
+    {
+        "german": "teilweise",
+        "english": "partially",
+        "level": "B2",
+        "example": "Die Gesellschaft ist teilweise intolerant.",
+        "word": "teilweise",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_18"
+    },
+    {
+        "german": "unterschiedlich",
+        "english": "differently / variously",
+        "level": "B2",
+        "example": "Menschen reagieren unterschiedlich auf Veränderungen.",
+        "word": "unterschiedlich",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_19"
+    },
+    {
+        "german": "ausnahmsweise",
+        "english": "exceptionally",
+        "level": "B2",
+        "example": "Heute dürfen wir ausnahmsweise früher gehen.",
+        "word": "ausnahmsweise",
+        "type": "adverb",
+        "category": "Gesellschaft & Kultur",
+        "id": "adverb_kultur_B2_20"
+    }
+]

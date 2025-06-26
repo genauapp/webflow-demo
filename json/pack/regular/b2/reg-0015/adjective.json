@@ -1,0 +1,202 @@
+[
+    {
+        "german": "tolerant",
+        "english": "tolerant",
+        "level": "B2",
+        "example": "Eine tolerante Gesellschaft akzeptiert Unterschiede.",
+        "word": "tolerant",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_01"
+    },
+    {
+        "german": "offen",
+        "english": "open / open-minded",
+        "level": "B2",
+        "example": "Man sollte offen für neue Kulturen sein.",
+        "word": "offen",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_02"
+    },
+    {
+        "german": "gleichberechtigt",
+        "english": "equal / having equal rights",
+        "level": "B2",
+        "example": "Männer und Frauen sind heute gleichberechtigt.",
+        "word": "gleichberechtigt",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_03"
+    },
+    {
+        "german": "diskriminierend",
+        "english": "discriminatory",
+        "level": "B2",
+        "example": "Diskriminierende Aussagen sind nicht akzeptabel.",
+        "word": "diskriminierend",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_04"
+    },
+    {
+        "german": "fremd",
+        "english": "foreign / strange",
+        "level": "B2",
+        "example": "Viele empfinden neue Kulturen zunächst als fremd.",
+        "word": "fremd",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_05"
+    },
+    {
+        "german": "kulturell",
+        "english": "cultural",
+        "level": "B2",
+        "example": "Kulturelle Unterschiede sollten akzeptiert werden.",
+        "word": "kulturell",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_06"
+    },
+    {
+        "german": "sozial",
+        "english": "social",
+        "level": "B2",
+        "example": "Soziale Gerechtigkeit ist ein Ziel vieler Organisationen.",
+        "word": "sozial",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_07"
+    },
+    {
+        "german": "gerecht",
+        "english": "fair / just",
+        "level": "B2",
+        "example": "Ein gerechtes System behandelt alle gleich.",
+        "word": "gerecht",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_08"
+    },
+    {
+        "german": "vielfältig",
+        "english": "diverse",
+        "level": "B2",
+        "example": "Eine vielfältige Gesellschaft ist eine starke Gesellschaft.",
+        "word": "vielfältig",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_09"
+    },
+    {
+        "german": "ethnisch",
+        "english": "ethnic",
+        "level": "B2",
+        "example": "Deutschland ist ethnisch vielfältiger geworden.",
+        "word": "ethnisch",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_10"
+    },
+    {
+        "german": "global",
+        "english": "global",
+        "level": "B2",
+        "example": "Wir leben in einer global vernetzten Welt.",
+        "word": "global",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_11"
+    },
+    {
+        "german": "religiös",
+        "english": "religious",
+        "level": "B2",
+        "example": "Religiöse Freiheit ist ein Menschenrecht.",
+        "word": "religiös",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_12"
+    },
+    {
+        "german": "verantwortlich",
+        "english": "responsible",
+        "level": "B2",
+        "example": "Jeder ist verantwortlich für sein Verhalten.",
+        "word": "verantwortlich",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_13"
+    },
+    {
+        "german": "respektvoll",
+        "english": "respectful",
+        "level": "B2",
+        "example": "Ein respektvoller Umgang ist sehr wichtig.",
+        "word": "respektvoll",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_14"
+    },
+    {
+        "german": "ausgrenzend",
+        "english": "exclusive / segregating",
+        "level": "B2",
+        "example": "Ausgrenzende Sprache verletzt viele Menschen.",
+        "word": "ausgrenzend",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_15"
+    },
+    {
+        "german": "aufgeschlossen",
+        "english": "open-minded",
+        "level": "B2",
+        "example": "Sie ist sehr aufgeschlossen gegenüber neuen Ideen.",
+        "word": "aufgeschlossen",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_16"
+    },
+    {
+        "german": "intolerant",
+        "english": "intolerant",
+        "level": "B2",
+        "example": "Eine intolerante Haltung führt zu Konflikten.",
+        "word": "intolerant",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_17"
+    },
+    {
+        "german": "veraltet",
+        "english": "outdated",
+        "level": "B2",
+        "example": "Veraltete Rollenbilder sollten überdacht werden.",
+        "word": "veraltet",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_18"
+    },
+    {
+        "german": "sensibel",
+        "english": "sensitive",
+        "level": "B2",
+        "example": "Das ist ein sensibles Thema.",
+        "word": "sensibel",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_19"
+    },
+    {
+        "german": "verbindlich",
+        "english": "binding / obliging",
+        "level": "B2",
+        "example": "Verbindliche Regeln gelten für alle.",
+        "word": "verbindlich",
+        "type": "adjective",
+        "category": "Gesellschaft & Kultur",
+        "id": "adjective_kultur_B2_20"
+    }
+]

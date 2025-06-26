@@ -1,5 +1,6 @@
 import protectedApi from '../api/protectedApi.js'
 import publicApi from '../api/publicApi.js'
+import { PACK_SUMMARIES_BY_LEVEL } from '../constants/props.js'
 
 export const publicApiService = {
   googleSignin: (idToken) => {
@@ -26,14 +27,29 @@ export const protectedApiService = {
   getUserProfile: () => {
     return handleRequest(() => protectedApi.get('/api/v1/user/me'))
   },
-  getPackWords: (packId, packLevel, packType, exerciseType) => {
+  getPackSummariesOfLevel: (currentLevel) => {
+    // return handleRequest(() => protectedApi.get(`/api/v1/pack/summary`))
+    return handleRequest(async () => {
+      // dynamically resolve the JSON module
+      const allPackSummaries = { ...PACK_SUMMARIES_BY_LEVEL }
+
+      return {
+        ok: true,
+        status: 200,
+        json: () =>
+          // match your real API shape
+          Promise.resolve({ data: allPackSummaries[currentLevel] }),
+      }
+    })
+  },
+  getPackDeckWords: (packId, packType, packLevel, packDeckWordType) => {
     // todo: activate when ready to integrate with api
     // return handleRequest(() => protectedApi.get(`/api/v1/pack/${packId}`))
     return handleRequest(async () => {
       // dynamically resolve the JSON module
       const module = await import(
         /* webpackMode: "lazy", webpackChunkName: "pack-[request]" */
-        `../../json/${packType}/${packLevel}/${exerciseType}/${packId}.json`,
+        `../../json/pack/${packType}/${packLevel}/${packId}/${packDeckWordType}.json`,
         { with: { type: 'json' } }
       )
 

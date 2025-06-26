@@ -1,0 +1,222 @@
+[
+  {
+    "id": "verb_freizeit_A2_01",
+    "german": "ausgehen",
+    "english": "to go out",
+    "level": "A2",
+    "example": "Am Wochenende gehen wir oft aus.",
+    "word": "ausgehen",
+    "type": "verb",
+    "category": "Freizeit & Konsum",
+    "cases": ["separable"]
+  },
+  {
+    "id": "verb_freizeit_A2_02",
+    "german": "sich entspannen",
+    "english": "to relax",
+    "level": "A2",
+    "example": "Ich entspanne mich mit Musik.",
+    "word": "sich entspannen",
+    "type": "verb",
+    "category": "Freizeit & Konsum",
+    "cases": ["reflexive"]
+  },
+  {
+    "id": "verb_freizeit_A2_03",
+    "german": "spazieren gehen",
+    "english": "to go for a walk",
+    "level": "A2",
+    "example": "Wir gehen jeden Abend spazieren.",
+    "word": "spazieren gehen",
+    "type": "verb",
+    "category": "Freizeit & Konsum",
+    "cases": ["separable"]
+  },
+  {
+    "id": "verb_freizeit_A2_04",
+    "german": "einkaufen",
+    "english": "to shop",
+    "level": "A2",
+    "example": "Ich kaufe am Samstag ein.",
+    "word": "einkaufen",
+    "type": "verb",
+    "category": "Freizeit & Konsum",
+    "cases": ["separable"]
+  },
+  {
+    "id": "verb_freizeit_A2_05",
+    "german": "ansehen",
+    "english": "to watch",
+    "level": "A2",
+    "example": "Wir sehen einen Film an.",
+    "word": "ansehen",
+    "type": "verb",
+    "category": "Freizeit & Konsum",
+    "cases": ["akkusativ", "separable"]
+  },
+  {
+    "id": "verb_freizeit_A2_06",
+    "german": "lesen",
+    "english": "to read",
+    "level": "A2",
+    "example": "Ich lese gern Romane.",
+    "word": "lesen",
+    "type": "verb",
+    "category": "Freizeit & Konsum",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_freizeit_A2_07",
+    "german": "zeichnen",
+    "english": "to draw",
+    "level": "A2",
+    "example": "Ich zeichne gerne in meiner Freizeit.",
+    "word": "zeichnen",
+    "type": "verb",
+    "category": "Freizeit & Konsum",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_freizeit_A2_08",
+    "german": "spielen",
+    "english": "to play",
+    "level": "A2",
+    "example": "Die Kinder spielen draußen.",
+    "word": "spielen",
+    "type": "verb",
+    "category": "Freizeit & Konsum",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_freizeit_A2_09",
+    "german": "sammeln",
+    "english": "to collect",
+    "level": "A2",
+    "example": "Ich sammle Briefmarken.",
+    "word": "sammeln",
+    "type": "verb",
+    "category": "Freizeit & Konsum",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_freizeit_A2_10",
+    "german": "hören",
+    "english": "to listen",
+    "level": "A2",
+    "example": "Ich höre gern Musik.",
+    "word": "hören",
+    "type": "verb",
+    "category": "Freizeit & Konsum",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_freizeit_A2_11",
+    "german": "tanzen",
+    "english": "to dance",
+    "level": "A2",
+    "example": "Wir tanzen auf der Party.",
+    "word": "tanzen",
+    "type": "verb",
+    "category": "Freizeit & Konsum",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_freizeit_A2_12",
+    "german": "besuchen",
+    "english": "to visit",
+    "level": "A2",
+    "example": "Wir besuchen ein Museum.",
+    "word": "besuchen",
+    "type": "verb",
+    "category": "Freizeit & Konsum",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_freizeit_A2_13",
+    "german": "basteln",
+    "english": "to do crafts",
+    "level": "A2",
+    "example": "Ich bastle gern mit Papier.",
+    "word": "basteln",
+    "type": "verb",
+    "category": "Freizeit & Konsum",
+    "cases": []
+  },
+  {
+    "id": "verb_freizeit_A2_14",
+    "german": "ausprobieren",
+    "english": "to try out",
+    "level": "A2",
+    "example": "Ich probiere ein neues Spiel aus.",
+    "word": "ausprobieren",
+    "type": "verb",
+    "category": "Freizeit & Konsum",
+    "cases": ["akkusativ", "separable"]
+  },
+  {
+    "id": "verb_freizeit_A2_15",
+    "german": "kochen",
+    "english": "to cook",
+    "level": "A2",
+    "example": "Ich koche gern italienisches Essen.",
+    "word": "kochen",
+    "type": "verb",
+    "category": "Freizeit & Konsum",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_freizeit_A2_16",
+    "german": "fotografieren",
+    "english": "to take photos",
+    "level": "A2",
+    "example": "Ich fotografiere oft auf Reisen.",
+    "word": "fotografieren",
+    "type": "verb",
+    "category": "Freizeit & Konsum",
+    "cases": []
+  },
+  {
+    "id": "verb_freizeit_A2_17",
+    "german": "schwimmen",
+    "english": "to swim",
+    "level": "A2",
+    "example": "Ich gehe am Wochenende schwimmen.",
+    "word": "schwimmen",
+    "type": "verb",
+    "category": "Freizeit & Konsum",
+    "cases": []
+  },
+  {
+    "id": "verb_freizeit_A2_18",
+    "german": "trainieren",
+    "english": "to train, practice",
+    "level": "A2",
+    "example": "Ich trainiere dreimal pro Woche.",
+    "word": "trainieren",
+    "type": "verb",
+    "category": "Freizeit & Konsum",
+    "cases": []
+  },
+  {
+    "id": "verb_freizeit_A2_19",
+    "german": "reservieren",
+    "english": "to reserve",
+    "level": "A2",
+    "example": "Ich reserviere einen Tisch im Restaurant.",
+    "word": "reservieren",
+    "type": "verb",
+    "category": "Freizeit & Konsum",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_freizeit_A2_20",
+    "german": "bezahlen",
+    "english": "to pay",
+    "level": "A2",
+    "example": "Ich bezahle die Rechnung.",
+    "word": "bezahlen",
+    "type": "verb",
+    "category": "Freizeit & Konsum",
+    "cases": ["akkusativ"]
+  }
+]

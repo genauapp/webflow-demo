@@ -43,6 +43,7 @@ import {
   mountPackPractice,
   unmountPackPractice,
 } from '../components/level/packPractice/packPractice.js'
+import { protectedApiService } from '../service/apiService.js'
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', async () => {
@@ -73,7 +74,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   LocalStorageManager.load(BOOKMARKS_KEY, DEFAULT_VALUE.BOOKMARKS)
 
   const currentLevel = LevelManager.getCurrentLevel()
-  const packSummariesOfCurrentLevel = PACK_SUMMARIES_BY_LEVEL[currentLevel]
+  // fetch pack summaries of current level
+  const packSummariesOfCurrentLevel =
+    await protectedApiService.getPackSummariesOfLevel(currentLevel)
+
   // change Level Header top of the pack screen
   const label = 'Level ' + `${currentLevel}`.toUpperCase()
   document.getElementById('pack-level-header').innerText = label
@@ -106,17 +110,22 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('content-container').style.display = 'none'
 
         // show micro-quiz learn/exercise
-        // 1. grab the first matching category
-        const firstQuiz = packSummariesOfCurrentLevel.find(
+        // 1. grab the first matching pack summary
+        const firstPackSummary = packSummariesOfCurrentLevel.find(
           (packSummary) => packSummary.type === PackType.MICRO_QUIZ
         )
 
+        // 1.1. grab its first deck summary
+        const firstDeckSummaryOfPack = firstPackSummary.deck_summaries[0]
+
         // 2. if one exists, mount it once
-        if (firstQuiz) {
+        if (firstPackSummary && firstDeckSummaryOfPack) {
           await mountPackPractice(
-            firstQuiz.id,
-            firstQuiz.level,
-            firstQuiz.exerciseType
+            firstPackSummary.id,
+            firstPackSummary.type,
+            firstPackSummary.level,
+            firstDeckSummaryOfPack.word_type,
+            firstDeckSummaryOfPack.exercise_type
           )
         }
       } else if (

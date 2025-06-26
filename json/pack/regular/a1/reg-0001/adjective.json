@@ -1,0 +1,202 @@
+[
+    {
+        "german": "müde",
+        "english": "tired",
+        "level": "A1",
+        "example": "Ich bin müde.",
+        "word": "müde",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_01"
+    },
+    {
+        "german": "fleißig",
+        "english": "hard-working",
+        "level": "A1",
+        "example": "Er ist sehr fleißig.",
+        "word": "fleißig",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_02"
+    },
+    {
+        "german": "pünktlich",
+        "english": "punctual",
+        "level": "A1",
+        "example": "Sie ist immer pünktlich.",
+        "word": "pünktlich",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_03"
+    },
+    {
+        "german": "glücklich",
+        "english": "happy",
+        "level": "A1",
+        "example": "Ich bin heute sehr glücklich.",
+        "word": "glücklich",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_04"
+    },
+    {
+        "german": "hungrig",
+        "english": "hungry",
+        "level": "A1",
+        "example": "Ich bin hungrig.",
+        "word": "hungrig",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_05"
+    },
+    {
+        "german": "durstig",
+        "english": "thirsty",
+        "level": "A1",
+        "example": "Ich bin durstig.",
+        "word": "durstig",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_06"
+    },
+    {
+        "german": "krank",
+        "english": "sick",
+        "level": "A1",
+        "example": "Ich bin krank.",
+        "word": "krank",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_07"
+    },
+    {
+        "german": "gesund",
+        "english": "healthy",
+        "level": "A1",
+        "example": "Ich fühle mich gesund.",
+        "word": "gesund",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_08"
+    },
+    {
+        "german": "freundlich",
+        "english": "friendly",
+        "level": "A1",
+        "example": "Die Nachbarn sind freundlich.",
+        "word": "freundlich",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_09"
+    },
+    {
+        "german": "nett",
+        "english": "nice",
+        "level": "A1",
+        "example": "Der Lehrer ist nett.",
+        "word": "nett",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_10"
+    },
+    {
+        "german": "laut",
+        "english": "loud",
+        "level": "A1",
+        "example": "Die Musik ist laut.",
+        "word": "laut",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_11"
+    },
+    {
+        "german": "leise",
+        "english": "quiet",
+        "level": "A1",
+        "example": "Sei bitte leise.",
+        "word": "leise",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_12"
+    },
+    {
+        "german": "langsam",
+        "english": "slow",
+        "level": "A1",
+        "example": "Das Auto ist langsam.",
+        "word": "langsam",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_13"
+    },
+    {
+        "german": "schnell",
+        "english": "fast",
+        "level": "A1",
+        "example": "Der Zug ist schnell.",
+        "word": "schnell",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_14"
+    },
+    {
+        "german": "neu",
+        "english": "new",
+        "level": "A1",
+        "example": "Ich habe ein neues Handy.",
+        "word": "neu",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_15"
+    },
+    {
+        "german": "alt",
+        "english": "old",
+        "level": "A1",
+        "example": "Das Haus ist alt.",
+        "word": "alt",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_16"
+    },
+    {
+        "german": "heiß",
+        "english": "hot",
+        "level": "A1",
+        "example": "Der Kaffee ist heiß.",
+        "word": "heiß",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_17"
+    },
+    {
+        "german": "kalt",
+        "english": "cold",
+        "level": "A1",
+        "example": "Es ist heute kalt.",
+        "word": "kalt",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_18"
+    },
+    {
+        "german": "voll",
+        "english": "full",
+        "level": "A1",
+        "example": "Das Glas ist voll.",
+        "word": "voll",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_19"
+    },
+    {
+        "german": "leer",
+        "english": "empty",
+        "level": "A1",
+        "example": "Die Flasche ist leer.",
+        "word": "leer",
+        "type": "adjective",
+        "category": "Alltag",
+        "id": "adjective_alltag_20"
+    }
+]

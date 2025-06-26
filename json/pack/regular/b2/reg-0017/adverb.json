@@ -1,0 +1,202 @@
+[
+    {
+        "german": "digital",
+        "english": "digitally",
+        "level": "B2",
+        "example": "Die Dokumente werden digital übermittelt.",
+        "word": "digital",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_01"
+    },
+    {
+        "german": "automatisch",
+        "english": "automatically",
+        "level": "B2",
+        "example": "Das Update wird automatisch installiert.",
+        "word": "automatisch",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_02"
+    },
+    {
+        "german": "online",
+        "english": "online",
+        "level": "B2",
+        "example": "Viele Kurse sind mittlerweile online verfügbar.",
+        "word": "online",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_03"
+    },
+    {
+        "german": "offline",
+        "english": "offline",
+        "level": "B2",
+        "example": "Die App funktioniert auch offline.",
+        "word": "offline",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_04"
+    },
+    {
+        "german": "zeitnah",
+        "english": "promptly / without delay",
+        "level": "B2",
+        "example": "Die Daten sollen zeitnah aktualisiert werden.",
+        "word": "zeitnah",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_05"
+    },
+    {
+        "german": "sicher",
+        "english": "safely / securely",
+        "level": "B2",
+        "example": "Die Daten wurden sicher gespeichert.",
+        "word": "sicher",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_06"
+    },
+    {
+        "german": "effizient",
+        "english": "efficiently",
+        "level": "B2",
+        "example": "Die Aufgaben wurden effizient erledigt.",
+        "word": "effizient",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_07"
+    },
+    {
+        "german": "regelmäßig",
+        "english": "regularly",
+        "level": "B2",
+        "example": "Die Software sollte regelmäßig überprüft werden.",
+        "word": "regelmäßig",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_08"
+    },
+    {
+        "german": "schnell",
+        "english": "quickly",
+        "level": "B2",
+        "example": "Die Verbindung wurde schnell hergestellt.",
+        "word": "schnell",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_09"
+    },
+    {
+        "german": "zuverlässig",
+        "english": "reliably",
+        "level": "B2",
+        "example": "Das System funktioniert sehr zuverlässig.",
+        "word": "zuverlässig",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_10"
+    },
+    {
+        "german": "gleichzeitig",
+        "english": "simultaneously",
+        "level": "B2",
+        "example": "Mehrere Prozesse laufen gleichzeitig.",
+        "word": "gleichzeitig",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_11"
+    },
+    {
+        "german": "manuell",
+        "english": "manually",
+        "level": "B2",
+        "example": "Die Einstellungen müssen manuell geändert werden.",
+        "word": "manuell",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_12"
+    },
+    {
+        "german": "zentral",
+        "english": "centrally",
+        "level": "B2",
+        "example": "Die Daten werden zentral gespeichert.",
+        "word": "zentral",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_13"
+    },
+    {
+        "german": "fern",
+        "english": "remotely",
+        "level": "B2",
+        "example": "Das Gerät lässt sich fern bedienen.",
+        "word": "fern",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_14"
+    },
+    {
+        "german": "technisch",
+        "english": "technically",
+        "level": "B2",
+        "example": "Das ist technisch nicht möglich.",
+        "word": "technisch",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_15"
+    },
+    {
+        "german": "interaktiv",
+        "english": "interactively",
+        "level": "B2",
+        "example": "Die Anwendung ist interaktiv gestaltet.",
+        "word": "interaktiv",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_16"
+    },
+    {
+        "german": "benutzerfreundlich",
+        "english": "user-friendly",
+        "level": "B2",
+        "example": "Die Website ist sehr benutzerfreundlich.",
+        "word": "benutzerfreundlich",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_17"
+    },
+    {
+        "german": "stabil",
+        "english": "stably",
+        "level": "B2",
+        "example": "Die Verbindung ist stabil.",
+        "word": "stabil",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_18"
+    },
+    {
+        "german": "sorgfältig",
+        "english": "carefully",
+        "level": "B2",
+        "example": "Die Daten wurden sorgfältig überprüft.",
+        "word": "sorgfältig",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_19"
+    },
+    {
+        "german": "kompatibel",
+        "english": "compatibly",
+        "level": "B2",
+        "example": "Die Geräte sind miteinander kompatibel.",
+        "word": "kompatibel",
+        "type": "adverb",
+        "category": "Digitalisierung & Technik",
+        "id": "adverb_technik_B2_20"
+    }
+]

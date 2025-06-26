@@ -1,0 +1,212 @@
+[
+    {
+        "german": "schnell",
+        "english": "quickly",
+        "level": "A1",
+        "example": "Ich kaufe schnell ein.",
+        "word": "schnell",
+        "rule": "Some adjectives can function directly as adverbs without changes.",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_01"
+    },
+    {
+        "german": "langsam",
+        "english": "slowly",
+        "level": "A1",
+        "example": "Fahr bitte langsam!",
+        "word": "langsam",
+        "rule": "Describes pace or manner, commonly used with verbs of movement.",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_02"
+    },
+    {
+        "german": "jetzt",
+        "english": "now",
+        "level": "A1",
+        "example": "Ich esse jetzt.",
+        "word": "jetzt",
+        "rule": "Time adverbs can be placed at the beginning or after the verb.",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_03"
+    },
+    {
+        "german": "bald",
+        "english": "soon",
+        "level": "A1",
+        "example": "Wir sehen uns bald.",
+        "word": "bald",
+        "rule": "Time adverb indicating something will happen shortly.",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_04"
+    },
+    {
+        "german": "immer",
+        "english": "always",
+        "level": "A1",
+        "example": "Er ist immer freundlich.",
+        "word": "immer",
+        "rule": "Frequency adverbs typically follow the verb.",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_05"
+    },
+    {
+        "german": "nie",
+        "english": "never",
+        "level": "A1",
+        "example": "Ich rauche nie.",
+        "word": "nie",
+        "rule": "Negating frequency, often used with present tense verbs.",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_06"
+    },
+    {
+        "german": "oft",
+        "english": "often",
+        "level": "A1",
+        "example": "Ich gehe oft spazieren.",
+        "word": "oft",
+        "rule": "Adverb of frequency, appears after the verb.",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_07"
+    },
+    {
+        "german": "manchmal",
+        "english": "sometimes",
+        "level": "A1",
+        "example": "Manchmal esse ich Pizza.",
+        "word": "manchmal",
+        "rule": "Frequency adverb often placed at the beginning of a sentence.",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_08"
+    },
+    {
+        "german": "gestern",
+        "english": "yesterday",
+        "level": "A1",
+        "example": "Gestern war ich krank.",
+        "word": "gestern",
+        "rule": "Time adverb indicating past; commonly starts the sentence.",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_09"
+    },
+    {
+        "german": "heute",
+        "english": "today",
+        "level": "A1",
+        "example": "Heute ist das Wetter schön.",
+        "word": "heute",
+        "rule": "Time adverb used to describe current day events.",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_10"
+    },
+    {
+        "german": "morgen",
+        "english": "tomorrow",
+        "level": "A1",
+        "example": "Ich reise morgen ab.",
+        "word": "morgen",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_11"
+    },
+    {
+        "german": "draußen",
+        "english": "outside",
+        "level": "A1",
+        "example": "Die Kinder spielen draußen.",
+        "word": "draußen",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_12"
+    },
+    {
+        "german": "drinnen",
+        "english": "inside",
+        "level": "A1",
+        "example": "Wir bleiben heute drinnen.",
+        "word": "drinnen",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_13"
+    },
+    {
+        "german": "oben",
+        "english": "upstairs",
+        "level": "A1",
+        "example": "Meine Sachen sind oben.",
+        "word": "oben",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_14"
+    },
+    {
+        "german": "unten",
+        "english": "downstairs",
+        "level": "A1",
+        "example": "Die Küche ist unten.",
+        "word": "unten",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_15"
+    },
+    {
+        "german": "zusammen",
+        "english": "together",
+        "level": "A1",
+        "example": "Wir lernen zusammen Deutsch.",
+        "word": "zusammen",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_16"
+    },
+    {
+        "german": "allein",
+        "english": "alone",
+        "level": "A1",
+        "example": "Ich esse allein.",
+        "word": "allein",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_17"
+    },
+    {
+        "german": "schon",
+        "english": "already",
+        "level": "A1",
+        "example": "Ich habe das schon gemacht.",
+        "word": "schon",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_18"
+    },
+    {
+        "german": "noch",
+        "english": "still",
+        "level": "A1",
+        "example": "Er schläft noch.",
+        "word": "noch",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_19"
+    },
+    {
+        "german": "nicht",
+        "english": "not",
+        "level": "A1",
+        "example": "Ich verstehe das nicht.",
+        "word": "nicht",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_20"
+    }
+]

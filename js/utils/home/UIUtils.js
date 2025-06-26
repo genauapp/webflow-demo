@@ -148,7 +148,7 @@ export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
 
     // <img> elementini oluştur
     const img = document.createElement('img')
-    img.src = packSummary.imgUrl
+    img.src = packSummary.img_url
     img.loading = 'lazy'
     // img.style.width = '100%'
     // img.style.height = '100%'
@@ -161,7 +161,7 @@ export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
     const h1 = document.createElement('h1')
     h1.id = `deck-title-${i}`
     h1.classList.add('heading-42')
-    h1.textContent = packSummary.nameEng
+    h1.textContent = packSummary.name_eng
     // h1.style.fontFamily = 'Lato, sans-serif'
     // h1.style.fontWeight = '400'
     // h1.style.fontSize = '16px'
@@ -231,17 +231,22 @@ export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
         document.getElementById('content-container').style.display = 'none'
 
         // show micro-quiz learn/exercise
-        // 1. grab the first matching category
-        const firstQuiz = packSummariesOfCurrentLevel.find(
-          (ps) => ps.type === PackType.MICRO_QUIZ
+        // 1. grab the first matching pack summary
+        const firstPackSummary = packSummariesOfCurrentLevel.find(
+          (packSummary) => packSummary.type === PackType.MICRO_QUIZ
         )
 
+        // 1.1. grab its first deck summary
+        const firstDeckSummaryOfPack = firstPackSummary.deck_summaries[0]
+
         // 2. if one exists, mount it once
-        if (firstQuiz) {
+        if (firstPackSummary && firstDeckSummaryOfPack) {
           await mountPackPractice(
-            firstQuiz.id,
-            firstQuiz.level,
-            firstQuiz.exerciseType
+            firstPackSummary.id,
+            firstPackSummary.type,
+            firstPackSummary.level,
+            firstDeckSummaryOfPack.word_type,
+            firstDeckSummaryOfPack.exercise_type
           )
         }
 

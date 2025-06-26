@@ -1,0 +1,222 @@
+[
+  {
+    "id": "verb_alltag_A2_01",
+    "german": "aufstehen",
+    "english": "to get up",
+    "level": "A2",
+    "example": "Ich stehe jeden Morgen um 7 Uhr auf.",
+    "word": "aufstehen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["separable"]
+  },
+  {
+    "id": "verb_alltag_A2_02",
+    "german": "sich anziehen",
+    "english": "to get dressed",
+    "level": "A2",
+    "example": "Ich ziehe mich schnell an.",
+    "word": "sich anziehen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["reflexive", "separable"]
+  },
+  {
+    "id": "verb_alltag_A2_03",
+    "german": "frühstücken",
+    "english": "to have breakfast",
+    "level": "A2",
+    "example": "Ich frühstücke um 8 Uhr.",
+    "word": "frühstücken",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": []
+  },
+  {
+    "id": "verb_alltag_A2_04",
+    "german": "putzen",
+    "english": "to clean",
+    "level": "A2",
+    "example": "Ich putze die Küche am Wochenende.",
+    "word": "putzen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_alltag_A2_05",
+    "german": "kochen",
+    "english": "to cook",
+    "level": "A2",
+    "example": "Ich koche gern für meine Familie.",
+    "word": "kochen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_alltag_A2_06",
+    "german": "spülen",
+    "english": "to wash (dishes)",
+    "level": "A2",
+    "example": "Ich spüle nach dem Essen.",
+    "word": "spülen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_alltag_A2_07",
+    "german": "bügeln",
+    "english": "to iron",
+    "level": "A2",
+    "example": "Ich bügle meine Hemden am Sonntag.",
+    "word": "bügeln",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_alltag_A2_08",
+    "german": "staubsaugen",
+    "english": "to vacuum",
+    "level": "A2",
+    "example": "Ich staubsauge das Wohnzimmer.",
+    "word": "staubsaugen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_alltag_A2_09",
+    "german": "aufräumen",
+    "english": "to tidy up",
+    "level": "A2",
+    "example": "Ich räume mein Zimmer auf.",
+    "word": "aufräumen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ", "separable"]
+  },
+  {
+    "id": "verb_alltag_A2_10",
+    "german": "sich beeilen",
+    "english": "to hurry up",
+    "level": "A2",
+    "example": "Ich muss mich beeilen, sonst komme ich zu spät.",
+    "word": "sich beeilen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["reflexive"]
+  },
+  {
+    "id": "verb_alltag_A2_11",
+    "german": "einkaufen",
+    "english": "to go shopping",
+    "level": "A2",
+    "example": "Ich kaufe jeden Samstag ein.",
+    "word": "einkaufen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["separable"]
+  },
+  {
+    "id": "verb_alltag_A2_12",
+    "german": "abwaschen",
+    "english": "to wash the dishes",
+    "level": "A2",
+    "example": "Ich wasche nach dem Essen ab.",
+    "word": "abwaschen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["separable"]
+  },
+  {
+    "id": "verb_alltag_A2_13",
+    "german": "anmachen",
+    "english": "to turn on",
+    "level": "A2",
+    "example": "Ich mache das Licht an.",
+    "word": "anmachen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ", "separable"]
+  },
+  {
+    "id": "verb_alltag_A2_14",
+    "german": "ausmachen",
+    "english": "to turn off",
+    "level": "A2",
+    "example": "Ich mache den Fernseher aus.",
+    "word": "ausmachen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ", "separable"]
+  },
+  {
+    "id": "verb_alltag_A2_15",
+    "german": "lüften",
+    "english": "to air out",
+    "level": "A2",
+    "example": "Ich lüfte das Schlafzimmer jeden Morgen.",
+    "word": "lüften",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_alltag_A2_16",
+    "german": "abtrocknen",
+    "english": "to dry (dishes)",
+    "level": "A2",
+    "example": "Ich trockne das Geschirr ab.",
+    "word": "abtrocknen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ", "separable"]
+  },
+  {
+    "id": "verb_alltag_A2_17",
+    "german": "bringen",
+    "english": "to bring",
+    "level": "A2",
+    "example": "Ich bringe den Müll raus.",
+    "word": "bringen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_alltag_A2_18",
+    "german": "reparieren",
+    "english": "to repair",
+    "level": "A2",
+    "example": "Ich repariere die Lampe.",
+    "word": "reparieren",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_alltag_A2_19",
+    "german": "vergessen",
+    "english": "to forget",
+    "level": "A2",
+    "example": "Ich vergesse oft meine Schlüssel.",
+    "word": "vergessen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["akkusativ"]
+  },
+  {
+    "id": "verb_alltag_A2_20",
+    "german": "sich entspannen",
+    "english": "to relax",
+    "level": "A2",
+    "example": "Ich entspanne mich am Abend.",
+    "word": "sich entspannen",
+    "type": "verb",
+    "category": "Alltag",
+    "cases": ["reflexive"]
+  }
+]
