@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const currentLevel = LevelManager.getCurrentLevel()
   // fetch pack summaries of current level
-  const packSummariesOfCurrentLevel =
+  const {data: packSummariesOfCurrentLevel} =
     await protectedApiService.getPackSummariesOfLevel(currentLevel)
 
   // change Level Header top of the pack screen
