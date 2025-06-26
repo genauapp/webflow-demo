@@ -69,6 +69,43 @@ export const WordSource = {
 }
 
 export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
+  test: [
+    {
+      id: 'reg-0005',
+      type: 'journey',
+      level: 'a2',
+      category: 'test',
+      name: 'Testingen',
+      name_eng: 'Test Data',
+      img_url: `${ASSETS_BASE_URL}/assets/images/decks/A1-DailyLife.jpg`,
+      deck_summaries: [
+        {
+          deck_id: 'deck-0100',
+          word_type: 'noun',
+          exercise_type: 'grammar',
+          status: 'unlocked',
+        },
+        {
+          deck_id: 'deck-0101',
+          word_type: 'verb',
+          exercise_type: 'grammar',
+          status: 'locked',
+        },
+        {
+          deck_id: 'deck-0102',
+          word_type: 'adjective',
+          exercise_type: 'grammar',
+          status: 'locked',
+        },
+        {
+          deck_id: 'deck-0103',
+          word_type: 'adverb',
+          exercise_type: 'grammar',
+          status: 'locked',
+        },
+      ],
+    },
+  ],
   a1: [
     {
       id: 'reg-0001',

@@ -207,7 +207,7 @@ async function fetchWords(packId, packType, packLevel, packDeckWordType) {
 }
 
 /** Initialize navigation service with callbacks */
-function initializeNavigationService() {
+function initializeNavigationService(onJourneyStageCompleted) {
   const SESSION_OPTIONS = {
     mode: NavigationMode.LEARN,
     exerciseType: state.exerciseType,
@@ -233,6 +233,18 @@ function initializeNavigationService() {
     },
     onExerciseResults: (resultsData) => {
       initExerciseResults(resultsData)
+
+      // NEW: Journey stage completion
+      if (
+        onJourneyStageCompleted &&
+        navigationService.isExerciseCompleted(state.sessionId)
+      ) {
+        onJourneyStageCompleted({
+          stageId,
+          words: state.words,
+          results: resultsData,
+        })
+      }
     },
   }
 
@@ -297,7 +309,8 @@ export async function mountPackPractice(
   packType,
   packLevel,
   packDeckWordType,
-  exerciseType
+  exerciseType,
+  onJourneyStageCompleted = null // null by default, micro-quiz does not use it
 ) {
   if (state && state.mounted) return
 

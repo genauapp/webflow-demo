@@ -1,55 +1,75 @@
-// PackPracticeJourneyService.js
-const JOURNEY_STAGES = ['noun', 'verb', 'adjective', 'adverb'];
+import { DeckStatus } from '../../constants/props'
+
+const JOURNEY_STAGES = ['noun', 'verb', 'adjective', 'adverb']
 
 class PackPracticeJourneyService {
   constructor() {
-    this.journeys = new Map(); // packId → { state, callbacks }
+    this.journeys = new Map() // packId → { state, callbacks }
   }
 
-  initJourney(packId, callbacks) {
-    const journeyState = {
-      packId,
-      stages: JOURNEY_STAGES.map((stage, index) => ({
-        id: stage,
-        status: index === 0 ? 'unlocked' : 'locked',
-        completed: false
-      }))
-    };
-    
-    this.journeys.set(packId, { state: journeyState, callbacks });
-    this._notifyUpdate(packId);
-    return journeyState;
+  createSession(packSummary, callbacks) {
+    const deckSummaries = packSummary.deck_summaries.map((deckSummary) => {
+      return {
+        deckId: deckSummary.deck_id,
+        wordType: deckSummary.word_type,
+        exerciseType: deckSummary.exercise_type,
+        status: deckSummary.status,
+      }
+    })
+
+    const journeySessionState = {
+      pack: {
+        id: packSummary.id,
+        type: packSummary.type,
+        level: packSummary.level,
+        category: packSummary.category,
+        name: {
+          german: packSummary.name,
+          english: packSummary.name_eng,
+        },
+        imageUrl: packSummary.img_url,
+        deckSummaries: deckSummaries,
+      },
+    }
+
+    this.journeys.set(journeySessionState.pack.id, {
+      state: journeySessionState,
+      callbacks,
+    })
+    this._notifyUpdate(journeySessionState.pack.id)
+    return journeySessionState
   }
 
   getJourneyState(packId) {
-    const journey = this.journeys.get(packId);
-    return journey?.state;
+    const journey = this.journeys.get(packId)
+    return journey?.state
   }
 
   completeStage(packId, stageId) {
-    const journey = this.journeys.get(packId);
-    if (!journey) return null;
-    
-    const stageIndex = JOURNEY_STAGES.indexOf(stageId);
-    if (stageIndex === -1) return journey.state;
-    
-    journey.state.stages[stageIndex].completed = true;
-    journey.state.stages[stageIndex].status = 'completed';
-    
-    if (stageIndex + 1 < JOURNEY_STAGES.length) {
-      journey.state.stages[stageIndex + 1].status = 'unlocked';
+    const journey = this.journeys.get(packId)
+    if (!journey) return null
+
+    const stageIndex = journey.state.deckSummaries.find(
+      (stage) => stage.id === stageId
+    )
+    if (stageIndex === -1) return journey.state
+
+    journey.state.deckSummaries[stageIndex].status = DeckStatus.COMPLETED
+
+    if (stageIndex + 1 < journey.state.deckSummaries.length) {
+      journey.state.deckSummaries[stageIndex + 1].status = DeckStatus.UNLOCKED
     }
-    
-    this._notifyUpdate(packId);
-    return journey.state;
+
+    this._notifyUpdate(packId)
+    return journey.state
   }
 
   _notifyUpdate(packId) {
-    const journey = this.journeys.get(packId);
+    const journey = this.journeys.get(packId)
     if (journey?.callbacks?.onUpdate) {
-      journey.callbacks.onUpdate(journey.state);
+      journey.callbacks.onUpdate(journey.state)
     }
   }
 }
 
-export const packPracticeJourneyService = new PackPracticeJourneyService();
+export const packPracticeJourneyService = new PackPracticeJourneyService()
