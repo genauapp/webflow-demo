@@ -172,7 +172,7 @@ export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
     linkBlock.appendChild(h1)
 
     // Son olarak istediğin yere ekle, örneğin bir container'a:
-    if (packSummary.type === PackType.REGULAR) {
+    if (packSummary.type === PackType.JOURNEY) {
       regularPackSummaryGrid.appendChild(linkBlock)
     } else if (packSummary.type === PackType.MICRO_QUIZ) {
       microQuizSummaryGrid.appendChild(linkBlock)

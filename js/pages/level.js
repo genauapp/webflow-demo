@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         packSummariesOfCurrentLevel.some(
           (packSummary) =>
             packSummary.category === currentCategory &&
-            packSummary.type === PackType.REGULAR
+            packSummary.type === PackType.JOURNEY
         )
       ) {
         // hide preposition learn/exercise
