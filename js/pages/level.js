@@ -44,6 +44,7 @@ import {
   unmountPackPractice,
 } from '../components/level/packPractice/packPractice.js'
 import { protectedApiService } from '../service/apiService.js'
+import { mountPackPracticeJourney } from '../components/level/packPracticeJourney/packPracticeJourney.js'
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', async () => {
@@ -75,7 +76,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const currentLevel = LevelManager.getCurrentLevel()
   // fetch pack summaries of current level
-  const {data: packSummariesOfCurrentLevel} =
+  const { data: packSummariesOfCurrentLevel } =
     await protectedApiService.getPackSummariesOfLevel(currentLevel)
 
   // change Level Header top of the pack screen
@@ -137,7 +138,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       ) {
         // hide preposition learn/exercise
         unmountPackPractice()
-        await loadAndShowWords()
+        // await loadAndShowWords()
+        const { data: packSummariesOfCurrentLevel } =
+          await protectedApiService.getPackSummariesOfLevel('test')
+        mountPackPracticeJourney(packSummariesOfCurrentLevel[0])
+        return
       }
     }
   }
