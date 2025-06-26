@@ -38,7 +38,7 @@ function handleStageSelection(stageId) {
 function mountPackPracticeForStage(packId, stageId, onStageCompleted) {
   mountPackPractice(
     packId,
-    'regular', // packLevel
+    'journey', // packLevel
     'vocabulary', // exerciseType
     stageId, // Stage context
     onStageCompleted // Completion callback

@@ -11,7 +11,7 @@ export const WordType = {
 }
 
 export const PackType = Object.freeze({
-  REGULAR: 'regular',
+  JOURNEY: 'journey',
   MICRO_QUIZ: 'micro-quiz',
 })
 
@@ -72,7 +72,7 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
   a1: [
     {
       id: 'reg-0001',
-      type: 'regular',
+      type: 'journey',
       level: 'a1',
       category: 'alltag',
       name: 'Alltag',
@@ -107,7 +107,7 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
     },
     {
       id: 'reg-0002',
-      type: 'regular',
+      type: 'journey',
       level: 'a1',
       category: 'einkaufen',
       name: 'Einkaufen & Essen',
@@ -142,7 +142,7 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
     },
     {
       id: 'reg-0003',
-      type: 'regular',
+      type: 'journey',
       level: 'a1',
       category: 'gesundheit',
       name: 'Gesundheit',
@@ -177,7 +177,7 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
     },
     {
       id: 'reg-0004',
-      type: 'regular',
+      type: 'journey',
       level: 'a1',
       category: 'behoerden',
       name: 'Behörden & Termin',
@@ -231,7 +231,7 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
   a2: [
     {
       id: 'reg-0005',
-      type: 'regular',
+      type: 'journey',
       level: 'a2',
       category: 'alltag',
       name: 'Alltag',
@@ -266,7 +266,7 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
     },
     {
       id: 'reg-0006',
-      type: 'regular',
+      type: 'journey',
       level: 'a2',
       category: 'freizeit',
       name: 'Freizeit & Konsum',
@@ -301,7 +301,7 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
     },
     {
       id: 'reg-0007',
-      type: 'regular',
+      type: 'journey',
       level: 'a2',
       category: 'medien',
       name: 'Medien & Kommunikation',
@@ -336,7 +336,7 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
     },
     {
       id: 'reg-0008',
-      type: 'regular',
+      type: 'journey',
       level: 'a2',
       category: 'arbeit',
       name: 'Arbeit & Behörden',
@@ -390,7 +390,7 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
   b1: [
     {
       id: 'reg-0009',
-      type: 'regular',
+      type: 'journey',
       level: 'b1',
       category: 'gefuehle',
       name: 'Gefühle & Beziehungen',
@@ -425,7 +425,7 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
     },
     {
       id: 'reg-0010',
-      type: 'regular',
+      type: 'journey',
       level: 'b1',
       category: 'reisen',
       name: 'Reisen & Verkehr',
@@ -460,7 +460,7 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
     },
     {
       id: 'reg-0011',
-      type: 'regular',
+      type: 'journey',
       level: 'b1',
       category: 'wohnen',
       name: 'Wohnen & Umwelt',
@@ -495,7 +495,7 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
     },
     {
       id: 'reg-0012',
-      type: 'regular',
+      type: 'journey',
       level: 'b1',
       category: 'slang',
       name: 'German Slang',
@@ -530,7 +530,7 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
     },
     {
       id: 'reg-0013',
-      type: 'regular',
+      type: 'journey',
       level: 'b1',
       category: 'b1telc',
       name: 'B1 TELC EXAM',
@@ -567,7 +567,7 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
   b2: [
     {
       id: 'reg-0014',
-      type: 'regular',
+      type: 'journey',
       level: 'b2',
       category: 'bildung',
       name: 'Wissenschaft & Bildung',
@@ -602,7 +602,7 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
     },
     {
       id: 'reg-0015',
-      type: 'regular',
+      type: 'journey',
       level: 'b2',
       category: 'kultur',
       name: 'Gesellschaft & Kultur',
@@ -637,7 +637,7 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
     },
     {
       id: 'reg-0016',
-      type: 'regular',
+      type: 'journey',
       level: 'b2',
       category: 'politik',
       name: 'Politik & Umwelt',
@@ -672,7 +672,7 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
     },
     {
       id: 'reg-0017',
-      type: 'regular',
+      type: 'journey',
       level: 'b2',
       category: 'technik',
       name: 'Digitalisierung & Technik',
