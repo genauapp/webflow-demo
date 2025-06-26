@@ -138,11 +138,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       ) {
         // hide preposition learn/exercise
         unmountPackPractice()
-        // await loadAndShowWords()
-        const { data: packSummariesOfCurrentLevel } =
-          await protectedApiService.getPackSummariesOfLevel('test')
         mountPackPracticeJourney(packSummariesOfCurrentLevel[0])
         return
+        // await loadAndShowWords()
       }
     }
   }

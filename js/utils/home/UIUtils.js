@@ -15,6 +15,7 @@ import {
   mountPackPractice,
   unmountPackPractice,
 } from '../../components/level/packPractice/packPractice.js'
+import { mountPackPracticeJourney } from '../../components/level/packPracticeJourney/packPracticeJourney.js'
 
 // UI visibility functions
 export function showSkeleton() {
@@ -256,9 +257,12 @@ export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
       } else {
         // hide preposition learn/exercise
         unmountPackPractice()
+        
+        mountPackPracticeJourney(packSummariesOfCurrentLevel[0])
+        return
 
         // show regular learn/exercise
-        await loadAndShowWords()
+        // await loadAndShowWords()
         // focus user Learn/Exercise area
         window.location.hash = '#action-content'
       }
