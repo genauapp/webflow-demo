@@ -233,7 +233,7 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
       id: 'reg-0005',
       type: 'journey',
       level: 'a2',
-      category: 'test',
+      category: 'alltag',
       name: 'Testingen',
       name_eng: 'Test Data',
       img_url: `${ASSETS_BASE_URL}/assets/images/decks/A1-DailyLife.jpg`,
