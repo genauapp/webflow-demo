@@ -19,7 +19,7 @@ function renderJourneyMap(journeyState, onStageSelected) {
     const stageEl = document.createElement('div')
     stageEl.className = `journey-stage ${stage.status}`
     stageEl.dataset.stageId = stage.id
-    stageEl.textContent = stage.word_type
+    stageEl.textContent = stage.wordType
 
     if (stage.status === DeckStatus.COMPLETED) {
       stageEl.innerHTML += '<span class="checkmark">✓</span>'

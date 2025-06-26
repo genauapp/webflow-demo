@@ -70,12 +70,16 @@ function handleStageSelection(stageId) {
 }
 
 function mountPackPracticeForStage(journeyState, stageId, onStageCompleted) {
+  const currentDeckSummary = journeyState.deckSummaries.find(
+    (stage) => stage.id === stageId
+  )
+
   mountPackPractice(
     journeyState.pack.id,
     journeyState.pack.type,
     journeyState.pack.level,
-    journeyState.deckSummaries[stageId].wordType,
-    journeyState.deckSummaries[stageId].exerciseType,
+    currentDeckSummary.wordType,
+    currentDeckSummary.exerciseType,
     onStageCompleted // Completion callback
   )
 }
