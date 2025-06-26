@@ -4,14 +4,14 @@ let els = {}
 
 function initElements() {
   els = {
-    container: document.getElementById('pack-journey-map-card-body'),
+    container: () => document.getElementById('pack-journey-map-card-body'),
   }
 }
 
 function renderJourneyMap(journeyState, onStageSelected) {
   if (!els.container) return
 
-  els.container.innerHTML = ''
+  els.container().innerHTML = ''
 
   const deckSummaries = journeyState.deckSummaries
 
@@ -30,7 +30,7 @@ function renderJourneyMap(journeyState, onStageSelected) {
       stageEl.classList.add('interactive')
     }
 
-    els.container.appendChild(stageEl)
+    els.container().appendChild(stageEl)
   })
 }
 
@@ -40,7 +40,9 @@ export function updateJourneyMap(journeyState) {
   const deckSummaries = journeyState.deckSummaries
 
   deckSummaries.forEach((stage) => {
-    const stageEl = els.container.querySelector(`[data-stage-id="${stage.id}"]`)
+    const stageEl = els
+      .container()
+      .querySelector(`[data-stage-id="${stage.id}"]`)
     if (!stageEl) return
 
     // Update status classes
@@ -65,5 +67,5 @@ export function initJourneyMapCardBody(journeyState, onStageSelected) {
 }
 
 export function unmountJourneyMapCardBody() {
-  if (els.container) els.container.innerHTML = ''
+  if (els.container) els.container().innerHTML = ''
 }
