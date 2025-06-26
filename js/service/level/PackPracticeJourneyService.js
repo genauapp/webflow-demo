@@ -10,7 +10,7 @@ class PackPracticeJourneyService {
   createSession(packSummary, callbacks) {
     const deckSummaries = packSummary.deck_summaries.map((deckSummary) => {
       return {
-        deckId: deckSummary.deck_id,
+        id: deckSummary.deck_id,
         wordType: deckSummary.word_type,
         exerciseType: deckSummary.exercise_type,
         status: deckSummary.status,
