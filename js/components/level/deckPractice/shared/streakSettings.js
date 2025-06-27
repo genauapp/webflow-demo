@@ -1,4 +1,4 @@
-// components/level/packPractice/shared/streakSettings.js
+// components/level/deckPractice/shared/streakSettings.js
 let els = {}
 
 function initElements() {

@@ -1,4 +1,4 @@
-// /components/level/packPractice/shared/learn.js
+// /components/level/deckPractice/shared/learn.js
 import { PrepositionCaseColorMap } from '../../../../constants/props.js'
 
 let els = {}

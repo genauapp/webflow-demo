@@ -1,14 +1,14 @@
-// packPracticeJourneyComponent.js
-import { packPracticeJourneyService } from '../../../service/level/PackPracticeJourneyService.js'
+// packJourney.js
+import { packJourneyService } from '../../../service/level/PackJourneyService.js'
 import {
   initJourneyMapCardBody,
   updateJourneyMap,
   unmountJourneyMapCardBody,
 } from './journeyMapCardBody.js'
 import {
-  mountPackPractice,
-  unmountPackPractice,
-} from '../packPractice/packPractice.js'
+  mountDeckPractice,
+  unmountDeckPractice,
+} from '../deckPractice/deckPractice.js'
 import { protectedApiService } from '../../../service/apiService.js'
 
 let currentPackId = null
@@ -52,11 +52,11 @@ function updateJourney(journeyState) {
 function handleStageSelection(stageId) {
   els.journeyMapCard().style.display = 'none'
 
-  const journeyState = packPracticeJourneyService.getJourneyState(currentPackId)
+  const journeyState = packJourneyService.getJourneyState(currentPackId)
 
-  mountPackPracticeForStage(journeyState, stageId, (results) => {
+  mountDeckPracticeForStage(journeyState, stageId, (results) => {
     // Stage completed callback
-    const updatedJourney = packPracticeJourneyService.completeStage(
+    const updatedJourney = packJourneyService.completeStage(
       currentPackId,
       stageId
     )
@@ -69,12 +69,12 @@ function handleStageSelection(stageId) {
   })
 }
 
-function mountPackPracticeForStage(journeyState, stageId, onStageCompleted) {
+function mountDeckPracticeForStage(journeyState, stageId, onStageCompleted) {
   const currentDeckSummary = journeyState.deckSummaries.find(
     (stage) => stage.id === stageId
   )
 
-  mountPackPractice(
+  mountDeckPractice(
     journeyState.pack.id,
     journeyState.pack.type,
     journeyState.pack.level,
@@ -84,7 +84,7 @@ function mountPackPracticeForStage(journeyState, stageId, onStageCompleted) {
   )
 }
 
-export function mountPackPracticeJourney(packSummary) {
+export function mountPackJourney(packSummary) {
   currentPackId = packSummary.id
 
   initElements()
@@ -93,7 +93,7 @@ export function mountPackPracticeJourney(packSummary) {
   els.container().style.display = 'flex'
 
   // Initialize journey service with callbacks
-  const initialJourneyState = packPracticeJourneyService.createSession(
+  const initialJourneyState = packJourneyService.createSession(
     packSummary,
     {
       onUpdate: (updatedState) => {
@@ -105,7 +105,7 @@ export function mountPackPracticeJourney(packSummary) {
   renderJourney(initialJourneyState)
 }
 
-export function unmountPackPracticeJourney() {
+export function unmountPackJourney() {
   // Hide root
   els.container().style.display = 'none'
 

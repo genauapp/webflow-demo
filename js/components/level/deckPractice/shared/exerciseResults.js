@@ -1,4 +1,4 @@
-// components/level/packPractice/shared/exerciseResults.js
+// components/level/deckPractice/shared/exerciseResults.js
 
 import { CDN_BASE_URL } from '../../../../constants/urls.js'
 

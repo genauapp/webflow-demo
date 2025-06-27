@@ -1,4 +1,4 @@
-// /components/level/packPractice/exercise/vocabularyExerciseCard.js
+// /components/level/deckPractice/exercise/vocabularyExerciseCard.js
 
 import {
   ExerciseType,

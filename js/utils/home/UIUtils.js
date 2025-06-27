@@ -12,10 +12,10 @@ import { PackType } from '../../constants/props.js'
 import { loadAndShowWords } from '../../pages/level.js'
 import LevelManager from '../LevelManager.js'
 import {
-  mountPackPractice,
-  unmountPackPractice,
-} from '../../components/level/packPractice/packPractice.js'
-import { mountPackPracticeJourney } from '../../components/level/packPracticeJourney/packPracticeJourney.js'
+  mountDeckPractice,
+  unmountDeckPractice,
+} from '../../components/level/deckPractice/deckPractice.js'
+import { mountPackJourney } from '../../components/level/packJourney/packJourney.js'
 
 // UI visibility functions
 export function showSkeleton() {
@@ -242,7 +242,7 @@ export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
 
         // 2. if one exists, mount it once
         if (firstPackSummary && firstDeckSummaryOfPack) {
-          await mountPackPractice(
+          await mountDeckPractice(
             firstPackSummary.id,
             firstPackSummary.type,
             firstPackSummary.level,
@@ -256,9 +256,9 @@ export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
         return
       } else {
         // hide preposition learn/exercise
-        unmountPackPractice()
+        unmountDeckPractice()
 
-        mountPackPracticeJourney(packSummariesOfCurrentLevel[0])
+        mountPackJourney(packSummariesOfCurrentLevel[0])
         window.location.hash = '#action-content'
         return
 

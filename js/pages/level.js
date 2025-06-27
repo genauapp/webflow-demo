@@ -40,11 +40,11 @@ import {
 } from '../utils/home/UIUtils.js'
 import LevelManager from '../utils/LevelManager.js'
 import {
-  mountPackPractice,
-  unmountPackPractice,
-} from '../components/level/packPractice/packPractice.js'
+  mountDeckPractice,
+  unmountDeckPractice,
+} from '../components/level/deckPractice/deckPractice.js'
 import { protectedApiService } from '../service/apiService.js'
-import { mountPackPracticeJourney } from '../components/level/packPracticeJourney/packPracticeJourney.js'
+import { mountPackJourney } from '../components/level/packJourney/packJourney.js'
 
 // On Initial Load
 document.addEventListener('DOMContentLoaded', async () => {
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // 2. if one exists, mount it once
         if (firstPackSummary && firstDeckSummaryOfPack) {
-          await mountPackPractice(
+          await mountDeckPractice(
             firstPackSummary.id,
             firstPackSummary.type,
             firstPackSummary.level,
@@ -137,8 +137,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         )
       ) {
         // hide preposition learn/exercise
-        unmountPackPractice()
-        mountPackPracticeJourney(packSummariesOfCurrentLevel[0])
+        unmountDeckPractice()
+        mountPackJourney(packSummariesOfCurrentLevel[0])
         return
         // await loadAndShowWords()
       }

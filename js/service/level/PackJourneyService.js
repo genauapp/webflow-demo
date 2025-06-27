@@ -2,7 +2,7 @@ import { DeckStatus } from '../../constants/props.js'
 
 const JOURNEY_STAGES = ['noun', 'verb', 'adjective', 'adverb']
 
-class PackPracticeJourneyService {
+class PackJourneyService {
   constructor() {
     this.journeys = new Map() // packId → { state, callbacks }
   }
@@ -72,4 +72,4 @@ class PackPracticeJourneyService {
   }
 }
 
-export const packPracticeJourneyService = new PackPracticeJourneyService()
+export const packJourneyService = new PackJourneyService()

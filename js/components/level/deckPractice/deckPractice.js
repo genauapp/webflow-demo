@@ -176,7 +176,13 @@ function enhanceWordsWithProperties(words) {
 }
 
 /** Fetch words from API service */
-async function fetchWords(packId, packType, packLevel, packDeckWordType) {
+async function fetchWords(
+  packId,
+  packType,
+  packLevel,
+  packDeckWordType,
+  onJourneyStageCompleted
+) {
   try {
     state.loading = true
     state.error = null
@@ -195,7 +201,8 @@ async function fetchWords(packId, packType, packLevel, packDeckWordType) {
     } else {
       state.words = enhanceWordsWithProperties(words || [])
       state.error = null
-      if (state.words.length > 0) initializeNavigationService()
+      if (state.words.length > 0)
+        initializeNavigationService(onJourneyStageCompleted)
     }
   } catch (err) {
     state.error = err.message || 'Failed to fetch words'
@@ -304,7 +311,7 @@ function resetEventListeners() {
  * Mount: set up everything once and show container
  * Prevents double-init via state.mounted
  */
-export async function mountPackPractice(
+export async function mountDeckPractice(
   packId,
   packType,
   packLevel,
@@ -327,13 +334,19 @@ export async function mountPackPractice(
   els.container().style.display = 'block'
 
   // Fetch words, initialize navigation service and render
-  await fetchWords(packId, packType, packLevel, packDeckWordType)
+  await fetchWords(
+    packId,
+    packType,
+    packLevel,
+    packDeckWordType,
+    onJourneyStageCompleted
+  )
 }
 
 /**
  * Unmount: teardown session & reset state, hide container
  */
-export function unmountPackPractice() {
+export function unmountDeckPractice() {
   if (!state || !state.mounted) return
 
   // Hide root
