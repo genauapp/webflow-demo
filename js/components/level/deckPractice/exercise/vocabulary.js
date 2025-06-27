@@ -1,9 +1,4 @@
-// /components/level/deckPractice/exercise/vocabularyExerciseCard.js
-
-import {
-  ExerciseType,
-  ExerciseTypeSettingsMap,
-} from '../../../../constants/props.js'
+// /components/level/deckPractice/exercise/vocabulary.js
 
 let els = {}
 
@@ -107,7 +102,7 @@ function hideVocabularyFeedback() {
 }
 
 /** Render vocabulary card */
-function renderVocabularyExerciseCard(
+function renderVocabulary(
   {
     streakTarget,
     currentWord: word,
@@ -132,9 +127,9 @@ function renderVocabularyExerciseCard(
   renderVocabularyOptions(options, word, onAnswerCallback)
 }
 
-export function mountVocabularyExerciseCard(exerciseState, onAnswerCallback) {
+export function mountVocabulary(exerciseState, onAnswerCallback) {
   // Initialize elements
   initElements()
 
-  renderVocabularyExerciseCard(exerciseState, onAnswerCallback)
+  renderVocabulary(exerciseState, onAnswerCallback)
 }

@@ -1,4 +1,4 @@
-// /components/level/deckPractice/exercise/grammarExerciseCard.js
+// /components/level/deckPractice/exercise/grammar.js
 import StringUtils from '../../../../utils/StringUtils.js'
 
 let els = {}
@@ -168,7 +168,7 @@ function hideGrammarFeedback() {
 }
 
 /** Render grammar exercise card */
-function renderGrammarExerciseCard(
+function renderGrammar(
   { currentWord: word, options, currentIndex, lastIndex, allWords, score },
   onAnswerCallback
 ) {
@@ -197,9 +197,9 @@ function renderGrammarExerciseCard(
   renderGrammarOptions(options, word, onAnswerCallback, isCapitalized)
 }
 
-export function mountGrammarExerciseCard(exerciseState, onAnswerCallback) {
+export function mountGrammar(exerciseState, onAnswerCallback) {
   // Initialize elements
   initElements()
 
-  renderGrammarExerciseCard(exerciseState, onAnswerCallback)
+  renderGrammar(exerciseState, onAnswerCallback)
 }

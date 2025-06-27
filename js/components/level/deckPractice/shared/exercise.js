@@ -1,7 +1,7 @@
 // /components/level/deckPractice/shared/exercise.js
 import { ExerciseType } from '../../../../constants/props.js'
-import { mountGrammarExerciseCard } from '../exercise/grammarExerciseCard.js'
-import { mountVocabularyExerciseCard } from '../exercise/vocabularyExerciseCard.js'
+import { mountGrammar } from '../exercise/grammar.js'
+import { mountVocabulary } from '../exercise/vocabulary.js'
 
 let els = {}
 
@@ -72,7 +72,7 @@ function renderExerciseCard(
   // Route to appropriate renderer based on exercise type
   if (exerciseType === ExerciseType.VOCABULARY) {
     // Default to vocabulary exercise
-    mountVocabularyExerciseCard(
+    mountVocabulary(
       {
         streakTarget,
         currentWord: word,
@@ -85,7 +85,7 @@ function renderExerciseCard(
       onAnswerCallback
     )
   } else if (exerciseType === ExerciseType.GRAMMAR) {
-    mountGrammarExerciseCard(
+    mountGrammar(
       {
         streakTarget,
         currentWord: word,
