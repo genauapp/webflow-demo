@@ -235,7 +235,7 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
       level: 'a2',
       category: 'alltag',
       name: 'Testingen',
-      name_eng: 'Test Data',
+      name_eng: 'Testingen Pack',
       img_url: `${ASSETS_BASE_URL}/assets/images/decks/A1-DailyLife.jpg`,
       deck_summaries: [
         {
