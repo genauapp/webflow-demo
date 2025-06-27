@@ -46,7 +46,7 @@ function renderJourney(journeyState) {
 }
 
 function updateJourney(journeyState) {
-  updateJourneyMap(journeyState)
+  updateJourneyMap(journeyState, handleStageSelection)
 }
 
 function handleStageSelection(stageId) {
