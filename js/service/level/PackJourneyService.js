@@ -49,7 +49,7 @@ class PackJourneyService {
     const journey = this.journeys.get(packId)
     if (!journey) return null
 
-    const stageIndex = journey.state.deckSummaries.find(
+    const stageIndex = journey.state.deckSummaries.findIndex(
       (stage) => stage.id === stageId
     )
     if (stageIndex === -1) return journey.state
