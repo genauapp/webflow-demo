@@ -8,18 +8,17 @@ function initElements() {
   }
 }
 
-// helper: wire up a stage element
-function setupStageInteractivity(stageEl, stage, onStageSelected) {
+// reusable interactivity helper
+function applyInteractivity(stageEl, stage, onStageSelected) {
   stageEl.dataset.stageId = stage.id
-  // clear any old listener (optional but safe)
-  stageEl.replaceWith(stageEl.cloneNode(true))
-  stageEl = els.container().querySelector(`[data-stage-id="${stage.id}"]`)
-
+  // remove any old click handler
+  stageEl.onclick = null
   if (stage.status === DeckStatus.UNLOCKED) {
     stageEl.classList.add('interactive')
-    stageEl.addEventListener('click', () => onStageSelected(stage.id))
+    stageEl.onclick = () => onStageSelected(stage.id)
+  } else {
+    stageEl.classList.remove('interactive')
   }
-  return stageEl
 }
 
 export function renderJourneyMap(journeyState, onStageSelected) {
@@ -35,9 +34,7 @@ export function renderJourneyMap(journeyState, onStageSelected) {
       stageEl.innerHTML += '<span class="checkmark">✓</span>'
     }
 
-    // wire up interactive states
-    setupStageInteractivity(stageEl, stage, onStageSelected)
-
+    applyInteractivity(stageEl, stage, onStageSelected)
     els.container().appendChild(stageEl)
   })
 }
@@ -46,22 +43,25 @@ export function updateJourneyMap(journeyState, onStageSelected) {
   if (!els.container) return
 
   journeyState.deckSummaries.forEach((stage) => {
-    let stageEl = els.container().querySelector(`[data-stage-id="${stage.id}"]`)
+    const stageEl = els
+      .container()
+      .querySelector(`[data-stage-id="${stage.id}"]`)
     if (!stageEl) return
 
-    // 1) update classes
+    // update status class
+    stageEl.classList.toggle('journey-stage', true)
+    stageEl.classList.toggle(DeckStatus.COMPLETED, false)
     stageEl.className = `journey-stage ${stage.status}`
 
-    // 2) update checkmark
+    // update checkmark
     const existing = stageEl.querySelector('.checkmark')
     if (stage.status === DeckStatus.COMPLETED) {
       if (!existing) stageEl.innerHTML += '<span class="checkmark">✓</span>'
-    } else {
-      if (existing) existing.remove()
+    } else if (existing) {
+      existing.remove()
     }
 
-    // 3) re-wire interactivity
-    setupStageInteractivity(stageEl, stage, onStageSelected)
+    applyInteractivity(stageEl, stage, onStageSelected)
   })
 }
 
