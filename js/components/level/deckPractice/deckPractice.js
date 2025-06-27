@@ -246,11 +246,11 @@ function initializeNavigationService(onJourneyStageCompleted) {
         onJourneyStageCompleted &&
         navigationService.isExerciseCompleted(state.sessionId)
       ) {
-        onJourneyStageCompleted({
+        onJourneyStageCompleted((stageId) => ({
           stageId,
           words: state.words,
           results: resultsData,
-        })
+        }))
       }
     },
   }
