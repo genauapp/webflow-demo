@@ -70,6 +70,8 @@ function handleStageSelection(stageId) {
 }
 
 function mountDeckPracticeForStage(journeyState, stageId, onStageCompleted) {
+  unmountDeckPractice()
+
   const currentDeckSummary = journeyState.deckSummaries.find(
     (stage) => stage.id === stageId
   )
@@ -93,14 +95,11 @@ export function mountPackJourney(packSummary) {
   els.container().style.display = 'flex'
 
   // Initialize journey service with callbacks
-  const initialJourneyState = packJourneyService.createSession(
-    packSummary,
-    {
-      onUpdate: (updatedState) => {
-        updateJourney(updatedState)
-      },
-    }
-  )
+  const initialJourneyState = packJourneyService.createSession(packSummary, {
+    onUpdate: (updatedState) => {
+      updateJourney(updatedState)
+    },
+  })
 
   renderJourney(initialJourneyState)
 }
