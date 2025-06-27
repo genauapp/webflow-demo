@@ -8,7 +8,7 @@ function initElements() {
   els = {
     // Main results container
     resultsContainer: () =>
-      document.getElementById('pack-practice-exercise-results-card'),
+      document.getElementById('deck-practice-exercise-results-card'),
 
     // Header elements
     resultsTitle: () => document.getElementById('exercise-results-title'),

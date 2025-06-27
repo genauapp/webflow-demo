@@ -10,7 +10,7 @@ const DEFAULT_STATE = Object.freeze({
   loading: false,
   error: null,
   words: [],
-  sessionId: 'pack-practice', // Unique session identifier
+  sessionId: 'deck-practice', // Unique session identifier
   streakTarget: 0, // Initially unset streak target
   mounted: false, // New: has the component been initialized?
 })
@@ -21,36 +21,36 @@ let state = {}
 /** Initialize elements dynamically using provided IDs */
 function initElements() {
   els = {
-    container: () => document.getElementById('pack-practice-container'),
+    container: () => document.getElementById('deck-practice-container'),
     // loadingContainer: () => document.getElementById("tbd"),
     // errorContainer: () => document.getElementById("tbd"),
     // emptyContainer: () => document.getElementById("tbd"),
 
-    learnTab: () => document.getElementById('pack-practice-tab-learn'),
+    learnTab: () => document.getElementById('deck-practice-tab-learn'),
     learnContainer: () =>
-      document.getElementById('pack-practice-learn-container'),
+      document.getElementById('deck-practice-learn-container'),
     learnWordCard: () =>
-      document.getElementById('pack-practice-learn-word-card'),
+      document.getElementById('deck-practice-learn-word-card'),
     learnRepeat: () =>
-      document.getElementById('pack-practice-learn-repeat-button'),
+      document.getElementById('deck-practice-learn-repeat-button'),
     learnNext: () =>
-      document.getElementById('pack-practice-learn-i-know-button'),
+      document.getElementById('deck-practice-learn-i-know-button'),
     learnCompletedCard: () =>
-      document.getElementById('pack-practice-learn-completed-card'),
+      document.getElementById('deck-practice-learn-completed-card'),
     learnReset: () =>
-      document.getElementById('pack-practice-learn-reset-button'),
+      document.getElementById('deck-practice-learn-reset-button'),
 
-    exerciseTab: () => document.getElementById('pack-practice-tab-exercise'),
+    exerciseTab: () => document.getElementById('deck-practice-tab-exercise'),
     exerciseContainer: () =>
-      document.getElementById('pack-practice-exercise-container'),
+      document.getElementById('deck-practice-exercise-container'),
     exerciseStreakSettingsCard: () =>
-      document.getElementById('pack-practice-exercise-streak-settings-card'),
+      document.getElementById('deck-practice-exercise-streak-settings-card'),
     exerciseWordCard: () =>
-      document.getElementById('pack-practice-exercise-word-card'),
+      document.getElementById('deck-practice-exercise-word-card'),
     exerciseResultsCard: () =>
-      document.getElementById('pack-practice-exercise-results-card'),
+      document.getElementById('deck-practice-exercise-results-card'),
     exerciseReset: () =>
-      document.getElementById('pack-practice-exercise-reset-button'),
+      document.getElementById('deck-practice-exercise-reset-button'),
   }
 }
 

@@ -10,7 +10,7 @@ function initElements() {
   els = {
     // Exercise card elements
     exerciseCard: () =>
-      document.getElementById('pack-practice-exercise-word-card'),
+      document.getElementById('deck-practice-exercise-word-card'),
 
     // header
     currentIndexLabel: () =>
