@@ -227,9 +227,10 @@ export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
       LocalStorageManager.save(CURRENT_CATEGORY_KEY, selectedCategory)
       organizeSelectedDeckImage()
       hideSelectCategoryMessage()
+      // hide old learn/exercise
+      document.getElementById('content-container').style.display = 'none'
+      
       if (selectedCategory === 'preposition') {
-        // hide regular learn/exercise
-        document.getElementById('content-container').style.display = 'none'
 
         // show micro-quiz learn/exercise
         // 1. grab the first matching pack summary

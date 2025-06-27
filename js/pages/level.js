@@ -100,6 +100,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (LevelManager.checkIfCategoryIsInCategories(currentCategory)) {
       hideSelectCategoryMessage()
       organizeSelectedDeckImage()
+      // hide old learn/exercise elements
+      document.getElementById('content-container').style.display = 'none'
+
       if (
         packSummariesOfCurrentLevel.some(
           (packSummary) =>
@@ -107,9 +110,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             packSummary.type === PackType.MICRO_QUIZ
         )
       ) {
-        // hide regular learn/exercise elements
-        document.getElementById('content-container').style.display = 'none'
-
         // show micro-quiz learn/exercise
         // 1. grab the first matching pack summary
         const firstPackSummary = packSummariesOfCurrentLevel.find(
