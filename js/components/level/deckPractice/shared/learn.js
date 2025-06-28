@@ -4,6 +4,7 @@ import { mountNoun } from '../learn/noun.js'
 import { mountAdjective } from '../learn/adjective.js'
 import { mountAdverb } from '../learn/adverb.js'
 import { mountPreposition } from '../learn/preposition.js'
+import { mountVerb } from '../learn/verb.js'
 
 let els = {}
 
@@ -36,6 +37,7 @@ function renderLearnCard({ currentWord: word, currentIndex, lastIndex }) {
   if (word.type === WordType.NOUN) {
     mountNoun(word)
   } else if (word.type === WordType.VERB) {
+    mountVerb(word)
   } else if (word.type === WordType.ADJECTIVE) {
     mountAdjective(word)
   } else if (word.type === WordType.ADVERB) {
