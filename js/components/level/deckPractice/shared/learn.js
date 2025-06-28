@@ -37,7 +37,7 @@ function renderLearnCard({ currentWord: word, currentIndex, lastIndex }) {
   if (word.type === WordType.NOUN) {
     mountNoun(word)
   } else if (word.type === WordType.VERB) {
-    // mountVerb(word)
+    mountVerb(word)
   } else if (word.type === WordType.ADJECTIVE) {
     mountAdjective(word)
   } else if (word.type === WordType.ADVERB) {
