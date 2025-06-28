@@ -23,7 +23,7 @@ function renderNoun(word) {
   if (els.wordText()) {
     // Concat article and text for nouns
     const displayText = word.article
-      ? `${word.article} ${StringUtils(word.german) || ''}`
+      ? `${word.article} ${StringUtils.capitalize(word.german) || ''}`
       : word.german || word.text || ''
     els.wordText().textContent = displayText
     // Use artikel color map for the entire concatenated text
