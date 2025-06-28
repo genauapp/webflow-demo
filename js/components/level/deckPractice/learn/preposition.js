@@ -1,5 +1,5 @@
 // /components/level/deckPractice/learn/preposition.js
-import { PrepositionCaseColorMap } from '../../../../constants/props'
+import { PrepositionCaseColorMap } from '../../../../constants/props.js'
 
 let els = {}
 
