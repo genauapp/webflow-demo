@@ -1,6 +1,8 @@
 // /components/level/deckPractice/shared/learn.js
 import { WordType } from '../../../../constants/props.js'
 import { mountNoun } from '../learn/noun.js'
+import { mountAdjective } from '../learn/adjective.js'
+import { mountAdverb } from '../learn/adverb.js'
 import { mountPreposition } from '../learn/preposition.js'
 
 let els = {}
@@ -31,17 +33,15 @@ function renderLearnCard({ currentWord: word, currentIndex, lastIndex }) {
   els.wordType().textContent = word.type || ''
 
   // Route to appropriate renderer based on word type
-  if (word.type === WordType.PREPOSITION) {
-    // Default to preposition for now
-    mountPreposition(word)
-  } else if (word.type === WordType.NOUN) {
+  if (word.type === WordType.NOUN) {
     mountNoun(word)
   } else if (word.type === WordType.VERB) {
-    // todo: mount verb
   } else if (word.type === WordType.ADJECTIVE) {
-    // todo: mount adjective
+    mountAdjective(word)
   } else if (word.type === WordType.ADVERB) {
-    // todo: mount adverb
+    mountAdverb(word)
+  } else if (word.type === WordType.PREPOSITION) {
+    mountPreposition(word)
   } else {
     console.warn(`Word Type Not Supported: ${word.type}`)
   }
