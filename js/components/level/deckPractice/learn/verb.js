@@ -1,5 +1,5 @@
 // /components/level/deckPractice/learn/verb.js
-import { ArtikelColorMap, ALL_VERB_CASES } from '../../../../constants/props.js'
+import { NounArticleColorMap, ALL_VERB_CASES } from '../../../../constants/props.js'
 
 let els = {}
 
@@ -75,7 +75,7 @@ function renderVerb(word) {
   // Update verb-specific elements
   if (els.wordText()) {
     els.wordText().textContent = word.german || ''
-    els.wordText().style.color = ArtikelColorMap['default']
+    els.wordText().style.color = NounArticleColorMap['default']
   }
 
   if (els.wordTranslation()) {
