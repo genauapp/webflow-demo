@@ -47,12 +47,13 @@ export const ExerciseTypeSettingsMap = Object.freeze({
   },
 })
 
-export const ArtikelColorMap = {
+export const NounArticleColorMap = {
   der: 'blue',
   die: 'red',
   das: 'green',
   default: 'black',
 }
+
 export const PrepositionCaseColorMap = {
   nominative: '#000000',
   accusative: '#E94DEC',

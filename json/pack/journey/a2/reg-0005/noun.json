@@ -1,10 +1,10 @@
 [
     {
-        "german": "die Wohnung",
+        "german": "Wohnung",
         "english": "apartment",
         "level": "A2",
         "example": "Meine Wohnung hat drei Zimmer.",
-        "artikel": "die",
+        "article": "die",
         "word": "Wohnung",
         "rule": "Nouns ending in '-ung' are always feminine.",
         "type": "noun",
@@ -12,11 +12,11 @@
         "id": "noun_alltag_A2_01"
     },
     {
-        "german": "der Nachbar",
+        "german": "Nachbar",
         "english": "neighbor (male)",
         "level": "A2",
         "example": "Mein Nachbar ist sehr freundlich.",
-        "artikel": "der",
+        "article": "der",
         "word": "Nachbar",
         "rule": "Masculine noun often takes '-der'.",
         "type": "noun",
@@ -24,11 +24,11 @@
         "id": "noun_alltag_A2_02"
     },
     {
-        "german": "die Nachbarin",
+        "german": "Nachbarin",
         "english": "neighbor (female)",
         "level": "A2",
         "example": "Die Nachbarin hilft mir oft.",
-        "artikel": "die",
+        "article": "die",
         "word": "Nachbarin",
         "rule": "Feminine version of a person noun ends with '-in'.",
         "type": "noun",
@@ -36,11 +36,11 @@
         "id": "noun_alltag_A2_03"
     },
     {
-        "german": "der Haushalt",
+        "german": "Haushalt",
         "english": "household",
         "level": "A2",
         "example": "Im Haushalt gibt es viel zu tun.",
-        "artikel": "der",
+        "article": "der",
         "word": "Haushalt",
         "rule": "Compound nouns with '-halt' (der Gehalt, der Fettgehalt) are often masculine.",
         "type": "noun",
@@ -48,11 +48,11 @@
         "id": "noun_alltag_A2_04"
     },
     {
-        "german": "die Heizung",
+        "german": "Heizung",
         "english": "heating",
         "level": "A2",
         "example": "Die Heizung funktioniert nicht.",
-        "artikel": "die",
+        "article": "die",
         "word": "Heizung",
         "rule": "Nouns ending in '-ung' are feminine.",
         "type": "noun",
@@ -60,11 +60,11 @@
         "id": "noun_alltag_A2_05"
     },
     {
-        "german": "das Mietvertrag",
+        "german": "Mietvertrag",
         "english": "rental contract",
         "level": "A2",
         "example": "Ich unterschreibe den Mietvertrag.",
-        "artikel": "das",
+        "article": "das",
         "word": "Mietvertrag",
         "rule": "",
         "type": "noun",
@@ -72,11 +72,11 @@
         "id": "noun_alltag_A2_06"
     },
     {
-        "german": "die Hausordnung",
+        "german": "Hausordnung",
         "english": "house rules",
         "level": "A2",
         "example": "Die Hausordnung muss beachtet werden.",
-        "artikel": "die",
+        "article": "die",
         "word": "Hausordnung",
         "rule": "Words ending in '-ung' are feminine.",
         "type": "noun",
@@ -84,11 +84,11 @@
         "id": "noun_alltag_A2_07"
     },
     {
-        "german": "der Mieter",
+        "german": "Mieter",
         "english": "tenant (male)",
         "level": "A2",
         "example": "Der Mieter zahlt die Miete pünktlich.",
-        "artikel": "der",
+        "article": "der",
         "word": "Mieter",
         "rule": "Profession-like roles ending in '-er' are masculine.",
         "type": "noun",
@@ -96,11 +96,11 @@
         "id": "noun_alltag_A2_08"
     },
     {
-        "german": "die Mieterin",
+        "german": "Mieterin",
         "english": "tenant (female)",
         "level": "A2",
         "example": "Die Mieterin wohnt im Erdgeschoss.",
-        "artikel": "die",
+        "article": "die",
         "word": "Mieterin",
         "rule": "Feminine roles end with '-in'.",
         "type": "noun",
@@ -108,11 +108,11 @@
         "id": "noun_alltag_A2_09"
     },
     {
-        "german": "die Mülltonne",
+        "german": "Mülltonne",
         "english": "trash bin",
         "level": "A2",
         "example": "Die Mülltonne steht vor dem Haus.",
-        "artikel": "die",
+        "article": "die",
         "word": "Mülltonne",
         "rule": "Objects ending in '-e' are usually feminine.",
         "type": "noun",
@@ -120,11 +120,11 @@
         "id": "noun_alltag_A2_10"
     },
     {
-        "german": "die Garderobe",
+        "german": "Garderobe",
         "english": "wardrobe",
         "level": "A2",
         "example": "Die Garderobe steht im Flur.",
-        "artikel": "die",
+        "article": "die",
         "word": "Garderobe",
         "rule": "Nouns ending in '-e' are often feminine.",
         "type": "noun",
@@ -132,11 +132,11 @@
         "id": "noun_alltag_A2_11"
     },
     {
-        "german": "der Teppich",
+        "german": "Teppich",
         "english": "carpet",
         "level": "A2",
         "example": "Der Teppich ist bunt.",
-        "artikel": "der",
+        "article": "der",
         "word": "Teppich",
         "rule": "Home-related objects are (der Schrank, der Tisch) often masculine.",
         "type": "noun",
@@ -144,11 +144,11 @@
         "id": "noun_alltag_A2_12"
     },
     {
-        "german": "die Decke",
+        "german": "Decke",
         "english": "blanket / ceiling",
         "level": "A2",
         "example": "Die Decke im Schlafzimmer ist neu.",
-        "artikel": "die",
+        "article": "die",
         "word": "Decke",
         "rule": "Words ending in '-e' are commonly feminine.",
         "type": "noun",
@@ -156,11 +156,11 @@
         "id": "noun_alltag_A2_13"
     },
     {
-        "german": "das Bett",
+        "german": "Bett",
         "english": "bed",
         "level": "A2",
         "example": "Das Bett ist sehr bequem.",
-        "artikel": "das",
+        "article": "das",
         "word": "Bett",
         "rule": "Furniture pieces are often neuter.",
         "type": "noun",
@@ -168,11 +168,11 @@
         "id": "noun_alltag_A2_14"
     },
     {
-        "german": "die Lampe",
+        "german": "Lampe",
         "english": "lamp",
         "level": "A2",
         "example": "Die Lampe steht auf dem Tisch.",
-        "artikel": "die",
+        "article": "die",
         "word": "Lampe",
         "rule": "Objects ending in '-e' are generally feminine.",
         "type": "noun",
@@ -180,11 +180,11 @@
         "id": "noun_alltag_A2_15"
     },
     {
-        "german": "der Wasserhahn",
+        "german": "Wasserhahn",
         "english": "faucet",
         "level": "A2",
         "example": "Der Wasserhahn tropft.",
-        "artikel": "der",
+        "article": "der",
         "word": "Wasserhahn",
         "rule": "",
         "type": "noun",
@@ -192,11 +192,11 @@
         "id": "noun_alltag_A2_16"
     },
     {
-        "german": "die Dusche",
+        "german": "Dusche",
         "english": "shower",
         "level": "A2",
         "example": "Die Dusche ist kaputt.",
-        "artikel": "die",
+        "article": "die",
         "word": "Dusche",
         "rule": "Bathroom nouns ending in '-e' are usually feminine.",
         "type": "noun",
@@ -204,11 +204,11 @@
         "id": "noun_alltag_A2_17"
     },
     {
-        "german": "das Waschbecken",
+        "german": "Waschbecken",
         "english": "sink",
         "level": "A2",
         "example": "Das Waschbecken ist sauber.",
-        "artikel": "das",
+        "article": "das",
         "word": "Waschbecken",
         "rule": "",
         "type": "noun",
@@ -216,11 +216,11 @@
         "id": "noun_alltag_A2_18"
     },
     {
-        "german": "die Fernbedienung",
+        "german": "Fernbedienung",
         "english": "remote control",
         "level": "A2",
         "example": "Ich finde die Fernbedienung nicht.",
-        "artikel": "die",
+        "article": "die",
         "word": "Fernbedienung",
         "rule": "Nouns ending in '-ung' are always feminine.",
         "type": "noun",
@@ -228,11 +228,11 @@
         "id": "noun_alltag_A2_19"
     },
     {
-        "german": "der Fernseher",
+        "german": "Fernseher",
         "english": "television",
         "level": "A2",
         "example": "Der Fernseher ist sehr alt.",
-        "artikel": "der",
+        "article": "der",
         "word": "Fernseher",
         "rule": "Devices ending in '-er' are often masculine.",
         "type": "noun",

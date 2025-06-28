@@ -1,10 +1,10 @@
 [
     {
-        "german": "die Regierung",
+        "german": "Regierung",
         "english": "government",
         "level": "B2",
         "example": "Die Regierung plant neue Maßnahmen zum Klimaschutz.",
-        "artikel": "die",
+        "article": "die",
         "word": "Regierung",
         "rule": "Words ending in '-ung' are always feminine.",
         "type": "noun",
@@ -12,11 +12,11 @@
         "id": "noun_politik_B2_01"
     },
     {
-        "german": "das Gesetz",
+        "german": "Gesetz",
         "english": "law",
         "level": "B2",
         "example": "Ein neues Gesetz wurde verabschiedet.",
-        "artikel": "das",
+        "article": "das",
         "word": "Gesetz",
         "rule": "Abstract legal terms often take 'das'.",
         "type": "noun",
@@ -24,11 +24,11 @@
         "id": "noun_politik_B2_02"
     },
     {
-        "german": "die Wahl",
+        "german": "Wahl",
         "english": "election / choice",
         "level": "B2",
         "example": "Die nächste Wahl findet im Herbst statt.",
-        "artikel": "die",
+        "article": "die",
         "word": "Wahl",
         "rule": "Words ending in '-ahl' are usually feminine.",
         "type": "noun",
@@ -36,11 +36,11 @@
         "id": "noun_politik_B2_03"
     },
     {
-        "german": "der Politiker",
+        "german": "Politiker",
         "english": "politician",
         "level": "B2",
         "example": "Der Politiker hält eine Rede im Bundestag.",
-        "artikel": "der",
+        "article": "der",
         "word": "Politiker",
         "rule": "Professions ending in '-er' are typically masculine.",
         "type": "noun",
@@ -48,11 +48,11 @@
         "id": "noun_politik_B2_04"
     },
     {
-        "german": "die Umwelt",
+        "german": "Umwelt",
         "english": "environment",
         "level": "B2",
         "example": "Wir müssen unsere Umwelt besser schützen.",
-        "artikel": "die",
+        "article": "die",
         "word": "Umwelt",
         "rule": "Compound noun with 'Welt' is feminine.",
         "type": "noun",
@@ -60,11 +60,11 @@
         "id": "noun_politik_B2_05"
     },
     {
-        "german": "der Klimawandel",
+        "german": "Klimawandel",
         "english": "climate change",
         "level": "B2",
         "example": "Der Klimawandel ist eine globale Herausforderung.",
-        "artikel": "der",
+        "article": "der",
         "word": "Klimawandel",
         "rule": "Compound nouns with '-wandel' are masculine.",
         "type": "noun",
@@ -72,11 +72,11 @@
         "id": "noun_politik_B2_06"
     },
     {
-        "german": "das Parlament",
+        "german": "Parlament",
         "english": "parliament",
         "level": "B2",
         "example": "Das Parlament diskutiert über neue Gesetze.",
-        "artikel": "das",
+        "article": "das",
         "word": "Parlament",
         "rule": "Loanwords ending in '-ment' are neuter.",
         "type": "noun",
@@ -84,11 +84,11 @@
         "id": "noun_politik_B2_07"
     },
     {
-        "german": "die Partei",
+        "german": "Partei",
         "english": "party (political)",
         "level": "B2",
         "example": "Jede Partei hat ein eigenes Wahlprogramm.",
-        "artikel": "die",
+        "article": "die",
         "word": "Partei",
         "rule": "Loanwords ending in '-ei' are feminine.",
         "type": "noun",
@@ -96,11 +96,11 @@
         "id": "noun_politik_B2_08"
     },
     {
-        "german": "der Umweltschutz",
+        "german": "Umweltschutz",
         "english": "environmental protection",
         "level": "B2",
         "example": "Der Umweltschutz ist ein wichtiges politisches Thema.",
-        "artikel": "der",
+        "article": "der",
         "word": "Umweltschutz",
         "rule": "Compound with '-schutz' is masculine.",
         "type": "noun",
@@ -108,11 +108,11 @@
         "id": "noun_politik_B2_09"
     },
     {
-        "german": "die Abstimmung",
+        "german": "Abstimmung",
         "english": "vote / ballot",
         "level": "B2",
         "example": "Die Abstimmung über das Gesetz war knapp.",
-        "artikel": "die",
+        "article": "die",
         "word": "Abstimmung",
         "rule": "Words ending in '-ung' are always feminine.",
         "type": "noun",
@@ -120,11 +120,11 @@
         "id": "noun_politik_B2_10"
     },
     {
-        "german": "der Aktivist",
+        "german": "Aktivist",
         "english": "activist",
         "level": "B2",
         "example": "Der Aktivist demonstriert für mehr Klimaschutz.",
-        "artikel": "der",
+        "article": "der",
         "word": "Aktivist",
         "rule": "Professions ending in '-ist' are masculine.",
         "type": "noun",
@@ -132,11 +132,11 @@
         "id": "noun_politik_B2_11"
     },
     {
-        "german": "die Initiative",
+        "german": "Initiative",
         "english": "initiative",
         "level": "B2",
         "example": "Die neue Initiative setzt sich für Nachhaltigkeit ein.",
-        "artikel": "die",
+        "article": "die",
         "word": "Initiative",
         "rule": "Loanwords ending in '-ive' are feminine.",
         "type": "noun",
@@ -144,11 +144,11 @@
         "id": "noun_politik_B2_12"
     },
     {
-        "german": "das Abkommen",
+        "german": "Abkommen",
         "english": "agreement / treaty",
         "level": "B2",
         "example": "Das Abkommen wurde zwischen mehreren Ländern geschlossen.",
-        "artikel": "das",
+        "article": "das",
         "word": "Abkommen",
         "rule": "Nouns with prefix 'Ab-' often neuter when nominalized.",
         "type": "noun",
@@ -156,11 +156,11 @@
         "id": "noun_politik_B2_13"
     },
     {
-        "german": "der CO2-Ausstoß",
+        "german": "CO2-Ausstoß",
         "english": "CO2 emission",
         "level": "B2",
         "example": "Der CO2-Ausstoß soll reduziert werden.",
-        "artikel": "der",
+        "article": "der",
         "word": "CO2-Ausstoß",
         "rule": "Compound with 'Ausstoß' is masculine.",
         "type": "noun",
@@ -168,11 +168,11 @@
         "id": "noun_politik_B2_14"
     },
     {
-        "german": "die Demonstration",
+        "german": "Demonstration",
         "english": "demonstration / protest",
         "level": "B2",
         "example": "Die Demonstration verlief friedlich.",
-        "artikel": "die",
+        "article": "die",
         "word": "Demonstration",
         "rule": "Loanwords ending in '-ion' are feminine.",
         "type": "noun",
@@ -180,11 +180,11 @@
         "id": "noun_politik_B2_15"
     },
     {
-        "german": "das Tempolimit",
+        "german": "Tempolimit",
         "english": "speed limit",
         "level": "B2",
         "example": "Ein Tempolimit hilft, die Umwelt zu schützen.",
-        "artikel": "das",
+        "article": "das",
         "word": "Tempolimit",
         "rule": "Loan compound from English, neuter.",
         "type": "noun",
@@ -192,11 +192,11 @@
         "id": "noun_politik_B2_16"
     },
     {
-        "german": "die Meinungsfreiheit",
+        "german": "Meinungsfreiheit",
         "english": "freedom of opinion",
         "level": "B2",
         "example": "In einer Demokratie ist die Meinungsfreiheit zentral.",
-        "artikel": "die",
+        "article": "die",
         "word": "Meinungsfreiheit",
         "rule": "Words ending in '-heit' are feminine.",
         "type": "noun",
@@ -204,11 +204,11 @@
         "id": "noun_politik_B2_17"
     },
     {
-        "german": "die Nachhaltigkeit",
+        "german": "Nachhaltigkeit",
         "english": "sustainability",
         "level": "B2",
         "example": "Nachhaltigkeit ist ein zentrales Thema in der Politik.",
-        "artikel": "die",
+        "article": "die",
         "word": "Nachhaltigkeit",
         "rule": "Words ending in '-keit' are feminine.",
         "type": "noun",
@@ -216,11 +216,11 @@
         "id": "noun_politik_B2_18"
     },
     {
-        "german": "der Umweltausschuss",
+        "german": "Umweltausschuss",
         "english": "environmental committee",
         "level": "B2",
         "example": "Der Umweltausschuss berät über neue Maßnahmen.",
-        "artikel": "der",
+        "article": "der",
         "word": "Umweltausschuss",
         "rule": "Compound nouns ending in '-ausschuss' are masculine.",
         "type": "noun",
@@ -228,11 +228,11 @@
         "id": "noun_politik_B2_19"
     },
     {
-        "german": "das Referendum",
+        "german": "Referendum",
         "english": "referendum",
         "level": "B2",
         "example": "Das Referendum entschied über die neue Verfassung.",
-        "artikel": "das",
+        "article": "das",
         "word": "Referendum",
         "rule": "Latin-derived nouns ending in '-um' are neuter.",
         "type": "noun",

@@ -1,10 +1,10 @@
 [
     {
-        "german": "der Supermarkt",
+        "german": "Supermarkt",
         "english": "supermarket",
         "level": "A1",
         "example": "Ich kaufe im Supermarkt ein.",
-        "artikel": "der",
+        "article": "der",
         "word": "Supermarkt",
         "rule": "Compound nouns ending in 'Markt' are masculine.",
         "type": "noun",
@@ -12,11 +12,11 @@
         "id": "noun_einkaufen_01"
     },
     {
-        "german": "die Banane",
+        "german": "Banane",
         "english": "banana",
         "level": "A1",
         "example": "Ich esse eine Banane.",
-        "artikel": "die",
+        "article": "die",
         "word": "Banane",
         "rule": "Fruits ending in '-e' are typically feminine.",
         "type": "noun",
@@ -24,11 +24,11 @@
         "id": "noun_einkaufen_02"
     },
     {
-        "german": "das Brot",
+        "german": "Brot",
         "english": "bread",
         "level": "A1",
         "example": "Ich kaufe Brot beim Bäcker.",
-        "artikel": "das",
+        "article": "das",
         "word": "Brot",
         "rule": "Most uncountable food items are neuter.",
         "type": "noun",
@@ -36,11 +36,11 @@
         "id": "noun_einkaufen_03"
     },
     {
-        "german": "die Milch",
+        "german": "Milch",
         "english": "milk",
         "level": "A1",
         "example": "Ich trinke morgens Milch.",
-        "artikel": "die",
+        "article": "die",
         "word": "Milch",
         "rule": "Many natural liquids are feminine.",
         "type": "noun",
@@ -48,11 +48,11 @@
         "id": "noun_einkaufen_04"
     },
     {
-        "german": "das Gemüse",
+        "german": "Gemüse",
         "english": "vegetables",
         "level": "A1",
         "example": "Ich kaufe frisches Gemüse.",
-        "artikel": "das",
+        "article": "das",
         "word": "Gemüse",
         "rule": "Collective nouns starting with 'Ge-' are neuter.",
         "type": "noun",
@@ -60,11 +60,11 @@
         "id": "noun_einkaufen_05"
     },
     {
-        "german": "der Käse",
+        "german": "Käse",
         "english": "cheese",
         "level": "A1",
         "example": "Ich esse gern Käse.",
-        "artikel": "der",
+        "article": "der",
         "word": "Käse",
         "rule": "Most dairy products take 'der'.",
         "type": "noun",
@@ -72,11 +72,11 @@
         "id": "noun_einkaufen_06"
     },
     {
-        "german": "die Tomate",
+        "german": "Tomate",
         "english": "tomato",
         "level": "A1",
         "example": "Ich kaufe Tomaten für den Salat.",
-        "artikel": "die",
+        "article": "die",
         "word": "Tomate",
         "rule": "Fruits/vegetables ending in '-e' are usually feminine.",
         "type": "noun",
@@ -84,11 +84,11 @@
         "id": "noun_einkaufen_07"
     },
     {
-        "german": "das Wasser",
+        "german": "Wasser",
         "english": "water",
         "level": "A1",
         "example": "Ich trinke viel Wasser.",
-        "artikel": "das",
+        "article": "das",
         "word": "Wasser",
         "rule": "Liquids and natural elements are neuter.",
         "type": "noun",
@@ -96,11 +96,11 @@
         "id": "noun_einkaufen_08"
     },
     {
-        "german": "der Apfel",
+        "german": "Apfel",
         "english": "apple",
         "level": "A1",
         "example": "Ein Apfel am Tag ist gesund.",
-        "artikel": "der",
+        "article": "der",
         "word": "Apfel",
         "rule": "Many single-syllable fruits take 'der'.",
         "type": "noun",
@@ -108,11 +108,11 @@
         "id": "noun_einkaufen_09"
     },
     {
-        "german": "die Schokolade",
+        "german": "Schokolade",
         "english": "chocolate",
         "level": "A1",
         "example": "Ich liebe Schokolade.",
-        "artikel": "die",
+        "article": "die",
         "word": "Schokolade",
         "rule": "Nouns ending in '-ade' are feminine.",
         "type": "noun",
@@ -120,11 +120,11 @@
         "id": "noun_einkaufen_10"
     },
     {
-        "german": "der Reis",
+        "german": "Reis",
         "english": "rice",
         "level": "A1",
         "example": "Ich esse gern Reis mit Gemüse.",
-        "artikel": "der",
+        "article": "der",
         "word": "Reis",
         "rule": "Some food items like grains are masculine.",
         "type": "noun",
@@ -132,11 +132,11 @@
         "id": "noun_einkaufen_11"
     },
     {
-        "german": "die Kartoffel",
+        "german": "Kartoffel",
         "english": "potato",
         "level": "A1",
         "example": "Kartoffeln sind gesund.",
-        "artikel": "die",
+        "article": "die",
         "word": "Kartoffel",
         "rule": "Vegetables ending in '-el' (die Nudel, die Gabel, die Zwiebel) are often feminine.",
         "type": "noun",
@@ -144,11 +144,11 @@
         "id": "noun_einkaufen_12"
     },
     {
-        "german": "das Fleisch",
+        "german": "Fleisch",
         "english": "meat",
         "level": "A1",
         "example": "Ich esse kein Fleisch.",
-        "artikel": "das",
+        "article": "das",
         "word": "Fleisch",
         "rule": "Meat and uncountable items are neuter.",
         "type": "noun",
@@ -156,11 +156,11 @@
         "id": "noun_einkaufen_13"
     },
     {
-        "german": "die Wurst",
+        "german": "Wurst",
         "english": "sausage",
         "level": "A1",
         "example": "Ich nehme eine Bratwurst.",
-        "artikel": "die",
+        "article": "die",
         "word": "Wurst",
         "rule": "Processed meat products often take 'die'.",
         "type": "noun",
@@ -168,11 +168,11 @@
         "id": "noun_einkaufen_14"
     },
     {
-        "german": "der Zucker",
+        "german": "Zucker",
         "english": "sugar",
         "level": "A1",
         "example": "Zucker ist süß.",
-        "artikel": "der",
+        "article": "der",
         "word": "Zucker",
         "rule": "Most nouns ending in '-er' take 'der'.",
         "type": "noun",
@@ -180,11 +180,11 @@
         "id": "noun_einkaufen_15"
     },
     {
-        "german": "das Salz",
+        "german": "Salz",
         "english": "salt",
         "level": "A1",
         "example": "Ich brauche mehr Salz.",
-        "artikel": "das",
+        "article": "das",
         "word": "Salz",
         "rule": "Mass nouns (uncountable substances like 'Salz', 'Wasser', 'Mehl') are often used with the article 'das' in German.",
         "type": "noun",
@@ -192,11 +192,11 @@
         "id": "noun_einkaufen_16"
     },
     {
-        "german": "die Tüte",
+        "german": "Tüte",
         "english": "bag",
         "level": "A1",
         "example": "Ich nehme eine Tüte.",
-        "artikel": "die",
+        "article": "die",
         "word": "Tüte",
         "rule": "Nouns ending in '-e' often take 'die'.",
         "type": "noun",
@@ -204,11 +204,11 @@
         "id": "noun_einkaufen_17"
     },
     {
-        "german": "der Einkauf",
+        "german": "Einkauf",
         "english": "shopping",
         "level": "A1",
         "example": "Der Einkauf dauert nicht lange.",
-        "artikel": "der",
+        "article": "der",
         "word": "Einkauf",
         "rule": "Masculine nouns often denote actions/things ending in -kauf.",
         "type": "noun",
@@ -216,11 +216,11 @@
         "id": "noun_einkaufen_18"
     },
     {
-        "german": "die Kasse",
+        "german": "Kasse",
         "english": "checkout",
         "level": "A1",
         "example": "Ich bezahle an der Kasse.",
-        "artikel": "die",
+        "article": "die",
         "word": "Kasse",
         "rule": "Objects ending in '-e' are typically feminine.",
         "type": "noun",
@@ -228,11 +228,11 @@
         "id": "noun_einkaufen_19"
     },
     {
-        "german": "das Obst",
+        "german": "Obst",
         "english": "fruit",
         "level": "A1",
         "example": "Obst ist gesund.",
-        "artikel": "das",
+        "article": "das",
         "word": "Obst",
         "rule": "Uncountable categories like 'fruit' are usually neuter.",
         "type": "noun",

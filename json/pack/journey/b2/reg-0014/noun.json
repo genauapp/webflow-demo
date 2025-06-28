@@ -1,10 +1,10 @@
 [
     {
-        "german": "die Forschung",
+        "german": "Forschung",
         "english": "research",
         "level": "B2",
         "example": "Die medizinische Forschung hat große Fortschritte gemacht.",
-        "artikel": "die",
+        "article": "die",
         "word": "Forschung",
         "rule": "Words ending in '-ung' are always feminine.",
         "type": "noun",
@@ -12,11 +12,11 @@
         "id": "noun_bildung_B2_01"
     },
     {
-        "german": "das Experiment",
+        "german": "Experiment",
         "english": "experiment",
         "level": "B2",
         "example": "Das Experiment wurde im Labor durchgeführt.",
-        "artikel": "das",
+        "article": "das",
         "word": "Experiment",
         "rule": "Loanwords ending in '-ment' are usually neuter.",
         "type": "noun",
@@ -24,11 +24,11 @@
         "id": "noun_bildung_B2_02"
     },
     {
-        "german": "die Bildung",
+        "german": "Bildung",
         "english": "education",
         "level": "B2",
         "example": "Gute Bildung ist der Schlüssel zum Erfolg.",
-        "artikel": "die",
+        "article": "die",
         "word": "Bildung",
         "rule": "Words ending in '-ung' are always feminine.",
         "type": "noun",
@@ -36,11 +36,11 @@
         "id": "noun_bildung_B2_03"
     },
     {
-        "german": "der Wissenschaftler",
+        "german": "Wissenschaftler",
         "english": "scientist",
         "level": "B2",
         "example": "Der Wissenschaftler arbeitet an einem neuen Projekt.",
-        "artikel": "der",
+        "article": "der",
         "word": "Wissenschaftler",
         "rule": "Occupations ending in '-er' are typically masculine.",
         "type": "noun",
@@ -48,11 +48,11 @@
         "id": "noun_bildung_B2_04"
     },
     {
-        "german": "das Ergebnis",
+        "german": "Ergebnis",
         "english": "result",
         "level": "B2",
         "example": "Die Ergebnisse der Studie wurden veröffentlicht.",
-        "artikel": "das",
+        "article": "das",
         "word": "Ergebnis",
         "rule": "Nouns ending in '-nis' are usually neuter.",
         "type": "noun",
@@ -60,11 +60,11 @@
         "id": "noun_bildung_B2_05"
     },
     {
-        "german": "die Methode",
+        "german": "Methode",
         "english": "method",
         "level": "B2",
         "example": "Die Methode wurde in der Forschung eingesetzt.",
-        "artikel": "die",
+        "article": "die",
         "word": "Methode",
         "rule": "Words ending in '-e' can often be feminine.",
         "type": "noun",
@@ -72,11 +72,11 @@
         "id": "noun_bildung_B2_06"
     },
     {
-        "german": "der Versuch",
+        "german": "Versuch",
         "english": "attempt / experiment",
         "level": "B2",
         "example": "Der Versuch ist fehlgeschlagen.",
-        "artikel": "der",
+        "article": "der",
         "word": "Versuch",
         "rule": "Often masculine when referring to tests or trials.",
         "type": "noun",
@@ -84,11 +84,11 @@
         "id": "noun_bildung_B2_07"
     },
     {
-        "german": "die Erkenntnis",
+        "german": "Erkenntnis",
         "english": "insight / realization",
         "level": "B2",
         "example": "Die neue Erkenntnis war für die Wissenschaft bedeutend.",
-        "artikel": "die",
+        "article": "die",
         "word": "Erkenntnis",
         "rule": "Abstract nouns ending in '-nis' are often feminine.",
         "type": "noun",
@@ -96,11 +96,11 @@
         "id": "noun_bildung_B2_08"
     },
     {
-        "german": "das Labor",
+        "german": "Labor",
         "english": "laboratory",
         "level": "B2",
         "example": "Im Labor wurden verschiedene Proben untersucht.",
-        "artikel": "das",
+        "article": "das",
         "word": "Labor",
         "rule": "Loanwords ending in '-or' are often neuter.",
         "type": "noun",
@@ -108,11 +108,11 @@
         "id": "noun_bildung_B2_09"
     },
     {
-        "german": "die Theorie",
+        "german": "Theorie",
         "english": "theory",
         "level": "B2",
         "example": "Die Theorie wurde in der Praxis überprüft.",
-        "artikel": "die",
+        "article": "die",
         "word": "Theorie",
         "rule": "Loanwords ending in '-ie' are typically feminine.",
         "type": "noun",
@@ -120,11 +120,11 @@
         "id": "noun_bildung_B2_10"
     },
     {
-        "german": "das Fach",
+        "german": "Fach",
         "english": "subject (school)",
         "level": "B2",
         "example": "Biologie ist mein Lieblingsfach.",
-        "artikel": "das",
+        "article": "das",
         "word": "Fach",
         "rule": "Subjects are usually neuter.",
         "type": "noun",
@@ -132,11 +132,11 @@
         "id": "noun_bildung_B2_11"
     },
     {
-        "german": "die Prüfung",
+        "german": "Prüfung",
         "english": "exam",
         "level": "B2",
         "example": "Die Prüfung war ziemlich schwierig.",
-        "artikel": "die",
+        "article": "die",
         "word": "Prüfung",
         "rule": "Words ending in '-ung' are always feminine.",
         "type": "noun",
@@ -144,11 +144,11 @@
         "id": "noun_bildung_B2_12"
     },
     {
-        "german": "der Schüler",
+        "german": "Schüler",
         "english": "student (school)",
         "level": "B2",
         "example": "Die Schüler bereiten sich auf die Abschlussprüfung vor.",
-        "artikel": "der",
+        "article": "der",
         "word": "Schüler",
         "rule": "Occupations or roles ending in '-er' are masculine.",
         "type": "noun",
@@ -156,11 +156,11 @@
         "id": "noun_bildung_B2_13"
     },
     {
-        "german": "die Schülerin",
+        "german": "Schülerin",
         "english": "female student (school)",
         "level": "B2",
         "example": "Die Schülerin stellt eine Frage.",
-        "artikel": "die",
+        "article": "die",
         "word": "Schülerin",
         "rule": "Feminine form of professions ends in '-in'.",
         "type": "noun",
@@ -168,11 +168,11 @@
         "id": "noun_bildung_B2_14"
     },
     {
-        "german": "die Universität",
+        "german": "Universität",
         "english": "university",
         "level": "B2",
         "example": "Sie studiert an einer renommierten Universität.",
-        "artikel": "die",
+        "article": "die",
         "word": "Universität",
         "rule": "Words ending in '-tät' are always feminine.",
         "type": "noun",
@@ -180,11 +180,11 @@
         "id": "noun_bildung_B2_15"
     },
     {
-        "german": "der Dozent",
+        "german": "Dozent",
         "english": "lecturer",
         "level": "B2",
         "example": "Der Dozent erklärt die Theorie sehr verständlich.",
-        "artikel": "der",
+        "article": "der",
         "word": "Dozent",
         "rule": "Academic professions are usually masculine.",
         "type": "noun",
@@ -192,11 +192,11 @@
         "id": "noun_bildung_B2_16"
     },
     {
-        "german": "die Weiterbildung",
+        "german": "Weiterbildung",
         "english": "further education",
         "level": "B2",
         "example": "Viele Berufstätige machen eine Weiterbildung.",
-        "artikel": "die",
+        "article": "die",
         "word": "Weiterbildung",
         "rule": "Compound noun with '-bildung' is feminine.",
         "type": "noun",
@@ -204,11 +204,11 @@
         "id": "noun_bildung_B2_17"
     },
     {
-        "german": "der Abschluss",
+        "german": "Abschluss",
         "english": "graduation / degree",
         "level": "B2",
         "example": "Sie hat ihren Abschluss mit Auszeichnung gemacht.",
-        "artikel": "der",
+        "article": "der",
         "word": "Abschluss",
         "rule": "Common masculine noun for qualification.",
         "type": "noun",
@@ -216,11 +216,11 @@
         "id": "noun_bildung_B2_18"
     },
     {
-        "german": "die Fähigkeit",
+        "german": "Fähigkeit",
         "english": "ability / skill",
         "level": "B2",
         "example": "Kritisches Denken ist eine wichtige Fähigkeit.",
-        "artikel": "die",
+        "article": "die",
         "word": "Fähigkeit",
         "rule": "Words ending in '-keit' are always feminine.",
         "type": "noun",
@@ -228,11 +228,11 @@
         "id": "noun_bildung_B2_19"
     },
     {
-        "german": "das Wissen",
+        "german": "Wissen",
         "english": "knowledge",
         "level": "B2",
         "example": "Sein Wissen über Physik ist beeindruckend.",
-        "artikel": "das",
+        "article": "das",
         "word": "Wissen",
         "rule": "Nominalized verb, neuter.",
         "type": "noun",

@@ -1,10 +1,10 @@
 [
     {
-        "german": "der Arzt",
+        "german": "Arzt",
         "english": "doctor",
         "level": "A1",
         "example": "Ich gehe zum Arzt.",
-        "artikel": "der",
+        "article": "der",
         "word": "Arzt",
         "rule":"Professions or roles referring to people are often masculine.",
         "type": "noun",
@@ -12,11 +12,11 @@
         "id": "noun_gesundheit_01"
     },
     {
-        "german": "die Ärztin",
+        "german": "Ärztin",
         "english": "female doctor",
         "level": "A1",
         "example": "Die Ärztin hilft mir.",
-        "artikel": "die",
+        "article": "die",
         "word": "Ärztin",
         "rule": "Feminine professions usually end in '-in'.",
         "type": "noun",
@@ -24,11 +24,11 @@
         "id": "noun_gesundheit_02"
     },
     {
-        "german": "das Krankenhaus",
+        "german": "Krankenhaus",
         "english": "hospital",
         "level": "A1",
         "example": "Er liegt im Krankenhaus.",
-        "artikel": "das",
+        "article": "das",
         "word": "Krankenhaus",
         "rule": "Compound nouns ending in -haus are neuter.",
         "type": "noun",
@@ -36,11 +36,11 @@
         "id": "noun_gesundheit_03"
     },
     {
-        "german": "die Apotheke",
+        "german": "Apotheke",
         "english": "pharmacy",
         "level": "A1",
         "example": "Ich gehe in die Apotheke.",
-        "artikel": "die",
+        "article": "die",
         "word": "Apotheke",
         "rule": "Nouns ending in '-e' are often feminine.",
         "type": "noun",
@@ -48,11 +48,11 @@
         "id": "noun_gesundheit_04"
     },
     {
-        "german": "das Medikament",
+        "german": "Medikament",
         "english": "medicine",
         "level": "A1",
         "example": "Ich nehme ein Medikament.",
-        "artikel": "das",
+        "article": "das",
         "word": "Medikament",
         "rule": "Most foreign-derived nouns ending in -ment (das Dokument, das Instrument...) are neuter.",
         "type": "noun",
@@ -60,11 +60,11 @@
         "id": "noun_gesundheit_05"
     },
     {
-        "german": "die Tablette",
+        "german": "Tablette",
         "english": "pill",
         "level": "A1",
         "example": "Ich nehme eine Tablette.",
-        "artikel": "die",
+        "article": "die",
         "word": "Tablette",
         "rule": "Feminine nouns for small objects often end in '-e'.",
         "type": "noun",
@@ -72,11 +72,11 @@
         "id": "noun_gesundheit_06"
     },
     {
-        "german": "der Schmerz",
+        "german": "Schmerz",
         "english": "pain",
         "level": "A1",
         "example": "Ich habe Kopfschmerzen.",
-        "artikel": "der",
+        "article": "der",
         "word": "Schmerz",
         "rule": "Abstract feelings and conditions are often masculine.",
         "type": "noun",
@@ -84,11 +84,11 @@
         "id": "noun_gesundheit_07"
     },
     {
-        "german": "die Praxis",
+        "german": "Praxis",
         "english": "practice (doctor's office)",
         "level": "A1",
         "example": "Die Praxis ist in der Nähe.",
-        "artikel": "die",
+        "article": "die",
         "word": "Praxis",
         "rule": "Nouns ending in '-is' (die Krise, die Basis) are usually feminine.",
         "type": "noun",
@@ -96,11 +96,11 @@
         "id": "noun_gesundheit_08"
     },
     {
-        "german": "das Rezept",
+        "german": "Rezept",
         "english": "prescription",
         "level": "A1",
         "example": "Ich bekomme ein Rezept vom Arzt.",
-        "artikel": "das",
+        "article": "das",
         "word": "Rezept",
         "rule": "Neuter noun, also means 'recipe'.",
         "type": "noun",
@@ -108,11 +108,11 @@
         "id": "noun_gesundheit_09"
     },
     {
-        "german": "die Krankheit",
+        "german": "Krankheit",
         "english": "illness",
         "level": "A1",
         "example": "Er hat eine Krankheit.",
-        "artikel": "die",
+        "article": "die",
         "word": "Krankheit",
         "rule": "Nouns ending in '-heit' are always feminine.",
         "type": "noun",
@@ -120,11 +120,11 @@
         "id": "noun_gesundheit_10"
     },
     {
-        "german": "der Termin",
+        "german": "Termin",
         "english": "appointment",
         "level": "A1",
         "example": "Ich habe einen Termin beim Arzt.",
-        "artikel": "der",
+        "article": "der",
         "word": "Termin",
         "rule": "Many scheduled events (der Start, der Feiertag) are masculine.",
         "type": "noun",
@@ -132,11 +132,11 @@
         "id": "noun_gesundheit_11"
     },
     {
-        "german": "die Untersuchung",
+        "german": "Untersuchung",
         "english": "examination",
         "level": "A1",
         "example": "Ich habe morgen eine Untersuchung.",
-        "artikel": "die",
+        "article": "die",
         "word": "Untersuchung",
         "rule": "Nouns ending in '-ung' are feminine.",
         "type": "noun",
@@ -144,11 +144,11 @@
         "id": "noun_gesundheit_12"
     },
     {
-        "german": "das Fieber",
+        "german": "Fieber",
         "english": "fever",
         "level": "A1",
         "example": "Ich habe Fieber.",
-        "artikel": "das",
+        "article": "das",
         "word": "Fieber",
         "rule": "Nouns for illnesses are often neuter.",
         "type": "noun",
@@ -156,11 +156,11 @@
         "id": "noun_gesundheit_13"
     },
     {
-        "german": "die Impfung",
+        "german": "Impfung",
         "english": "vaccination",
         "level": "A1",
         "example": "Ich brauche eine Impfung.",
-        "artikel": "die",
+        "article": "die",
         "word": "Impfung",
         "rule": "Nouns ending in '-ung' are feminine.",
         "type": "noun",
@@ -168,11 +168,11 @@
         "id": "noun_gesundheit_14"
     },
     {
-        "german": "der Patient",
+        "german": "Patient",
         "english": "patient",
         "level": "A1",
         "example": "Der Patient wartet.",
-        "artikel": "der",
+        "article": "der",
         "word": "Patient",
         "rule": "Professions or roles referring to people are often masculine.",
         "type": "noun",
@@ -180,11 +180,11 @@
         "id": "noun_gesundheit_15"
     },
     {
-        "german": "die Patientin",
+        "german": "Patientin",
         "english": "female patient",
         "level": "A1",
         "example": "Die Patientin ist da.",
-        "artikel": "die",
+        "article": "die",
         "word": "Patientin",
         "rule": "Feminine counterpart of masculine nouns ends in '-in'.",
         "type": "noun",
@@ -192,11 +192,11 @@
         "id": "noun_gesundheit_16"
     },
     {
-        "german": "das Wartezimmer",
+        "german": "Wartezimmer",
         "english": "waiting room",
         "level": "A1",
         "example": "Ich warte im Wartezimmer.",
-        "artikel": "das",
+        "article": "das",
         "word": "Wartezimmer",
         "rule": "Compound nouns ending in '-zimmer' are neuter.",
         "type": "noun",
@@ -204,11 +204,11 @@
         "id": "noun_gesundheit_17"
     },
     {
-        "german": "die Spritze",
+        "german": "Spritze",
         "english": "injection",
         "level": "A1",
         "example": "Ich bekomme eine Spritze.",
-        "artikel": "die",
+        "article": "die",
         "word": "Spritze",
         "rule": "Nouns ending in '-e' are often feminine.",
         "type": "noun",
@@ -216,11 +216,11 @@
         "id": "noun_gesundheit_18"
     },
     {
-        "german": "der Notfall",
+        "german": "Notfall",
         "english": "emergency",
         "level": "A1",
         "example": "Es ist ein Notfall.",
-        "artikel": "der",
+        "article": "der",
         "word": "Notfall",
         "rule": "Many compound words with 'Fall' are masculine.",
         "type": "noun",
@@ -228,11 +228,11 @@
         "id": "noun_gesundheit_19"
     },
     {
-        "german": "die Hilfe",
+        "german": "Hilfe",
         "english": "help",
         "level": "A1",
         "example": "Ich brauche Hilfe.",
-        "artikel": "die",
+        "article": "die",
         "word": "Hilfe",
         "rule": "Nouns ending in '-e' are often feminine.",
         "type": "noun",

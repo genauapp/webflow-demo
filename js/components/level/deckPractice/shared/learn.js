@@ -1,5 +1,7 @@
 // /components/level/deckPractice/shared/learn.js
-import { PrepositionCaseColorMap } from '../../../../constants/props.js'
+import { WordType } from '../../../../constants/props.js'
+import { mountNoun } from '../learn/noun.js'
+import { mountPreposition } from '../learn/preposition.js'
 
 let els = {}
 
@@ -14,11 +16,6 @@ function initElements() {
     lastIndexLabel: () => document.getElementById('learn-word-card-index-last'),
     // wordLevel: () => document.getElementById('learn-word-card-level'),
     wordType: () => document.getElementById('learn-word-card-type'),
-    wordText: () => document.getElementById('learn-word-card-text'),
-    wordTranslation: () =>
-      document.getElementById('learn-word-card-translation'),
-    wordExample: () => document.getElementById('learn-word-card-example'),
-    wordRule: () => document.getElementById('learn-word-card-rule'),
   }
 }
 
@@ -32,14 +29,22 @@ function renderLearnCard({ currentWord: word, currentIndex, lastIndex }) {
 
   // els.wordLevel().textContent = word.level || ''
   els.wordType().textContent = word.type || ''
-  els.wordText().textContent = word.german || ''
-  els.wordText().style.color = PrepositionCaseColorMap[word.case]
-  els.wordTranslation().textContent = word.english || ''
 
-  // els.wordExample().textContent = word.example || '' // disable when exercise type is grammar?? 
-  // els.wordExample().style.display = word.example ? 'block' : 'none'
-
-  els.wordRule().textContent = word.rule || ''
+  // Route to appropriate renderer based on word type
+  if (word.type === WordType.PREPOSITION) {
+    // Default to preposition for now
+    mountPreposition(word)
+  } else if (word.type === WordType.NOUN) {
+    mountNoun(word)
+  } else if (word.type === WordType.VERB) {
+    // todo: mount verb
+  } else if (word.type === WordType.ADJECTIVE) {
+    // todo: mount adjective
+  } else if (word.type === WordType.ADVERB) {
+    // todo: mount adverb
+  } else {
+    console.warn(`Word Type Not Supported: ${word.type}`)
+  }
 
   // // Show the card
   // if (els.wordCard()) {

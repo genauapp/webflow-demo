@@ -1,10 +1,10 @@
 [
     {
-        "german": "der Wecker",
+        "german": "Wecker",
         "english": "alarm clock",
         "level": "A1",
         "example": "Der Wecker klingelt um 7 Uhr.",
-        "artikel": "der",
+        "article": "der",
         "word": "Wecker",
         "rule": "Most nouns ending in '-er' take 'der'.",
         "type": "noun",
@@ -12,11 +12,11 @@
         "id": "noun_alltag_01"
     },
     {
-        "german": "die Zeitung",
+        "german": "Zeitung",
         "english": "newspaper",
         "level": "A1",
         "example": "Ich lese morgens die Zeitung.",
-        "artikel": "die",
+        "article": "die",
         "word": "Zeitung",
         "rule": "Nouns ending in '-ung' are always feminine and take 'die'.",
         "type": "noun",
@@ -24,11 +24,11 @@
         "id": "noun_alltag_02"
     },
     {
-        "german": "das Handy",
+        "german": "Handy",
         "english": "mobile phone",
         "level": "A1",
         "example": "Mein Handy liegt auf dem Tisch.",
-        "artikel": "das",
+        "article": "das",
         "word": "Handy",
         "rule": "Most borrowed English nouns take: 'das'.",
         "type": "noun",
@@ -36,11 +36,11 @@
         "id": "noun_alltag_03"
     },
     {
-        "german": "die Arbeit",
+        "german": "Arbeit",
         "english": "work",
         "level": "A1",
         "example": "Ich gehe jeden Tag zur Arbeit.",
-        "artikel": "die",
+        "article": "die",
         "word": "Arbeit",
         "rule": "Abstract nouns ending in '-eit' are feminine.",
         "type": "noun",
@@ -48,11 +48,11 @@
         "id": "noun_alltag_04"
     },
     {
-        "german": "der Tisch",
+        "german": "Tisch",
         "english": "table",
         "level": "A1",
         "example": "Der Tisch ist aus Holz.",
-        "artikel": "der",
+        "article": "der",
         "word": "Tisch",
         "rule": "Most masculine concrete objects take 'der'.",
         "type": "noun",
@@ -60,11 +60,11 @@
         "id": "noun_alltag_05"
     },
     {
-        "german": "das Fenster",
+        "german": "Fenster",
         "english": "window",
         "level": "A1",
         "example": "Das Fenster ist offen.",
-        "artikel": "das",
+        "article": "das",
         "word": "Fenster",
         "rule": "",
         "type": "noun",
@@ -72,11 +72,11 @@
         "id": "noun_alltag_06"
     },
     {
-        "german": "die Tür",
+        "german": "Tür",
         "english": "door",
         "level": "A1",
         "example": "Die Tür ist geschlossen.",
-        "artikel": "die",
+        "article": "die",
         "word": "Tür",
         "rule": "Short feminine nouns for household objects often take 'die'.",
         "type": "noun",
@@ -84,11 +84,11 @@
         "id": "noun_alltag_07"
     },
     {
-        "german": "der Stuhl",
+        "german": "Stuhl",
         "english": "chair",
         "level": "A1",
         "example": "Der Stuhl ist bequem.",
-        "artikel": "der",
+        "article": "der",
         "word": "Stuhl",
         "rule": "Furniture items often use 'der' unless they end in '-e'.",
         "type": "noun",
@@ -96,11 +96,11 @@
         "id": "noun_alltag_08"
     },
     {
-        "german": "das Licht",
+        "german": "Licht",
         "english": "light",
         "level": "A1",
         "example": "Das Licht ist an.",
-        "artikel": "das",
+        "article": "das",
         "word": "Licht",
         "rule": "Abstract and elemental nouns are usually neuter.",
         "type": "noun",
@@ -108,11 +108,11 @@
         "id": "noun_alltag_09"
     },
     {
-        "german": "die Lampe",
+        "german": "Lampe",
         "english": "lamp",
         "level": "A1",
         "example": "Die Lampe steht im Wohnzimmer.",
-        "artikel": "die",
+        "article": "die",
         "word": "Lampe",
         "rule": "Nouns ending in '-e' are often feminine.",
         "type": "noun",
@@ -120,11 +120,11 @@
         "id": "noun_alltag_10"
     },
     {
-        "german": "der Fernseher",
+        "german": "Fernseher",
         "english": "TV",
         "level": "A1",
         "example": "Der Fernseher ist kaputt.",
-        "artikel": "der",
+        "article": "der",
         "word": "Fernseher",
         "rule": "Most nouns ending in '-er' take 'der'.",
         "type": "noun",
@@ -132,11 +132,11 @@
         "id": "noun_alltag_11"
     },
     {
-        "german": "das Sofa",
+        "german": "Sofa",
         "english": "sofa",
         "level": "A1",
         "example": "Das Sofa ist sehr bequem.",
-        "artikel": "das",
+        "article": "das",
         "word": "Sofa",
         "rule": "Most loanwords ending in '-a' are neuter.",
         "type": "noun",
@@ -144,11 +144,11 @@
         "id": "noun_alltag_12"
     },
     {
-        "german": "die Küche",
+        "german": "Küche",
         "english": "kitchen",
         "level": "A1",
         "example": "Die Küche ist modern.",
-        "artikel": "die",
+        "article": "die",
         "word": "Küche",
         "rule": "Nouns ending in '-e' are typically feminine.",
         "type": "noun",
@@ -156,11 +156,11 @@
         "id": "noun_alltag_13"
     },
     {
-        "german": "die Dusche",
+        "german": "Dusche",
         "english": "shower",
         "level": "A1",
         "example": "Ich gehe jeden Morgen unter die Dusche.",
-        "artikel": "die",
+        "article": "die",
         "word": "Dusche",
         "rule": "Nouns ending in '-e' are typically feminine.",
         "type": "noun",
@@ -168,11 +168,11 @@
         "id": "noun_alltag_14"
     },
     {
-        "german": "der Spiegel",
+        "german": "Spiegel",
         "english": "mirror",
         "level": "A1",
         "example": "Der Spiegel hängt im Badezimmer.",
-        "artikel": "der",
+        "article": "der",
         "word": "Spiegel",
         "rule": "Many items found in the bathroom take 'der'.",
         "type": "noun",
@@ -180,11 +180,11 @@
         "id": "noun_alltag_15"
     },
     {
-        "german": "das Bett",
+        "german": "Bett",
         "english": "bed",
         "level": "A1",
         "example": "Das Bett ist sehr bequem.",
-        "artikel": "das",
+        "article": "das",
         "word": "Bett",
         "rule": "Most furniture nouns that are neutral in function take 'das'.",
         "type": "noun",
@@ -192,11 +192,11 @@
         "id": "noun_alltag_16"
     },
     {
-        "german": "die Decke",
+        "german": "Decke",
         "english": "blanket",
         "level": "A1",
         "example": "Ich brauche eine warme Decke.",
-        "artikel": "die",
+        "article": "die",
         "word": "Decke",
         "rule": "Nouns ending in '-e' are often feminine.",
         "type": "noun",
@@ -204,11 +204,11 @@
         "id": "noun_alltag_17"
     },
     {
-        "german": "der Schrank",
+        "german": "Schrank",
         "english": "cupboard",
         "level": "A1",
         "example": "Der Schrank steht im Schlafzimmer.",
-        "artikel": "der",
+        "article": "der",
         "word": "Schrank",
         "rule": "Storage-related furniture often takes 'der'.",
         "type": "noun",
@@ -216,11 +216,11 @@
         "id": "noun_alltag_18"
     },
     {
-        "german": "das Kissen",
+        "german": "Kissen",
         "english": "pillow",
         "level": "A1",
         "example": "Ich schlafe mit zwei Kissen.",
-        "artikel": "das",
+        "article": "das",
         "word": "Kissen",
         "rule": "Diminutive-like nouns ending in '-en' are usually neuter.",
         "type": "noun",
@@ -228,11 +228,11 @@
         "id": "noun_alltag_19"
     },
     {
-        "german": "die Wand",
+        "german": "Wand",
         "english": "wall",
         "level": "A1",
         "example": "Ein Bild hängt an der Wand.",
-        "artikel": "die",
+        "article": "die",
         "word": "Wand",
         "rule": "Body and structure parts ending in consonants often take 'die'.",
         "type": "noun",

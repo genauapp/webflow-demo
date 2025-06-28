@@ -1,10 +1,10 @@
 [
   {
-    "german": "die Vielfalt",
+    "german": "Vielfalt",
     "english": "diversity",
     "level": "B2",
     "example": "Die kulturelle Vielfalt bereichert die Gesellschaft.",
-    "artikel": "die",
+    "article": "die",
     "word": "Vielfalt",
     "rule": "Abstract nouns ending in '-falt' are feminine.",
     "type": "noun",
@@ -12,11 +12,11 @@
     "id": "noun_kultur_B2_01"
   },
   {
-    "german": "die Gleichberechtigung",
+    "german": "Gleichberechtigung",
     "english": "equality",
     "level": "B2",
     "example": "Die Gleichberechtigung der Geschlechter ist ein wichtiges Ziel.",
-    "artikel": "die",
+    "article": "die",
     "word": "Gleichberechtigung",
     "rule": "Words ending in '-ung' are always feminine.",
     "type": "noun",
@@ -24,11 +24,11 @@
     "id": "noun_kultur_B2_02"
   },
   {
-    "german": "der Wert",
+    "german": "Wert",
     "english": "value",
     "level": "B2",
     "example": "Traditionelle Werte spielen in vielen Kulturen eine große Rolle.",
-    "artikel": "der",
+    "article": "der",
     "word": "Wert",
     "rule": "Common masculine noun, often abstract.",
     "type": "noun",
@@ -36,11 +36,11 @@
     "id": "noun_kultur_B2_03"
   },
   {
-    "german": "das Verhalten",
+    "german": "Verhalten",
     "english": "behavior",
     "level": "B2",
     "example": "Sein Verhalten wurde als unhöflich empfunden.",
-    "artikel": "das",
+    "article": "das",
     "word": "Verhalten",
     "rule": "Nominalization of verbs with 'ver-' prefix are usually neuter.",
     "type": "noun",
@@ -48,11 +48,11 @@
     "id": "noun_kultur_B2_04"
   },
   {
-    "german": "die Integration",
+    "german": "Integration",
     "english": "integration",
     "level": "B2",
     "example": "Die Integration von Migranten ist ein wichtiges gesellschaftliches Thema.",
-    "artikel": "die",
+    "article": "die",
     "word": "Integration",
     "rule": "Loanwords ending in '-tion' are always feminine.",
     "type": "noun",
@@ -60,11 +60,11 @@
     "id": "noun_kultur_B2_05"
   },
   {
-    "german": "der Respekt",
+    "german": "Respekt",
     "english": "respect",
     "level": "B2",
     "example": "Respekt gegenüber anderen Kulturen ist essenziell.",
-    "artikel": "der",
+    "article": "der",
     "word": "Respekt",
     "rule": "Loanwords from Latin often take 'der'.",
     "type": "noun",
@@ -72,11 +72,11 @@
     "id": "noun_kultur_B2_06"
   },
   {
-    "german": "das Vorurteil",
+    "german": "Vorurteil",
     "english": "prejudice",
     "level": "B2",
     "example": "Vorurteile erschweren die Integration.",
-    "artikel": "das",
+    "article": "das",
     "word": "Vorurteil",
     "rule": "Compound noun with 'Vor-' prefix is often neuter.",
     "type": "noun",
@@ -84,11 +84,11 @@
     "id": "noun_kultur_B2_07"
   },
   {
-    "german": "die Herkunft",
+    "german": "Herkunft",
     "english": "origin",
     "level": "B2",
     "example": "Menschen unterschiedlicher Herkunft leben in der Stadt.",
-    "artikel": "die",
+    "article": "die",
     "word": "Herkunft",
     "rule": "Often feminine when describing roots or origin.",
     "type": "noun",
@@ -96,11 +96,11 @@
     "id": "noun_kultur_B2_08"
   },
   {
-    "german": "das Klischee",
+    "german": "Klischee",
     "english": "stereotype",
     "level": "B2",
     "example": "Viele Klischees basieren auf Unwissenheit.",
-    "artikel": "das",
+    "article": "das",
     "word": "Klischee",
     "rule": "Loanwords ending in '-ee' are usually neuter.",
     "type": "noun",
@@ -108,11 +108,11 @@
     "id": "noun_kultur_B2_09"
   },
   {
-    "german": "die Diskriminierung",
+    "german": "Diskriminierung",
     "english": "discrimination",
     "level": "B2",
     "example": "Diskriminierung am Arbeitsplatz ist verboten.",
-    "artikel": "die",
+    "article": "die",
     "word": "Diskriminierung",
     "rule": "Words ending in '-ung' are always feminine.",
     "type": "noun",
@@ -120,11 +120,11 @@
     "id": "noun_kultur_B2_10"
   },
   {
-    "german": "die Gesellschaft",
+    "german": "Gesellschaft",
     "english": "society",
     "level": "B2",
     "example": "Die Gesellschaft verändert sich ständig.",
-    "artikel": "die",
+    "article": "die",
     "word": "Gesellschaft",
     "rule": "Words ending in '-schaft' are always feminine.",
     "type": "noun",
@@ -132,11 +132,11 @@
     "id": "noun_kultur_B2_11"
   },
   {
-    "german": "der Brauch",
+    "german": "Brauch",
     "english": "custom / tradition",
     "level": "B2",
     "example": "Ein alter Brauch wird jedes Jahr gefeiert.",
-    "artikel": "der",
+    "article": "der",
     "word": "Brauch",
     "rule": "Cultural terms are often masculine.",
     "type": "noun",
@@ -144,11 +144,11 @@
     "id": "noun_kultur_B2_12"
   },
   {
-    "german": "die Religion",
+    "german": "Religion",
     "english": "religion",
     "level": "B2",
     "example": "Religion spielt für viele Menschen eine wichtige Rolle.",
-    "artikel": "die",
+    "article": "die",
     "word": "Religion",
     "rule": "Loanwords ending in '-ion' are always feminine.",
     "type": "noun",
@@ -156,11 +156,11 @@
     "id": "noun_kultur_B2_13"
   },
   {
-    "german": "der Glaube",
+    "german": "Glaube",
     "english": "belief / faith",
     "level": "B2",
     "example": "Der Glaube kann Menschen Hoffnung geben.",
-    "artikel": "der",
+    "article": "der",
     "word": "Glaube",
     "rule": "Abstract concepts of faith are masculine.",
     "type": "noun",
@@ -168,11 +168,11 @@
     "id": "noun_kultur_B2_14"
   },
   {
-    "german": "das Recht",
+    "german": "Recht",
     "english": "law / right",
     "level": "B2",
     "example": "Jeder hat das Recht auf freie Meinungsäußerung.",
-    "artikel": "das",
+    "article": "das",
     "word": "Recht",
     "rule": "Legal and institutional terms often neuter.",
     "type": "noun",
@@ -180,11 +180,11 @@
     "id": "noun_kultur_B2_15"
   },
   {
-    "german": "die Freiheit",
+    "german": "Freiheit",
     "english": "freedom",
     "level": "B2",
     "example": "Freiheit ist ein Grundrecht.",
-    "artikel": "die",
+    "article": "die",
     "word": "Freiheit",
     "rule": "Words ending in '-heit' are always feminine.",
     "type": "noun",
@@ -192,11 +192,11 @@
     "id": "noun_kultur_B2_16"
   },
   {
-    "german": "die Verantwortung",
+    "german": "Verantwortung",
     "english": "responsibility",
     "level": "B2",
     "example": "Eltern tragen Verantwortung für ihre Kinder.",
-    "artikel": "die",
+    "article": "die",
     "word": "Verantwortung",
     "rule": "Words ending in '-ung' are always feminine.",
     "type": "noun",
@@ -204,11 +204,11 @@
     "id": "noun_kultur_B2_17"
   },
   {
-    "german": "das Verständnis",
+    "german": "Verständnis",
     "english": "understanding",
     "level": "B2",
     "example": "Verständnis für andere Kulturen ist wichtig.",
-    "artikel": "das",
+    "article": "das",
     "word": "Verständnis",
     "rule": "Abstract noun ending in '-nis' is usually neuter.",
     "type": "noun",
@@ -216,11 +216,11 @@
     "id": "noun_kultur_B2_18"
   },
   {
-    "german": "der Einfluss",
+    "german": "Einfluss",
     "english": "influence",
     "level": "B2",
     "example": "Medien haben einen großen Einfluss auf die Gesellschaft.",
-    "artikel": "der",
+    "article": "der",
     "word": "Einfluss",
     "rule": "Masculine compound noun.",
     "type": "noun",
@@ -228,11 +228,11 @@
     "id": "noun_kultur_B2_19"
   },
   {
-    "german": "die Debatte",
+    "german": "Debatte",
     "english": "debate",
     "level": "B2",
     "example": "Es gibt eine breite Debatte über Migration.",
-    "artikel": "die",
+    "article": "die",
     "word": "Debatte",
     "rule": "Loanwords ending in '-e' can be feminine.",
     "type": "noun",

@@ -1,10 +1,10 @@
 [
     {
-        "german": "der Chef",
+        "german": "Chef",
         "english": "boss (male)",
         "level": "A2",
         "example": "Der Chef ist heute nicht im Büro.",
-        "artikel": "der",
+        "article": "der",
         "word": "Chef",
         "rule": "Occupational titles ending in consonants are often masculine.",
         "type": "noun",
@@ -12,11 +12,11 @@
         "id": "noun_arbeit_A2_01"
     },
     {
-        "german": "die Chefin",
+        "german": "Chefin",
         "english": "boss (female)",
         "level": "A2",
         "example": "Die Chefin hat viele Aufgaben.",
-        "artikel": "die",
+        "article": "die",
         "word": "Chefin",
         "rule": "Feminine form of job titles end in '-in'.",
         "type": "noun",
@@ -24,11 +24,11 @@
         "id": "noun_arbeit_A2_02"
     },
     {
-        "german": "der Kollege",
+        "german": "Kollege",
         "english": "colleague (male)",
         "level": "A2",
         "example": "Mein Kollege hilft mir oft.",
-        "artikel": "der",
+        "article": "der",
         "word": "Kollege",
         "rule": "Occupational titles are usually masculine.",
         "type": "noun",
@@ -36,11 +36,11 @@
         "id": "noun_arbeit_A2_03"
     },
     {
-        "german": "die Kollegin",
+        "german": "Kollegin",
         "english": "colleague (female)",
         "level": "A2",
         "example": "Meine Kollegin ist sehr nett.",
-        "artikel": "die",
+        "article": "die",
         "word": "Kollegin",
         "rule": "Feminine form of 'Kollege'.",
         "type": "noun",
@@ -48,11 +48,11 @@
         "id": "noun_arbeit_A2_04"
     },
     {
-        "german": "der Arbeitsplatz",
+        "german": "Arbeitsplatz",
         "english": "workplace",
         "level": "A2",
         "example": "Mein Arbeitsplatz ist im Zentrum.",
-        "artikel": "der",
+        "article": "der",
         "word": "Arbeitsplatz",
         "rule": "",
         "type": "noun",
@@ -60,11 +60,11 @@
         "id": "noun_arbeit_A2_05"
     },
     {
-        "german": "die Arbeit",
+        "german": "Arbeit",
         "english": "work",
         "level": "A2",
         "example": "Die Arbeit macht Spaß.",
-        "artikel": "die",
+        "article": "die",
         "word": "Arbeit",
         "rule": "Nouns ending in '-eit' are always feminine.",
         "type": "noun",
@@ -72,11 +72,11 @@
         "id": "noun_arbeit_A2_06"
     },
     {
-        "german": "das Büro",
+        "german": "Büro",
         "english": "office",
         "level": "A2",
         "example": "Ich arbeite in einem Büro.",
-        "artikel": "das",
+        "article": "das",
         "word": "Büro",
         "rule": "",
         "type": "noun",
@@ -84,11 +84,11 @@
         "id": "noun_arbeit_A2_07"
     },
     {
-        "german": "der Termin",
+        "german": "Termin",
         "english": "appointment",
         "level": "A2",
         "example": "Ich habe einen Termin beim Amt.",
-        "artikel": "der",
+        "article": "der",
         "word": "Termin",
         "rule": "",
         "type": "noun",
@@ -96,11 +96,11 @@
         "id": "noun_arbeit_A2_08"
     },
     {
-        "german": "die Behörde",
+        "german": "Behörde",
         "english": "authority / government office",
         "level": "A2",
         "example": "Ich muss zur Behörde gehen.",
-        "artikel": "die",
+        "article": "die",
         "word": "Behörde",
         "rule": "Words ending in '-e' often feminine.",
         "type": "noun",
@@ -108,11 +108,11 @@
         "id": "noun_arbeit_A2_09"
     },
     {
-        "german": "das Formular",
+        "german": "Formular",
         "english": "form",
         "level": "A2",
         "example": "Bitte füllen Sie das Formular aus.",
-        "artikel": "das",
+        "article": "das",
         "word": "Formular",
         "rule": "",
         "type": "noun",
@@ -120,11 +120,11 @@
         "id": "noun_arbeit_A2_10"
     },
     {
-        "german": "der Ausweis",
+        "german": "Ausweis",
         "english": "ID card",
         "level": "A2",
         "example": "Ich brauche meinen Ausweis.",
-        "artikel": "der",
+        "article": "der",
         "word": "Ausweis",
         "rule": "Documents and cards usually take 'der'.",
         "type": "noun",
@@ -132,11 +132,11 @@
         "id": "noun_arbeit_A2_11"
     },
     {
-        "german": "die Unterschrift",
+        "german": "Unterschrift",
         "english": "signature",
         "level": "A2",
         "example": "Hier fehlt noch die Unterschrift.",
-        "artikel": "die",
+        "article": "die",
         "word": "Unterschrift",
         "rule": "",
         "type": "noun",
@@ -144,11 +144,11 @@
         "id": "noun_arbeit_A2_12"
     },
     {
-        "german": "die Anmeldung",
+        "german": "Anmeldung",
         "english": "registration",
         "level": "A2",
         "example": "Die Anmeldung erfolgt online.",
-        "artikel": "die",
+        "article": "die",
         "word": "Anmeldung",
         "rule": "Nouns ending in '-ung' are always feminine.",
         "type": "noun",
@@ -156,11 +156,11 @@
         "id": "noun_arbeit_A2_13"
     },
     {
-        "german": "der Antrag",
+        "german": "Antrag",
         "english": "application (formal)",
         "level": "A2",
         "example": "Ich stelle einen Antrag auf Unterstützung.",
-        "artikel": "der",
+        "article": "der",
         "word": "Antrag",
         "rule": "Formal nouns with verbs often take 'der'.",
         "type": "noun",
@@ -168,11 +168,11 @@
         "id": "noun_arbeit_A2_14"
     },
     {
-        "german": "die Genehmigung",
+        "german": "Genehmigung",
         "english": "approval",
         "level": "A2",
         "example": "Ich brauche eine Genehmigung.",
-        "artikel": "die",
+        "article": "die",
         "word": "Genehmigung",
         "rule": "Nouns ending in '-ung' are feminine.",
         "type": "noun",
@@ -180,11 +180,11 @@
         "id": "noun_arbeit_A2_15"
     },
     {
-        "german": "das Gehalt",
+        "german": "Gehalt",
         "english": "salary",
         "level": "A2",
         "example": "Mein Gehalt ist gut.",
-        "artikel": "das",
+        "article": "das",
         "word": "Gehalt",
         "rule": "Financial terms like 'Gehalt' are neuter.",
         "type": "noun",
@@ -192,11 +192,11 @@
         "id": "noun_arbeit_A2_16"
     },
     {
-        "german": "die Steuer",
+        "german": "Steuer",
         "english": "tax",
         "level": "A2",
         "example": "Ich muss meine Steuer zahlen.",
-        "artikel": "die",
+        "article": "die",
         "word": "Steuer",
         "rule": "",
         "type": "noun",
@@ -204,11 +204,11 @@
         "id": "noun_arbeit_A2_17"
     },
     {
-        "german": "das Amt",
+        "german": "Amt",
         "english": "office (official)",
         "level": "A2",
         "example": "Das Amt ist heute geschlossen.",
-        "artikel": "das",
+        "article": "das",
         "word": "Amt",
         "rule": "",
         "type": "noun",
@@ -216,11 +216,11 @@
         "id": "noun_arbeit_A2_18"
     },
     {
-        "german": "die Bescheinigung",
+        "german": "Bescheinigung",
         "english": "certificate",
         "level": "A2",
         "example": "Ich brauche eine Bescheinigung vom Arzt.",
-        "artikel": "die",
+        "article": "die",
         "word": "Bescheinigung",
         "rule": "Nouns ending in '-ung' are feminine.",
         "type": "noun",
@@ -228,11 +228,11 @@
         "id": "noun_arbeit_A2_19"
     },
     {
-        "german": "der Vertrag",
+        "german": "Vertrag",
         "english": "contract",
         "level": "A2",
         "example": "Ich unterschreibe den Vertrag morgen.",
-        "artikel": "der",
+        "article": "der",
         "word": "Vertrag",
         "rule": "Legal and formal documents often masculine.",
         "type": "noun",

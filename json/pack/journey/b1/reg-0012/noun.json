@@ -1,10 +1,10 @@
 [
     {
-        "german": "die Kohle",
+        "german": "Kohle",
         "english": "money (slang)",
         "level": "B1",
         "example": "Ich habe heute keine Kohle dabei.",
-        "artikel": "die",
+        "article": "die",
         "word": "Kohle",
         "rule": "Literal meaning: coal. Used colloquially for money.",
         "type": "noun",
@@ -12,11 +12,11 @@
         "id": "noun_slang_B1_01"
     },
     {
-        "german": "der Bock",
+        "german": "Bock",
         "english": "desire (slang)",
         "level": "B1",
         "example": "Ich habe keinen Bock auf Schule.",
-        "artikel": "der",
+        "article": "der",
         "word": "Bock",
         "rule": "Used in expressions like 'keinen Bock haben'.",
         "type": "noun",
@@ -24,11 +24,11 @@
         "id": "noun_slang_B1_02"
     },
     {
-        "german": "der Kumpel",
+        "german": "Kumpel",
         "english": "buddy",
         "level": "B1",
         "example": "Er ist mein bester Kumpel.",
-        "artikel": "der",
+        "article": "der",
         "word": "Kumpel",
         "rule": "Casual term for a friend.",
         "type": "noun",
@@ -36,11 +36,11 @@
         "id": "noun_slang_B1_03"
     },
     {
-        "german": "die Alte",
+        "german": "Alte",
         "english": "girlfriend / wife (slang)",
         "level": "B1",
         "example": "Ich gehe mit meiner Alten ins Kino.",
-        "artikel": "die",
+        "article": "die",
         "word": "Alte",
         "rule": "Informal and can be disrespectful depending on tone.",
         "type": "noun",
@@ -48,11 +48,11 @@
         "id": "noun_slang_B1_04"
     },
     {
-        "german": "der Alte",
+        "german": "Alte",
         "english": "guy / husband (slang)",
         "level": "B1",
         "example": "Mein Alter arbeitet viel.",
-        "artikel": "der",
+        "article": "der",
         "word": "Alte",
         "rule": "Also used for parents: 'mein Alter'.",
         "type": "noun",
@@ -60,11 +60,11 @@
         "id": "noun_slang_B1_05"
     },
     {
-        "german": "die Tussi",
+        "german": "Tussi",
         "english": "chick (pejorative)",
         "level": "B1",
         "example": "Diese Tussi nervt mich.",
-        "artikel": "die",
+        "article": "die",
         "word": "Tussi",
         "rule": "Can be offensive or mocking.",
         "type": "noun",
@@ -72,11 +72,11 @@
         "id": "noun_slang_B1_06"
     },
     {
-        "german": "der Typ",
+        "german": "Typ",
         "english": "guy / dude",
         "level": "B1",
         "example": "Was will der Typ von dir?",
-        "artikel": "der",
+        "article": "der",
         "word": "Typ",
         "rule": "Neutral colloquial term.",
         "type": "noun",
@@ -84,11 +84,11 @@
         "id": "noun_slang_B1_07"
     },
     {
-        "german": "die Clique",
+        "german": "Clique",
         "english": "group of friends",
         "level": "B1",
         "example": "Ich treffe mich mit meiner Clique.",
-        "artikel": "die",
+        "article": "die",
         "word": "Clique",
         "rule": "Youth slang for friend group.",
         "type": "noun",
@@ -96,11 +96,11 @@
         "id": "noun_slang_B1_08"
     },
     {
-        "german": "das Teil",
+        "german": "Teil",
         "english": "thing / gadget",
         "level": "B1",
         "example": "Was ist das für ein Teil?",
-        "artikel": "das",
+        "article": "das",
         "word": "Teil",
         "rule": "Used for various objects.",
         "type": "noun",
@@ -108,11 +108,11 @@
         "id": "noun_slang_B1_09"
     },
     {
-        "german": "die Mucke",
+        "german": "Mucke",
         "english": "music (slang)",
         "level": "B1",
         "example": "Ich höre gerne Mucke.",
-        "artikel": "die",
+        "article": "die",
         "word": "Mucke",
         "rule": "Short for Musik.",
         "type": "noun",
@@ -120,11 +120,11 @@
         "id": "noun_slang_B1_10"
     },
     {
-        "german": "die Klamotten",
+        "german": "Klamotten",
         "english": "clothes (slang)",
         "level": "B1",
         "example": "Ich brauche neue Klamotten.",
-        "artikel": "die",
+        "article": "die",
         "word": "Klamotten",
         "rule": "Always plural.",
         "type": "noun",
@@ -132,11 +132,11 @@
         "id": "noun_slang_B1_11"
     },
     {
-        "german": "die Glotze",
+        "german": "Glotze",
         "english": "TV (slang)",
         "level": "B1",
         "example": "Ich sitze den ganzen Tag vor der Glotze.",
-        "artikel": "die",
+        "article": "die",
         "word": "Glotze",
         "rule": "Casual word for Fernseher.",
         "type": "noun",
@@ -144,11 +144,11 @@
         "id": "noun_slang_B1_12"
     },
     {
-        "german": "die Karre",
+        "german": "Karre",
         "english": "car (slang)",
         "level": "B1",
         "example": "Seine Karre ist echt schnell.",
-        "artikel": "die",
+        "article": "die",
         "word": "Karre",
         "rule": "Informal term for car.",
         "type": "noun",
@@ -156,11 +156,11 @@
         "id": "noun_slang_B1_13"
     },
     {
-        "german": "das Handy",
+        "german": "Handy",
         "english": "cell phone",
         "level": "B1",
         "example": "Ich habe mein Handy vergessen.",
-        "artikel": "das",
+        "article": "das",
         "word": "Handy",
         "rule": "Denglisch slang.",
         "type": "noun",
@@ -168,11 +168,11 @@
         "id": "noun_slang_B1_14"
     },
     {
-        "german": "die Fresse",
+        "german": "Fresse",
         "english": "mouth (vulgar)",
         "level": "B1",
         "example": "Halt die Fresse!",
-        "artikel": "die",
+        "article": "die",
         "word": "Fresse",
         "rule": "Very informal, often offensive.",
         "type": "noun",
@@ -180,11 +180,11 @@
         "id": "noun_slang_B1_15"
     },
     {
-        "german": "der Bulle",
+        "german": "Bulle",
         "english": "cop (slang)",
         "level": "B1",
         "example": "Die Bullen sind schon da.",
-        "artikel": "der",
+        "article": "der",
         "word": "Bulle",
         "rule": "Can be derogatory for police.",
         "type": "noun",
@@ -192,11 +192,11 @@
         "id": "noun_slang_B1_16"
     },
     {
-        "german": "der Lappen",
+        "german": "Lappen",
         "english": "driver’s license (slang)",
         "level": "B1",
         "example": "Ich habe meinen Lappen verloren.",
-        "artikel": "der",
+        "article": "der",
         "word": "Lappen",
         "rule": "Literal: rag. Slang for Führerschein.",
         "type": "noun",
@@ -204,11 +204,11 @@
         "id": "noun_slang_B1_17"
     },
     {
-        "german": "der Penner",
+        "german": "Penner",
         "english": "homeless person / bum (slang)",
         "level": "B1",
         "example": "Der Penner schläft auf der Bank.",
-        "artikel": "der",
+        "article": "der",
         "word": "Penner",
         "rule": "Can be highly derogatory.",
         "type": "noun",
@@ -216,11 +216,11 @@
         "id": "noun_slang_B1_18"
     },
     {
-        "german": "der Schiss",
+        "german": "Schiss",
         "english": "fear (slang)",
         "level": "B1",
         "example": "Ich habe voll den Schiss vor der Prüfung.",
-        "artikel": "der",
+        "article": "der",
         "word": "Schiss",
         "rule": "Very informal. From 'Scheiße'.",
         "type": "noun",
@@ -228,11 +228,11 @@
         "id": "noun_slang_B1_19"
     },
     {
-        "german": "die Klappe",
+        "german": "Klappe",
         "english": "mouth / flap (slang)",
         "level": "B1",
         "example": "Halt die Klappe!",
-        "artikel": "die",
+        "article": "die",
         "word": "Klappe",
         "rule": "Used in expressions to tell someone to be quiet.",
         "type": "noun",

@@ -1,10 +1,10 @@
 [
     {
-        "german": "die Freundschaft",
+        "german": "Freundschaft",
         "english": "friendship",
         "level": "B1",
         "example": "Unsere Freundschaft ist sehr stark.",
-        "artikel": "die",
+        "article": "die",
         "word": "Freundschaft",
         "rule": "Words ending in '-schaft' are always feminine.",
         "type": "noun",
@@ -12,11 +12,11 @@
         "id": "noun_gefuehle_B1_01"
     },
     {
-        "german": "die Beziehung",
+        "german": "Beziehung",
         "english": "relationship",
         "level": "B1",
         "example": "Sie haben eine gute Beziehung.",
-        "artikel": "die",
+        "article": "die",
         "word": "Beziehung",
         "rule": "Words ending in '-ung' are always feminine.",
         "type": "noun",
@@ -24,11 +24,11 @@
         "id": "noun_gefuehle_B1_02"
     },
     {
-        "german": "das Gefühl",
+        "german": "Gefühl",
         "english": "feeling",
         "level": "B1",
         "example": "Ich habe ein gutes Gefühl.",
-        "artikel": "das",
+        "article": "das",
         "word": "Gefühl",
         "rule": "",
         "type": "noun",
@@ -36,11 +36,11 @@
         "id": "noun_gefuehle_B1_03"
     },
     {
-        "german": "die Liebe",
+        "german": "Liebe",
         "english": "love",
         "level": "B1",
         "example": "Liebe ist wichtig im Leben.",
-        "artikel": "die",
+        "article": "die",
         "word": "Liebe",
         "rule": "Words ending in '-e' are often feminine.",
         "type": "noun",
@@ -48,11 +48,11 @@
         "id": "noun_gefuehle_B1_04"
     },
     {
-        "german": "der Hass",
+        "german": "Hass",
         "english": "hate",
         "level": "B1",
         "example": "Hass ist ein starkes Gefühl.",
-        "artikel": "der",
+        "article": "der",
         "word": "Hass",
         "rule": "",
         "type": "noun",
@@ -60,11 +60,11 @@
         "id": "noun_gefuehle_B1_05"
     },
     {
-        "german": "die Angst",
+        "german": "Angst",
         "english": "fear",
         "level": "B1",
         "example": "Ich habe Angst vor Spinnen.",
-        "artikel": "die",
+        "article": "die",
         "word": "Angst",
         "rule": "",
         "type": "noun",
@@ -72,11 +72,11 @@
         "id": "noun_gefuehle_B1_06"
     },
     {
-        "german": "die Eifersucht",
+        "german": "Eifersucht",
         "english": "jealousy",
         "level": "B1",
         "example": "Eifersucht kann Beziehungen zerstören.",
-        "artikel": "die",
+        "article": "die",
         "word": "Eifersucht",
         "rule": "",
         "type": "noun",
@@ -84,11 +84,11 @@
         "id": "noun_gefuehle_B1_07"
     },
     {
-        "german": "der Streit",
+        "german": "Streit",
         "english": "argument",
         "level": "B1",
         "example": "Es gab einen Streit zwischen den Geschwistern.",
-        "artikel": "der",
+        "article": "der",
         "word": "Streit",
         "rule": "",
         "type": "noun",
@@ -96,11 +96,11 @@
         "id": "noun_gefuehle_B1_08"
     },
     {
-        "german": "die Trennung",
+        "german": "Trennung",
         "english": "separation",
         "level": "B1",
         "example": "Nach der Trennung fühlte sie sich traurig.",
-        "artikel": "die",
+        "article": "die",
         "word": "Trennung",
         "rule": "Words ending in '-ung' are always feminine.",
         "type": "noun",
@@ -108,11 +108,11 @@
         "id": "noun_gefuehle_B1_09"
     },
     {
-        "german": "die Versöhnung",
+        "german": "Versöhnung",
         "english": "reconciliation",
         "level": "B1",
         "example": "Die Versöhnung war für beide wichtig.",
-        "artikel": "die",
+        "article": "die",
         "word": "Versöhnung",
         "rule": "Words ending in '-ung' are always feminine.",
         "type": "noun",
@@ -120,11 +120,11 @@
         "id": "noun_gefuehle_B1_10"
     },
     {
-        "german": "die Zuneigung",
+        "german": "Zuneigung",
         "english": "affection",
         "level": "B1",
         "example": "Zuneigung ist eine Form der Liebe.",
-        "artikel": "die",
+        "article": "die",
         "word": "Zuneigung",
         "rule": "Words ending in '-ung' are always feminine.",
         "type": "noun",
@@ -132,11 +132,11 @@
         "id": "noun_gefuehle_B1_11"
     },
     {
-        "german": "das Vertrauen",
+        "german": "Vertrauen",
         "english": "trust",
         "level": "B1",
         "example": "Vertrauen ist die Basis jeder Beziehung.",
-        "artikel": "das",
+        "article": "das",
         "word": "Vertrauen",
         "rule": "",
         "type": "noun",
@@ -144,11 +144,11 @@
         "id": "noun_gefuehle_B1_12"
     },
     {
-        "german": "die Enttäuschung",
+        "german": "Enttäuschung",
         "english": "disappointment",
         "level": "B1",
         "example": "Nach dem Streit kam die Enttäuschung.",
-        "artikel": "die",
+        "article": "die",
         "word": "Enttäuschung",
         "rule": "Words ending in '-ung' are always feminine.",
         "type": "noun",
@@ -156,11 +156,11 @@
         "id": "noun_gefuehle_B1_13"
     },
     {
-        "german": "das Geheimnis",
+        "german": "Geheimnis",
         "english": "secret",
         "level": "B1",
         "example": "Sie hat ihm ein Geheimnis erzählt.",
-        "artikel": "das",
+        "article": "das",
         "word": "Geheimnis",
         "rule": "Words ending in '-nis' are usually neuter.",
         "type": "noun",
@@ -168,11 +168,11 @@
         "id": "noun_gefuehle_B1_14"
     },
     {
-        "german": "die Nähe",
+        "german": "Nähe",
         "english": "closeness",
         "level": "B1",
         "example": "Nähe schafft Vertrauen.",
-        "artikel": "die",
+        "article": "die",
         "word": "Nähe",
         "rule": "",
         "type": "noun",
@@ -180,11 +180,11 @@
         "id": "noun_gefuehle_B1_15"
     },
     {
-        "german": "die Distanz",
+        "german": "Distanz",
         "english": "distance",
         "level": "B1",
         "example": "Zu viel Distanz kann Probleme machen.",
-        "artikel": "die",
+        "article": "die",
         "word": "Distanz",
         "rule": "Words ending in '-anz' are usually feminine.",
         "type": "noun",
@@ -192,11 +192,11 @@
         "id": "noun_gefuehle_B1_16"
     },
     {
-        "german": "die Sehnsucht",
+        "german": "Sehnsucht",
         "english": "longing",
         "level": "B1",
         "example": "Er fühlte eine große Sehnsucht nach ihr.",
-        "artikel": "die",
+        "article": "die",
         "word": "Sehnsucht",
         "rule": "",
         "type": "noun",
@@ -204,11 +204,11 @@
         "id": "noun_gefuehle_B1_17"
     },
     {
-        "german": "der Respekt",
+        "german": "Respekt",
         "english": "respect",
         "level": "B1",
         "example": "Respekt ist wichtig in jeder Beziehung.",
-        "artikel": "der",
+        "article": "der",
         "word": "Respekt",
         "rule": "",
         "type": "noun",
@@ -216,11 +216,11 @@
         "id": "noun_gefuehle_B1_18"
     },
     {
-        "german": "die Sympathie",
+        "german": "Sympathie",
         "english": "sympathy",
         "level": "B1",
         "example": "Ich habe viel Sympathie für ihn.",
-        "artikel": "die",
+        "article": "die",
         "word": "Sympathie",
         "rule": "Words ending in '-ie' are usually feminine.",
         "type": "noun",
@@ -228,11 +228,11 @@
         "id": "noun_gefuehle_B1_19"
     },
     {
-        "german": "die Empathie",
+        "german": "Empathie",
         "english": "empathy",
         "level": "B1",
         "example": "Empathie hilft beim Verstehen anderer Menschen.",
-        "artikel": "die",
+        "article": "die",
         "word": "Empathie",
         "rule": "Words ending in '-ie' are usually feminine.",
         "type": "noun",
