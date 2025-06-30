@@ -51,13 +51,24 @@ class NavigationUtils {
     return options
   }
 
+  /** Generate options for article exercise */
+  static generateArticleOptions(correctWord, allWords, optionsCount = 3) {
+    // For article exercises, we always use the three German articles
+    const articles = ['der', 'die', 'das']
+
+    // Create option objects with the correct article marked
+    const options = articles.map((article) => ({
+      article: article,
+      isCorrect: article === correctWord.article,
+    }))
+
+    // No shuffling - keep der, die, das order
+    return options
+  }
+
   /** Swap current word with another from the list */
   /** works with both learn and exercise modes thanks to shared structure and workflow */
-  static getSwappedActiveOrder(
-    activeOrder,
-    currentIndex,
-    candidates
-  ) {
+  static getSwappedActiveOrder(activeOrder, currentIndex, candidates) {
     // Guard: need at least two candidates to swap
     if (!Array.isArray(candidates) || candidates.length <= 1) {
       return activeOrder

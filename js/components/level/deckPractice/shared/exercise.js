@@ -1,5 +1,6 @@
 // /components/level/deckPractice/shared/exercise.js
 import { ExerciseType } from '../../../../constants/props.js'
+import { mountArticle } from '../exercise/article.js'
 import { mountGrammar } from '../exercise/grammar.js'
 import { mountVocabulary } from '../exercise/vocabulary.js'
 
@@ -29,6 +30,8 @@ function initElements() {
       document.getElementById('exercise-vocabulary-container'),
     grammarContainer: () =>
       document.getElementById('exercise-grammar-container'),
+    articleContainer: () =>
+      document.getElementById('exercise-article-container'),
 
     scoreText: () => document.getElementById('exercise-score-text'),
   }
@@ -78,6 +81,7 @@ function renderExerciseCard(
   // hide all body containers
   els.vocabularyContainer().style.display = 'none'
   els.grammarContainer().style.display = 'none'
+  els.articleContainer().style.display = 'none'
 
   // Route to appropriate renderer based on exercise type
   if (exerciseType === ExerciseType.VOCABULARY) {
@@ -97,6 +101,20 @@ function renderExerciseCard(
   } else if (exerciseType === ExerciseType.GRAMMAR) {
     els.grammarContainer().style.display = 'flex'
     mountGrammar(
+      {
+        streakTarget,
+        currentWord: word,
+        options,
+        currentIndex,
+        lastIndex,
+        allWords,
+        score,
+      },
+      onAnswerCallback
+    )
+  } else if (exerciseType === ExerciseType.ARTICLE) {
+    els.articleContainer().style.display = 'flex'
+    mountArticle(
       {
         streakTarget,
         currentWord: word,

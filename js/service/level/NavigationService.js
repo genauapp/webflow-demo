@@ -544,6 +544,12 @@ class NavigationService {
         allWords,
         optionsCount
       )
+    } else if (exerciseType === ExerciseType.ARTICLE) {
+      return NavigationUtils.generateArticleOptions(
+        correctWord,
+        allWords,
+        optionsCount
+      )
     }
   }
 
