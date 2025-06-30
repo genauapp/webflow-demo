@@ -5,7 +5,7 @@ let els = {}
 /** Initialize elements for exercise component */
 function initElements() {
   els = {
-    wordText: () => document.getElementById('exercise-word-card-text'),
+    wordText: () => document.getElementById('exercise-vocabulary-word-text'),
 
     // Options
     optionsContainer: () =>

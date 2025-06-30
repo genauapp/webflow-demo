@@ -24,6 +24,12 @@ function initElements() {
     progressBarContainer: () =>
       document.getElementById('exercise-streak-progress-bar-container'),
 
+    // Card bodies according to word type
+    vocabularyContainer: () =>
+      document.getElementById('exercise-vocabulary-container'),
+    grammarContainer: () =>
+      document.getElementById('exercise-grammar-container'),
+
     scoreText: () => document.getElementById('exercise-score-text'),
   }
 }
@@ -41,7 +47,7 @@ function renderStreakProgression(word, streakTarget) {
   }
 }
 
-/** UPDATED: Main render function with exercise type routing */
+/** Main render function with exercise type routing */
 function renderExerciseCard(
   {
     exerciseType,
@@ -69,9 +75,13 @@ function renderExerciseCard(
     els.wordType().textContent = word.type || ''
   }
 
+  // hide all body containers
+  els.vocabularyContainer().style.display = 'none'
+  els.grammarContainer().style.display = 'none'
+
   // Route to appropriate renderer based on exercise type
   if (exerciseType === ExerciseType.VOCABULARY) {
-    // Default to vocabulary exercise
+    els.vocabularyContainer().style.display = 'flex'
     mountVocabulary(
       {
         streakTarget,
@@ -85,6 +95,7 @@ function renderExerciseCard(
       onAnswerCallback
     )
   } else if (exerciseType === ExerciseType.GRAMMAR) {
+    els.grammarContainer().style.display = 'flex'
     mountGrammar(
       {
         streakTarget,
