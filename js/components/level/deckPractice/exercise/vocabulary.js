@@ -75,6 +75,7 @@ function showVocabularyFeedback(isCorrect, correctWord, selectedWord) {
   if (!feedbackContainer) return
 
   feedbackContainer.style.display = 'block'
+  feedbackContainer.classList.remove('feedback-correct', 'feedback-incorrect')
 
   if (feedbackContainer && feedbackText) {
     feedbackContainer.classList.add(
