@@ -46,6 +46,11 @@ export const ExerciseTypeSettingsMap = Object.freeze({
       "Grammar fill in the blank 'example' element in the exercise. 'german' properties of other words in the list are selected as 'wrong' answers",
     optionsCount: 3,
   },
+  [ExerciseType.ARTICLE]: {
+    description:
+      "'die'/'der'/'das' for nouns in the exercise; one is correct, others are wrong. other articles that are not equal to word's 'article' property are selected as 'wrong' answers",
+    optionsCount: 3,
+  },
 })
 
 export const NounArticleColorMap = {
