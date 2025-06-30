@@ -51,11 +51,11 @@ function renderArticleOptions(options, correctWord, onAnswerCallback) {
       // If correct, prepend article to word text with color
       if (isCorrect && els.wordText()) {
         const wordEl = els.wordText()
-        const currentText = wordEl.textContent
+        wordEl.innerText = `${correctWord.article} ${currentText}`
         const articleColor =
           NounArticleColorMap[correctWord.article] ||
           NounArticleColorMap.default
-        wordEl.innerHTML = `<span style="color: ${articleColor}; font-weight: bold;">${correctWord.article}</span> ${currentText}`
+        wordEl.style.color = articleColor
       }
 
       // disable all buttons
