@@ -51,11 +51,11 @@ function renderArticleOptions(options, correctWord, onAnswerCallback) {
       // If correct, prepend article to word text with color
       if (isCorrect && els.wordText()) {
         const wordEl = els.wordText()
-        wordEl.innerText = `${correctWord.article} ${currentText}`
-        const articleColor =
-          NounArticleColorMap[correctWord.article] ||
-          NounArticleColorMap.default
-        wordEl.style.color = articleColor
+        wordEl.textContent = `${correctWord.article} ${StringUtils.capitalize(
+          correctWord.german
+        )}`
+        wordEl.style.color =
+          NounArticleColorMap[word.article] || NounArticleColorMap['default']
       }
 
       // disable all buttons
@@ -128,7 +128,7 @@ function renderArticle(
 
   // Update question and word
   if (els.wordText()) {
-    els.wordText().textContent = word.german || word.text || ''
+    els.wordText().textContent = `___ ${StringUtils.capitalize(word.german)}`
   }
 
   renderArticleOptions(options, word, onAnswerCallback)
