@@ -76,17 +76,16 @@ function showVocabularyFeedback(isCorrect, correctWord, selectedWord) {
 
   feedbackContainer.style.display = 'block'
 
-  if (feedbackText) {
-    feedbackText.textContent = isCorrect ? 'Correct!' : 'Incorrect!'
-    feedbackText.className = isCorrect
-      ? 'feedback-correct'
-      : 'feedback-incorrect'
+  if (feedbackContainer && feedbackText) {
+    feedbackContainer.classList.add(
+      isCorrect ? 'feedback-correct' : 'feedback-incorrect'
+    )
+    feedbackText.textContent = isCorrect
+      ? 'Correct! 🎉'
+      : `No worries! Let's try again 💪`
   }
-
   if (correctAnswerEl && !isCorrect) {
-    correctAnswerEl.textContent = `Correct answer: ${
-      correctWord.definition || correctWord.meaning || ''
-    }`
+    correctAnswerEl.textContent = `Correct answer: ${correctWord.english || ''}`
     correctAnswerEl.style.display = 'block'
   } else if (correctAnswerEl) {
     correctAnswerEl.style.display = 'none'
