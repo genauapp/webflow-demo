@@ -627,9 +627,10 @@ class NavigationService {
         exerciseType: session.exerciseType,
         streakTarget: session.streakTarget,
         currentWord: currentWord,
-        options: ListUtils.shuffleArray(
-          exerciseProgressionState.currentOptions
-        ), // for shuffling options visually
+        options:
+          session.exerciseType === ExerciseType.ARTICLE
+            ? exerciseProgressionState.currentOptions // don't shuffle article options
+            : ListUtils.shuffleArray(exerciseProgressionState.currentOptions), // for shuffling options visually
         currentIndex: exerciseProgressionState.currentIndex + 1, // visual index starts from 1
         lastIndex: exerciseProgressionState.lastIndex + 1, // visual index ends at n + 1
         allWords: session.originalItems,

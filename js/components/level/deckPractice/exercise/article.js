@@ -56,7 +56,8 @@ function renderArticleOptions(options, correctWord, onAnswerCallback) {
           correctWord.german
         )}`
         wordEl.style.color =
-          NounArticleColorMap[word.article] || NounArticleColorMap['default']
+          NounArticleColorMap[correctWord.article] ||
+          NounArticleColorMap['default']
       }
 
       // disable all buttons
