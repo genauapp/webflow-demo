@@ -22,7 +22,8 @@ let state = {}
 function initElements() {
   els = {
     container: () => document.getElementById('deck-practice-container'),
-    // loadingContainer: () => document.getElementById("tbd"),
+    loadingContainer: () =>
+      document.getElementById('deck-practice-loading-container'),
     // errorContainer: () => document.getElementById("tbd"),
     // emptyContainer: () => document.getElementById("tbd"),
 
@@ -72,7 +73,7 @@ function resetState() {
 /** Show/hide according to state flags */
 function render() {
   if (state.loading) {
-    // els.loadingContainer().style.display = 'flex'
+    els.loadingContainer().style.display = 'flex'
     // els.errorContainer().style.display = 'none'
     // els.emptyContainer().style.display = 'none'
     els.learnContainer().style.display = 'none'
@@ -81,7 +82,7 @@ function render() {
     return
   }
   if (state.error) {
-    // els.loadingContainer().style.display = 'none'
+    els.loadingContainer().style.display = 'none'
     // els.errorContainer().style.display = 'flex'
     // els.emptyContainer().style.display = 'none'
     els.learnContainer().style.display = 'none'
@@ -89,14 +90,14 @@ function render() {
     return
   }
   if (state.words.length === 0) {
-    // els.loadingContainer().style.display = 'none'
+    els.loadingContainer().style.display = 'none'
     // els.errorContainer().style.display = 'none'
     // els.emptyContainer().style.display = 'flex'
     els.learnContainer().style.display = 'none'
     els.exerciseContainer().style.display = 'none'
     return
   }
-  // els.loadingContainer().style.display = 'none'
+  els.loadingContainer().style.display = 'none'
   // els.errorContainer().style.display = 'none'
   // els.emptyContainer().style.display = 'none'
   els.learnContainer().style.display = 'block'
