@@ -131,6 +131,7 @@ function renderArticle(
   // Update question and word
   if (els.wordText()) {
     els.wordText().textContent = `___ ${StringUtils.capitalize(word.german)}`
+    els.wordText().style.color = NounArticleColorMap['default']
   }
 
   renderArticleOptions(options, word, onAnswerCallback)
