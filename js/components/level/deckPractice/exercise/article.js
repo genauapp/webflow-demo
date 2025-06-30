@@ -1,5 +1,6 @@
 // /components/level/deckPractice/exercise/article.js
 import { NounArticleColorMap } from '../../../../constants/props.js'
+import StringUtils from '../../../../utils/StringUtils.js'
 
 let els = {}
 
