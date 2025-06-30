@@ -243,14 +243,20 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
         {
           deck_id: 'deck-0100',
           word_type: 'noun',
-          exercise_type: 'grammar',
+          exercise_type: 'article',
           status: 'completed',
+        },
+        {
+          deck_id: 'deck-0017',
+          word_type: 'noun',
+          exercise_type: 'article',
+          status: 'unlocked',
         },
         {
           deck_id: 'deck-0018',
           word_type: 'verb',
           exercise_type: 'vocabulary',
-          status: 'unlocked',
+          status: 'locked',
         },
         {
           deck_id: 'deck-0019',
@@ -262,12 +268,6 @@ export const PACK_SUMMARIES_BY_LEVEL = Object.freeze({
           deck_id: 'deck-0020',
           word_type: 'adverb',
           exercise_type: 'vocabulary',
-          status: 'locked',
-        },
-        {
-          deck_id: 'deck-0017',
-          word_type: 'noun',
-          exercise_type: 'grammar',
           status: 'locked',
         },
       ],
