@@ -32,11 +32,11 @@ import showExerciseWord from '../utils/home/ShowExerciseWord.js'
 import checkNounAnswer from '../utils/home/checkNounAnswer.js'
 import showLearnWord from '../utils/home/showLearnWord.js'
 import {
-  organizeSelectedDeckImage,
+  organizeSelectedPackImage,
   showSelectCategoryMessage,
   hideSelectCategoryMessage,
   isRegularLevel,
-  loadDeckPropsOnLevelPage,
+  loadPackPropsOnLevelPage,
 } from '../utils/home/UIUtils.js'
 import LevelManager from '../utils/LevelManager.js'
 import {
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (isRegularLevel(currentLevel)) {
     // Load current category from localStorage
     let currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
-    loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel)
+    loadPackPropsOnLevelPage(packSummariesOfCurrentLevel)
     // If current category is not in the list or is null, undefined or empty, show select category message
     if (
       !LevelManager.checkIfCategoryIsInCategories(currentCategory) ||
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
     if (LevelManager.checkIfCategoryIsInCategories(currentCategory)) {
       hideSelectCategoryMessage()
-      organizeSelectedDeckImage()
+      organizeSelectedPackImage()
       // hide old learn/exercise elements
       document.getElementById('content-container').style.display = 'none'
 

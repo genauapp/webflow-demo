@@ -117,7 +117,7 @@ export function isRegularLevel(level) {
   )
 }
 
-export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
+export function loadPackPropsOnLevelPage(packSummariesOfCurrentLevel) {
   // Regular Pack Elements
   const regularPackSummaryGrid = document.getElementById(
     'regular-pack-summary-container-grid'
@@ -225,7 +225,7 @@ export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
       const selectedCategory = elem.getAttribute('data-option')
       //save category name to localStorage
       LocalStorageManager.save(CURRENT_CATEGORY_KEY, selectedCategory)
-      organizeSelectedDeckImage()
+      organizeSelectedPackImage()
       hideSelectCategoryMessage()
       // hide old learn/exercise
       document.getElementById('content-container').style.display = 'none'
@@ -467,7 +467,7 @@ export function hideSelectCategoryMessage() {
 
 // Remove border from all deck images and add border to the selected deck image
 // Remove selected class from all deck images and add selected class to the selected deck image
-export function organizeSelectedDeckImage() {
+export function organizeSelectedPackImage() {
   const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
   const deckimgs = document.querySelectorAll('.deck-img')
   deckimgs.forEach((deckimg) => {
