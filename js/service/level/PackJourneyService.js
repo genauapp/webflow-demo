@@ -4,7 +4,7 @@ import { deckProgressService } from './DeckProgressService.js'
 
 class PackJourneyService {
   constructor() {
-    this.journeys = new Map()
+    this.journeys = new Map() // packId → { state, callbacks }
   }
 
   createSession(packSummary, callbacks) {
@@ -41,7 +41,11 @@ class PackJourneyService {
       deckSummaries,
     }
 
-    this.journeys.set(packSummary.id, { state, callbacks })
+    this.journeys.set(state.pack.id, {
+      state,
+      callbacks,
+    })
+    this._notifyUpdate(state.pack.id)
     return state
   }
 
@@ -59,6 +63,11 @@ class PackJourneyService {
     }
   }
 
+  getJourneyState(packId) {
+    const journey = this.journeys.get(packId)
+    return journey?.state
+  }
+
   completeStage(packId, deckId, results) {
     const journey = this.journeys.get(packId)
     if (!journey) return
@@ -74,11 +83,15 @@ class PackJourneyService {
     this.applyProgression(journey.state.deckSummaries)
 
     // Notify UI
+    this._notifyUpdate(packId)
+    return journey.state
+  }
+
+  _notifyUpdate(packId) {
+    const journey = this.journeys.get(packId)
     if (journey.callbacks.onUpdate) {
       journey.callbacks.onUpdate(journey.state)
     }
-
-    return journey.state
   }
 }
 
