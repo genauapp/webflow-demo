@@ -16,8 +16,10 @@ class PackJourneyService {
       status: deck.status,
     }))
 
-    // Apply saved progress
+    // Apply saved progress with level and pack scope
     const savedStatuses = deckProgressService.getDeckStatuses(
+      packSummary.level, // Level
+      packSummary.id, // Pack ID
       deckSummaries.map((d) => d.id)
     )
 
@@ -49,6 +51,11 @@ class PackJourneyService {
     return state
   }
 
+  getJourneyState(packId) {
+    const journey = this.journeys.get(packId)
+    return journey?.state
+  }
+
   applyProgression(decks) {
     // Ensure first deck is unlocked
     if (decks.length > 0 && decks[0].status === DeckStatus.LOCKED) {
@@ -63,11 +70,6 @@ class PackJourneyService {
     }
   }
 
-  getJourneyState(packId) {
-    const journey = this.journeys.get(packId)
-    return journey?.state
-  }
-
   completeStage(packId, deckId, results) {
     const journey = this.journeys.get(packId)
     if (!journey) return
@@ -77,7 +79,14 @@ class PackJourneyService {
     if (!deck) return
 
     deck.status = DeckStatus.COMPLETED
-    deckProgressService.completeDeck(deckId, results)
+
+    // Save with level and pack scope
+    deckProgressService.completeDeck(
+      journey.state.pack.level, // Level
+      packId, // Pack ID
+      deckId, // Deck ID
+      results
+    )
 
     // Unlock next deck
     this.applyProgression(journey.state.deckSummaries)
