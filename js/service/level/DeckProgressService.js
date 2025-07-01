@@ -1,3 +1,6 @@
+import { DeckStatus } from '../../constants/props.js'
+import LocalStorageManager from '../../utils/LocalStorageManager.js'
+
 class DeckProgressService {
   constructor() {
     this.STORAGE_KEY = 'deck_progress_data'
