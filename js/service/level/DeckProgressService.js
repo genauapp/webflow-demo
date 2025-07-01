@@ -15,7 +15,7 @@ class DeckProgressService {
   // Save all progress data
   saveProgressData(data) {
     try {
-      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(data))
+      LocalStorageManager.save(this.STORAGE_KEY, data)
       return true
     } catch (error) {
       console.error('Progress data save error:', error)
@@ -54,7 +54,7 @@ class DeckProgressService {
       await apiService.completeDeck(deckId, progressData[deckId].results)
     }
 
-    localStorage.removeItem(this.STORAGE_KEY)
+    LocalStorageManager.remove(this.STORAGE_KEY)
   }
 }
 
