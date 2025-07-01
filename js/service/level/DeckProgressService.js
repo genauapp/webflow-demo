@@ -8,13 +8,8 @@ class DeckProgressService {
 
   // Get all progress data
   getProgressData() {
-    try {
-      const data = LocalStorageManager.load(this.STORAGE_KEY)
-      return data ? JSON.parse(data) : {}
-    } catch (error) {
-      console.error('Progress data parse error:', error)
-      return {}
-    }
+    const data = LocalStorageManager.load(this.STORAGE_KEY, {})
+    return data
   }
 
   // Save all progress data
