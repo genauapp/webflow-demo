@@ -55,14 +55,8 @@ function handleStageSelection(stageId) {
   const journeyState = packJourneyService.getJourneyState(currentPackId)
 
   mountDeckPracticeForStage(journeyState, stageId, (results) => {
-    // Stage completed callback
-    const updatedJourney = packJourneyService.completeStage(
-      currentPackId,
-      stageId
-    )
-
-    // // Send analytics
-    // protectedApiService.logStageCompletion(currentPackId, stageId, results)
+    // Pass results to completion handler
+    packJourneyService.completeStage(currentPackId, stageId, results)
 
     // // Return to journey view
     els.journeyMapCard().style.display = 'flex'

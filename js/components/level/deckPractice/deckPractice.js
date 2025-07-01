@@ -247,11 +247,7 @@ function initializeNavigationService(onJourneyStageCompleted) {
         onJourneyStageCompleted &&
         navigationService.isExerciseCompleted(state.sessionId)
       ) {
-        onJourneyStageCompleted((stageId) => ({
-          stageId,
-          words: state.words,
-          results: resultsData,
-        }))
+        onJourneyStageCompleted(resultsData)
       }
     },
   }
