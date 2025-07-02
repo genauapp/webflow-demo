@@ -154,13 +154,13 @@ export function loadPackPropsOnLevelPage(packSummariesOfCurrentLevel) {
     // img.style.width = '100%'
     // img.style.height = '100%'
     // img.style.maxWidth = '100%'
-    img.id = `deck-${i}`
+    img.id = `pack-${i}`
     img.dataset.option = packSummary.category
-    img.classList.add('deck-img') //, 'image-19')
+    img.classList.add('pack-img') //, 'image-19')
 
     // <h1> elementini oluştur
     const h1 = document.createElement('h1')
-    h1.id = `deck-title-${i}`
+    h1.id = `pack-title-${i}`
     h1.classList.add('heading-42')
     h1.textContent = packSummary.name_eng
     // h1.style.fontFamily = 'Lato, sans-serif'
@@ -214,7 +214,7 @@ export function loadPackPropsOnLevelPage(packSummariesOfCurrentLevel) {
   })
 
   // Category click handler
-  document.querySelectorAll('.deck-img').forEach((elem) => {
+  document.querySelectorAll('.pack-img').forEach((elem) => {
     elem.addEventListener('click', async function (event) {
       event.preventDefault()
 
@@ -469,16 +469,16 @@ export function hideSelectCategoryMessage() {
 // Remove selected class from all deck images and add selected class to the selected deck image
 export function organizeSelectedPackImage() {
   const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
-  const deckimgs = document.querySelectorAll('.deck-img')
+  const deckimgs = document.querySelectorAll('.pack-img')
   deckimgs.forEach((deckimg) => {
-    deckimg.classList.remove('selected-deck-img')
+    deckimg.classList.remove('selected-pack-img')
     // deckimg.style.border = 'none'
     // deckimg.style.borderRadius = ''
   })
   const selectedDeckImg = [...deckimgs].find(
     (deckimg) => deckimg.dataset.option === category
   )
-  selectedDeckImg.classList.add('selected-deck-img')
+  selectedDeckImg.classList.add('selected-pack-img')
   // selectedDeckImg.style.border = '2px solid black'
   // selectedDeckImg.style.borderRadius = '16px'
 }
