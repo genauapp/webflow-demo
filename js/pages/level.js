@@ -93,9 +93,9 @@ function loadPackPropsOnLevelPage(packSummariesOfCurrentLevel) {
     const img = document.createElement('img')
     img.src = packSummary.img_url
     img.loading = 'lazy'
-    img.id = `deck-${i}`
+    img.id = `pack-${i}`
     img.dataset.option = packSummary.id
-    img.classList.add('deck-img') //, 'image-19')
+    img.classList.add('pack-img') //, 'image-19')
 
     // add event listener
     img.addEventListener('click', (event) =>
@@ -104,7 +104,7 @@ function loadPackPropsOnLevelPage(packSummariesOfCurrentLevel) {
 
     // create <h1> element
     const h1 = document.createElement('h1')
-    h1.id = `deck-title-${i}`
+    h1.id = `pack-title-${i}`
     h1.classList.add('heading-42')
     h1.textContent = packSummary.name_eng
 
@@ -178,14 +178,14 @@ function hideSelectCategoryMessage() {
 // Remove selected class from all deck images and add selected class to the selected deck image
 function updatePackAvatarImages(selectedPackId) {
   // const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
-  const packAvatarImages = document.querySelectorAll('.deck-img')
+  const packAvatarImages = document.querySelectorAll('.pack-img')
   packAvatarImages.forEach((avatarImage) => {
-    avatarImage.classList.remove('selected-deck-img')
+    avatarImage.classList.remove('selected-pack-img')
   })
   const selectedAvatarImage = [...packAvatarImages].find(
     (avatarImage) => avatarImage.dataset.option === selectedPackId
   )
-  selectedAvatarImage.classList.add('selected-deck-img')
+  selectedAvatarImage.classList.add('selected-pack-img')
 }
 
 // Webflow Dropdown Config
