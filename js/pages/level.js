@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Load current category from localStorage
   const selectedPackSummary = LocalStorageManager.load(CURRENT_PACK_KEY)
   loadPackPropsOnLevelPage(packSummariesOfCurrentLevel)
-  // If current category is not in the list or is null, undefined or empty, show select category message
-  if (!selectedPackSummary) {
+  // If current pack is undefined or belongs on another level, show select pack message
+  if (!selectedPackSummary || selectedPackSummary.level !== currentLevel) {
     showSelectCategoryMessage()
     return
   }
