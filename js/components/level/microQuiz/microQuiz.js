@@ -2,7 +2,7 @@
 import {
   mountDeckPractice,
   unmountDeckPractice,
-} from '../deckPractice/deckPractice'
+} from '../deckPractice/deckPractice.js'
 
 export function mountMicroQuiz(packSummary) {
   // Implementation similar to mountPackJourney but for micro-quiz
