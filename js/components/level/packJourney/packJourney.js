@@ -100,7 +100,7 @@ export function mountPackJourney(packSummary) {
 
 export function unmountPackJourney() {
   // Hide root
-  els.container().style.display = 'none'
+  if (els.container) els.container().style.display = 'none'
 
   unmountJourneyMapCardBody()
   resetElements()
