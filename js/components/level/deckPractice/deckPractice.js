@@ -105,7 +105,7 @@ function render() {
 
 /** Update tab button states based on navigation service */
 function updateTabStates(sessionState) {
-  const activeClasses = ['active', 'w--current']
+  const activeClasses = ['active', 'w--current', 'selected-tab']
   const learnTabEl = els.learnTab()
   const exerciseTabEl = els.exerciseTab()
 
