@@ -33,11 +33,16 @@ document.addEventListener('DOMContentLoaded', async () => {
   const label = 'Level: ' + `${currentLevel}`.toUpperCase()
   document.getElementById('pack-level-header').innerText = label
 
-  // Load current category from localStorage
-  const selectedPackSummary = LocalStorageManager.load(CURRENT_PACK_KEY)
+  // Load current category from localStorage, set it to null if not found
+  const selectedPackSummary = LocalStorageManager.load(CURRENT_PACK_KEY, null)
   loadPackPropsOnLevelPage(packSummariesOfCurrentLevel)
-  // If current pack is undefined or belongs on another level, show select pack message
-  if (!selectedPackSummary || selectedPackSummary.level !== currentLevel) {
+  // If current pack is null or belongs on another level, show select pack message
+  if (
+    selectedPackSummary === null ||
+    selectedPackSummary.level !== currentLevel
+  ) {
+    // clear selection
+    LocalStorageManager.save(CURRENT_PACK_KEY, null)
     showSelectCategoryMessage()
     return
   }
