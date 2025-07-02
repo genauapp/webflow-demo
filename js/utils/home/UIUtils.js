@@ -9,7 +9,7 @@ import {
   WORD_LIST_EXERCISE_KEY,
 } from '../../constants/storageKeys.js'
 import { PackType } from '../../constants/props.js'
-import { loadAndShowWords } from '../../pages/level.js'
+// import { loadAndShowWords } from '../../pages/level-old.js'
 import LevelManager from '../LevelManager.js'
 import {
   mountDeckPractice,
@@ -319,7 +319,7 @@ export async function refreshProgress() {
   successScreen.style.display = 'none'
   contentContainer.style.display = 'flex'
 
-  await loadAndShowWords()
+  // await loadAndShowWords()
 }
 
 export function hideFinishScreen() {
