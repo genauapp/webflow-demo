@@ -63,9 +63,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 //  initialize pack avatar images
 // // attach click handlers to them
 function loadPackPropsOnLevelPage(packSummariesOfCurrentLevel) {
-  // Regular Pack Elements
+  // Journey Pack Elements
   const regularPackSummaryGrid = document.getElementById(
-    'regular-pack-summary-container-grid'
+    'journey-pack-summary-container-grid'
   )
 
   // Micro Quiz Pack Elements
