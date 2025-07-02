@@ -100,7 +100,7 @@ function render() {
   els.loadingContainer().style.display = 'none'
   // els.errorContainer().style.display = 'none'
   // els.emptyContainer().style.display = 'none'
-  els.learnContainer().style.display = 'block'
+  els.learnContainer().style.display = 'flex'
 }
 
 /** Update tab button states based on navigation service */
@@ -115,7 +115,7 @@ function updateTabStates(sessionState) {
   if (sessionState.mode === NavigationMode.LEARN) {
     learnTabEl.classList.add(...activeClasses)
 
-    els.learnContainer().style.display = 'block'
+    els.learnContainer().style.display = 'flex'
     els.exerciseContainer().style.display = 'none'
 
     // Show completed container if learn is completed
@@ -129,7 +129,7 @@ function updateTabStates(sessionState) {
   } else if (sessionState.mode === NavigationMode.EXERCISE) {
     exerciseTabEl.classList.add(...activeClasses)
     els.learnContainer().style.display = 'none'
-    els.exerciseContainer().style.display = 'block'
+    els.exerciseContainer().style.display = 'flex'
 
     // Check if exercise streak settings are set
     if (sessionState.streakTarget === 0) {
@@ -158,12 +158,12 @@ function updateNavigationButtons(sessionState) {
 
   els.learnRepeat().disabled = isLearnCompleted
   els.learnNext().disabled = isLearnCompleted
-  els.learnReset().style.display = isLearnCompleted ? 'block' : 'none'
+  els.learnReset().style.display = isLearnCompleted ? 'flex' : 'none'
 
   // Exercise buttons
   const isExerciseCompleted = progression[NavigationMode.EXERCISE].isCompleted
   // option buttons are dynamically generated via service to sub-component
-  els.exerciseReset().style.display = isExerciseCompleted ? 'block' : 'none'
+  els.exerciseReset().style.display = isExerciseCompleted ? 'flex' : 'none'
 }
 
 /** Enhance words with required properties */
