@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('content-container').style.display = 'none'
 
   if (selectedPackSummary.type === PackType.MICRO_QUIZ) {
-    mountMicroQuiz(firstPackSummary)
+    mountMicroQuiz(selectedPackSummary)
   } else if (selectedPackSummary.type === PackType.JOURNEY) {
     mountPackJourney(selectedPackSummary)
     return
