@@ -141,10 +141,10 @@ function avatarImageClickHandler(event, selectedPack) {
 
   if (selectedPack.type === PackType.JOURNEY) {
     unmountMicroQuiz()
-    mountPackJourney(packSummariesOfCurrentLevel[0])
+    mountPackJourney(selectedPack)
   } else if (selectedPack.type === PackType.MICRO_QUIZ) {
     unmountPackJourney()
-    mountMicroQuiz(firstPackSummary)
+    mountMicroQuiz(selectedPack)
   }
 
   // focus user Learn/Exercise area
