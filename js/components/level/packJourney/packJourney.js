@@ -50,7 +50,8 @@ function updateJourney(journeyState) {
 }
 
 function handleStageSelection(stageId) {
-  els.journeyMapCard().style.display = 'none'
+  // els.journeyMapCard().style.display = 'none'
+  els.container().style.display = 'none'
 
   const journeyState = packJourneyService.getJourneyState(currentPackId)
 
@@ -59,7 +60,8 @@ function handleStageSelection(stageId) {
     packJourneyService.completeStage(currentPackId, stageId, results)
 
     // // Return to journey view
-    els.journeyMapCard().style.display = 'flex'
+    // els.journeyMapCard().style.display = 'flex'
+    els.container().style.display = 'flex'
   })
 }
 
