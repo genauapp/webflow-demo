@@ -328,7 +328,7 @@ export async function mountDeckPractice(
   initEventListeners()
 
   // Show root
-  els.container().style.display = 'block'
+  els.container().style.display = 'flex'
 
   // Fetch words, initialize navigation service and render
   await fetchWords(
