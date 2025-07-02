@@ -53,10 +53,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('content-container').style.display = 'none'
 
   if (selectedPackSummary.type === PackType.MICRO_QUIZ) {
-    unmountPackJourney()
     mountMicroQuiz(firstPackSummary)
   } else if (selectedPackSummary.type === PackType.JOURNEY) {
-    unmountMicroQuiz()
     mountPackJourney(selectedPackSummary)
     return
   }
@@ -144,11 +142,13 @@ function avatarImageClickHandler(event, selectedPack) {
   // hide old learn/exercise
   document.getElementById('content-container').style.display = 'none'
 
+  // unmount previously opened components
+  unmountPackJourney()
+  unmountMicroQuiz()
+
   if (selectedPack.type === PackType.JOURNEY) {
-    unmountMicroQuiz()
     mountPackJourney(selectedPack)
   } else if (selectedPack.type === PackType.MICRO_QUIZ) {
-    unmountPackJourney()
     mountMicroQuiz(selectedPack)
   }
 
