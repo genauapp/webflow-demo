@@ -42,6 +42,10 @@ function renderStreakProgression(word, streakTarget) {
   const container = els.progressBarContainer()
   if (!container) return
   container.innerHTML = ''
+
+  // don't render streak progression if streak target is 1
+  if (streakTarget === 1) return
+
   for (let i = 1; i <= streakTarget; i++) {
     const bar = document.createElement('div')
     bar.className = 'streak-progression-bar'
