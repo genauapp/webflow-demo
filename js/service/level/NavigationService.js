@@ -571,13 +571,16 @@ class NavigationService {
    * Provides real-time feedback for correct/incorrect streak changes.
    */
   _notifyStreakUpdate(session, word) {
-    if (session.callbacks.onStreakUpdate) {
-      session.callbacks.onStreakUpdate({
-        word: word,
-        streak: word.streak,
-        streakTarget: session.streakTarget,
-      })
-    }
+    if (!session.callbacks.onStreakUpdate) return
+
+    // don't notify UI if streak target is 1
+    if (session.streakTarget === 1) return
+
+    session.callbacks.onStreakUpdate({
+      word: word,
+      streak: word.streak,
+      streakTarget: session.streakTarget,
+    })
   }
 
   /**
