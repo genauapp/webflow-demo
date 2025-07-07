@@ -15,9 +15,7 @@ function initElements() {
 }
 
 function handleConfirm() {
-  if (typeof onConfirmCallback === 'function') {
-    onConfirmCallback()
-  }
+  onConfirmCallback()
   // els.modal.style.display = 'none'
 }
 
@@ -37,7 +35,9 @@ export function mountReturnToJourneyButton(packName, onConfirm) {
   els.label.textContent = `Return to ${packName}`
 
   // Attach event handlers
-  els.button.addEventListener('click', handleButtonClick)
+  els.button.addEventListener('click', handleConfirm)
+
+  // els.button.addEventListener('click', handleButtonClick)
   // els.confirmBtn.addEventListener('click', handleConfirm)
   // els.cancelBtn.addEventListener('click', handleCancel)
 
@@ -51,7 +51,9 @@ export function unmountReturnToJourneyButton() {
   // els.modal.style.display = 'none'
 
   // Clean up event listeners
-  if (els.button) els.button.removeEventListener('click', handleButtonClick)
+  if (els.button) els.button.removeEventListener('click', handleConfirm)
+
+  // if (els.button) els.button.removeEventListener('click', handleButtonClick)
   // els.confirmBtn.removeEventListener('click', handleConfirm)
   // els.cancelBtn.removeEventListener('click', handleCancel)
 
