@@ -65,14 +65,15 @@ function handleStageSelection(stageId) {
 
     // // Return to journey view
     // els.journeyMapCard().style.display = 'flex'
-    els.container().style.display = 'flex'
+    // els.container().style.display = 'flex'
   })
 }
 
 function mountDeckPracticeForStage(journeyState, stageId, onStageCompleted) {
+  unmountDeckPractice()
+
   // Mount back button with navigation handler
   mountReturnToJourneyButton(journeyState.pack.name.german, () => {
-    unmountDeckPractice()
     els.container().style.display = 'flex'
   })
 

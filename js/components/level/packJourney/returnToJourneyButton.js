@@ -47,11 +47,11 @@ export function mountReturnToJourneyButton(packName, onConfirm) {
 
 export function unmountReturnToJourneyButton() {
   // Hide button and modal
-  els.container.style.display = 'none'
+  if (els.container) els.container.style.display = 'none'
   // els.modal.style.display = 'none'
 
   // Clean up event listeners
-  els.button.removeEventListener('click', handleButtonClick)
+  if (els.button) els.button.removeEventListener('click', handleButtonClick)
   // els.confirmBtn.removeEventListener('click', handleConfirm)
   // els.cancelBtn.removeEventListener('click', handleCancel)
 
