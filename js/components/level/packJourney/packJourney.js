@@ -10,6 +10,10 @@ import {
   unmountDeckPractice,
 } from '../deckPractice/deckPractice.js'
 import { protectedApiService } from '../../../service/apiService.js'
+import {
+  mountBackToJourneyButton,
+  unmountBackToJourneyButton,
+} from './backToJourneyButton.js'
 
 let currentPackId = null
 
@@ -66,7 +70,11 @@ function handleStageSelection(stageId) {
 }
 
 function mountDeckPracticeForStage(journeyState, stageId, onStageCompleted) {
-  unmountDeckPractice()
+  // Mount back button with navigation handler
+  mountBackToJourneyButton(journeyState.pack.german, () => {
+    unmountDeckPractice()
+    els.container().style.display = 'flex'
+  })
 
   const currentDeckSummary = journeyState.deckSummaries.find(
     (stage) => stage.id === stageId
@@ -105,6 +113,7 @@ export function unmountPackJourney() {
   if (els.container) els.container().style.display = 'none'
 
   unmountJourneyMapCardBody()
+  unmountBackToJourneyButton()
   resetElements()
 
   currentPackId = null
