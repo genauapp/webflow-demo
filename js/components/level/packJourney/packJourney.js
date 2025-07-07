@@ -73,7 +73,7 @@ function mountDeckPracticeForStage(journeyState, stageId, onStageCompleted) {
   unmountDeckPractice()
 
   // Mount back button with navigation handler
-  mountReturnToJourneyButton(journeyState.pack.name.german, () => {
+  mountReturnToJourneyButton(journeyState.pack.name.english, () => {
     els.container().style.display = 'flex'
   })
 
