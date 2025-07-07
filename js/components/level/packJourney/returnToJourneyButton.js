@@ -1,11 +1,14 @@
-// components/level/packJourney/backToJourneyButton.js
+// components/level/packJourney/returnToJourneyButton.js
 let els = {}
 let onConfirmCallback = null
 
 function initElements() {
   els = {
-    button: document.getElementById('back-to-journey-button'),
-    modal: document.getElementById('back-confirmation-modal'),
+    container: document.getElementById('return-to-journey-button-container'),
+    button: document.getElementById('return-to-journey-button'),
+    label: document.getElementById('return-to-journey-button-label'),
+
+    modal: document.getElementById('return-confirmation-modal'),
     confirmBtn: document.getElementById('confirm-back-button'),
     cancelBtn: document.getElementById('cancel-back-button'),
   }
@@ -23,15 +26,15 @@ function handleCancel() {
 }
 
 function handleButtonClick() {
-  // els.modal.style.display = 'block'
+  // els.modal.style.display = 'flex'
 }
 
-export function mountBackToJourneyButton(packName, onConfirm) {
+export function mountReturnToJourneyButton(packName, onConfirm) {
   initElements()
   onConfirmCallback = onConfirm
 
   // Set button text
-  els.button.textContent = `Return to ${packName}`
+  els.label.textContent = `Return to ${packName}`
 
   // Attach event handlers
   els.button.addEventListener('click', handleButtonClick)
@@ -39,12 +42,12 @@ export function mountBackToJourneyButton(packName, onConfirm) {
   // els.cancelBtn.addEventListener('click', handleCancel)
 
   // Show button
-  els.button.style.display = 'block'
+  els.container.style.display = 'flex'
 }
 
-export function unmountBackToJourneyButton() {
+export function unmountReturnToJourneyButton() {
   // Hide button and modal
-  els.button.style.display = 'none'
+  els.container.style.display = 'none'
   // els.modal.style.display = 'none'
 
   // Clean up event listeners
