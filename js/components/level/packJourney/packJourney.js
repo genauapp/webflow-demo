@@ -1,7 +1,7 @@
 // packJourney.js
 import { packJourneyService } from '../../../service/level/PackJourneyService.js'
 import {
-  initJourneyMapCardBody,
+  mountJourneyMapCardBody,
   updateJourneyMap,
   unmountJourneyMapCardBody,
 } from './journeyMapCardBody.js'
@@ -46,7 +46,7 @@ function renderJourney(journeyState) {
   els.journeyMapCard().style.display = 'flex'
 
   // Initialize journey map
-  initJourneyMapCardBody(journeyState, handleStageSelection)
+  mountJourneyMapCardBody(journeyState, handleStageSelection)
 }
 
 function updateJourney(journeyState) {
@@ -70,10 +70,10 @@ function handleStageSelection(stageId) {
 }
 
 function mountDeckPracticeForStage(journeyState, stageId, onStageCompleted) {
-  unmountDeckPractice()
-
   // Mount back button with navigation handler
   mountReturnToJourneyButton(journeyState.pack.name.english, () => {
+    unmountDeckPractice()
+
     els.container().style.display = 'flex'
   })
 

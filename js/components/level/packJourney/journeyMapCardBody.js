@@ -65,7 +65,7 @@ export function updateJourneyMap(journeyState, onStageSelected) {
   })
 }
 
-export function initJourneyMapCardBody(journeyState, onStageSelected) {
+export function mountJourneyMapCardBody(journeyState, onStageSelected) {
   initElements()
   renderJourneyMap(journeyState, onStageSelected)
 }
