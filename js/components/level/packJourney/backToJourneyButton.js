@@ -15,15 +15,15 @@ function handleConfirm() {
   if (typeof onConfirmCallback === 'function') {
     onConfirmCallback()
   }
-  els.modal.style.display = 'none'
+  // els.modal.style.display = 'none'
 }
 
 function handleCancel() {
-  els.modal.style.display = 'none'
+  // els.modal.style.display = 'none'
 }
 
 function handleButtonClick() {
-  els.modal.style.display = 'block'
+  // els.modal.style.display = 'block'
 }
 
 export function mountBackToJourneyButton(packName, onConfirm) {
@@ -35,8 +35,8 @@ export function mountBackToJourneyButton(packName, onConfirm) {
 
   // Attach event handlers
   els.button.addEventListener('click', handleButtonClick)
-  els.confirmBtn.addEventListener('click', handleConfirm)
-  els.cancelBtn.addEventListener('click', handleCancel)
+  // els.confirmBtn.addEventListener('click', handleConfirm)
+  // els.cancelBtn.addEventListener('click', handleCancel)
 
   // Show button
   els.button.style.display = 'block'
@@ -45,12 +45,12 @@ export function mountBackToJourneyButton(packName, onConfirm) {
 export function unmountBackToJourneyButton() {
   // Hide button and modal
   els.button.style.display = 'none'
-  els.modal.style.display = 'none'
+  // els.modal.style.display = 'none'
 
   // Clean up event listeners
   els.button.removeEventListener('click', handleButtonClick)
-  els.confirmBtn.removeEventListener('click', handleConfirm)
-  els.cancelBtn.removeEventListener('click', handleCancel)
+  // els.confirmBtn.removeEventListener('click', handleConfirm)
+  // els.cancelBtn.removeEventListener('click', handleCancel)
 
   // Reset state
   els = {}
