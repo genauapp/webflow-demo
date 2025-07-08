@@ -18,7 +18,7 @@ function initElements() {
       //   document.getElementById('learn-verb-case-labels-container'),
       caseLabel: (verbCase) =>
         document.getElementById(`learn-verb-case-label-${verbCase}`),
-      caseDetailsContainer: (verbCase) =>
+      caseDetails: (verbCase) =>
         document.getElementById(
           `learn-verb-case-details-container-${verbCase}`
         ),
@@ -29,7 +29,7 @@ function initElements() {
 /** Close all verb case details containers */
 function closeAllVerbCaseDetails() {
   ALL_VERB_CASES.forEach((verbCase) => {
-    const container = els.verb.caseDetailsContainer(verbCase)
+    const container = els.verb.caseDetails(verbCase)
     if (container) container.style.display = 'none'
   })
 }
@@ -44,13 +44,13 @@ function attachVerbCaseHandlers() {
         // Close all details containers
         closeAllVerbCaseDetails()
         // Open the clicked case's container
-        const detailsContainer = els.verb.caseDetailsContainer(verbCase)
+        const detailsContainer = els.verb.caseDetails(verbCase)
         if (detailsContainer) detailsContainer.style.display = 'flex'
       })
     }
 
     // Cancel button click handler
-    const detailsContainer = els.verb.caseDetailsContainer(verbCase)
+    const detailsContainer = els.verb.caseDetails(verbCase)
     if (detailsContainer) {
       const cancelBtn = detailsContainer.querySelector(
         '.btn-verb-case-close-details'

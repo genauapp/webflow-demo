@@ -22,8 +22,8 @@ function initElements() {
 
     // Verb-specific elements
     verb: {
-      caseLabelsContainer: () =>
-        document.getElementById('learn-verb-case-labels-container'),
+      casesContainer: () =>
+        document.getElementById('learn-verb-cases-container'),
     },
   }
 }
@@ -41,13 +41,13 @@ function renderLearnCard({ currentWord: word, currentIndex, lastIndex }) {
 
   // clear type-specific containers
   // // verb
-  els.verb.caseLabelsContainer().style.display = 'none'
+  els.verb.casesContainer().style.display = 'none'
 
   // Route to appropriate renderer based on word type
   if (word.type === WordType.NOUN) {
     mountNoun(word)
   } else if (word.type === WordType.VERB) {
-    els.verb.caseLabelsContainer().style.display = 'flex'
+    els.verb.casesContainer().style.display = 'flex'
     mountVerb(word)
   } else if (word.type === WordType.ADJECTIVE) {
     mountAdjective(word)
