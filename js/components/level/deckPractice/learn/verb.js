@@ -20,7 +20,7 @@ function initElements() {
         document.getElementById(`learn-verb-case-label-${verbCase}`),
       caseDetails: (verbCase) =>
         document.getElementById(
-          `learn-verb-case-details-container-${verbCase}`
+          `learn-verb-case-details-${verbCase}`
         ),
     },
   }
