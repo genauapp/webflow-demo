@@ -134,6 +134,7 @@ function updateTabStates(sessionState) {
     // Check if exercise streak settings are set
     if (sessionState.streakTarget === 0) {
       els.exerciseWordCard().style.display = 'none'
+      els.exerciseResultsCard().style.display = 'none'
       els.exerciseStreakSettingsCard().style.display = 'flex'
     } else {
       els.exerciseStreakSettingsCard().style.display = 'none'
