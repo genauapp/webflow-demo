@@ -34,7 +34,8 @@ function renderAdverb(word) {
   }
 
   if (els.wordRule()) {
-    els.wordRule().textContent = word.rule || ''
+    els.wordRule().style.display = word.rule ? 'block' : 'none'
+    els.wordRule().textContent = word.rule
   }
 }
 
