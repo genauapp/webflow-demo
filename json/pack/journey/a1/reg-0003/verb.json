@@ -19,7 +19,7 @@
     "word": "haben",
     "type": "verb",
     "category": "Gesundheit",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_gesundheit_03",
@@ -30,7 +30,7 @@
     "word": "nehmen",
     "type": "verb",
     "category": "Gesundheit",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_gesundheit_04",
@@ -41,7 +41,7 @@
     "word": "bekommen",
     "type": "verb",
     "category": "Gesundheit",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_gesundheit_05",
@@ -52,7 +52,7 @@
     "word": "brauchen",
     "type": "verb",
     "category": "Gesundheit",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_gesundheit_06",
@@ -74,7 +74,7 @@
     "word": "helfen",
     "type": "verb",
     "category": "Gesundheit",
-    "cases": ["dativ"]
+    "cases": ["dative"]
   },
   {
     "id": "verb_gesundheit_08",
@@ -96,7 +96,7 @@
     "word": "warten",
     "type": "verb",
     "category": "Gesundheit",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_gesundheit_10",
@@ -118,7 +118,7 @@
     "word": "untersuchen",
     "type": "verb",
     "category": "Gesundheit",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_gesundheit_12",
@@ -129,7 +129,7 @@
     "word": "verschreiben",
     "type": "verb",
     "category": "Gesundheit",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_gesundheit_13",
@@ -162,7 +162,7 @@
     "word": "trinken",
     "type": "verb",
     "category": "Gesundheit",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_gesundheit_16",
@@ -173,7 +173,7 @@
     "word": "essen",
     "type": "verb",
     "category": "Gesundheit",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_gesundheit_17",
@@ -184,7 +184,7 @@
     "word": "rufen",
     "type": "verb",
     "category": "Gesundheit",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_gesundheit_18",
@@ -206,7 +206,7 @@
     "word": "vergessen",
     "type": "verb",
     "category": "Gesundheit",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_gesundheit_20",
@@ -217,6 +217,6 @@
     "word": "zeigen",
     "type": "verb",
     "category": "Gesundheit",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   }
 ]

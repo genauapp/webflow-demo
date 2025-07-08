@@ -19,7 +19,7 @@
     "word": "essen",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_alltag_03",
@@ -30,7 +30,7 @@
     "word": "trinken",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_alltag_04",
@@ -41,7 +41,7 @@
     "word": "lesen",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_alltag_05",
@@ -107,7 +107,7 @@
     "word": "sehen",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_alltag_11",
@@ -118,7 +118,7 @@
     "word": "hören",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_alltag_12",
@@ -129,7 +129,7 @@
     "word": "telefonieren",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["dativ"]
+    "cases": ["dative"]
   },
   {
     "id": "verb_alltag_13",
@@ -140,7 +140,7 @@
     "word": "putzen",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_alltag_14",
@@ -151,7 +151,7 @@
     "word": "kochen",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_alltag_15",
@@ -162,7 +162,7 @@
     "word": "machen",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_alltag_16",
@@ -173,7 +173,7 @@
     "word": "anrufen",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_alltag_17",
@@ -184,7 +184,7 @@
     "word": "fernsehen",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_alltag_18",
@@ -195,7 +195,7 @@
     "word": "aufmachen",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_alltag_19",
@@ -206,7 +206,7 @@
     "word": "zumachen",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_alltag_20",
@@ -217,6 +217,6 @@
     "word": "spielen",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   }
 ]

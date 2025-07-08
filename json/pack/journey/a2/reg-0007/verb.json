@@ -8,7 +8,7 @@
     "word": "anrufen",
     "type": "verb",
     "category": "Medien & Kommunikation",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_medien_A2_02",
@@ -19,7 +19,7 @@
     "word": "telefonieren",
     "type": "verb",
     "category": "Medien & Kommunikation",
-    "cases": ["dativ"]
+    "cases": ["dative"]
   },
   {
     "id": "verb_medien_A2_03",
@@ -30,7 +30,7 @@
     "word": "schreiben",
     "type": "verb",
     "category": "Medien & Kommunikation",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_medien_A2_04",
@@ -41,7 +41,7 @@
     "word": "senden",
     "type": "verb",
     "category": "Medien & Kommunikation",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_medien_A2_05",
@@ -52,7 +52,7 @@
     "word": "empfangen",
     "type": "verb",
     "category": "Medien & Kommunikation",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_medien_A2_06",
@@ -63,7 +63,7 @@
     "word": "löschen",
     "type": "verb",
     "category": "Medien & Kommunikation",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_medien_A2_07",
@@ -74,7 +74,7 @@
     "word": "speichern",
     "type": "verb",
     "category": "Medien & Kommunikation",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_medien_A2_08",
@@ -85,7 +85,7 @@
     "word": "installieren",
     "type": "verb",
     "category": "Medien & Kommunikation",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_medien_A2_09",
@@ -151,7 +151,7 @@
     "word": "informieren",
     "type": "verb",
     "category": "Medien & Kommunikation",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_medien_A2_15",
@@ -162,7 +162,7 @@
     "word": "chatten",
     "type": "verb",
     "category": "Medien & Kommunikation",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_medien_A2_16",
@@ -173,7 +173,7 @@
     "word": "posten",
     "type": "verb",
     "category": "Medien & Kommunikation",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_medien_A2_17",
@@ -184,7 +184,7 @@
     "word": "teilen",
     "type": "verb",
     "category": "Medien & Kommunikation",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_medien_A2_18",
@@ -195,7 +195,7 @@
     "word": "suchen",
     "type": "verb",
     "category": "Medien & Kommunikation",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_medien_A2_19",
@@ -206,7 +206,7 @@
     "word": "finden",
     "type": "verb",
     "category": "Medien & Kommunikation",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_medien_A2_20",
@@ -217,6 +217,6 @@
     "word": "antworten",
     "type": "verb",
     "category": "Medien & Kommunikation",
-    "cases": ["dativ"]
+    "cases": ["dative"]
   }
 ]

@@ -8,7 +8,7 @@
     "word": "ausfüllen",
     "type": "verb",
     "category": "Behoerden",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_behoerden_02",
@@ -19,7 +19,7 @@
     "word": "beantragen",
     "type": "verb",
     "category": "Behoerden",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_behoerden_03",
@@ -30,7 +30,7 @@
     "word": "unterschreiben",
     "type": "verb",
     "category": "Behoerden",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_behoerden_04",
@@ -41,7 +41,7 @@
     "word": "zeigen",
     "type": "verb",
     "category": "Behoerden",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_behoerden_05",
@@ -52,7 +52,7 @@
     "word": "abholen",
     "type": "verb",
     "category": "Behoerden",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_behoerden_06",
@@ -63,7 +63,7 @@
     "word": "einreichen",
     "type": "verb",
     "category": "Behoerden",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_behoerden_07",
@@ -74,7 +74,7 @@
     "word": "bezahlen",
     "type": "verb",
     "category": "Behoerden",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_behoerden_08",
@@ -85,7 +85,7 @@
     "word": "mitbringen",
     "type": "verb",
     "category": "Behoerden",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_behoerden_09",
@@ -129,7 +129,7 @@
     "word": "vereinbaren",
     "type": "verb",
     "category": "Behoerden",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_behoerden_13",
@@ -140,7 +140,7 @@
     "word": "vorlegen",
     "type": "verb",
     "category": "Behoerden",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_behoerden_14",
@@ -151,7 +151,7 @@
     "word": "erklären",
     "type": "verb",
     "category": "Behoerden",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_behoerden_15",
@@ -162,7 +162,7 @@
     "word": "vergessen",
     "type": "verb",
     "category": "Behoerden",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_behoerden_16",
@@ -184,7 +184,7 @@
     "word": "rufen",
     "type": "verb",
     "category": "Behoerden",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_behoerden_18",
@@ -195,7 +195,7 @@
     "word": "verlängern",
     "type": "verb",
     "category": "Behoerden",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_behoerden_19",
@@ -206,7 +206,7 @@
     "word": "prüfen",
     "type": "verb",
     "category": "Behoerden",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_behoerden_20",
@@ -217,6 +217,6 @@
     "word": "bestätigen",
     "type": "verb",
     "category": "Behoerden",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   }
 ]

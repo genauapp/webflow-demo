@@ -8,7 +8,7 @@
     "word": "programmieren",
     "type": "verb",
     "category": "Digitalisierung & Technik",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_technik_B2_02",
@@ -19,7 +19,7 @@
     "word": "installieren",
     "type": "verb",
     "category": "Digitalisierung & Technik",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_technik_B2_03",
@@ -30,7 +30,7 @@
     "word": "herunterladen",
     "type": "verb",
     "category": "Digitalisierung & Technik",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_technik_B2_04",
@@ -41,7 +41,7 @@
     "word": "hochladen",
     "type": "verb",
     "category": "Digitalisierung & Technik",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_technik_B2_05",
@@ -52,7 +52,7 @@
     "word": "entwickeln",
     "type": "verb",
     "category": "Digitalisierung & Technik",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_technik_B2_06",
@@ -63,7 +63,7 @@
     "word": "verschlüsseln",
     "type": "verb",
     "category": "Digitalisierung & Technik",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_technik_B2_07",
@@ -74,7 +74,7 @@
     "word": "entschlüsseln",
     "type": "verb",
     "category": "Digitalisierung & Technik",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_technik_B2_08",
@@ -85,7 +85,7 @@
     "word": "speichern",
     "type": "verb",
     "category": "Digitalisierung & Technik",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_technik_B2_09",
@@ -96,7 +96,7 @@
     "word": "löschen",
     "type": "verb",
     "category": "Digitalisierung & Technik",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_technik_B2_10",
@@ -107,7 +107,7 @@
     "word": "aktualisieren",
     "type": "verb",
     "category": "Digitalisierung & Technik",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_technik_B2_11",
@@ -118,7 +118,7 @@
     "word": "verbinden",
     "type": "verb",
     "category": "Digitalisierung & Technik",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_technik_B2_12",
@@ -129,7 +129,7 @@
     "word": "reagieren",
     "type": "verb",
     "category": "Digitalisierung & Technik",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_technik_B2_13",
@@ -140,7 +140,7 @@
     "word": "sich anmelden",
     "type": "verb",
     "category": "Digitalisierung & Technik",
-    "cases": ["reflexive", "akkusativ", "separable"]
+    "cases": ["reflexive", "accusative", "separable"]
   },
   {
     "id": "verb_technik_B2_14",
@@ -151,7 +151,7 @@
     "word": "sich abmelden",
     "type": "verb",
     "category": "Digitalisierung & Technik",
-    "cases": ["reflexive", "akkusativ", "separable"]
+    "cases": ["reflexive", "accusative", "separable"]
   },
   {
     "id": "verb_technik_B2_15",
@@ -162,7 +162,7 @@
     "word": "verarbeiten",
     "type": "verb",
     "category": "Digitalisierung & Technik",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_technik_B2_16",
@@ -173,7 +173,7 @@
     "word": "nutzen",
     "type": "verb",
     "category": "Digitalisierung & Technik",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_technik_B2_17",
@@ -184,7 +184,7 @@
     "word": "einrichten",
     "type": "verb",
     "category": "Digitalisierung & Technik",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_technik_B2_18",
@@ -195,7 +195,7 @@
     "word": "scannen",
     "type": "verb",
     "category": "Digitalisierung & Technik",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_technik_B2_19",
@@ -206,7 +206,7 @@
     "word": "drucken",
     "type": "verb",
     "category": "Digitalisierung & Technik",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_technik_B2_20",
@@ -217,6 +217,6 @@
     "word": "übertragen",
     "type": "verb",
     "category": "Digitalisierung & Technik",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   }
 ]

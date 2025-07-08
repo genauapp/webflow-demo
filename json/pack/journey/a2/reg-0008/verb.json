@@ -19,7 +19,7 @@
     "word": "verdienen",
     "type": "verb",
     "category": "Arbeit & Behörden",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_arbeit_A2_03",
@@ -30,7 +30,7 @@
     "word": "kündigen",
     "type": "verb",
     "category": "Arbeit & Behörden",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_arbeit_A2_04",
@@ -41,7 +41,7 @@
     "word": "einstellen",
     "type": "verb",
     "category": "Arbeit & Behörden",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_arbeit_A2_05",
@@ -52,7 +52,7 @@
     "word": "unterschreiben",
     "type": "verb",
     "category": "Arbeit & Behörden",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_arbeit_A2_06",
@@ -63,7 +63,7 @@
     "word": "beantragen",
     "type": "verb",
     "category": "Arbeit & Behörden",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_arbeit_A2_07",
@@ -74,7 +74,7 @@
     "word": "ausfüllen",
     "type": "verb",
     "category": "Arbeit & Behörden",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_arbeit_A2_08",
@@ -85,7 +85,7 @@
     "word": "vorlegen",
     "type": "verb",
     "category": "Arbeit & Behörden",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_arbeit_A2_09",
@@ -96,7 +96,7 @@
     "word": "ausdrucken",
     "type": "verb",
     "category": "Arbeit & Behörden",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_arbeit_A2_10",
@@ -107,7 +107,7 @@
     "word": "einreichen",
     "type": "verb",
     "category": "Arbeit & Behörden",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_arbeit_A2_11",
@@ -118,7 +118,7 @@
     "word": "zahlen",
     "type": "verb",
     "category": "Arbeit & Behörden",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_arbeit_A2_12",
@@ -129,7 +129,7 @@
     "word": "bekommen",
     "type": "verb",
     "category": "Arbeit & Behörden",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_arbeit_A2_13",
@@ -140,7 +140,7 @@
     "word": "prüfen",
     "type": "verb",
     "category": "Arbeit & Behörden",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_arbeit_A2_14",
@@ -151,7 +151,7 @@
     "word": "bestätigen",
     "type": "verb",
     "category": "Arbeit & Behörden",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_arbeit_A2_15",
@@ -162,7 +162,7 @@
     "word": "erklären",
     "type": "verb",
     "category": "Arbeit & Behörden",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_arbeit_A2_16",
@@ -173,7 +173,7 @@
     "word": "vereinbaren",
     "type": "verb",
     "category": "Arbeit & Behörden",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_arbeit_A2_17",
@@ -206,7 +206,7 @@
     "word": "abgeben",
     "type": "verb",
     "category": "Arbeit & Behörden",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_arbeit_A2_20",

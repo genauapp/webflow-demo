@@ -19,7 +19,7 @@
     "word": "wählen",
     "type": "verb",
     "category": "Politik & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_politik_B2_03",
@@ -41,7 +41,7 @@
     "word": "diskutieren",
     "type": "verb",
     "category": "Politik & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_politik_B2_05",
@@ -74,7 +74,7 @@
     "word": "beschließen",
     "type": "verb",
     "category": "Politik & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_politik_B2_08",
@@ -96,7 +96,7 @@
     "word": "einführen",
     "type": "verb",
     "category": "Politik & Umwelt",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_politik_B2_10",
@@ -107,7 +107,7 @@
     "word": "schützen",
     "type": "verb",
     "category": "Politik & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_politik_B2_11",
@@ -118,7 +118,7 @@
     "word": "unterzeichnen",
     "type": "verb",
     "category": "Politik & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_politik_B2_12",
@@ -129,7 +129,7 @@
     "word": "reduzieren",
     "type": "verb",
     "category": "Politik & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_politik_B2_13",
@@ -140,7 +140,7 @@
     "word": "genehmigen",
     "type": "verb",
     "category": "Politik & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_politik_B2_14",
@@ -151,7 +151,7 @@
     "word": "verbieten",
     "type": "verb",
     "category": "Politik & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_politik_B2_15",
@@ -162,7 +162,7 @@
     "word": "reagieren",
     "type": "verb",
     "category": "Politik & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_politik_B2_16",
@@ -173,7 +173,7 @@
     "word": "anregen",
     "type": "verb",
     "category": "Politik & Umwelt",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_politik_B2_17",
@@ -184,7 +184,7 @@
     "word": "informieren",
     "type": "verb",
     "category": "Politik & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_politik_B2_18",
@@ -195,7 +195,7 @@
     "word": "beteiligen",
     "type": "verb",
     "category": "Politik & Umwelt",
-    "cases": ["dativ"]
+    "cases": ["dative"]
   },
   {
     "id": "verb_politik_B2_19",

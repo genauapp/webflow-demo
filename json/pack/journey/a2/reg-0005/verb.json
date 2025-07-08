@@ -41,7 +41,7 @@
     "word": "putzen",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_alltag_A2_05",
@@ -52,7 +52,7 @@
     "word": "kochen",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_alltag_A2_06",
@@ -63,7 +63,7 @@
     "word": "spülen",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_alltag_A2_07",
@@ -74,7 +74,7 @@
     "word": "bügeln",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_alltag_A2_08",
@@ -85,7 +85,7 @@
     "word": "staubsaugen",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_alltag_A2_09",
@@ -96,7 +96,7 @@
     "word": "aufräumen",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_alltag_A2_10",
@@ -140,7 +140,7 @@
     "word": "anmachen",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_alltag_A2_14",
@@ -151,7 +151,7 @@
     "word": "ausmachen",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_alltag_A2_15",
@@ -162,7 +162,7 @@
     "word": "lüften",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_alltag_A2_16",
@@ -173,7 +173,7 @@
     "word": "abtrocknen",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_alltag_A2_17",
@@ -184,7 +184,7 @@
     "word": "bringen",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_alltag_A2_18",
@@ -195,7 +195,7 @@
     "word": "reparieren",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_alltag_A2_19",
@@ -206,7 +206,7 @@
     "word": "vergessen",
     "type": "verb",
     "category": "Alltag",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_alltag_A2_20",

@@ -19,7 +19,7 @@
     "word": "bezahlen",
     "type": "verb",
     "category": "Einkaufen",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_einkaufen_03",
@@ -30,7 +30,7 @@
     "word": "nehmen",
     "type": "verb",
     "category": "Einkaufen",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_einkaufen_04",
@@ -41,7 +41,7 @@
     "word": "bestellen",
     "type": "verb",
     "category": "Einkaufen",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_einkaufen_05",
@@ -52,7 +52,7 @@
     "word": "verkaufen",
     "type": "verb",
     "category": "Einkaufen",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_einkaufen_06",
@@ -63,7 +63,7 @@
     "word": "brauchen",
     "type": "verb",
     "category": "Einkaufen",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_einkaufen_07",
@@ -85,7 +85,7 @@
     "word": "probieren",
     "type": "verb",
     "category": "Einkaufen",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_einkaufen_09",
@@ -96,7 +96,7 @@
     "word": "trinken",
     "type": "verb",
     "category": "Einkaufen",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_einkaufen_10",
@@ -107,7 +107,7 @@
     "word": "essen",
     "type": "verb",
     "category": "Einkaufen",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_einkaufen_11",
@@ -118,7 +118,7 @@
     "word": "wiegen",
     "type": "verb",
     "category": "Einkaufen",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_einkaufen_12",
@@ -129,7 +129,7 @@
     "word": "auswählen",
     "type": "verb",
     "category": "Einkaufen",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_einkaufen_13",
@@ -140,7 +140,7 @@
     "word": "mitbringen",
     "type": "verb",
     "category": "Einkaufen",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_einkaufen_14",
@@ -151,7 +151,7 @@
     "word": "kochen",
     "type": "verb",
     "category": "Einkaufen",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_einkaufen_15",
@@ -162,7 +162,7 @@
     "word": "backen",
     "type": "verb",
     "category": "Einkaufen",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_einkaufen_16",
@@ -173,7 +173,7 @@
     "word": "servieren",
     "type": "verb",
     "category": "Einkaufen",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_einkaufen_17",
@@ -184,7 +184,7 @@
     "word": "öffnen",
     "type": "verb",
     "category": "Einkaufen",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_einkaufen_18",
@@ -195,7 +195,7 @@
     "word": "schließen",
     "type": "verb",
     "category": "Einkaufen",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_einkaufen_19",
@@ -206,7 +206,7 @@
     "word": "zeigen",
     "type": "verb",
     "category": "Einkaufen",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_einkaufen_20",
@@ -217,6 +217,6 @@
     "word": "packen",
     "type": "verb",
     "category": "Einkaufen",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   }
 ]

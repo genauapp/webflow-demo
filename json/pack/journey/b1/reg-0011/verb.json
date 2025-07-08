@@ -30,7 +30,7 @@
     "word": "mieten",
     "type": "verb",
     "category": "Wohnen & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_wohnen_B1_04",
@@ -41,7 +41,7 @@
     "word": "vermieten",
     "type": "verb",
     "category": "Wohnen & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_wohnen_B1_05",
@@ -63,7 +63,7 @@
     "word": "lüften",
     "type": "verb",
     "category": "Wohnen & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_wohnen_B1_07",
@@ -74,7 +74,7 @@
     "word": "einrichten",
     "type": "verb",
     "category": "Wohnen & Umwelt",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_wohnen_B1_08",
@@ -85,7 +85,7 @@
     "word": "reparieren",
     "type": "verb",
     "category": "Wohnen & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_wohnen_B1_09",
@@ -96,7 +96,7 @@
     "word": "putzen",
     "type": "verb",
     "category": "Wohnen & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_wohnen_B1_10",
@@ -107,7 +107,7 @@
     "word": "renovieren",
     "type": "verb",
     "category": "Wohnen & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_wohnen_B1_11",
@@ -140,7 +140,7 @@
     "word": "streichen",
     "type": "verb",
     "category": "Wohnen & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_wohnen_B1_14",
@@ -151,7 +151,7 @@
     "word": "bauen",
     "type": "verb",
     "category": "Wohnen & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_wohnen_B1_15",
@@ -162,7 +162,7 @@
     "word": "recyceln",
     "type": "verb",
     "category": "Wohnen & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_wohnen_B1_16",
@@ -173,7 +173,7 @@
     "word": "trennen",
     "type": "verb",
     "category": "Wohnen & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_wohnen_B1_17",
@@ -184,7 +184,7 @@
     "word": "sparen",
     "type": "verb",
     "category": "Wohnen & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_wohnen_B1_18",
@@ -195,7 +195,7 @@
     "word": "verschmutzen",
     "type": "verb",
     "category": "Wohnen & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_wohnen_B1_19",
@@ -206,7 +206,7 @@
     "word": "verbrauchen",
     "type": "verb",
     "category": "Wohnen & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_wohnen_B1_20",
@@ -217,6 +217,6 @@
     "word": "installieren",
     "type": "verb",
     "category": "Wohnen & Umwelt",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   }
 ]

@@ -52,7 +52,7 @@
     "word": "ansehen",
     "type": "verb",
     "category": "Freizeit & Konsum",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_freizeit_A2_06",
@@ -63,7 +63,7 @@
     "word": "lesen",
     "type": "verb",
     "category": "Freizeit & Konsum",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_freizeit_A2_07",
@@ -74,7 +74,7 @@
     "word": "zeichnen",
     "type": "verb",
     "category": "Freizeit & Konsum",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_freizeit_A2_08",
@@ -85,7 +85,7 @@
     "word": "spielen",
     "type": "verb",
     "category": "Freizeit & Konsum",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_freizeit_A2_09",
@@ -96,7 +96,7 @@
     "word": "sammeln",
     "type": "verb",
     "category": "Freizeit & Konsum",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_freizeit_A2_10",
@@ -107,7 +107,7 @@
     "word": "hören",
     "type": "verb",
     "category": "Freizeit & Konsum",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_freizeit_A2_11",
@@ -118,7 +118,7 @@
     "word": "tanzen",
     "type": "verb",
     "category": "Freizeit & Konsum",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_freizeit_A2_12",
@@ -129,7 +129,7 @@
     "word": "besuchen",
     "type": "verb",
     "category": "Freizeit & Konsum",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_freizeit_A2_13",
@@ -151,7 +151,7 @@
     "word": "ausprobieren",
     "type": "verb",
     "category": "Freizeit & Konsum",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_freizeit_A2_15",
@@ -162,7 +162,7 @@
     "word": "kochen",
     "type": "verb",
     "category": "Freizeit & Konsum",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_freizeit_A2_16",
@@ -206,7 +206,7 @@
     "word": "reservieren",
     "type": "verb",
     "category": "Freizeit & Konsum",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_freizeit_A2_20",
@@ -217,6 +217,6 @@
     "word": "bezahlen",
     "type": "verb",
     "category": "Freizeit & Konsum",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   }
 ]

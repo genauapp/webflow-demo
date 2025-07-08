@@ -8,7 +8,7 @@
     "word": "lieben",
     "type": "verb",
     "category": "Gefühle & Beziehungen",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_gefuehle_B1_02",
@@ -19,7 +19,7 @@
     "word": "hassen",
     "type": "verb",
     "category": "Gefühle & Beziehungen",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_gefuehle_B1_03",
@@ -41,7 +41,7 @@
     "word": "verzeihen",
     "type": "verb",
     "category": "Gefühle & Beziehungen",
-    "cases": ["dativ"]
+    "cases": ["dative"]
   },
   {
     "id": "verb_gefuehle_B1_05",
@@ -52,7 +52,7 @@
     "word": "vermissen",
     "type": "verb",
     "category": "Gefühle & Beziehungen",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_gefuehle_B1_06",
@@ -85,7 +85,7 @@
     "word": "vertrauen",
     "type": "verb",
     "category": "Gefühle & Beziehungen",
-    "cases": ["dativ"]
+    "cases": ["dative"]
   },
   {
     "id": "verb_gefuehle_B1_09",
@@ -129,7 +129,7 @@
     "word": "respektieren",
     "type": "verb",
     "category": "Gefühle & Beziehungen",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_gefuehle_B1_13",
@@ -140,7 +140,7 @@
     "word": "trösten",
     "type": "verb",
     "category": "Gefühle & Beziehungen",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_gefuehle_B1_14",
@@ -173,7 +173,7 @@
     "word": "beleidigen",
     "type": "verb",
     "category": "Gefühle & Beziehungen",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_gefuehle_B1_17",
@@ -195,7 +195,7 @@
     "word": "ermutigen",
     "type": "verb",
     "category": "Gefühle & Beziehungen",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_gefuehle_B1_19",

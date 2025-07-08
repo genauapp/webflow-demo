@@ -30,7 +30,7 @@
     "word": "abziehen",
     "type": "verb",
     "category": "German Slang",
-    "cases": ["akkusativ", "separable"]
+    "cases": ["accusative", "separable"]
   },
   {
     "id": "verb_slang_B1_04",
@@ -52,7 +52,7 @@
     "word": "verarschen",
     "type": "verb",
     "category": "German Slang",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_slang_B1_06",
@@ -74,7 +74,7 @@
     "word": "nerven",
     "type": "verb",
     "category": "German Slang",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_slang_B1_08",
@@ -96,7 +96,7 @@
     "word": "glotzen",
     "type": "verb",
     "category": "German Slang",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_slang_B1_10",
@@ -118,7 +118,7 @@
     "word": "klauen",
     "type": "verb",
     "category": "German Slang",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_slang_B1_12",
@@ -140,7 +140,7 @@
     "word": "verzocken",
     "type": "verb",
     "category": "German Slang",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_slang_B1_14",
@@ -173,7 +173,7 @@
     "word": "schnorren",
     "type": "verb",
     "category": "German Slang",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_slang_B1_17",
@@ -195,7 +195,7 @@
     "word": "hauen",
     "type": "verb",
     "category": "German Slang",
-    "cases": ["akkusativ"]
+    "cases": ["accusative"]
   },
   {
     "id": "verb_slang_B1_19",
