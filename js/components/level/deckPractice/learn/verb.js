@@ -14,8 +14,8 @@ function initElements() {
 
     // Verb-specific elements
     verb: {
-      caseLabelsContainer: () =>
-        document.getElementById('learn-verb-case-labels-container'),
+      // caseLabelsContainer: () =>
+      //   document.getElementById('learn-verb-case-labels-container'),
       caseLabel: (verbCase) =>
         document.getElementById(`learn-verb-case-label-${verbCase}`),
       caseDetailsContainer: (verbCase) =>
@@ -94,9 +94,9 @@ function renderVerb(word) {
 
   // Handle verb cases (similar to search component logic)
   if (word.cases && word.cases.length > 0) {
-    if (els.verb.caseLabelsContainer()) {
-      els.verb.caseLabelsContainer().style.display = 'flex'
-    }
+    // if (els.verb.caseLabelsContainer()) {
+    //   els.verb.caseLabelsContainer().style.display = 'flex'
+    // }
 
     ALL_VERB_CASES.forEach((verbCase) => {
       const caseNotExists =
@@ -108,9 +108,9 @@ function renderVerb(word) {
       }
     })
   } else {
-    if (els.verb.caseLabelsContainer()) {
-      els.verb.caseLabelsContainer().style.display = 'none'
-    }
+    // if (els.verb.caseLabelsContainer()) {
+    //   els.verb.caseLabelsContainer().style.display = 'none'
+    // }
   }
 }
 

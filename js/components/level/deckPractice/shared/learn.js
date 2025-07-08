@@ -19,6 +19,12 @@ function initElements() {
     lastIndexLabel: () => document.getElementById('learn-word-card-index-last'),
     // wordLevel: () => document.getElementById('learn-word-card-level'),
     wordType: () => document.getElementById('learn-word-card-type'),
+
+    // Verb-specific elements
+    verb: {
+      caseLabelsContainer: () =>
+        document.getElementById('learn-verb-case-labels-container'),
+    },
   }
 }
 
@@ -33,10 +39,15 @@ function renderLearnCard({ currentWord: word, currentIndex, lastIndex }) {
   // els.wordLevel().textContent = word.level || ''
   els.wordType().textContent = word.type || ''
 
+  // clear type-specific containers
+  // // verb
+  els.verb.caseLabelsContainer().style.display = 'none'
+
   // Route to appropriate renderer based on word type
   if (word.type === WordType.NOUN) {
     mountNoun(word)
   } else if (word.type === WordType.VERB) {
+    els.verb.caseLabelsContainer().style.display = 'flex'
     mountVerb(word)
   } else if (word.type === WordType.ADJECTIVE) {
     mountAdjective(word)
