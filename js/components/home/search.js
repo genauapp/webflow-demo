@@ -2,7 +2,7 @@
 import { SigninModalTriggerEvent } from '../../constants/events.js'
 import {
   WordType,
-  ArtikelColorMap,
+  NounArticleColorMap,
   ALL_VERB_CASES,
   WordSource,
 } from '../../constants/props.js'
@@ -224,8 +224,8 @@ function showWordCard(wordResult) {
   // // use article/default color for title
   els.title().style.color =
     wordResult.type === WordType.NOUN
-      ? ArtikelColorMap[wordResult.article || wordResult.artikel]
-      : ArtikelColorMap['default']
+      ? NounArticleColorMap[wordResult.article || wordResult.artikel]
+      : NounArticleColorMap['default']
 
   // verb
   // // cases
