@@ -14,6 +14,7 @@ import CollectionsManager from '../../utils/CollectionsManager.js'
 import eventService from '../../service/events/EventService.js'
 import { AuthEvent } from '../../constants/events.js'
 import { DURATION_FEEDBACK_MS } from '../../constants/timeout.js'
+import StringUtils from '../../utils/StringUtils.js'
 
 let els = {}
 let currentWordResults = []
@@ -187,8 +188,7 @@ function showWordCard(wordResult) {
   closeAllVerbCaseDetails()
 
   els.resultsContainer().style.display = 'flex'
-
-  els.title().innerText = wordResult.german
+  // title is set at below according to noun
   els.levelBadge().innerText = wordResult.level
   els.typeBadge().innerText = wordResult.type
   els.translation().innerText = wordResult.english
@@ -204,10 +204,31 @@ function showWordCard(wordResult) {
     els.rule().innerText = ''
   }
 
-  // // use artikel/default color for title
+  // // word title: prepend article to title/skip
+  let newTitleValue
+  if (
+    wordResult.type === WordType.NOUN &&
+    !wordResult.german.startsWith('die ') &&
+    !wordResult.german.startsWith('der ') &&
+    !wordResult.german.startsWith('das ')
+  ) {
+    newTitleValue = `${
+      wordResult.article || wordResult.artikel
+    } ${StringUtils.capitalize(wordResult.german)}`
+  } else {
+    newTitleValue = wordResult.german
+  }
+  // // // set it to the element
+  els.title().innerText = newTitleValue
+
+  // // use article/default color for title
   els.title().style.color =
     wordResult.type === WordType.NOUN
+<<<<<<< HEAD
       ? NounArticleColorMap[wordResult.artikel]
+=======
+      ? NounArticleColorMap[wordResult.article || wordResult.artikel]
+>>>>>>> 8c812b7 (feat: support new back-end bookmark search(translation) responses)
       : NounArticleColorMap['default']
 
   // verb
