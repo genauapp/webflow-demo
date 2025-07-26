@@ -2,7 +2,7 @@
 import { SigninModalTriggerEvent } from '../../constants/events.js'
 import {
   WordType,
-  NounArticleColorMap,
+  ArtikelColorMap,
   ALL_VERB_CASES,
   WordSource,
 } from '../../constants/props.js'
@@ -224,9 +224,8 @@ function showWordCard(wordResult) {
   // // use article/default color for title
   els.title().style.color =
     wordResult.type === WordType.NOUN
-      ? ArtikelColorMap[wordResult.artikel]
+      ? ArtikelColorMap[wordResult.article || wordResult.artikel]
       : ArtikelColorMap['default']
->>>>>>> 89938ef (fix: non-existing props import instead of working ArtikelColorMap)
 
   // verb
   // // cases
