@@ -2,7 +2,7 @@
 import { SigninModalTriggerEvent } from '../../constants/events.js'
 import {
   WordType,
-  NounArticleColorMap,
+  ArtikelColorMap,
   ALL_VERB_CASES,
   WordSource,
 } from '../../constants/props.js'
@@ -225,11 +225,16 @@ function showWordCard(wordResult) {
   els.title().style.color =
     wordResult.type === WordType.NOUN
 <<<<<<< HEAD
+<<<<<<< HEAD
       ? NounArticleColorMap[wordResult.artikel]
 =======
       ? NounArticleColorMap[wordResult.article || wordResult.artikel]
 >>>>>>> 8c812b7 (feat: support new back-end bookmark search(translation) responses)
       : NounArticleColorMap['default']
+=======
+      ? ArtikelColorMap[wordResult.article || wordResult.artikel]
+      : ArtikelColorMap['default']
+>>>>>>> 89938ef (fix: non-existing props import instead of working ArtikelColorMap)
 
   // verb
   // // cases
