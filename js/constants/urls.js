@@ -6,4 +6,7 @@ export const ASSETS_BASE_URL =
 
 export const CDN_BASE_URL = 'https://genauapp.github.io/cdn-temp'
 
-export const API_SERVER_BASE_URL = 'https://api.genauapp.io'
+// PROD
+// export const API_SERVER_BASE_URL = 'https://api.genauapp.io'
+// STAGING
+export const API_SERVER_BASE_URL = 'https://c3e849ac04d1.ngrok-free.app'
