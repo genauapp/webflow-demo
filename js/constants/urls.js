@@ -9,4 +9,4 @@ export const CDN_BASE_URL = 'https://genauapp.github.io/cdn-temp'
 // PROD
 // export const API_SERVER_BASE_URL = 'https://api.genauapp.io'
 // STAGING
-export const API_SERVER_BASE_URL = 'https://3ff5ed78fee4.ngrok-free.app'
+export const API_SERVER_BASE_URL = 'https://52d118e9791a.ngrok-free.app'
