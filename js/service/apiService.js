@@ -44,8 +44,8 @@ export const protectedApiService = {
 
     // Real API Call
     return handleRequest(() =>
-      protectedApi.get(`/api/v1/pack/summary`)
-    )`/api/v1/user-pack/summary?level=${currentLevel}`
+      protectedApi.get(`/api/v1/user-pack/summary?level=${currentLevel}`)
+    )
   },
   getPackDeckWords: (deckId) => {
     // Mock API Response with Promise & JSON
