@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   const { data: packSummariesOfCurrentLevel } =
     await protectedApiService.getPackSummariesOfLevel(currentLevel)
 
+  console.log(JSON.stringify(packSummariesOfCurrentLevel))
+
   // change Level Header top of the pack screen
   const label = 'Level: ' + `${currentLevel}`.toUpperCase()
   document.getElementById('pack-level-header').innerText = label
@@ -39,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // If current pack is null or belongs on another level, show select pack message
   if (
     selectedPackSummary === null ||
-    selectedPackSummary.level !== currentLevel
+    selectedPackSummary.pack_level !== currentLevel
   ) {
     // clear selection
     LocalStorageManager.save(CURRENT_PACK_KEY, null)
@@ -48,13 +50,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   hideSelectCategoryMessage()
-  updatePackAvatarImages(selectedPackSummary.id)
+  updatePackAvatarImages(selectedPackSummary.pack_id)
   // hide old learn/exercise elements
   document.getElementById('content-container').style.display = 'none'
 
-  if (selectedPackSummary.type === PackType.MICRO_QUIZ) {
+  if (selectedPackSummary.pack_type === PackType.MICRO_QUIZ) {
     mountMicroQuiz(selectedPackSummary)
-  } else if (selectedPackSummary.type === PackType.JOURNEY) {
+  } else if (selectedPackSummary.pack_type === PackType.JOURNEY) {
     mountPackJourney(selectedPackSummary)
     return
   }
@@ -64,7 +66,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 // // attach click handlers to them
 function loadPackPropsOnLevelPage(packSummariesOfCurrentLevel) {
   // Journey Pack Elements
-  const regularPackSummaryGrid = document.getElementById(
+  const journeyPackSummaryGrid = document.getElementById(
     'journey-pack-summary-container-grid'
   )
 
@@ -77,7 +79,7 @@ function loadPackPropsOnLevelPage(packSummariesOfCurrentLevel) {
   )
 
   const isMicroQuizAbsent = !packSummariesOfCurrentLevel.some(
-    (ps) => ps.type === PackType.MICRO_QUIZ
+    (ps) => ps.pack_type === PackType.MICRO_QUIZ
   )
 
   if (isMicroQuizAbsent) {
@@ -91,10 +93,10 @@ function loadPackPropsOnLevelPage(packSummariesOfCurrentLevel) {
 
     // create <img> element
     const img = document.createElement('img')
-    img.src = packSummary.img_url
+    img.src = packSummary.pack_image_url
     img.loading = 'lazy'
-    img.id = `pack-${i}`
-    img.dataset.option = packSummary.id
+    img.id = `pack-${packSummary.pack_id}`
+    img.dataset.option = packSummary.pack_id
     img.classList.add('pack-img') //, 'image-19')
 
     // add event listener
@@ -106,15 +108,15 @@ function loadPackPropsOnLevelPage(packSummariesOfCurrentLevel) {
     const h1 = document.createElement('h1')
     h1.id = `pack-title-${i}`
     h1.classList.add('heading-42')
-    h1.textContent = packSummary.name_eng
+    h1.textContent = packSummary.pack_english
 
     linkBlock.appendChild(img)
     linkBlock.appendChild(h1)
 
     // Son olarak istediğin yere ekle, örneğin bir container'a:
-    if (packSummary.type === PackType.JOURNEY) {
-      regularPackSummaryGrid.appendChild(linkBlock)
-    } else if (packSummary.type === PackType.MICRO_QUIZ) {
+    if (packSummary.pack_type === PackType.JOURNEY) {
+      journeyPackSummaryGrid.appendChild(linkBlock)
+    } else if (packSummary.pack_type === PackType.MICRO_QUIZ) {
       microQuizSummaryGrid.appendChild(linkBlock)
     }
   })
@@ -135,7 +137,7 @@ function avatarImageClickHandler(event, selectedPack) {
   LocalStorageManager.save(CURRENT_PACK_KEY, selectedPack)
 
   // update pack image avatar UI
-  updatePackAvatarImages(selectedPack.id)
+  updatePackAvatarImages(selectedPack.pack_id)
   // hide "no pack is selected" UI
   hideSelectCategoryMessage()
 
@@ -146,9 +148,9 @@ function avatarImageClickHandler(event, selectedPack) {
   unmountPackJourney()
   unmountMicroQuiz()
 
-  if (selectedPack.type === PackType.JOURNEY) {
+  if (selectedPack.pack_type === PackType.JOURNEY) {
     mountPackJourney(selectedPack)
-  } else if (selectedPack.type === PackType.MICRO_QUIZ) {
+  } else if (selectedPack.pack_type === PackType.MICRO_QUIZ) {
     mountMicroQuiz(selectedPack)
   }
 

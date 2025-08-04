@@ -28,39 +28,48 @@ export const protectedApiService = {
     return handleRequest(() => protectedApi.get('/api/v1/user/me'))
   },
   getPackSummariesOfLevel: (currentLevel) => {
-    // return handleRequest(() => protectedApi.get(`/api/v1/pack/summary`))
-    return handleRequest(async () => {
-      // dynamically resolve the JSON module
-      const allPackSummaries = { ...PACK_SUMMARIES_BY_LEVEL }
+    // Mock API Response with Promise & JSON
+    // return handleRequest(async () => {
+    //   // dynamically resolve the JSON module
+    //   const allPackSummaries = { ...PACK_SUMMARIES_BY_LEVEL }
 
-      return {
-        ok: true,
-        status: 200,
-        json: () =>
-          // match your real API shape
-          Promise.resolve({ data: allPackSummaries[currentLevel] }),
-      }
-    })
+    //   return {
+    //     ok: true,
+    //     status: 200,
+    //     json: () =>
+    //       // match your real API shape
+    //       Promise.resolve({ data: allPackSummaries[currentLevel] }),
+    //   }
+    // })
+
+    // Real API Call
+    return handleRequest(() =>
+      protectedApi.get(`/api/v1/pack/summary`)
+    )`/api/v1/user-pack/summary?level=${currentLevel}`
   },
-  getPackDeckWords: (packId, packType, packLevel, packDeckWordType) => {
-    // todo: activate when ready to integrate with api
-    // return handleRequest(() => protectedApi.get(`/api/v1/pack/${packId}`))
-    return handleRequest(async () => {
-      // dynamically resolve the JSON module
-      const module = await import(
-        /* webpackMode: "lazy", webpackChunkName: "pack-[request]" */
-        `../../json/pack/${packType}/${packLevel}/${packId}/${packDeckWordType}.json`,
-        { with: { type: 'json' } }
-      )
+  getPackDeckWords: (deckId) => {
+    // Mock API Response with Promise & JSON
+    // return handleRequest(async () => {
+    //   // dynamically resolve the JSON module
+    //   const module = await import(
+    //     /* webpackMode: "lazy", webpackChunkName: "pack-[request]" */
+    //     `../../json/pack/${packType}/${packLevel}/${packId}/${packDeckWordType}.json`,
+    //     { with: { type: 'json' } }
+    //   )
 
-      return {
-        ok: true,
-        status: 200,
-        json: () =>
-          // match your real API shape
-          Promise.resolve({ data: module.default }),
-      }
-    })
+    //   return {
+    //     ok: true,
+    //     status: 200,
+    //     json: () =>
+    //       // match your real API shape
+    //       Promise.resolve({ data: module.default }),
+    //   }
+    // })
+
+    // Real API Call
+    return handleRequest(() =>
+      protectedApi.get(`/api/v1/user-pack/deck/${deckId}/word`)
+    )
   },
 }
 

@@ -6,15 +6,9 @@ import {
 
 export function mountMicroQuiz(packSummary) {
   // Implementation similar to mountPackJourney but for micro-quiz
-  const firstDeck = packSummary.deck_summaries[0]
+  const firstDeckSummary = packSummary.deck_summaries[0]
 
-  mountDeckPractice(
-    packSummary.id,
-    packSummary.type,
-    packSummary.level,
-    firstDeck.word_type,
-    firstDeck.exercise_type
-  )
+  mountDeckPractice(firstDeckSummary)
 }
 
 export function unmountMicroQuiz() {

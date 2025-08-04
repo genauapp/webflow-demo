@@ -14,18 +14,19 @@ class PackJourneyService {
       wordType: deck.word_type,
       exerciseType: deck.exercise_type,
       status: deck.status,
+      wordsCount: deck.words_count
     }))
 
     // Apply saved progress with level and pack scope
     const savedStatuses = deckProgressService.getDeckStatuses(
-      packSummary.level, // Level
-      packSummary.id, // Pack ID
-      deckSummaries.map((d) => d.id)
+      packSummary.pack_level, // Level
+      packSummary.pack_id, // Pack ID
+      deckSummaries.map((d) => d.deck_id)
     )
 
     deckSummaries.forEach((deck) => {
-      if (savedStatuses[deck.id]) {
-        deck.status = savedStatuses[deck.id]
+      if (savedStatuses[deck.deck_id]) {
+        deck.user_deck_status = savedStatuses[deck.deck_id]
       }
     })
 
@@ -34,11 +35,15 @@ class PackJourneyService {
 
     const state = {
       pack: {
-        id: packSummary.id,
-        type: packSummary.type,
-        level: packSummary.level,
-        name: { german: packSummary.name, english: packSummary.name_eng },
-        imageUrl: packSummary.img_url,
+        id: packSummary.pack_id,
+        type: packSummary.pack_type,
+        level: packSummary.pack_level,
+        category: packSummary.pack_category,
+        description: packSummary.pack_description,
+        name: { german: packSummary.pack_german, english: packSummary.pack_english },
+        imageUrl: packSummary.pack_image_url,
+        wordsCount: packSummary.total_words_count,
+        decksCount: packSummary.total_decks_count
       },
       deckSummaries,
     }
@@ -58,8 +63,8 @@ class PackJourneyService {
 
   applyProgression(decks) {
     // Ensure first deck is unlocked
-    if (decks.length > 0 && decks[0].status === DeckStatus.LOCKED) {
-      decks[0].status = DeckStatus.UNLOCKED
+    if (decks.length > 0 && decks[0].user_deck_status === DeckStatus.LOCKED) {
+      decks[0].user_deck_status = DeckStatus.UNLOCKED
     }
 
     // Unlock next after completed

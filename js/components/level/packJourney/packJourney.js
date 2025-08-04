@@ -83,17 +83,13 @@ function mountDeckPracticeForStage(journeyState, stageId, onStageCompleted) {
   )
 
   mountDeckPractice(
-    journeyState.pack.id,
-    journeyState.pack.type,
-    journeyState.pack.level,
-    currentDeckSummary.wordType,
-    currentDeckSummary.exerciseType,
+    currentDeckSummary,
     onStageCompleted // Completion callback
   )
 }
 
 export function mountPackJourney(packSummary) {
-  currentPackId = packSummary.id
+  currentPackId = packSummary.pack_id
 
   initElements()
 

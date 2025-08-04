@@ -179,10 +179,7 @@ function enhanceWordsWithProperties(words) {
 
 /** Fetch words from API service */
 async function fetchWords(
-  packId,
-  packType,
-  packLevel,
-  packDeckWordType,
+  deckSummary,
   onJourneyStageCompleted
 ) {
   try {
@@ -190,13 +187,17 @@ async function fetchWords(
     state.error = null
     render()
 
-    const { data: words, error } = await protectedApiService.getPackDeckWords(
-      packId,
-      packType,
-      packLevel,
-      packDeckWordType
-    )
+    // const { data: words, error } = await protectedApiService.getPackDeckWords(
+    //   packId,
+    //   packType,
+    //   packLevel,
+    //   packDeckWordType
+    // )
 
+    const { data: deckWithWords, error} = await protectedApiService.getPackDeckWords(deckSummary.deck_id)
+
+    const words = deckWithWords.words
+    
     if (error) {
       state.error = error
       state.words = []
@@ -310,17 +311,13 @@ function resetEventListeners() {
  * Prevents double-init via state.mounted
  */
 export async function mountDeckPractice(
-  packId,
-  packType,
-  packLevel,
-  packDeckWordType,
-  exerciseType,
+  deckSummary,
   onJourneyStageCompleted = null // null by default, micro-quiz does not use it
 ) {
   if (state && state.mounted) return
 
   // First Step: initialize state
-  initState(exerciseType)
+  initState(deckSummary.exercise_type)
 
   state.mounted = true
   initStreakSettings(handleStreakTargetChange)
@@ -332,13 +329,7 @@ export async function mountDeckPractice(
   els.container().style.display = 'flex'
 
   // Fetch words, initialize navigation service and render
-  await fetchWords(
-    packId,
-    packType,
-    packLevel,
-    packDeckWordType,
-    onJourneyStageCompleted
-  )
+  await fetchWords(deckSummary, onJourneyStageCompleted)
 }
 
 /**
