@@ -32,8 +32,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   console.log(JSON.stringify(packSummariesOfCurrentLevel))
 
   // change Level Header top of the pack screen
-  const label = 'Level: ' + `${currentLevel}`.toUpperCase()
-  document.getElementById('pack-level-header').innerText = label
+  const levelLabel = `Level: ${currentLevel}`
+  document.getElementById('pack-level-header').innerText = levelLabel
 
   // Load current category from localStorage, set it to null if not found
   const selectedPackSummary = LocalStorageManager.load(CURRENT_PACK_KEY, null)

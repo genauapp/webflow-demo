@@ -11,14 +11,14 @@ export const WordType = {
 }
 
 export const PackType = Object.freeze({
-  JOURNEY: 'journey',
-  MICRO_QUIZ: 'micro-quiz',
+  JOURNEY: 'JOURNEY',
+  MICRO_QUIZ: 'MICRO_QUIZ',
 })
 
 export const DeckStatus = Object.freeze({
-  LOCKED: 'locked',
-  UNLOCKED: 'unlocked',
-  COMPLETED: 'completed',
+  LOCKED: 'LOCKED',
+  UNLOCKED: 'UNLOCKED',
+  COMPLETED: 'COMPLETED',
 })
 
 export const NavigationMode = Object.freeze({
@@ -27,11 +27,11 @@ export const NavigationMode = Object.freeze({
 })
 
 export const ExerciseType = Object.freeze({
-  VOCABULARY: 'vocabulary', // english word with one correct, many wrong answer options
-  GRAMMAR: 'grammar', // fill in the blanks
-  ARTICLE: 'article', // article prefix der/die/das
-  ARTICLE_ENDING: 'article-ending', // article ending rule
-  TRUE_FALSE: 'true-false', // 70% correct - 30% wrong answer
+  VOCABULARY: 'VOCABULARY', // english word with one correct, many wrong answer options
+  GRAMMAR: 'GRAMMAR', // fill in the blanks
+  ARTICLE: 'ARTICLE', // article prefix der/die/das
+  // ARTICLE_ENDING: 'article-ending', // article ending rule
+  // TRUE_FALSE: 'true-false', // 70% correct - 30% wrong answer
 })
 
 export const ExerciseTypeSettingsMap = Object.freeze({
@@ -69,6 +69,7 @@ export const PrepositionCaseColorMap = {
 }
 export const ALL_VERB_CASES = ['reflexive', 'separable', 'accusative', 'dative']
 
+// todo: sync here with back-end as GENAU/NAU_V1/NAU_V1_1
 export const WordSource = {
   NORMAL_PROMPT: 'normal-prompt',
   ASSISTANT: 'assistant',
