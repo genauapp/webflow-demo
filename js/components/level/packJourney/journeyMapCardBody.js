@@ -13,7 +13,7 @@ function applyInteractivity(stageEl, stage, onStageSelected) {
   stageEl.dataset.stageId = stage.id
   // remove any old click handler
   stageEl.onclick = null
-  if (stage.user_deck_status === DeckStatus.UNLOCKED) {
+  if (stage.status === DeckStatus.UNLOCKED) {
     stageEl.classList.add('interactive')
     stageEl.onclick = () => onStageSelected(stage.id)
   } else {
@@ -27,10 +27,10 @@ export function renderJourneyMap(journeyState, onStageSelected) {
 
   journeyState.deckSummaries.forEach((stage) => {
     const stageEl = document.createElement('div')
-    stageEl.className = `journey-stage ${stage.user_deck_status}`
+    stageEl.className = `journey-stage ${stage.status}`
     stageEl.textContent = `${stage.wordType} Deck`
 
-    if (stage.user_deck_status === DeckStatus.COMPLETED) {
+    if (stage._status === DeckStatus.COMPLETED) {
       stageEl.innerHTML += '<span class="checkmark">✓</span>'
     }
 
@@ -51,11 +51,11 @@ export function updateJourneyMap(journeyState, onStageSelected) {
     // update status class
     stageEl.classList.toggle('journey-stage', true)
     stageEl.classList.toggle(DeckStatus.COMPLETED, false)
-    stageEl.className = `journey-stage ${stage.user_deck_status}`
+    stageEl.className = `journey-stage ${stage.status}`
 
     // update checkmark
     const existing = stageEl.querySelector('.checkmark')
-    if (stage.user_deck_status === DeckStatus.COMPLETED) {
+    if (stage.status === DeckStatus.COMPLETED) {
       if (!existing) stageEl.innerHTML += '<span class="checkmark">✓</span>'
     } else if (existing) {
       existing.remove()

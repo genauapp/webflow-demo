@@ -13,7 +13,7 @@ class PackJourneyService {
       id: deck.deck_id,
       wordType: deck.word_type,
       exerciseType: deck.exercise_type,
-      status: deck.status,
+      status: deck.user_deck_status,
       wordsCount: deck.words_count
     }))
 
@@ -26,7 +26,7 @@ class PackJourneyService {
 
     deckSummaries.forEach((deck) => {
       if (savedStatuses[deck.deck_id]) {
-        deck.user_deck_status = savedStatuses[deck.deck_id]
+        deck.status = savedStatuses[deck.deck_id]
       }
     })
 
@@ -63,8 +63,8 @@ class PackJourneyService {
 
   applyProgression(decks) {
     // Ensure first deck is unlocked
-    if (decks.length > 0 && decks[0].user_deck_status === DeckStatus.LOCKED) {
-      decks[0].user_deck_status = DeckStatus.UNLOCKED
+    if (decks.length > 0 && decks[0].status === DeckStatus.LOCKED) {
+      decks[0].status = DeckStatus.UNLOCKED
     }
 
     // Unlock next after completed
