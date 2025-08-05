@@ -79,7 +79,7 @@ function mountDeckPracticeForStage(journeyState, stageId, onStageCompleted) {
   })
 
   const currentDeckSummary = journeyState.deckSummaries.find(
-    (stage) => stage.deck_id === stageId
+    (stage) => stage.id === stageId
   )
 
   mountDeckPractice(
