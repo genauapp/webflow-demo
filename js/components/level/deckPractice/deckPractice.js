@@ -196,7 +196,7 @@ async function fetchWords(
 
     const { data: deckWithWords, error} = await protectedApiService.getPackDeckWords(deckSummary.deck_id)
 
-    const words = deckWithWords.words
+    const words = deckWithWords.user_words
     
     if (error) {
       state.error = error
