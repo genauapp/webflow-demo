@@ -317,7 +317,7 @@ export async function mountDeckPractice(
   if (state && state.mounted) return
 
   // First Step: initialize state
-  initState(deckSummary.exercise_type)
+  initState(deckSummary.exerciseType)
 
   state.mounted = true
   initStreakSettings(handleStreakTargetChange)
