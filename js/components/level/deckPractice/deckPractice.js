@@ -10,7 +10,7 @@ const DEFAULT_STATE = Object.freeze({
   loading: false,
   error: null,
   words: [],
-  sessionId: 'deck-practice', // Unique session identifier
+  // sessionId: 'deck-practice', // Unique session identifier
   streakTarget: 0, // Initially unset streak target
   mounted: false, // New: has the component been initialized?
 })
@@ -59,10 +59,11 @@ function resetElements() {
   els = {}
 }
 
-function initState(exerciseType) {
+function initState(deckSummary) {
   state = {
     ...DEFAULT_STATE,
-    exerciseType,
+    sessionId: `${deckSummary.id}_${deckSummary.wordType}`,
+    exerciseType: deckSummary.exerciseType,
   }
 }
 
@@ -178,10 +179,7 @@ function enhanceWordsWithProperties(words) {
 }
 
 /** Fetch words from API service */
-async function fetchWords(
-  deckSummary,
-  onJourneyStageCompleted
-) {
+async function fetchWords(deckSummary, onJourneyStageCompleted) {
   try {
     state.loading = true
     state.error = null
@@ -194,10 +192,11 @@ async function fetchWords(
     //   packDeckWordType
     // )
 
-    const { data: deckWithWords, error} = await protectedApiService.getPackDeckWords(deckSummary.id)
+    const { data: deckWithWords, error } =
+      await protectedApiService.getPackDeckWords(deckSummary.id)
 
     const words = deckWithWords.user_words
-    
+
     if (error) {
       state.error = error
       state.words = []
@@ -317,7 +316,7 @@ export async function mountDeckPractice(
   if (state && state.mounted) return
 
   // First Step: initialize state
-  initState(deckSummary.exerciseType)
+  initState(deckSummary)
 
   state.mounted = true
   initStreakSettings(handleStreakTargetChange)
