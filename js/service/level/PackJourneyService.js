@@ -13,22 +13,24 @@ class PackJourneyService {
       id: deck.deck_id,
       wordType: deck.word_type,
       exerciseType: deck.exercise_type,
+      createdAt: deck.created_at,
+      updatedAt: deck.updated_at,
+      wordsCount: deck.words_count,
       status: deck.user_deck_status,
-      wordsCount: deck.words_count
     }))
 
-    // Apply saved progress with level and pack scope
-    const savedStatuses = deckProgressService.getDeckStatuses(
-      packSummary.pack_level, // Level
-      packSummary.pack_id, // Pack ID
-      deckSummaries.map((d) => d.deck_id)
-    )
+    // // Apply saved progress with level and pack scope
+    // const savedStatuses = deckProgressService.getDeckStatuses(
+    //   packSummary.pack_level, // Level
+    //   packSummary.pack_id, // Pack ID
+    //   deckSummaries.map((d) => d.deck_id)
+    // )
 
-    deckSummaries.forEach((deck) => {
-      if (savedStatuses[deck.deck_id]) {
-        deck.status = savedStatuses[deck.deck_id]
-      }
-    })
+    // deckSummaries.forEach((deck) => {
+    //   if (savedStatuses[deck.deck_id]) {
+    //     deck.status = savedStatuses[deck.deck_id]
+    //   }
+    // })
 
     // Unlock next decks based on progress
     this.applyProgression(deckSummaries)
@@ -62,17 +64,17 @@ class PackJourneyService {
   }
 
   applyProgression(decks) {
-    // Ensure first deck is unlocked
-    if (decks.length > 0 && decks[0].status === DeckStatus.LOCKED) {
-      decks[0].status = DeckStatus.UNLOCKED
-    }
+    // // Ensure first deck is unlocked
+    // if (decks.length > 0 && decks[0].status === DeckStatus.LOCKED) {
+    //   decks[0].status = DeckStatus.UNLOCKED
+    // }
 
-    // Unlock next after completed
-    for (let i = 0; i < decks.length - 1; i++) {
-      if (decks[i].status === DeckStatus.COMPLETED) {
-        decks[i + 1].status = DeckStatus.UNLOCKED
-      }
-    }
+    // // Unlock next after completed
+    // for (let i = 0; i < decks.length - 1; i++) {
+    //   if (decks[i].status === DeckStatus.COMPLETED) {
+    //     decks[i + 1].status = DeckStatus.UNLOCKED
+    //   }
+    // }
   }
 
   completeStage(packId, deckId, results) {
