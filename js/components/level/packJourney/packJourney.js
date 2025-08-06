@@ -119,6 +119,7 @@ export function unmountPackJourney() {
 
   unmountJourneyMapCardBody()
   unmountReturnToJourneyButton()
+  unmountDeckPractice()
   resetElements()
 
   currentPackId = null
