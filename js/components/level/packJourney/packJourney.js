@@ -49,12 +49,21 @@ function renderJourney(journeyState) {
   if (journeyState.deckSummaries.length < 2) {
     mountDeckPractice(
       journeyState.deckSummaries[0],
-      onStageCompleted // Completion callback
+      handleStageCompletion // Completion callback
     )
   } else {
     // Initialize journey map
     mountJourneyMapCardBody(journeyState, handleStageSelection)
   }
+}
+
+const handleStageCompletion = (results) => {
+  // Pass results to completion handler
+  packJourneyService.completeStage(currentPackId, stageId, results)
+
+  // // Return to journey view
+  // els.journeyMapCard().style.display = 'flex'
+  // els.container().style.display = 'flex'
 }
 
 function updateJourney(journeyState) {
@@ -67,17 +76,10 @@ function handleStageSelection(stageId) {
 
   const journeyState = packJourneyService.getJourneyState(currentPackId)
 
-  mountDeckPracticeForStage(journeyState, stageId, (results) => {
-    // Pass results to completion handler
-    packJourneyService.completeStage(currentPackId, stageId, results)
-
-    // // Return to journey view
-    // els.journeyMapCard().style.display = 'flex'
-    // els.container().style.display = 'flex'
-  })
+  mountDeckPracticeForStage(journeyState, stageId, handleStageCompletion)
 }
 
-function mountDeckPracticeForStage(journeyState, stageId, onStageCompleted) {
+function mountDeckPracticeForStage(journeyState, stageId) {
   // Mount back button with navigation handler
   mountReturnToJourneyButton(journeyState.pack.name.english, () => {
     unmountDeckPractice()
@@ -92,7 +94,7 @@ function mountDeckPracticeForStage(journeyState, stageId, onStageCompleted) {
 
   mountDeckPractice(
     currentDeckSummary,
-    onStageCompleted // Completion callback
+    handleStageCompletion // Completion callback
   )
 }
 
