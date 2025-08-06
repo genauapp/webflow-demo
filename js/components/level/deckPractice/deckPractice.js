@@ -62,7 +62,7 @@ function resetElements() {
 function initState(deckSummary) {
   state = {
     ...DEFAULT_STATE,
-    sessionId: `${deckSummary.id}_${deckSummary.wordType}`,
+    sessionId: deckSummary.id,
     exerciseType: deckSummary.exerciseType,
   }
 }
@@ -240,7 +240,7 @@ function initializeNavigationService(onJourneyStageCompleted) {
     onStreakUpdate: (streakData) => {
       updateStreakProgression(streakData.word, streakData.streakTarget)
     },
-    onExerciseResults: (resultsData) => {
+    onExerciseResults: (resultsData, postPayload) => {
       initExerciseResults(resultsData)
 
       // NEW: Journey stage completion
@@ -248,7 +248,7 @@ function initializeNavigationService(onJourneyStageCompleted) {
         onJourneyStageCompleted &&
         navigationService.isExerciseCompleted(state.sessionId)
       ) {
-        onJourneyStageCompleted(resultsData)
+        onJourneyStageCompleted(resultsData, postPayload)
       }
     },
   }
@@ -309,10 +309,7 @@ function resetEventListeners() {
  * Mount: set up everything once and show container
  * Prevents double-init via state.mounted
  */
-export async function mountDeckPractice(
-  deckSummary,
-  onJourneyStageCompleted = null // null by default, micro-quiz does not use it
-) {
+export async function mountDeckPractice(deckSummary, onJourneyStageCompleted) {
   if (state && state.mounted) return
 
   // First Step: initialize state

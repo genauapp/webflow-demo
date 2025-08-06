@@ -1,6 +1,9 @@
 // PackJourneyService.js (updated)
 import { DeckStatus } from '../../constants/props.js'
 import { deckProgressService } from './DeckProgressService.js'
+import { protectedApiService } from '../apiService.js'
+import LocalStorageManager from '../../utils/LocalStorageManager.js'
+import { CURRENT_PACK_KEY } from '../../constants/storageKeys.js'
 
 class PackJourneyService {
   constructor() {
@@ -77,27 +80,43 @@ class PackJourneyService {
     // }
   }
 
-  completeStage(packId, deckId, results) {
+  /**
+   * Complete a deck stage: POST results, update local pack summary, and deck status.
+   * @param {string} packId
+   * @param {string} deckId
+   * @param {object} postPayload - POST-ready payload for completion
+   * @returns {Promise<object>} updated journey state
+   */
+  async completeStage(packId, deckId, postPayload) {
+    // 1. POST results to backend and get updated pack summary
+    const { userPackSummary, userDeckExerciseResult, error } = await protectedApiService.completeUserDeckExercise(postPayload)
+    if (error) {
+      console.error('Failed to complete deck exercise:', error)
+      return null
+    }
+    // 2. Update local storage for CURRENT_PACK
+    if (userPackSummary) {
+      LocalStorageManager.save(CURRENT_PACK_KEY, userPackSummary)
+    }
+    // 3. Update deck summary in journey state
     const journey = this.journeys.get(packId)
-    if (!journey) return
-
-    // Update status
-    const deck = journey.state.deckSummaries.find((d) => d.id === deckId)
-    if (!deck) return
-
-    deck.status = DeckStatus.COMPLETED
-
-    // Save with level and pack scope
-    deckProgressService.completeDeck(
-      journey.state.pack.level, // Level
-      packId, // Pack ID
-      deckId, // Deck ID
-      results
-    )
-
-    // // Unlock next deck
-    // this.applyProgression(journey.state.deckSummaries)
-
+    if (!journey) return null
+    const updatedDeck = userPackSummary.deck_summaries.find((d) => d.deck_id === deckId)
+    if (updatedDeck) {
+      const idx = journey.state.deckSummaries.findIndex((d) => d.id === deckId)
+      if (idx !== -1) {
+        journey.state.deckSummaries[idx] = {
+          id: updatedDeck.deck_id,
+          wordType: updatedDeck.word_type,
+          exerciseType: updatedDeck.exercise_type,
+          createdAt: updatedDeck.created_at,
+          updatedAt: updatedDeck.updated_at,
+          wordsCount: updatedDeck.words_count,
+          status: updatedDeck.user_deck_status,
+        }
+      }
+    }
+    // Optionally, update other pack fields from userPackSummary
     // Notify UI
     this._notifyUpdate(packId)
     return journey.state

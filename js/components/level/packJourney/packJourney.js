@@ -58,11 +58,10 @@ function renderJourney(journeyState) {
 
 const handleStageCompletion = (currentPackId, currentDeckId) => {
   // return callback
-  return (results) => {
-    // Pass results to completion handler
-    packJourneyService.completeStage(currentPackId, currentDeckId, results)
-
-    // // Return to journey view
+  return async (resultsData, postPayload) => {
+    // 1. Complete stage via service (handles POST and local update)
+    await packJourneyService.completeStage(currentPackId, currentDeckId, postPayload)
+    // 2. Optionally, re-render or show completion UI
     // els.journeyMapCard().style.display = 'flex'
     // els.container().style.display = 'flex'
   }

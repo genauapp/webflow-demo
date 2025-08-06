@@ -88,6 +88,11 @@ class NavigationService {
     const session = this.sessions.get(sessionId)
     if (!session) return null
     session.streakTarget = newTarget
+    // Set exerciseStartedAt if not already set
+    const exerciseState = session.progression[NavigationMode.EXERCISE]
+    if (!exerciseState.exerciseStartedAt) {
+      exerciseState.exerciseStartedAt = new Date().toISOString()
+    }
     this._notifyUpdate(session)
     return session
   }
@@ -326,6 +331,8 @@ class NavigationService {
 
     // 6) If exercise is completed, notify results callback
     if (state.isCompleted) {
+      // Set exerciseCompletedAt timestamp
+      state.exerciseCompletedAt = new Date().toISOString()
       this._notifyExerciseResults(session)
     }
     return currentWord
@@ -449,6 +456,39 @@ class NavigationService {
     }
   }
 
+  /**
+   * Generates the payload for completing a deck exercise, formatted for API POST.
+   * @param {string} sessionId
+   * @param {string} deckId
+   * @param {string} exerciseStartedAt - ISO string
+   * @param {string} exerciseCompletedAt - ISO string
+   * @returns {object} API payload
+   */
+  getDeckExerciseCompletionPayload(
+    sessionId,
+    deckId,
+    exerciseStartedAt,
+    exerciseCompletedAt
+  ) {
+    const session = this.sessions.get(sessionId)
+    if (!session) return null
+
+    const state = session.progression[NavigationMode.EXERCISE]
+    const streakTarget = session.streakTarget
+    const wordScores = session.originalItems.map((word) => ({
+      word_id: word.id,
+      wrong_count: this._getWordWrongCount(state.wrongAnswerCountMap, word.id),
+    }))
+
+    return {
+      deck_id: deckId,
+      exercise_streak_target: streakTarget,
+      exercise_started_at: exerciseStartedAt,
+      exercise_completed_at: exerciseCompletedAt,
+      word_scores: wordScores,
+    }
+  }
+
   // =============================================================================
   // PRIVATE HELPER METHODS
   // =============================================================================
@@ -488,6 +528,8 @@ class NavigationService {
       activeOrder: shuffledExerciseList,
       score: { correct: 0, total: 0 },
       wrongAnswerCountMap: new Map(), // Map of wrongCount -> [words]
+      exerciseStartedAt: null,
+      exerciseCompletedAt: null,
     }
 
     return initialExerciseProgression
@@ -646,7 +688,27 @@ class NavigationService {
   _notifyExerciseResults(session) {
     if (session.callbacks.onExerciseResults) {
       const results = this.getExerciseResults(session.id)
-      session.callbacks.onExerciseResults(results)
+      // Generate POST-ready payload
+      const progression = session.progression[NavigationMode.EXERCISE]
+      const streakTarget = session.streakTarget
+      const exerciseStartedAt = progression.exerciseStartedAt || null
+      const exerciseCompletedAt =
+        progression.exerciseCompletedAt || new Date().toISOString()
+      const wordScores = session.originalItems.map((word) => ({
+        word_id: word.id,
+        wrong_count: this._getWordWrongCount(
+          progression.wrongAnswerCountMap,
+          word.id
+        ),
+      }))
+      const postPayload = {
+        deck_id: session.id,
+        exercise_streak_target: streakTarget,
+        exercise_started_at: exerciseStartedAt,
+        exercise_completed_at: exerciseCompletedAt,
+        word_scores: wordScores,
+      }
+      session.callbacks.onExerciseResults(results, postPayload)
     }
   }
 }
