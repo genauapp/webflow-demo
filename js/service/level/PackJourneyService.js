@@ -32,8 +32,8 @@ class PackJourneyService {
     //   }
     // })
 
-    // Unlock next decks based on progress
-    this.applyProgression(deckSummaries)
+    // // Unlock next decks based on progress
+    // this.applyProgression(deckSummaries)
 
     const state = {
       pack: {
@@ -95,8 +95,8 @@ class PackJourneyService {
       results
     )
 
-    // Unlock next deck
-    this.applyProgression(journey.state.deckSummaries)
+    // // Unlock next deck
+    // this.applyProgression(journey.state.deckSummaries)
 
     // Notify UI
     this._notifyUpdate(packId)

@@ -11,10 +11,10 @@ import {
   mountPackJourney,
   unmountPackJourney,
 } from '../components/level/packJourney/packJourney.js'
-import {
-  mountMicroQuiz,
-  unmountMicroQuiz,
-} from '../components/level/microQuiz/microQuiz.js'
+// import {
+//   mountMicroQuiz,
+//   unmountMicroQuiz,
+// } from '../components/level/microQuiz/microQuiz.js'
 
 // On Initial Load
 // // fetch pack summaries
@@ -54,12 +54,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   // hide old learn/exercise elements
   document.getElementById('content-container').style.display = 'none'
 
-  if (selectedPackSummary.pack_type === PackType.MICRO_QUIZ) {
-    mountMicroQuiz(selectedPackSummary)
-  } else if (selectedPackSummary.pack_type === PackType.JOURNEY) {
-    mountPackJourney(selectedPackSummary)
-    return
-  }
+  // if (selectedPackSummary.pack_type === PackType.MICRO_QUIZ) {
+  //   mountMicroQuiz(selectedPackSummary)
+  // } else if (selectedPackSummary.pack_type === PackType.JOURNEY) {
+  //   mountPackJourney(selectedPackSummary)
+  //   return
+  // }
+  mountPackJourney(selectedPackSummary)
 })
 
 //  initialize pack avatar images
@@ -146,13 +147,15 @@ function avatarImageClickHandler(event, selectedPack) {
 
   // unmount previously opened components
   unmountPackJourney()
-  unmountMicroQuiz()
+  // unmountMicroQuiz()
 
-  if (selectedPack.pack_type === PackType.JOURNEY) {
-    mountPackJourney(selectedPack)
-  } else if (selectedPack.pack_type === PackType.MICRO_QUIZ) {
-    mountMicroQuiz(selectedPack)
-  }
+  // if (selectedPack.pack_type === PackType.JOURNEY) {
+  //   mountPackJourney(selectedPack)
+  // } else if (selectedPack.pack_type === PackType.MICRO_QUIZ) {
+  //   mountMicroQuiz(selectedPack)
+  // }
+
+  mountPackJourney(selectedPack)
 
   // focus user Learn/Exercise area
   window.location.hash = '#action-content'
