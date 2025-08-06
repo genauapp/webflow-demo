@@ -1,54 +1,69 @@
 // bookmarkButton.js
 import bookmarkService from '../../../../service/BookmarkService.js'
 
-/**
- * Renders a bookmark button based on the word's bookmark status.
- * @param {Object} word - The word object containing `is_bookmarked` and `id`.
- */
-export function renderBookmarkButton(word) {
-  const container = document.getElementById('bookmark-button-container')
-  if (!container || !word) return
+let els = {}
+let isLoading = false // Track loading state globally
 
-  // Clear existing content
-  container.innerHTML = ''
+/** Initialize elements dynamically using provided IDs */
+function initElements() {
+  els = {
+    container: () => document.getElementById('bookmark-button-container'),
+    addButton: () => document.getElementById('bookmark-add-button'),
+    removeButton: () => document.getElementById('bookmark-remove-button'),
+  }
+}
 
-  // Create button element
-  const button = document.createElement('button')
-  button.classList.add('bookmark-button')
+/** Render bookmark buttons based on the word's bookmark status */
+export function renderBookmarkButtons(word) {
+  if (!els.container() || !word) return
 
-  // Update button rendering logic to prevent recursive event listener additions and handle loading state
-  button.disabled = false // Ensure button is enabled initially
-
+  // Show/hide buttons based on bookmark status
   if (word.is_bookmarked) {
-    button.textContent = 'Remove Bookmark'
-    button.onclick = async () => {
-      button.disabled = true // Disable button during loading
+    els.addButton().style.display = 'none'
+    els.removeButton().style.display = 'block'
+
+    els.removeButton().onclick = async () => {
+      if (isLoading) return // Prevent spam clicks
+      isLoading = true
+      els.removeButton().disabled = true // Disable button during loading
+
       const result = await bookmarkService.removeFromBookmark(word.id)
-      button.disabled = false // Re-enable button after loading
+
+      isLoading = false
+      els.removeButton().disabled = false // Re-enable button after loading
 
       if (!result.error) {
         word.is_bookmarked = false
-        renderBookmarkButton(word) // Re-render button
+        renderBookmarkButtons(word) // Re-render buttons
       } else {
         console.error('Failed to remove bookmark:', result.error)
       }
     }
   } else {
-    button.textContent = 'Add Bookmark'
-    button.onclick = async () => {
-      button.disabled = true // Disable button during loading
+    els.addButton().style.display = 'block'
+    els.removeButton().style.display = 'none'
+
+    els.addButton().onclick = async () => {
+      if (isLoading) return // Prevent spam clicks
+      isLoading = true
+      els.addButton().disabled = true // Disable button during loading
+
       const result = await bookmarkService.addToBookmark(word.id)
-      button.disabled = false // Re-enable button after loading
+
+      isLoading = false
+      els.addButton().disabled = false // Re-enable button after loading
 
       if (!result.error) {
         word.is_bookmarked = true
-        renderBookmarkButton(word) // Re-render button
+        renderBookmarkButtons(word) // Re-render buttons
       } else {
         console.error('Failed to add bookmark:', result.error)
       }
     }
   }
+}
 
-  // Append button to container
-  container.appendChild(button)
+/** Initialize bookmark buttons */
+export function initBookmarkButtons() {
+  initElements()
 }
