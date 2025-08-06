@@ -78,7 +78,7 @@ function handleStageSelection(stageId) {
   const currentDeckSummary = journeyState.deckSummaries.find(
     (stage) => stage.id === stageId
   )
-  mountMultiDeckPractice(currentDeckSummary)
+  mountMultiDeckPractice(journeyState.pack, currentDeckSummary)
 }
 
 function mountSingleDeckPractice(currentDeckSummary) {
@@ -88,9 +88,9 @@ function mountSingleDeckPractice(currentDeckSummary) {
   )
 }
 
-function mountMultiDeckPractice(currentDeckSummary) {
+function mountMultiDeckPractice(currentPackSummary, currentDeckSummary) {
   // Mount back button with navigation handler
-  mountReturnToJourneyButton(journeyState.pack.name.english, () => {
+  mountReturnToJourneyButton(currentPackSummary.name.english, () => {
     unmountDeckPractice()
     unmountReturnToJourneyButton()
 
