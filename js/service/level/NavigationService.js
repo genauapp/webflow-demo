@@ -1,4 +1,5 @@
 import {
+  ExerciseStreakTarget,
   ExerciseType,
   ExerciseTypeSettingsMap,
   NavigationMode,
