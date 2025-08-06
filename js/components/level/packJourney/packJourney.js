@@ -43,16 +43,13 @@ function renderJourney(journeyState) {
   )
     return
 
-  els.journeyMapCard().style.display = 'flex'
-
   // MICRO_QUIZ
   if (journeyState.deckSummaries.length < 2) {
-    mountDeckPractice(
-      journeyState.deckSummaries[0],
-      handleStageCompletion // Completion callback
-    )
+    els.journeyMapCard().style.display = 'none'
+    handleStageSelection(journeyState.deckSummaries[0].id)
   } else {
     // Initialize journey map
+    els.journeyMapCard().style.display = 'flex'
     mountJourneyMapCardBody(journeyState, handleStageSelection)
   }
 }
