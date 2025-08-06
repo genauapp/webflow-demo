@@ -34,6 +34,12 @@ export const ExerciseType = Object.freeze({
   // TRUE_FALSE: 'true-false', // 70% correct - 30% wrong answer
 })
 
+export const ExerciseStreakTarget = Object.freeze({
+  1: 'ONE',
+  3: 'THREE',
+  5: 'FIVE',
+})
+
 export const ExerciseTypeSettingsMap = Object.freeze({
   [ExerciseType.VOCABULARY]: {
     description:

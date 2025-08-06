@@ -474,7 +474,7 @@ class NavigationService {
     if (!session) return null
 
     const state = session.progression[NavigationMode.EXERCISE]
-    const streakTarget = session.streakTarget
+    const streakTarget = ExerciseStreakTarget[session.streakTarget]
     const wordScores = session.originalItems.map((word) => ({
       word_id: word.id,
       wrong_count: this._getWordWrongCount(state.wrongAnswerCountMap, word.id),
