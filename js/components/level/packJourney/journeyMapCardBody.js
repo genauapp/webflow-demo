@@ -30,7 +30,7 @@ export function renderJourneyMap(journeyState, onStageSelected) {
     stageEl.className = `journey-stage ${stage.status}`
     stageEl.textContent = `${stage.wordType} Deck`
 
-    if (stage._status === DeckStatus.COMPLETED) {
+    if (stage.status === DeckStatus.COMPLETED) {
       stageEl.innerHTML += '<span class="checkmark">✓</span>'
     }
 
