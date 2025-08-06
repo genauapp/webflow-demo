@@ -14,7 +14,7 @@ function initElements() {
 }
 
 /** Render bookmark buttons based on the word's bookmark status */
-export function renderBookmarkButtons(word) {
+function renderBookmarkButtons(word) {
   if (!els.container() || !word) return
 
   // Show/hide buttons based on bookmark status
@@ -64,6 +64,8 @@ export function renderBookmarkButtons(word) {
 }
 
 /** Initialize bookmark buttons */
-export function initBookmarkButtons() {
+export function initBookmarkButtons(word) {
   initElements()
+
+  renderBookmarkButtons(word)
 }
