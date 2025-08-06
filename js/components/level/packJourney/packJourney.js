@@ -47,7 +47,7 @@ function renderJourney(journeyState) {
 
   // MICRO_QUIZ
   if (journeyState.deckSummaries.length < 2) {
-    handleStageSelection(deckSummaries[0].id)
+    handleStageSelection(journeyState.deckSummaries[0].id)
   } else {
     // Initialize journey map
     mountJourneyMapCardBody(journeyState, handleStageSelection)
