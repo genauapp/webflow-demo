@@ -47,8 +47,8 @@ function renderJourney(journeyState) {
   if (journeyState.deckSummaries.length < 2) {
     els.container().style.display = 'none'
     els.journeyMapCard().style.display = 'none'
-    const currentSingleDeck = journeyState.deckSummaries[0]
-    mountSingleDeckPractice(currentSingleDeck)
+    const singleDeckSummary = journeyState.deckSummaries[0]
+    mountSingleDeckPractice(journeyState.pack, singleDeckSummary)
   } else {
     // Initialize journey map
     els.journeyMapCard().style.display = 'flex'
@@ -56,13 +56,16 @@ function renderJourney(journeyState) {
   }
 }
 
-const handleStageCompletion = (results) => {
-  // Pass results to completion handler
-  packJourneyService.completeStage(currentPackId, stageId, results)
+const handleStageCompletion = (currentPackId, currentDeckId) => {
+  // return callback
+  return (results) => {
+    // Pass results to completion handler
+    packJourneyService.completeStage(currentPackId, currentDeckId, results)
 
-  // // Return to journey view
-  // els.journeyMapCard().style.display = 'flex'
-  // els.container().style.display = 'flex'
+    // // Return to journey view
+    // els.journeyMapCard().style.display = 'flex'
+    // els.container().style.display = 'flex'
+  }
 }
 
 function updateJourney(journeyState) {
@@ -81,10 +84,10 @@ function handleStageSelection(stageId) {
   mountMultiDeckPractice(journeyState.pack, currentDeckSummary)
 }
 
-function mountSingleDeckPractice(currentDeckSummary) {
+function mountSingleDeckPractice(currentPackSummary, currentDeckSummary) {
   mountDeckPractice(
     currentDeckSummary,
-    handleStageCompletion // Completion callback
+    handleStageCompletion(currentPackSummary.id, currentDeckSummary.id) // that returns completion callback
   )
 }
 
@@ -99,7 +102,7 @@ function mountMultiDeckPractice(currentPackSummary, currentDeckSummary) {
 
   mountDeckPractice(
     currentDeckSummary,
-    handleStageCompletion // Completion callback
+    handleStageCompletion(currentPackSummary.id, currentDeckSummary.id) // that returns completion callback
   )
 }
 

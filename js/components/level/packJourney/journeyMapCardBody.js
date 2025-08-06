@@ -13,12 +13,12 @@ function applyInteractivity(stageEl, stage, onStageSelected) {
   stageEl.dataset.stageId = stage.id
   // remove any old click handler
   stageEl.onclick = null
-  if (stage.status === DeckStatus.UNLOCKED) {
-    stageEl.classList.add('interactive')
-    stageEl.onclick = () => onStageSelected(stage.id)
-  } else {
-    stageEl.classList.remove('interactive')
-  }
+  // if (stage.status === DeckStatus.UNLOCKED) {
+  stageEl.classList.add('interactive')
+  stageEl.onclick = () => onStageSelected(stage.id)
+  // } else {
+  //   stageEl.classList.remove('interactive')
+  // }
 }
 
 export function renderJourneyMap(journeyState, onStageSelected) {
