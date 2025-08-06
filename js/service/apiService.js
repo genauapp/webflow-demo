@@ -71,6 +71,19 @@ export const protectedApiService = {
       protectedApi.get(`/api/v1/user-pack/deck/${deckId}/word`)
     )
   },
+  addToBookmark: (wordId) => {
+    return handleRequest(() =>
+      protectedApi.post('/api/v1/user-word/bookmark', { word_id: wordId })
+    )
+  },
+  removeFromBookmark: (wordId) => {
+    return handleRequest(() =>
+      protectedApi.delete(`/api/v1/user-word/bookmark/${wordId}`)
+    )
+  },
+  getAllBookmarkedWords: () => {
+    return handleRequest(() => protectedApi.get('/api/v1/user-word/bookmark'))
+  },
 }
 
 async function handleRequest(fetchCall) {
