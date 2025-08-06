@@ -45,8 +45,10 @@ function renderJourney(journeyState) {
 
   // MICRO_QUIZ
   if (journeyState.deckSummaries.length < 2) {
+    els.container().style.display = 'none'
     els.journeyMapCard().style.display = 'none'
-    handleStageSelection(journeyState.deckSummaries[0].id)
+    const currentSingleDeck = journeyState.deckSummaries[0]
+    mountSingleDeckPractice(currentSingleDeck)
   } else {
     // Initialize journey map
     els.journeyMapCard().style.display = 'flex'
@@ -73,10 +75,20 @@ function handleStageSelection(stageId) {
 
   const journeyState = packJourneyService.getJourneyState(currentPackId)
 
-  mountDeckPracticeForStage(journeyState, stageId, handleStageCompletion)
+  const currentDeckSummary = journeyState.deckSummaries.find(
+    (stage) => stage.id === stageId
+  )
+  mountMultiDeckPractice(currentDeckSummary)
 }
 
-function mountDeckPracticeForStage(journeyState, stageId) {
+function mountSingleDeckPractice(currentDeckSummary) {
+  mountDeckPractice(
+    currentDeckSummary,
+    handleStageCompletion // Completion callback
+  )
+}
+
+function mountMultiDeckPractice(currentDeckSummary) {
   // Mount back button with navigation handler
   mountReturnToJourneyButton(journeyState.pack.name.english, () => {
     unmountDeckPractice()
@@ -84,10 +96,6 @@ function mountDeckPracticeForStage(journeyState, stageId) {
 
     els.container().style.display = 'flex'
   })
-
-  const currentDeckSummary = journeyState.deckSummaries.find(
-    (stage) => stage.id === stageId
-  )
 
   mountDeckPractice(
     currentDeckSummary,
