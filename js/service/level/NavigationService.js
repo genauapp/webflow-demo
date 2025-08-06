@@ -466,7 +466,6 @@ class NavigationService {
    */
   getDeckExerciseCompletionPayload(
     sessionId,
-    deckId,
     exerciseStartedAt,
     exerciseCompletedAt
   ) {
@@ -481,7 +480,7 @@ class NavigationService {
     }))
 
     return {
-      deck_id: deckId,
+      deck_id: sessionId,
       exercise_streak_target: streakTarget,
       exercise_started_at: exerciseStartedAt,
       exercise_completed_at: exerciseCompletedAt,
@@ -688,26 +687,12 @@ class NavigationService {
   _notifyExerciseResults(session) {
     if (session.callbacks.onExerciseResults) {
       const results = this.getExerciseResults(session.id)
-      // Generate POST-ready payload
       const progression = session.progression[NavigationMode.EXERCISE]
-      const streakTarget = session.streakTarget
-      const exerciseStartedAt = progression.exerciseStartedAt || null
-      const exerciseCompletedAt =
-        progression.exerciseCompletedAt || new Date().toISOString()
-      const wordScores = session.originalItems.map((word) => ({
-        word_id: word.id,
-        wrong_count: this._getWordWrongCount(
-          progression.wrongAnswerCountMap,
-          word.id
-        ),
-      }))
-      const postPayload = {
-        deck_id: session.id,
-        exercise_streak_target: streakTarget,
-        exercise_started_at: exerciseStartedAt,
-        exercise_completed_at: exerciseCompletedAt,
-        word_scores: wordScores,
-      }
+      const postPayload = this.getDeckExerciseCompletionPayload(
+        session.id, // deckId is session.id here
+        progression.exerciseStartedAt,
+        progression.exerciseCompletedAt
+      )
       session.callbacks.onExerciseResults(results, postPayload)
     }
   }
