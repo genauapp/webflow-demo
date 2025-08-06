@@ -5,6 +5,7 @@ import { mountAdjective } from '../learn/adjective.js'
 import { mountAdverb } from '../learn/adverb.js'
 import { mountPreposition } from '../learn/preposition.js'
 import { mountVerb } from '../learn/verb.js'
+import { renderBookmarkButton } from './bookmarkButton.js'
 
 let els = {}
 
@@ -58,6 +59,8 @@ function renderLearnCard({ currentWord: word, currentIndex, lastIndex }) {
   } else {
     console.warn(`Word Type Not Supported: ${word.type}`)
   }
+
+  renderBookmarkButton(word)
 
   // // Show the card
   // if (els.wordCard()) {
