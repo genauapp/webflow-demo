@@ -39,14 +39,19 @@ function renderJourney(journeyState) {
   if (
     !journeyState ||
     !journeyState.deckSummaries ||
-    journeyState.deckSummaries.length === 0
+    journeyState.deckSummaries.length < 1
   )
     return
 
   els.journeyMapCard().style.display = 'flex'
 
-  // Initialize journey map
-  mountJourneyMapCardBody(journeyState, handleStageSelection)
+  // MICRO_QUIZ
+  if (journeyState.deckSummaries.length < 2) {
+    handleStageSelection(deckSummaries[0].id)
+  } else {
+    // Initialize journey map
+    mountJourneyMapCardBody(journeyState, handleStageSelection)
+  }
 }
 
 function updateJourney(journeyState) {
