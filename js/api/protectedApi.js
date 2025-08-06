@@ -35,6 +35,8 @@ const protectedApi = {
   },
   post: (endpoint, body, options) =>
     protectedFetch(endpoint, { method: 'POST', body, ...options }),
+  delete: (endpoint, options) =>
+    protectedFetch(endpoint, { method: 'DELETE', ...options }),
 }
 
 export default protectedApi
