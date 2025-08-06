@@ -466,19 +466,20 @@ class NavigationService {
    * @returns {object} API payload
    */
   getDeckExerciseCompletionPayload(
-    sessionId,
-    exerciseStartedAt,
-    exerciseCompletedAt
+    sessionId
   ) {
     const session = this.sessions.get(sessionId)
     if (!session) return null
 
     const state = session.progression[NavigationMode.EXERCISE]
     const streakTarget = ExerciseStreakTarget[session.streakTarget]
+    const exerciseStartedAt = state.exerciseStartedAt
+    const exerciseCompletedAt = state.exerciseCompletedAt
     const wordScores = session.originalItems.map((word) => ({
       word_id: word.id,
       wrong_count: this._getWordWrongCount(state.wrongAnswerCountMap, word.id),
     }))
+
 
     return {
       deck_id: sessionId,
@@ -689,11 +690,7 @@ class NavigationService {
     if (session.callbacks.onExerciseResults) {
       const results = this.getExerciseResults(session.id)
       const progression = session.progression[NavigationMode.EXERCISE]
-      const postPayload = this.getDeckExerciseCompletionPayload(
-        session.id, // deckId is session.id here
-        progression.exerciseStartedAt,
-        progression.exerciseCompletedAt
-      )
+      const postPayload = this.getDeckExerciseCompletionPayload(session.id)
       session.callbacks.onExerciseResults(results, postPayload)
     }
   }
