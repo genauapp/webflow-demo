@@ -144,13 +144,11 @@ async function removeFavorite(wordId) {
     return
   }
 
-  const updatedBookmarkedWords = bookmarkedWords.splice(removedBookmarkWordIndex, 1) // İlgili indeksi kaldır
-
-  bookmarkedWords = updatedBookmarkedWords
+  bookmarkedWords.splice(removedBookmarkWordIndex, 1) // Remove the item in place
 
   // LocalStorageManager.save(BOOKMARKS_KEY, bookmarkedWords)
 
-  listBookmarkedWords(updatedBookmarkedWords) // Listeyi yeniden yükle
+  listBookmarkedWords(bookmarkedWords) // Pass the updated array
 }
 
 // function listLearnedWords() {
