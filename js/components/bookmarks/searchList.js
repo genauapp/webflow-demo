@@ -74,9 +74,29 @@ function renderSearchUI() {
     handleFilterChange()
   })
 
+  // Reset button
+  const resetBtn = document.createElement('button')
+  resetBtn.textContent = 'Reset Filters'
+  resetBtn.style = 'padding: 8px 20px; margin-left: 12px; border-radius: 8px; border: none; background: #e0e0e7; color: #333; font-size: 16px; cursor: pointer; transition: background 0.2s;'
+  resetBtn.addEventListener('mouseenter', () => {
+    resetBtn.style.background = '#d1d1d8'
+  })
+  resetBtn.addEventListener('mouseleave', () => {
+    resetBtn.style.background = '#e0e0e7'
+  })
+  resetBtn.addEventListener('click', () => {
+    filters = { level: '', type: '', text: '' }
+    // Reset UI values
+    levelSelect.value = ''
+    typeSelect.value = ''
+    textInput.value = ''
+    handleFilterChange()
+  })
+
   container.appendChild(levelSelect)
   container.appendChild(typeSelect)
   container.appendChild(textInput)
+  container.appendChild(resetBtn)
 }
 
 /** Render bookmarked words list */
