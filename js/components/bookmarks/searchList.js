@@ -26,9 +26,9 @@ function renderSearchUI() {
 
   // Modern styles for search elements
   const selectStyle =
-    'padding: 8px 16px; margin-right: 12px; border-radius: 8px; border: 1px solid #ccc; background: #f8f8fa; font-size: 16px; color: #333; outline: none; transition: border-color 0.2s;'
+    'padding: 8px 16px; margin-right: 12px; margin-bottom: 16px; border-radius: 8px; border: 1px solid #ccc; background: #f8f8fa; font-size: 16px; color: #333; outline: none; transition: border-color 0.2s;'
   const inputStyle =
-    'padding: 8px 16px; border-radius: 8px; border: 1px solid #ccc; background: #f8f8fa; font-size: 16px; color: #333; outline: none; transition: border-color 0.2s; width: 220px;'
+    'padding: 8px 16px; margin-bottom: 16px; border-radius: 8px; border: 1px solid #ccc; background: #f8f8fa; font-size: 16px; color: #333; outline: none; transition: border-color 0.2s; width: 220px;'
 
   // Level filter
   const levelSelect = document.createElement('select')
