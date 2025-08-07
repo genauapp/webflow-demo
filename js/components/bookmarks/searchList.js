@@ -24,9 +24,16 @@ function renderSearchUI() {
   if (!container) return
   container.innerHTML = ''
 
+  // Modern styles for search elements
+  const selectStyle =
+    'padding: 8px 16px; margin-right: 12px; border-radius: 8px; border: 1px solid #ccc; background: #f8f8fa; font-size: 16px; color: #333; outline: none; transition: border-color 0.2s;'
+  const inputStyle =
+    'padding: 8px 16px; border-radius: 8px; border: 1px solid #ccc; background: #f8f8fa; font-size: 16px; color: #333; outline: none; transition: border-color 0.2s; width: 220px;'
+
   // Level filter
   const levelSelect = document.createElement('select')
   levelSelect.id = 'bookmark-search-level'
+  levelSelect.style = selectStyle
   ;['', 'A1', 'A2', 'B1', 'B2'].forEach(lvl => {
     const opt = document.createElement('option')
     opt.value = lvl
@@ -42,6 +49,7 @@ function renderSearchUI() {
   // Type filter
   const typeSelect = document.createElement('select')
   typeSelect.id = 'bookmark-search-type'
+  typeSelect.style = selectStyle
   ;['', 'noun', 'verb', 'adjective', 'adverb', 'preposition'].forEach(type => {
     const opt = document.createElement('option')
     opt.value = type
@@ -60,6 +68,7 @@ function renderSearchUI() {
   textInput.type = 'text'
   textInput.placeholder = 'Search words...'
   textInput.value = filters.text
+  textInput.style = inputStyle
   textInput.addEventListener('input', () => {
     filters.text = textInput.value
     handleFilterChange()
