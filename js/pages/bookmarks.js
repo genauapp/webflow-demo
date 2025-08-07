@@ -144,7 +144,7 @@ async function removeFavorite(wordId) {
     return
   }
 
-  const updatedBookmarkedWords = bookmarkedWords.splice(index, 1) // İlgili indeksi kaldır
+  const updatedBookmarkedWords = bookmarkedWords.splice(removedBookmarkWordIndex, 1) // İlgili indeksi kaldır
 
   bookmarkedWords = updatedBookmarkedWords
 
