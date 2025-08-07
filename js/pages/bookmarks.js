@@ -8,11 +8,17 @@ let bookmarkedWords = null
 document.addEventListener('DOMContentLoaded', async () => {
   LocalStorageManager.clearDeprecatedLocalStorageItems()
 
-  const { data } = await protectedApiService.getAllBookmarkedWords()
-  bookmarkedWords = data
+  try {
+    const { data, error } = await protectedApiService.getAllBookmarkedWords()
+    bookmarkedWords = error ? [] : data
+  } catch {
+    bookmarkedWords = []
+  }
+
+  listBookmarkedWords(bookmarkedWords)
 })
 
-async function listFavorites() {
+async function listBookmarkedWords(words) {
   const favoritesContainer = document.getElementById('favoritesContainer')
 
   // FavoritesContainer için scrollable alan ayarları
@@ -31,7 +37,7 @@ async function listFavorites() {
   //   DEFAULT_VALUE.BOOKMARKS
   // )
 
-  if (bookmarkedWords.length === 0) {
+  if (words.length === 0) {
     // Favori word yokken gösterilecek mesaj
     showNoWordsMessage(favoritesContainer)
     return
@@ -41,7 +47,7 @@ async function listFavorites() {
   // favoritesContainer.style.display = 'block' // Flex değil, varsayılan düzen
   favoritesContainer.style.display = 'flex' // Flex değil, varsayılan düzen
 
-  bookmarkedWords.forEach((word) => {
+  words.forEach((word) => {
     // Tüm favori bloğunu kapsayan div
     const wordContainer = document.createElement('div')
     // wordContainer.classList.add('favAllBlock')
@@ -122,10 +128,11 @@ async function listFavorites() {
 }
 
 // Favori wordyi silme
-function removeFavorite(wordId) {
+async function removeFavorite(wordId) {
   // let bookmarkedWords = LocalStorageManager.load(BOOKMARKS_KEY)
 
-  const unbookmarkedWord = protectedApiService.removeFromBookmark(wordId)
+  const { data: unbookmarkedWord } =
+    await protectedApiService.removeFromBookmark(wordId)
 
   // const updatedBookmarkedWords = bookmarkedWords.splice(index, 1) // İlgili indeksi kaldır
   const removedBookmarkWordIndex = bookmarkedWords.findIndex(
@@ -142,7 +149,7 @@ function removeFavorite(wordId) {
 
   // LocalStorageManager.save(BOOKMARKS_KEY, bookmarkedWords)
 
-  listFavorites() // Listeyi yeniden yükle
+  listBookmarkedWords(updatedBookmarkedWords) // Listeyi yeniden yükle
 }
 
 // function listLearnedWords() {
@@ -261,5 +268,5 @@ function showNoWordsMessage(elem) {
 }
 
 // Sayfa yüklendiğinde favorileri listele
-document.addEventListener('DOMContentLoaded', listFavorites)
+// document.addEventListener('DOMContentLoaded', listBookmarkedWords)
 // document.addEventListener('DOMContentLoaded', listLearnedWords)
