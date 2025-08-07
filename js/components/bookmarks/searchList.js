@@ -1,6 +1,6 @@
 // js/components/bookmarks/searchList.js
 import { bookmarkSearchService } from '../../service/BookmarkSearchService.js'
-import { bookmarkAutocompleteService } from '../../service/BookmarkAutocompleteService.js'
+import { mountBookmarkAutocomplete } from './autocomplete.js'
 import { protectedApiService } from '../../service/apiService.js'
 
 let els = {}
@@ -70,47 +70,14 @@ function renderSearchUI() {
   textInput.value = filters.text
   textInput.style = inputStyle
 
-  // Autocomplete dropdown
-  const autocompleteDropdown = document.createElement('div')
-  autocompleteDropdown.id = 'bookmark-search-autocomplete'
-  autocompleteDropdown.style = 'position: absolute; z-index: 10; background: #fff; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-top: 4px; min-width: 220px; display: none;'
-
-  textInput.addEventListener('input', () => {
-    filters.text = textInput.value
+  // Autocomplete component
+  const searchWrapper = document.createElement('div')
+  searchWrapper.style = 'display: inline-block; position: relative;'
+  searchWrapper.appendChild(textInput)
+  // Mount autocomplete
+  mountBookmarkAutocomplete(textInput, bookmarkedWords, (selectedValue) => {
+    filters.text = selectedValue
     handleFilterChange()
-
-    // Autocomplete logic
-    const suggestions = bookmarkAutocompleteService.getSuggestions(bookmarkedWords, textInput.value)
-    autocompleteDropdown.innerHTML = ''
-    if (suggestions.length && textInput.value.length > 1) {
-      suggestions.forEach(suggestion => {
-        const item = document.createElement('div')
-        item.textContent = suggestion.value
-        item.style = 'padding: 8px 16px; cursor: pointer; font-size: 15px; display: flex; align-items: center;'
-        const tag = document.createElement('span')
-        tag.textContent = suggestion.tag
-        tag.style = 'margin-left: 8px; background: #e0e0e7; color: #555; font-size: 13px; border-radius: 6px; padding: 2px 8px;'
-        item.appendChild(tag)
-        item.addEventListener('mousedown', (e) => {
-          e.preventDefault()
-          textInput.value = suggestion.value
-          filters.text = suggestion.value
-          handleFilterChange()
-          autocompleteDropdown.style.display = 'none'
-        })
-        autocompleteDropdown.appendChild(item)
-      })
-      autocompleteDropdown.style.display = 'block'
-    } else {
-      autocompleteDropdown.style.display = 'none'
-    }
-  })
-
-  textInput.addEventListener('blur', () => {
-    setTimeout(() => { autocompleteDropdown.style.display = 'none' }, 120)
-  })
-  textInput.addEventListener('focus', () => {
-    if (autocompleteDropdown.innerHTML) autocompleteDropdown.style.display = 'block'
   })
 
   // Reset button
@@ -131,12 +98,6 @@ function renderSearchUI() {
     textInput.value = ''
     handleFilterChange()
   })
-
-  // Position autocomplete relative to input
-  const searchWrapper = document.createElement('div')
-  searchWrapper.style = 'display: inline-block; position: relative;'
-  searchWrapper.appendChild(textInput)
-  searchWrapper.appendChild(autocompleteDropdown)
 
   container.appendChild(levelSelect)
   container.appendChild(typeSelect)
