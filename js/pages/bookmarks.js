@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 })
 
 async function listBookmarkedWords(words) {
-  const favoritesContainer = document.getElementById('favoritesContainer')
+  // const favoritesContainer = document.getElementById('favoritesContainer')
+  const bookmarksContainer = document.getElementById('bookmarks-container')
 
   // FavoritesContainer için scrollable alan ayarları
   // favoritesContainer.style.maxHeight = '420px' // Maksimum yükseklik
@@ -30,7 +31,7 @@ async function listBookmarkedWords(words) {
   // favoritesContainer.style.display = 'block' // Varsayılan düzen
   // favoritesContainer.style.display = 'flex' // Varsayılan düzen
 
-  favoritesContainer.innerHTML = '' // Mevcut listeyi temizle
+  bookmarksContainer.innerHTML = '' // Mevcut listeyi temizle
 
   // const bookmarkedWords = LocalStorageManager.load(
   //   BOOKMARKS_KEY,
@@ -39,13 +40,13 @@ async function listBookmarkedWords(words) {
 
   if (words.length === 0) {
     // Favori word yokken gösterilecek mesaj
-    showNoWordsMessage(favoritesContainer)
+    showNoWordsMessage(bookmarksContainer)
     return
   }
 
   // Favori wordler mevcutsa düzeni geri yükle
   // favoritesContainer.style.display = 'block' // Flex değil, varsayılan düzen
-  favoritesContainer.style.display = 'flex' // Flex değil, varsayılan düzen
+  bookmarksContainer.style.display = 'flex' // Flex değil, varsayılan düzen
 
   words.forEach((word) => {
     // Tüm favori bloğunu kapsayan div
@@ -123,7 +124,7 @@ async function listBookmarkedWords(words) {
     wordContainer.appendChild(wordRightContainer)
 
     // Favoriler kapsayıcısına ekle
-    favoritesContainer.appendChild(wordContainer)
+    bookmarksContainer.appendChild(wordContainer)
   })
 }
 
@@ -247,19 +248,19 @@ function showNoWordsMessage(elem) {
   noWordsMessageElement.style.padding = '16px' // Mesaj için padding
   noWordsMessageElement.style.lineHeight = '1.5' // Satır yüksekliği
 
-  if (elem.id === 'learnedWordsContainer') {
-    noWordsMessageElement.innerHTML = `
-      <p>No words learned yet!</p>
-      <p>Go to the "Exercise" and answer correctly a word three times in a row!!!</p>
-    `
-    elem.appendChild(noWordsMessageElement)
-    return
-  }
+  // if (elem.id === 'learnedWordsContainer') {
+  //   noWordsMessageElement.innerHTML = `
+  //     <p>No words learned yet!</p>
+  //     <p>Go to the "Exercise" and answer correctly a word three times in a row!!!</p>
+  //   `
+  //   elem.appendChild(noWordsMessageElement)
+  //   return
+  // }
 
-  if (elem.id === 'favoritesContainer') {
+  if (elem.id === 'bookmarks-container') {
     noWordsMessageElement.innerHTML = `
-      <p>No favorites added yet!</p>
-      <p>Click the "Add to Favorites" button to start saving words 🌟</p>
+      <p>No bookmarked words added yet!</p>
+      <p>Click the "Add to Bookmark" button to start saving words 🌟</p>
     `
 
     elem.appendChild(noWordsMessageElement)
