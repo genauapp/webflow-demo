@@ -77,7 +77,7 @@ async function listBookmarkedWords(words) {
 
     const englishWord = document.createElement('p')
     // englishWord.classList.add('favoriteWordEnglish')
-    englishWord.classList.add('bookmark-word-german')
+    englishWord.classList.add('bookmark-word-english')
     // englishWord.style.margin = '4px 0 0 0' // Üstte boşluk
     englishWord.textContent = word.english
 
