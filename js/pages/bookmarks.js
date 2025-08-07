@@ -1,6 +1,7 @@
 // import { BOOKMARKS_KEY, DEFAULT_VALUE } from '../constants/storageKeys.js'
 import { protectedApiService } from '../service/apiService.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
+import { mountBookmarkSearchList } from '../components/bookmarks/searchList.js'
 
 let bookmarkedWords = null
 
@@ -15,141 +16,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     bookmarkedWords = []
   }
 
-  listBookmarkedWords(bookmarkedWords)
+  // Ensure search UI container exists above bookmarks list
+  let searchContainer = document.getElementById('bookmark-search-container')
+  if (!searchContainer) {
+    searchContainer = document.createElement('div')
+    searchContainer.id = 'bookmark-search-container'
+    const bookmarksContainer = document.getElementById('bookmarks-container')
+    bookmarksContainer.parentNode.insertBefore(searchContainer, bookmarksContainer)
+  }
+
+  mountBookmarkSearchList(bookmarkedWords)
 })
 
-async function listBookmarkedWords(words) {
-  // const favoritesContainer = document.getElementById('favoritesContainer')
-  const bookmarksContainer = document.getElementById('bookmarks-container')
-
-  // FavoritesContainer için scrollable alan ayarları
-  // favoritesContainer.style.maxHeight = '420px' // Maksimum yükseklik
-  // favoritesContainer.style.overflowY = 'auto' // Dikey kaydırma
-  // favoritesContainer.style.padding = '12px' // İçerik padding
-  // favoritesContainer.style.border = '0px solid #ccc' // Çerçeve
-  // favoritesContainer.style.borderRadius = '16px' // Köşeleri yuvarla
-  // favoritesContainer.style.display = 'block' // Varsayılan düzen
-  // favoritesContainer.style.display = 'flex' // Varsayılan düzen
-
-  bookmarksContainer.innerHTML = '' // Mevcut listeyi temizle
-
-  // const bookmarkedWords = LocalStorageManager.load(
-  //   BOOKMARKS_KEY,
-  //   DEFAULT_VALUE.BOOKMARKS
-  // )
-
-  if (words.length === 0) {
-    // Favori word yokken gösterilecek mesaj
-    showNoWordsMessage(bookmarksContainer)
-    return
-  }
-
-  // Favori wordler mevcutsa düzeni geri yükle
-  // favoritesContainer.style.display = 'block' // Flex değil, varsayılan düzen
-  bookmarksContainer.style.display = 'flex' // Flex değil, varsayılan düzen
-
-  words.forEach((word) => {
-    // Tüm favori bloğunu kapsayan div
-    const wordContainer = document.createElement('div')
-    // wordContainer.classList.add('favAllBlock')
-    wordContainer.classList.add('bookmark-word-container')
-    // wordContainer.style.display = 'flex'
-    // wordContainer.style.justifyContent = 'space-between' // Yatayda aralık
-    // wordContainer.style.alignItems = 'center' // Dikeyde ortalama
-    // wordContainer.style.padding = '12px 0' // Bloklar arası boşluk
-    // wordContainer.style.borderBottom = '1px solid #ccc' // Alt çizgi ile ayırma
-
-    // german ve İngilizce wordler
-    const wordLeftContainer = document.createElement('div')
-    // wordLeftContainer.classList.add('wordLeftContainer')
-    wordLeftContainer.classList.add('bookmark-word-left-container')
-    // wordLeftContainer.style.display = 'flex'
-    // wordLeftContainer.style.flexDirection = 'column' // Dikey hizalama
-    // wordLeftContainer.style.textAlign = 'left' // Sola hizalama
-    // wordLeftContainer.style.flex = '1' // Otomatik genişleme
-
-    const germanWord = document.createElement('p')
-    // germanWord.classList.add('favoriteWordGerman')
-    germanWord.classList.add('bookmark-word-german')
-    // germanWord.style.margin = '0' // Varsayılan margin sıfırlama
-    // germanWord.style.fontWeight = 'bold' // Kalın yazı
-    germanWord.textContent = word.german
-
-    const englishWord = document.createElement('p')
-    // englishWord.classList.add('favoriteWordEnglish')
-    englishWord.classList.add('bookmark-word-english')
-    // englishWord.style.margin = '4px 0 0 0' // Üstte boşluk
-    englishWord.textContent = word.english
-
-    wordLeftContainer.appendChild(germanWord)
-    wordLeftContainer.appendChild(englishWord)
-
-    // level ve silme butonu
-    const wordRightContainer = document.createElement('div')
-    // wordRightContainer.classList.add('favLevelBlock')
-    wordRightContainer.classList.add('bookmark-word-right-container')
-    // wordRightContainer.style.display = 'flex'
-    // wordRightContainer.style.alignItems = 'center' // Dikeyde ortalama
-    // wordRightContainer.style.gap = '8px' // Level ve buton arası boşluk
-
-    const wordLevel = document.createElement('p')
-    wordLevel.classList.add('bookmark-word-level')
-    // wordLevel.style.margin = '0' // Varsayılan margin sıfırlama
-    // wordLevel.style.color = '#999' // Gri renk
-    wordLevel.textContent = word.level
-
-    const wordType = document.createElement('p')
-    wordType.classList.add('bookmark-word-type')
-    // wordType.style.margin = '0'
-    // wordType.style.color = '#999'
-    wordType.textContent = word.type
-
-    const removeButton = document.createElement('button')
-    // removeButton.classList.add('removeButton')
-    removeButton.classList.add('bookmark-word-remove-button')
-    // removeButton.style.border = 'none'
-    // removeButton.style.background = 'none'
-    // removeButton.style.cursor = 'pointer'
-    // removeButton.style.display = 'flex'
-    // removeButton.style.alignItems = 'center' // İkon hizalama
-    removeButton.innerHTML = '🗑️' // Çöp kutusu ikonu
-    removeButton.onclick = () => removeFavorite(word.id)
-
-    wordRightContainer.appendChild(wordType)
-    wordRightContainer.appendChild(wordLevel)
-    wordRightContainer.appendChild(removeButton)
-
-    // Ana bloğa ekle
-    wordContainer.appendChild(wordLeftContainer)
-    wordContainer.appendChild(wordRightContainer)
-
-    // Favoriler kapsayıcısına ekle
-    bookmarksContainer.appendChild(wordContainer)
-  })
-}
-
-// Favori wordyi silme
-async function removeFavorite(wordId) {
-  // let bookmarkedWords = LocalStorageManager.load(BOOKMARKS_KEY)
-
-  const { data: unbookmarkedWord } =
-    await protectedApiService.removeFromBookmark(wordId)
-
-  // const updatedBookmarkedWords = bookmarkedWords.splice(index, 1) // İlgili indeksi kaldır
-  const removedBookmarkWordIndex = bookmarkedWords.findIndex(
-    (bw) => bw.id === unbookmarkedWord.id
-  )
-
-  if (removedBookmarkWordIndex === -1) {
-    return
-  }
-
-  bookmarkedWords.splice(removedBookmarkWordIndex, 1) // Remove the item in place
-
-  // LocalStorageManager.save(BOOKMARKS_KEY, bookmarkedWords)
-
-  listBookmarkedWords(bookmarkedWords) // Pass the updated array
-}
+// ...existing code...
 
 // function listLearnedWords() {
 //   const learnedWordsContainer = document.getElementById('learnedWordsContainer')
@@ -232,39 +111,7 @@ async function removeFavorite(wordId) {
 //   })
 // }
 
-function showNoWordsMessage(elem) {
-  elem.style.display = 'flex' // Flex düzen
-  elem.style.justifyContent = 'center' // Yatayda ortala
-  elem.style.alignItems = 'center' // Dikeyde ortala
-  elem.style.textAlign = 'center' // Yazıları ortala
-
-  const noWordsMessageElement = document.createElement('div')
-  noWordsMessageElement.style.color = '#666' // Gri renk
-  noWordsMessageElement.style.fontFamily = 'Montserrat, sans-serif' // Font ailesi
-  noWordsMessageElement.style.fontSize = '16px' // Font boyutu
-  noWordsMessageElement.style.fontWeight = '500' // Yazı kalınlığı
-  noWordsMessageElement.style.padding = '16px' // Mesaj için padding
-  noWordsMessageElement.style.lineHeight = '1.5' // Satır yüksekliği
-
-  // if (elem.id === 'learnedWordsContainer') {
-  //   noWordsMessageElement.innerHTML = `
-  //     <p>No words learned yet!</p>
-  //     <p>Go to the "Exercise" and answer correctly a word three times in a row!!!</p>
-  //   `
-  //   elem.appendChild(noWordsMessageElement)
-  //   return
-  // }
-
-  if (elem.id === 'bookmarks-container') {
-    noWordsMessageElement.innerHTML = `
-      <p>No bookmarked words added yet!</p>
-      <p>Click the "Add to Bookmark" button to start saving words 🌟</p>
-    `
-
-    elem.appendChild(noWordsMessageElement)
-    return
-  }
-}
+// ...existing code...
 
 // Sayfa yüklendiğinde favorileri listele
 // document.addEventListener('DOMContentLoaded', listBookmarkedWords)
