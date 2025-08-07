@@ -8,6 +8,7 @@ let els = {}
 function initElements() {
   els = {
     wordText: () => document.getElementById('exercise-article-word-text'),
+    wordEnglish: () => document.getElementById('exercise-article-word-english'),
 
     // Options
     optionsContainer: () =>
@@ -132,6 +133,11 @@ function renderArticle(
   if (els.wordText()) {
     els.wordText().textContent = `___ ${StringUtils.capitalize(word.german)}`
     els.wordText().style.color = NounArticleColorMap['default']
+  }
+  // Update English word
+  if (els.wordEnglish()) {
+    els.wordEnglish().textContent = word.english || ''
+    els.wordEnglish().style.display = 'flex'
   }
 
   renderArticleOptions(options, word, onAnswerCallback)
