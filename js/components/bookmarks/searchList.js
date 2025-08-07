@@ -36,7 +36,7 @@ function renderSearchUI() {
   const levelSelect = document.createElement('select')
   levelSelect.id = 'bookmark-search-level'
   levelSelect.style = selectStyle
-  ;['', [...WordLevelList]].forEach((lvl) => {
+  ;['', ...WordLevelList].forEach((lvl) => {
     const opt = document.createElement('option')
     opt.value = lvl
     opt.textContent = lvl ? lvl : 'All Levels'
@@ -52,7 +52,7 @@ function renderSearchUI() {
   const typeSelect = document.createElement('select')
   typeSelect.id = 'bookmark-search-type'
   typeSelect.style = selectStyle
-  ;['', [...WordTypeList]].forEach((type) => {
+  ;['', ...WordTypeList].forEach((type) => {
     const opt = document.createElement('option')
     opt.value = type
     opt.textContent = type ? StringUtils.capitalize(type) : 'All Types'
