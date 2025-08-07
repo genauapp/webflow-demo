@@ -137,7 +137,7 @@ function renderArticle(
   // Update English word
   if (els.wordEnglish()) {
     els.wordEnglish().textContent = word.english || ''
-    els.wordEnglish().style.display = 'flex'
+    // els.wordEnglish().style.display = 'flex'
   }
 
   renderArticleOptions(options, word, onAnswerCallback)
