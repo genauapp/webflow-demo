@@ -1,7 +1,13 @@
 import { ASSETS_BASE_URL } from './urls.js'
 
-export const levels = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2', 'einburgerungstest']
-export const types = ['noun', 'verb', 'adjective', 'adverb']
+export const WordLevelList = Object.freeze(['A1', 'A2', 'B1', 'B2'])
+export const WordTypeList = Object.freeze([
+  'noun',
+  'verb',
+  'adjective',
+  'adverb',
+  'preposition',
+])
 export const WordType = {
   NOUN: 'noun',
   VERB: 'verb',

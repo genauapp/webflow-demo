@@ -2,6 +2,8 @@
 import { bookmarkSearchService } from '../../service/BookmarkSearchService.js'
 import { mountBookmarkAutocomplete } from './autocomplete.js'
 import { protectedApiService } from '../../service/apiService.js'
+import { WordLevelList, WordTypeList } from '../../constants/props.js'
+import StringUtils from '../../utils/StringUtils.js'
 
 let els = {}
 let filters = { level: '', type: '', text: '' }
@@ -34,7 +36,7 @@ function renderSearchUI() {
   const levelSelect = document.createElement('select')
   levelSelect.id = 'bookmark-search-level'
   levelSelect.style = selectStyle
-  ;['', 'A1', 'A2', 'B1', 'B2'].forEach(lvl => {
+  ;['', [...WordLevelList]].forEach((lvl) => {
     const opt = document.createElement('option')
     opt.value = lvl
     opt.textContent = lvl ? lvl : 'All Levels'
@@ -50,10 +52,10 @@ function renderSearchUI() {
   const typeSelect = document.createElement('select')
   typeSelect.id = 'bookmark-search-type'
   typeSelect.style = selectStyle
-  ;['', 'noun', 'verb', 'adjective', 'adverb', 'preposition'].forEach(type => {
+  ;['', [...WordTypeList]].forEach((type) => {
     const opt = document.createElement('option')
     opt.value = type
-    opt.textContent = type ? type.charAt(0).toUpperCase() + type.slice(1) : 'All Types'
+    opt.textContent = type ? StringUtils.capitalize(type) : 'All Types'
     typeSelect.appendChild(opt)
   })
   typeSelect.value = filters.type
@@ -83,7 +85,8 @@ function renderSearchUI() {
   // Reset button
   const resetBtn = document.createElement('button')
   resetBtn.textContent = 'Reset Filters'
-  resetBtn.style = 'padding: 8px 20px; margin-left: 12px; border-radius: 8px; border: none; background: #e0e0e7; color: #333; font-size: 16px; cursor: pointer; transition: background 0.2s;'
+  resetBtn.style =
+    'padding: 8px 20px; margin-left: 12px; border-radius: 8px; border: none; background: #e0e0e7; color: #333; font-size: 16px; cursor: pointer; transition: background 0.2s;'
   resetBtn.addEventListener('mouseenter', () => {
     resetBtn.style.background = '#d1d1d8'
   })
@@ -119,7 +122,7 @@ function renderBookmarkedWords(words) {
     return
   }
 
-  words.forEach(word => {
+  words.forEach((word) => {
     const card = document.createElement('div')
     card.className = 'bookmark-word-container'
 
@@ -150,9 +153,12 @@ function renderBookmarkedWords(words) {
     removeBtn.onclick = async () => {
       if (typeof word.id !== 'undefined') {
         // Call API to remove from backend
-        const { data: unbookmarkedWord } = await protectedApiService.removeFromBookmark(word.id)
+        const { data: unbookmarkedWord } =
+          await protectedApiService.removeFromBookmark(word.id)
         // Remove from local list
-        bookmarkedWords = bookmarkedWords.filter(w => w.id !== unbookmarkedWord.id)
+        bookmarkedWords = bookmarkedWords.filter(
+          (w) => w.id !== unbookmarkedWord.id
+        )
         handleFilterChange()
       }
     }
@@ -180,5 +186,5 @@ export function mountBookmarkSearchList(words) {
   renderBookmarkedWords(words)
 
   // Listen for remove events
-// ...existing code...
+  // ...existing code...
 }
