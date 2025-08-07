@@ -262,4 +262,4 @@ function showNoWordsMessage(elem) {
 
 // Sayfa yüklendiğinde favorileri listele
 document.addEventListener('DOMContentLoaded', listFavorites)
-document.addEventListener('DOMContentLoaded', listLearnedWords)
+// document.addEventListener('DOMContentLoaded', listLearnedWords)
