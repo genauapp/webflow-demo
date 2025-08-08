@@ -76,8 +76,8 @@ function renderSearchUI() {
   const searchWrapper = document.createElement('div')
   searchWrapper.style = 'display: inline-block; position: relative;'
   searchWrapper.appendChild(textInput)
-  // Mount autocomplete
-  mountBookmarkAutocomplete(textInput, bookmarkedWords, (selectedValue) => {
+  // Mount autocomplete with live words getter
+  mountBookmarkAutocomplete(textInput, () => bookmarkedWords, (selectedValue) => {
     filters.text = selectedValue
     handleFilterChange()
   })
