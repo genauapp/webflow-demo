@@ -18,6 +18,11 @@ export function mountBookmarkAutocomplete(inputEl, getWords, onSelect) {
   const wrapper = inputEl.parentNode
   wrapper.appendChild(dropdown)
 
+  function clearAutocomplete() {
+    dropdown.innerHTML = ''
+    dropdown.style.display = 'none'
+  }
+
   inputEl.addEventListener('input', () => {
     const value = inputEl.value
     const words = getWords()
@@ -38,13 +43,13 @@ export function mountBookmarkAutocomplete(inputEl, getWords, onSelect) {
           e.preventDefault()
           inputEl.value = suggestion.value
           onSelect(suggestion.value)
-          dropdown.style.display = 'none'
+          clearAutocomplete()
         })
         dropdown.appendChild(item)
       })
       dropdown.style.display = 'block'
     } else {
-      dropdown.style.display = 'none'
+      clearAutocomplete()
     }
   })
 
@@ -56,4 +61,7 @@ export function mountBookmarkAutocomplete(inputEl, getWords, onSelect) {
   inputEl.addEventListener('focus', () => {
     if (dropdown.innerHTML) dropdown.style.display = 'block'
   })
+
+  // Expose a method to clear autocomplete externally
+  inputEl.clearAutocomplete = clearAutocomplete
 }

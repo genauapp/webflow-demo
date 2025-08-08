@@ -103,6 +103,9 @@ function renderSearchUI() {
     levelSelect.value = ''
     typeSelect.value = ''
     textInput.value = ''
+    if (typeof textInput.clearAutocomplete === 'function') {
+      textInput.clearAutocomplete()
+    }
     handleFilterChange()
   })
 
