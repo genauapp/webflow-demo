@@ -30,7 +30,7 @@ function renderSearchUI() {
   const selectStyle =
     'padding: 8px 16px; margin-right: 12px; margin-bottom: 16px; border-radius: 8px; border: 1px solid #ccc; background: #f8f8fa; font-size: 16px; color: #333; outline: none; transition: border-color 0.2s;'
   const inputStyle =
-    'padding: 8px 16px; margin-bottom: 16px; border-radius: 8px; border: 1px solid #ccc; background: #f8f8fa; font-size: 16px; color: #333; outline: none; transition: border-color 0.2s; width: 220px;'
+    'padding: 8px 16px; border-radius: 8px; border: 1px solid #ccc; background: #f8f8fa; font-size: 16px; color: #333; outline: none; transition: border-color 0.2s; width: 220px;'
 
   // Level filter
   const levelSelect = document.createElement('select')
@@ -77,10 +77,14 @@ function renderSearchUI() {
   searchWrapper.style = 'display: inline-block; position: relative;'
   searchWrapper.appendChild(textInput)
   // Mount autocomplete with live words getter
-  mountBookmarkAutocomplete(textInput, () => bookmarkedWords, (selectedValue) => {
-    filters.text = selectedValue
-    handleFilterChange()
-  })
+  mountBookmarkAutocomplete(
+    textInput,
+    () => bookmarkedWords,
+    (selectedValue) => {
+      filters.text = selectedValue
+      handleFilterChange()
+    }
+  )
 
   // Reset button
   const resetBtn = document.createElement('button')
