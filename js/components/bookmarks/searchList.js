@@ -90,7 +90,7 @@ function renderSearchUI() {
   const resetBtn = document.createElement('button')
   resetBtn.textContent = 'Reset Filters'
   resetBtn.style =
-    'padding: 8px 20px; margin-left: 12px; border-radius: 8px; border: none; background: #e0e0e7; color: #333; font-size: 16px; cursor: pointer; transition: background 0.2s;'
+    'padding: 8px 20px; margin-top: 12px; margin-left: 12px; border-radius: 8px; border: none; background: #e0e0e7; color: #333; font-size: 16px; cursor: pointer; transition: background 0.2s;'
   resetBtn.addEventListener('mouseenter', () => {
     resetBtn.style.background = '#d1d1d8'
   })
