@@ -19,7 +19,8 @@ export function mountBookmarkAutocomplete(inputEl, getWords, onSelect) {
 
   inputEl.addEventListener('input', () => {
     const value = inputEl.value
-    const suggestions = bookmarkAutocompleteService.getSuggestions(getWords(), value)
+    const words = getWords()
+    const suggestions = bookmarkAutocompleteService.getSuggestions(words, value)
     dropdown.innerHTML = ''
     if (suggestions.length && value.length > 1) {
       suggestions.forEach(suggestion => {
