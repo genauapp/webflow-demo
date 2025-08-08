@@ -4,10 +4,10 @@ import { bookmarkAutocompleteService } from '../../service/BookmarkAutocompleteS
 /**
  * Mounts autocomplete dropdown for a given input element
  * @param {HTMLInputElement} inputEl - The input element to attach autocomplete to
- * @param {Array} words - List of bookmarked word objects
+ * @param {Function} getWords - Function that returns the current list of bookmarked word objects
  * @param {Function} onSelect - Callback when a suggestion is selected
  */
-export function mountBookmarkAutocomplete(inputEl, words, onSelect) {
+export function mountBookmarkAutocomplete(inputEl, getWords, onSelect) {
   // Create dropdown
   const dropdown = document.createElement('div')
   dropdown.id = 'bookmark-search-autocomplete'
@@ -19,7 +19,7 @@ export function mountBookmarkAutocomplete(inputEl, words, onSelect) {
 
   inputEl.addEventListener('input', () => {
     const value = inputEl.value
-    const suggestions = bookmarkAutocompleteService.getSuggestions(words, value)
+    const suggestions = bookmarkAutocompleteService.getSuggestions(getWords(), value)
     dropdown.innerHTML = ''
     if (suggestions.length && value.length > 1) {
       suggestions.forEach(suggestion => {
