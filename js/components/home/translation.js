@@ -102,11 +102,12 @@ function render({ loading, error, results }) {
   els.noResultsContainer().style.display = 'none'
   hideWordCard()
 
-  // clear add bookmark button
-  els.addToBookmarksButton().textContent = 'Add to Bookmarks'
-  // els.addToBookmarksButton().disabled = false  // not working since it's an anchor element
-  els.addToBookmarksButton().style.pointerEvents = 'auto' // Re-enable clicks
-  els.addToBookmarksButton().style.opacity = '1' // Reset visual state
+  // Set bookmark button state using helper
+  if (Array.isArray(results) && results.length > 0) {
+    setBookmarkButtonState(results[0].is_bookmarked)
+  } else {
+    setBookmarkButtonState(false)
+  }
 
   if (error) {
     console.error(`Search error: ${error}`)
@@ -129,6 +130,15 @@ function render({ loading, error, results }) {
     // todo: multiple word results
     showWordCard(results[0])
   }
+}
+
+/** Set bookmark button state */
+function setBookmarkButtonState(isBookmarked) {
+  const btn = els.addToBookmarksButton()
+  btn.textContent = isBookmarked ? 'Added to Bookmarks' : 'Add to Bookmarks'
+  // els.addToBookmarksButton().disabled = isBookmarked ? true : false  // not working since it's an anchor element
+  btn.style.pointerEvents = isBookmarked ? 'none' : 'auto'
+  btn.style.opacity = isBookmarked ? '0.6' : '1'
 }
 
 /** Get current input state */
@@ -320,10 +330,7 @@ async function handleAddToBookmarks(e) {
     await bookmarkService.addToBookmark(currentWord.id)
   }
 
-  btn.textContent = 'Added to Bookmarks'
-  // btn.disabled = true // not working since it's an anchor element
-  btn.style.pointerEvents = 'none' // Disable further clicks
-  btn.style.opacity = '0.6' // Visual disabled state
+  setBookmarkButtonState(true)
 }
 
 /** Initialize the translation component */
