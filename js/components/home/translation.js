@@ -173,8 +173,8 @@ async function doSearch(query) {
     return
   }
 
-  // assuming API returns data.results array
-  const results = data?.results ?? []
+  // assuming API returns data array
+  const results = data ?? []
   // console.log(`results:\n${JSON.stringify(results)}`)
 
   currentWordResults = results
