@@ -14,10 +14,10 @@ export const publicApiService = {
   logout: () => {
     return handleRequest(() => publicApi.post('/api/v1/auth/logout', {}))
   },
-  getSearchResults: (query) => {
+  getTranslationResults: (query) => {
     return handleRequest(() =>
       publicApi.get(
-        `/api/v1/bookmark/search?query=${encodeURIComponent(query)}`
+        `/api/v1/translation/search?query=${encodeURIComponent(query)}`
       )
     )
   },

@@ -166,7 +166,7 @@ async function doSearch(query) {
   // init loading
   render({ loading: true, error: null, results: null })
 
-  const { data, error, status } = await publicApiService.getSearchResults(query)
+  const { data, error, status } = await publicApiService.getTranslationResults(query)
 
   if (error) {
     render({ loading: false, error: error.toString(), results: null })
