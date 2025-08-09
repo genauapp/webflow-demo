@@ -15,6 +15,7 @@ import eventService from '../../service/events/EventService.js'
 import { AuthEvent } from '../../constants/events.js'
 import { DURATION_FEEDBACK_MS } from '../../constants/timeout.js'
 import StringUtils from '../../utils/StringUtils.js'
+import bookmarkService from '../../service/BookmarkService.js'
 
 let els = {}
 let currentWordResults = []
@@ -286,7 +287,7 @@ const attachVerbCaseHandlers = () => {
 
 async function handleAddToBookmarks(e) {
   e.preventDefault()
-  eventService.publish(SigninModalTriggerEvent.HOME_SEARCH_ADD_TO_BOOKMARKS)
+  // eventService.publish(SigninModalTriggerEvent.HOME_SEARCH_ADD_TO_BOOKMARKS)
 
   if (currentWordResults.length === 0) return
 
@@ -309,18 +310,24 @@ async function handleAddToBookmarks(e) {
 
   requiresSigninLabel.style.display = 'none'
 
-  CollectionsManager.addWordToBookmarks(
-    currentWordResults[0],
-    WordSource.NORMAL_PROMPT
-  )
+  // CollectionsManager.addWordToBookmarks(
+  //   currentWordResults[0],
+  //   WordSource.NORMAL_PROMPT
+  // )
+
+  const currentWord = currentWordResults[0]
+  if (!currentWord.is_bookmarked) {
+    await bookmarkService.addToBookmark(currentWord.id)
+  }
+
   btn.textContent = 'Added to Bookmarks'
   // btn.disabled = true // not working since it's an anchor element
   btn.style.pointerEvents = 'none' // Disable further clicks
   btn.style.opacity = '0.6' // Visual disabled state
 }
 
-/** Initialize the search component */
-export function initSearchComponent(elementIds) {
+/** Initialize the translation component */
+export function initTranslationComponent(elementIds) {
   // Initialize elements with provided IDs
   initElements(elementIds)
 
