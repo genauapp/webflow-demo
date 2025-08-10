@@ -19,6 +19,7 @@ import AuthService from '../service/AuthService.js'
 import { showSigninModal, hideSigninModal, initSigninComponent } from '../components/layout/signin.js'
 import eventService from '../service/events/EventService.js'
 import { AuthEvent } from '../constants/events.js'
+import StringUtils from '../utils/StringUtils.js'
 
 // On Initial Load
 // // fetch pack summaries
@@ -139,7 +140,7 @@ function loadPackPropsOnLevelPage(packSummariesOfCurrentLevel) {
     const h1 = document.createElement('h1')
     h1.id = `pack-title-${i}`
     h1.classList.add('heading-42')
-    h1.textContent = packSummary.pack_english
+    h1.textContent = StringUtils.capitalizeWords(packSummary.pack_english)
 
     linkBlock.appendChild(img)
     linkBlock.appendChild(h1)

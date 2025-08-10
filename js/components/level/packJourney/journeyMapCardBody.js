@@ -1,4 +1,5 @@
 import { DeckStatus, JourneyDeckDefinition } from '../../../constants/props.js'
+import StringUtils from '../../../utils/StringUtils.js'
 
 let els = {}
 
@@ -50,7 +51,7 @@ export function renderJourneyMap(journeyState, onStageSelected) {
           <div class="w-layout-hflex stage-header-left">
             <img src="${deckIconMap[stage.status] || ''}" loading="lazy" alt="">
             <div class="w-layout-vflex stage-header-deck-overview">
-              <h1 class="stage-header-title heading-42">${stage.wordType}</h1>
+              <h1 class="stage-header-title heading-42">${StringUtils.capitalize(stage.wordType)}</h1>
               <div id="Word_Count_Badge" class="w-layout-hflex stage-header-deck-words-count-container noimage">
                 <div class="w-layout-hflex stage-header-deck-words-count">
                   <div id="Word_Count_Text" class="words-count-label">${
