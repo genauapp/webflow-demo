@@ -1,5 +1,6 @@
 // packJourney.js
 import { packJourneyService } from '../../../service/level/PackJourneyService.js'
+import { updatePackSummaryInLevel } from '../../../pages/level.js'
 import {
   mountJourneyMapCardBody,
   updateJourneyMap,
@@ -60,8 +61,12 @@ const handleStageCompletion = (currentPackId, currentDeckId) => {
   // return callback
   return async (resultsData, postPayload) => {
     // 1. Complete stage via service (handles POST and local update)
-    await packJourneyService.completeStage(currentPackId, currentDeckId, postPayload)
-    // 2. Optionally, re-render or show completion UI
+    const updatedPackSummary = await packJourneyService.completeStage(currentPackId, currentDeckId, postPayload)
+    // 2. Update top-level pack summaries in level.js
+    if (updatedPackSummary) {
+      updatePackSummaryInLevel(updatedPackSummary)
+    }
+    // 3. Optionally, re-render or show completion UI
     // els.journeyMapCard().style.display = 'flex'
     // els.container().style.display = 'flex'
   }
