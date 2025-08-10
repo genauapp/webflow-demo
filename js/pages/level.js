@@ -16,7 +16,7 @@ import {
 //   unmountMicroQuiz,
 // } from '../components/level/microQuiz/microQuiz.js'
 import AuthService from '../service/AuthService.js'
-import { showSignInModal, hideSignInModal } from '../components/layout/modal/signin.js'
+import { showSignInModal, hideSignInModal } from '../components/layout/signin.js'
 
 // On Initial Load
 // // fetch pack summaries
