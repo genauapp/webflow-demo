@@ -17,6 +17,8 @@ import {
 // } from '../components/level/microQuiz/microQuiz.js'
 import AuthService from '../service/AuthService.js'
 import { showSigninModal, hideSigninModal, initSigninComponent } from '../components/layout/signin.js'
+import eventService from '../service/events/EventService.js'
+import { AuthEvent } from '../constants/events.js'
 
 // On Initial Load
 // // fetch pack summaries
@@ -55,8 +57,8 @@ function initializeLevelPage() {
   })
 }
 
-function handleAuthStateChanged(user) {
-  if (!user) {
+function handleAuthStateChanged({ unauthorized, user }) {
+  if (unauthorized || !user) {
     showSigninModal()
     // Hide all content
     document.getElementById('content-container').style.display = 'none'
@@ -75,10 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
     signinModal: 'modal-signin-container',
     googleSigninButton: 'btn-modal-google-signin',
   })
-  // Subscribe to AuthStateChanged event
-  AuthService.onAuthStateChanged(handleAuthStateChanged)
-  // Initial check
-  handleAuthStateChanged(AuthService.getCurrentUser())
+  // Subscribe to AuthEvent.AUTH_STATE_CHANGED using eventService
+  eventService.subscribe(AuthEvent.AUTH_STATE_CHANGED, (event) => {
+    handleAuthStateChanged(event.detail)
+  })
+  // Optionally, trigger initial auth check
+  AuthService.initialize()
 })
 
 //  initialize pack avatar images
