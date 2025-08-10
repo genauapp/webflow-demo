@@ -4,6 +4,7 @@ import { deckProgressService } from './DeckProgressService.js'
 import { protectedApiService } from '../apiService.js'
 import LocalStorageManager from '../../utils/LocalStorageManager.js'
 import { CURRENT_PACK_KEY } from '../../constants/storageKeys.js'
+import StringUtils from '../../utils/StringUtils.js'
 
 class PackJourneyService {
   constructor() {
@@ -45,10 +46,13 @@ class PackJourneyService {
         level: packSummary.pack_level,
         category: packSummary.pack_category,
         description: packSummary.pack_description,
-        name: { german: packSummary.pack_german, english: packSummary.pack_english },
+        name: {
+          german: StringUtils.capitalizeWords(packSummary.pack_german),
+          english: StringUtils.capitalizeWords(packSummary.pack_english),
+        },
         imageUrl: packSummary.pack_image_url,
         wordsCount: packSummary.total_words_count,
-        decksCount: packSummary.total_decks_count
+        decksCount: packSummary.total_decks_count,
       },
       deckSummaries,
     }
@@ -71,7 +75,6 @@ class PackJourneyService {
     // if (decks.length > 0 && decks[0].status === DeckStatus.LOCKED) {
     //   decks[0].status = DeckStatus.UNLOCKED
     // }
-
     // // Unlock next after completed
     // for (let i = 0; i < decks.length - 1; i++) {
     //   if (decks[i].status === DeckStatus.COMPLETED) {
@@ -89,7 +92,8 @@ class PackJourneyService {
    */
   async completeStage(packId, deckId, postPayload) {
     // 1. POST results to backend and get updated pack summary
-    const { userPackSummary, userDeckExerciseResult, error } = await protectedApiService.completeUserDeckExercise(postPayload)
+    const { userPackSummary, userDeckExerciseResult, error } =
+      await protectedApiService.completeUserDeckExercise(postPayload)
     if (error) {
       console.error('Failed to complete deck exercise:', error)
       return null
@@ -101,7 +105,9 @@ class PackJourneyService {
     // 3. Update deck summary in journey state
     const journey = this.journeys.get(packId)
     if (!journey) return null
-    const updatedDeck = userPackSummary.deck_summaries.find((d) => d.deck_id === deckId)
+    const updatedDeck = userPackSummary.deck_summaries.find(
+      (d) => d.deck_id === deckId
+    )
     if (updatedDeck) {
       const idx = journey.state.deckSummaries.findIndex((d) => d.id === deckId)
       if (idx !== -1) {
