@@ -214,7 +214,7 @@ function renderResults({ goodWords, badWords, totalWords, score }) {
 }
 
 export function initExerciseResults(resultsData) {
-  console.log('Exercise Results Data:', resultsData)
+  // console.log('Exercise Results Data:', resultsData)
 
   if (!resultsData) {
     console.warn('No results data provided')

@@ -33,7 +33,7 @@ function initializeLevelPage() {
 
   const currentLevel = LevelManager.getCurrentLevel()
   protectedApiService.getPackSummariesOfLevel(currentLevel).then(({ data: packSummariesOfCurrentLevel }) => {
-    console.log(JSON.stringify(packSummariesOfCurrentLevel))
+    // console.log(JSON.stringify(packSummariesOfCurrentLevel))
 
     // change Level Header top of the pack screen
     const levelLabel = `Level: ${currentLevel}`
