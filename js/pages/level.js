@@ -26,6 +26,10 @@ import { AuthEvent } from '../constants/events.js'
 function initializeLevelPage() {
   LocalStorageManager.clearDeprecatedLocalStorageItems()
 
+  // Unmount any previously opened components
+  unmountPackJourney()
+  // If you have other unmounts, add here (e.g., unmountMicroQuiz())
+
   const currentLevel = LevelManager.getCurrentLevel()
   protectedApiService.getPackSummariesOfLevel(currentLevel).then(({ data: packSummariesOfCurrentLevel }) => {
     console.log(JSON.stringify(packSummariesOfCurrentLevel))
@@ -92,6 +96,8 @@ function loadPackPropsOnLevelPage(packSummariesOfCurrentLevel) {
   const journeyPackSummaryGrid = document.getElementById(
     'journey-pack-summary-container-grid'
   )
+  // Clear previous journey packs
+  journeyPackSummaryGrid.innerHTML = ''
 
   // Micro Quiz Pack Elements
   const microQuizSummarySection = document.getElementById(
@@ -100,6 +106,8 @@ function loadPackPropsOnLevelPage(packSummariesOfCurrentLevel) {
   const microQuizSummaryGrid = document.getElementById(
     'micro-quiz-pack-summary-container-grid'
   )
+  // Clear previous micro quiz packs
+  microQuizSummaryGrid.innerHTML = ''
 
   const isMicroQuizAbsent = !packSummariesOfCurrentLevel.some(
     (ps) => ps.pack_type === PackType.MICRO_QUIZ
