@@ -8,6 +8,7 @@ const protectedFetch = async (endpoint, options = {}) => {
     credentials: 'include', // Send cookies automatically
     headers: {
       'Content-Type': 'application/json',
+      'ngrok-skip-browser-warning': true, // api staging config
       ...options.headers,
     },
     body: options.body ? JSON.stringify(options.body) : undefined,
