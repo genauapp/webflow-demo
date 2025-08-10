@@ -45,10 +45,12 @@ export function renderJourneyMap(journeyState, onStageSelected) {
               <div class="stage-header-title">${stage.wordType}</div>
               <div class="stage-header-deck-words-count-container">
                 <div class="stage-header-deck-words-count">
-                  <div class="words-count-label">${stage.wordsCount}</div>
-                  <div class="words-count-suffix-label">${
-                    ' Word' + stage.wordsCount === 1 ? '' : 's'
-                  }</div>
+                  <span class="words-count-label">
+                    ${stage.wordsCount}
+                    <span class="words-count-suffix-label">
+                      ${' Word'}${stage.wordsCount !== 1 ? 's' : ''}
+                    </span>
+                  </span>
                 </div>
               </div>
             </div>
