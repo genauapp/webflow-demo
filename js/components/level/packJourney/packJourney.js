@@ -60,15 +60,24 @@ function renderJourney(journeyState) {
 const handleStageCompletion = (currentPackId, currentDeckId) => {
   // return callback
   return async (resultsData, postPayload) => {
-    // 1. Complete stage via service (handles POST and local update)
-    const updatedPackSummary = await packJourneyService.completeStage(currentPackId, currentDeckId, postPayload)
-    // 2. Update top-level pack summaries in level.js
-    if (updatedPackSummary) {
-      updatePackSummaryInLevel(updatedPackSummary)
+    // 1. Make API call to complete the deck exercise
+    const { userPackSummary, userDeckExerciseResult, error } = 
+      await protectedApiService.completeUserDeckExercise(postPayload)
+    
+    if (error) {
+      console.error('Failed to complete deck exercise:', error)
+      return
     }
-    // 3. Optionally, re-render or show completion UI
-    // els.journeyMapCard().style.display = 'flex'
-    // els.container().style.display = 'flex'
+
+    // 2. Pass the updated pack summary to service for state management
+    const updatedJourneyState = await packJourneyService.completeStage(
+      currentPackId, 
+      currentDeckId, 
+      postPayload, 
+      userPackSummary // Pass the API response
+    )
+    
+    // 3. The service handles updating both its map and level.js pack summaries
   }
 }
 

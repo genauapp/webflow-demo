@@ -82,6 +82,9 @@ export function updatePackSummaryInLevel(updatedPackSummary) {
   if (idx !== -1) {
     packSummariesOfCurrentLevel[idx] = updatedPackSummary
     loadPackPropsOnLevelPage(packSummariesOfCurrentLevel)
+    console.log('Updated pack summary in level:', updatedPackSummary.pack_id)
+  } else {
+    console.log('Pack summary not found in level:', updatedPackSummary.pack_id)
   }
 }
 

@@ -12,7 +12,18 @@ class PackJourneyService {
   }
 
   createSession(packSummary, callbacks) {
-    // Initialize deck summaries
+    const packId = packSummary.pack_id
+    
+    // Check if we already have a journey for this pack with updated state
+    const existingJourney = this.journeys.get(packId)
+    if (existingJourney) {
+      // Update callbacks and return existing state (which may have fresher data)
+      existingJourney.callbacks = callbacks
+      this._notifyUpdate(packId)
+      return existingJourney.state
+    }
+
+    // Initialize deck summaries for new journey
     const deckSummaries = packSummary.deck_summaries.map((deck) => ({
       id: deck.deck_id,
       wordType: deck.word_type,
@@ -22,22 +33,6 @@ class PackJourneyService {
       wordsCount: deck.words_count,
       status: deck.user_deck_status,
     }))
-
-    // // Apply saved progress with level and pack scope
-    // const savedStatuses = deckProgressService.getDeckStatuses(
-    //   packSummary.pack_level, // Level
-    //   packSummary.pack_id, // Pack ID
-    //   deckSummaries.map((d) => d.deck_id)
-    // )
-
-    // deckSummaries.forEach((deck) => {
-    //   if (savedStatuses[deck.deck_id]) {
-    //     deck.status = savedStatuses[deck.deck_id]
-    //   }
-    // })
-
-    // // Unlock next decks based on progress
-    // this.applyProgression(deckSummaries)
 
     const state = {
       pack: {
@@ -88,41 +83,67 @@ class PackJourneyService {
    * @param {string} packId
    * @param {string} deckId
    * @param {object} postPayload - POST-ready payload for completion
+   * @param {object} updatedPackSummary - Updated pack summary from API response
    * @returns {Promise<object>} updated journey state
    */
-  async completeStage(packId, deckId, postPayload) {
-    // 1. POST results to backend and get updated pack summary
-    const { userPackSummary, userDeckExerciseResult, error } =
-      await protectedApiService.completeUserDeckExercise(postPayload)
-    if (error) {
-      console.error('Failed to complete deck exercise:', error)
-      return null
+  async completeStage(packId, deckId, postPayload, updatedPackSummary) {
+    // If updatedPackSummary is provided, use it; otherwise make API call
+    let userPackSummary = updatedPackSummary
+    if (!userPackSummary) {
+      const { userPackSummary: apiResponse, userDeckExerciseResult, error } =
+        await protectedApiService.completeUserDeckExercise(postPayload)
+      if (error) {
+        console.error('Failed to complete deck exercise:', error)
+        return null
+      }
+      userPackSummary = apiResponse
     }
-    // 2. Update local storage for CURRENT_PACK
+
+    // 1. Update local storage for CURRENT_PACK
     if (userPackSummary) {
       LocalStorageManager.save(CURRENT_PACK_KEY, userPackSummary)
     }
-    // 3. Update deck summary in journey state
+
+    // 2. Update the pack summaries in level.js with the API response
+    if (userPackSummary) {
+      const { updatePackSummaryInLevel } = await import('../../pages/level.js')
+      updatePackSummaryInLevel(userPackSummary)
+    }
+
+    // 3. Update the entire journey state with fresh pack summary data
     const journey = this.journeys.get(packId)
     if (!journey) return null
-    const updatedDeck = userPackSummary.deck_summaries.find(
-      (d) => d.deck_id === deckId
-    )
-    if (updatedDeck) {
-      const idx = journey.state.deckSummaries.findIndex((d) => d.id === deckId)
-      if (idx !== -1) {
-        journey.state.deckSummaries[idx] = {
-          id: updatedDeck.deck_id,
-          wordType: updatedDeck.word_type,
-          exerciseType: updatedDeck.exercise_type,
-          createdAt: updatedDeck.created_at,
-          updatedAt: updatedDeck.updated_at,
-          wordsCount: updatedDeck.words_count,
-          status: updatedDeck.user_deck_status,
-        }
-      }
+
+    // Rebuild the journey state with updated pack summary
+    const updatedDeckSummaries = userPackSummary.deck_summaries.map((deck) => ({
+      id: deck.deck_id,
+      wordType: deck.word_type,
+      exerciseType: deck.exercise_type,
+      createdAt: deck.created_at,
+      updatedAt: deck.updated_at,
+      wordsCount: deck.words_count,
+      status: deck.user_deck_status,
+    }))
+
+    // Update pack info as well
+    journey.state.pack = {
+      id: userPackSummary.pack_id,
+      type: userPackSummary.pack_type,
+      level: userPackSummary.pack_level,
+      category: userPackSummary.pack_category,
+      description: userPackSummary.pack_description,
+      name: {
+        german: StringUtils.capitalizeWords(userPackSummary.pack_german),
+        english: StringUtils.capitalizeWords(userPackSummary.pack_english),
+      },
+      imageUrl: userPackSummary.pack_image_url,
+      wordsCount: userPackSummary.total_words_count,
+      decksCount: userPackSummary.total_decks_count,
     }
-    // Optionally, update other pack fields from userPackSummary
+
+    // Update deck summaries
+    journey.state.deckSummaries = updatedDeckSummaries
+
     // Notify UI
     this._notifyUpdate(packId)
     return journey.state
@@ -130,9 +151,24 @@ class PackJourneyService {
 
   _notifyUpdate(packId) {
     const journey = this.journeys.get(packId)
-    if (journey.callbacks.onUpdate) {
+    if (journey && journey.callbacks && journey.callbacks.onUpdate) {
       journey.callbacks.onUpdate(journey.state)
     }
+  }
+
+  /**
+   * Clear a specific journey from the map (optional cleanup)
+   * @param {string} packId 
+   */
+  clearJourney(packId) {
+    this.journeys.delete(packId)
+  }
+
+  /**
+   * Clear all journeys (optional cleanup)
+   */
+  clearAllJourneys() {
+    this.journeys.clear()
   }
 }
 
