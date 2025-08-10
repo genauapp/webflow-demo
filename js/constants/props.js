@@ -27,6 +27,14 @@ export const DeckStatus = Object.freeze({
   COMPLETED: 'COMPLETED',
 })
 
+export const JourneyDeckDefinition = Object.freeze({
+  [WordType.NOUN]: "Names of people, places, things, or ideas",
+  [WordType.VERB]: "Words that describe actions or states.",
+  [WordType.ADJECTIVE]: "Words that describe how, when, or where something happens.",
+  [WordType.ADVERB]: "Words that describe nouns.",
+  [WordType.PREPOSITION]: "Words that show relationships between a noun or pronoun and other words in a sentence.",
+})
+
 export const NavigationMode = Object.freeze({
   LEARN: 'learn',
   EXERCISE: 'exercise',

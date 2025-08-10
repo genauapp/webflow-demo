@@ -1,4 +1,4 @@
-import { DeckStatus } from '../../../constants/props.js'
+import { DeckStatus, JourneyDeckDefinition } from '../../../constants/props.js'
 
 let els = {}
 
@@ -26,16 +26,63 @@ export function renderJourneyMap(journeyState, onStageSelected) {
   els.container().innerHTML = ''
 
   journeyState.deckSummaries.forEach((stage) => {
-    const stageEl = document.createElement('div')
-    stageEl.className = `journey-stage ${stage.status}`
-    stageEl.textContent = `${stage.wordType} Deck`
+    // Template for the card, similar to Webflow design
+    const template = `
+      <div class="journey-stage-container ${stage.status}">
+        <div class="stage-header-container">
+          <div class="stage-header-left">
+          <div class="stage-header-deck-overview">
+              ${
+                stage.status === DeckStatus.UNLOCKED
+                  ? '<span class="unlocked">🔓</span>'
+                  : ''
+              }
+              ${
+                stage.status === DeckStatus.COMPLETED
+                  ? '<span class="checkmark">✓</span>'
+                  : ''
+              }
+              <div class="stage-header-title">${stage.wordType}</div>
+              <div class="stage-header-deck-words-count-container">
+                <div class="stage-header-deck-words-count">
+                  <div class="words-count-label">${stage.wordsCount}</div>
+                  <div class="words-count-suffix-label">${
+                    ' Word' + stage.wordsCount === 1 ? '' : 's'
+                  }</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="stage-footer-container">
+            <span class="stage-footer-label">What is it?
+              <span class="stage-footer-description-label">${
+                JourneyDeckDefinition[stage.wordType] || ''
+              }</span>
+            </span>
+          
+            <span class="stage-footer-label">Example: 
+              <span class="stage-footer-description-label">${
+                stage.description || ''
+              }</span>
+            </span>
+        </div>
+      </div>
+    `
 
-    if (stage.status === DeckStatus.COMPLETED) {
-      stageEl.innerHTML += '<span class="checkmark">✓</span>'
-    }
+    //     <div class="stage-footer-icon">
+    //   <!-- Placeholder for icon, you can use stage.icon or status-based icon -->
+    //   ${
+    //     stage.icon ? `<span class="footer-icon">${stage.icon}</span>` : ''
+    //   }
+    // </div>
 
-    applyInteractivity(stageEl, stage, onStageSelected)
-    els.container().appendChild(stageEl)
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = template.trim()
+    const stageContainerEl = wrapper.firstElementChild
+
+    applyInteractivity(stageContainerEl, stage, onStageSelected)
+    els.container().appendChild(stageContainerEl)
   })
 }
 
