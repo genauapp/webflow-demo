@@ -15,52 +15,65 @@ import {
 //   mountMicroQuiz,
 //   unmountMicroQuiz,
 // } from '../components/level/microQuiz/microQuiz.js'
+import AuthService from '../service/AuthService.js'
+import { showSignInModal, hideSignInModal } from '../components/layout/modal/signin.js'
 
 // On Initial Load
 // // fetch pack summaries
 // // show initial journey or micro-quiz
-document.addEventListener('DOMContentLoaded', async () => {
+function initializeLevelPage() {
   LocalStorageManager.clearDeprecatedLocalStorageItems()
 
-  // LocalStorageManager.load(BOOKMARKS_KEY, DEFAULT_VALUE.BOOKMARKS)
-
   const currentLevel = LevelManager.getCurrentLevel()
-  // fetch pack summaries of current level
-  const { data: packSummariesOfCurrentLevel } =
-    await protectedApiService.getPackSummariesOfLevel(currentLevel)
+  protectedApiService.getPackSummariesOfLevel(currentLevel).then(({ data: packSummariesOfCurrentLevel }) => {
+    console.log(JSON.stringify(packSummariesOfCurrentLevel))
 
-  console.log(JSON.stringify(packSummariesOfCurrentLevel))
+    // change Level Header top of the pack screen
+    const levelLabel = `Level: ${currentLevel}`
+    document.getElementById('pack-level-header').innerText = levelLabel
 
-  // change Level Header top of the pack screen
-  const levelLabel = `Level: ${currentLevel}`
-  document.getElementById('pack-level-header').innerText = levelLabel
+    // Load current category from localStorage, set it to null if not found
+    const selectedPackSummary = LocalStorageManager.load(CURRENT_PACK_KEY, null)
+    loadPackPropsOnLevelPage(packSummariesOfCurrentLevel)
+    // If current pack is null or belongs on another level, show select pack message
+    if (
+      selectedPackSummary === null ||
+      selectedPackSummary.pack_level !== currentLevel
+    ) {
+      // clear selection
+      LocalStorageManager.save(CURRENT_PACK_KEY, null)
+      showSelectCategoryMessage()
+      return
+    }
 
-  // Load current category from localStorage, set it to null if not found
-  const selectedPackSummary = LocalStorageManager.load(CURRENT_PACK_KEY, null)
-  loadPackPropsOnLevelPage(packSummariesOfCurrentLevel)
-  // If current pack is null or belongs on another level, show select pack message
-  if (
-    selectedPackSummary === null ||
-    selectedPackSummary.pack_level !== currentLevel
-  ) {
-    // clear selection
-    LocalStorageManager.save(CURRENT_PACK_KEY, null)
+    hideSelectCategoryMessage()
+    updatePackAvatarImages(selectedPackSummary.pack_id)
+    // hide old learn/exercise elements
+    document.getElementById('content-container').style.display = 'none'
+
+    mountPackJourney(selectedPackSummary)
+  })
+}
+
+function handleAuthStateChanged(user) {
+  if (!user) {
+    showSignInModal()
+    // Hide all content
+    document.getElementById('content-container').style.display = 'none'
+    document.getElementById('pack-level-header').innerText = ''
     showSelectCategoryMessage()
     return
+  } else {
+    hideSignInModal()
+    initializeLevelPage()
   }
+}
 
-  hideSelectCategoryMessage()
-  updatePackAvatarImages(selectedPackSummary.pack_id)
-  // hide old learn/exercise elements
-  document.getElementById('content-container').style.display = 'none'
-
-  // if (selectedPackSummary.pack_type === PackType.MICRO_QUIZ) {
-  //   mountMicroQuiz(selectedPackSummary)
-  // } else if (selectedPackSummary.pack_type === PackType.JOURNEY) {
-  //   mountPackJourney(selectedPackSummary)
-  //   return
-  // }
-  mountPackJourney(selectedPackSummary)
+document.addEventListener('DOMContentLoaded', () => {
+  // Subscribe to AuthStateChanged event
+  AuthService.onAuthStateChanged(handleAuthStateChanged)
+  // Initial check
+  handleAuthStateChanged(AuthService.getCurrentUser())
 })
 
 //  initialize pack avatar images
