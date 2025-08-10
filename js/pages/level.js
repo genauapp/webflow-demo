@@ -16,7 +16,7 @@ import {
 //   unmountMicroQuiz,
 // } from '../components/level/microQuiz/microQuiz.js'
 import AuthService from '../service/AuthService.js'
-import { showSignInModal, hideSignInModal } from '../layout/modal/signin.js'
+import { showSigninModal, hideSigninModal, initSigninComponent } from '../components/layout/signin.js'
 
 // On Initial Load
 // // fetch pack summaries
@@ -57,19 +57,24 @@ function initializeLevelPage() {
 
 function handleAuthStateChanged(user) {
   if (!user) {
-    showSignInModal()
+    showSigninModal()
     // Hide all content
     document.getElementById('content-container').style.display = 'none'
     document.getElementById('pack-level-header').innerText = ''
     showSelectCategoryMessage()
     return
   } else {
-    hideSignInModal()
+    hideSigninModal()
     initializeLevelPage()
   }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Initialize Signin Component (modal and button)
+  initSigninComponent({
+    signinModal: 'modal-signin-container',
+    googleSigninButton: 'btn-modal-google-signin',
+  })
   // Subscribe to AuthStateChanged event
   AuthService.onAuthStateChanged(handleAuthStateChanged)
   // Initial check
