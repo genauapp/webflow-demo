@@ -538,13 +538,14 @@ class NavigationService {
 
   /**
    * Gets the current active word based on session mode and progression state.
+   * Assigns a random example to currentExample every time a word is accessed.
    * Returns null if session is completed or invalid.
    */
   _getCurrentItem(session) {
     if (!session) return null
 
+    let currentWord = null
     if (session.mode === NavigationMode.LEARN) {
-      // BUG FIX: was using EXERCISE state instead of LEARN state
       const state = session.progression[NavigationMode.LEARN]
       if (
         state.isCompleted ||
@@ -553,16 +554,20 @@ class NavigationService {
       ) {
         return null
       }
-
-      return state.activeOrder[state.currentIndex] || null
+      currentWord = state.activeOrder[state.currentIndex] || null
     } else if (session.mode === NavigationMode.EXERCISE) {
       const state = session.progression[NavigationMode.EXERCISE]
-
       if (state.isCompleted || state.currentIndex === -1) return null
-
-      // Simplified: just return the current word at current index
-      return state.activeOrder[state.currentIndex] || null
+      currentWord = state.activeOrder[state.currentIndex] || null
     }
+    // Centralized random example assignment
+    if (currentWord && Array.isArray(currentWord.examples) && currentWord.examples.length > 0) {
+      const shuffled = ListUtils.shuffleArray(currentWord.examples)
+      currentWord.currentExample = shuffled[0]
+    } else if (currentWord) {
+      currentWord.currentExample = null
+    }
+    return currentWord
   }
 
   /**
