@@ -9,6 +9,8 @@ function initElements() {
     wordText: () => document.getElementById('learn-word-card-text'),
     wordTranslation: () =>
       document.getElementById('learn-word-card-translation'),
+    wordExampleContainer: () =>
+      document.getElementById('learn-word-card-example-container'),
     wordExample: () => document.getElementById('learn-word-card-example'),
     wordRule: () => document.getElementById('learn-word-card-rule'),
   }
@@ -28,11 +30,14 @@ function renderPreposition(word) {
     els.wordTranslation().textContent = word.english || ''
   }
 
-  if (els.wordExample()) {
-    // els.wordExample().textContent = word.example || ''
-    // els.wordExample().style.display = word.example ? 'block' : 'none'
-    els.wordExample().style.display = 'none' // disable when exercise type is grammar
+  if (els.wordExampleContainer()) {
+    els.wordExampleContainer().style.display = 'none'
   }
+
+  // if (els.wordExample()) {
+  //   els.wordExample().textContent = word.example || ''
+  //   els.wordExample().style.display = word.example ? 'block' : 'none' // disable when exercise type is grammar??
+  // }
 
   if (els.wordRule()) {
     els.wordRule().style.display = word.rule ? 'block' : 'none'

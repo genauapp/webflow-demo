@@ -10,6 +10,8 @@ function initElements() {
     wordText: () => document.getElementById('learn-word-card-text'),
     wordTranslation: () =>
       document.getElementById('learn-word-card-translation'),
+    wordExampleContainer: () =>
+      document.getElementById('learn-word-card-example-container'),
     wordExample: () => document.getElementById('learn-word-card-example'),
     wordRule: () => document.getElementById('learn-word-card-rule'),
   }
@@ -35,9 +37,12 @@ function renderNoun(word) {
     els.wordTranslation().textContent = word.english || ''
   }
 
+  if (els.wordExampleContainer()) {
+    els.wordExampleContainer().style.display = 'flex'
+  }
+
   if (els.wordExample()) {
     els.wordExample().textContent = word.example || ''
-    els.wordExample().style.display = word.example ? 'block' : 'none'
   }
 
   if (els.wordRule()) {

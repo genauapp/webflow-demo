@@ -1,5 +1,8 @@
 // /components/level/deckPractice/learn/verb.js
-import { NounArticleColorMap, ALL_VERB_CASES } from '../../../../constants/props.js'
+import {
+  NounArticleColorMap,
+  ALL_VERB_CASES,
+} from '../../../../constants/props.js'
 
 let els = {}
 
@@ -9,6 +12,8 @@ function initElements() {
     wordText: () => document.getElementById('learn-word-card-text'),
     wordTranslation: () =>
       document.getElementById('learn-word-card-translation'),
+    wordExampleContainer: () =>
+      document.getElementById('learn-word-card-example-container'),
     wordExample: () => document.getElementById('learn-word-card-example'),
     wordRule: () => document.getElementById('learn-word-card-rule'),
 
@@ -19,9 +24,7 @@ function initElements() {
       caseLabel: (verbCase) =>
         document.getElementById(`learn-verb-case-label-${verbCase}`),
       caseDetails: (verbCase) =>
-        document.getElementById(
-          `learn-verb-case-details-${verbCase}`
-        ),
+        document.getElementById(`learn-verb-case-details-${verbCase}`),
     },
   }
 }
@@ -82,9 +85,12 @@ function renderVerb(word) {
     els.wordTranslation().textContent = word.english || ''
   }
 
+  if (els.wordExampleContainer()) {
+    els.wordExampleContainer().style.display = 'flex'
+  }
+
   if (els.wordExample()) {
     els.wordExample().textContent = word.example || ''
-    els.wordExample().style.display = word.example ? 'block' : 'none'
   }
 
   if (els.wordRule()) {
