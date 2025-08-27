@@ -16,6 +16,7 @@ import { AuthEvent } from '../../constants/events.js'
 import { DURATION_FEEDBACK_MS } from '../../constants/timeout.js'
 import StringUtils from '../../utils/StringUtils.js'
 import bookmarkService from '../../service/BookmarkService.js'
+import ListUtils from '../../utils/ListUtils.js'
 
 let els = {}
 let currentWordResults = []
@@ -166,7 +167,9 @@ async function doSearch(query) {
   // init loading
   render({ loading: true, error: null, results: null })
 
-  const { data, error, status } = await publicApiService.getTranslationResults(query)
+  const { data, error, status } = await publicApiService.getTranslationResults(
+    query
+  )
 
   if (error) {
     render({ loading: false, error: error.toString(), results: null })
@@ -203,7 +206,7 @@ function showWordCard(wordResult) {
   els.levelBadge().innerText = wordResult.level
   els.typeBadge().innerText = wordResult.type
   els.translation().innerText = wordResult.english
-  els.sentence().innerText = wordResult.example
+  els.sentence().innerText = ListUtils.shuffleArray(wordResult.examples)[0]
 
   // noun
   // // show/hide rule
