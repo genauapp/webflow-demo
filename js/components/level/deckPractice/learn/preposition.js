@@ -29,8 +29,9 @@ function renderPreposition(word) {
   }
 
   if (els.wordExample()) {
-    els.wordExample().textContent = word.example || ''
-    els.wordExample().style.display = word.example ? 'block' : 'none' // disable when exercise type is grammar??
+    // els.wordExample().textContent = word.example || ''
+    // els.wordExample().style.display = word.example ? 'block' : 'none'
+    els.wordExample().style.display = 'none' // disable when exercise type is grammar
   }
 
   if (els.wordRule()) {
