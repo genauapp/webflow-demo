@@ -563,9 +563,9 @@ class NavigationService {
     // Centralized random example assignment
     if (currentWord && Array.isArray(currentWord.examples) && currentWord.examples.length > 0) {
       const shuffled = ListUtils.shuffleArray(currentWord.examples)
-      currentWord.currentExample = shuffled[0]
+      currentWord.example = shuffled[0]
     } else if (currentWord) {
-      currentWord.currentExample = null
+      currentWord.example = null
     }
     return currentWord
   }
