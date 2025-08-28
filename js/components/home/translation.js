@@ -317,7 +317,7 @@ async function handleAddToBookmarks(e) {
       btn.style.pointerEvents = 'auto'
       btn.style.opacity = '1'
       requiresSigninLabel.style.display = 'none'
-    }, DURATION_FEEDBACK_MS)
+    }, DURATION_REQUIRES_SIGNIN_MS)
     return
   }
 
