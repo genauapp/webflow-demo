@@ -7,7 +7,6 @@ import {
 import ListUtils from '../../utils/ListUtils.js'
 import {
   DURATION_FEEDBACK_CORRECT_MS,
-  DURATION_FEEDBACK_MS,
   DURATION_FEEDBACK_WRONG_MS,
 } from '../../constants/timeout.js'
 import NavigationUtils from '../../utils/level/NavigationUtils.js'
