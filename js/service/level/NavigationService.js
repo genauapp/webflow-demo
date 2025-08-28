@@ -5,7 +5,11 @@ import {
   NavigationMode,
 } from '../../constants/props.js'
 import ListUtils from '../../utils/ListUtils.js'
-import { DURATION_FEEDBACK_MS } from '../../constants/timeout.js'
+import {
+  DURATION_FEEDBACK_CORRECT_MS,
+  DURATION_FEEDBACK_MS,
+  DURATION_FEEDBACK_WRONG_MS,
+} from '../../constants/timeout.js'
 import NavigationUtils from '../../utils/level/NavigationUtils.js'
 
 // =============================================================================
@@ -325,7 +329,10 @@ class NavigationService {
     this._notifyStreakUpdate(session, currentWord)
 
     // 4) WAIT for the feedback duration _inside_ the service
-    await new Promise((res) => setTimeout(res, DURATION_FEEDBACK_MS))
+    const feedbackDuration = isCorrect
+      ? DURATION_FEEDBACK_CORRECT_MS
+      : DURATION_FEEDBACK_WRONG_MS
+    await new Promise((res) => setTimeout(res, feedbackDuration))
 
     // 5) notify other UI elements after the delay
     this._notifyUpdate(session)
@@ -465,9 +472,7 @@ class NavigationService {
    * @param {string} exerciseCompletedAt - ISO string
    * @returns {object} API payload
    */
-  getDeckExerciseCompletionPayload(
-    sessionId
-  ) {
+  getDeckExerciseCompletionPayload(sessionId) {
     const session = this.sessions.get(sessionId)
     if (!session) return null
 
@@ -479,7 +484,6 @@ class NavigationService {
       word_id: word.id,
       wrong_count: this._getWordWrongCount(state.wrongAnswerCountMap, word.id),
     }))
-
 
     return {
       deck_id: sessionId,
@@ -561,7 +565,11 @@ class NavigationService {
       currentWord = state.activeOrder[state.currentIndex] || null
     }
     // Centralized random example assignment
-    if (currentWord && Array.isArray(currentWord.examples) && currentWord.examples.length > 0) {
+    if (
+      currentWord &&
+      Array.isArray(currentWord.examples) &&
+      currentWord.examples.length > 0
+    ) {
       const shuffled = ListUtils.shuffleArray(currentWord.examples)
       currentWord.example = shuffled[0]
     } else if (currentWord) {
