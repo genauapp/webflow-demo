@@ -13,7 +13,7 @@ import {
 import CollectionsManager from '../../utils/CollectionsManager.js'
 import eventService from '../../service/events/EventService.js'
 import { AuthEvent } from '../../constants/events.js'
-import { DURATION_FEEDBACK_MS } from '../../constants/timeout.js'
+import { DURATION_REQUIRES_SIGNIN_MS } from '../../constants/timeout.js'
 import StringUtils from '../../utils/StringUtils.js'
 import bookmarkService from '../../service/BookmarkService.js'
 import ListUtils from '../../utils/ListUtils.js'
