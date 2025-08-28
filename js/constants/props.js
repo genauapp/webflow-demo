@@ -28,11 +28,21 @@ export const DeckStatus = Object.freeze({
 })
 
 export const JourneyDeckDefinition = Object.freeze({
-  [WordType.NOUN]: "Names of people, places, things, or ideas",
-  [WordType.VERB]: "Words that describe actions or states.",
-  [WordType.ADJECTIVE]: "Words that describe how, when, or where something happens.",
-  [WordType.ADVERB]: "Words that describe nouns.",
-  [WordType.PREPOSITION]: "Words that show relationships between a noun or pronoun and other words in a sentence.",
+  [WordType.NOUN]: 'Names of people, places, things, or ideas',
+  [WordType.VERB]: 'Words that describe actions or states.',
+  [WordType.ADJECTIVE]:
+    'Words that describe how, when, or where something happens.',
+  [WordType.ADVERB]: 'Words that describe nouns.',
+  [WordType.PREPOSITION]:
+    'Words that show relationships between a noun or pronoun and other words in a sentence.',
+})
+
+export const JourneyDeckExample = Object.freeze({
+  [WordType.NOUN]: 'der Tisch (the table), die Stadt (the city)',
+  [WordType.VERB]: 'laufen (to run), sprechen (to speak)',
+  [WordType.ADJECTIVE]: 'groß (big), schnell (fast)',
+  [WordType.ADVERB]: 'schnell (quickly), gestern (yesterday)',
+  [WordType.PREPOSITION]: 'mit (with), durch (through)',
 })
 
 export const NavigationMode = Object.freeze({

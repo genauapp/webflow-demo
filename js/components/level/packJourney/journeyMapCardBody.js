@@ -74,8 +74,11 @@ export function renderJourneyMap(journeyState, onStageSelected) {
         </div>
         <div class="w-layout-hflex stage-footer-container">
           <div class="stage-footer-label">What is it?&nbsp;<span class="stage-footer-description-label">${
-            JourneyDeckDefinition[stage.wordType] || ''
-          }</span></div>
+              JourneyDeckDefinition[stage.wordType] || ''
+            }</span></div>
+            <div class="stage-footer-label">Example:&nbsp;<span class="stage-footer-description-label">${
+              JourneyDeckExample[stage.wordType] || ''
+            }</span></div>
           </div>
           </a>
           `
