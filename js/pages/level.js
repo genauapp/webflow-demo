@@ -181,7 +181,7 @@ function loadPackPropsOnLevelPage(packSummariesOfCurrentLevel) {
       </div>
     </div>
   `
-    packEl.insertAdjacentHTML('beforeend', wordsCountHTML)
+    linkBlock.insertAdjacentHTML('beforeend', wordsCountHTML)
 
     // Son olarak istediğin yere ekle, örneğin bir container'a:
     if (packSummary.pack_type === PackType.JOURNEY) {
