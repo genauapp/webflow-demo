@@ -96,6 +96,7 @@ export const PrepositionCaseColorMap = {
   dative: '#7ACC20',
   genitive: '#A259FF',
   dual: '#F9731F',
+  default: '#000000',
 }
 export const ALL_VERB_CASES = ['reflexive', 'separable', 'accusative', 'dative']
 

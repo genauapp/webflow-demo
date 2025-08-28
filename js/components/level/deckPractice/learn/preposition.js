@@ -23,7 +23,9 @@ function renderPreposition(word) {
   // Update preposition-specific elements
   if (els.wordText()) {
     els.wordText().textContent = word.german || ''
-    els.wordText().style.color = PrepositionCaseColorMap[word.case] || ''
+    els.wordText().style.color =
+      PrepositionCaseColorMap[word.cases[0]] ||
+      PrepositionCaseColorMap['default']
   }
 
   if (els.wordTranslation()) {
