@@ -10,6 +10,7 @@ import {
   DURATION_FEEDBACK_WRONG_MS,
 } from '../../constants/timeout.js'
 import NavigationUtils from '../../utils/level/NavigationUtils.js'
+import SoundUtils from '../../utils/SoundUtils.js'
 
 // =============================================================================
 // NAVIGATION SERVICE - LEARNING AND EXERCISE SESSION MANAGEMENT
@@ -327,16 +328,23 @@ class NavigationService {
     // 3) fire immediate streak‐update callback
     this._notifyStreakUpdate(session, currentWord)
 
-    // 4) WAIT for the feedback duration _inside_ the service
+    // 4) Play feedback sound for correct answer after streak update
+    this._playFeedbackSound({
+      isCorrect,
+      streak: currentWord.streak,
+      streakTarget: session.streakTarget,
+    })
+
+    // 5) WAIT for the feedback duration _inside_ the service
     const feedbackDuration = isCorrect
       ? DURATION_FEEDBACK_CORRECT_MS
       : DURATION_FEEDBACK_WRONG_MS
     await new Promise((res) => setTimeout(res, feedbackDuration))
 
-    // 5) notify other UI elements after the delay
+    // 6) notify other UI elements after the delay
     this._notifyUpdate(session)
 
-    // 6) If exercise is completed, notify results callback
+    // 7) If exercise is completed, notify results callback
     if (state.isCompleted) {
       // Set exerciseCompletedAt timestamp
       state.exerciseCompletedAt = new Date().toISOString()
@@ -632,6 +640,18 @@ class NavigationService {
         streak: word.streak,
         streakTarget: session.streakTarget,
       })
+    }
+  }
+
+  /**
+   * Plays feedback sound based on answer correctness and streak status.
+   */
+  _playFeedbackSound({ isCorrect, streak, streakTarget }) {
+    if (!isCorrect) return
+    if (streak >= streakTarget) {
+      SoundUtils.playStreakSound()
+    } else {
+      SoundUtils.playCorrectSound()
     }
   }
 
