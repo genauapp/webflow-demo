@@ -99,6 +99,14 @@ export function renderJourneyMap(journeyState, onStageSelected) {
     const wrapper = document.createElement('div')
     wrapper.innerHTML = template.trim()
     const stageContainerEl = wrapper.firstElementChild
+    // update border color inline style
+    if (stage.status === DeckStatus.UNLOCKED) {
+      stageContainerEl.style.borderColor = '#fc6e2d'
+    } else if (stage.status === DeckStatus.COMPLETED) {
+      stageContainerEl.style.borderColor = '#0eac92'
+    } else {
+      stageContainerEl.style.borderColor = '#000000'
+    }
 
     applyInteractivity(stageContainerEl, stage, onStageSelected)
     els.container().appendChild(stageContainerEl)
@@ -132,15 +140,6 @@ export function updateJourneyMap(journeyState, onStageSelected) {
     // update status class and href
     stageEl.className = `journey-stage-container w-inline-block ${stage.status}`
     stageEl.setAttribute('href', '#')
-
-    // update border color inline style
-    if (stage.status === DeckStatus.UNLOCKED) {
-      stageEl.style.borderColor = '#fc6e2d'
-    } else if (stage.status === DeckStatus.COMPLETED) {
-      stageEl.style.borderColor = '#0eac92'
-    } else {
-      stageEl.style.borderColor = '#000000'
-    }
 
     // update deck icon
     const deckIcon = stageEl.querySelector('.stage-header-left img')
