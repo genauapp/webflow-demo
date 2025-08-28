@@ -172,7 +172,7 @@ function loadPackPropsOnLevelPage(packSummariesOfCurrentLevel) {
     linkBlock.appendChild(h1)
 
     // Add pack-summary-words-count-container element
-    const wordsCount = pack.total_words_count || 0
+    const wordsCount = packSummary.total_words_count || 0
     const wordsCountHTML = `
     <div id="Word_Count_Badge" class="w-layout-hflex pack-summary-words-count-container">
       <img src="https://cdn.prod.website-files.com/677da6ae8464f53ea15d73ac/683c7cefa0f6a98cfe516c78_WordsIcon.svg" loading="lazy" alt="" class="image-21">
