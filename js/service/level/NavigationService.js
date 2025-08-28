@@ -11,6 +11,7 @@ import {
 } from '../../constants/timeout.js'
 import NavigationUtils from '../../utils/level/NavigationUtils.js'
 import SoundUtils from '../../utils/SoundUtils.js'
+import AnimationUtils from '../../utils/AnimationUtils.js'
 
 // =============================================================================
 // NAVIGATION SERVICE - LEARNING AND EXERCISE SESSION MANAGEMENT
@@ -329,7 +330,7 @@ class NavigationService {
     this._notifyStreakUpdate(session, currentWord)
 
     // 4) Play feedback sound for correct answer after streak update
-    this._playFeedbackSound({
+    this._playFeedbackSoundAndAnimation({
       isCorrect,
       streak: currentWord.streak,
       streakTarget: session.streakTarget,
@@ -646,10 +647,11 @@ class NavigationService {
   /**
    * Plays feedback sound based on answer correctness and streak status.
    */
-  _playFeedbackSound({ isCorrect, streak, streakTarget }) {
+  _playFeedbackSoundAndAnimation({ isCorrect, streak, streakTarget }) {
     if (!isCorrect) return
     if (streak >= streakTarget) {
       SoundUtils.playStreakSound()
+      AnimationUtils.runConfettiAnimation()
     } else {
       SoundUtils.playCorrectSound()
     }
