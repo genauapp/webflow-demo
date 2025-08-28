@@ -1,4 +1,4 @@
-import { CDN_BASE_URL } from '../constants/urls'
+import { CDN_BASE_URL } from '../constants/urls.js'
 
 class SoundUtils {
   static playCorrectSound() {
