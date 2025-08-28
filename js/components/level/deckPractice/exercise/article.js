@@ -100,6 +100,9 @@ function showArticleFeedback(isCorrect, correctWord, selectedArticle) {
     )
     feedbackText.textContent = isCorrect
       ? 'Correct! 🎉'
+      : // : `No worries! Let's try again 💪`
+      correctWord.rule && correctWord.rule.length !== 0
+      ? correctWord.rule
       : `No worries! Let's try again 💪`
   }
 

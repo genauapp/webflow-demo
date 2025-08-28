@@ -141,7 +141,10 @@ function showGrammarFeedback(isCorrect, correctWord, selectedWord) {
     )
     feedbackText.textContent = isCorrect
       ? 'Correct! 🎉'
-      : `No worries! Let’s try again 💪` // ${correctWord.rule || ''}`
+      : // : `No worries! Let's try again 💪`
+      correctWord.rule && correctWord.rule.length !== 0
+      ? correctWord.rule
+      : `No worries! Let's try again 💪`
   }
 
   if (correctAnswerEl && !isCorrect) {
