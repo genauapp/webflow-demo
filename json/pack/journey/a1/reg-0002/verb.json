@@ -1,0 +1,222 @@
+[
+  {
+    "id": "verb_einkaufen_01",
+    "german": "einkaufen",
+    "english": "to shop",
+    "level": "A1",
+    "example": "Ich kaufe im Supermarkt ein.",
+    "word": "einkaufen",
+    "type": "verb",
+    "category": "Einkaufen",
+    "cases": ["separable"]
+  },
+  {
+    "id": "verb_einkaufen_02",
+    "german": "bezahlen",
+    "english": "to pay",
+    "level": "A1",
+    "example": "Ich bezahle an der Kasse.",
+    "word": "bezahlen",
+    "type": "verb",
+    "category": "Einkaufen",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_einkaufen_03",
+    "german": "nehmen",
+    "english": "to take",
+    "level": "A1",
+    "example": "Ich nehme eine Tüte.",
+    "word": "nehmen",
+    "type": "verb",
+    "category": "Einkaufen",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_einkaufen_04",
+    "german": "bestellen",
+    "english": "to order",
+    "level": "A1",
+    "example": "Ich bestelle eine Pizza.",
+    "word": "bestellen",
+    "type": "verb",
+    "category": "Einkaufen",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_einkaufen_05",
+    "german": "verkaufen",
+    "english": "to sell",
+    "level": "A1",
+    "example": "Der Bäcker verkauft Brot.",
+    "word": "verkaufen",
+    "type": "verb",
+    "category": "Einkaufen",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_einkaufen_06",
+    "german": "brauchen",
+    "english": "to need",
+    "level": "A1",
+    "example": "Ich brauche Milch.",
+    "word": "brauchen",
+    "type": "verb",
+    "category": "Einkaufen",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_einkaufen_07",
+    "german": "zahlen",
+    "english": "to pay",
+    "level": "A1",
+    "example": "Ich zahle bar.",
+    "word": "zahlen",
+    "type": "verb",
+    "category": "Einkaufen",
+    "cases": []
+  },
+  {
+    "id": "verb_einkaufen_08",
+    "german": "probieren",
+    "english": "to try (taste)",
+    "level": "A1",
+    "example": "Ich probiere den Käse.",
+    "word": "probieren",
+    "type": "verb",
+    "category": "Einkaufen",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_einkaufen_09",
+    "german": "trinken",
+    "english": "to drink",
+    "level": "A1",
+    "example": "Ich trinke ein Glas Wasser.",
+    "word": "trinken",
+    "type": "verb",
+    "category": "Einkaufen",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_einkaufen_10",
+    "german": "essen",
+    "english": "to eat",
+    "level": "A1",
+    "example": "Ich esse eine Suppe.",
+    "word": "essen",
+    "type": "verb",
+    "category": "Einkaufen",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_einkaufen_11",
+    "german": "wiegen",
+    "english": "to weigh",
+    "level": "A1",
+    "example": "Ich wiege das Gemüse.",
+    "word": "wiegen",
+    "type": "verb",
+    "category": "Einkaufen",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_einkaufen_12",
+    "german": "auswählen",
+    "english": "to choose",
+    "level": "A1",
+    "example": "Ich wähle den Käse aus.",
+    "word": "auswählen",
+    "type": "verb",
+    "category": "Einkaufen",
+    "cases": ["accusative", "separable"]
+  },
+  {
+    "id": "verb_einkaufen_13",
+    "german": "mitbringen",
+    "english": "to bring along",
+    "level": "A1",
+    "example": "Ich bringe Brot mit.",
+    "word": "mitbringen",
+    "type": "verb",
+    "category": "Einkaufen",
+    "cases": ["accusative", "separable"]
+  },
+  {
+    "id": "verb_einkaufen_14",
+    "german": "kochen",
+    "english": "to cook",
+    "level": "A1",
+    "example": "Ich koche Suppe.",
+    "word": "kochen",
+    "type": "verb",
+    "category": "Einkaufen",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_einkaufen_15",
+    "german": "backen",
+    "english": "to bake",
+    "level": "A1",
+    "example": "Ich backe einen Kuchen.",
+    "word": "backen",
+    "type": "verb",
+    "category": "Einkaufen",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_einkaufen_16",
+    "german": "servieren",
+    "english": "to serve",
+    "level": "A1",
+    "example": "Der Kellner serviert das Essen.",
+    "word": "servieren",
+    "type": "verb",
+    "category": "Einkaufen",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_einkaufen_17",
+    "german": "öffnen",
+    "english": "to open",
+    "level": "A1",
+    "example": "Ich öffne die Flasche.",
+    "word": "öffnen",
+    "type": "verb",
+    "category": "Einkaufen",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_einkaufen_18",
+    "german": "schließen",
+    "english": "to close",
+    "level": "A1",
+    "example": "Ich schließe den Kühlschrank.",
+    "word": "schließen",
+    "type": "verb",
+    "category": "Einkaufen",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_einkaufen_19",
+    "german": "zeigen",
+    "english": "to show",
+    "level": "A1",
+    "example": "Ich zeige den Kassenzettel.",
+    "word": "zeigen",
+    "type": "verb",
+    "category": "Einkaufen",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_einkaufen_20",
+    "german": "packen",
+    "english": "to pack",
+    "level": "A1",
+    "example": "Ich packe die Einkäufe ein.",
+    "word": "packen",
+    "type": "verb",
+    "category": "Einkaufen",
+    "cases": ["accusative"]
+  }
+]

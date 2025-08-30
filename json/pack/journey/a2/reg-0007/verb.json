@@ -1,0 +1,222 @@
+[
+  {
+    "id": "verb_medien_A2_01",
+    "german": "anrufen",
+    "english": "to call",
+    "level": "A2",
+    "example": "Ich rufe meine Mutter jeden Tag an.",
+    "word": "anrufen",
+    "type": "verb",
+    "category": "Medien & Kommunikation",
+    "cases": ["accusative", "separable"]
+  },
+  {
+    "id": "verb_medien_A2_02",
+    "german": "telefonieren",
+    "english": "to talk on the phone",
+    "level": "A2",
+    "example": "Ich telefoniere mit meinem Freund.",
+    "word": "telefonieren",
+    "type": "verb",
+    "category": "Medien & Kommunikation",
+    "cases": ["dative"]
+  },
+  {
+    "id": "verb_medien_A2_03",
+    "german": "schreiben",
+    "english": "to write",
+    "level": "A2",
+    "example": "Ich schreibe eine E-Mail.",
+    "word": "schreiben",
+    "type": "verb",
+    "category": "Medien & Kommunikation",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_medien_A2_04",
+    "german": "senden",
+    "english": "to send",
+    "level": "A2",
+    "example": "Ich sende dir die Nachricht gleich.",
+    "word": "senden",
+    "type": "verb",
+    "category": "Medien & Kommunikation",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_medien_A2_05",
+    "german": "empfangen",
+    "english": "to receive",
+    "level": "A2",
+    "example": "Ich habe die E-Mail empfangen.",
+    "word": "empfangen",
+    "type": "verb",
+    "category": "Medien & Kommunikation",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_medien_A2_06",
+    "german": "löschen",
+    "english": "to delete",
+    "level": "A2",
+    "example": "Ich lösche alte Nachrichten.",
+    "word": "löschen",
+    "type": "verb",
+    "category": "Medien & Kommunikation",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_medien_A2_07",
+    "german": "speichern",
+    "english": "to save",
+    "level": "A2",
+    "example": "Ich speichere das Dokument.",
+    "word": "speichern",
+    "type": "verb",
+    "category": "Medien & Kommunikation",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_medien_A2_08",
+    "german": "installieren",
+    "english": "to install",
+    "level": "A2",
+    "example": "Ich installiere eine neue App.",
+    "word": "installieren",
+    "type": "verb",
+    "category": "Medien & Kommunikation",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_medien_A2_09",
+    "german": "surfen",
+    "english": "to surf (the internet)",
+    "level": "A2",
+    "example": "Ich surfe im Internet.",
+    "word": "surfen",
+    "type": "verb",
+    "category": "Medien & Kommunikation",
+    "cases": []
+  },
+  {
+    "id": "verb_medien_A2_10",
+    "german": "klicken",
+    "english": "to click",
+    "level": "A2",
+    "example": "Du musst hier klicken.",
+    "word": "klicken",
+    "type": "verb",
+    "category": "Medien & Kommunikation",
+    "cases": []
+  },
+  {
+    "id": "verb_medien_A2_11",
+    "german": "sich einloggen",
+    "english": "to log in",
+    "level": "A2",
+    "example": "Ich logge mich ins System ein.",
+    "word": "einloggen",
+    "type": "verb",
+    "category": "Medien & Kommunikation",
+    "cases": ["reflexive", "separable"]
+  },
+  {
+    "id": "verb_medien_A2_12",
+    "german": "sich abmelden",
+    "english": "to log out / sign off",
+    "level": "A2",
+    "example": "Vergiss nicht, dich abzumelden.",
+    "word": "abmelden",
+    "type": "verb",
+    "category": "Medien & Kommunikation",
+    "cases": ["reflexive", "separable"]
+  },
+  {
+    "id": "verb_medien_A2_13",
+    "german": "kommunizieren",
+    "english": "to communicate",
+    "level": "A2",
+    "example": "Wir kommunizieren per E-Mail.",
+    "word": "kommunizieren",
+    "type": "verb",
+    "category": "Medien & Kommunikation",
+    "cases": []
+  },
+  {
+    "id": "verb_medien_A2_14",
+    "german": "informieren",
+    "english": "to inform",
+    "level": "A2",
+    "example": "Ich informiere dich später.",
+    "word": "informieren",
+    "type": "verb",
+    "category": "Medien & Kommunikation",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_medien_A2_15",
+    "german": "chatten",
+    "english": "to chat",
+    "level": "A2",
+    "example": "Ich chatte mit meinen Freunden.",
+    "word": "chatten",
+    "type": "verb",
+    "category": "Medien & Kommunikation",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_medien_A2_16",
+    "german": "posten",
+    "english": "to post (online)",
+    "level": "A2",
+    "example": "Ich poste ein Foto auf Instagram.",
+    "word": "posten",
+    "type": "verb",
+    "category": "Medien & Kommunikation",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_medien_A2_17",
+    "german": "teilen",
+    "english": "to share",
+    "level": "A2",
+    "example": "Ich teile das Video mit dir.",
+    "word": "teilen",
+    "type": "verb",
+    "category": "Medien & Kommunikation",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_medien_A2_18",
+    "german": "suchen",
+    "english": "to search",
+    "level": "A2",
+    "example": "Ich suche Informationen im Netz.",
+    "word": "suchen",
+    "type": "verb",
+    "category": "Medien & Kommunikation",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_medien_A2_19",
+    "german": "finden",
+    "english": "to find",
+    "level": "A2",
+    "example": "Ich finde keine Verbindung.",
+    "word": "finden",
+    "type": "verb",
+    "category": "Medien & Kommunikation",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_medien_A2_20",
+    "german": "antworten",
+    "english": "to answer",
+    "level": "A2",
+    "example": "Ich antworte auf deine Nachricht.",
+    "word": "antworten",
+    "type": "verb",
+    "category": "Medien & Kommunikation",
+    "cases": ["dative"]
+  }
+]

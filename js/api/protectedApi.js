@@ -8,6 +8,7 @@ const protectedFetch = async (endpoint, options = {}) => {
     credentials: 'include', // Send cookies automatically
     headers: {
       'Content-Type': 'application/json',
+      'ngrok-skip-browser-warning': true, // api staging config
       ...options.headers,
     },
     body: options.body ? JSON.stringify(options.body) : undefined,
@@ -35,6 +36,8 @@ const protectedApi = {
   },
   post: (endpoint, body, options) =>
     protectedFetch(endpoint, { method: 'POST', body, ...options }),
+  delete: (endpoint, options) =>
+    protectedFetch(endpoint, { method: 'DELETE', ...options }),
 }
 
 export default protectedApi

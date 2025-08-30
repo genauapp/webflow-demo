@@ -1,12 +1,12 @@
 import { API_SERVER_BASE_URL } from '../constants/urls.js'
 
 const publicFetch = async (endpoint, options) => {
-  // Rename data -> options
   return await fetch(`${API_SERVER_BASE_URL}${endpoint}`, {
-    method: options.method || 'POST', // Use specified method
+    method: options.method || 'POST',
     credentials: 'include',
     headers: {
       'Content-Type': 'application/json',
+      'ngrok-skip-browser-warning': true, // api staging config
     },
     body: options.body ? JSON.stringify(options.body) : undefined,
   })

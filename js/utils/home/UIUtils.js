@@ -9,12 +9,13 @@ import {
   WORD_LIST_EXERCISE_KEY,
 } from '../../constants/storageKeys.js'
 import { PackType } from '../../constants/props.js'
-import { loadAndShowWords } from '../../pages/level.js'
+// import { loadAndShowWords } from '../../pages/level-old.js'
 import LevelManager from '../LevelManager.js'
 import {
-  mountPackPractice,
-  unmountPackPractice,
-} from '../../components/level/packPractice/packPractice.js'
+  mountDeckPractice,
+  unmountDeckPractice,
+} from '../../components/level/deckPractice/deckPractice.js'
+import { mountPackJourney } from '../../components/level/packJourney/packJourney.js'
 
 // UI visibility functions
 export function showSkeleton() {
@@ -116,10 +117,10 @@ export function isRegularLevel(level) {
   )
 }
 
-export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
-  // Regular Pack Elements
+export function loadPackPropsOnLevelPage(packSummariesOfCurrentLevel) {
+  // Journey Pack Elements
   const regularPackSummaryGrid = document.getElementById(
-    'regular-pack-summary-container-grid'
+    'journey-pack-summary-container-grid'
   )
 
   // Micro Quiz Pack Elements
@@ -148,20 +149,20 @@ export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
 
     // <img> elementini oluştur
     const img = document.createElement('img')
-    img.src = packSummary.imgUrl
+    img.src = packSummary.img_url
     img.loading = 'lazy'
     // img.style.width = '100%'
     // img.style.height = '100%'
     // img.style.maxWidth = '100%'
-    img.id = `deck-${i}`
+    img.id = `pack-${i}`
     img.dataset.option = packSummary.category
-    img.classList.add('deck-img') //, 'image-19')
+    img.classList.add('pack-img') //, 'image-19')
 
     // <h1> elementini oluştur
     const h1 = document.createElement('h1')
-    h1.id = `deck-title-${i}`
+    h1.id = `pack-title-${i}`
     h1.classList.add('heading-42')
-    h1.textContent = packSummary.nameEng
+    h1.textContent = packSummary.name_eng
     // h1.style.fontFamily = 'Lato, sans-serif'
     // h1.style.fontWeight = '400'
     // h1.style.fontSize = '16px'
@@ -172,7 +173,7 @@ export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
     linkBlock.appendChild(h1)
 
     // Son olarak istediğin yere ekle, örneğin bir container'a:
-    if (packSummary.type === PackType.REGULAR) {
+    if (packSummary.type === PackType.JOURNEY) {
       regularPackSummaryGrid.appendChild(linkBlock)
     } else if (packSummary.type === PackType.MICRO_QUIZ) {
       microQuizSummaryGrid.appendChild(linkBlock)
@@ -213,7 +214,7 @@ export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
   })
 
   // Category click handler
-  document.querySelectorAll('.deck-img').forEach((elem) => {
+  document.querySelectorAll('.pack-img').forEach((elem) => {
     elem.addEventListener('click', async function (event) {
       event.preventDefault()
 
@@ -224,24 +225,30 @@ export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
       const selectedCategory = elem.getAttribute('data-option')
       //save category name to localStorage
       LocalStorageManager.save(CURRENT_CATEGORY_KEY, selectedCategory)
-      organizeSelectedDeckImage()
+      organizeSelectedPackImage()
       hideSelectCategoryMessage()
+      // hide old learn/exercise
+      document.getElementById('content-container').style.display = 'none'
+      
       if (selectedCategory === 'preposition') {
-        // hide regular learn/exercise
-        document.getElementById('content-container').style.display = 'none'
 
         // show micro-quiz learn/exercise
-        // 1. grab the first matching category
-        const firstQuiz = packSummariesOfCurrentLevel.find(
-          (ps) => ps.type === PackType.MICRO_QUIZ
+        // 1. grab the first matching pack summary
+        const firstPackSummary = packSummariesOfCurrentLevel.find(
+          (packSummary) => packSummary.type === PackType.MICRO_QUIZ
         )
 
+        // 1.1. grab its first deck summary
+        const firstDeckSummaryOfPack = firstPackSummary.deck_summaries[0]
+
         // 2. if one exists, mount it once
-        if (firstQuiz) {
-          await mountPackPractice(
-            firstQuiz.id,
-            firstQuiz.level,
-            firstQuiz.exerciseType
+        if (firstPackSummary && firstDeckSummaryOfPack) {
+          await mountDeckPractice(
+            firstPackSummary.id,
+            firstPackSummary.type,
+            firstPackSummary.level,
+            firstDeckSummaryOfPack.word_type,
+            firstDeckSummaryOfPack.exercise_type
           )
         }
 
@@ -250,12 +257,15 @@ export function loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel) {
         return
       } else {
         // hide preposition learn/exercise
-        unmountPackPractice()
+        unmountDeckPractice()
+
+        mountPackJourney(packSummariesOfCurrentLevel[0])
+        window.location.hash = '#action-content'
+        return
 
         // show regular learn/exercise
-        await loadAndShowWords()
+        // await loadAndShowWords()
         // focus user Learn/Exercise area
-        window.location.hash = '#action-content'
       }
     })
   })
@@ -309,7 +319,7 @@ export async function refreshProgress() {
   successScreen.style.display = 'none'
   contentContainer.style.display = 'flex'
 
-  await loadAndShowWords()
+  // await loadAndShowWords()
 }
 
 export function hideFinishScreen() {
@@ -457,18 +467,18 @@ export function hideSelectCategoryMessage() {
 
 // Remove border from all deck images and add border to the selected deck image
 // Remove selected class from all deck images and add selected class to the selected deck image
-export function organizeSelectedDeckImage() {
+export function organizeSelectedPackImage() {
   const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
-  const deckimgs = document.querySelectorAll('.deck-img')
+  const deckimgs = document.querySelectorAll('.pack-img')
   deckimgs.forEach((deckimg) => {
-    deckimg.classList.remove('selected-deck-img')
+    deckimg.classList.remove('selected-pack-img')
     // deckimg.style.border = 'none'
     // deckimg.style.borderRadius = ''
   })
   const selectedDeckImg = [...deckimgs].find(
     (deckimg) => deckimg.dataset.option === category
   )
-  selectedDeckImg.classList.add('selected-deck-img')
+  selectedDeckImg.classList.add('selected-pack-img')
   // selectedDeckImg.style.border = '2px solid black'
   // selectedDeckImg.style.borderRadius = '16px'
 }

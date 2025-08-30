@@ -1,0 +1,202 @@
+[
+    {
+        "german": "heute",
+        "english": "today",
+        "level": "A1",
+        "example": "Heute kaufe ich ein.",
+        "word": "heute",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_01"
+    },
+    {
+        "german": "gestern",
+        "english": "yesterday",
+        "level": "A1",
+        "example": "Gestern war ich im Supermarkt.",
+        "word": "gestern",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_02"
+    },
+    {
+        "german": "morgen",
+        "english": "tomorrow",
+        "level": "A1",
+        "example": "Morgen gehe ich einkaufen.",
+        "word": "morgen",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_03"
+    },
+    {
+        "german": "jetzt",
+        "english": "now",
+        "level": "A1",
+        "example": "Ich bestelle jetzt das Essen.",
+        "word": "jetzt",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_04"
+    },
+    {
+        "german": "bald",
+        "english": "soon",
+        "level": "A1",
+        "example": "Wir essen bald.",
+        "word": "bald",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_05"
+    },
+    {
+        "german": "sofort",
+        "english": "immediately",
+        "level": "A1",
+        "example": "Ich zahle sofort.",
+        "word": "sofort",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_06"
+    },
+    {
+        "german": "später",
+        "english": "later",
+        "level": "A1",
+        "example": "Ich esse später.",
+        "word": "später",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_07"
+    },
+    {
+        "german": "immer",
+        "english": "always",
+        "level": "A1",
+        "example": "Ich kaufe immer Bio-Produkte.",
+        "word": "immer",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_08"
+    },
+    {
+        "german": "oft",
+        "english": "often",
+        "level": "A1",
+        "example": "Wir essen oft zusammen.",
+        "word": "oft",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_09"
+    },
+    {
+        "german": "manchmal",
+        "english": "sometimes",
+        "level": "A1",
+        "example": "Manchmal kaufe ich online ein.",
+        "word": "manchmal",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_10"
+    },
+    {
+        "german": "nie",
+        "english": "never",
+        "level": "A1",
+        "example": "Ich esse nie Fleisch.",
+        "word": "nie",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_11"
+    },
+    {
+        "german": "gern",
+        "english": "gladly / with pleasure",
+        "level": "A1",
+        "example": "Ich esse gern Pizza.",
+        "word": "gern",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_12"
+    },
+    {
+        "german": "nicht",
+        "english": "not",
+        "level": "A1",
+        "example": "Ich kaufe das nicht.",
+        "word": "nicht",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_13"
+    },
+    {
+        "german": "auch",
+        "english": "also",
+        "level": "A1",
+        "example": "Ich nehme auch Brot.",
+        "word": "auch",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_14"
+    },
+    {
+        "german": "nur",
+        "english": "only",
+        "level": "A1",
+        "example": "Ich kaufe nur Gemüse.",
+        "word": "nur",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_15"
+    },
+    {
+        "german": "schon",
+        "english": "already",
+        "level": "A1",
+        "example": "Ich habe schon bezahlt.",
+        "word": "schon",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_16"
+    },
+    {
+        "german": "noch",
+        "english": "still / yet",
+        "level": "A1",
+        "example": "Ich brauche noch Eier.",
+        "word": "noch",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_17"
+    },
+    {
+        "german": "zusammen",
+        "english": "together",
+        "level": "A1",
+        "example": "Wir kaufen zusammen ein.",
+        "word": "zusammen",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_18"
+    },
+    {
+        "german": "allein",
+        "english": "alone",
+        "level": "A1",
+        "example": "Ich esse allein.",
+        "word": "allein",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_19"
+    },
+    {
+        "german": "da",
+        "english": "there",
+        "level": "A1",
+        "example": "Die Kasse ist da.",
+        "word": "da",
+        "type": "adverb",
+        "category": "Einkaufen",
+        "id": "adverb_einkaufen_20"
+    }
+]

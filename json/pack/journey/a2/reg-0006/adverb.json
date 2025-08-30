@@ -1,0 +1,202 @@
+[
+    {
+        "german": "gern",
+        "english": "gladly",
+        "level": "A2",
+        "example": "Ich spiele gern Gitarre.",
+        "word": "gern",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_01"
+    },
+    {
+        "german": "gemeinsam",
+        "english": "together",
+        "level": "A2",
+        "example": "Wir machen das gemeinsam.",
+        "word": "gemeinsam",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_02"
+    },
+    {
+        "german": "manchmal",
+        "english": "sometimes",
+        "level": "A2",
+        "example": "Manchmal gehe ich ins Theater.",
+        "word": "manchmal",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_03"
+    },
+    {
+        "german": "nie",
+        "english": "never",
+        "level": "A2",
+        "example": "Ich gehe nie allein ins Kino.",
+        "word": "nie",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_04"
+    },
+    {
+        "german": "immer",
+        "english": "always",
+        "level": "A2",
+        "example": "Ich bin immer pünktlich beim Konzert.",
+        "word": "immer",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_05"
+    },
+    {
+        "german": "heute",
+        "english": "today",
+        "level": "A2",
+        "example": "Heute spiele ich Tennis.",
+        "word": "heute",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_06"
+    },
+    {
+        "german": "morgen",
+        "english": "tomorrow",
+        "level": "A2",
+        "example": "Morgen gehen wir ins Konzert.",
+        "word": "morgen",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_07"
+    },
+    {
+        "german": "gestern",
+        "english": "yesterday",
+        "level": "A2",
+        "example": "Gestern war ich im Kino.",
+        "word": "gestern",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_08"
+    },
+    {
+        "german": "schon",
+        "english": "already",
+        "level": "A2",
+        "example": "Ich habe das Buch schon gelesen.",
+        "word": "schon",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_09"
+    },
+    {
+        "german": "noch nicht",
+        "english": "not yet",
+        "level": "A2",
+        "example": "Ich habe das Lied noch nicht gehört.",
+        "word": "noch nicht",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_10"
+    },
+    {
+        "german": "bald",
+        "english": "soon",
+        "level": "A2",
+        "example": "Ich fahre bald in den Urlaub.",
+        "word": "bald",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_11"
+    },
+    {
+        "german": "später",
+        "english": "later",
+        "level": "A2",
+        "example": "Ich rufe dich später an.",
+        "word": "später",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_12"
+    },
+    {
+        "german": "lange",
+        "english": "for a long time",
+        "level": "A2",
+        "example": "Ich warte schon lange.",
+        "word": "lange",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_13"
+    },
+    {
+        "german": "kurz",
+        "english": "briefly",
+        "level": "A2",
+        "example": "Ich bleibe nur kurz.",
+        "word": "kurz",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_14"
+    },
+    {
+        "german": "oft",
+        "english": "often",
+        "level": "A2",
+        "example": "Ich gehe oft ins Einkaufszentrum.",
+        "word": "oft",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_15"
+    },
+    {
+        "german": "selten",
+        "english": "rarely",
+        "level": "A2",
+        "example": "Ich gehe selten essen.",
+        "word": "selten",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_16"
+    },
+    {
+        "german": "überall",
+        "english": "everywhere",
+        "level": "A2",
+        "example": "Ich suche überall nach dem Buch.",
+        "word": "überall",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_17"
+    },
+    {
+        "german": "nirgendwo",
+        "english": "nowhere",
+        "level": "A2",
+        "example": "Das Konzert findet nirgendwo statt.",
+        "word": "nirgendwo",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_18"
+    },
+    {
+        "german": "drinnen",
+        "english": "inside",
+        "level": "A2",
+        "example": "Heute bleiben wir drinnen.",
+        "word": "drinnen",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_19"
+    },
+    {
+        "german": "draußen",
+        "english": "outside",
+        "level": "A2",
+        "example": "Die Kinder spielen draußen.",
+        "word": "draußen",
+        "type": "adverb",
+        "category": "Freizeit & Konsum",
+        "id": "adverb_freizeit_A2_20"
+    }
+]

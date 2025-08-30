@@ -1,11 +1,17 @@
 import {
+  ExerciseStreakTarget,
   ExerciseType,
   ExerciseTypeSettingsMap,
   NavigationMode,
 } from '../../constants/props.js'
 import ListUtils from '../../utils/ListUtils.js'
-import { DURATION_FEEDBACK_MS } from '../../constants/timeout.js'
+import {
+  DURATION_FEEDBACK_CORRECT_MS,
+  DURATION_FEEDBACK_WRONG_MS,
+} from '../../constants/timeout.js'
 import NavigationUtils from '../../utils/level/NavigationUtils.js'
+import SoundUtils from '../../utils/SoundUtils.js'
+import AnimationUtils from '../../utils/AnimationUtils.js'
 
 // =============================================================================
 // NAVIGATION SERVICE - LEARNING AND EXERCISE SESSION MANAGEMENT
@@ -88,6 +94,11 @@ class NavigationService {
     const session = this.sessions.get(sessionId)
     if (!session) return null
     session.streakTarget = newTarget
+    // Set exerciseStartedAt if not already set
+    const exerciseState = session.progression[NavigationMode.EXERCISE]
+    if (!exerciseState.exerciseStartedAt) {
+      exerciseState.exerciseStartedAt = new Date().toISOString()
+    }
     this._notifyUpdate(session)
     return session
   }
@@ -318,14 +329,26 @@ class NavigationService {
     // 3) fire immediate streak‐update callback
     this._notifyStreakUpdate(session, currentWord)
 
-    // 4) WAIT for the feedback duration _inside_ the service
-    await new Promise((res) => setTimeout(res, DURATION_FEEDBACK_MS))
+    // 4) Play feedback sound for correct answer after streak update
+    this._playFeedbackSoundAndAnimation({
+      isCorrect,
+      streak: currentWord.streak,
+      streakTarget: session.streakTarget,
+    })
 
-    // 5) notify other UI elements after the delay
+    // 5) WAIT for the feedback duration _inside_ the service
+    const feedbackDuration = isCorrect
+      ? DURATION_FEEDBACK_CORRECT_MS
+      : DURATION_FEEDBACK_WRONG_MS
+    await new Promise((res) => setTimeout(res, feedbackDuration))
+
+    // 6) notify other UI elements after the delay
     this._notifyUpdate(session)
 
-    // 6) If exercise is completed, notify results callback
+    // 7) If exercise is completed, notify results callback
     if (state.isCompleted) {
+      // Set exerciseCompletedAt timestamp
+      state.exerciseCompletedAt = new Date().toISOString()
       this._notifyExerciseResults(session)
     }
     return currentWord
@@ -449,6 +472,36 @@ class NavigationService {
     }
   }
 
+  /**
+   * Generates the payload for completing a deck exercise, formatted for API POST.
+   * @param {string} sessionId
+   * @param {string} deckId
+   * @param {string} exerciseStartedAt - ISO string
+   * @param {string} exerciseCompletedAt - ISO string
+   * @returns {object} API payload
+   */
+  getDeckExerciseCompletionPayload(sessionId) {
+    const session = this.sessions.get(sessionId)
+    if (!session) return null
+
+    const state = session.progression[NavigationMode.EXERCISE]
+    const streakTarget = ExerciseStreakTarget[session.streakTarget]
+    const exerciseStartedAt = state.exerciseStartedAt
+    const exerciseCompletedAt = state.exerciseCompletedAt
+    const wordScores = session.originalItems.map((word) => ({
+      word_id: word.id,
+      wrong_count: this._getWordWrongCount(state.wrongAnswerCountMap, word.id),
+    }))
+
+    return {
+      deck_id: sessionId,
+      exercise_streak_target: streakTarget,
+      exercise_started_at: exerciseStartedAt,
+      exercise_completed_at: exerciseCompletedAt,
+      word_scores: wordScores,
+    }
+  }
+
   // =============================================================================
   // PRIVATE HELPER METHODS
   // =============================================================================
@@ -488,6 +541,8 @@ class NavigationService {
       activeOrder: shuffledExerciseList,
       score: { correct: 0, total: 0 },
       wrongAnswerCountMap: new Map(), // Map of wrongCount -> [words]
+      exerciseStartedAt: null,
+      exerciseCompletedAt: null,
     }
 
     return initialExerciseProgression
@@ -495,13 +550,14 @@ class NavigationService {
 
   /**
    * Gets the current active word based on session mode and progression state.
+   * Assigns a random example to currentExample every time a word is accessed.
    * Returns null if session is completed or invalid.
    */
   _getCurrentItem(session) {
     if (!session) return null
 
+    let currentWord = null
     if (session.mode === NavigationMode.LEARN) {
-      // BUG FIX: was using EXERCISE state instead of LEARN state
       const state = session.progression[NavigationMode.LEARN]
       if (
         state.isCompleted ||
@@ -510,16 +566,24 @@ class NavigationService {
       ) {
         return null
       }
-
-      return state.activeOrder[state.currentIndex] || null
+      currentWord = state.activeOrder[state.currentIndex] || null
     } else if (session.mode === NavigationMode.EXERCISE) {
       const state = session.progression[NavigationMode.EXERCISE]
-
       if (state.isCompleted || state.currentIndex === -1) return null
-
-      // Simplified: just return the current word at current index
-      return state.activeOrder[state.currentIndex] || null
+      currentWord = state.activeOrder[state.currentIndex] || null
     }
+    // Centralized random example assignment
+    if (
+      currentWord &&
+      Array.isArray(currentWord.examples) &&
+      currentWord.examples.length > 0
+    ) {
+      const shuffled = ListUtils.shuffleArray(currentWord.examples)
+      currentWord.example = shuffled[0]
+    } else if (currentWord) {
+      currentWord.example = null
+    }
+    return currentWord
   }
 
   /**
@@ -540,6 +604,12 @@ class NavigationService {
       )
     } else if (exerciseType === ExerciseType.GRAMMAR) {
       return NavigationUtils.generateGrammarOptions(
+        correctWord,
+        allWords,
+        optionsCount
+      )
+    } else if (exerciseType === ExerciseType.ARTICLE) {
+      return NavigationUtils.generateArticleOptions(
         correctWord,
         allWords,
         optionsCount
@@ -571,6 +641,19 @@ class NavigationService {
         streak: word.streak,
         streakTarget: session.streakTarget,
       })
+    }
+  }
+
+  /**
+   * Plays feedback sound based on answer correctness and streak status.
+   */
+  _playFeedbackSoundAndAnimation({ isCorrect, streak, streakTarget }) {
+    if (!isCorrect) return
+    if (streak >= streakTarget) {
+      SoundUtils.playStreakSound()
+      AnimationUtils.runConfettiAnimation()
+    } else {
+      SoundUtils.playCorrectSound()
     }
   }
 
@@ -621,9 +704,10 @@ class NavigationService {
         exerciseType: session.exerciseType,
         streakTarget: session.streakTarget,
         currentWord: currentWord,
-        options: ListUtils.shuffleArray(
-          exerciseProgressionState.currentOptions
-        ), // for shuffling options visually
+        options:
+          session.exerciseType === ExerciseType.ARTICLE
+            ? exerciseProgressionState.currentOptions // don't shuffle article options
+            : ListUtils.shuffleArray(exerciseProgressionState.currentOptions), // for shuffling options visually
         currentIndex: exerciseProgressionState.currentIndex + 1, // visual index starts from 1
         lastIndex: exerciseProgressionState.lastIndex + 1, // visual index ends at n + 1
         allWords: session.originalItems,
@@ -639,7 +723,9 @@ class NavigationService {
   _notifyExerciseResults(session) {
     if (session.callbacks.onExerciseResults) {
       const results = this.getExerciseResults(session.id)
-      session.callbacks.onExerciseResults(results)
+      const progression = session.progression[NavigationMode.EXERCISE]
+      const postPayload = this.getDeckExerciseCompletionPayload(session.id)
+      session.callbacks.onExerciseResults(results, postPayload)
     }
   }
 }

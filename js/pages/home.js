@@ -1,5 +1,5 @@
 // /pages/home.js
-import { initSearchComponent } from '../components/home/search.js'
+import { initTranslationComponent } from '../components/home/translation.js'
 import { initLevelComponent } from '../components/home/level.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
 
@@ -49,7 +49,7 @@ async function bootstrap() {
   LocalStorageManager.clearDeprecatedLocalStorageItems()
 
   // Initialize both components with their respective element IDs
-  initSearchComponent({ ...elementIds.search })
+  initTranslationComponent({ ...elementIds.search })
   // initLevelComponent({ ...elementIds.level })
 }
 

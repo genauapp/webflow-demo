@@ -1,0 +1,202 @@
+[
+    {
+        "german": "interessant",
+        "english": "interesting",
+        "level": "A2",
+        "example": "Das Konzert war sehr interessant.",
+        "word": "interessant",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_01"
+    },
+    {
+        "german": "langweilig",
+        "english": "boring",
+        "level": "A2",
+        "example": "Der Film war langweilig.",
+        "word": "langweilig",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_02"
+    },
+    {
+        "german": "entspannend",
+        "english": "relaxing",
+        "level": "A2",
+        "example": "Das Wochenende war entspannend.",
+        "word": "entspannend",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_03"
+    },
+    {
+        "german": "anstrengend",
+        "english": "exhausting",
+        "level": "A2",
+        "example": "Der Einkauf war anstrengend.",
+        "word": "anstrengend",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_04"
+    },
+    {
+        "german": "billig",
+        "english": "cheap",
+        "level": "A2",
+        "example": "Die Jacke war sehr billig.",
+        "word": "billig",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_05"
+    },
+    {
+        "german": "teuer",
+        "english": "expensive",
+        "level": "A2",
+        "example": "Die Konzertkarte war teuer.",
+        "word": "teuer",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_06"
+    },
+    {
+        "german": "neu",
+        "english": "new",
+        "level": "A2",
+        "example": "Ich habe ein neues Buch gekauft.",
+        "word": "neu",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_07"
+    },
+    {
+        "german": "alt",
+        "english": "old",
+        "level": "A2",
+        "example": "Das Lied ist sehr alt.",
+        "word": "alt",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_08"
+    },
+    {
+        "german": "modisch",
+        "english": "fashionable",
+        "level": "A2",
+        "example": "Diese Kleidung ist sehr modisch.",
+        "word": "modisch",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_09"
+    },
+    {
+        "german": "unmodisch",
+        "english": "unfashionable",
+        "level": "A2",
+        "example": "Diese Schuhe sind unmodisch.",
+        "word": "unmodisch",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_10"
+    },
+    {
+        "german": "bequem",
+        "english": "comfortable",
+        "level": "A2",
+        "example": "Die Couch ist bequem.",
+        "word": "bequem",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_11"
+    },
+    {
+        "german": "unbequem",
+        "english": "uncomfortable",
+        "level": "A2",
+        "example": "Der Stuhl ist unbequem.",
+        "word": "unbequem",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_12"
+    },
+    {
+        "german": "spannend",
+        "english": "exciting",
+        "level": "A2",
+        "example": "Das Buch war spannend.",
+        "word": "spannend",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_13"
+    },
+    {
+        "german": "ruhig",
+        "english": "quiet",
+        "level": "A2",
+        "example": "Der Abend war ruhig und angenehm.",
+        "word": "ruhig",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_14"
+    },
+    {
+        "german": "laut",
+        "english": "loud",
+        "level": "A2",
+        "example": "Die Musik ist zu laut.",
+        "word": "laut",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_15"
+    },
+    {
+        "german": "gemütlich",
+        "english": "cozy",
+        "level": "A2",
+        "example": "Das Café ist sehr gemütlich.",
+        "word": "gemütlich",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_16"
+    },
+    {
+        "german": "offen",
+        "english": "open",
+        "level": "A2",
+        "example": "Der Laden ist noch offen.",
+        "word": "offen",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_17"
+    },
+    {
+        "german": "geschlossen",
+        "english": "closed",
+        "level": "A2",
+        "example": "Das Geschäft ist geschlossen.",
+        "word": "geschlossen",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_18"
+    },
+    {
+        "german": "hilfreich",
+        "english": "helpful",
+        "level": "A2",
+        "example": "Die Verkäuferin war sehr hilfreich.",
+        "word": "hilfreich",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_19"
+    },
+    {
+        "german": "freundlich",
+        "english": "friendly",
+        "level": "A2",
+        "example": "Das Personal war freundlich.",
+        "word": "freundlich",
+        "type": "adjective",
+        "category": "Freizeit & Konsum",
+        "id": "adjective_freizeit_A2_20"
+    }
+]

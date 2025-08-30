@@ -1,0 +1,202 @@
+[
+    {
+        "german": "wissenschaftlich",
+        "english": "scientifically",
+        "level": "B2",
+        "example": "Die Theorie wurde wissenschaftlich überprüft.",
+        "word": "wissenschaftlich",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_01"
+    },
+    {
+        "german": "logisch",
+        "english": "logically",
+        "level": "B2",
+        "example": "Die Argumentation ist logisch aufgebaut.",
+        "word": "logisch",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_02"
+    },
+    {
+        "german": "gründlich",
+        "english": "thoroughly",
+        "level": "B2",
+        "example": "Die Daten wurden gründlich analysiert.",
+        "word": "gründlich",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_03"
+    },
+    {
+        "german": "objektiv",
+        "english": "objectively",
+        "level": "B2",
+        "example": "Die Ergebnisse wurden objektiv bewertet.",
+        "word": "objektiv",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_04"
+    },
+    {
+        "german": "systematisch",
+        "english": "systematically",
+        "level": "B2",
+        "example": "Das Problem wurde systematisch untersucht.",
+        "word": "systematisch",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_05"
+    },
+    {
+        "german": "kritisch",
+        "english": "critically",
+        "level": "B2",
+        "example": "Die Theorie muss kritisch hinterfragt werden.",
+        "word": "kritisch",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_06"
+    },
+    {
+        "german": "klar",
+        "english": "clearly",
+        "level": "B2",
+        "example": "Die Ergebnisse zeigen klar, dass ein Fehler vorliegt.",
+        "word": "klar",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_07"
+    },
+    {
+        "german": "verständlich",
+        "english": "comprehensibly",
+        "level": "B2",
+        "example": "Die Lehrerin erklärt den Stoff verständlich.",
+        "word": "verständlich",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_08"
+    },
+    {
+        "german": "praktisch",
+        "english": "practically",
+        "level": "B2",
+        "example": "Die Theorie lässt sich praktisch anwenden.",
+        "word": "praktisch",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_09"
+    },
+    {
+        "german": "effektiv",
+        "english": "effectively",
+        "level": "B2",
+        "example": "Die Methode funktioniert sehr effektiv.",
+        "word": "effektiv",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_10"
+    },
+    {
+        "german": "intensiv",
+        "english": "intensively",
+        "level": "B2",
+        "example": "Die Schüler haben intensiv gelernt.",
+        "word": "intensiv",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_11"
+    },
+    {
+        "german": "regelmäßig",
+        "english": "regularly",
+        "level": "B2",
+        "example": "Man sollte regelmäßig lernen.",
+        "word": "regelmäßig",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_12"
+    },
+    {
+        "german": "konsequent",
+        "english": "consistently",
+        "level": "B2",
+        "example": "Er arbeitet konsequent an seinem Ziel.",
+        "word": "konsequent",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_13"
+    },
+    {
+        "german": "sorgfältig",
+        "english": "carefully",
+        "level": "B2",
+        "example": "Die Studie wurde sorgfältig durchgeführt.",
+        "word": "sorgfältig",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_14"
+    },
+    {
+        "german": "schriftlich",
+        "english": "in writing",
+        "level": "B2",
+        "example": "Die Antworten müssen schriftlich gegeben werden.",
+        "word": "schriftlich",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_15"
+    },
+    {
+        "german": "mündlich",
+        "english": "orally",
+        "level": "B2",
+        "example": "Die Prüfung findet mündlich statt.",
+        "word": "mündlich",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_16"
+    },
+    {
+        "german": "bewusst",
+        "english": "consciously",
+        "level": "B2",
+        "example": "Er entscheidet sich bewusst für das Studium.",
+        "word": "bewusst",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_17"
+    },
+    {
+        "german": "sinnvoll",
+        "english": "meaningfully / sensibly",
+        "level": "B2",
+        "example": "Man sollte seine Zeit sinnvoll nutzen.",
+        "word": "sinnvoll",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_18"
+    },
+    {
+        "german": "zufällig",
+        "english": "by chance",
+        "level": "B2",
+        "example": "Die Entdeckung wurde zufällig gemacht.",
+        "word": "zufällig",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_19"
+    },
+    {
+        "german": "deutlich",
+        "english": "clearly",
+        "level": "B2",
+        "example": "Die Unterschiede sind deutlich erkennbar.",
+        "word": "deutlich",
+        "type": "adverb",
+        "category": "Wissenschaft & Bildung",
+        "id": "adverb_bildung_B2_20"
+    }
+]

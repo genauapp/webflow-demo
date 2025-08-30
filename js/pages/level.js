@@ -1,428 +1,268 @@
 import {
-  CURRENT_WORD_TYPE_KEY,
-  DEFAULT_VALUE,
-  LEARNED_WITH_EXERCISE_WORDS_KEY,
-  LEARNED_WITH_LEARN_WORDS_KEY,
-  CURRENT_CATEGORY_KEY,
-  WORD_LIST_EXERCISE_KEY,
-  IN_PROGRESS_WORDS_KEY,
-  WORD_LIST_KEY,
-  TOTAL_WORD_EXERCISE_KEY,
-  TOTAL_WORD_LEARN_KEY,
-  IS_ON_LEARN_KEY,
-  BOOKMARKS_KEY,
+  CURRENT_PACK_KEY,
+  // BOOKMARKS_KEY,
   // PAYMENT_TRIGGER_COUNTER_KEY,
 } from '../constants/storageKeys.js'
-import { ASSETS_BASE_URL } from '../constants/urls.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
-import ListUtils from '../utils/ListUtils.js'
-import {
-  PACK_SUMMARIES_BY_LEVEL,
-  ExerciseType,
-  PackType,
-  types,
-} from '../constants/props.js'
-import {
-  removeFavorite,
-  addToFavorites,
-} from '../utils/home/AddOrRemoveFavs.js'
-import { iKnowLearn, repeatLearn } from '../utils/home/LearnUtils.js'
-import checkNonNounAnswer from '../utils/home/checkNonNounAnswer.js'
-import showExerciseWord from '../utils/home/ShowExerciseWord.js'
-import checkNounAnswer from '../utils/home/checkNounAnswer.js'
-import showLearnWord from '../utils/home/showLearnWord.js'
-import {
-  organizeSelectedDeckImage,
-  showSelectCategoryMessage,
-  hideSelectCategoryMessage,
-  isRegularLevel,
-  loadDeckPropsOnLevelPage,
-} from '../utils/home/UIUtils.js'
+import { PackType } from '../constants/props.js'
 import LevelManager from '../utils/LevelManager.js'
+import { protectedApiService } from '../service/apiService.js'
 import {
-  mountPackPractice,
-  unmountPackPractice,
-} from '../components/level/packPractice/packPractice.js'
+  mountPackJourney,
+  unmountPackJourney,
+} from '../components/level/packJourney/packJourney.js'
+// import {
+//   mountMicroQuiz,
+//   unmountMicroQuiz,
+// } from '../components/level/microQuiz/microQuiz.js'
+import AuthService from '../service/AuthService.js'
+import {
+  showSigninModal,
+  hideSigninModal,
+  initSigninComponent,
+} from '../components/layout/signin.js'
+import eventService from '../service/events/EventService.js'
+import { AuthEvent } from '../constants/events.js'
+import StringUtils from '../utils/StringUtils.js'
+
+// Make pack summaries accessible and updatable
+export let packSummariesOfCurrentLevel = []
 
 // On Initial Load
-document.addEventListener('DOMContentLoaded', async () => {
+// // fetch pack summaries
+// // show initial journey or micro-quiz
+function initializeLevelPage() {
   LocalStorageManager.clearDeprecatedLocalStorageItems()
-  LocalStorageManager.save(
-    CURRENT_WORD_TYPE_KEY,
-    DEFAULT_VALUE.CURRENT_WORD_TYPE
-  )
-  LocalStorageManager.save(
-    WORD_LIST_EXERCISE_KEY,
-    DEFAULT_VALUE.WORD_LIST_EXERCISE
-  )
-  LocalStorageManager.save(WORD_LIST_KEY, DEFAULT_VALUE.WORD_LIST)
-  LocalStorageManager.save(
-    IN_PROGRESS_WORDS_KEY,
-    DEFAULT_VALUE.IN_PROGRESS_WORDS
-  )
-  LocalStorageManager.save(IS_ON_LEARN_KEY, 'learn')
-  // LocalStorageManager.load(PAYMENT_TRIGGER_COUNTER_KEY, DEFAULT_VALUE.PAYMENT_TRIGGER_COUNTER)
-  LocalStorageManager.load(
-    LEARNED_WITH_EXERCISE_WORDS_KEY,
-    DEFAULT_VALUE.LEARNED_WITH_EXERCISE_WORDS
-  )
-  LocalStorageManager.load(
-    LEARNED_WITH_LEARN_WORDS_KEY,
-    DEFAULT_VALUE.LEARNED_WITH_LEARN_WORDS
-  )
-  LocalStorageManager.load(BOOKMARKS_KEY, DEFAULT_VALUE.BOOKMARKS)
+
+  // Unmount any previously opened components
+  unmountPackJourney()
+  // If you have other unmounts, add here (e.g., unmountMicroQuiz())
 
   const currentLevel = LevelManager.getCurrentLevel()
-  const packSummariesOfCurrentLevel = PACK_SUMMARIES_BY_LEVEL[currentLevel]
-  // change Level Header top of the pack screen
-  const label = 'Level ' + `${currentLevel}`.toUpperCase()
-  document.getElementById('pack-level-header').innerText = label
-  // Load Deck Props for specific Level and manage category prop on localStorage
-  if (isRegularLevel(currentLevel)) {
-    // Load current category from localStorage
-    let currentCategory = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
-    loadDeckPropsOnLevelPage(packSummariesOfCurrentLevel)
-    // If current category is not in the list or is null, undefined or empty, show select category message
-    if (
-      !LevelManager.checkIfCategoryIsInCategories(currentCategory) ||
-      currentCategory === null ||
-      currentCategory === undefined ||
-      currentCategory === ''
-    ) {
-      showSelectCategoryMessage()
-      return
-    }
-    if (LevelManager.checkIfCategoryIsInCategories(currentCategory)) {
-      hideSelectCategoryMessage()
-      organizeSelectedDeckImage()
+  protectedApiService
+    .getPackSummariesOfLevel(currentLevel)
+    .then(({ data: packSummariesOfCurrentLevel }) => {
+      // console.log(JSON.stringify(packSummariesOfCurrentLevel))
+
+      // change Level Header top of the pack screen
+      const levelLabel = `Level: ${currentLevel}`
+      document.getElementById('pack-level-header').innerText = levelLabel
+
+      // Load current category from localStorage, set it to null if not found
+      const selectedPackSummary = LocalStorageManager.load(
+        CURRENT_PACK_KEY,
+        null
+      )
+      loadPackPropsOnLevelPage(packSummariesOfCurrentLevel)
+      // If current pack is null or belongs on another level, show select pack message
       if (
-        packSummariesOfCurrentLevel.some(
-          (packSummary) =>
-            packSummary.category === currentCategory &&
-            packSummary.type === PackType.MICRO_QUIZ
-        )
+        selectedPackSummary === null ||
+        selectedPackSummary.pack_level !== currentLevel
       ) {
-        // hide regular learn/exercise elements
-        document.getElementById('content-container').style.display = 'none'
-
-        // show micro-quiz learn/exercise
-        // 1. grab the first matching category
-        const firstQuiz = packSummariesOfCurrentLevel.find(
-          (packSummary) => packSummary.type === PackType.MICRO_QUIZ
-        )
-
-        // 2. if one exists, mount it once
-        if (firstQuiz) {
-          await mountPackPractice(
-            firstQuiz.id,
-            firstQuiz.level,
-            firstQuiz.exerciseType
-          )
-        }
-      } else if (
-        packSummariesOfCurrentLevel.some(
-          (packSummary) =>
-            packSummary.category === currentCategory &&
-            packSummary.type === PackType.REGULAR
-        )
-      ) {
-        // hide preposition learn/exercise
-        unmountPackPractice()
-        await loadAndShowWords()
+        // clear selection
+        LocalStorageManager.save(CURRENT_PACK_KEY, null)
+        showSelectCategoryMessage()
+        return
       }
-    }
+
+      hideSelectCategoryMessage()
+      updatePackAvatarImages(selectedPackSummary.pack_id)
+      // hide old learn/exercise elements
+      document.getElementById('content-container').style.display = 'none'
+
+      mountPackJourney(selectedPackSummary)
+    })
+}
+
+// Exported function to update a pack summary in-place
+export function updatePackSummaryInLevel(updatedPackSummary) {
+  const idx = packSummariesOfCurrentLevel.findIndex(
+    (ps) => ps.pack_id === updatedPackSummary.pack_id
+  )
+  if (idx !== -1) {
+    packSummariesOfCurrentLevel[idx] = updatedPackSummary
+    loadPackPropsOnLevelPage(packSummariesOfCurrentLevel)
+    console.log('Updated pack summary in level:', updatedPackSummary.pack_id)
+  } else {
+    console.log('Pack summary not found in level:', updatedPackSummary.pack_id)
   }
-})
+}
 
-// On Word Type Change
+function handleAuthStateChanged({ unauthorized, user }) {
+  if (unauthorized || !user) {
+    showSigninModal()
+    // Hide all content
+    document.getElementById('content-container').style.display = 'none'
+    document.getElementById('pack-level-header').innerText = ''
+    showSelectCategoryMessage()
+    return
+  } else {
+    hideSigninModal()
+    initializeLevelPage()
+  }
+}
 
-types.forEach((type) => {
-  document.getElementById(`${type}Tab`).addEventListener('click', async () => {
-    LocalStorageManager.save(CURRENT_WORD_TYPE_KEY, type)
-    await loadAndShowWords()
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize Signin Component (modal and button)
+  initSigninComponent({
+    signinModal: 'modal-signin-container',
+    googleSigninButton: 'btn-modal-google-signin',
   })
-  document
-    .getElementById(`${type}Tab-learn`)
-    .addEventListener('click', async () => {
-      document
-        .getElementById(`${type}Tab-exercise`)
-        .classList.remove('w--current')
-      document.getElementById(`${type}Tab-learn`).classList.remove('w--current')
-      document.getElementById(`${type}Tab-learn`).classList.add('w--current')
-      LocalStorageManager.save(IS_ON_LEARN_KEY, 'learn')
-      await loadAndShowWords()
-    })
-  document
-    .getElementById(`${type}Tab-exercise`)
-    .addEventListener('click', async () => {
-      document.getElementById(`${type}Tab-learn`).classList.remove('w--current')
-      document
-        .getElementById(`${type}Tab-exercise`)
-        .classList.remove('w--current')
-      document.getElementById(`${type}Tab-exercise`).classList.add('w--current')
-      LocalStorageManager.save(IS_ON_LEARN_KEY, 'exercise')
-      await loadAndShowWords()
-    })
+  // Subscribe to AuthEvent.AUTH_STATE_CHANGED using eventService
+  eventService.subscribe(AuthEvent.AUTH_STATE_CHANGED, (event) => {
+    handleAuthStateChanged(event.detail)
+  })
+  // Optionally, trigger initial auth check
+  AuthService.initialize()
 })
 
-export async function loadAndShowWords() {
-  checkIsOnLearnOrExercise()
-  const isOnLearn = LocalStorageManager.load(IS_ON_LEARN_KEY)
-  try {
-    await loadWords()
-    if (isOnLearn === 'learn') {
-      showLearnWord()
-      return
-    }
-    if (isOnLearn === 'exercise') {
-      showExerciseWord()
-      return
-    }
-  } catch (error) {
-    console.error('word yükleme hatası:', error)
+//  initialize pack avatar images
+// // attach click handlers to them
+function loadPackPropsOnLevelPage(packSummariesOfCurrentLevel) {
+  // Journey Pack Elements
+  const journeyPackSummaryGrid = document.getElementById(
+    'journey-pack-summary-container-grid'
+  )
+  // Clear previous journey packs
+  journeyPackSummaryGrid.innerHTML = ''
+
+  // Micro Quiz Pack Elements
+  const microQuizSummarySection = document.getElementById(
+    'micro-quiz-pack-summary-section'
+  )
+  const microQuizSummaryGrid = document.getElementById(
+    'micro-quiz-pack-summary-container-grid'
+  )
+  // Clear previous micro quiz packs
+  microQuizSummaryGrid.innerHTML = ''
+
+  const isMicroQuizAbsent = !packSummariesOfCurrentLevel.some(
+    (ps) => ps.pack_type === PackType.MICRO_QUIZ
+  )
+
+  if (isMicroQuizAbsent) {
+    microQuizSummarySection.style.display = 'none'
   }
-}
 
-// word yükleme fonksiyonu
-export async function loadWords() {
-  const level = LevelManager.getCurrentLevel()
-  const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
-  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
-  let wordList = LocalStorageManager.load(WORD_LIST_KEY)
-  let wordListExercise = LocalStorageManager.load(WORD_LIST_EXERCISE_KEY)
+  packSummariesOfCurrentLevel.forEach((packSummary, i) => {
+    // create <div> element
+    const linkBlock = document.createElement('div')
+    linkBlock.classList.add('pack-link-block')
 
-  try {
-    const response = await fetch(
-      `${ASSETS_BASE_URL}/json/${level}/${category}/${wordType}.json`
+    // create <img> element
+    const img = document.createElement('img')
+    img.src = packSummary.pack_image_url
+    img.loading = 'lazy'
+    img.id = `pack-${packSummary.pack_id}`
+    img.dataset.option = packSummary.pack_id
+    img.classList.add('pack-img') //, 'image-19')
+
+    // add event listener
+    img.addEventListener('click', (event) =>
+      avatarImageClickHandler(event, packSummary)
     )
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`)
+    // create <h1> element
+    const h1 = document.createElement('h1')
+    h1.id = `pack-title-${i}`
+    h1.classList.add('heading-42')
+    h1.textContent = StringUtils.capitalizeWords(packSummary.pack_english)
+
+    linkBlock.appendChild(img)
+    linkBlock.appendChild(h1)
+
+    // Add pack-summary-words-count-container element
+    const wordsCount = packSummary.total_words_count || 0
+    const wordsCountHTML = `
+    <div id="Word_Count_Badge" class="w-layout-hflex pack-summary-words-count-container">
+      <img src="https://cdn.prod.website-files.com/677da6ae8464f53ea15d73ac/683c7cefa0f6a98cfe516c78_WordsIcon.svg" loading="lazy" alt="" class="image-21">
+      <div class="w-layout-hflex pack-summary-words-count">
+        <div id="Word_Count_Text" class="words-count-label">${wordsCount}</div>
+      </div>
+    </div>
+  `
+    linkBlock.insertAdjacentHTML('beforeend', wordsCountHTML)
+
+    // Son olarak istediğin yere ekle, örneğin bir container'a:
+    if (packSummary.pack_type === PackType.JOURNEY) {
+      journeyPackSummaryGrid.appendChild(linkBlock)
+    } else if (packSummary.pack_type === PackType.MICRO_QUIZ) {
+      microQuizSummaryGrid.appendChild(linkBlock)
     }
+  })
 
-    const data = await response.json()
-
-    wordList = [...data]
-    wordListExercise = [...data]
-    const totalWordsExercise = wordList.length
-    const totalWordsLearn = wordList.length
-
-    LocalStorageManager.save(TOTAL_WORD_EXERCISE_KEY, totalWordsExercise)
-    LocalStorageManager.save(TOTAL_WORD_LEARN_KEY, totalWordsLearn)
-    LocalStorageManager.save(WORD_LIST_KEY, ListUtils.shuffleArray(wordList))
-    LocalStorageManager.save(
-      WORD_LIST_EXERCISE_KEY,
-      ListUtils.shuffleArray(wordListExercise)
-    )
-  } catch (error) {
-    console.error('Error fetching JSON:', error)
-    throw error
-  }
+  // remove placeholders
+  document.querySelectorAll('.placeholder').forEach((element) => {
+    element.style.display = 'none'
+  })
 }
 
-function checkIsOnLearnOrExercise() {
-  const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
-  const exerciseTab = document.getElementById(`${wordType}Tab-exercise`)
-  const learnTab = document.getElementById(`${wordType}Tab-learn`)
-  const isOnLearn = LocalStorageManager.load(IS_ON_LEARN_KEY)
-  if (learnTab.classList.contains('w--current') && !(isOnLearn === 'learn')) {
-    LocalStorageManager.save(IS_ON_LEARN_KEY, 'learn')
-    return
-  }
-  if (
-    exerciseTab.classList.contains('w--current') &&
-    !(isOnLearn === 'exercise')
-  ) {
-    LocalStorageManager.save(IS_ON_LEARN_KEY, 'exercise')
-    return
-  }
-}
-
-// On Page Changes
-document.addEventListener('DOMContentLoaded', async () => {
-  try {
-    const wordType = LocalStorageManager.load(CURRENT_WORD_TYPE_KEY)
-    setupEventListeners()
-
-    // Sayfa değişimlerini izle
-    const observer = new MutationObserver((mutations) => {
-      // Sadece gerekli değişikliklerde event listener'ları güncelle
-      const shouldUpdate = mutations.some((mutation) => {
-        return Array.from(mutation.addedNodes).some(
-          (node) =>
-            node.nodeType === 1 && // Element node
-            (node.id === `repeatButtonLearn-${wordType}` ||
-              node.id === `iKnowButtonLearn-${wordType}` ||
-              node.id === `outfav-${wordType}` ||
-              node.id === `infav-${wordType}`)
-        )
-      })
-
-      if (shouldUpdate) {
-        setupEventListeners()
-      }
-    })
-
-    // Sadece body içindeki değişiklikleri izle
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-    })
-  } catch (error) {
-    console.error('Error in DOMContentLoaded:', error)
-  }
-})
-
-export const nounDerAnswerClickHandler = function (event) {
-  event.preventDefault() // Sayfanın yukarı kaymasını engeller
-  checkNounAnswer('der')
-}
-
-export const nounDieAnswerClickHandler = function (event) {
-  event.preventDefault() // Sayfanın yukarı kaymasını engeller
-  checkNounAnswer('die')
-}
-
-export const nounDasAnswerClickHandler = (event) => {
-  event.preventDefault() // Sayfanın yukarı kaymasını engeller
-  checkNounAnswer('das')
-}
-
-document
-  .getElementById('buttonDer')
-  .addEventListener('click', nounDerAnswerClickHandler)
-
-document
-  .getElementById('buttonDie')
-  .addEventListener('click', nounDieAnswerClickHandler)
-
-document
-  .getElementById('buttonDas')
-  .addEventListener('click', nounDasAnswerClickHandler)
-
-const nonNounWrongAnswerClickHandler = (event) => {
-  event.preventDefault() // Sayfanın yukarı kaymasını engeller
-  checkNonNounAnswer(false)
-}
-
-const nonNounCorrectAnswerClickHandler = (event) => {
-  event.preventDefault() // Sayfanın yukarı kaymasını engeller
-  checkNonNounAnswer(true)
-}
-
-const filteredTypes = types.filter((type) => type !== 'noun')
-
-filteredTypes.forEach((type) => {
-  document
-    .getElementById(`wrongButton-${type}`)
-    .addEventListener('click', nonNounWrongAnswerClickHandler)
-
-  document
-    .getElementById(`correctButton-${type}`)
-    .addEventListener('click', nonNounCorrectAnswerClickHandler)
-})
-// ... existing code ...
-
-function setupEventListeners() {
-  try {
-    // Butonları ID ile seçelim
-    const iKnowButtonNoun = document.getElementById(`iKnowButtonLearn-noun`)
-    const repeatButtonNoun = document.getElementById(`repeatButtonLearn-noun`)
-    const iKnowButtonVerb = document.getElementById(`iKnowButtonLearn-verb`)
-    const repeatButtonVerb = document.getElementById(`repeatButtonLearn-verb`)
-    const iKnowButtonAdjective = document.getElementById(
-      `iKnowButtonLearn-adjective`
-    )
-    const repeatButtonAdjective = document.getElementById(
-      `repeatButtonLearn-adjective`
-    )
-    const iKnowButtonAdverb = document.getElementById(`iKnowButtonLearn-adverb`)
-    const repeatButtonAdverb = document.getElementById(
-      `repeatButtonLearn-adverb`
-    )
-
-    setupListenerForIknowAndLearn(iKnowButtonNoun, repeatButtonNoun)
-    setupListenerForIknowAndLearn(iKnowButtonVerb, repeatButtonVerb)
-    setupListenerForIknowAndLearn(iKnowButtonAdjective, repeatButtonAdjective)
-    setupListenerForIknowAndLearn(iKnowButtonAdverb, repeatButtonAdverb)
-
-    const outfavNoun = document.getElementById(`outfav-noun`)
-    const infavNoun = document.getElementById(`infav-noun`)
-    const outfavVerb = document.getElementById(`outfav-verb`)
-    const infavVerb = document.getElementById(`infav-verb`)
-    const outfavAdjective = document.getElementById(`outfav-adjective`)
-    const infavAdjective = document.getElementById(`infav-adjective`)
-    const outfavAdverb = document.getElementById(`outfav-adverb`)
-    const infavAdverb = document.getElementById(`infav-adverb`)
-
-    // Noun - Favorite buttons
-    if (outfavNoun && !outfavNoun.hasAttribute('listener-attached')) {
-      outfavNoun.addEventListener('click', addToFavorites)
-      outfavNoun.setAttribute('listener-attached', 'true')
-    }
-
-    if (infavNoun && !infavNoun.hasAttribute('listener-attached')) {
-      infavNoun.addEventListener('click', removeFavorite)
-      infavNoun.setAttribute('listener-attached', 'true')
-    }
-    // Verb - Favorite buttons
-    if (outfavVerb && !outfavVerb.hasAttribute('listener-attached')) {
-      outfavVerb.addEventListener('click', addToFavorites)
-      outfavVerb.setAttribute('listener-attached', 'true')
-    }
-
-    if (infavVerb && !infavVerb.hasAttribute('listener-attached')) {
-      infavVerb.addEventListener('click', removeFavorite)
-      infavVerb.setAttribute('listener-attached', 'true')
-    }
-    // Adjective - Favorite buttons
-    if (outfavAdjective && !outfavAdjective.hasAttribute('listener-attached')) {
-      outfavAdjective.addEventListener('click', addToFavorites)
-      outfavAdjective.setAttribute('listener-attached', 'true')
-    }
-
-    if (infavAdjective && !infavAdjective.hasAttribute('listener-attached')) {
-      infavAdjective.addEventListener('click', removeFavorite)
-      infavAdjective.setAttribute('listener-attached', 'true')
-    }
-    // Adverb - Favorite buttons
-    if (outfavAdverb && !outfavAdverb.hasAttribute('listener-attached')) {
-      outfavAdverb.addEventListener('click', addToFavorites)
-      outfavAdverb.setAttribute('listener-attached', 'true')
-    }
-
-    if (infavAdverb && !infavAdverb.hasAttribute('listener-attached')) {
-      infavAdverb.addEventListener('click', removeFavorite)
-      infavAdverb.setAttribute('listener-attached', 'true')
-    }
-  } catch (error) {
-    console.error('Error in setupEventListeners:', error)
-  }
-}
-
-const iKnowButtonClickHandler = (event) => {
+function avatarImageClickHandler(event, selectedPack) {
   event.preventDefault()
-  iKnowLearn()
+
+  // clear location hash for re-focusing
+  window.location.hash = ''
+
+  // save pack to localStorage
+  LocalStorageManager.save(CURRENT_PACK_KEY, selectedPack)
+
+  // update pack image avatar UI
+  updatePackAvatarImages(selectedPack.pack_id)
+  // hide "no pack is selected" UI
+  hideSelectCategoryMessage()
+
+  // hide old learn/exercise
+  document.getElementById('content-container').style.display = 'none'
+
+  // unmount previously opened components
+  unmountPackJourney()
+  // unmountMicroQuiz()
+
+  // if (selectedPack.pack_type === PackType.JOURNEY) {
+  //   mountPackJourney(selectedPack)
+  // } else if (selectedPack.pack_type === PackType.MICRO_QUIZ) {
+  //   mountMicroQuiz(selectedPack)
+  // }
+
+  mountPackJourney(selectedPack)
+
+  // focus user Learn/Exercise area
+  window.location.hash = '#action-content'
+  return
 }
 
-const repeatButtonClickHandler = (event) => {
-  event.preventDefault()
-  repeatLearn()
+function showSelectCategoryMessage() {
+  const contentContainer = document.getElementById('content-container')
+  contentContainer.style.display = 'none'
+  const selectCategoryMessage = document.getElementById(
+    'select-category-message'
+  )
+  selectCategoryMessage.style.display = 'flex'
 }
 
-function setupListenerForIknowAndLearn(iKnowButton, repeatButton) {
-  // I Know button
-  if (iKnowButton && !iKnowButton.hasAttribute('listener-attached')) {
-    iKnowButton.addEventListener('click', iKnowButtonClickHandler)
-    iKnowButton.setAttribute('listener-attached', 'true')
-  }
-  // Repeat button
-  if (repeatButton && !repeatButton.hasAttribute('listener-attached')) {
-    repeatButton.addEventListener('click', repeatButtonClickHandler)
-    repeatButton.setAttribute('listener-attached', 'true')
-  }
+function hideSelectCategoryMessage() {
+  const contentContainer = document.getElementById('content-container')
+  contentContainer.style.display = 'block'
+  const selectCategoryMessage = document.getElementById(
+    'select-category-message'
+  )
+  selectCategoryMessage.style.display = 'none'
 }
 
+// Remove selected class from all deck images and add selected class to the selected deck image
+function updatePackAvatarImages(selectedPackId) {
+  // const category = LocalStorageManager.load(CURRENT_CATEGORY_KEY)
+  const packAvatarImages = document.querySelectorAll('.pack-img')
+  packAvatarImages.forEach((avatarImage) => {
+    avatarImage.classList.remove('selected-pack-img')
+  })
+  const selectedAvatarImage = [...packAvatarImages].find(
+    (avatarImage) => avatarImage.dataset.option === selectedPackId
+  )
+  selectedAvatarImage.classList.add('selected-pack-img')
+}
+
+// Webflow Dropdown Config
 $('a').click(function () {
   $('nav').removeClass('w--open')
 })

@@ -1,0 +1,208 @@
+[
+    {
+        "german": "krank",
+        "english": "sick",
+        "level": "A1",
+        "example": "Ich bin krank.",
+        "word": "krank",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_01"
+    },
+    {
+        "german": "gesund",
+        "english": "healthy",
+        "level": "A1",
+        "example": "Ich bin wieder gesund.",
+        "word": "gesund",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_02"
+    },
+    {
+        "german": "müde",
+        "english": "tired",
+        "level": "A1",
+        "example": "Ich bin sehr müde.",
+        "word": "müde",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_03"
+    },
+    {
+        "german": "schwach",
+        "english": "weak",
+        "level": "A1",
+        "example": "Ich fühle mich schwach.",
+        "word": "schwach",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_04"
+    },
+    {
+        "german": "stark",
+        "english": "strong",
+        "level": "A1",
+        "example": "Er ist wieder stark.",
+        "word": "stark",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_05"
+    },
+    {
+        "german": "fiebrig",
+        "english": "feverish",
+        "level": "A1",
+        "example": "Ich bin fiebrig.",
+        "word": "fiebrig",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_06"
+    },
+    {
+        "german": "nass",
+        "english": "wet",
+        "level": "A1",
+        "example": "Meine Haare sind nass.",
+        "word": "nass",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_07"
+    },
+    {
+        "german": "trocken",
+        "english": "dry",
+        "level": "A1",
+        "example": "Mein Hals ist trocken.",
+        "word": "trocken",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_08"
+    },
+    {
+        "german": "warm",
+        "english": "warm",
+        "level": "A1",
+        "example": "Die Suppe ist warm.",
+        "word": "warm",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_09"
+    },
+    {
+        "german": "kalt",
+        "english": "cold",
+        "level": "A1",
+        "example": "Meine Hände sind kalt.",
+        "word": "kalt",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_10"
+    },
+    {
+        "german": "schnell",
+        "english": "quick",
+        "level": "A1",
+        "example": "Die Behandlung ist schnell.",
+        "word": "schnell",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_11"
+    },
+    {
+        "german": "langsam",
+        "english": "slow",
+        "level": "A1",
+        "example": "Die Heilung ist langsam.",
+        "word": "langsam",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_12"
+    },
+    {
+        "german": "wichtig",
+        "english": "important",
+        "level": "A1",
+        "example": "Die Impfung ist wichtig.",
+        "word": "wichtig",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_13"
+    },
+    {
+        "german": "bereit",
+        "english": "ready",
+        "level": "A1",
+        "example": "Der Patient ist bereit.",
+        "word": "bereit",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_14"
+    },
+    {
+        "german": "ruhig",
+        "english": "calm",
+        "level": "A1",
+        "example": "Der Patient bleibt ruhig.",
+        "word": "ruhig",
+        "rule": "Describes behavior or atmosphere.",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_15"
+    },
+    {
+        "german": "nötig",
+        "english": "necessary",
+        "level": "A1",
+        "example": "Das Medikament ist nötig.",
+        "word": "nötig",
+        "rule": "Used to describe medical requirement.",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_16"
+    },
+    {
+        "german": "klar",
+        "english": "clear",
+        "level": "A1",
+        "example": "Die Anweisung ist klar.",
+        "word": "klar",
+        "rule": "Describes communication or instruction.",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_17"
+    },
+    {
+        "german": "leicht",
+        "english": "light / easy",
+        "level": "A1",
+        "example": "Die Übung ist leicht.",
+        "word": "leicht",
+        "rule": "Can describe both difficulty and weight.",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_18"
+    },
+    {
+        "german": "schwer",
+        "english": "difficult / heavy",
+        "level": "A1",
+        "example": "Die Krankheit ist schwer.",
+        "word": "schwer",
+        "rule": "Often used with diseases or tasks.",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_19"
+    },
+    {
+        "german": "froh",
+        "english": "glad",
+        "level": "A1",
+        "example": "Ich bin froh über die Diagnose.",
+        "word": "froh",
+        "rule": "Describes emotional state.",
+        "type": "adjective",
+        "category": "Gesundheit",
+        "id": "adjective_gesundheit_20"
+    }
+]

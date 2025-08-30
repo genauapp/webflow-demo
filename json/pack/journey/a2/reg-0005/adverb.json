@@ -1,0 +1,202 @@
+[
+    {
+        "german": "täglich",
+        "english": "daily",
+        "level": "A2",
+        "example": "Ich putze täglich das Badezimmer.",
+        "word": "täglich",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_01"
+    },
+    {
+        "german": "regelmäßig",
+        "english": "regularly",
+        "level": "A2",
+        "example": "Ich mache regelmäßig Sport.",
+        "word": "regelmäßig",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_02"
+    },
+    {
+        "german": "selten",
+        "english": "rarely",
+        "level": "A2",
+        "example": "Ich gehe selten aus dem Haus.",
+        "word": "selten",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_03"
+    },
+    {
+        "german": "meistens",
+        "english": "mostly",
+        "level": "A2",
+        "example": "Ich bin meistens zu Hause.",
+        "word": "meistens",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_04"
+    },
+    {
+        "german": "oft",
+        "english": "often",
+        "level": "A2",
+        "example": "Ich telefoniere oft mit meiner Familie.",
+        "word": "oft",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_05"
+    },
+    {
+        "german": "gerne",
+        "english": "gladly",
+        "level": "A2",
+        "example": "Ich koche gerne.",
+        "word": "gerne",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_06"
+    },
+    {
+        "german": "allein",
+        "english": "alone",
+        "level": "A2",
+        "example": "Ich mache das allein.",
+        "word": "allein",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_07"
+    },
+    {
+        "german": "zusammen",
+        "english": "together",
+        "level": "A2",
+        "example": "Wir essen zusammen zu Abend.",
+        "word": "zusammen",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_08"
+    },
+    {
+        "german": "überall",
+        "english": "everywhere",
+        "level": "A2",
+        "example": "Ich habe überall gesucht.",
+        "word": "überall",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_09"
+    },
+    {
+        "german": "nirgendwo",
+        "english": "nowhere",
+        "level": "A2",
+        "example": "Ich finde den Schlüssel nirgendwo.",
+        "word": "nirgendwo",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_10"
+    },
+    {
+        "german": "draußen",
+        "english": "outside",
+        "level": "A2",
+        "example": "Die Kinder spielen draußen.",
+        "word": "draußen",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_11"
+    },
+    {
+        "german": "drinnen",
+        "english": "inside",
+        "level": "A2",
+        "example": "Wir bleiben heute drinnen.",
+        "word": "drinnen",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_12"
+    },
+    {
+        "german": "vorher",
+        "english": "beforehand",
+        "level": "A2",
+        "example": "Ich habe das vorher gemacht.",
+        "word": "vorher",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_13"
+    },
+    {
+        "german": "nachher",
+        "english": "afterwards",
+        "level": "A2",
+        "example": "Wir gehen nachher spazieren.",
+        "word": "nachher",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_14"
+    },
+    {
+        "german": "zu Hause",
+        "english": "at home",
+        "level": "A2",
+        "example": "Ich bleibe heute zu Hause.",
+        "word": "zu Hause",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_15"
+    },
+    {
+        "german": "unterwegs",
+        "english": "on the way",
+        "level": "A2",
+        "example": "Ich bin gerade unterwegs.",
+        "word": "unterwegs",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_16"
+    },
+    {
+        "german": "gleich",
+        "english": "soon",
+        "level": "A2",
+        "example": "Ich komme gleich.",
+        "word": "gleich",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_17"
+    },
+    {
+        "german": "eben",
+        "english": "just",
+        "level": "A2",
+        "example": "Ich habe eben angerufen.",
+        "word": "eben",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_18"
+    },
+    {
+        "german": "lange",
+        "english": "for a long time",
+        "level": "A2",
+        "example": "Ich warte schon lange.",
+        "word": "lange",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_19"
+    },
+    {
+        "german": "kurz",
+        "english": "briefly",
+        "level": "A2",
+        "example": "Ich habe nur kurz Zeit.",
+        "word": "kurz",
+        "type": "adverb",
+        "category": "Alltag",
+        "id": "adverb_alltag_A2_20"
+    }
+]

@@ -1,0 +1,202 @@
+[
+    {
+        "german": "jetzt",
+        "english": "now",
+        "level": "A1",
+        "example": "Ich brauche jetzt Hilfe.",
+        "word": "jetzt",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_01"
+    },
+    {
+        "german": "bald",
+        "english": "soon",
+        "level": "A1",
+        "example": "Ich bekomme bald einen Termin.",
+        "word": "bald",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_02"
+    },
+    {
+        "german": "heute",
+        "english": "today",
+        "level": "A1",
+        "example": "Heute gehe ich zum Arzt.",
+        "word": "heute",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_03"
+    },
+    {
+        "german": "gestern",
+        "english": "yesterday",
+        "level": "A1",
+        "example": "Ich war gestern krank.",
+        "word": "gestern",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_04"
+    },
+    {
+        "german": "morgen",
+        "english": "tomorrow",
+        "level": "A1",
+        "example": "Morgen habe ich eine Untersuchung.",
+        "word": "morgen",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_05"
+    },
+    {
+        "german": "immer",
+        "english": "always",
+        "level": "A1",
+        "example": "Ich nehme immer meine Tabletten.",
+        "word": "immer",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_06"
+    },
+    {
+        "german": "manchmal",
+        "english": "sometimes",
+        "level": "A1",
+        "example": "Ich habe manchmal Kopfschmerzen.",
+        "word": "manchmal",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_07"
+    },
+    {
+        "german": "nie",
+        "english": "never",
+        "level": "A1",
+        "example": "Ich rauche nie.",
+        "word": "nie",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_08"
+    },
+    {
+        "german": "oft",
+        "english": "often",
+        "level": "A1",
+        "example": "Ich bin oft müde.",
+        "word": "oft",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_09"
+    },
+    {
+        "german": "nicht",
+        "english": "not",
+        "level": "A1",
+        "example": "Ich fühle mich nicht gut.",
+        "word": "nicht",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_10"
+    },
+    {
+        "german": "schon",
+        "english": "already",
+        "level": "A1",
+        "example": "Ich habe schon einen Termin.",
+        "word": "schon",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_11"
+    },
+    {
+        "german": "noch",
+        "english": "still",
+        "level": "A1",
+        "example": "Ich bin noch krank.",
+        "word": "noch",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_12"
+    },
+    {
+        "german": "vielleicht",
+        "english": "maybe",
+        "level": "A1",
+        "example": "Vielleicht brauche ich ein Medikament.",
+        "word": "vielleicht",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_13"
+    },
+    {
+        "german": "zu",
+        "english": "too (much)",
+        "level": "A1",
+        "example": "Das ist zu heiß.",
+        "word": "zu",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_14"
+    },
+    {
+        "german": "sehr",
+        "english": "very",
+        "level": "A1",
+        "example": "Ich bin sehr müde.",
+        "word": "sehr",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_15"
+    },
+    {
+        "german": "da",
+        "english": "there",
+        "level": "A1",
+        "example": "Der Arzt ist da.",
+        "word": "da",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_16"
+    },
+    {
+        "german": "draußen",
+        "english": "outside",
+        "level": "A1",
+        "example": "Die Patienten warten draußen.",
+        "word": "draußen",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_17"
+    },
+    {
+        "german": "drinnen",
+        "english": "inside",
+        "level": "A1",
+        "example": "Der Arzt ist drinnen.",
+        "word": "drinnen",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_18"
+    },
+    {
+        "german": "fast",
+        "english": "almost",
+        "level": "A1",
+        "example": "Ich bin fast gesund.",
+        "word": "fast",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_19"
+    },
+    {
+        "german": "ganz",
+        "english": "completely",
+        "level": "A1",
+        "example": "Ich bin ganz gesund.",
+        "word": "ganz",
+        "type": "adverb",
+        "category": "Gesundheit",
+        "id": "adverb_gesundheit_20"
+    }
+]

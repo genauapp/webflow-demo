@@ -1,0 +1,202 @@
+[
+    {
+        "german": "gemütlich",
+        "english": "cozy",
+        "level": "B1",
+        "example": "Unser Wohnzimmer ist sehr gemütlich.",
+        "word": "gemütlich",
+        "type": "adjective",
+        "category": "Wohnen & Umwelt",
+        "id": "adjective_wohnen_B1_01"
+    },
+    {
+        "german": "modern",
+        "english": "modern",
+        "level": "B1",
+        "example": "Die Küche ist sehr modern ausgestattet.",
+        "word": "modern",
+        "type": "adjective",
+        "category": "Wohnen & Umwelt",
+        "id": "adjective_wohnen_B1_02"
+    },
+    {
+        "german": "altmodisch",
+        "english": "old-fashioned",
+        "level": "B1",
+        "example": "Das Sofa sieht altmodisch aus.",
+        "word": "altmodisch",
+        "type": "adjective",
+        "category": "Wohnen & Umwelt",
+        "id": "adjective_wohnen_B1_03"
+    },
+    {
+        "german": "geräumig",
+        "english": "spacious",
+        "level": "B1",
+        "example": "Die Wohnung ist sehr geräumig.",
+        "word": "geräumig",
+        "type": "adjective",
+        "category": "Wohnen & Umwelt",
+        "id": "adjective_wohnen_B1_04"
+    },
+    {
+        "german": "hell",
+        "english": "bright",
+        "level": "B1",
+        "example": "Das Zimmer ist hell und freundlich.",
+        "word": "hell",
+        "type": "adjective",
+        "category": "Wohnen & Umwelt",
+        "id": "adjective_wohnen_B1_05"
+    },
+    {
+        "german": "dunkel",
+        "english": "dark",
+        "level": "B1",
+        "example": "Der Flur ist etwas dunkel.",
+        "word": "dunkel",
+        "type": "adjective",
+        "category": "Wohnen & Umwelt",
+        "id": "adjective_wohnen_B1_06"
+    },
+    {
+        "german": "ruhig",
+        "english": "quiet",
+        "level": "B1",
+        "example": "Die Nachbarschaft ist sehr ruhig.",
+        "word": "ruhig",
+        "type": "adjective",
+        "category": "Wohnen & Umwelt",
+        "id": "adjective_wohnen_B1_07"
+    },
+    {
+        "german": "laut",
+        "english": "noisy",
+        "level": "B1",
+        "example": "Die Straße ist ziemlich laut.",
+        "word": "laut",
+        "type": "adjective",
+        "category": "Wohnen & Umwelt",
+        "id": "adjective_wohnen_B1_08"
+    },
+    {
+        "german": "neu",
+        "english": "new",
+        "level": "B1",
+        "example": "Wir haben eine neue Couch gekauft.",
+        "word": "neu",
+        "type": "adjective",
+        "category": "Wohnen & Umwelt",
+        "id": "adjective_wohnen_B1_09"
+    },
+    {
+        "german": "alt",
+        "english": "old",
+        "level": "B1",
+        "example": "Das Gebäude ist schon sehr alt.",
+        "word": "alt",
+        "type": "adjective",
+        "category": "Wohnen & Umwelt",
+        "id": "adjective_wohnen_B1_10"
+    },
+    {
+        "german": "praktisch",
+        "english": "practical",
+        "level": "B1",
+        "example": "Die Möbel sind sehr praktisch.",
+        "word": "praktisch",
+        "type": "adjective",
+        "category": "Wohnen & Umwelt",
+        "id": "adjective_wohnen_B1_11"
+    },
+    {
+        "german": "nützlich",
+        "english": "useful",
+        "level": "B1",
+        "example": "Diese Lampe ist wirklich nützlich.",
+        "word": "nützlich",
+        "type": "adjective",
+        "category": "Wohnen & Umwelt",
+        "id": "adjective_wohnen_B1_12"
+    },
+    {
+        "german": "teuer",
+        "english": "expensive",
+        "level": "B1",
+        "example": "Die Miete ist sehr teuer.",
+        "word": "teuer",
+        "type": "adjective",
+        "category": "Wohnen & Umwelt",
+        "id": "adjective_wohnen_B1_13"
+    },
+    {
+        "german": "billig",
+        "english": "cheap",
+        "level": "B1",
+        "example": "Wir haben ein billiges Sofa gekauft.",
+        "word": "billig",
+        "type": "adjective",
+        "category": "Wohnen & Umwelt",
+        "id": "adjective_wohnen_B1_14"
+    },
+    {
+        "german": "sauber",
+        "english": "clean",
+        "level": "B1",
+        "example": "Die Wohnung ist immer sauber.",
+        "word": "sauber",
+        "type": "adjective",
+        "category": "Wohnen & Umwelt",
+        "id": "adjective_wohnen_B1_15"
+    },
+    {
+        "german": "schmutzig",
+        "english": "dirty",
+        "level": "B1",
+        "example": "Das Fenster ist sehr schmutzig.",
+        "word": "schmutzig",
+        "type": "adjective",
+        "category": "Wohnen & Umwelt",
+        "id": "adjective_wohnen_B1_16"
+    },
+    {
+        "german": "umweltfreundlich",
+        "english": "environmentally friendly",
+        "level": "B1",
+        "example": "Wir benutzen umweltfreundliche Produkte.",
+        "word": "umweltfreundlich",
+        "type": "adjective",
+        "category": "Wohnen & Umwelt",
+        "id": "adjective_wohnen_B1_17"
+    },
+    {
+        "german": "energiesparend",
+        "english": "energy-saving",
+        "level": "B1",
+        "example": "Diese Lampe ist energiesparend.",
+        "word": "energiesparend",
+        "type": "adjective",
+        "category": "Wohnen & Umwelt",
+        "id": "adjective_wohnen_B1_18"
+    },
+    {
+        "german": "recycelbar",
+        "english": "recyclable",
+        "level": "B1",
+        "example": "Diese Verpackung ist recycelbar.",
+        "word": "recycelbar",
+        "type": "adjective",
+        "category": "Wohnen & Umwelt",
+        "id": "adjective_wohnen_B1_19"
+    },
+    {
+        "german": "natürlich",
+        "english": "natural",
+        "level": "B1",
+        "example": "Wir bevorzugen natürliche Materialien.",
+        "word": "natürlich",
+        "type": "adjective",
+        "category": "Wohnen & Umwelt",
+        "id": "adjective_wohnen_B1_20"
+    }
+]

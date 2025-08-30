@@ -1,0 +1,202 @@
+[
+    {
+        "german": "pünktlich",
+        "english": "punctually",
+        "level": "A2",
+        "example": "Ich komme pünktlich zur Arbeit.",
+        "word": "pünktlich",
+        "type": "adverb",
+        "category": "Arbeit & Behörden",
+        "id": "adverb_arbeit_A2_01"
+    },
+    {
+        "german": "täglich",
+        "english": "daily",
+        "level": "A2",
+        "example": "Ich arbeite täglich acht Stunden.",
+        "word": "täglich",
+        "type": "adverb",
+        "category": "Arbeit & Behörden",
+        "id": "adverb_arbeit_A2_02"
+    },
+    {
+        "german": "oft",
+        "english": "often",
+        "level": "A2",
+        "example": "Ich telefoniere oft mit dem Amt.",
+        "word": "oft",
+        "type": "adverb",
+        "category": "Arbeit & Behörden",
+        "id": "adverb_arbeit_A2_03"
+    },
+    {
+        "german": "selten",
+        "english": "rarely",
+        "level": "A2",
+        "example": "Ich muss selten zum Amt.",
+        "word": "selten",
+        "type": "adverb",
+        "category": "Arbeit & Behörden",
+        "id": "adverb_arbeit_A2_04"
+    },
+    {
+        "german": "manchmal",
+        "english": "sometimes",
+        "level": "A2",
+        "example": "Manchmal arbeite ich am Wochenende.",
+        "word": "manchmal",
+        "type": "adverb",
+        "category": "Arbeit & Behörden",
+        "id": "adverb_arbeit_A2_05"
+    },
+    {
+        "german": "immer",
+        "english": "always",
+        "level": "A2",
+        "example": "Ich bringe immer meinen Ausweis mit.",
+        "word": "immer",
+        "type": "adverb",
+        "category": "Arbeit & Behörden",
+        "id": "adverb_arbeit_A2_06"
+    },
+    {
+        "german": "nie",
+        "english": "never",
+        "level": "A2",
+        "example": "Ich vergesse nie meinen Ausweis.",
+        "word": "nie",
+        "type": "adverb",
+        "category": "Arbeit & Behörden",
+        "id": "adverb_arbeit_A2_07"
+    },
+    {
+        "german": "sofort",
+        "english": "immediately",
+        "level": "A2",
+        "example": "Bitte antworten Sie mir sofort.",
+        "word": "sofort",
+        "type": "adverb",
+        "category": "Arbeit & Behörden",
+        "id": "adverb_arbeit_A2_08"
+    },
+    {
+        "german": "rechtzeitig",
+        "english": "in time",
+        "level": "A2",
+        "example": "Ich habe das Formular rechtzeitig abgegeben.",
+        "word": "rechtzeitig",
+        "type": "adverb",
+        "category": "Arbeit & Behörden",
+        "id": "adverb_arbeit_A2_09"
+    },
+    {
+        "german": "persönlich",
+        "english": "personally",
+        "level": "A2",
+        "example": "Sie müssen persönlich erscheinen.",
+        "word": "persönlich",
+        "type": "adverb",
+        "category": "Arbeit & Behörden",
+        "id": "adverb_arbeit_A2_10"
+    },
+    {
+        "german": "schriftlich",
+        "english": "in writing",
+        "level": "A2",
+        "example": "Bitte geben Sie eine schriftliche Erklärung.",
+        "word": "schriftlich",
+        "type": "adverb",
+        "category": "Arbeit & Behörden",
+        "id": "adverb_arbeit_A2_11"
+    },
+    {
+        "german": "mündlich",
+        "english": "orally",
+        "level": "A2",
+        "example": "Die Prüfung ist mündlich.",
+        "word": "mündlich",
+        "type": "adverb",
+        "category": "Arbeit & Behörden",
+        "id": "adverb_arbeit_A2_12"
+    },
+    {
+        "german": "zusätzlich",
+        "english": "additionally",
+        "level": "A2",
+        "example": "Zusätzlich brauche ich eine Bescheinigung.",
+        "word": "zusätzlich",
+        "type": "adverb",
+        "category": "Arbeit & Behörden",
+        "id": "adverb_arbeit_A2_13"
+    },
+    {
+        "german": "früh",
+        "english": "early",
+        "level": "A2",
+        "example": "Ich komme früh zur Arbeit.",
+        "word": "früh",
+        "type": "adverb",
+        "category": "Arbeit & Behörden",
+        "id": "adverb_arbeit_A2_14"
+    },
+    {
+        "german": "spät",
+        "english": "late",
+        "level": "A2",
+        "example": "Ich darf nicht zu spät kommen.",
+        "word": "spät",
+        "type": "adverb",
+        "category": "Arbeit & Behörden",
+        "id": "adverb_arbeit_A2_15"
+    },
+    {
+        "german": "bald",
+        "english": "soon",
+        "level": "A2",
+        "example": "Ich werde bald eine Antwort bekommen.",
+        "word": "bald",
+        "type": "adverb",
+        "category": "Arbeit & Behörden",
+        "id": "adverb_arbeit_A2_16"
+    },
+    {
+        "german": "später",
+        "english": "later",
+        "level": "A2",
+        "example": "Ich komme später ins Büro.",
+        "word": "später",
+        "type": "adverb",
+        "category": "Arbeit & Behörden",
+        "id": "adverb_arbeit_A2_17"
+    },
+    {
+        "german": "vergeblich",
+        "english": "in vain",
+        "level": "A2",
+        "example": "Ich habe vergeblich gewartet.",
+        "word": "vergeblich",
+        "type": "adverb",
+        "category": "Arbeit & Behörden",
+        "id": "adverb_arbeit_A2_18"
+    },
+    {
+        "german": "endlich",
+        "english": "finally",
+        "level": "A2",
+        "example": "Endlich habe ich die Genehmigung erhalten.",
+        "word": "endlich",
+        "type": "adverb",
+        "category": "Arbeit & Behörden",
+        "id": "adverb_arbeit_A2_19"
+    },
+    {
+        "german": "bereits",
+        "english": "already",
+        "level": "A2",
+        "example": "Ich habe das Formular bereits abgeschickt.",
+        "word": "bereits",
+        "type": "adverb",
+        "category": "Arbeit & Behörden",
+        "id": "adverb_arbeit_A2_20"
+    }
+]

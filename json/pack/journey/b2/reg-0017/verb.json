@@ -1,0 +1,222 @@
+[
+  {
+    "id": "verb_technik_B2_01",
+    "german": "programmieren",
+    "english": "to program",
+    "level": "B2",
+    "example": "Er hat eine App programmiert.",
+    "word": "programmieren",
+    "type": "verb",
+    "category": "Digitalisierung & Technik",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_technik_B2_02",
+    "german": "installieren",
+    "english": "to install",
+    "level": "B2",
+    "example": "Ich muss die Software installieren.",
+    "word": "installieren",
+    "type": "verb",
+    "category": "Digitalisierung & Technik",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_technik_B2_03",
+    "german": "herunterladen",
+    "english": "to download",
+    "level": "B2",
+    "example": "Er hat die Datei heruntergeladen.",
+    "word": "herunterladen",
+    "type": "verb",
+    "category": "Digitalisierung & Technik",
+    "cases": ["accusative", "separable"]
+  },
+  {
+    "id": "verb_technik_B2_04",
+    "german": "hochladen",
+    "english": "to upload",
+    "level": "B2",
+    "example": "Bitte lade das Dokument hoch.",
+    "word": "hochladen",
+    "type": "verb",
+    "category": "Digitalisierung & Technik",
+    "cases": ["accusative", "separable"]
+  },
+  {
+    "id": "verb_technik_B2_05",
+    "german": "entwickeln",
+    "english": "to develop",
+    "level": "B2",
+    "example": "Die Firma entwickelt neue Softwarelösungen.",
+    "word": "entwickeln",
+    "type": "verb",
+    "category": "Digitalisierung & Technik",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_technik_B2_06",
+    "german": "verschlüsseln",
+    "english": "to encrypt",
+    "level": "B2",
+    "example": "Die Nachrichten wurden verschlüsselt.",
+    "word": "verschlüsseln",
+    "type": "verb",
+    "category": "Digitalisierung & Technik",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_technik_B2_07",
+    "german": "entschlüsseln",
+    "english": "to decrypt",
+    "level": "B2",
+    "example": "Man konnte die Datei nicht entschlüsseln.",
+    "word": "entschlüsseln",
+    "type": "verb",
+    "category": "Digitalisierung & Technik",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_technik_B2_08",
+    "german": "speichern",
+    "english": "to save / to store",
+    "level": "B2",
+    "example": "Vergiss nicht, die Datei zu speichern.",
+    "word": "speichern",
+    "type": "verb",
+    "category": "Digitalisierung & Technik",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_technik_B2_09",
+    "german": "löschen",
+    "english": "to delete",
+    "level": "B2",
+    "example": "Die Daten wurden versehentlich gelöscht.",
+    "word": "löschen",
+    "type": "verb",
+    "category": "Digitalisierung & Technik",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_technik_B2_10",
+    "german": "aktualisieren",
+    "english": "to update",
+    "level": "B2",
+    "example": "Du solltest die Software regelmäßig aktualisieren.",
+    "word": "aktualisieren",
+    "type": "verb",
+    "category": "Digitalisierung & Technik",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_technik_B2_11",
+    "german": "verbinden",
+    "english": "to connect",
+    "level": "B2",
+    "example": "Das Gerät ist mit dem WLAN verbunden.",
+    "word": "verbinden",
+    "type": "verb",
+    "category": "Digitalisierung & Technik",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_technik_B2_12",
+    "german": "reagieren",
+    "english": "to react",
+    "level": "B2",
+    "example": "Das System reagiert auf Sprachbefehle.",
+    "word": "reagieren",
+    "type": "verb",
+    "category": "Digitalisierung & Technik",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_technik_B2_13",
+    "german": "sich anmelden",
+    "english": "to log in / to register",
+    "level": "B2",
+    "example": "Du musst dich zuerst anmelden.",
+    "word": "sich anmelden",
+    "type": "verb",
+    "category": "Digitalisierung & Technik",
+    "cases": ["reflexive", "accusative", "separable"]
+  },
+  {
+    "id": "verb_technik_B2_14",
+    "german": "sich abmelden",
+    "english": "to log out",
+    "level": "B2",
+    "example": "Vergiss nicht, dich abzumelden.",
+    "word": "sich abmelden",
+    "type": "verb",
+    "category": "Digitalisierung & Technik",
+    "cases": ["reflexive", "accusative", "separable"]
+  },
+  {
+    "id": "verb_technik_B2_15",
+    "german": "verarbeiten",
+    "english": "to process",
+    "level": "B2",
+    "example": "Das System verarbeitet große Datenmengen.",
+    "word": "verarbeiten",
+    "type": "verb",
+    "category": "Digitalisierung & Technik",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_technik_B2_16",
+    "german": "nutzen",
+    "english": "to use",
+    "level": "B2",
+    "example": "Immer mehr Menschen nutzen soziale Medien.",
+    "word": "nutzen",
+    "type": "verb",
+    "category": "Digitalisierung & Technik",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_technik_B2_17",
+    "german": "einrichten",
+    "english": "to set up",
+    "level": "B2",
+    "example": "Er hat sein neues Smartphone eingerichtet.",
+    "word": "einrichten",
+    "type": "verb",
+    "category": "Digitalisierung & Technik",
+    "cases": ["accusative", "separable"]
+  },
+  {
+    "id": "verb_technik_B2_18",
+    "german": "scannen",
+    "english": "to scan",
+    "level": "B2",
+    "example": "Bitte scannen Sie das Dokument ein.",
+    "word": "scannen",
+    "type": "verb",
+    "category": "Digitalisierung & Technik",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_technik_B2_19",
+    "german": "drucken",
+    "english": "to print",
+    "level": "B2",
+    "example": "Ich habe das Dokument gedruckt.",
+    "word": "drucken",
+    "type": "verb",
+    "category": "Digitalisierung & Technik",
+    "cases": ["accusative"]
+  },
+  {
+    "id": "verb_technik_B2_20",
+    "german": "übertragen",
+    "english": "to transfer / to stream",
+    "level": "B2",
+    "example": "Das Video wird live übertragen.",
+    "word": "übertragen",
+    "type": "verb",
+    "category": "Digitalisierung & Technik",
+    "cases": ["accusative"]
+  }
+]
