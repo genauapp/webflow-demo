@@ -1,5 +1,5 @@
 const API_KEY =
-  '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'
+  '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'
 
 let currentLevel = 'A1'
 let wordList = []
