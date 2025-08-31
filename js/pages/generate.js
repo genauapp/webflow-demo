@@ -1,3 +1,6 @@
+const API_KEY =
+  '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'
+
 let currentLevel = 'A1'
 let wordList = []
 let currentIndex = 0
@@ -164,8 +167,7 @@ Return only JSON. No explanation or notes.
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization:
-          'Bearer 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',
+        Authorization: `Bearer ${API_KEY}`,
       },
       body: JSON.stringify({
         model: 'gpt-4',
