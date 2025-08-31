@@ -139,7 +139,7 @@ async function generatePack() {
 You are a German vocabulary generator.
 First, detect the language of the user's prompt.
 Use that language as the translation output for each German word.
-You must generate a mixed list of 26 German words that are commonly used in this context:
+You must generate a mixed list of 14 German words that are commonly used in this context:
 "**${prompt}**"
 Each word should be of type: noun, verb, adjective, adverb, or preposition.
 Return a JSON array where each object includes:
