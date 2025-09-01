@@ -127,8 +127,11 @@ async function generatePack() {
   console.log(':rocket: generatePack triggered')
   const prompt = document.getElementById('promptInput').value.trim()
   const loading = document.getElementById('loading')
+  const results = document.getElementById('results')
   const output = document.getElementById('card-wrapper')
+
   loading.style.display = 'block'
+  results.style.display = 'none'
   output.style.display = 'none'
 
   const loadingDiv = document.getElementById('loading')
@@ -204,23 +207,32 @@ Return only JSON. No explanation or notes.
     } catch (e) {
       output.innerHTML = `<p>:x: Unexpected response from AI. Try again.</p><pre>${text}</pre>`
       loading.style.display = 'none'
+      results.style.display = 'block'
       output.style.display = 'block'
       return
     }
     currentIndex = 0
     showCard(currentIndex)
     loading.style.display = 'none'
+    results.style.display = 'block'
     output.style.display = 'block'
     const refreshBtn = document.getElementById('refreshButton')
     if (refreshBtn) refreshBtn.style.display = 'block'
   } catch (err) {
     output.innerHTML = `<p>:x: Error fetching word pack. Please try again.</p>`
     loading.style.display = 'none'
+    results.style.display = 'block'
     output.style.display = 'block'
   }
 }
 document.addEventListener('DOMContentLoaded', function () {
   console.log(':package: JS loaded')
+
+  // Add results element initialization
+  const results = document.getElementById('results')
+
+  results.style.display = 'none'
+  
   ;['A1', 'A2', 'B1', 'B2'].forEach((level) => {
     const btn = document.getElementById(`selectLevel-${level}`)
     if (btn) {
