@@ -1,5 +1,4 @@
-const API_KEY =
-  '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'
+import { publicApiService } from '../service/apiService.js'
 
 let currentLevel = 'A1'
 let wordList = []
@@ -131,11 +130,18 @@ async function generatePack() {
   const output = document.getElementById('card-wrapper')
   loading.style.display = 'block'
   output.style.display = 'none'
-  // Loading animasyonu alanına auto scroll
+
   const loadingDiv = document.getElementById('loading')
   if (loadingDiv)
     loadingDiv.scrollIntoView({ behavior: 'smooth', block: 'center' })
-  const systemPrompt = `
+
+  try {
+    const { data: apiKey, error } = await publicApiService.getExperimentalOpenAiApiKey()
+    if (error || !apiKey) {
+      throw new Error('Failed to fetch API key')
+    }
+
+    const systemPrompt = `
 You are a German vocabulary generator.
 First, detect the language of the user's prompt.
 Use that language as the translation output for each German word.
@@ -162,12 +168,12 @@ Format: "Nouns ending in '-XYZ' are usually [masculine/feminine/neuter]."
 If no match, leave rule empty.
 Return only JSON. No explanation or notes.
 `
-  try {
+
     const res = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${API_KEY}`,
+        Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
         model: 'gpt-4',
@@ -175,6 +181,7 @@ Return only JSON. No explanation or notes.
         temperature: 0.7,
       }),
     })
+
     const data = await res.json()
     const text = data.choices[0].message.content
     try {
