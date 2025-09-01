@@ -32,9 +32,9 @@ function showCard(index) {
       : article === 'das'
       ? 'das'
       : ''
-  document.getElementById('counter').innerText = `${index + 1}/${
-    wordList.length
-  }`
+  const counterIndexLabelEl = document.getElementById('counter-index-label')
+  counterIndexLabelEl.innerText = `${index + 1}/${wordList.length}`
+
   const germanWordEl = document.getElementById('german-word')
   germanWordEl.innerText = wordDisplay
   // Renk atama
@@ -136,7 +136,8 @@ async function generatePack() {
     loadingDiv.scrollIntoView({ behavior: 'smooth', block: 'center' })
 
   try {
-    const { data: apiKey, error } = await publicApiService.getExperimentalOpenAiApiKey()
+    const { data: apiKey, error } =
+      await publicApiService.getExperimentalOpenAiApiKey()
     if (error || !apiKey) {
       throw new Error('Failed to fetch API key')
     }
