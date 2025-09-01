@@ -21,6 +21,9 @@ export const publicApiService = {
       )
     )
   },
+  getExperimentalOpenAiApiKey: async () => {
+    return handleRequest(() => publicApi.get('/api/v1/api-key/open-ai'))
+  },
 }
 
 export const protectedApiService = {
@@ -93,11 +96,12 @@ export const protectedApiService = {
     return await handleRequest(() =>
       protectedApi.post('/api/v1/user-pack/deck/exercise/complete', payload)
     ).then(({ data, error }) => {
-      if (error) return { userPackSummary: null, userDeckExerciseResult: null, error }
+      if (error)
+        return { userPackSummary: null, userDeckExerciseResult: null, error }
       return {
         userPackSummary: data?.user_pack_summary ?? null,
         userDeckExerciseResult: data?.user_deck_exercise_result ?? null,
-        error: null
+        error: null,
       }
     })
   },
