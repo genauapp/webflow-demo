@@ -7,6 +7,7 @@ export const WordTypeList = Object.freeze([
   'adjective',
   'adverb',
   'preposition',
+  'conjunction',
 ])
 export const WordType = {
   NOUN: 'noun',
@@ -36,6 +37,7 @@ export const JourneyDeckDefinition = Object.freeze({
   [WordType.ADVERB]: 'Words that describe nouns.',
   [WordType.PREPOSITION]:
     'Words that show relationships between a noun or pronoun and other words in a sentence.',
+  [WordType.CONJUNCTION]: 'Words that connect words, phrases, or clauses.',
 })
 
 export const JourneyDeckExample = Object.freeze({
@@ -44,6 +46,7 @@ export const JourneyDeckExample = Object.freeze({
   [WordType.ADJECTIVE]: 'groß (big), schnell (fast)',
   [WordType.ADVERB]: 'schnell (quickly), gestern (yesterday)',
   [WordType.PREPOSITION]: 'mit (with), durch (through)',
+  [WordType.CONJUNCTION]: 'und (and), aber (but), oder (or)',
 })
 
 export const NavigationMode = Object.freeze({
