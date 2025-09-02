@@ -1,8 +1,42 @@
 import { publicApiService } from '../service/apiService.js'
+import { navigationService } from '../service/level/NavigationService.js'
+import { NavigationMode } from '../constants/props.js'
 
 let currentLevel = 'A1'
-let wordList = []
-let currentIndex = 0
+let sessionId = 'generate-pack-session'
+
+// Initialize words with required properties for NavigationService
+function enhanceWordsWithProperties(words) {
+  return words.map((word, index) => ({
+    ...word,
+    id: word.id || `word-${index}`, // Ensure each word has an ID
+    isKnown: false, // Required for learn mode
+  }))
+}
+
+// Initialize NavigationService session
+function initializeNavigationService(words) {
+  const enhancedWords = enhanceWordsWithProperties(words)
+  
+  const sessionOptions = {
+    mode: NavigationMode.LEARN,
+    onLearnUpdate: (learnProgressionState) => {
+      if (learnProgressionState.currentWord) {
+        showCard(learnProgressionState.currentWord, learnProgressionState.currentIndex, learnProgressionState.lastIndex)
+      } else {
+        // Session completed
+        document.getElementById('card-wrapper').innerHTML = ":tada: You've completed the pack!"
+      }
+    }
+  }
+  
+  navigationService.createSession(sessionId, enhancedWords, sessionOptions)
+}
+
+// Destroy NavigationService session
+function destroyNavigationService() {
+  navigationService.destroySession(sessionId)
+}
 // Seviye seçimi
 function selectLevel(level) {
   currentLevel = level
@@ -15,28 +49,23 @@ function selectLevel(level) {
 }
 // Refresh butonu
 function refreshPack() {
+  destroyNavigationService()
   location.reload()
 }
-// Kart gösterme
-function showCard(index) {
-  const word = wordList[index]
+// Kart gösterme - NavigationService'ten gelen data ile
+function showCard(word, currentIndex, lastIndex) {
   if (!word) return
+  
   // Article ve kelimeyi birleştir
   const article = word.article || ''
   const wordDisplay = article ? `${article} ${word.german}` : word.german
-  const articleClass =
-    article === 'der'
-      ? 'der'
-      : article === 'die'
-      ? 'die'
-      : article === 'das'
-      ? 'das'
-      : ''
+  
   const counterIndexLabelEl = document.getElementById('counter-index-label')
-  counterIndexLabelEl.innerText = `${index + 1}/${wordList.length}`
+  counterIndexLabelEl.innerText = `${currentIndex}/${lastIndex}`
 
   const germanWordEl = document.getElementById('german-word')
   germanWordEl.innerText = wordDisplay
+  
   // Renk atama
   if (article === 'der') {
     germanWordEl.style.color = '#3286C7' // lacivert
@@ -47,12 +76,15 @@ function showCard(index) {
   } else {
     germanWordEl.style.color = ''
   }
+  
   document.getElementById('translated-word').innerText = word.translation
   document.getElementById('example-sentence').innerText = word.example
   document.getElementById('word-type-label').innerText = word.type
   document.getElementById('rule-text').innerText = word.rule || ''
+  
   const rulewrapper = document.getElementById('word-card-rule-container')
   const tagWrapper = document.getElementById('grammar-tags')
+  
   // Önce tüm tag'leri gizle
   const tagIds = [
     'tag-modal',
@@ -66,9 +98,11 @@ function showCard(index) {
     const el = document.getElementById(id)
     if (el) el.style.display = 'none'
   })
+  
   // Default olarak wrapper'ı da gizle
   if (tagWrapper) tagWrapper.style.display = 'none'
   if (rulewrapper) rulewrapper.style.display = 'flex'
+  
   // Eğer verb ve case'leri varsa, ilgili tag'leri göster
   if (word.type === 'verb' && word.cases && word.cases.length > 0) {
     if (tagWrapper) tagWrapper.style.display = 'flex'
@@ -78,32 +112,17 @@ function showCard(index) {
       if (el) el.style.display = 'flex'
     })
   }
+  
   if (word.rule === '') {
     if (rulewrapper) rulewrapper.style.display = 'none'
   }
-  // Butonlar
+  
+  // Butonlar - NavigationService kullan
   const repeatBtn = document.getElementById('repeatBtn')
   const nextBtn = document.getElementById('nextBtn')
   if (repeatBtn && nextBtn) {
-    repeatBtn.onclick = () => {
-      wordList.push(wordList[currentIndex])
-    //   currentIndex++ // keep index as the same on repeat
-      if (currentIndex < wordList.length) {
-        showCard(currentIndex)
-      } else {
-        document.getElementById('card-wrapper').innerHTML =
-          ":tada: You've completed the pack!"
-      }
-    }
-    nextBtn.onclick = () => {
-      currentIndex++
-      if (currentIndex < wordList.length) {
-        showCard(currentIndex)
-      } else {
-        document.getElementById('card-wrapper').innerHTML =
-          ":tada: You've completed the pack!"
-      }
-    }
+    repeatBtn.onclick = () => navigationService.learnRepeat(sessionId)
+    nextBtn.onclick = () => navigationService.learnNext(sessionId)
   }
 }
 // Tag Emoji Fonksiyonu
@@ -189,9 +208,9 @@ Return only JSON. No explanation or notes.
     const data = await res.json()
     const text = data.choices[0].message.content
     try {
-      wordList = JSON.parse(text)
-      // :white_tick: Normalize ve filtreleme
-      wordList = wordList.map((word) => {
+      const wordList = JSON.parse(text)
+      // Normalize ve filtreleme
+      const normalizedWords = wordList.map((word) => {
         word.type = word.type?.toLowerCase()
         if (word.type !== 'noun') {
           word.rule = ''
@@ -204,6 +223,11 @@ Return only JSON. No explanation or notes.
         }
         return word
       })
+
+      // Destroy any existing session and create new one
+      destroyNavigationService()
+      initializeNavigationService(normalizedWords)
+      
     } catch (e) {
       output.innerHTML = `<p>:x: Unexpected response from AI. Try again.</p><pre>${text}</pre>`
       loading.style.display = 'none'
@@ -211,8 +235,7 @@ Return only JSON. No explanation or notes.
       output.style.display = 'block'
       return
     }
-    currentIndex = 0
-    showCard(currentIndex)
+
     loading.style.display = 'none'
     results.style.display = 'block'
     output.style.display = 'block'
