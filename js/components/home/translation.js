@@ -17,6 +17,7 @@ import { DURATION_REQUIRES_SIGNIN_MS } from '../../constants/timeout.js'
 import StringUtils from '../../utils/StringUtils.js'
 import bookmarkService from '../../service/BookmarkService.js'
 import ListUtils from '../../utils/ListUtils.js'
+import ttsService from '../../service/TtsService.js'
 
 let els = {}
 let currentWordResults = []
@@ -62,6 +63,8 @@ function initElements(elementIds) {
       document.getElementById(elementIds.results.addToBookmarksButton),
     labelRequiresSignin: () =>
       document.getElementById(elementIds.results.labelRequiresSignin),
+    ttsPlayButton: () =>
+      document.getElementById(elementIds.results.ttsPlayButton),
   }
 }
 
@@ -258,6 +261,9 @@ function showWordCard(wordResult) {
   } else {
     els.verb.caseLabelsContainer().style.display = 'none'
   }
+
+  // Setup TTS functionality after rendering word card
+  ttsService.setupTTSButton(wordResult, wordResult.type, els.ttsPlayButton())
 }
 
 function closeAllVerbCaseDetails() {

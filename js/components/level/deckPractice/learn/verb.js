@@ -2,7 +2,9 @@
 import {
   NounArticleColorMap,
   ALL_VERB_CASES,
+  WordType,
 } from '../../../../constants/props.js'
+import ttsService from '../../../../service/TtsService.js'
 
 let els = {}
 
@@ -16,6 +18,7 @@ function initElements() {
       document.getElementById('learn-word-card-example-container'),
     wordExample: () => document.getElementById('learn-word-card-example'),
     wordRule: () => document.getElementById('learn-word-card-rule'),
+    ttsPlayButton: () => document.getElementById('learn-word-tts-play-button'),
 
     // Verb-specific elements
     verb: {
@@ -118,6 +121,9 @@ function renderVerb(word) {
     //   els.verb.caseLabelsContainer().style.display = 'none'
     // }
   }
+
+  // Setup TTS functionality after rendering
+  ttsService.setupTTSButton(word, WordType.VERB, els.ttsPlayButton())
 }
 
 /** Mount verb component */
