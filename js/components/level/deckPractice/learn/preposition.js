@@ -49,7 +49,7 @@ function renderPreposition(word) {
   }
 
   // Setup TTS functionality after rendering
-  ttsService.setupTTSButton(word, WordType.PREPOSITION)
+  ttsService.setupTTSButton(word, WordType.PREPOSITION, els.ttsPlayButton())
 }
 
 /** Mount preposition component */

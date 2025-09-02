@@ -46,7 +46,7 @@ function renderAdjective(word) {
   }
 
   // Setup TTS functionality after rendering
-  ttsService.setupTTSButton(word, WordType.ADJECTIVE)
+  ttsService.setupTTSButton(word, WordType.ADJECTIVE, els.ttsPlayButton())
 }
 
 /** Mount adjective component */

@@ -123,7 +123,7 @@ function renderVerb(word) {
   }
 
   // Setup TTS functionality after rendering
-  ttsService.setupTTSButton(word, WordType.VERB)
+  ttsService.setupTTSButton(word, WordType.VERB, els.ttsPlayButton())
 }
 
 /** Mount verb component */

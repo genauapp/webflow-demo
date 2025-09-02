@@ -53,7 +53,7 @@ function renderNoun(word) {
   }
 
   // Setup TTS functionality after rendering
-  ttsService.setupTTSButton(word, WordType.NOUN)
+  ttsService.setupTTSButton(word, WordType.NOUN, els.ttsPlayButton())
 }
 
 /** Mount noun component */

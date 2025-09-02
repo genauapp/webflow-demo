@@ -263,11 +263,7 @@ function showWordCard(wordResult) {
   }
 
   // Setup TTS functionality after rendering word card
-  ttsService.setupTTSButton(
-    wordResult,
-    wordResult.type,
-    elementIds.results.ttsPlayButton
-  )
+  ttsService.setupTTSButton(wordResult, wordResult.type, els.ttsPlayButton())
 }
 
 function closeAllVerbCaseDetails() {

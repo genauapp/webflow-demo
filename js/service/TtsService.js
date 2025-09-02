@@ -43,12 +43,22 @@ class TtsService {
    * Setup TTS functionality for a play button
    * @param {Object} word - The word object containing german text and other properties
    * @param {string} wordType - Type of word: WordType.NOUN, WordType.VERB, etc.
-   * @param {string} buttonId - The ID of the TTS play button element
+   * @param {HTMLElement|string} buttonElement - The TTS button element or its ID
    */
-  setupTTSButton(word, wordType, buttonId = 'learn-word-tts-play-button') {
-    const ttsButton = document.getElementById(buttonId)
+  setupTTSButton(word, wordType, buttonElement) {
+    // Handle both element and string ID for backward compatibility
+    let ttsButton
+    if (typeof buttonElement === 'string') {
+      ttsButton = document.getElementById(buttonElement)
+    } else if (buttonElement && buttonElement.nodeType === Node.ELEMENT_NODE) {
+      ttsButton = buttonElement
+    } else {
+      console.warn('Invalid button element provided to setupTTSButton')
+      return
+    }
+
     if (!ttsButton) {
-      console.warn(`TTS button with ID '${buttonId}' not found`)
+      console.warn('TTS button not found or provided')
       return
     }
 

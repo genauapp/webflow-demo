@@ -46,7 +46,7 @@ function renderConjunction(word) {
   }
 
   // Setup TTS functionality after rendering
-  ttsService.setupTTSButton(word, WordType.CONJUNCTION)
+  ttsService.setupTTSButton(word, WordType.CONJUNCTION, els.ttsPlayButton())
 }
 
 /** Mount conjunction component */

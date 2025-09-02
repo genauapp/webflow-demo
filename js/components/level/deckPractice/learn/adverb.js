@@ -46,7 +46,7 @@ function renderAdverb(word) {
   }
 
   // Setup TTS functionality after rendering
-  ttsService.setupTTSButton(word, WordType.ADVERB)
+  ttsService.setupTTSButton(word, WordType.ADVERB, els.ttsPlayButton())
 }
 
 /** Mount adverb component */

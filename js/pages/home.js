@@ -32,6 +32,7 @@ const elementIds = {
       },
       addToBookmarksButton: 'btn-search-add-to-bookmarks',
       labelRequiresSignin: 'label-requires-signin',
+      ttsPlayButton: 'btn-search-tts-play',
     },
   },
 
