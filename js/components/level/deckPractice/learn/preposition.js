@@ -47,6 +47,9 @@ function renderPreposition(word) {
     els.wordRule().style.display = word.rule ? 'block' : 'none'
     els.wordRule().textContent = word.rule
   }
+
+  // Setup TTS functionality after rendering
+  ttsService.setupTTSButton(word, WordType.PREPOSITION)
 }
 
 /** Mount preposition component */
@@ -56,7 +59,4 @@ export function mountPreposition(currentWord) {
 
   // Render preposition content
   renderPreposition(currentWord)
-
-  // Setup TTS functionality
-  ttsService.setupTTSButton(currentWord, WordType.PREPOSITION)
 }

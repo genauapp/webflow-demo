@@ -121,6 +121,9 @@ function renderVerb(word) {
     //   els.verb.caseLabelsContainer().style.display = 'none'
     // }
   }
+
+  // Setup TTS functionality after rendering
+  ttsService.setupTTSButton(word, WordType.VERB)
 }
 
 /** Mount verb component */
@@ -133,7 +136,4 @@ export function mountVerb(currentWord) {
 
   // Render verb content
   renderVerb(currentWord)
-
-  // Setup TTS functionality
-  ttsService.setupTTSButton(currentWord, WordType.VERB)
 }

@@ -44,6 +44,9 @@ function renderAdjective(word) {
     els.wordRule().style.display = word.rule ? 'block' : 'none'
     els.wordRule().textContent = word.rule
   }
+
+  // Setup TTS functionality after rendering
+  ttsService.setupTTSButton(word, WordType.ADJECTIVE)
 }
 
 /** Mount adjective component */
@@ -53,7 +56,4 @@ export function mountAdjective(currentWord) {
 
   // Render adjective content
   renderAdjective(currentWord)
-
-  // Setup TTS functionality
-  ttsService.setupTTSButton(currentWord, WordType.ADJECTIVE)
 }

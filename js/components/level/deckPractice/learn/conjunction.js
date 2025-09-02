@@ -44,6 +44,9 @@ function renderConjunction(word) {
     els.wordRule().style.display = word.rule ? 'block' : 'none'
     els.wordRule().textContent = word.rule
   }
+
+  // Setup TTS functionality after rendering
+  ttsService.setupTTSButton(word, WordType.CONJUNCTION)
 }
 
 /** Mount conjunction component */
@@ -53,7 +56,4 @@ export function mountConjunction(currentWord) {
 
   // Render conjunction content
   renderConjunction(currentWord)
-
-  // Setup TTS functionality
-  ttsService.setupTTSButton(currentWord, WordType.CONJUNCTION)
 }

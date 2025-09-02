@@ -44,6 +44,9 @@ function renderAdverb(word) {
     els.wordRule().style.display = word.rule ? 'block' : 'none'
     els.wordRule().textContent = word.rule
   }
+
+  // Setup TTS functionality after rendering
+  ttsService.setupTTSButton(word, WordType.ADVERB)
 }
 
 /** Mount adverb component */
@@ -53,7 +56,4 @@ export function mountAdverb(currentWord) {
 
   // Render adverb content
   renderAdverb(currentWord)
-
-  // Setup TTS functionality
-  ttsService.setupTTSButton(currentWord, WordType.ADVERB)
 }

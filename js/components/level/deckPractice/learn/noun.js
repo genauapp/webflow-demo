@@ -51,6 +51,9 @@ function renderNoun(word) {
     els.wordRule().style.display = word.rule ? 'block' : 'none'
     els.wordRule().textContent = word.rule
   }
+
+  // Setup TTS functionality after rendering
+  ttsService.setupTTSButton(word, WordType.NOUN)
 }
 
 /** Mount noun component */
@@ -60,7 +63,4 @@ export function mountNoun(currentWord) {
 
   // Render noun content
   renderNoun(currentWord)
-
-  // Setup TTS functionality using the centralized service
-  ttsService.setupTTSButton(currentWord, WordType.NOUN)
 }
