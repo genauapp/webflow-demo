@@ -31,15 +31,20 @@ function setupTTSButton(word) {
   newButton.addEventListener('click', () => {
     if (!word || !word.german) return
 
+    // For nouns, include the article in TTS
+    const textToSpeak = word.article
+      ? `${word.article} ${word.german}`
+      : word.german
+
     // Disable button during speech
     newButton.disabled = true
     newButton.style.opacity = '0.5'
 
-    // Play the German text
-    SoundUtils.speakGerman(word.german)
+    // Play the German text with article
+    SoundUtils.speakGerman(textToSpeak)
 
     // Re-enable button after a delay (estimated speech duration)
-    const speechDuration = Math.max(2000, word.german.length * 100) // Rough estimate
+    const speechDuration = Math.max(2000, textToSpeak.length * 100) // Rough estimate
     setTimeout(() => {
       newButton.disabled = false
       newButton.style.opacity = '1'
