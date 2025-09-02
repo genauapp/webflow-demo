@@ -14,6 +14,7 @@ export const WordType = {
   ADJECTIVE: 'adjective',
   ADVERB: 'adverb',
   PREPOSITION: 'preposition',
+  CONJUNCTION: 'conjunction',
 }
 
 export const PackType = Object.freeze({

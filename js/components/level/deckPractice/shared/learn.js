@@ -1,10 +1,11 @@
 // /components/level/deckPractice/shared/learn.js
 import { WordType } from '../../../../constants/props.js'
 import { mountNoun } from '../learn/noun.js'
+import { mountVerb } from '../learn/verb.js'
 import { mountAdjective } from '../learn/adjective.js'
 import { mountAdverb } from '../learn/adverb.js'
 import { mountPreposition } from '../learn/preposition.js'
-import { mountVerb } from '../learn/verb.js'
+import { mountConjunction } from '../learn/conjunction.js'
 import { initBookmarkButtons } from './bookmarkButtons.js'
 
 let els = {}
@@ -56,6 +57,8 @@ function renderLearnCard({ currentWord: word, currentIndex, lastIndex }) {
     mountAdverb(word)
   } else if (word.type === WordType.PREPOSITION) {
     mountPreposition(word)
+  } else if (word.type === WordType.CONJUNCTION) {
+    mountConjunction(word)
   } else {
     console.warn(`Word Type Not Supported: ${word.type}`)
   }
