@@ -209,10 +209,12 @@ Return only JSON. No explanation or notes.
 
     const data = await res.json()
     const text = data.choices[0].message.content
+    
+    let normalizedWords
     try {
       const wordList = JSON.parse(text)
       // Normalize ve filtreleme
-      const normalizedWords = wordList.map((word) => {
+      normalizedWords = wordList.map((word) => {
         word.type = word.type?.toLowerCase()
         if (word.type !== 'noun') {
           word.rule = ''
@@ -225,11 +227,6 @@ Return only JSON. No explanation or notes.
         }
         return word
       })
-
-      // Destroy any existing session and create new one
-      destroyNavigationService()
-      initializeNavigationService(normalizedWords)
-      
     } catch (e) {
       output.innerHTML = `<p>:x: Unexpected response from AI. Try again.</p><pre>${text}</pre>`
       loading.style.display = 'none'
@@ -237,6 +234,10 @@ Return only JSON. No explanation or notes.
       output.style.display = 'block'
       return
     }
+
+    // Destroy any existing session and create new one
+    destroyNavigationService()
+    initializeNavigationService(normalizedWords)
 
     loading.style.display = 'none'
     results.style.display = 'block'
