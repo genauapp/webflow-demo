@@ -23,9 +23,6 @@ function renderConjunction(word) {
   // Update conjunction-specific elements
   if (els.wordText()) {
     els.wordText().textContent = word.german || ''
-    els.wordText().style.color =
-      ConjunctionCaseColorMap[word.cases[0]] ||
-      ConjunctionCaseColorMap['default']
   }
 
   if (els.wordTranslation()) {
