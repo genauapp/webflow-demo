@@ -1,4 +1,6 @@
 // /components/level/deckPractice/learn/conjunction.js
+import { WordType } from '../../../../constants/props.js'
+import ttsService from '../../../../service/TtsService.js'
 
 let els = {}
 
@@ -12,6 +14,7 @@ function initElements() {
       document.getElementById('learn-word-card-example-container'),
     wordExample: () => document.getElementById('learn-word-card-example'),
     wordRule: () => document.getElementById('learn-word-card-rule'),
+    ttsPlayButton: () => document.getElementById('learn-word-tts-play-button'),
   }
 }
 
@@ -50,4 +53,7 @@ export function mountConjunction(currentWord) {
 
   // Render conjunction content
   renderConjunction(currentWord)
+
+  // Setup TTS functionality
+  ttsService.setupTTSButton(currentWord, WordType.CONJUNCTION)
 }

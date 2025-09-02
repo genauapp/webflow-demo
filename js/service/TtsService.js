@@ -1,4 +1,5 @@
 import SoundUtils from '../utils/SoundUtils.js'
+import { WordType } from '../constants/props.js'
 
 /**
  * TTS Service for handling Text-to-Speech functionality across word type components
@@ -14,24 +15,24 @@ class TtsService {
   /**
    * Get the text to speak based on word type
    * @param {Object} word - The word object containing german text and other properties
-   * @param {string} wordType - Type of word: 'noun', 'verb', 'adjective', 'adverb', 'preposition', 'conjunction'
+   * @param {string} wordType - Type of word: WordType.NOUN, WordType.VERB, etc.
    * @returns {string} - The text to be spoken by TTS
    */
   getTextToSpeak(word, wordType) {
     if (!word || !word.german) return ''
 
     switch (wordType) {
-      case 'noun':
+      case WordType.NOUN:
         // For nouns, include the article if available
         return word.article 
           ? `${word.article} ${word.german}` 
           : word.german
       
-      case 'verb':
-      case 'adjective':
-      case 'adverb':
-      case 'preposition':
-      case 'conjunction':
+      case WordType.VERB:
+      case WordType.ADJECTIVE:
+      case WordType.ADVERB:
+      case WordType.PREPOSITION:
+      case WordType.CONJUNCTION:
         // For other word types, just use the German text
         return word.german
       
@@ -43,7 +44,7 @@ class TtsService {
   /**
    * Setup TTS functionality for a play button
    * @param {Object} word - The word object containing german text and other properties
-   * @param {string} wordType - Type of word: 'noun', 'verb', 'adjective', 'adverb', 'preposition', 'conjunction'
+   * @param {string} wordType - Type of word: WordType.NOUN, WordType.VERB, etc.
    * @param {string} buttonId - The ID of the TTS play button element
    */
   setupTTSButton(word, wordType, buttonId = 'learn-word-tts-play-button') {
