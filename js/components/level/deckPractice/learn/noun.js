@@ -1,7 +1,7 @@
 // /components/level/deckPractice/learn/noun.js
-import { NounArticleColorMap } from '../../../../constants/props.js'
+import { NounArticleColorMap, WordType } from '../../../../constants/props.js'
 import StringUtils from '../../../../utils/StringUtils.js'
-import SoundUtils from '../../../../utils/SoundUtils.js'
+import ttsService from '../../../../service/TtsService.js'
 
 let els = {}
 
@@ -17,62 +17,6 @@ function initElements() {
     wordRule: () => document.getElementById('learn-word-card-rule'),
     ttsPlayButton: () => document.getElementById('learn-word-tts-play-button'),
   }
-}
-
-/** Handle TTS play button functionality */
-function setupTTSButton(word) {
-  const ttsButton = els.ttsPlayButton()
-  if (!ttsButton) return
-
-  // Remove any existing event listeners
-  const newButton = ttsButton.cloneNode(true)
-  ttsButton.parentNode.replaceChild(newButton, ttsButton)
-
-  let isSpeaking = false
-
-  newButton.addEventListener('click', (e) => {
-    // Prevent action if already speaking
-    if (isSpeaking) {
-      e.preventDefault()
-      e.stopPropagation()
-      return
-    }
-
-    if (!word || !word.german) return
-
-    // For nouns, include the article in TTS
-    const textToSpeak = word.article
-      ? `${word.article} ${word.german}`
-      : word.german
-
-    // Set speaking state and disable button
-    isSpeaking = true
-    newButton.disabled = true
-    newButton.style.opacity = '0.5'
-    newButton.style.pointerEvents = 'none'
-
-    // Play the German text with article
-    SoundUtils.speakText(textToSpeak, {
-      lang: 'de-DE',
-      rate: 0.8,
-      pitch: 1,
-      volume: 1,
-      onEnd: () => {
-        // Re-enable button when speech ends
-        isSpeaking = false
-        newButton.disabled = false
-        newButton.style.opacity = '1'
-        newButton.style.pointerEvents = 'auto'
-      },
-      onError: () => {
-        // Re-enable button on error
-        isSpeaking = false
-        newButton.disabled = false
-        newButton.style.opacity = '1'
-        newButton.style.pointerEvents = 'auto'
-      }
-    })
-  })
 }
 
 /** Render noun-specific content */
@@ -117,6 +61,6 @@ export function mountNoun(currentWord) {
   // Render noun content
   renderNoun(currentWord)
 
-  // Setup TTS functionality
-  setupTTSButton(currentWord)
+  // Setup TTS functionality using the centralized service
+  ttsService.setupTTSButton(currentWord, WordType.NOUN)
 }
