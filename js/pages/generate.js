@@ -11,6 +11,8 @@ function enhanceWordsWithProperties(words) {
     ...word,
     id: word.id || `word-${index}`, // Ensure each word has an ID
     isKnown: false, // Required for learn mode
+    // Convert single example to examples array for NavigationService compatibility
+    examples: word.example ? [word.example] : [],
   }))
 }
 
