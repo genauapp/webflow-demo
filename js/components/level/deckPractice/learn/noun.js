@@ -1,6 +1,7 @@
 // /components/level/deckPractice/learn/noun.js
 import { NounArticleColorMap } from '../../../../constants/props.js'
 import StringUtils from '../../../../utils/StringUtils.js'
+import SoundUtils from '../../../../utils/SoundUtils.js'
 
 let els = {}
 
@@ -14,7 +15,36 @@ function initElements() {
       document.getElementById('learn-word-card-example-container'),
     wordExample: () => document.getElementById('learn-word-card-example'),
     wordRule: () => document.getElementById('learn-word-card-rule'),
+    ttsPlayButton: () => document.getElementById('learn-word-tts-play-button'),
   }
+}
+
+/** Handle TTS play button functionality */
+function setupTTSButton(word) {
+  const ttsButton = els.ttsPlayButton()
+  if (!ttsButton) return
+
+  // Remove any existing event listeners
+  const newButton = ttsButton.cloneNode(true)
+  ttsButton.parentNode.replaceChild(newButton, ttsButton)
+
+  newButton.addEventListener('click', () => {
+    if (!word || !word.german) return
+
+    // Disable button during speech
+    newButton.disabled = true
+    newButton.style.opacity = '0.5'
+
+    // Play the German text
+    SoundUtils.speakGerman(word.german)
+
+    // Re-enable button after a delay (estimated speech duration)
+    const speechDuration = Math.max(2000, word.german.length * 100) // Rough estimate
+    setTimeout(() => {
+      newButton.disabled = false
+      newButton.style.opacity = '1'
+    }, speechDuration)
+  })
 }
 
 /** Render noun-specific content */
@@ -58,4 +88,7 @@ export function mountNoun(currentWord) {
 
   // Render noun content
   renderNoun(currentWord)
+
+  // Setup TTS functionality
+  setupTTSButton(currentWord)
 }
