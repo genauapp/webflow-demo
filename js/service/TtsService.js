@@ -7,9 +7,7 @@ import { WordType } from '../constants/props.js'
  */
 class TtsService {
   constructor() {
-    this.isSpeaking = false
-    this.currentButton = null
-    this.boundClickHandler = null
+    // Remove all shared state that was causing conflicts
   }
 
   /**
@@ -54,87 +52,45 @@ class TtsService {
       return
     }
 
-    // Store reference to current button
-    this.currentButton = ttsButton
-
-    // Remove any existing TTS event listeners to prevent duplicates
-    ttsButton.removeEventListener('click', this.boundClickHandler)
-    
-    // Create bound handler for this instance
-    this.boundClickHandler = (e) => this.handleTTSClick(e, word, wordType)
-    
-    // Add the event listener
-    ttsButton.addEventListener('click', this.boundClickHandler)
-  }
-
-  /**
-   * Handle TTS button click event
-   * @param {Event} e - The click event
-   * @param {Object} word - The word object
-   * @param {string} wordType - Type of word
-   */
-  handleTTSClick(e, word, wordType) {
-    // Prevent action if already speaking
-    if (this.isSpeaking) {
-      e.preventDefault()
-      e.stopPropagation()
-      return
-    }
-
-    if (!word || !word.german) return
-
-    const textToSpeak = this.getTextToSpeak(word, wordType)
-    if (!textToSpeak) return
-
-    this.playTTS(textToSpeak)
-  }
-
-  /**
-   * Play TTS for the given text
-   * @param {string} textToSpeak - The text to be spoken
-   */
-  playTTS(textToSpeak) {
-    // Set speaking state and disable button
-    this.isSpeaking = true
-    this.disableButton()
-
-    // Play the German text
-    SoundUtils.speakText(textToSpeak, {
-      lang: 'de-DE',
-      rate: 0.8,
-      pitch: 1,
-      volume: 1,
-      onEnd: () => {
-        this.enableButton()
-      },
-      onError: (error) => {
-        console.error('TTS Error:', error)
-        this.enableButton()
+    // Simple approach: just ensure the button has the right data and onclick
+    ttsButton.onclick = (e) => {
+      // Check if already speaking by looking at button state
+      if (ttsButton.disabled) {
+        e.preventDefault()
+        return
       }
-    })
-  }
 
-  /**
-   * Disable the TTS button during speech
-   */
-  disableButton() {
-    if (!this.currentButton) return
+      if (!word || !word.german) return
 
-    this.currentButton.disabled = true
-    this.currentButton.style.opacity = '0.5'
-    this.currentButton.style.pointerEvents = 'none'
-  }
+      const textToSpeak = this.getTextToSpeak(word, wordType)
+      if (!textToSpeak) return
 
-  /**
-   * Enable the TTS button after speech
-   */
-  enableButton() {
-    if (!this.currentButton) return
+      // Disable button immediately
+      ttsButton.disabled = true
+      ttsButton.style.opacity = '0.5'
+      ttsButton.style.pointerEvents = 'none'
 
-    this.isSpeaking = false
-    this.currentButton.disabled = false
-    this.currentButton.style.opacity = '1'
-    this.currentButton.style.pointerEvents = 'auto'
+      // Play the German text
+      SoundUtils.speakText(textToSpeak, {
+        lang: 'de-DE',
+        rate: 0.8,
+        pitch: 1,
+        volume: 1,
+        onEnd: () => {
+          // Re-enable button
+          ttsButton.disabled = false
+          ttsButton.style.opacity = '1'
+          ttsButton.style.pointerEvents = 'auto'
+        },
+        onError: (error) => {
+          console.error('TTS Error:', error)
+          // Re-enable button on error
+          ttsButton.disabled = false
+          ttsButton.style.opacity = '1'
+          ttsButton.style.pointerEvents = 'auto'
+        }
+      })
+    }
   }
 
   /**
@@ -142,15 +98,6 @@ class TtsService {
    */
   stopTTS() {
     SoundUtils.stopSpeech()
-    this.enableButton()
-  }
-
-  /**
-   * Check if TTS is currently speaking
-   * @returns {boolean}
-   */
-  getIsSpeaking() {
-    return this.isSpeaking
   }
 }
 
