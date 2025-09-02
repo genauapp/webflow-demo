@@ -87,7 +87,7 @@ function showCard(index) {
   if (repeatBtn && nextBtn) {
     repeatBtn.onclick = () => {
       wordList.push(wordList[currentIndex])
-      currentIndex++
+    //   currentIndex++ // keep index as the same on repeat
       if (currentIndex < wordList.length) {
         showCard(currentIndex)
       } else {
@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const results = document.getElementById('results')
 
   results.style.display = 'none'
-  
+
   ;['A1', 'A2', 'B1', 'B2'].forEach((level) => {
     const btn = document.getElementById(`selectLevel-${level}`)
     if (btn) {
