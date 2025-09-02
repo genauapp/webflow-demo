@@ -1,5 +1,4 @@
 // /components/level/deckPractice/learn/conjunction.js
-import { ConjunctionCaseColorMap } from '../../../../constants/props.js'
 
 let els = {}
 
