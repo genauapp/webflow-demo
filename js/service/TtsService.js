@@ -8,6 +8,7 @@ class TtsService {
   constructor() {
     this.isSpeaking = false
     this.currentButton = null
+    this.boundClickHandler = null
   }
 
   /**
@@ -52,16 +53,17 @@ class TtsService {
       return
     }
 
-    // Remove any existing event listeners by cloning the button
-    const newButton = ttsButton.cloneNode(true)
-    ttsButton.parentNode.replaceChild(newButton, ttsButton)
-
     // Store reference to current button
-    this.currentButton = newButton
+    this.currentButton = ttsButton
 
-    newButton.addEventListener('click', (e) => {
-      this.handleTTSClick(e, word, wordType)
-    })
+    // Remove any existing TTS event listeners to prevent duplicates
+    ttsButton.removeEventListener('click', this.boundClickHandler)
+    
+    // Create bound handler for this instance
+    this.boundClickHandler = (e) => this.handleTTSClick(e, word, wordType)
+    
+    // Add the event listener
+    ttsButton.addEventListener('click', this.boundClickHandler)
   }
 
   /**
