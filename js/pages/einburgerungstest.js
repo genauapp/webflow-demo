@@ -1,8 +1,21 @@
 import QuestionManager from '../utils/einburgerungstest/QuestionManager.js'
-
 import LocalStorageManager from '../utils/LocalStorageManager.js'
-
 import ElementUtils from '../utils/ElementUtils.js'
+
+// Payment Integration - Two-Wall System
+import paymentService from '../service/payment/PaymentService.js'
+import paymentModal from '../components/payment/PaymentModal.js'
+import { ProductType } from '../constants/payment.js'
+import { PaymentElementIds, PaymentElementClasses, PaymentElementSelectors } from '../constants/paymentElements.js'
+import eventService from '../service/events/EventService.js'
+import { EinburgerungstestPaymentEvent } from '../constants/events.js'
+import AuthService from '../service/AuthService.js'
+import {
+  showSigninModal,
+  hideSigninModal,
+  initSigninComponent,
+} from '../components/layout/signin.js'
+import { AuthEvent } from '../constants/events.js'
 
 import {
   CURRENT_STATE_KEY,
@@ -14,8 +27,157 @@ import {
 } from '../constants/storageKeys.js'
 import { testTabClickHandler } from '../components/einburgerungstest/testTab.js'
 
-// On Initial Load
+// On Initial Load - Enhanced with Two-Wall System
 document.addEventListener('DOMContentLoaded', () => {
+  // Initialize Signin Component (modal and button) following level.js pattern
+  initSigninComponent({
+    signinModal: 'modal-signin-container',
+    googleSigninButton: 'btn-modal-google-signin',
+  })
+  
+  // Subscribe to AuthEvent.AUTH_STATE_CHANGED using eventService
+  eventService.subscribe(AuthEvent.AUTH_STATE_CHANGED, (event) => {
+    handleAuthStateChanged(event.detail)
+  })
+  
+  // Trigger initial auth check
+  AuthService.initialize()
+
+  // Initialize existing einburgerungstest functionality
+  initializeEinburgerungstestContent()
+})
+
+/**
+ * Handle authentication state changes following level.js pattern
+ * Implements WALL 1: Authentication
+ */
+function handleAuthStateChanged({ unauthorized, user }) {
+  if (unauthorized || !user) {
+    // WALL 1: Authentication - blocks entire page
+    showSigninModal()
+    hideAllPageContent()
+    return
+  } else {
+    hideSigninModal()
+    // User authenticated, now check payment status
+    checkPaymentStatusAndShowContent()
+  }
+}
+
+/**
+ * Hide all page content when user is not authenticated
+ */
+function hideAllPageContent() {
+  // Hide the entire page content during authentication wall
+  const mainContent = document.querySelector('.main-content, #main-content, .page-content, .container')
+  if (mainContent) {
+    mainContent.style.display = 'none'
+  }
+  
+  // Also hide specific content areas
+  const learnContainer = document.getElementById('learn-question-container')
+  const testTab = document.getElementById('test-tab')
+  
+  if (learnContainer) learnContainer.style.display = 'none'
+  if (testTab) testTab.style.display = 'none'
+}
+
+/**
+ * Check payment status and show appropriate content or payment wall
+ * Implements WALL 2: Payment
+ */
+async function checkPaymentStatusAndShowContent() {
+  try {
+    // Initialize payment service if Stripe key is available
+    const stripeKey = window.STRIPE_PUBLISHABLE_KEY || 
+                     document.querySelector(PaymentElementSelectors.STRIPE_KEY_META)?.content
+    
+    if (stripeKey) {
+      await paymentService.initialize(stripeKey)
+      paymentModal.init()
+    }
+    
+    // Check payment access
+    const currency = detectUserCurrency()
+    const accessResult = await paymentService.checkEinburgerungstestAccess(currency)
+    
+    if (accessResult.error) {
+      console.error('[EinburgerungstestPage] Payment check failed:', accessResult.error)
+      // Fallback to showing content on error (graceful degradation)
+      showAllPageContent()
+      return
+    }
+    
+    if (!accessResult.hasAccess) {
+      // WALL 2: Payment - blocks page content until payment
+      showPaymentWall(accessResult.productInfo)
+    } else {
+      // User has access - show full page functionality
+      showAllPageContent()
+      console.log('[EinburgerungstestPage] Full access granted')
+    }
+    
+  } catch (error) {
+    console.error('[EinburgerungstestPage] Payment check failed:', error)
+    
+    // Fallback to showing content on error (graceful degradation)
+    showAllPageContent()
+  }
+}
+
+/**
+ * Show payment wall that blocks entire page content
+ */
+function showPaymentWall(productInfo) {
+  // Hide main page content
+  hideAllPageContent()
+  
+  // Show payment modal as a wall (not dismissible by clicking outside)
+  paymentModal.show(productInfo.currency || detectUserCurrency())
+  
+  console.log('[EinburgerungstestPage] Payment wall active')
+}
+
+/**
+ * Show all page content after walls are passed
+ */
+function showAllPageContent() {
+  // Show the main page content
+  const mainContent = document.querySelector('.main-content, #main-content, .page-content, .container')
+  if (mainContent) {
+    mainContent.style.display = 'block'
+  }
+  
+  // Show specific content areas
+  const learnContainer = document.getElementById('learn-question-container')
+  const testTab = document.getElementById('test-tab')
+  
+  if (learnContainer) learnContainer.style.display = 'block'
+  if (testTab) testTab.style.display = 'block'
+  
+  // All components (testTab, learnTab, etc.) work normally now
+  // No individual access checks needed
+  console.log('[EinburgerungstestPage] All content accessible')
+}
+
+/**
+ * Detect user's preferred currency
+ * @returns {string} Currency code
+ */
+function detectUserCurrency() {
+  const userLocale = navigator.language || navigator.userLanguage
+  const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
+
+  if (userLocale.startsWith('tr') || timeZone.includes('Istanbul')) return 'TRY'
+  if (userLocale.startsWith('en-US') || timeZone.includes('America')) return 'USD'
+  return 'EUR'
+}
+
+/**
+ * Initialize all existing einburgerungstest content
+ * This encapsulates all the original functionality
+ */
+function initializeEinburgerungstestContent() {
   LocalStorageManager.clearDeprecatedLocalStorageItems()
   
   showLearnSkeleton()
@@ -65,6 +227,20 @@ document.addEventListener('DOMContentLoaded', () => {
     recentQuestion,
     DEFAULT_VALUE.LEARN_QUESTION_USER_ANSWER
   )
+}
+
+/**
+ * Handle successful payment completion
+ */
+eventService.subscribe(EinburgerungstestPaymentEvent.PURCHASE_COMPLETED, async (event) => {
+  const { purchaseId } = event.detail
+  
+  console.log('[EinburgerungstestPage] Purchase completed:', purchaseId)
+  
+  // Refresh access status and show content
+  setTimeout(() => {
+    window.location.reload()
+  }, 2000)
 })
 
 // On Previous Click

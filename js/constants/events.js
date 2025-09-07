@@ -16,3 +16,24 @@ export const SigninModalTriggerEvent = Object.freeze({
   LEVEL_EXERCISE_FINISH: 'level:exercise-finish',
   EINBURGERUNGSTEST_TEST_FINISH: 'einburgerungstest:test-finish',
 })
+
+/**
+ * Payment Events - Stripe Payment Integration
+ * Following our existing event patterns
+ */
+export const PaymentEvent = Object.freeze({
+  ACCESS_CHECK_STARTED: 'payment:access-check-started',
+  ACCESS_CHECK_SUCCESS: 'payment:access-check-success', 
+  ACCESS_CHECK_ERROR: 'payment:access-check-error',
+  PAYMENT_INTENT_CREATED: 'payment:intent-created',
+  PAYMENT_PROCESSING: 'payment:processing',
+  PAYMENT_SUCCESS: 'payment:success',
+  PAYMENT_ERROR: 'payment:error',
+  PAYMENT_CANCELLED: 'payment:cancelled'
+})
+
+export const EinburgerungstestPaymentEvent = Object.freeze({
+  ACCESS_REQUIRED: 'einburgerungstest:access-required',
+  PURCHASE_MODAL_OPENED: 'einburgerungstest:purchase-modal-opened',
+  PURCHASE_COMPLETED: 'einburgerungstest:purchase-completed'
+})
