@@ -1,5 +1,5 @@
 import { protectedApiService } from '../apiService.js'
-import { PaymentEndpoints, ProductType } from '../../constants/payment.js'
+import { ProductType } from '../../constants/payment.js'
 import eventService from '../events/EventService.js'
 import { PaymentEvent } from '../../constants/events.js'
 
