@@ -112,7 +112,8 @@ async function checkPaymentStatusAndShowContent() {
       // WALL 2: Payment - blocks page content until payment
       showPaymentWall(accessResult.productInfo)
     } else {
-      // User has access - show full page functionality
+      // User has access - hide any payment modal and show full page functionality
+      paymentModal.hide()
       showAllPageContent()
       console.log('[EinburgerungstestPage] Full access granted')
     }
@@ -237,7 +238,13 @@ eventService.subscribe(EinburgerungstestPaymentEvent.PURCHASE_COMPLETED, async (
   
   console.log('[EinburgerungstestPage] Purchase completed:', purchaseId)
   
-  // Refresh access status and show content
+  // Hide payment modal immediately
+  paymentModal.hide()
+  
+  // Show all content immediately
+  showAllPageContent()
+  
+  // Refresh access status after a short delay for backend sync
   setTimeout(() => {
     window.location.reload()
   }, 2000)
