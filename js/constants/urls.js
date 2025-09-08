@@ -20,7 +20,7 @@ export const PaymentEndpoints = {
   CHECK_EINBURGERUNGSTEST_ACCESS: '/api/v1/access/einburgerungstest',
   
   // Payment processing endpoints
-  CREATE_PAYMENT_INTENT: '/api/v1/payments/create-intent',
+  CREATE_INTENT: '/api/v1/payments/create-intent',
   VERIFY_PAYMENT: '/api/v1/payments/verify',
   
   // Future premium pack endpoints (infrastructure ready)
