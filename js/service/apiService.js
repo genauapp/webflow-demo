@@ -2,6 +2,7 @@ import protectedApi from '../api/protectedApi.js'
 import publicApi from '../api/publicApi.js'
 import { PACK_SUMMARIES_BY_LEVEL } from '../constants/props.js'
 import { PaymentEndpoints } from '../constants/urls.js'
+import { ProductType } from '../constants/payment.js'
 
 export const publicApiService = {
   googleSignin: (idToken) => {
@@ -119,22 +120,24 @@ export const protectedApiService = {
    */
   checkEinburgerungstestAccess: (currency = 'EUR') => {
     return handleRequest(() =>
-      protectedApi.get(`${PaymentEndpoints.CHECK_EINBURGERUNGSTEST_ACCESS}?currency=${currency}`)
+      protectedApi.get(
+        `${PaymentEndpoints.CHECK_EINBURGERUNGSTEST_ACCESS}?currency=${currency}`
+      )
     )
   },
 
-    /**
+  /**
    * Create payment intent for Einbürgerungstest
    * @param {string} currency - Payment currency (EUR, USD, TRY)
    * @returns {Promise<Object>} Payment intent response
    */
-  async createPaymentIntent(currency = 'EUR') {
-    return this.handleRequest(async () => {
-      return await this.protectedApiService.post(PaymentEndpoints.CREATE_INTENT, {
+  createPaymentIntent: (currency = 'EUR') => {
+    return handleRequest(() =>
+      protectedApi.post(PaymentEndpoints.CREATE_INTENT, {
         product_type: ProductType.EINBURGERUNGSTEST,
-        currency: currency
+        currency: currency,
       })
-    })
+    )
   },
 
   /**
@@ -142,14 +145,14 @@ export const protectedApiService = {
    * @param {string} paymentIntentId - Stripe payment intent ID
    * @returns {Promise<{data, status, error}>} Verification result
    */
-  async verifyPayment(paymentIntentId) {
-    return this.handleRequest(async () => {
-      return await this.protectedApiService.post(PaymentEndpoints.VERIFY_PAYMENT, {
+  verifyPayment: (paymentIntentId) => {
+    return handleRequest(() =>
+      protectedApi.post(PaymentEndpoints.VERIFY_PAYMENT, {
         payment_intent_id: paymentIntentId,
-        product_type: ProductType.EINBURGERUNGSTEST
+        product_type: ProductType.EINBURGERUNGSTEST,
       })
-    })
-  }
+    )
+  },
 
   // Future premium pack methods (infrastructure ready):
   // checkJourneyPackAccess: (currency = 'EUR') => { ... },
