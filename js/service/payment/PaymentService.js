@@ -164,9 +164,13 @@ class PaymentService {
         currency: this.currentCurrency
       })
 
+      // Clear current payment intent
+      this.currentPaymentIntent = null
+      this.currentCurrency = null
+
       return { 
         success: true, 
-        purchaseId: verificationResult.purchaseId, 
+        purchaseId: verificationResult.purchaseId,
         error: null 
       }
 

@@ -70,9 +70,14 @@ class PaymentApiService {
     try {
       eventService.publish(PaymentEvent.PAYMENT_INTENT_CREATING, { productType, currency })
       
+      console.log('[PaymentApiService] Creating payment intent with:', { productType, currency })
+      
       const result = await protectedApiService.createPaymentIntent(currency)
       
+      console.log('[PaymentApiService] Backend response:', result)
+      
       if (result.error) {
+        console.error('[PaymentApiService] Payment intent creation failed:', result.error)
         eventService.publish(PaymentEvent.PAYMENT_ERROR, { productType, error: result.error })
         return { paymentIntent: null, error: result.error }
       }
@@ -85,6 +90,8 @@ class PaymentApiService {
         formattedAmount: result.data?.formatted_amount
       }
 
+      console.log('[PaymentApiService] Payment intent created successfully:', paymentIntent)
+
       eventService.publish(PaymentEvent.PAYMENT_INTENT_CREATED, { 
         productType, 
         paymentIntent 
@@ -93,6 +100,7 @@ class PaymentApiService {
       return { paymentIntent, error: null }
 
     } catch (error) {
+      console.error('[PaymentApiService] Payment intent creation exception:', error)
       eventService.publish(PaymentEvent.PAYMENT_ERROR, { productType, error: error.message })
       return { paymentIntent: null, error: error.message }
     }

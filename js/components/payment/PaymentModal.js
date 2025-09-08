@@ -3,6 +3,7 @@ import { ProductType } from '../../constants/payment.js'
 import { PaymentElementIds, PaymentElementClasses, PaymentElementSelectors } from '../../constants/paymentElements.js'
 import eventService from '../../service/events/EventService.js'
 import { PaymentEvent, EinburgerungstestPaymentEvent } from '../../constants/events.js'
+import authService from '../../service/AuthService.js'
 
 /**
  * PaymentModal component following our existing modal patterns
@@ -81,9 +82,19 @@ class PaymentModal {
    */
   async show(currency = 'EUR') {
     try {
+      // Ensure user is authenticated
+      const currentUser = authService.getCurrentUser()
+      if (!currentUser) {
+        this.showErrorMessage('Please sign in to continue with payment')
+        return
+      }
+
       this.currentCurrency = currency
       this.showModalContainer()
       this.showLoadingState()
+
+      // Pre-populate user info (no form fields needed)
+      this.populateUserInfo(currentUser)
 
       // Initialize payment flow
       const cardContainer = this.els.stripeCardContainer()
@@ -113,7 +124,8 @@ class PaymentModal {
         // Publish event
         eventService.publish(EinburgerungstestPaymentEvent.PURCHASE_MODAL_OPENED, {
           currency: currency,
-          productInfo: result.productInfo
+          productInfo: result.productInfo,
+          user: currentUser
         })
       }
 
@@ -190,13 +202,19 @@ class PaymentModal {
   }
 
   /**
-   * Get billing details from form
-   * @returns {Object} Billing details
+   * Get billing details from authenticated user (no form needed!)
+   * @returns {Object} Billing details from current user
    */
   getBillingDetails() {
+    const currentUser = authService.getCurrentUser()
+    
+    if (!currentUser) {
+      throw new Error('User not authenticated')
+    }
+
     return {
-      name: this.els.cardholderName()?.value || '',
-      email: this.els.billingEmail()?.value || ''
+      name: currentUser.name || '',
+      email: currentUser.email || ''
     }
   }
 
@@ -245,6 +263,27 @@ class PaymentModal {
   handlePaymentError(detail) {
     console.log('[PaymentModal] Payment error:', detail)
     this.showErrorMessage(detail.error)
+  }
+
+  /**
+   * Populate user information in the payment form
+   * @param {Object} user - Current user object
+   */
+  populateUserInfo(user) {
+    const nameEl = this.els.cardholderName()
+    const emailEl = this.els.billingEmail()
+
+    if (nameEl) {
+      nameEl.value = user.name || ''
+      nameEl.readOnly = true // Make read-only since it comes from authenticated user
+      nameEl.removeAttribute('required') // Remove validation since it's auto-populated
+    }
+    
+    if (emailEl) {
+      emailEl.value = user.email || ''
+      emailEl.readOnly = true // Make read-only since it comes from authenticated user
+      emailEl.removeAttribute('required') // Remove validation since it's auto-populated
+    }
   }
 
   /**

@@ -123,18 +123,18 @@ export const protectedApiService = {
     )
   },
 
-  /**
+    /**
    * Create payment intent for Einbürgerungstest
    * @param {string} currency - Payment currency (EUR, USD, TRY)
-   * @returns {Promise<{data, status, error}>} Payment intent details
+   * @returns {Promise<Object>} Payment intent response
    */
-  createPaymentIntent: (currency = 'EUR') => {
-    return handleRequest(() =>
-      protectedApi.post(PaymentEndpoints.CREATE_PAYMENT_INTENT, {
-        product_type: 'EINBURGERUNGSTEST',
+  async createPaymentIntent(currency = 'EUR') {
+    return this.handleRequest(async () => {
+      return await this.protectedApiService.post(PaymentEndpoints.CREATE_INTENT, {
+        product_type: ProductType.EINBURGERUNGSTEST,
         currency: currency
       })
-    )
+    })
   },
 
   /**
@@ -142,14 +142,14 @@ export const protectedApiService = {
    * @param {string} paymentIntentId - Stripe payment intent ID
    * @returns {Promise<{data, status, error}>} Verification result
    */
-  verifyPayment: (paymentIntentId) => {
-    return handleRequest(() =>
-      protectedApi.post(PaymentEndpoints.VERIFY_PAYMENT, {
+  async verifyPayment(paymentIntentId) {
+    return this.handleRequest(async () => {
+      return await this.protectedApiService.post(PaymentEndpoints.VERIFY_PAYMENT, {
         payment_intent_id: paymentIntentId,
-        product_type: 'EINBURGERUNGSTEST'
+        product_type: ProductType.EINBURGERUNGSTEST
       })
-    )
-  },
+    })
+  }
 
   // Future premium pack methods (infrastructure ready):
   // checkJourneyPackAccess: (currency = 'EUR') => { ... },
