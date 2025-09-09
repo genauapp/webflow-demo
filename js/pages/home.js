@@ -1,6 +1,7 @@
 // /pages/home.js
 import { initTranslationComponent } from '../components/home/translation.js'
 import { initLevelComponent } from '../components/home/level.js'
+import { mountStarterPack } from '../components/home/starterPack.js'
 import LocalStorageManager from '../utils/LocalStorageManager.js'
 
 // Element IDs are kept in the page file
@@ -52,6 +53,12 @@ async function bootstrap() {
   // Initialize both components with their respective element IDs
   initTranslationComponent({ ...elementIds.search })
   // initLevelComponent({ ...elementIds.level })
+  
+  // Check if starter pack is completed
+  const isCompleted = LocalStorageManager.load('STARTER_PACK_COMPLETED', false)
+  if (!isCompleted) {
+    mountStarterPack()
+  }
 }
 
 document.addEventListener('DOMContentLoaded', bootstrap)

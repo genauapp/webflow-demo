@@ -51,6 +51,23 @@ export const protectedApiService = {
     )
   },
   getPackDeckWords: (deckId) => {
+    // Handle starter pack special case
+    if (deckId === 'starter-pack-deck') {
+      return handleRequest(async () => {
+        const module = await import(
+          /* webpackMode: "lazy", webpackChunkName: "starter-pack-words" */
+          `../../json/pack/starter/words.json`,
+          { with: { type: 'json' } }
+        )
+
+        return {
+          ok: true,
+          status: 200,
+          json: () => Promise.resolve(module.default),
+        }
+      })
+    }
+
     // Mock API Response with Promise & JSON
     // return handleRequest(async () => {
     //   // dynamically resolve the JSON module

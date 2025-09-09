@@ -596,6 +596,11 @@ class NavigationService {
     allWords,
     optionsCount
   ) {
+    // Early check for MIXED type - use word-specific exercise type
+    if (exerciseType === ExerciseType.MIXED) {
+      exerciseType = correctWord.exerciseType
+    }
+    
     if (exerciseType === ExerciseType.VOCABULARY) {
       return NavigationUtils.generateVocabularyOptions(
         correctWord,
