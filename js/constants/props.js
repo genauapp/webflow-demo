@@ -86,6 +86,11 @@ export const ExerciseTypeSettingsMap = Object.freeze({
       "'die'/'der'/'das' for nouns in the exercise; one is correct, others are wrong. other articles that are not equal to word's 'article' property are selected as 'wrong' answers",
     optionsCount: 3,
   },
+  [ExerciseType.MIXED]: {
+    description:
+      "Mixed exercise types in a single session. Each word has its own exercise type (ARTICLE for nouns, VOCABULARY for others). Options are generated based on individual word exercise types.",
+    optionsCount: 3,
+  },
 })
 
 export const NounArticleColorMap = {
