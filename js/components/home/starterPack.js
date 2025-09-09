@@ -1,5 +1,5 @@
-import { mountDeckPractice, unmountDeckPractice } from '../../level/deckPractice/deckPractice.js'
-import LocalStorageManager from '../../../utils/LocalStorageManager.js'
+import { mountDeckPractice, unmountDeckPractice } from '../level/deckPractice/deckPractice.js'
+import LocalStorageManager from '../../utils/LocalStorageManager.js'
 
 let state = {
   mounted: false
