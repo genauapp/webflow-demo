@@ -1,6 +1,7 @@
 // /pages/home.js
 import { initLevelComponent } from '../components/home/level.js'
 import { mountStarterPack } from '../components/home/starterPack.js'
+import LocalStorageManager from '../utils/LocalStorageManager.js'
 
 // Element IDs are kept in the page file
 const elementIds = {
