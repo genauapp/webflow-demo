@@ -21,11 +21,8 @@ async function bootstrap() {
   // initLevelComponent({ ...elementIds.level })
   // Initialize both components with their respective element IDs
 
-  // Check if starter pack is completed
-  const isCompleted = LocalStorageManager.load('STARTER_PACK_COMPLETED', false)
-  if (!isCompleted) {
-    mountStarterPack()
-  }
+  // Always mount starter pack - it handles completion state internally
+  mountStarterPack()
 }
 
 document.addEventListener('DOMContentLoaded', bootstrap)
