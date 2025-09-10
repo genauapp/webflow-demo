@@ -1,4 +1,5 @@
 import { mountDeckPractice, unmountDeckPractice } from '../level/deckPractice/deckPractice.js'
+import { mountStarterPackCompletion } from './starterPackCompletion.js'
 import LocalStorageManager from '../../utils/LocalStorageManager.js'
 
 let state = {
@@ -18,8 +19,14 @@ function handleStarterPackCompletion(resultsData, postPayload) {
   // Optional: Show completion message or redirect
   console.log('Starter pack completed!', resultsData)
   
-  // Hide the starter pack
-  unmountStarterPack()
+  // Unmount deck practice first
+  unmountDeckPractice()
+  
+  // Mount completion component (handles auth state internally)
+  mountStarterPackCompletion()
+  
+  // Update state
+  state.mounted = false
 }
 
 export function mountStarterPack() {
