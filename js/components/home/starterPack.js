@@ -34,11 +34,19 @@ export function mountStarterPack() {
   
   state.mounted = true
   
-  // Use deckPractice exactly like packJourney does - no extra flags
-  mountDeckPractice(
-    STARTER_PACK_DECK_SUMMARY, 
-    handleStarterPackCompletion
-  )
+  // Check if starter pack is already completed
+  const isCompleted = LocalStorageManager.load('STARTER_PACK_COMPLETED', false)
+  
+  if (isCompleted) {
+    // User already completed starter pack - show completion component
+    mountStarterPackCompletion()
+  } else {
+    // User hasn't completed starter pack yet - show deck practice
+    mountDeckPractice(
+      STARTER_PACK_DECK_SUMMARY, 
+      handleStarterPackCompletion
+    )
+  }
 }
 
 export function unmountStarterPack() {
