@@ -1,0 +1,124 @@
+{
+  "data": {
+    "id": "starter-pack-deck",
+    "word_type": "mixed", 
+    "exercise_type": "MIXED",
+    "created_at": "2025-09-09T12:00:00.000Z",
+    "updated_at": "2025-09-09T12:00:00.000Z",
+    "user_deck_status": "UNLOCKED",
+    "user_words": [
+      {
+        "id": "starter-noun-1", 
+        "type": "noun", 
+        "german": "tisch", 
+        "english": "table", 
+        "article": "der",
+        "rule": "Most masculine concrete objects take 'der'.",
+        "examples": ["Der Tisch ist aus Holz."],
+        "exerciseType": "ARTICLE"
+      },
+      {
+        "id": "starter-noun-2", 
+        "type": "noun", 
+        "german": "küche", 
+        "english": "kitchen", 
+        "article": "die",
+        "rule": "Nouns ending in '-e' are typically feminine.",
+        "examples": ["Die Küche ist modern."],
+        "exerciseType": "ARTICLE"
+      },
+      {
+        "id": "starter-verb-1", 
+        "type": "verb", 
+        "german": "essen", 
+        "english": "to eat",
+        "cases": ["accusative"],
+        "examples": ["Ich esse gern Pizza."],
+        "exerciseType": "VOCABULARY"
+      },
+      {
+        "id": "starter-verb-2", 
+        "type": "verb", 
+        "german": "schlafen", 
+        "english": "to sleep",
+        "cases": [],
+        "examples": ["Ich schlafe acht Stunden."],
+        "exerciseType": "VOCABULARY"
+      },
+      {
+        "id": "starter-adj-1", 
+        "type": "adjective", 
+        "german": "glücklich", 
+        "english": "happy",
+        "examples": ["Ich bin heute sehr glücklich."],
+        "exerciseType": "VOCABULARY"
+      },
+      {
+        "id": "starter-adj-2", 
+        "type": "adjective", 
+        "german": "müde", 
+        "english": "tired",
+        "examples": ["Ich bin müde."],
+        "exerciseType": "VOCABULARY"
+      },
+      {
+        "id": "starter-adv-1", 
+        "type": "adverb", 
+        "german": "heute", 
+        "english": "today",
+        "rule": "Time adverb used to describe current day events.",
+        "examples": ["Heute ist das Wetter schön."],
+        "exerciseType": "VOCABULARY"
+      },
+      {
+        "id": "starter-adv-2", 
+        "type": "adverb", 
+        "german": "schnell", 
+        "english": "quickly",
+        "rule": "Some adjectives can function directly as adverbs without changes.",
+        "examples": ["Ich kaufe schnell ein."],
+        "exerciseType": "VOCABULARY"
+      },
+      {
+        "id": "starter-prep-1",
+        "type": "preposition",
+        "german": "mit",
+        "english": "with",
+        "cases": [],
+        "rule": "Takes dative: der → dem, das → dem, die → der",
+        "examples": ["Ich fahre mit dem Bus."],
+        "exerciseType": "GRAMMAR"
+      },
+      {
+        "id": "starter-prep-2",
+        "type": "preposition",
+        "german": "für",
+        "english": "for",
+        "cases": [],
+        "rule": "Takes accusative: der → den, das → das, die → die",
+        "examples": ["Das Geschenk ist für dich."],
+        "exerciseType": "GRAMMAR"
+      },
+      {
+        "id": "starter-conj-1",
+        "type": "conjunction",
+        "german": "obwohl",
+        "english": "although",
+        "cases": [],
+        "rule": "Subordinating conjunctions push the verb to the end of the clause.",
+        "examples": ["Ich gehe spazieren, obwohl es regnet."],
+        "exerciseType": "GRAMMAR"
+      },
+      {
+        "id": "starter-conj-2",
+        "type": "conjunction",
+        "german": "damit",
+        "english": "so that",
+        "cases": [],
+        "rule": "Used to express purpose; the verb goes to the end.",
+        "examples": ["Ich lerne Deutsch, damit ich in Deutschland arbeiten kann."],
+        "exerciseType": "GRAMMAR"
+      }
+    ]
+  }
+}

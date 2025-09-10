@@ -58,6 +58,7 @@ export const ExerciseType = Object.freeze({
   VOCABULARY: 'VOCABULARY', // english word with one correct, many wrong answer options
   GRAMMAR: 'GRAMMAR', // fill in the blanks
   ARTICLE: 'ARTICLE', // article prefix der/die/das
+  MIXED: 'MIXED', // NEW: for starter pack - mixed exercise types per word
   // ARTICLE_ENDING: 'article-ending', // article ending rule
   // TRUE_FALSE: 'true-false', // 70% correct - 30% wrong answer
 })
@@ -83,6 +84,11 @@ export const ExerciseTypeSettingsMap = Object.freeze({
   [ExerciseType.ARTICLE]: {
     description:
       "'die'/'der'/'das' for nouns in the exercise; one is correct, others are wrong. other articles that are not equal to word's 'article' property are selected as 'wrong' answers",
+    optionsCount: 3,
+  },
+  [ExerciseType.MIXED]: {
+    description:
+      "Mixed exercise types in a single session. Each word has its own exercise type (ARTICLE for nouns, VOCABULARY for others). Options are generated based on individual word exercise types.",
     optionsCount: 3,
   },
 })

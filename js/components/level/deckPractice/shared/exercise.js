@@ -82,13 +82,18 @@ function renderExerciseCard(
     els.wordType().textContent = word.type || ''
   }
 
+  // Use word-specific exercise type if session is MIXED mode
+  const wordExerciseType = exerciseType === ExerciseType.MIXED 
+    ? word.exerciseType 
+    : exerciseType
+
   // hide all body containers
   els.vocabularyContainer().style.display = 'none'
   els.grammarContainer().style.display = 'none'
   els.articleContainer().style.display = 'none'
 
   // Route to appropriate renderer based on exercise type
-  if (exerciseType === ExerciseType.VOCABULARY) {
+  if (wordExerciseType === ExerciseType.VOCABULARY) {
     els.vocabularyContainer().style.display = 'flex'
     mountVocabulary(
       {
@@ -102,7 +107,7 @@ function renderExerciseCard(
       },
       onAnswerCallback
     )
-  } else if (exerciseType === ExerciseType.GRAMMAR) {
+  } else if (wordExerciseType === ExerciseType.GRAMMAR) {
     els.grammarContainer().style.display = 'flex'
     mountGrammar(
       {
@@ -116,7 +121,7 @@ function renderExerciseCard(
       },
       onAnswerCallback
     )
-  } else if (exerciseType === ExerciseType.ARTICLE) {
+  } else if (wordExerciseType === ExerciseType.ARTICLE) {
     els.articleContainer().style.display = 'flex'
     mountArticle(
       {
