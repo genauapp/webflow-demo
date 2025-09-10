@@ -78,13 +78,16 @@ export function mountStarterPackCompletion() {
     )
   }
   
-  // Get current auth state and render
-  const currentAuthState = authService.getCurrentState()
+  // Get current auth state using existing methods
+  const currentUser = authService.getCurrentUser()
+  const isLoading = authService.getIsLoading()
+  const isAuthenticated = authService.isAuthenticated()
+  
   render({
-    loading: currentAuthState.isLoading,
-    error: currentAuthState.hasError,
-    unauthorized: currentAuthState.unauthorized,
-    user: currentAuthState.user
+    loading: isLoading,
+    error: null,
+    unauthorized: !isAuthenticated,
+    user: currentUser
   })
 }
 
