@@ -8,7 +8,9 @@ export default class LevelManager {
     const level = pathSegments.includes('level')
       ? pathSegments[pathSegments.length - 1]
       : null
-    return level.toUpperCase()
+    
+    // Return null if level is null/undefined, otherwise uppercase it
+    return level ? level.toUpperCase() : null
   }
 
   static getCurrentCategory() {

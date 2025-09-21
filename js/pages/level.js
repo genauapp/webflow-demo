@@ -39,6 +39,14 @@ function initializeLevelPage() {
   // If you have other unmounts, add here (e.g., unmountMicroQuiz())
 
   const currentLevel = LevelManager.getCurrentLevel()
+  
+  // If no valid level found in URL, don't make API calls
+  if (!currentLevel) {
+    console.error('No valid level found in URL path')
+    showSelectCategoryMessage()
+    return
+  }
+  
   protectedApiService
     .getPackSummariesOfLevel(currentLevel)
     .then(({ data: packSummariesOfCurrentLevel }) => {
