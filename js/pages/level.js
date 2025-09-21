@@ -53,6 +53,13 @@ function initializeLevelPage() {
         CURRENT_PACK_KEY,
         null
       )
+      
+      // Check if user has any packs (content ready) or needs onboarding
+      if (packSummariesOfCurrentLevel.length === 0) {
+        showContentSetupMessage()
+        return
+      }
+      
       loadPackPropsOnLevelPage(packSummariesOfCurrentLevel)
       // If current pack is null or belongs on another level, show select pack message
       if (
@@ -61,11 +68,13 @@ function initializeLevelPage() {
       ) {
         // clear selection
         LocalStorageManager.save(CURRENT_PACK_KEY, null)
+        hideContentSetupMessage()
         showSelectCategoryMessage()
         return
       }
 
       hideSelectCategoryMessage()
+      hideContentSetupMessage()
       updatePackAvatarImages(selectedPackSummary.pack_id)
       // hide old learn/exercise elements
       document.getElementById('content-container').style.display = 'none'
@@ -112,6 +121,11 @@ document.addEventListener('DOMContentLoaded', () => {
   eventService.subscribe(AuthEvent.AUTH_STATE_CHANGED, (event) => {
     handleAuthStateChanged(event.detail)
   })
+  // Add reload button event listener
+  const reloadButton = document.getElementById('btn-reload-content')
+  if (reloadButton) {
+    reloadButton.addEventListener('click', handleReloadContent)
+  }
   // Optionally, trigger initial auth check
   AuthService.initialize()
 })
@@ -208,8 +222,9 @@ function avatarImageClickHandler(event, selectedPack) {
 
   // update pack image avatar UI
   updatePackAvatarImages(selectedPack.pack_id)
-  // hide "no pack is selected" UI
+  // hide "no pack is selected" UI and setup message
   hideSelectCategoryMessage()
+  hideContentSetupMessage()
 
   // hide old learn/exercise
   document.getElementById('content-container').style.display = 'none'
@@ -247,6 +262,49 @@ function hideSelectCategoryMessage() {
     'select-category-message'
   )
   selectCategoryMessage.style.display = 'none'
+}
+
+function showContentSetupMessage() {
+  const contentContainer = document.getElementById('content-container')
+  const selectCategoryMessage = document.getElementById('select-category-message')
+  const journeyPackSummarySection = document.getElementById('journey-pack-summary-section')
+  const microQuizSummarySection = document.getElementById('micro-quiz-pack-summary-section')
+  contentContainer.style.display = 'none'
+  selectCategoryMessage.style.display = 'none'
+  journeyPackSummarySection.style.display = 'none'
+  microQuizSummarySection.style.display = 'none'
+
+  const contentSetupMessage = document.getElementById('content-setup-message-container')
+  contentSetupMessage.style.display = 'flex'
+}
+
+function hideContentSetupMessage() {
+  const contentSetupMessage = document.getElementById('content-setup-message-container')
+  contentSetupMessage.style.display = 'none'
+
+  const journeyPackSummarySection = document.getElementById('journey-pack-summary-section')
+  const microQuizSummarySection = document.getElementById('micro-quiz-pack-summary-section')
+  journeyPackSummarySection.style.display = 'flex' // or whatever the original display value is
+  microQuizSummarySection.style.display = 'flex' // or whatever the original display value is
+}
+
+async function handleReloadContent() {
+  try {
+    const { data, error } = await protectedApiService.getOnboardingStatus()
+    if (error) {
+      console.error('Failed to check onboarding status:', error)
+      return
+    }
+    
+    if (data && data.status === true) {
+      // Content is ready - reload the level page
+      hideContentSetupMessage()
+      initializeLevelPage()
+    }
+    // If status is false, do nothing - user can try again
+  } catch (err) {
+    console.error('Error checking onboarding status:', err)
+  }
 }
 
 // Remove selected class from all deck images and add selected class to the selected deck image

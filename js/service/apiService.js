@@ -122,6 +122,9 @@ export const protectedApiService = {
       }
     })
   },
+  getOnboardingStatus: () => {
+    return handleRequest(() => protectedApi.get('/api/v1/user-pack/onboarding/status'))
+  },
 }
 
 async function handleRequest(fetchCall) {
