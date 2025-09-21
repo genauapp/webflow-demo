@@ -27,6 +27,11 @@ function renderArticleOptions(options, correctWord, onAnswerCallback) {
   const container = els.optionsContainer()
   if (!container) return
 
+  // Clear focus from any active elements to prevent mobile state persistence
+  if (document.activeElement && container.contains(document.activeElement)) {
+    document.activeElement.blur()
+  }
+
   container.innerHTML = ''
 
   options.forEach((option, index) => {
