@@ -50,6 +50,11 @@ export const protectedApiService = {
       protectedApi.get(`/api/v1/user-pack/summary?level=${currentLevel}`)
     )
   },
+  getOnboardingStatus: () => {
+    return handleRequest(() =>
+      protectedApi.get('/api/v1/user-pack/onboarding/status')
+    )
+  },
   getPackDeckWords: (deckId) => {
     // Handle starter pack special case
     if (deckId === 'starter-pack-deck') {
@@ -121,9 +126,6 @@ export const protectedApiService = {
         error: null,
       }
     })
-  },
-  getOnboardingStatus: () => {
-    return handleRequest(() => protectedApi.get('/api/v1/user-pack/onboarding/status'))
   },
 }
 
