@@ -91,9 +91,9 @@ export function updatePackSummaryInLevel(updatedPackSummary) {
   if (idx !== -1) {
     packSummariesOfCurrentLevel[idx] = updatedPackSummary
     loadPackPropsOnLevelPage(packSummariesOfCurrentLevel)
-    console.log('Updated pack summary in level:', updatedPackSummary.pack_id)
+    // console.log('Updated pack summary in level:', updatedPackSummary.pack_id)
   } else {
-    console.log('Pack summary not found in level:', updatedPackSummary.pack_id)
+    // console.log('Pack summary not found in level:', updatedPackSummary.pack_id)
   }
 }
 
@@ -124,16 +124,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Add reload button event listener
   const reloadButton = document.getElementById('btn-reload-content')
   if (reloadButton) {
-    console.log('Reload button found, attaching event listener')
     reloadButton.style.cursor = 'pointer'
     reloadButton.addEventListener('click', (e) => {
-      console.log('Reload button clicked!')
       e.preventDefault()
       e.stopPropagation()
       handleReloadContent()
     })
-  } else {
-    console.log('Reload button not found in DOM')
   }
   // Optionally, trigger initial auth check
   AuthService.initialize()
@@ -298,30 +294,44 @@ function hideContentSetupMessage() {
 }
 
 async function handleReloadContent() {
-  console.log('handleReloadContent called')
+  const reloadButton = document.getElementById('btn-reload-content')
+  const buttonInnerDiv = reloadButton.querySelector('div')
+  const originalText = buttonInnerDiv ? buttonInnerDiv.textContent : reloadButton.textContent
+  
+  // Show loading state
+  if (buttonInnerDiv) {
+    buttonInnerDiv.textContent = 'Checking...'
+  } else {
+    reloadButton.textContent = 'Checking...'
+  }
+  reloadButton.style.opacity = '0.6'
+  reloadButton.disabled = true
+  
   try {
-    console.log('Checking onboarding status...')
     const { data, error } = await protectedApiService.getOnboardingStatus()
+    
     if (error) {
       console.error('Failed to check onboarding status:', error)
       return
     }
     
-    console.log('Onboarding status response:', data)
-    // Check if data is directly a boolean or has a status property
     const isReady = data === true || data?.status === true
     
     if (isReady) {
-      // Content is ready - reload the level page
-      console.log('Content is ready! Reloading level page...')
       hideContentSetupMessage()
       initializeLevelPage()
-    } else {
-      console.log('Content not ready yet, status:', data)
     }
-    // If status is false, do nothing - user can try again
   } catch (err) {
     console.error('Error checking onboarding status:', err)
+  } finally {
+    // Reset button state
+    if (buttonInnerDiv) {
+      buttonInnerDiv.textContent = originalText
+    } else {
+      reloadButton.textContent = originalText
+    }
+    reloadButton.style.opacity = '1'
+    reloadButton.disabled = false
   }
 }
 
