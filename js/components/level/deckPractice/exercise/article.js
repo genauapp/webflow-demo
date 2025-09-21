@@ -82,12 +82,10 @@ function renderArticleOptions(options, correctWord, onAnswerCallback) {
     container.appendChild(button)
   })
 
-  // Force focus away from any button to prevent mobile focus persistence
-  setTimeout(() => {
-    if (document.activeElement && container.contains(document.activeElement)) {
-      document.body.focus()
-    }
-  }, 0)
+  // Clear focus AFTER new buttons are rendered to prevent mobile focus persistence
+  if (document.activeElement && document.activeElement.classList?.contains('exercise-option-btn')) {
+    document.activeElement.blur()
+  }
 }
 
 /** Show article-specific feedback */
