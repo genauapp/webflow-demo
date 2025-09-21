@@ -308,13 +308,16 @@ async function handleReloadContent() {
     }
     
     console.log('Onboarding status response:', data)
-    if (data && data.status === true) {
+    // Check if data is directly a boolean or has a status property
+    const isReady = data === true || data?.status === true
+    
+    if (isReady) {
       // Content is ready - reload the level page
       console.log('Content is ready! Reloading level page...')
       hideContentSetupMessage()
       initializeLevelPage()
     } else {
-      console.log('Content not ready yet, status:', data?.status)
+      console.log('Content not ready yet, status:', data)
     }
     // If status is false, do nothing - user can try again
   } catch (err) {
