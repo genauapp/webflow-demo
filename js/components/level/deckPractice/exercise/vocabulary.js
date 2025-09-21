@@ -24,11 +24,6 @@ function renderVocabularyOptions(options, correctWord, onAnswerCallback) {
   const container = els.optionsContainer()
   if (!container) return
 
-  // Clear focus from any active elements to prevent mobile state persistence
-  if (document.activeElement && container.contains(document.activeElement)) {
-    document.activeElement.blur()
-  }
-
   container.innerHTML = ''
 
   options.forEach((option, index) => {
@@ -69,6 +64,13 @@ function renderVocabularyOptions(options, correctWord, onAnswerCallback) {
 
     container.appendChild(button)
   })
+
+  // Force focus away from any button to prevent mobile focus persistence
+  setTimeout(() => {
+    if (document.activeElement && container.contains(document.activeElement)) {
+      document.body.focus()
+    }
+  }, 0)
 }
 
 /** Show feedback */
