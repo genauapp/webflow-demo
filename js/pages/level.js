@@ -131,6 +131,17 @@ document.addEventListener('DOMContentLoaded', () => {
       handleReloadContent()
     })
   }
+  
+  // Add generate pack button event listener
+  const generateButton = document.getElementById('btn-generate-pack')
+  if (generateButton) {
+    generateButton.style.cursor = 'pointer'
+    generateButton.addEventListener('click', (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+      window.location.replace('/generate')
+    })
+  }
   // Optionally, trigger initial auth check
   AuthService.initialize()
 })
