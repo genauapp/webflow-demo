@@ -166,15 +166,8 @@ function loadPackPropsOnLevelPage(packSummariesOfCurrentLevel) {
   // Clear previous micro quiz packs
   microQuizSummaryGrid.innerHTML = ''
 
-  const isMicroQuizAbsent = !packSummariesOfCurrentLevel.some(
-    (ps) => ps.pack_type === PackType.MICRO_QUIZ
-  )
-
-  if (isMicroQuizAbsent) {
-    microQuizSummarySection.style.display = 'none'
-  } else {
-    microQuizSummarySection.style.display = 'flex' // Show it when there are micro-quiz packs
-  }
+  // Update micro-quiz section visibility
+  updateMicroQuizSectionVisibility()
 
   packSummariesOfCurrentLevel.forEach((packSummary, i) => {
     // create <div> element
@@ -296,15 +289,28 @@ function showContentSetupMessage() {
   contentSetupMessage.style.display = 'flex'
 }
 
+function updateMicroQuizSectionVisibility() {
+  const microQuizSummarySection = document.getElementById('micro-quiz-pack-summary-section')
+  const hasMicroQuizPacks = packSummariesOfCurrentLevel.some(
+    (ps) => ps.pack_type === PackType.MICRO_QUIZ
+  )
+  
+  if (hasMicroQuizPacks) {
+    microQuizSummarySection.style.display = 'flex'
+  } else {
+    microQuizSummarySection.style.display = 'none'
+  }
+}
+
 function hideContentSetupMessage() {
   const contentSetupMessage = document.getElementById('content-setup-message-container')
   contentSetupMessage.style.display = 'none'
 
   const journeyPackSummarySection = document.getElementById('journey-pack-summary-section')
-  journeyPackSummarySection.style.display = 'flex' // or whatever the original display value is
+  journeyPackSummarySection.style.display = 'flex'
   
-  // For micro-quiz section, don't automatically show it - let loadPackPropsOnLevelPage handle visibility
-  // based on whether there are actual micro-quiz packs
+  // Update micro-quiz section visibility based on current pack data
+  updateMicroQuizSectionVisibility()
 }
 
 async function handleReloadContent() {
