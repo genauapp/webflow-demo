@@ -124,7 +124,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // Add reload button event listener
   const reloadButton = document.getElementById('btn-reload-content')
   if (reloadButton) {
-    reloadButton.addEventListener('click', handleReloadContent)
+    console.log('Reload button found, attaching event listener')
+    reloadButton.style.cursor = 'pointer'
+    reloadButton.addEventListener('click', (e) => {
+      console.log('Reload button clicked!')
+      e.preventDefault()
+      e.stopPropagation()
+      handleReloadContent()
+    })
+  } else {
+    console.log('Reload button not found in DOM')
   }
   // Optionally, trigger initial auth check
   AuthService.initialize()
@@ -289,17 +298,23 @@ function hideContentSetupMessage() {
 }
 
 async function handleReloadContent() {
+  console.log('handleReloadContent called')
   try {
+    console.log('Checking onboarding status...')
     const { data, error } = await protectedApiService.getOnboardingStatus()
     if (error) {
       console.error('Failed to check onboarding status:', error)
       return
     }
     
+    console.log('Onboarding status response:', data)
     if (data && data.status === true) {
       // Content is ready - reload the level page
+      console.log('Content is ready! Reloading level page...')
       hideContentSetupMessage()
       initializeLevelPage()
+    } else {
+      console.log('Content not ready yet, status:', data?.status)
     }
     // If status is false, do nothing - user can try again
   } catch (err) {
