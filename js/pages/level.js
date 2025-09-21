@@ -39,6 +39,14 @@ function initializeLevelPage() {
   // If you have other unmounts, add here (e.g., unmountMicroQuiz())
 
   const currentLevel = LevelManager.getCurrentLevel()
+  
+  // If no valid level found in URL, don't make API calls
+  if (!currentLevel) {
+    console.error('No valid level found in URL path')
+    showSelectCategoryMessage()
+    return
+  }
+  
   protectedApiService
     .getPackSummariesOfLevel(currentLevel)
     .then(({ data: packSummariesOfCurrentLevel }) => {
@@ -53,6 +61,13 @@ function initializeLevelPage() {
         CURRENT_PACK_KEY,
         null
       )
+      
+      // Check if user has any packs (content ready) or needs onboarding
+      if (packSummariesOfCurrentLevel.length === 0) {
+        showContentSetupMessage()
+        return
+      }
+      
       loadPackPropsOnLevelPage(packSummariesOfCurrentLevel)
       // If current pack is null or belongs on another level, show select pack message
       if (
@@ -61,11 +76,13 @@ function initializeLevelPage() {
       ) {
         // clear selection
         LocalStorageManager.save(CURRENT_PACK_KEY, null)
+        hideContentSetupMessage()
         showSelectCategoryMessage()
         return
       }
 
       hideSelectCategoryMessage()
+      hideContentSetupMessage()
       updatePackAvatarImages(selectedPackSummary.pack_id)
       // hide old learn/exercise elements
       document.getElementById('content-container').style.display = 'none'
@@ -82,9 +99,9 @@ export function updatePackSummaryInLevel(updatedPackSummary) {
   if (idx !== -1) {
     packSummariesOfCurrentLevel[idx] = updatedPackSummary
     loadPackPropsOnLevelPage(packSummariesOfCurrentLevel)
-    console.log('Updated pack summary in level:', updatedPackSummary.pack_id)
+    // console.log('Updated pack summary in level:', updatedPackSummary.pack_id)
   } else {
-    console.log('Pack summary not found in level:', updatedPackSummary.pack_id)
+    // console.log('Pack summary not found in level:', updatedPackSummary.pack_id)
   }
 }
 
@@ -112,6 +129,27 @@ document.addEventListener('DOMContentLoaded', () => {
   eventService.subscribe(AuthEvent.AUTH_STATE_CHANGED, (event) => {
     handleAuthStateChanged(event.detail)
   })
+  // Add reload button event listener
+  const reloadButton = document.getElementById('btn-reload-content')
+  if (reloadButton) {
+    reloadButton.style.cursor = 'pointer'
+    reloadButton.addEventListener('click', (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+      handleReloadContent()
+    })
+  }
+  
+  // Add generate pack button event listener
+  const generateButton = document.getElementById('btn-generate-pack')
+  if (generateButton) {
+    generateButton.style.cursor = 'pointer'
+    generateButton.addEventListener('click', (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+      window.location.replace('/generate')
+    })
+  }
   // Optionally, trigger initial auth check
   AuthService.initialize()
 })
@@ -142,6 +180,8 @@ function loadPackPropsOnLevelPage(packSummariesOfCurrentLevel) {
 
   if (isMicroQuizAbsent) {
     microQuizSummarySection.style.display = 'none'
+  } else {
+    microQuizSummarySection.style.display = 'flex'
   }
 
   packSummariesOfCurrentLevel.forEach((packSummary, i) => {
@@ -208,8 +248,9 @@ function avatarImageClickHandler(event, selectedPack) {
 
   // update pack image avatar UI
   updatePackAvatarImages(selectedPack.pack_id)
-  // hide "no pack is selected" UI
+  // hide "no pack is selected" UI and setup message
   hideSelectCategoryMessage()
+  hideContentSetupMessage()
 
   // hide old learn/exercise
   document.getElementById('content-container').style.display = 'none'
@@ -247,6 +288,72 @@ function hideSelectCategoryMessage() {
     'select-category-message'
   )
   selectCategoryMessage.style.display = 'none'
+}
+
+function showContentSetupMessage() {
+  const contentContainer = document.getElementById('content-container')
+  const selectCategoryMessage = document.getElementById('select-category-message')
+  const journeyPackSummarySection = document.getElementById('journey-pack-summary-section')
+  const microQuizSummarySection = document.getElementById('micro-quiz-pack-summary-section')
+  contentContainer.style.display = 'none'
+  selectCategoryMessage.style.display = 'none'
+  journeyPackSummarySection.style.display = 'none'
+  microQuizSummarySection.style.display = 'none'
+
+  const contentSetupMessage = document.getElementById('content-setup-message-container')
+  contentSetupMessage.style.display = 'flex'
+}
+
+function hideContentSetupMessage() {
+  const contentSetupMessage = document.getElementById('content-setup-message-container')
+  contentSetupMessage.style.display = 'none'
+
+  const journeyPackSummarySection = document.getElementById('journey-pack-summary-section')
+  journeyPackSummarySection.style.display = 'flex'
+  
+  // Don't touch micro-quiz section here - let loadPackPropsOnLevelPage handle it
+}
+
+async function handleReloadContent() {
+  const reloadButton = document.getElementById('btn-reload-content')
+  const buttonInnerDiv = reloadButton.querySelector('div')
+  const originalText = buttonInnerDiv ? buttonInnerDiv.textContent : reloadButton.textContent
+  
+  // Show loading state
+  if (buttonInnerDiv) {
+    buttonInnerDiv.textContent = 'Checking...'
+  } else {
+    reloadButton.textContent = 'Checking...'
+  }
+  reloadButton.style.opacity = '0.6'
+  reloadButton.disabled = true
+  
+  try {
+    const { data, error } = await protectedApiService.getOnboardingStatus()
+    
+    if (error) {
+      console.error('Failed to check onboarding status:', error)
+      return
+    }
+    
+    const isReady = data === true || data?.status === true
+    
+    if (isReady) {
+      hideContentSetupMessage()
+      initializeLevelPage()
+    }
+  } catch (err) {
+    console.error('Error checking onboarding status:', err)
+  } finally {
+    // Reset button state
+    if (buttonInnerDiv) {
+      buttonInnerDiv.textContent = originalText
+    } else {
+      reloadButton.textContent = originalText
+    }
+    reloadButton.style.opacity = '1'
+    reloadButton.disabled = false
+  }
 }
 
 // Remove selected class from all deck images and add selected class to the selected deck image
