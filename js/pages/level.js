@@ -172,6 +172,8 @@ function loadPackPropsOnLevelPage(packSummariesOfCurrentLevel) {
 
   if (isMicroQuizAbsent) {
     microQuizSummarySection.style.display = 'none'
+  } else {
+    microQuizSummarySection.style.display = 'flex' // Show it when there are micro-quiz packs
   }
 
   packSummariesOfCurrentLevel.forEach((packSummary, i) => {
@@ -299,9 +301,10 @@ function hideContentSetupMessage() {
   contentSetupMessage.style.display = 'none'
 
   const journeyPackSummarySection = document.getElementById('journey-pack-summary-section')
-  const microQuizSummarySection = document.getElementById('micro-quiz-pack-summary-section')
   journeyPackSummarySection.style.display = 'flex' // or whatever the original display value is
-  microQuizSummarySection.style.display = 'flex' // or whatever the original display value is
+  
+  // For micro-quiz section, don't automatically show it - let loadPackPropsOnLevelPage handle visibility
+  // based on whether there are actual micro-quiz packs
 }
 
 async function handleReloadContent() {
