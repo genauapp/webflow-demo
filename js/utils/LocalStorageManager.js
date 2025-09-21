@@ -79,6 +79,24 @@ export default class LocalStorageManager {
     const APP_VERSION = LocalStorageManager.load(APP_VERSION_KEY, null)
 
     if (APP_VERSION === null || APP_VERSION !== currentAppVersion) {
+      // For version mismatch, trigger logout asynchronously without blocking
+      if (APP_VERSION !== null) {
+        // Only logout if there was a previous version (not first time users)
+        // Do this asynchronously so it doesn't block the current execution
+        setTimeout(async () => {
+          try {
+            const { publicApiService } = await import('../service/apiService.js')
+            await publicApiService.logout()
+            // Force page reload after logout to ensure clean state
+            window.location.reload()
+          } catch (error) {
+            console.error('Failed to logout during version update:', error)
+            // Force reload anyway to ensure clean state
+            window.location.reload()
+          }
+        }, 100)
+      }
+      
       LocalStorageManager.clear()
       LocalStorageManager.save(APP_VERSION_KEY, currentAppVersion)
     }
