@@ -38,16 +38,8 @@ function renderVocabularyOptions(options, correctWord, onAnswerCallback) {
       option === correctWord ? 'true' : 'false'
     )
 
-    // Prevent focus on mobile to avoid state persistence
-    button.addEventListener('touchstart', (e) => {
-      e.target.blur()
-    })
-
     button.addEventListener('click', async () => {
       const isCorrect = option === correctWord
-
-      // Immediately blur this button to prevent focus retention
-      button.blur()
 
       // 1) show feedback immediately
       showVocabularyFeedback(isCorrect, correctWord, option)
@@ -72,9 +64,6 @@ function renderVocabularyOptions(options, correctWord, onAnswerCallback) {
 
     container.appendChild(button)
   })
-
-  // Clear any residual focus immediately after rendering
-  document.activeElement?.blur()
 }
 
 /** Show feedback */

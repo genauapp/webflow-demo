@@ -73,16 +73,8 @@ function renderGrammarOptions(
       option === correctWord ? 'true' : 'false'
     )
 
-    // Prevent focus on mobile to avoid state persistence
-    button.addEventListener('touchstart', (e) => {
-      e.target.blur()
-    })
-
     button.addEventListener('click', async () => {
       const isCorrect = option === correctWord
-
-      // Immediately blur this button to prevent focus retention
-      button.blur()
 
       // 1) show blank + feedback immediately
       // // fill the blank with selected answer
@@ -130,9 +122,6 @@ function renderGrammarOptions(
 
     container.appendChild(button)
   })
-
-  // Clear any residual focus immediately after rendering
-  document.activeElement?.blur()
 }
 
 /** Show grammar-specific feedback */
