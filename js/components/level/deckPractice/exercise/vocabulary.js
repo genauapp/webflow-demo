@@ -64,11 +64,6 @@ function renderVocabularyOptions(options, correctWord, onAnswerCallback) {
 
     container.appendChild(button)
   })
-
-  // Clear focus AFTER new buttons are rendered to prevent mobile focus persistence
-  if (document.activeElement && document.activeElement.classList?.contains('exercise-option-btn')) {
-    document.activeElement.blur()
-  }
 }
 
 /** Show feedback */
