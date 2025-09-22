@@ -192,7 +192,7 @@ function renderGrammar(
   }
 
   const sentenceEl = els.grammarSentence()
-  sentenceEl.style.display = 'flex'
+  sentenceEl.style.display = 'block'
   // generate span in here
   const blankElStr = `<span id="exercise-grammar-blank" class="exercise-grammar-sentence grammar-blank"> ______ </span>`
   sentenceEl.innerHTML = `${before} ${blankElStr} ${after}`
