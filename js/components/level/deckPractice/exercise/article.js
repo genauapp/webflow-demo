@@ -44,8 +44,16 @@ function renderArticleOptions(options, correctWord, onAnswerCallback) {
     button.setAttribute('data-option', JSON.stringify(option))
     button.setAttribute('data-correct', option.isCorrect ? 'true' : 'false')
 
+    // Prevent focus on mobile to avoid state persistence
+    button.addEventListener('touchstart', (e) => {
+      e.target.blur()
+    })
+
     button.addEventListener('click', async () => {
       const isCorrect = option.isCorrect
+
+      // Immediately blur this button to prevent focus retention
+      button.blur()
 
       // 1) show feedback immediately
       showArticleFeedback(isCorrect, correctWord, option.article)
@@ -82,10 +90,8 @@ function renderArticleOptions(options, correctWord, onAnswerCallback) {
     container.appendChild(button)
   })
 
-  // Clear focus AFTER new buttons are rendered to prevent mobile focus persistence
-  if (document.activeElement && document.activeElement.classList?.contains('exercise-option-btn')) {
-    document.activeElement.blur()
-  }
+  // Clear any residual focus immediately after rendering
+  document.activeElement?.blur()
 }
 
 /** Show article-specific feedback */
