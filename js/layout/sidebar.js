@@ -14,7 +14,7 @@ const elementIds = {
 const elementClasses = {
   // User component elements appear in desktop/mobile
   user: {
-    profileContainer: 'user-profile-container',
+    infoContainer: 'user-info-container',
     avatar: 'image-user-info-avatar',
     name: 'label-user-info-name',
     email: 'label-user-info-email',
