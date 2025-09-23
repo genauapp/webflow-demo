@@ -27,7 +27,7 @@ export const publicApiService = {
 }
 
 export const protectedApiService = {
-  getUserProfile: () => {
+  getUserInfo: () => {
     return handleRequest(() => protectedApi.get('/api/v1/user/me'))
   },
   getPackSummariesOfLevel: (currentLevel) => {

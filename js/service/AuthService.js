@@ -12,20 +12,20 @@ class AuthService {
   }
 
   /**
-   * Get current user profile - makes API call if needed and publishes result
+   * Get current user info - makes API call if needed and publishes result
    * Prevents duplicate requests with loading flag
    */
-  async getUserProfile() {
+  async getUserInfo() {
     // If already loading, don't make another request
     if (this.isLoading) {
       // console.debug(
-      //   '[AuthService] getUserProfile: Skipped due to ongoing request'
+      //   '[AuthService] getUserInfo: Skipped due to ongoing request'
       // )
 
       return
     }
 
-    // console.log('[AuthService] Fetching user profile...')
+    // console.log('[AuthService] Fetching user info...')
     this.isLoading = true
 
     try {
@@ -33,9 +33,9 @@ class AuthService {
         data: user,
         status,
         error,
-      } = await protectedApiService.getUserProfile()
+      } = await protectedApiService.getUserInfo()
       // console.debug(
-      //   `[AuthService] getUserProfile response - Status: ${status}, Error: ${
+      //   `[AuthService] getUserInfo response - Status: ${status}, Error: ${
       //     error || 'None'
       //   }`
       // )
@@ -43,7 +43,7 @@ class AuthService {
 
       if (unauthorized || error) {
         // console.warn(
-        //   `[AuthService] Profile fetch failed - Unauthorized: ${unauthorized}, Error: ${
+        //   `[AuthService] User info fetch failed - Unauthorized: ${unauthorized}, Error: ${
         //     error || 'None'
         //   }`
         // )
@@ -56,7 +56,7 @@ class AuthService {
         })
       } else {
         // console.log(
-        //   `[AuthService] Profile fetched successfully - User ID: ${
+        //   `[AuthService] User info fetched successfully - User ID: ${
         //     user.id || 'Unknown'
         //   }`
         // )
@@ -70,7 +70,7 @@ class AuthService {
       }
     } catch (err) {
       // console.error(
-      //   `[AuthService] getUserProfile exception - ${err.message || err}`,
+      //   `[AuthService] getUserInfo exception - ${err.message || err}`,
       //   err.stack ? { stack: err.stack } : ''
       // )
       this.currentUser = null
@@ -83,7 +83,7 @@ class AuthService {
     } finally {
       this.isLoading = false
       this.isInitialized = true
-      // console.debug('[AuthService] Profile loading completed')
+      // console.debug('[AuthService] User info loading completed')
     }
   }
 
@@ -199,12 +199,12 @@ class AuthService {
   }
 
   /**
-   * Initialize auth service - gets initial user profile
+   * Initialize auth service - gets initial user info
    */
   async initialize() {
     if (!this.isInitialized) {
       // console.log('[AuthService] Initializing auth service...')
-      await this.getUserProfile()
+      await this.getUserInfo()
     } else {
       // console.debug('[AuthService] Already initialized')
     }

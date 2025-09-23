@@ -11,9 +11,9 @@ function initElements(elementIds, elementClasses) {
   els = {
     loginContainer: () => document.getElementById(elementIds.loginContainer),
 
-    profileContainers: () =>
+    infoContainers: () =>
       Array.from(
-        document.querySelectorAll(`.${elementClasses.profileContainer}`)
+        document.querySelectorAll(`.${elementClasses.infoContainer}`)
       ),
     avatarImages: () =>
       Array.from(document.querySelectorAll(`.${elementClasses.avatar}`)),
@@ -38,7 +38,7 @@ function render({ loading, error, unauthorized, user }) {
   if (loading) {
     els.loginContainer().style.display = 'none'
 
-    els.profileContainers().forEach((element) => {
+    els.infoContainers().forEach((element) => {
       element.style.display = 'none'
     })
     return
@@ -49,7 +49,7 @@ function render({ loading, error, unauthorized, user }) {
     // fallback to login
     els.loginContainer().style.display = 'flex'
 
-    els.profileContainers().forEach((element) => {
+    els.infoContainers().forEach((element) => {
       element.style.display = 'none'
     })
     els.logoutButtons().forEach((element) => {
@@ -62,7 +62,7 @@ function render({ loading, error, unauthorized, user }) {
   if (unauthorized || !user) {
     els.loginContainer().style.display = 'flex'
 
-    els.profileContainers().forEach((element) => {
+    els.infoContainers().forEach((element) => {
       element.style.display = 'none'
     })
     els.logoutButtons().forEach((element) => {
@@ -71,7 +71,7 @@ function render({ loading, error, unauthorized, user }) {
   } else {
     els.loginContainer().style.display = 'none'
 
-    els.profileContainers().forEach((element) => {
+    els.infoContainers().forEach((element) => {
       element.style.display = 'flex'
     })
     els.avatarImages().forEach((element) => {

@@ -1,8 +1,8 @@
 // /constants/events.js
 export const AuthEvent = Object.freeze({
-  // USER_PROFILE_REQUESTED: 'auth:user-profile-requested',
-  // USER_PROFILE_SUCCESS: 'auth:user-profile-success',
-  // USER_PROFILE_ERROR: 'auth:user-profile-error',
+  // USER_INFO_REQUESTED: 'auth:user-info-requested',
+  // USER_INFO_SUCCESS: 'auth:user-info-success',
+  // USER_INFO_ERROR: 'auth:user-info-error',
   // LOGIN_SUCCESS: 'auth:login-success',
   // LOGOUT_SUCCESS: 'auth:logout-success',
   // AUTH_STATE_LOADING: 'auth:state-loading',
